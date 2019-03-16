@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}{{title}}{% endblock %}
-{% block subtitle %}<a href="{{PAGES.articles.url}}">Blog</a>{% endblock %}
+{% block subtitle %}<a href="{{PAGES.blog.url}}">Blog</a>{% endblock %}
 {% block article %}
     <!--<canvas class="animated-color-grid" height="100"></canvas>-->
     <div class="article-body">
         {% block post %}
             <div style="background-image: url({{img}}); height: 60px; background-attachment: fixed; margin-top: 50px; margin-bottom: 50px;" class="article-featured-image"></div>
-            <iframe src="{{iframe}}" style="width:100%; height: {{height|default('200vh', true)}}"></iframe>
+            <iframe src="{{iframe}}" style="width:100%; height: {{height|default('200vh', true)}}; border-radius: 14px"></iframe>
             <div style="background-image: url({{img}}); height: 60px; background-attachment: fixed" class="article-featured-image"></div>
         {% endblock %}
         <div class="container post-footer">

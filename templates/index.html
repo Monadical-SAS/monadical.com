@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block subtitle %}Home{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
+
+{% block article %}
+    <div class="container-full">
+        {# <center>
+            <br/>
+            <h2>Advanced web development &amp; consulting</h2><br/>
+            <i>To create the most engaging eSports experience to ever hit the poker market.</i>
+            <hr style="max-width: 645px"/>
+        </center> #}
+        <center>
+            <br/><br/>
+            <b>Monadical is a fully remote software-consulting shop founded in Medellin, Colombia in 2016.</b>
+            <br/><br/>
+            
+            We do everything from <a href="https://oddslingers.com">online game development</a> and 
+            <a href="">advanced web animation</a>,<br/>
+            to <a href="">internet archiving</a>, <a href="">smart contracts</a>, <a href="">mesh networks</a>, and more...
+            <br/>
+        </center>
+        <div class="row container__steps">
+            <div class="container__step col-md-4 text-center">
+                <h2 class="icon"><img src="static/product-management.png" height="180px"></h2>
+                <h2>Product Management</h2>
+                <ul>
+                    <li>Allow entertaining high-skill players to earn</li>
+                    <li>income beyond donations. Spectators place bets</li>
+                    <li>on favorite streamers, and a cut goes to the player.</li>
+                </ul>
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <h2 class="icon"><img src="static/full-stack.png" height="180px"></h2>
+                <h2>Full-Stack Development</h2>
+                <ul>
+                    <li>Create a clean, fast, ad-free experience</li>
+                    <li>with personalized progress goals for beginners,</li>
+                    <li>private games, and new game variants.</li>
+                </ul> 
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <h2 class="icon"><img src="static/ops.png" height="180px"></h2>
+                <h2>Ops, Data Science, Security</h2>
+                <ul>
+                    <li>Introduce a revolutionary new eSports experience</li>
+                    <li>with real-time audio &amp; video + chat, and</li>
+                    <li>distributed-ledger-backed bets on video streams.</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <center>
+            <a href="{{PAGES.about.url}}">Learn more about our consulting services...</a>
+            <br/><br/>
+            <hr/>
+            <br/>
+            <b>
+                <h4>Our specialty is full-stack web development using Python & JS for medium to large clients,</h4>
+            but we're comfortable working with a wide range of tech stacks and project requirements.</b>
+            <br/><br/><br/>
+            <img src="static/python.png" style="height: 150px; opacity: 0.2; margin-right: 15px"/>
+            <img src="static/javascript.png" style="height: 150px; opacity: 0.2; margin-left: 15px; margin-right: 15px"/>
+            <img src="static/django.png" style="height: 150px; opacity: 0.2; margin-left: 15px; margin-right: 15px"/>
+            <img src="static/react.png" style="height: 150px; opacity: 0.2; margin-left: 15px; margin-right: 15px"/>
+            <img src="static/ethereum.png" style="height: 150px; opacity: 0.2; margin-left: 15px"/>
+            <br/><br/>
+            <br/>
+            
+            <h5>Some things we care about:</h5><br/>
+            hiring curious people, communicating effectively, being transparent,<br/>
+            having good design, supporting open source communities, and keeping information accessible.</b>
+        </center>
+
+        <center>
+            <br/>
+            <a href="{{PAGES.blog.url}}">See blog posts by our team...</a><br/><br/>
+            <br/><br>
+            <hr/>
+            <br/>
+            <i>Our team ramps up fast and can make meaningful commits within days of receiving specs.</i><br/>
+            <a href="/apply" class="btn beta-btn btn-shadow btn-success">
+                <span style="color:black; opacity: 0.8">♠</span>
+                <span style="color:red; opacity: 0.8">♦</span>
+                &nbsp; &nbsp;
+                Want to work together?
+                &nbsp; &nbsp;
+                <span style="color:black; opacity: 0.8">♣</span>
+                <span style="color:red; opacity: 0.8">♥</span>
+            </a>
+            <br/>
+            We can spec out both hourly and project-based contracts, and our <br/>
+            invoices ares payable internationally or domestically in the USA, Colombia, or Canada.<br/><br/>
+            
+            <br/>
+            <br/>
+            <h2 class="icon"><img src="static/squiggle.png" height="130px"></h2>
+            <br/><br/>
+            {# <a href="{{PAGES.about.url}}">More info...</a> #}
+            {# <br/><br/> #}
+        </center>
+    </div>
+{% endblock %}

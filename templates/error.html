@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+{% block subtitle %}{{status}}{% endblock %}
+
+{% block article %}
+    <center>
+        <br/><br/><br/>
+
+        <h1>Error<br/>&nbsp;😢<h1>
+        <h2 class="page-header">{{status}}</h2>
+        <br/><br/>
+        {{reason}}
+    </center>
+{% endblock %}

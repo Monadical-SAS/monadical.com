@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Team{% endblock %}
+{% block subtitle %}Team{% endblock %}
+{% block logo %}
+{% endblock %}
+{% block article %}
+    <style type="text/css">
+        article {
+            background-color: #333;
+            border-radius: 14px;
+            max-width: 1024px;
+            margin: auto;
+            float: none;
+            overflow: hidden;
+            padding: 0px;
+        }
+        article center {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        .profile-img {
+            height: 240px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 4px 4px 4px rgba(0,0,0,0.02);
+        }
+    </style>
+    <article class="container-full">
+        <br/>
+        <center>
+            <b style="font-size: 1.3em">
+                We're a fully remote, 6-person development team working in Montréal, Medellín, and NYC.<br/>
+                <br/>
+                <small>We value curiosity, transparency, and work-life balance!</small>
+            </b>
+            <br/><br/><br/>
+            <a href="mailto:n+deck@monadical.com" target="_blank" class="btn btn-success" style="font-size: 1.2em; color: rgba(246, 246, 246, 0.9);">
+                &nbsp;&nbsp;&nbsp; Contact Us &nbsp;<img src="static/external.png" style="height:20px; vertical-align: middle; filter: invert(1)"/> &nbsp;<br/>
+            </a>
+            <br><br/>
+            <hr style="max-width: 645px"/>
+            <small style="opacity: 0.4">
+                The company runs in English, but we also speak Spanish, 
+                Chinese, French, and German to varying degrees.
+            </small>
+        </center>
+        <div class="row container__steps">
+            <div class="container__step col-md-4 text-center">
+                <a href="https://monadical.com">
+                    <img src="static/max.jpg" class="profile-img"/>
+                    <br/><br/>
+                    <h5>Max McCrea<br/><small style="opacity:0.6; color: gray">Senior Dev / Co-Founder<br/>〰〰〰〰</small></h5>
+                </a>
+                <small>
+                    Expert data scientist, ex-pro poker player, senior full-stack engineer,<br/>undefeated Monadical grillmaster.
+                </small>
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <a href="https://monadical.com">
+                    <img src="static/nick.jpg" class="profile-img"/>
+                    <br/><br/>
+                    <h5>Nick Sweeting<br/><small style="opacity:0.6; color: gray">Senior Dev / Co-Founder<br/>〰〰〰〰</small></h5>
+                </a>
+                <small>
+                    Serial entrepeneur, internet archivist, senior full-stack engineer,<br/>bicycle fanatic.
+                </small>
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <a href="https://monadical.com">
+                    <img src="static/ana.jpg" class="profile-img"/>
+                    <br/><br/>
+                    <h5>Ana Gonzales<br/><small style="opacity:0.6; color: gray">COO<br/>〰〰〰〰</small></h5>
+                </a>
+                <small>
+                    Computational linguistics specialist, ops &amp; hiring expert,<br/>travel &amp; language-learning afficianado.
+                </small>
+                <br/><br/><br/>
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <a href="https://monadical.com">
+                    <img src="static/juan.jpg" class="profile-img"/>
+                    <br/><br/>
+                    <h5>Juan Diego Garcia<br/><small style="opacity:0.6; color: gray">Senior Dev / PM<br/>〰〰〰〰</small></h5>
+                </a>
+                <small>
+                    Senior full-stack engineer, principled product manager,<br/>expert motocross rider.
+                </small>
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <a href="https://monadical.com">
+                    <img src="static/milton.jpg" class="profile-img"/>
+                    <br/><br/>
+                    <h5>Milton Lenis<br/><small style="opacity:0.6; color: gray">Senior Dev / PM<br/>〰〰〰〰</small></h5>
+                </a>
+                <small>
+                    Senior full-stack engineer, development community organizer,<br/>self-improvement junkie.
+                </small>
+            </div>
+            <div class="container__step col-md-4 text-center">
+                <a href="https://monadical.com">
+                    <img src="static/jose.jpg" class="profile-img"/>
+                    <br/><br/>
+                    <h5>Jose Benitez<br/><small style="opacity:0.6; color: gray">Junior Dev<br/>〰〰〰〰</small></h5>
+                </a>
+                <small>
+                    Full-stack engineer, fast-moving UI &amp; UX wizard,<br/>serious quadcopter lover.
+                </small>
+            </div>
+        </div>
+        <hr/>
+        <center>
+            Want to learn more? Read our <a href="{{PAGES.blog.url}}">blog posts</a>, or subscribe to our <a href="{{PAGES.blog.url}}">newsletter</a>.
+            <br/><br/>
+            <small>Or just shoot us an email at <a href="mailto:hello@monadical.com">hello@monadical.com</a> if you want to say hi!</small>
+        </center>
+        <br/>
+    </article>
+    <br/><br/><br/>
+    <div class="container row">
+        <div class="col-md-6" style="text-align: center">
+            <img src="static/medellin.jpg" style="width: 100%; border-radius: 14px"/><br/>
+            <br/>
+            <i>Onboarding in Medellín, Colombia, remote after that.</i>
+        </div>
+        <div class="col-md-6" style="color:#ddd; text-align: left;">
+            <center>
+                <b>
+                    Want to join our team?<br/>
+                    We're always hiring for several open positions:
+                </b>
+            </center>
+            <br/>
+            <ul style="max-width: 320px; text-align: left; margin: auto; font-size: 18px; font-weight: 200; opacity: 0.5">
+                <li>Digital Marketing Specialists</li>
+                <li>Senior Full-Stack Engineers</li>
+                <li>Full-Stack Engineers (Python & JS)</li>
+                <li>Junior Engineers (Python & JS)</li>
+            </ul><br/>
+            <center>
+                <a href="https://monadical.com/apply" class="btn btn-info">
+                    <i class="fa fa-envelope"></i> Apply Now
+                </a>
+            </center>
+        </div>
+    </div>
+    <br/>
+    <canvas class="animated-color-grid" height="100"></canvas>
+{% endblock %}

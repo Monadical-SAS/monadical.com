@@ -1,0 +1,52 @@
+#!/bin/bash
+
+normal=$(tput sgr0)
+red=${txtbld}$(tput setaf 1)
+blue=${txtbld}$(tput setaf 4)
+green=${txtbld}$(tput setaf 2)
+white=${txtbld}$(tput setaf 7)
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+echo "$blue[+] Starting Flask server to render pages...$normal"
+./server > /dev/null &
+sleep 1.5
+
+# Recreate output folder
+rm -Rf output
+mkdir -p output/posts
+cp -r static output/static
+cp static/favicon.ico output/favicon.ico
+./server --pages > output/pages.txt
+./server --posts > output/posts.txt
+
+echo ""
+echo "$blue[+] Saving pages as static HTML to output/...$normal"
+(cd output; wget -q $(<pages.txt))
+(cd output/posts; wget -q $(<../posts.txt))
+
+# echo "$red[*] Stopping Flask server...$normal"
+kill %1 > /dev/null
+echo ""
+echo "$green[√] Build of static site to output/ complete.$normal"
+echo ""
+echo ""
+echo "$red Committing & deploying output/ in 3 sec, press Ctrl+C to cancel..."
+echo ""
+sleep 3
+echo ""
+git add output
+git commit -q --short -m "built static site" > /dev/null
+
+echo "$blue[^] Pushing build to origin/live...$normal"
+git push origin "$current_branch":live --force
+
+echo "$blue[^] Deploying output/ to https://monadical.com...$normal"
+rsync -r output/ monadical.com:/opt/monadical.com/flask/output
+# ssh monadical.com "cd /opt/monadical.com; git checkout -f live; git pull"
+
+echo ""
+echo "$green[√] Deploy to https://monadical.com complete.$normal"
+
+echo
+echo "Make sure to clear CloudFlare caches in order to see changes."
+echo "https://dash.cloudflare.com/413ad3842c5a82a780b582d8de8dc903/monadical.com/caching"

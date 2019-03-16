@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Posts &amp; Articles{% endblock %}
+{% block subtitle %}Blog{% endblock %}
+
+{% block article %}
+    <!--<canvas class="animated-color-grid" height="100"></canvas>-->
+    <div class="container-full post">
+        <div style="width: 100%; text-align: center;">
+            <br/><br/>
+            <h2>Blog Posts from the Monadical Team</h2><br/>
+            <span class="label" style="font-size: 20px">
+                Read about: &nbsp; &nbsp;
+                #Django &nbsp; &nbsp;
+                #React &nbsp; &nbsp;
+                #Animations &nbsp; &nbsp;
+                #Engineering &nbsp; &nbsp;
+                #Management &nbsp; &nbsp;
+                #Poker &nbsp; &nbsp;
+                #Ops &nbsp; &nbsp;
+                and more...
+            </span><br/><br/>
+            <a href="https://twitter.com/MonadicalSAS" class="btn btn-info btn-dark">
+                Follow us on Twitter <i class="fa fa-twitter"></i>
+            </a>
+            &nbsp; &nbsp;
+            <a href="#newsletter" class="btn btn-success btn-dark">Follow our Newsletter <i class="fa fa-angle-double-down"></i></a>
+        </div>
+        <br/>
+        <hr/>
+        <div class="row articles">
+            {% for post in POSTS.values() %}
+                <div class="col-md-6 text-center article">
+                    <a href="{{post.url}}">
+                        <h2>{{post.title}}</h2>
+                        <div style="background-image: url({{post.img}})" class="article-featured-image"></div>
+                        <div class="post-tags">
+                            {% for tag in post.tags %}
+                                <span class="label">#{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </a>
+                    <div>{{post.description}}</div>
+                    <div class="author small">
+                        <hr/>
+                        {{post.author.name}} - {{post.date}}<br/><br/>
+                        <button class="btn btn-shadow text-mono btn-outline-secondary">
+                            {{post.length}}
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div style="width: 100%; text-align: center;">
+            <br/>
+            <div style="background-color: #191919; color: #eee; border-radius: 14px; overflow: hidden; max-width: 900px; margin: auto">
+                <canvas class="animated-color-grid" height="40" style="max-width: 900px;margin: auto"></canvas>
+                <br/>
+                <a name="newsletter"><h4>Want to receive occasional news from Monadical?</h4></a>
+                <br/>
+                <form action="?" method="POST">
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email" style="max-width: 300px; margin: auto; text-align: center"><br/>
+                    <div style="max-width: 780px; margin: auto; float: none">
+                        <div style="display: inline-block; width: 45%; min-width: 320px">
+                            <a href="#" class="btn btn-success">&nbsp;<i class="fa fa-envelope"></i> Subscribe to Major News&nbsp;</a>
+                            <br/>
+                            <small>( ~ 2 emails per year ) </small>
+                        </div>
+                        <div style="display: inline-block; width: 45%; min-width: 320px">
+                            <a href="#" class="btn btn-info">&nbsp;<i class="fa fa-envelope"></i> Subscribe to All Posts&nbsp;</a>
+                            <br/>
+                            <small>( ~ 12 emails per year ) </small>
+                        </div>
+                    </div>
+                </form>
+                <br/>
+                <canvas class="animated-color-grid" height="40" style="max-width: 900px;margin: auto"></canvas>
+            </div>
+        </div>
+        <br/><br/>
+        <hr/>
+        <br/>
+        <div class="row container">
+            <div class="col-md-6 alert alert-info" style="min-height: 200px; border-radius: 5px; text-align: center">
+                <br/><br/>
+                <b>For code &amp; projects, see the <a href="{{PAGES.projects.url}}">{{PAGES.projects.title}}</a> page.</b>
+                <br/>
+                <div class="library">
+                    <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
+                        <i class="fa fa-github"></i> Github
+                    </a>
+                    &nbsp; 
+                    <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                        <i class="fa fa-twitter"></i> Twitter
+                    </a>
+                    &nbsp; 
+                    <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                        <i class="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="height: 200px;overflow: scroll; width: 100%; max-width: 800px;border-radius: 4px">            
+                    <a class="twitter-timeline" href="https://twitter.com/MonadicalSAS?ref_src=twsrc%5Etfw">Tweets by Monadical</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+        <br/>
+    </div>
+{% endblock %}

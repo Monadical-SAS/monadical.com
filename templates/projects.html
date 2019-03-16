@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+{% block subtitle %}Projects{% endblock %}
+{% block article %}
+    <style>
+        .library h2 {
+            color: #58d665;
+            opacity: 0.8;
+        }
+    </style>
+    <div class="main-content">
+        <br/>
+        <canvas class="animated-color-grid" height="40"></canvas>
+    </div>
+    <div class="container">
+            <div style="color:#ddd; text-align: center; margin-top: 5px;">
+                <h2>
+                    Monadical's Engineering Projects
+                </h2>
+            </div>
+            <br/>
+        <div class="row projects">
+            <div class="col-md-6 text-center project">
+                <div class="project__description">
+                    <img src="static/oddslingers-text.png"/>
+                    Fully-featured online poker platform that works on 
+                    desktop, mobile, and tablets using free play-chips. 
+                    Uses redux-time and django-channels for performant, time-synchronized
+                    gameplay via websockets.(>50k LOC)<br/>
+                    <div class="play-btn">
+                        <a href="#" class="btn beta-btn btn-shadow btn-success">
+                            ♠<span class="diamond">♦</span> Play Free Poker <span class="neon">BETA</span> ♠<span class="diamond">♦</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center project">
+                <div class="project__description">
+                    <img src="static/redux-time.png"/>
+                    <div>
+                        A novel approach to powerful, performant, interactive animation in the frontend. 
+                        Define animations declaratively, trigger them using pure redux actions.
+                        It supports CSS animations, React, Three.js and any other pure render layer.<br/>
+                    </div>
+                    <div class="project__description--links">
+                        <a href="https://github.com/Monadical-SAS/redux-time" class="btn btn-sm btn-shadow btn-success btn-light">
+                            Github
+                        </a> &nbsp; 
+                        <a href="https://monadical-sas.github.io/redux-time/#documentation" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                            Docs
+                        </a> &nbsp; 
+                        <a href="https://monadical-sas.github.io/redux-time/examples/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                            Explore Examples
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>warped-time</h2>
+                <p>Server time synchronization &amp; speed control</p>
+                <a href="https://github.com/Monadical-SAS" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="https://monadical-sas.github.io/warped-time/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Docs
+                </a>
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>channels-router</h2>
+                <p>Socket message router for django-channels</p>
+                <a href="https://github.com/Monadical-SAS/django-channels-router" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="https://github.com/Monadical-SAS/django-channels-router/blob/master/examples/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Examples
+                </a>
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>storycoin</h2>
+                <p>Custom blockchain implementation in Rust &amp; Python</p>
+                <a href="https://github.com/cowpig/blockchain" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a>
+                
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>crypto-trader</h2>
+                <p>Algorithic trading toolkit for Gemini &amp; Bitfinex</p>
+                <a href="https://github.com/pirate/crypto-trader" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="https://github.com/pirate/crypto-trader#api-documentation" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Docs
+                </a> &nbsp;
+                <a href="https://github.com/pirate/crypto-trader/blob/master/example.py" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Example
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>ArchiveBox</h2>
+                <p>Run your own self-hosted way-back machine!</p>
+                <a href="https://github.com/pirate/ArchiveBox" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="https://archivebox.io" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Website
+                </a> &nbsp;
+                <a href="https://archive.sweeting.me" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Demo
+                </a>
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>netviz</h2>
+                <p>A neural network vizualizer &amp; playground.</p>
+                <a href="https://github.com/cowpig/netviz" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="http://cowpig.github.io/netviz/viz.html" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Demo
+                </a>
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>mesh-networking</h2>
+                <p>Layer 2 mesh network protocol testing framework</p>
+                <a href="https://github.com/pirate/mesh-networking" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="https://pypi.org/project/mesh-networking/" class="btn btn-sm btn-shadow btn-success btn-light">
+                    PyPi
+                </a> &nbsp;
+                <a href="https://github.com/pirate/mesh-networking/tree/master/examples" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Examples
+                </a>
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
+                <h2>menu-generator</h2>
+                <p>Generate Django navigation menus from dictionaries</p>
+                <a href="https://github.com/LaLogiaDePython/django-menu-generator" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a>
+                
+            </div>
+        </div>
+
+        <center>
+            <a href="https://monadical.com/apply" class="btn btn-info">
+                <i class="fa fa-envelope"></i> Contact us to request a quote
+            </a>
+            <br/><br/>
+            <hr/>
+            <div>
+                For Monadical news, blog posts, and project announcements, see the <a href="{{PAGES.blog.url}}">{{PAGES.blog.title}}</a> page.
+            </div>
+            <div class="library">
+                <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
+                    <i class="fa fa-github"></i> Github
+                </a>
+                &nbsp; 
+                <a href="https://twitter.com/Monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                    <i class="fa fa-twitter"></i> Twitter
+                </a>
+                &nbsp; 
+                <a href="https://linkedin.com/Monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                    <i class="fa fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </center>
+        <hr/>
+        <div class="container">
+            <br/>
+            <div style="color:#ddd; text-align: center;">
+                If you like our projects:&nbsp;
+                <a href="">support us on Patreon</a>, <a href="">hire us as consultants</a>, or <a href="">apply to join our team</a>.
+                <br/><br/><br/>
+            </div>
+        </div>
+        
+    </div>
+    <canvas class="animated-color-grid" height="100"></canvas>
+
+{% endblock %}
+
+

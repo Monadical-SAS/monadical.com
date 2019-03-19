@@ -644,16 +644,22 @@ footer .container small{
     height: 200px;
     border-radius: 15px;
 }
+.project {
+    margin-bottom: 8px;
+    vertical-align: bottom;
+}
 .project__description{
     background: #fff;
     border-radius: 15px;
     padding: 2rem;
     min-height: 350px;
     color: #333;
+    height: 100%;
 }
-.project__description img{
-    max-height: 80px;
-    width: auto;
+.project__description img {
+    max-height: 190px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 10px auto 20px;
 }
@@ -732,6 +738,37 @@ article .apply center .progress{
     margin: 30px auto;
 }
 
+.tag {
+    color: #dadada;
+    background-color: #f1f8ff;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 8px 2px;
+    padding: .3em .9em;
+    white-space: nowrap;
+    border: 1px solid #333;
+}
+.tag-lang {
+    background-color: rgba(0,0,0,0.4);
+}
+.tag-library {
+    color: rgba(165, 233, 159, 0.73);
+    background-color: rgba(0,0,0,0.6);
+}
+.tag-industry {
+    color: #85b2da;
+    background-color: rgba(0,0,0,0.8);
+}
+.tag-lang > i {
+    border-radius: 50%;
+    display: inline-block;
+    height: 12px;
+    position: relative;
+    top: 1px;
+    width: 12px;
+    margin-right: 2px;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
     #navbarTogglerDemo03{
         width: 100%;
@@ -739,7 +776,7 @@ article .apply center .progress{
     .container__steps .container__step h2:not(.icon), .library h2{
         font-size: 1.7rem;
     }
-    .project__description img{
+    .project__description img {
         width: 100%;
     }
     .project__description--links a, .library .btn{
@@ -796,7 +833,7 @@ article .apply center .progress{
     .container__steps .container__step ul {
         font-size: 0.85rem;
     }
-    .project__description img{
+    .project__description img {
         width: 100%;
     }
     .project > img{
@@ -862,7 +899,7 @@ article .apply center .progress{
     .navbar-left, .navbar-right{
         justify-content: center;
     }
-    .project__description img{
+    .project__description img {
         width: 100%;
     }
     .project__description--links a, .library .btn{
@@ -967,7 +1004,7 @@ article .apply center .progress{
     article .container {
         margin: 0 auto 2rem;
     }
-    .project__description img{
+    .project__description img {
         width: 100%
     }
     .play-btn a{

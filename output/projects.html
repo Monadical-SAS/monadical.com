@@ -99,33 +99,27 @@
         <br/>
         <canvas class="animated-color-grid" height="40"></canvas>
     </div>
+    <br/>
     <div class="container">
-            <div style="color:#ddd; text-align: center; margin-top: 5px;">
-                <h2>
-                    <a name="main">Monadical's Published Projects</a>
-                </h2>
-            </div>
+        <div style="color:#ddd; text-align: center; margin-top: 5px;">
+            <h2>
+                <a name="main">Major Projects Published by Monadical</a>
+                <br/><br/>
+            </h2>
+            <b>Over the last 3 years, Monadical has launched and scaled multiple projects to thousands of users within months of launch.</b>
+            <br/><br/>
+            Our largest project launched in 2018 and has had over 3 million hands played by users in 85+ countries.
             <br/>
+            You might have even seen some of our projects on the front page of <a href="https://news.ycombinator.com/item?id=19346985">HackerNews</a>, <a href="https://www.producthunt.com/posts/archivebox">ProductHunt</a>, or <a href="https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community#archivebox-discussions-in-news--social-media">elsewhere online</a>!
+        </div>
+        <br/><br/>
         <div class="row projects">
-            <div class="col-md-6 text-center project">
-                <div class="project__description">
-                    <img src="static/oddslingers-text.png"/>
-                    Fully-featured online poker platform that works on 
-                    desktop, mobile, and tablets using free play-chips. 
-                    Uses redux-time and django-channels for performant, time-synchronized
-                    gameplay via websockets. (2.5 year project, >50k LOC)<br/>
-                    <div class="play-btn">
-                        <a href="https://oddslingers.com" class="btn beta-btn btn-shadow btn-success">
-                            ♠<span class="diamond">♦</span> Play Free Poker <span class="neon">BETA</span> ♠<span class="diamond">♦</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 text-center project">
+            <div class="col-md-4 text-center project">
                 <div class="project__description">
                     <img src="static/redux-time.png"/>
                     <div>
-                        A novel approach to powerful, performant, interactive animation in the frontend. 
+                        <b>A novel solution for powerful, performant, interactive animation in the frontend.</b>
+                        <br/><br/>
                         Define animations declaratively, trigger them using pure redux actions.
                         It supports CSS animations, React, Three.js and any other pure render layer.<br/>
                     </div>
@@ -133,19 +127,60 @@
                         <a href="https://github.com/Monadical-SAS/redux-time" class="btn btn-sm btn-shadow btn-success btn-light">
                             Github
                         </a> &nbsp; 
-                        <a href="https://monadical-sas.github.io/redux-time/#documentation" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
-                            Docs
-                        </a> &nbsp; 
                         <a href="https://monadical-sas.github.io/redux-time/examples/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
-                            Explore Examples
+                            Examples
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center project" style="padding-left: 2px; padding-right: 2px">
+                <div class="project__description" style="border: 6px solid #3dbe4c;min-height: 110%;margin-top: -15px;background-color: #1a1a1a;color: #fafafa;">
+                    <img src="static/oddslingers-text.png" style="margin-top: 20px; margin-bottom: 34px; width: 120%; max-width: 120%; margin-left: -10%; margin-right: -10%"/>
+                    <b style="font-size: 1.3em">Fully-featured free online poker platform.</b>
+                    <br/><br/>
+                    <b>
+                        3.1 million hands played by 2,800+ users last year.<br/><br/>
+                        Works on desktop, mobile, and tablets using free chips.<br/><br/>
+                    </b>
+                    (2.5 year project, >50k LOC)
+                    <br/>
+                    <div class="play-btn">
+                        <a href="https://oddslingers.com" class="btn beta-btn btn-shadow btn-success" style="font-size: 15px;">
+                            ♠<span class="diamond">♦</span> Play Free Poker <span class="neon">BETA</span> ♠<span class="diamond">♦</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center project">
+                <div class="project__description">
+                    <img src="static/archivebox.png" style="margin-top: 20px; margin-bottom: 34px"/>
+                    <div>
+                        A <b>self-hosted internet archiving solution that uses headless Chrome to accurately save pages.</b>
+                        <br/><br/>
+                        Imports links from browser history / bookmarks / text lists, 
+                        and outputs archived HTML, JS, PDFs, media, and more. 
+                        Preserve access to websites you care about for decades.
+                    </div>
+                    <div class="project__description--links">
+                        <a href="https://github.com/Monadical-SAS/ArchiveBox" class="btn btn-sm btn-shadow btn-success btn-light">
+                            Github
+                        </a> &nbsp; 
+                        <a href="https://archivebox.io" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                            Website
                         </a>
                     </div>
                 </div>
             </div>
         </div>
         <br/>
+        <hr/>
+        <br/>
+        <div style="color:#ddd; text-align: center; margin-top: 5px;">
+            <h2>
+                <a name="open-source">Other Open-Source Projects by Monadical</a>
+            </h2>
+        </div>
         <div class="row">
-            <a name="open-source"></a>
             <div class="library col-md-6 col-lg-3 text-center">
                 <h2>warped-time</h2>
                 <p>Server time synchronization &amp; speed control</p>
@@ -191,21 +226,8 @@
 
         <div class="row">
             <div class="library col-md-6 col-lg-3 text-center">
-                <h2>ArchiveBox</h2>
-                <p>Run your own self-hosted way-back machine!</p>
-                <a href="https://github.com/Monadical-SAS/ArchiveBox" class="btn btn-sm btn-shadow btn-success btn-light">
-                    Github
-                </a> &nbsp;
-                <a href="https://archivebox.io" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
-                    Website
-                </a> &nbsp;
-                <a href="https://archive.sweeting.me" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
-                    Demo
-                </a>
-            </div>
-            <div class="library col-md-6 col-lg-3 text-center">
                 <h2>netviz</h2>
-                <p>A neural network vizualizer &amp; playground.</p>
+                <p>A neural network vizualizer &amp; playground</p>
                 <a href="https://github.com/Monadical-SAS/netviz" class="btn btn-sm btn-shadow btn-success btn-light">
                     Github
                 </a> &nbsp;
@@ -227,17 +249,54 @@
                 </a>
             </div>
             <div class="library col-md-6 col-lg-3 text-center">
+                <h2>security-growler</h2>
+                <p>A macOS menubar app that alerts you of security and auth events</p>
+                <a href="https://github.com/Monadical-SAS/security-growler" class="btn btn-sm btn-shadow btn-success btn-light">
+                    Github
+                </a> &nbsp;
+                <a href="https://pirate.github.io/security-growler" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                    Website
+                </a>
+            </div>
+            <div class="library col-md-6 col-lg-3 text-center">
                 <h2>menu-generator</h2>
                 <p>Generate Django navigation menus from dictionaries</p>
                 <a href="https://github.com/LaLogiaDePython/django-menu-generator" class="btn btn-sm btn-shadow btn-success btn-light">
                     Github
                 </a>
-                
             </div>
         </div>
-
+        <br/><hr/>
         <center>
-            <h4>And many more on:</h4>
+            <a name="tags"></a>
+            <h4>Our <a href="/team.html#main">team</a> has worked with a wide range of stacks and industries.</h4><br/>
+            <span class="tag tag-lang"><i style="background-color:#f1e05a"></i> Python</span>
+            <span class="tag tag-lang"><i style="background-color:purple"></i> HTML/JS/CSS</span>
+            <span class="tag tag-lang"><i style="background-color:orange"></i> Rust</span>
+            <span class="tag tag-lang"><i style="background-color:blue"></i> C++</span>
+            <span class="tag tag-lang"><i style="background-color:gray"></i> Bash</span>
+            <span class="tag tag-lang"><i style="background-color:green"></i> Solidity</span>
+            <br/>
+            <span class="tag tag-library">react</span> &nbsp; &nbsp;
+            <span class="tag tag-library">redux</span> &nbsp; &nbsp;
+            <span class="tag tag-library">vue</span> &nbsp; &nbsp;
+            <span class="tag tag-library">angular</span> &nbsp; &nbsp;
+            <span class="tag tag-library">django</span> &nbsp; &nbsp;
+            <span class="tag tag-library">django-channels</span> &nbsp; &nbsp;
+            <span class="tag tag-library">flask</span> &nbsp; &nbsp;
+            <span class="tag tag-library">tornado</span> &nbsp; &nbsp;
+            <span class="tag tag-library">parity</span>
+            <br/>
+            <span class="tag tag-industry">game design</span> &nbsp; &nbsp;
+            <span class="tag tag-industry">data science</span> &nbsp; &nbsp;
+            <span class="tag tag-industry">internet archiving</span> &nbsp; &nbsp;
+            <span class="tag tag-industry">healthcare</span> &nbsp; &nbsp;
+            <span class="tag tag-industry">agriculture</span> &nbsp; &nbsp;
+            <span class="tag tag-industry">food delivery</span> &nbsp; &nbsp;
+            <span class="tag tag-industry">nonprofits</span> &nbsp; &nbsp;
+        </center>
+        <center>
+            <b>And many more...<br/>You can find more of our work online:</b>
             <div class="library">
                 <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
                     <i class="fa fa-github"></i> Github

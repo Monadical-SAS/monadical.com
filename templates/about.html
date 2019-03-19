@@ -5,7 +5,7 @@
 {% block enableLogo %}enable-logo{% endblock %}
 {% block article %}
     <article>
-        <div class="container-full">
+        <div class="container-full" style="padding: 0px 10px;">
             <div style="max-width: 670px; margin: auto; float: none; font-size: 1.2em">
                 <br/><br/><br/>
                 <center>
@@ -39,18 +39,24 @@
                 <a name="contact"><h2>Contact Us</h2></a>
                 <br/><br/>
                 We're currently accepting new clients, aquisition offers, free pizza, <br/>
-                questions, comments, concerns, and anything else you have to offer. ⛵️
+                questions, comments, concerns, or anything else you have to offer. ⛵️
                 <br/><br/>
                 <br/>
-                <center>
-                    <a href="mailto:hello@monadical.com" class="btn btn-shadow btn-success btn-dark">
-                        &nbsp;<i class="fa fa-angle-double-right"></i>&nbsp; Ask a question or request a quote &nbsp;<i class="fa fa-angle-double-right"></i>&nbsp; 
-                    </a>
-                </center><br/>
-                Or send an email to <a href="mailto:hello@monadical.com">hello@monadical.com</a>.
+                <div class="container" style="text-align: center; max-width: 600px">
+                    <form>
+                    <input type="email" class="form-control" placeholder="---" disabled/>
+                    <textarea class="form-control" placeholder="Contact form not available on your browser, send us an email instead." disabled></textarea>
+                    <br/>
+                    <button role="submit" class="btn btn-shadow btn-success btn-dark" disabled>
+                        &nbsp;Send &nbsp;<i class="fa fa-angle-double-right"></i>&nbsp; 
+                    </button>
+                    </form>
+                </divr>
+                <br/><br/>
+                Send us an email at <a href="mailto:hello@monadical.com">hello@monadical.com</a>.
                 <br/><br/>
                 <img src="static/squiggle.png" height="130px">
-                <br/>
+                <br/><br/>
                 <div class="library">
                     <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
                         <i class="fa fa-github"></i> Github

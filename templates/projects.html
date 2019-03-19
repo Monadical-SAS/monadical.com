@@ -16,26 +16,29 @@
     <div class="container">
         <div style="color:#ddd; text-align: center; margin-top: 5px;">
             <h2>
-                <a name="main">Major Projects Published by Monadical</a>
+                <a name="main">Major Projects by Monadical</a>
                 <br/><br/>
             </h2>
             <b>Over the last 3 years, Monadical has launched and scaled multiple projects to thousands of users within months of launch.</b>
             <br/><br/>
-            Our largest project launched in 2018 and has had over 3 million hands played by users in 85+ countries.
+            Our largest release launched in 2018 and has had over 3 million hands played by users in 85+ countries.
             <br/>
-            You might have even seen some of our projects on the front page of <a href="https://news.ycombinator.com/item?id=19346985">HackerNews</a>, <a href="https://www.producthunt.com/posts/archivebox">ProductHunt</a>, or <a href="https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community#archivebox-discussions-in-news--social-media">elsewhere online</a>!
+            You might have seen some of our work on the front page of <a href="https://news.ycombinator.com/item?id=19346985">HackerNews</a>, <a href="https://www.producthunt.com/posts/archivebox">ProductHunt</a>, or <a href="https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community#archivebox-discussions-in-news--social-media">elsewhere online</a>!
         </div>
         <br/><br/>
-        <div class="row projects">
+    </div>
+    <div class="container-full">
+        <div class="row">
             <div class="col-md-4 text-center project">
                 <div class="project__description">
                     <img src="static/redux-time.png"/>
-                    <div>
-                        <b>A novel solution for powerful, performant, interactive animation in the frontend.</b>
-                        <br/><br/>
-                        Define animations declaratively, trigger them using pure redux actions.
-                        It supports CSS animations, React, Three.js and any other pure render layer.<br/>
-                    </div>
+                    <h2 style="font-size:24px">Novel library for fast, declarative animations in JavaScript.</h2>
+                    <br/>
+                    <img src="static/ball.png"/>
+                    <br/>
+                    Define animations declaratively, trigger them using pure redux actions.
+                    It supports complex interactive animations, time-reversal, CSS animations, and can plug into any pure render layer like React, Inferno, or Three.js.<br/>
+                    <br/>
                     <div class="project__description--links">
                         <a href="https://github.com/Monadical-SAS/redux-time" class="btn btn-sm btn-shadow btn-success btn-light">
                             Github
@@ -43,37 +46,48 @@
                         <a href="https://monadical-sas.github.io/redux-time/examples/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
                             Examples
                         </a>
+                        <br/><br/>
+                        <i>
+                            Handles >5,000 animations @ 100FPS<br/>
+                            Perfect for dataviz, games, &amp; interactivity
+                        </i>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-center project" style="padding-left: 2px; padding-right: 2px">
-                <div class="project__description" style="border: 6px solid #3dbe4c;min-height: 110%;margin-top: -15px;background-color: #1a1a1a;color: #fafafa;">
-                    <img src="static/oddslingers-text.png" style="margin-top: 20px; margin-bottom: 34px; width: 120%; max-width: 120%; margin-left: -10%; margin-right: -10%"/>
-                    <b style="font-size: 1.3em">Fully-featured free online poker platform.</b>
-                    <br/><br/>
-                    <b>
-                        3.1 million hands played by 2,800+ users last year.<br/><br/>
-                        Works on desktop, mobile, and tablets using free chips.<br/><br/>
-                    </b>
-                    (2.5 year project, >50k LOC)
+                <div class="project__description" style="border: 8px solid #454545;min-height: 105%;margin-top: -15px;background-color: #fefefe;">
+                    <img src="static/oddslingers-text.png" style="margin-top: 20px; margin-bottom: 34px;"/>
+                    <h2 style="font-size:24px">Free, real-time, Django + React powered online poker platform.</h2>
                     <br/>
+                    <img src="static/laptop-screenshot.png"/>
+                    <br/>
+                    Real-time gaming platform powered by HTML5 + React/Redux and Django Channels 
+                    WebSockets works on desktop, mobile, and tablets without downloads or plugins.
+                    Built, launched, and scaled over 3 years, with 6 full-time people and >50k LOC.
+                    <br/><br/>
                     <div class="play-btn">
-                        <a href="https://oddslingers.com" class="btn beta-btn btn-shadow btn-success" style="font-size: 15px;">
+                        <a href="https://oddslingers.com" class="btn beta-btn btn-shadow btn-success" style="font-size: 16px;">
                             ♠<span class="diamond">♦</span> Play Free Poker <span class="neon">BETA</span> ♠<span class="diamond">♦</span>
                         </a>
                     </div>
+                    <br/><br/>
+                    <i>
+                        Active users in 85+ countries<br/>
+                        3.1 million hands played last year
+                    </i>
                 </div>
             </div>
             <div class="col-md-4 text-center project">
                 <div class="project__description">
                     <img src="static/archivebox.png" style="margin-top: 20px; margin-bottom: 34px"/>
-                    <div>
-                        A <b>self-hosted internet archiving solution that uses headless Chrome to accurately save pages.</b>
-                        <br/><br/>
-                        Imports links from browser history / bookmarks / text lists, 
-                        and outputs archived HTML, JS, PDFs, media, and more. 
-                        Preserve access to websites you care about for decades.
-                    </div>
+                    <h2 style="font-size:24px">Self-hosted internet archive powered by Chrome headless and wget.</h2>
+                    <br/>
+                    <img src="https://i.imgur.com/wnpdAVM.jpg"/>
+                    <br/>
+                    Imports links from browser history / bookmarks / text lists, 
+                    and outputs archived HTML, JS, PDFs, media, and more. 
+                    Automatically import and snapshot browsing history, bookmarks, or other feeds in formats that will last 50+ years.
+                    <br/><br/>
                     <div class="project__description--links">
                         <a href="https://github.com/Monadical-SAS/ArchiveBox" class="btn btn-sm btn-shadow btn-success btn-light">
                             Github
@@ -81,10 +95,14 @@
                         <a href="https://archivebox.io" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
                             Website
                         </a>
+                        <br/><br/>
+                        <i>Used by thousands of people with 30+ contributors and an active community</i>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
         <br/><br/><br/>
         <hr/>
         <br/>

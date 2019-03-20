@@ -921,6 +921,10 @@ article .apply center .progress{
         /* align-items: center; */
         display: flex !important;
     }
+    .navbar .navbar-toggler{
+        height: 3.5rem;
+        margin: auto;
+    }
     
     .nav-bar-wrapper{
         width: 100%;
@@ -1072,6 +1076,11 @@ article .apply center .progress{
     }
     .worker img {
         width: 70%;
+    }
+    .break-contact {
+        max-width: 50%;
+        display: inline-block;
+        white-space: normal;
     }
 }
 

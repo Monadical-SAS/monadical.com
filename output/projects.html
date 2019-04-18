@@ -23,12 +23,16 @@
     <body>
         
             <div id="particles-js"></div>
+            
         
         
         
         <header>
-            <a name="top"></a>
+            <a id="top"></a>
+
             
+            
+
             <nav class="navbar navbar-expand-sm navbar-light">
                 <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,44 +51,45 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav navbar-left ">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/projects.html">Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/team.html">Team</a>
-                            </li>
-                        </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects.html">Projects</a>
+                        </li>
+                    </ul>
                         
-                        <h1 class="nav-item main-brand-link d-none d-sm-block ">
-                            
+                    <h1 class="nav-item main-brand-link d-none d-sm-block ">
+                        
                             <center>
                                 <img src="static/logo-black.png" id="brand-img"/>
                             </center>
                         
-                            <a href="/index.html">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
-                            <small><i class="fa fa-angle-double-right"></i>  Projects <i class="fa fa-angle-double-left"></i></small>
-                        </h1>
+                        <a href="/index.html">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
+                        <small><i class="fa fa-angle-double-right"></i>  Projects <i class="fa fa-angle-double-left"></i></small>
+                    </h1>
 
-                        <ul class="navbar-nav navbar-right">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about.html">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="beta-btn nav-link btn btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
-                                    &nbsp;♠ &nbsp;
-                                    Hire Us 
-                                    &nbsp; <span class="diamond">♦</span>&nbsp;
-                                </a>
-                            </li>
-                        </ul>
-            </div>
-            </nav></header>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="beta-btn nav-link btn btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
+                                &nbsp;♠ &nbsp;
+                                Hire Us 
+                                &nbsp; <span class="diamond">♦</span>&nbsp;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         
         
 
@@ -97,17 +102,9 @@
             opacity: 0.8;
         }
     </style>
-    <div class="main-content">
-        <br/>
-        <canvas class="animated-color-grid" height="40"></canvas>
-    </div>
     <br/>
     <div class="container">
         <div style="color:#ddd; text-align: center; margin-top: 5px;">
-            <h2>
-                <a name="main">Major Projects by Monadical</a>
-                <br/><br/>
-            </h2>
             <b>Over the last 3 years, Monadical has launched and scaled multiple projects to thousands of users within months of launch.</b>
             <br/><br/><br/>
             Our largest release launched in 2018 and has had over 3 million hands played by users in 85+ countries.
@@ -116,93 +113,104 @@
         </div>
         <br/><br/><br/><br/>
     </div>
-    <div class="container-full">
-        <div class="row">
-            <div class="col-md-4 text-center project">
-                <div class="project__description">
-                    <img src="static/redux-time.png"/>
-                    <h2 style="font-size:24px">Novel library for fast, declarative animations in JavaScript.</h2>
-                    <br/>
-                    <img src="static/ball.png"/>
-                    <br/>
-                    Define animations declaratively, trigger them using pure redux actions.
-                    It supports complex interactive animations, time-reversal, CSS animations, and can plug into any pure render layer like React, Inferno, or Three.js.<br/>
-                    <br/>
-                    <div class="project__description--links">
-                        <a href="https://github.com/Monadical-SAS/redux-time" class="btn btn-sm btn-shadow btn-success btn-light">
-                            Github
-                        </a> &nbsp; 
-                        <a href="https://monadical-sas.github.io/redux-time/examples/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
-                            Examples
-                        </a>
-                        <br/><br/><br/>
+    <canvas class="animated-color-grid" height="40"></canvas>
+    <div style="background-color: rgba(255,255,255,0.05); width: 100%; padding-bottom: 50px">
+        <br/><br/>
+        <center>
+            <h2>
+                <a id="main">Major Projects by Monadical</a>
+            </h2>
+        </center>
+        <br/><br/>
+        <div class="container-full">
+            <div class="row">
+                <div class="col-md-4 text-center project">
+                    <div class="project__description">
+                        <img src="static/redux-time.png"/>
+                        <h2 style="font-size:24px">Novel library for fast, declarative animations in JavaScript.</h2>
+                        <br/>
+                        <img src="static/ball.png"/>
+                        <br/>
+                        Define animations declaratively, trigger them using pure redux actions.
+                        It supports complex interactive animations, time-reversal, CSS animations, and can plug into any pure render layer like React, Inferno, or Three.js.<br/>
+                        <br/>
+                        <div class="project__description--links">
+                            <a href="https://github.com/Monadical-SAS/redux-time" class="btn btn-sm btn-shadow btn-success btn-light">
+                                Github
+                            </a> &nbsp; 
+                            <a href="https://monadical-sas.github.io/redux-time/examples/" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                                Examples
+                            </a>
+                            <br/><br/><br/>
+                            <i>
+                                Handles >5,000 animations @ 100FPS<br/>
+                                Perfect for dataviz, games, &amp; interactivity
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center project" style="padding-left: 2px; padding-right: 2px">
+                    <div class="project__description" style="border: 8px solid #454545;min-height: 105%;margin-top: -15px;background-color: #fefefe;">
+                        <img src="static/oddslingers-text.png" style="margin-top: 20px; margin-bottom: 34px;"/>
+                        <h2 style="font-size:24px">Free, real-time, Django + React powered online poker platform.</h2>
+                        <br/>
+                        <img src="static/laptop-screenshot.png"/>
+                        <br/>
+                        Real-time gaming platform powered by HTML5 + React/Redux and Django Channels 
+                        WebSockets works on desktop, mobile, and tablets without downloads or plugins.
+                        Built, launched, and scaled over 3 years, with 6 full-time people and >50k LOC.
+                        <br/><br/>
+                        <div class="play-btn">
+                            <a href="https://oddslingers.com" class="btn beta-btn btn-shadow btn-success" style="font-size: 16px;">
+                                ♠<span class="diamond">♦</span> Play Poker (<span class="neon">ONLINE</span>) ♠<span class="diamond">♦</span>
+                            </a>
+                        </div>
+                        <br/><br/>
                         <i>
-                            Handles >5,000 animations @ 100FPS<br/>
-                            Perfect for dataviz, games, &amp; interactivity
+                            <b>Active users in 85+ countries<br/>
+                            3.1 million hands played last year</b>
                         </i>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 text-center project" style="padding-left: 2px; padding-right: 2px">
-                <div class="project__description" style="border: 8px solid #454545;min-height: 105%;margin-top: -15px;background-color: #fefefe;">
-                    <img src="static/oddslingers-text.png" style="margin-top: 20px; margin-bottom: 34px;"/>
-                    <h2 style="font-size:24px">Free, real-time, Django + React powered online poker platform.</h2>
-                    <br/>
-                    <img src="static/laptop-screenshot.png"/>
-                    <br/>
-                    Real-time gaming platform powered by HTML5 + React/Redux and Django Channels 
-                    WebSockets works on desktop, mobile, and tablets without downloads or plugins.
-                    Built, launched, and scaled over 3 years, with 6 full-time people and >50k LOC.
-                    <br/><br/>
-                    <div class="play-btn">
-                        <a href="https://oddslingers.com" class="btn beta-btn btn-shadow btn-success" style="font-size: 16px;">
-                            ♠<span class="diamond">♦</span> Play Poker (<span class="neon">ONLINE</span>) ♠<span class="diamond">♦</span>
-                        </a>
-                    </div>
-                    <br/><br/>
-                    <i>
-                        <b>Active users in 85+ countries<br/>
-                        3.1 million hands played last year</b>
-                    </i>
-                </div>
-            </div>
-            <div class="col-md-4 text-center project">
-                <div class="project__description">
-                    <img src="static/archivebox.png" style="margin-top: 20px; margin-bottom: 34px"/>
-                    <h2 style="font-size:24px">Self-hosted internet archive powered by Chrome headless and wget.</h2>
-                    <br/>
-                    <img src="static/archivebox-screenshot.png"/>
-                    <br/>
-                    Imports links from browser history / bookmarks / text lists, 
-                    and outputs archived HTML, JS, PDFs, media, and more. 
-                    Automatically import and snapshot browsing history, bookmarks, or other feeds in formats that will last 50+ years.
-                    <br/><br/>
-                    <div class="project__description--links">
-                        <a href="https://github.com/Monadical-SAS/ArchiveBox" class="btn btn-sm btn-shadow btn-success btn-light">
-                            Github
-                        </a> &nbsp; 
-                        <a href="https://archivebox.io" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
-                            Website
-                        </a>
-                        <br/><br/><br/>
-                        <i>Used by thousands of people with 30+ contributors and an active community</i>
+                <div class="col-md-4 text-center project">
+                    <div class="project__description">
+                        <img src="static/archivebox.png" style="margin-top: 20px; margin-bottom: 34px"/>
+                        <h2 style="font-size:24px">Self-hosted internet archive powered by Chrome headless and wget.</h2>
+                        <br/>
+                        <img src="static/archivebox-screenshot.png"/>
+                        <br/>
+                        Imports links from browser history / bookmarks / text lists, 
+                        and outputs archived HTML, JS, PDFs, media, and more. 
+                        Automatically import and snapshot browsing history, bookmarks, or other feeds in formats that will last 50+ years.
+                        <br/><br/>
+                        <div class="project__description--links">
+                            <a href="https://github.com/Monadical-SAS/ArchiveBox" class="btn btn-sm btn-shadow btn-success btn-light">
+                                Github
+                            </a> &nbsp; 
+                            <a href="https://archivebox.io" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-secondary">
+                                Website
+                            </a>
+                            <br/><br/><br/>
+                            <i>Used by thousands of people with 30+ contributors and an active community</i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
         <br/><br/><br/>
-        <hr/>
-        <br/>
+    </div>
+    <div class="green-squares" style="opacity: 0.3"></div>
+    <div class="container">
+        <br/><br/><br/><br/>
         <center>
             <div style="color:#ddd; text-align: center; margin-top: 5px;">
                 <h2>
-                    <a name="open-source">Other Open-Source Projects by Monadical</a>
+                    <a id="open-source">Other Open-Source Projects by Monadical</a>
                 </h2>
             </div>
-            <h5>We've published a variety of smaller tools and frameworks over the years.</h5>
+            <h5 style="opacity: 0.8">We've released a variety of open source tools and libraries over the years.</h5>
         </center>
+        <br/>
         <div class="row">
             <div class="library col-md-6 col-lg-3 text-center">
                 <h2>warped-time</h2>
@@ -289,83 +297,88 @@
                 </a>
             </div>
         </div>
-        <br/><hr/><br/>
+        <br/><br/><br/>
+        <div style="color:#ddd; text-align: center;">
+            If you like our projects:
+            <a href="https://github.com/Monadicla-SAS">star them on Github</a>, 
+            <a href="https://www.patreon.com/theSquashSH">support us on Patreon</a>, 
+            <a href="/index.html#consulting">work with us</a>, or 
+            <a href="/team.html#join">join our team</a>. &nbsp; &nbsp;
+            <img src="static/octopus.png" height="40px">
+            <br/><br/><br/>
+        </div>
+    </div>
+    <br/>
+    <div style="background-color: rgba(255,255,255,0.05); width: 100%; padding-bottom: 50px">
+        <br/><br/>
+        <div class="container">
+            <center>
+                <h2>
+                    <a id="tags">We pride ourselves on being generalists who love to learn.</a>
+                    <br/><br/>
+                </h2>
+                <h5>Our <a href="/team.html#main">team</a> has worked with a wide range of stacks and industries.</h5><br/>
+                <span class="tag tag-lang"><i style="background-color:#f1e05a"></i> Python</span>
+                <span class="tag tag-lang"><i style="background-color:purple"></i> HTML/JS/CSS</span>
+                <span class="tag tag-lang"><i style="background-color:orange"></i> Rust</span>
+                <span class="tag tag-lang"><i style="background-color:blue"></i> C++</span>
+                <span class="tag tag-lang"><i style="background-color:gray"></i> Bash</span>
+                <span class="tag tag-lang"><i style="background-color:green"></i> Solidity</span>
+                <br/>
+                <span class="tag tag-library">react</span> &nbsp; &nbsp;
+                <span class="tag tag-library">redux</span> &nbsp; &nbsp;
+                <span class="tag tag-library">vue</span> &nbsp; &nbsp;
+                <span class="tag tag-library">angular</span> &nbsp; &nbsp;
+                <span class="tag tag-library">django</span> &nbsp; &nbsp;
+                <span class="tag tag-library">django-channels</span> &nbsp; &nbsp;
+                <span class="tag tag-library">flask</span> &nbsp; &nbsp;
+                <span class="tag tag-library">tornado</span> &nbsp; &nbsp;
+                <span class="tag tag-library">parity</span>
+                <br/>
+                <span class="tag tag-industry">game design</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">real-estate</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">data science</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">internet archiving</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">healthcare</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">agriculture</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">food delivery</span> &nbsp; &nbsp;
+                <span class="tag tag-industry">nonprofits</span> &nbsp; &nbsp;
+            
+                <br/><hr/><br/>
+
+                <b>And many more...<br/>You can find more of our work online:</b>
+                <div class="library">
+                    <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
+                        <i class="fa fa-github"></i> Github
+                    </a>
+                    &nbsp; 
+                    <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                        <i class="fa fa-twitter"></i> Twitter
+                    </a>
+                    &nbsp; 
+                    <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                        <i class="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </center>
+        </div>
+    </div>
+    <br/>
+    <div class="container">
         <center>
-            <h2>
-                <a name="tags">We pride ourselves on being generalists who love to learn.</a>
-                <br/><br/>
-            </h2>
-            <h5>Our <a href="/team.html#main">team</a> has worked with a wide range of stacks and industries.</h5><br/>
-            <span class="tag tag-lang"><i style="background-color:#f1e05a"></i> Python</span>
-            <span class="tag tag-lang"><i style="background-color:purple"></i> HTML/JS/CSS</span>
-            <span class="tag tag-lang"><i style="background-color:orange"></i> Rust</span>
-            <span class="tag tag-lang"><i style="background-color:blue"></i> C++</span>
-            <span class="tag tag-lang"><i style="background-color:gray"></i> Bash</span>
-            <span class="tag tag-lang"><i style="background-color:green"></i> Solidity</span>
             <br/>
-            <span class="tag tag-library">react</span> &nbsp; &nbsp;
-            <span class="tag tag-library">redux</span> &nbsp; &nbsp;
-            <span class="tag tag-library">vue</span> &nbsp; &nbsp;
-            <span class="tag tag-library">angular</span> &nbsp; &nbsp;
-            <span class="tag tag-library">django</span> &nbsp; &nbsp;
-            <span class="tag tag-library">django-channels</span> &nbsp; &nbsp;
-            <span class="tag tag-library">flask</span> &nbsp; &nbsp;
-            <span class="tag tag-library">tornado</span> &nbsp; &nbsp;
-            <span class="tag tag-library">parity</span>
-            <br/>
-            <span class="tag tag-industry">game design</span> &nbsp; &nbsp;
-            <span class="tag tag-industry">data science</span> &nbsp; &nbsp;
-            <span class="tag tag-industry">internet archiving</span> &nbsp; &nbsp;
-            <span class="tag tag-industry">healthcare</span> &nbsp; &nbsp;
-            <span class="tag tag-industry">agriculture</span> &nbsp; &nbsp;
-            <span class="tag tag-industry">food delivery</span> &nbsp; &nbsp;
-            <span class="tag tag-industry">nonprofits</span> &nbsp; &nbsp;
-        </center>
-        <center>
-            <b>And many more...<br/>You can find more of our work online:</b>
-            <div class="library">
-                <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
-                    <i class="fa fa-github"></i> Github
-                </a>
-                &nbsp; 
-                <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                    <i class="fa fa-twitter"></i> Twitter
-                </a>
-                &nbsp; 
-                <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                    <i class="fa fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-            <br/>
-            <hr/>
-            <br/><br/>
             <a href="/about.html#contact" class="btn btn-info">
                 <i class="fa fa-envelope"></i>&nbsp;
                 <span style="white-space: normal">
                     Contact us to discuss a project
                 </span>
             </a>
-            <br/><br/>
-            <div>
-                For Monadical news, blog posts, and project announcements, see the <a href="/blog.html#main">Blog</a> page.
-            </div>
+            <br/><br/><br/>
+            For new project announcements, sign up for our <a href="/blog.html#main">newsletter</a>.
+            <br/><br/><br/>
         </center>
-        <hr/>
-        <div class="container">
-            <br/>
-            <div style="color:#ddd; text-align: center;">
-                If you like our projects:
-                <a href="https://github.com/Monadicla-SAS">star them on Github</a>, 
-                <a href="https://www.patreon.com/theSquashSH">support us on Patreon</a>, 
-                <a href="/index.html#consulting">hire us as consultants</a>, or 
-                <a href="/team.html#join">apply to join our team</a>. &nbsp; &nbsp;
-                <img src="static/octopus.png" height="40px">
-                <br/><br/><br/>
-            </div>
-        </div>
-        
     </div>
-    <canvas class="animated-color-grid" height="100"></canvas>
+    <canvas class="animated-color-grid" height="40" style="box-shadow: none; opacity: 0.2"></canvas>
 
 
         </article>
@@ -383,7 +396,8 @@
         <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a><a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a><a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
     </div>
     <br/>
-    <a href="#top"><img src="/static/logo-white.png" height="40px" style="opacity: 0.2"></a>
+    <br/>
+    <a href="#top"><img src="/static/logo-white.png"></a>
 </div>
                 
                 <small>Monadical S.A.S. © 2019</small>
@@ -395,16 +409,29 @@
 
         <script src="/static/squares.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
 
         
         
 
+        <!-- Smooth Scroll to Anchor Links Animation -->
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+
+        <!-- Particles.js Network Graph Animation -->
         <script type="text/javascript">
-            /* ---- particles.js config ---- */
-
             particlesJS("particles-js", {
               "particles": {
                 "number": {
@@ -415,7 +442,7 @@
                   }
                 },
                 "color": {
-                  "value": "#333"
+                  "value": "#f7fcff"
                 },
                 "shape": {
                   "type": "circle",
@@ -455,7 +482,7 @@
                 "line_linked": {
                   "enable": true,
                   "distance": 150,
-                  "color": "#333",
+                  "color": "#3dbe4c",
                   "opacity": 0.4,
                   "width": 1
                 },
@@ -516,6 +543,58 @@
               "retina_detect": true
             });
         </script>
+
+        <!-- D3 Cursor Waves Animation -->
+        <!--<script type="text/javascript">
+
+          var width = Math.max(960, innerWidth),
+              height = Math.max(500, innerHeight);
+
+          var x1 = width / 2,
+              y1 = height / 2,
+              x0 = x1,
+              y0 = y1,
+              i = 0,
+              r = 200,
+              τ = 2 * Math.PI;
+
+          var canvas = d3.select("#waves").append("canvas")
+              .attr("width", width)
+              .attr("height", height)
+              .on("ontouchstart" in document ? "touchmove" : "mousemove", move);
+
+          var context = canvas.node().getContext("2d");
+          context.globalCompositeOperation = "lighter";
+          context.lineWidth = 2;
+
+          d3.timer(function() {
+            context.clearRect(0, 0, width, height);
+
+            var z = d3.hsl(++i % 360, 1, .5).rgb(),
+                c = "rgba(" + z.r + "," + z.g + "," + z.b + ",",
+                x = x0 += (x1 - x0) * .1,
+                y = y0 += (y1 - y0) * .1;
+
+            d3.select({}).transition()
+                .duration(2000)
+                .ease(Math.sqrt)
+                .tween("circle", function() {
+                  return function(t) {
+                    context.strokeStyle = c + (1 - t) + ")";
+                    context.beginPath();
+                    context.arc(x, y, r * t, 0, τ);
+                    context.stroke();
+                  };
+                });
+          });
+
+          function move() {
+            var mouse = d3.mouse(this);
+            x1 = mouse[0];
+            y1 = mouse[1];
+            d3.event.preventDefault();
+          }
+        </script>-->
 
         <!-- Matomo -->
         <script type="text/javascript">

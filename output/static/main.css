@@ -503,22 +503,22 @@ iframe {
     background-size: initial;
     background-position: 0px 0px;
     height: 92px;
-    width: 400%;
-    animation: scroll 160s linear infinite;
-    opacity: 0.6;
+    width: 200%;
+    animation: scroll 50s linear infinite;
+    opacity: 0.8;
     margin-bottom: -14px;
     transition: opacity 1s;
-    transform: translateX(0px) translateZ(0);
+    transform: translateX(0px);
     transition: transform 10s;
 }
 .green-squares:hover {
     opacity: 1;
-    transform: translateX(-500px);
-    transition: transform 10s;
+    transform: translateX(-20%);
+    transition: transform 5s;
 }
 @keyframes scroll {
     from {background-position: 0px 0px;}
-    to {background-position: -6000px 0px;}
+    to {background-position: -100% 0px;}
 }
 
 .section-title{

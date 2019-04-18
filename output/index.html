@@ -164,14 +164,16 @@
                 <b>Check out the <a href="/projects.html#main">projects page</a> for a list of things we've worked on.</b>
                 <br/><br/><br/>
 
-                <span class="tag tag-industry" style="color: lightblue">game design</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">real-estate</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">data science</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">internet archiving</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">healthcare</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">agriculture</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">food delivery</span> &nbsp; &nbsp;
-                <span class="tag tag-industry" style="color: lightblue">nonprofits</span> &nbsp; &nbsp;
+                <a href="/projects.html#tags">
+                    <span class="tag tag-industry" style="color: lightblue">game design</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">real-estate</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">data science</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">internet archiving</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">healthcare</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">agriculture</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">food delivery</span> &nbsp; &nbsp;
+                    <span class="tag tag-industry" style="color: lightblue">nonprofits</span>
+                </a>
                 <br/><br/>
                 <br/><br/><br/>
             </div>
@@ -237,10 +239,11 @@
                 <br/><br/>
             </h4><br/>
             <b>⚡️ &nbsp; We ramp up fast and can prototype MVPs within days of taking on new projects. &nbsp; ⚡️</b>
-            <br/><br/>
+            <br/><br/><br/>
             We don't just ship features, we ship well-tested, beautifully-documented<br/>
             codebases with complete deployement, growth, and maintenance timelines and guides.<br/>
-
+            <br/>
+            We stand behind our code and are willing to provide long-term support, refactoring, and security review.
             <br/><br/>
             
             <a href="/about.html#contact" class="btn beta-btn btn-shadow btn-success">
@@ -311,7 +314,7 @@
     
         var force = d3.layout.force()
             .gravity(0.0001)
-            .charge(function(d, i) { return i ? 0 : -100; })
+            .charge(function(d, i) { return i ? 0 : -200; })
             .nodes(nodes)
             .size([width, height]);
     
@@ -392,7 +395,7 @@
             particlesJS("particles-js", {
               "particles": {
                 "number": {
-                  "value": 380,
+                  "value": 250,
                   "density": {
                     "enable": true,
                     "value_area": 800
@@ -402,7 +405,7 @@
                   "value": "#f7fcff"
                 },
                 "shape": {
-                  "type": "circle",
+                  "type": "square",
                   "stroke": {
                     "width": 0,
                     "color": "#000000"
@@ -410,11 +413,6 @@
                   "polygon": {
                     "nb_sides": 5
                   },
-                  "image": {
-                    "src": "img/github.svg",
-                    "width": 100,
-                    "height": 100
-                  }
                 },
                 "opacity": {
                   "value": 0.5,
@@ -450,7 +448,7 @@
                   "random": false,
                   "straight": false,
                   "out_mode": "out",
-                  "bounce": false,
+                  "bounce": true,
                   "attract": {
                     "enable": false,
                     "rotateX": 600,

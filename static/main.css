@@ -275,7 +275,11 @@ a.btn {
 }
 .beta-btn:hover .diamond {
     color: red;
-    transition: 3000ms color;
+    transition: 3s color ease-out;
+}
+.beta-btn:hover .spade {
+    color: black;
+    transition: 3s color ease-out;
 }
 
 .beta-btn:hover .neon-hover {
@@ -1046,7 +1050,11 @@ article .apply center .progress{
     }
     .beta-btn .diamond {
         color: red;
-        transition: 3000ms color;
+        transition: 3s color;
+    }
+    .beta-btn .spade {
+        color: black;
+        transition: 3s color;
     }
     
     .beta-btn .neon {

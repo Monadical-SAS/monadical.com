@@ -33,49 +33,68 @@
                 <a href="{{PAGES.blog.url}}#main" class="btn btn-shadow btn-success btn-dark">
                     <i class="fa fa-book"></i> Read our blog
                 </a>
-                <br/><br/><br/>
+                <br/><br/><br/><br/><br/>
                 <canvas class="animated-color-grid" height="100"></canvas>
-                <br><br/><br/>
+                <br><br/><br/><br/>
                 <a name="contact"><h2>Contact Us</h2></a>
                 <br/><br/>
-                We're currently accepting new clients, aquisition offers, free pizza, <br/>
-                questions, comments, concerns, or anything else you have to offer. ⛵️
-                <br/><br/>
-                <br/>
-                <div class="container" style="text-align: center; max-width: 600px">
-                    <form>
-                    <input type="email" class="form-control" placeholder="---" disabled/>
-                    <textarea class="form-control" placeholder="Contact form not available on your browser, send us an email instead." disabled></textarea>
+                <div class="col-md-8 alert alert-info" style="min-height: 100px; border-radius: 5px; text-align: center">
                     <br/>
-                    <button role="submit" class="btn btn-shadow btn-success btn-dark" disabled>
-                        &nbsp;Send &nbsp;<i class="fa fa-angle-double-right"></i>&nbsp; 
-                    </button>
-                    </form>
-                </divr>
-                <br/><br/>
-                Send us an email at <a href="mailto:hello@monadical.com">hello@monadical.com</a>.
-                <br/><br/>
-                <img src="static/squiggle.png" height="130px">
-                <br/><br/>
-                <div class="library">
-                    <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                        <i class="fa fa-github"></i> Github
-                    </a>
-                    &nbsp; 
-                    <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                        <i class="fa fa-twitter"></i> Twitter
-                    </a>
-                    &nbsp; 
-                    <a href="https://facebook.com/Monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                        <i class="fa fa-facebook"></i> Facebook
-                    </a>
-                    &nbsp; 
-                    <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                        <i class="fa fa-linkedin"></i> LinkedIn
-                    </a>
+                    <h5>We are currently accepting new clients.</h5>
+                    <br/>
+                    Please email us a quick summary of the work you're looking for, including scope, timeline, and budget.<br/>
+                    <br/>
+                    It's something we can help with, an intro call will be scheduled to discuss futher details.
+                    <br/><br/>
+                    <hr/><br/>
+                    <div class="container" style="max-width: 800px">
+                        <div class="row">
+                            <div class="col-md-6" style="text-align:center">
+                                <h4 style="opacity: 0.9">
+                                    <small>Send us an email:<br/></small>
+                                    <br/>
+                                    <a href="mailto:hello@monadical.com" style="margin-top: 4px;display: inline-block;">hello@monadical.com</a>
+                                    <br/><br/>
+                                    {# <img src="static/squiggle.png" height="80px" style="opacity: 0.5;"> #}
+                                    {# <br/><br/> #}
+                                </h4>
+                            </div>
+                            <div class="col-md-6" style="text-align:center">
+                                <h4 style="opacity: 0.9">
+                                    <small>Or chat with us online:<br/></small>
+                                </h4>
+                                <div class="library">
+                                    <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                                        <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+                                    &nbsp; 
+                                    <a href="https://facebook.com/Monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                                        <i class="fa fa-facebook"></i> Facebook
+                                    </a>
+                                    &nbsp; 
+                                    <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                                        <i class="fa fa-linkedin"></i> LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br/>
+                <div class="container" style="text-align: center; max-width: 600px">
+                    <form disabled>
+                        <input type="email" class="form-control" placeholder="Your email" disabled/><br/>
+                        <textarea class="form-control" placeholder="Your message..." disabled></textarea>
+                        <br/>
+                        Contact form not available on your browser, please send your email to: hello@monadical.com
+                        <br/><br/>
+                        <button role="submit" class="btn btn-shadow btn-success btn-dark" disabled>
+                            &nbsp;Send &nbsp;<i class="fa fa-angle-double-right"></i>&nbsp; 
+                        </button>
+                    </form>
+                </div>
             </center>
+            <br/><br/><br/>
         </div>
     </article>
 {% endblock %}

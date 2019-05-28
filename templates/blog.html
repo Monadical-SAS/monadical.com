@@ -5,7 +5,7 @@
 
 {% block article %}
     <!--<canvas class="animated-color-grid" height="100"></canvas>-->
-    <div class="container-full post">
+    <div class="container-full post" style="padding: 10px">
         <div style="width: 100%; text-align: center;">
             <br/><br/>
             <h2><a id="main">Blog Posts from the Monadical Team</a></h2><br/>
@@ -60,19 +60,21 @@
                 <a id="newsletter"><h4>Want to receive occasional email from Monadical?</h4></a>
                 <br/>
                 <form action="?" method="POST">
-                    <span style="color:red">Newsletter is temporarily on hold, please come back later!</span>
+                    <span style="color:red">Newsletter is temporarily on hold, in the meantime you can <a href="https://twitter.com/MonadicalSAS">follow us on Twitter</a>, sorry for the inconvenience!</span>
+                    <div style="opacity: 0.3; cursor: not-allowed;">
                     <br/><br/>
-                    <input type="email" name="email" class="form-control" disabled placeholder="Click here to enter your email" style="max-width: 300px; margin: auto; text-align: center"><br/>
-                    <div style="max-width: 780px; margin: auto; float: none">
-                        <div style="display: inline-block; width: 45%; min-width: 320px">
-                            <a href="#newsletter" disabled class="btn disabled btn-success">&nbsp;<i class="fa fa-envelope"></i> Only big announcements&nbsp;</a>
-                            <br/>
-                            <small>( ~ 2 emails per year ) </small>
-                        </div>
-                        <div style="display: inline-block; width: 45%; min-width: 320px">
-                            <a href="#newsletter" disabled class="btn disabled btn-info">&nbsp;<i class="fa fa-envelope"></i> Announcements &amp; new blog posts&nbsp;</a>
-                            <br/>
-                            <small>( ~ 1 email per month ) </small>
+                        <input type="email" name="email" class="form-control" disabled placeholder="Click here to enter your email" style="max-width: 300px; margin: auto; text-align: center"><br/>
+                        <div style="max-width: 780px; margin: auto; float: none">
+                            <div style="display: inline-block; width: 45%; min-width: 320px">
+                                <a href="#newsletter" disabled class="btn disabled btn-success">&nbsp;<i class="fa fa-envelope"></i> Only big announcements&nbsp;</a>
+                                <br/>
+                                <small>( ~ 2 emails per year ) </small>
+                            </div>
+                            <div style="display: inline-block; width: 45%; min-width: 320px">
+                                <a href="#newsletter" disabled class="btn disabled btn-info">&nbsp;<i class="fa fa-envelope"></i> Announcements &amp; new blog posts&nbsp;</a>
+                                <br/>
+                                <small>( ~ 1 email per month ) </small>
+                            </div>
                         </div>
                     </div>
                 </form>

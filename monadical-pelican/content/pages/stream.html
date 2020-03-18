@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}How to Get Started on Monadical{% endblock %}
+{% block subtitle %}How to Get Started{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
+{% block article %}
+    <div class="container apply">
+        <center style="margin-top: 0px">
+            <div class="col-md-10" style="max-width: 820px; margin-left: -10px">
+                No download needed to play.<br/>
+                Monadical works on any desktop or mobile device with a modern browser.<br/>
+                <small>Chrome, Safari, Firefox, Edge, Opera, etc.</small>
+                <br/><br/>
+                <div class="library">
+                    <a href="https://monadical.com/" class="btn btn-shadow btn-success btn-dark" target="_blank">
+                        <i class="fa fa-gamepad"></i> Play Hands
+                    </a>
+                    &nbsp; 
+                    <a href="https://monadical.com/learn" class="btn btn-shadow btn-success btn-outline-secondary btn-dark"  target="_blank">
+                        <i class="fa fa-book"></i> Read the Rules
+                    </a>
+                    &nbsp; 
+                    <a href="https://monadical.com/faq/" class="btn btn-shadow btn-success btn-outline-secondary btn-dark"  target="_blank">
+                        <i class="fa fa-question"></i> FAQ
+                    </a>
+                    &nbsp; 
+                    <a href="https://discord.gg/USPweBy" class="btn btn-shadow btn-success btn-outline-secondary btn-dark"  target="_blank">
+                        <i class="fa fa-comments-o"></i> Discuss on Discord
+                    </a>
+                    <br/><br/>
+                    For some advanced poker, game theory, and tech insights,<br/>
+                    read our <a href="{{PAGES.articles.url}}">{{PAGES.articles.title}}</a> or check out our <a href="https://monadical.com/learn">Poker Learing Resources</a>.
+                </div>
+                <br/><br/>
+                <iframe class="first" src="https://monadical.com" scrolling="no"></iframe>
+            </div>
+            <div class="mt-4 mx-4">
+                On Android and iOS you can visit <a href="https://monadical.com">Monadical.com</a> and add it to your homescreen.
+                <br/><br/>
+                <img src="/static/add-to-home.png" width="300px"/><br/>
+            </div>
+        </center>
+    </div>
+    <canvas class="animated-color-grid" height="100"></canvas>
+{% endblock %}

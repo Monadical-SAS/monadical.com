@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Anatomy of HTML, CSS, and JavaScript| Monadical</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+        <link rel="stylesheet" href="/static/main.css">
+        <style type="text/css">
+        #article-title {
+          padding-top: 2%;
+        }
+        article {
+          padding-left: 10%;
+          max-width: 800px;
+        }
+        img {
+          max-width: 100%
+        }
+
+        </style>
+
+        <link rel="canonical" href="https://monadical.com"/> 
+
+    </head>
+    
+    <body>
+            <div id="particles-js"></div>
+
+        
+        <header>
+            <a id="top"></a>
+
+
+
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                            <center>
+                                <img src="/static/logo-black.png" id="brand-img"/>
+                            </center>
+                        <h1 style="white-space: normal">
+                            Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span>
+                        </h1>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav navbar-left ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                    </ul>
+                        
+                    <h1 class="nav-item main-brand-link d-none d-sm-block ">
+                        <a href="#">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
+                        <small><i class="fa fa-angle-double-right"></i> Blog <i class="fa fa-angle-double-left"></i></small>
+                    </h1>
+
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="beta-btn nav-link btn btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
+                                &nbsp;<span class="spade">♠</span> &nbsp;
+                                Hire Us 
+                                &nbsp; <span class="diamond">♦</span>&nbsp;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <center id="article-title"><h1>Anatomy of HTML, CSS, and JavaScript</h1></center>
+        <article>
+          <h2>Anatomy of HTML</h2>
+<p><img alt="" src="https://clearlydecoded.com/assets/images/posts/2017-09-04-anatomy-of-html-tag/html-tag-attributes.png"></p>
+<p>An HTML document is a tree of HTML <strong>elements</strong> in a hierarchy.  An HTML code file is made up of <strong>tags</strong> with content inside of them, which together describe the layout of the final rendered page the user sees in their browser.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">tag-name</span> <span class="na">attribute-name</span><span class="o">=</span><span class="s">&quot;attribute-value1 attribute-value2 ...&quot;</span> <span class="err">...</span><span class="p">&gt;</span>
+    tag content
+    ...
+<span class="p">&lt;/</span><span class="nt">tag-name</span><span class="p">&gt;</span>
+...
+</code></pre></div>
+
+
+<h3>HTML Elements</h3>
+<p>"<strong>Element</strong>"" is generally used to decribe one rendered component of a page, for example a picture, a shaded rectangle, or a paragraph of text. A <strong>tag</strong> refers to the code used to generate that element.  The distinction is not super important, but it's handy to keep in mind that <strong>elements</strong> are things you see in the browser, and <strong>tags</strong> are things you see in your code editor that become the things in the browser when viewed.</p>
+<h3>HTML Tags</h3>
+<p>An HTML <strong>tag</strong> is written in HTML syntax using three parts:</p>
+<p>e.g. <code>&lt;div&gt;...children...&lt;/div&gt;</code></p>
+<ol>
+<li>the <strong>opening tag</strong> = <code>&lt;div&gt;</code></li>
+<li>the <strong><code>...children...</code></strong> = can contain more child tags, or text, etc.</li>
+<li>the <strong>closing tag</strong> = <code>&lt;/div&gt;</code></li>
+</ol>
+<p><em>Some examples of tags:</em></p>
+<p><code>&lt;html&gt;...&lt;/html&gt;</code>, <code>&lt;body&gt;...&lt;/body&gt;</code>, <code>&lt;div&gt;...&lt;/div&gt;</code>, <code>&lt;span&gt;...&lt;/span&gt;</code></p>
+<h4>Self Closing tags</h4>
+<p>Some tags are called <strong>self-closing tags</strong>, these tags do not need a closing tag because they don't have any child content.</p>
+<p><em>Some examples of self-closing tags:</em></p>
+<p><code>&lt;img src="example.jpg"/&gt;</code>, or <code>&lt;br/&gt;</code> for linebreak, and <code>&lt;hr/&gt;</code> for "horizontal line", etc.</p>
+<p>You can usually distinguish self-closing tags by checking for the <code>/</code> at the end, like<code>&lt;tag-name/&gt;</code>, though some people don't follow this convention so it's not a 100% rule.</p>
+<hr>
+<h2>Anatomy of CSS</h2>
+<p><img alt="" src="https://learnwebcode.com/wp-content/uploads/2010/02/anatomy-of-a-css-rule.gif"></p>
+<h3>CSS Rules</h3>
+<p>CSS consists of <strong>rules</strong>. A CSS <strong>rule</strong> is made up of a <strong>selector</strong> and a list of <strong>styles</strong> aka <strong>properties</strong> to apply to the elements that the selector matches.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">tagname</span> <span class="p">{</span>
+    <span class="n">property-name</span><span class="p">:</span> <span class="n">property</span> <span class="n">value</span><span class="p">;</span>
+    <span class="err">...</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">class-name</span> <span class="p">{</span>
+    <span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h4>CSS Selectors</h4>
+<p>Examples of some CSS selectors:</p>
+<ul>
+<li>
+<p>select all the elements with a certain tag name, e.g. <code>h1</code>, <code>body</code>, or <code>div</code>:
+    <code>h1 { ... }</code>, <code>body { ... }</code>, <code>div { ... }</code></p>
+</li>
+<li>
+<p>select all the elements with a certain class name, e.g. <code>featured-image</code>:
+    <code>.featured-image { ... }</code></p>
+</li>
+</ul>
+<p>The <strong>selector</strong> specifically refers to the <code>[h1]</code> part of the rule.  Selectors "select" which elements you want to style, and you can create more complex selectors that use multiple class names and tag names to find specific elements on the page and apply some styles;</p>
+<p>e.g. This selector will match all <code>&lt;small&gt;</code> elements that are inside of an <code>h1</code> tag that has the <code>header-text</code> class on it.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">h1</span><span class="p">.</span><span class="nc">header-text</span> <span class="nt">small</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Which would match the inner <code>&lt;small&gt;</code> element here, and the "Some subtext" inside would be displayed with a <code>14px</code> font size.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header-text&quot;</span><span class="p">&gt;</span>
+    Some header text...<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Some subtext<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+
+
+<h4>CSS Properties</h4>
+<p>Once you've selected some elements to style, you can apply <strong>properties</strong> that describe which styles you want to change.</p>
+<p>E.g. if we wanted to make out entire document use a specific font, we could do:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">Helvetica</span> <span class="kc">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h5>CSS Property Names</h5>
+<p>In this example <code>font-family</code> is the <strong>property name</strong>, and <code>Helvetica sans-serif</code> is the <strong>property value</strong>.</p>
+<p>Some examples of <strong>property names</strong>:
+<code>font-size</code>, <code>width</code>, <code>display</code>, <code>white-space</code>, <code>opacity</code>, <code>text-align</code></p>
+<h5>CSS Property Values</h5>
+<p>Some examples of <strong>property values:</strong>:
+<code>20px</code>, <code>30vw</code>, <code>1.5em</code>, <code>10%</code>, <code>200</code>, <code>'Gill Sans' Helvetica sans-serif</code></p>
+<p>You'll notice that these property values can have different <strong>units</strong>.</p>
+<h5>CSS Property Units</h5>
+<p>Here are some examples of acceptable <strong>CSS units</strong>:</p>
+<ul>
+<li><code>px</code>: pixels</li>
+<li><code>%</code>: percentage of parent's value</li>
+<li><code>vw</code>: percentage of entire screen's width (<code>100vw</code> = <code>100%</code> of screen width)</li>
+<li><code>vh</code>: percentage of entire screen's height</li>
+<li><code>cm</code>: centimeters</li>
+<li><code>in</code>: inches</li>
+<li><code>em</code>: scale factor of inherited default font size (<code>1.1em</code> = 1.1x default font size, e.g. <code>1.1em</code> when the default is <code>14px</code> would be <code>15.4px</code>)</li>
+<li>no unit: not all css values need units, e.g. <code>font-weight</code> or <code>opacity</code> can be <code>400</code> or <code>0.1</code> respectively</li>
+</ul>
+<hr>
+<h2>Further Resources</h2>
+<p>This is a fantastic, in-depth guide to learn the whole process of web development:
+https://btholt.github.io/intro-to-web-dev-v2/</p>
+<hr>
+        </article>
+
+        <footer>
+
+            <div class="container text-center text-darkgrey">
+<small>Monadical Inc. © 2020</small>            </div>
+        </footer>
+
+        <script src="/static/squares.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+
+
+        <!-- Smooth Scroll to Anchor Links Animation -->
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+
+        <!-- Particles.js Network Graph Animation -->
+        <script type="text/javascript">
+            particlesJS("particles-js", {
+              "particles": {
+                "number": {
+                  "value": 250,
+                  "density": {
+                    "enable": true,
+                    "value_area": 800
+                  }
+                },
+                "color": {
+                  "value": "#f7fcff"
+                },
+                "shape": {
+                  "type": "square",
+                  "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                  },
+                  "polygon": {
+                    "nb_sides": 5
+                  },
+                },
+                "opacity": {
+                  "value": 0.5,
+                  "random": false,
+                  "anim": {
+                    "enable": false,
+                    "speed": 0.5,
+                    "opacity_min": 0.1,
+                    "sync": false
+                  }
+                },
+                "size": {
+                  "value": 3,
+                  "random": true,
+                  "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                  }
+                },
+                "line_linked": {
+                  "enable": true,
+                  "distance": 150,
+                  "color": "#3dbe4c",
+                  "opacity": 0.4,
+                  "width": 1
+                },
+                "move": {
+                  "enable": true,
+                  "speed": 1,
+                  "direction": "none",
+                  "random": false,
+                  "straight": false,
+                  "out_mode": "out",
+                  "bounce": true,
+                  "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                  }
+                }
+              },
+              "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                  "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                  },
+                  "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                  },
+                  "resize": true
+                },
+                "modes": {
+                  "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                      "opacity": 1
+                    }
+                  },
+                  "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                  },
+                  "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                  },
+                  "push": {
+                    "particles_nb": 4
+                  },
+                  "remove": {
+                    "particles_nb": 2
+                  }
+                }
+              },
+              "retina_detect": true
+            });
+        </script>
+
+        <!-- D3 Cursor Waves Animation -->
+        <!--<script type="text/javascript">
+
+          var width = Math.max(960, innerWidth),
+              height = Math.max(500, innerHeight);
+
+          var x1 = width / 2,
+              y1 = height / 2,
+              x0 = x1,
+              y0 = y1,
+              i = 0,
+              r = 200,
+              τ = 2 * Math.PI;
+
+          var canvas = d3.select("#waves").append("canvas")
+              .attr("width", width)
+              .attr("height", height)
+              .on("ontouchstart" in document ? "touchmove" : "mousemove", move);
+
+          var context = canvas.node().getContext("2d");
+          context.globalCompositeOperation = "lighter";
+          context.lineWidth = 2;
+
+          d3.timer(function() {
+            context.clearRect(0, 0, width, height);
+
+            var z = d3.hsl(++i % 360, 1, .5).rgb(),
+                c = "rgba(" + z.r + "," + z.g + "," + z.b + ",",
+                x = x0 += (x1 - x0) * .1,
+                y = y0 += (y1 - y0) * .1;
+
+            d3.select({}).transition()
+                .duration(2000)
+                .ease(Math.sqrt)
+                .tween("circle", function() {
+                  return function(t) {
+                    context.strokeStyle = c + (1 - t) + ")";
+                    context.beginPath();
+                    context.arc(x, y, r * t, 0, τ);
+                    context.stroke();
+                  };
+                });
+          });
+
+          function move() {
+            var mouse = d3.mouse(this);
+            x1 = mouse[0];
+            y1 = mouse[1];
+            d3.event.preventDefault();
+          }
+        </script>-->
+
+        <!-- Matomo -->
+        <script type="text/javascript">
+          var _paq = _paq || [];
+          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//nicksweeting.com/piwik/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', '14']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+        <!-- End Matomo Code -->
+    </body>
+</html>

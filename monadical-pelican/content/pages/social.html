@@ -1,0 +1,8 @@
+<div class="social-links">
+    <div class="follow-intro">Follow us on:</div>
+    <div class="follow-links">
+        {% for site in SOCIAL.values() %}<a href="{{site.url}}" title="{{site.title}}" target="_blank" rel="noopener"><i class="fa fa-{{site.icon}}"></i></a>{% endfor %}
+    </div>
+    <br/>
+    <a href="#top"><img src="/static/logo-blue.png" style="height: 50px; opacity: 1"></a>
+</div>

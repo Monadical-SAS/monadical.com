@@ -1,0 +1,178 @@
+Title: How to Make Remote Work (part one)
+Date: 2020-03-18
+Slug: how-to-make-remote-work
+Authors: Max
+
+*Written by Max. Originally published 2020-03-18 on the [Monadical blog](https://monadical.com/blog.html).*
+
+*How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.*
+
+*This article is about how I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.*
+
+<br>
+
+I love remote work.
+
+To me, it's like riding a bike without training wheels. Scary and easy to hurt yourself at first, but if you can find your balance, all that freedom becomes exhilarating.
+
+This guide comes from over a decade of personal experience navigating the challenges of remote work, both as an individual contributor and as a manager and company founder: it's written from my personal perspective. 
+
+What follows are nine things I wish I'd learned ten years ago:
+
+![](https://docs.monadical.com/uploads/upload_8f3cd3d7c4407431b926f7cee9558aeb.jpg)
+
+#### Separate a Workspace
+
+It's easy to roll out of bed, grab my laptop, and start working. Actually, scratch that--I'll just grab my laptop in bed. 10 second work commute!
+
+I've actually found this to be fine... when I'm motivated and feeling good. But it's a bad habit that becomes costly in times where I'm feeling lethargic, overwhelmed, or frustrated.
+
+In those times, separating out a space makes a big difference. It *feels* different when I sit at the desk where I always avoid playing games or browsing social media. Doing work becomes my auto-pilot, which decreases the barrier to getting into a flow.
+
+I'm quick to block social media in `/etc/hosts` if I find myself mindlessly typing it into my browser on days where I'm struggling to focus. And almost all notifications on my phone and browser are silent or disabled at all times^[I also put all my communication browser tabs in a single window on a workspace that's hidden (or minimized) when I'm working.]. I only ever want to check on notifications intentionally, never incidentally.
+
+#### Separate a Mental Workspace
+
+The same principle applies to habits/rituals. For example, I nearly always take a long shower and drink a pot of tea before I start working. As I take my shower, I think about what I'm going to do that day, which brings me into my work headspace.
+
+I then start each workday by checking on my communications and creating a TO-DO list for that day. I try to create a new one each day (though sometimes I don't write it down), and I like to put the easiest things at the beginning of my day. It's easier to get harder things done once I have a bit of productive momentum going.
+
+#### Work in Short, Efficient Chunks
+
+There's a bunch of evidence that >40 hrs/week is bad for the average person[^work_hours]. Not just in terms of happiness, but also in terms of productive throughput over the long run. Not that those two things are independent of one another.
+
+[^work_hours]: There is more detail in [this article](https://www.salon.com/test/2012/03/14/bring_back_the_40_hour_work_week/). Did you know that 6-hour days are, on average, the best for knowledge workers? And [here is some relevant data](https://ourworldindata.org/working-hours) with nice visualizations.
+
+It's different for everyone--I do know some people who seem to sustain 60-hour weeks indefinitely. But I am not one of them; I find I am most impactful working ~35 hours in a typical week. Sometimes I have crunch weeks where I work a lot more, but only a few per year--I consider them to be high-interest loans from future productivity.
+
+When I'm doing concentrated, challenging work, it's usually about 6-7 hours working over the course of a day. Lower-lift days can be 8-10hrs if I'm doing a mix of easy or routine engineering tasks, operational stuff, and low-intensity communication. But those days are the minority. If I find myself having a lot of those days, it usually means I'm wasting too much time doing things that I should delegate or automate.
+
+My workday is usually about 3-4 chunks of work. The first one is short and the same thing every day, which sets up a habitual pattern that helps get me into the right headspace. A solid, productive day might look like this:
+
+`8am` - wake up, shower, drink some tea, read some articles
+
+`9:20am` - 40 mins light work: check email, read company chat, answer questions, plan today's TODO list
+
+`10am` - 30 min break to brew some more tea, eat a piece of fruit
+
+`10:30am` - 2hrs of focused work
+
+`12:30pm` - 2hr break for lunch, gym
+
+`2:30pm` - 1hr calls
+
+`3:30pm` - 10 min break, get a glass of water
+
+`3:40pm` - 2hrs focused work on my hardest task for the day
+
+`5:40pm` - 20 mins EOD communication/reminders/etc
+
+`6pm` - 30 mins mental review of the day: how am I feeling, is there anything I could have done better, fitting things into the bigger picture, etc
+
+All distractions are turned off during my 2-3 hour focused chunks. I don't check zulip, email, or my phone. The only way I can be distracted is if my phone rings[^distractions].
+
+[^distractions]: One study found that [people who checked email in batches were more productive](https://dl.acm.org/doi/abs/10.1145/2858036.2858262), which certainly matches with my experience.
+
+Days where I'm working on complicated engineering tasks are a bit different, with soft tasks in the morning and then one 4-5 hour uninterrupted chunk in the afternoon/evening (with 2-5 min breaks every hour or so).
+
+Afterwards, if I'm feeling good, I'll periodically check on my company chat to see if I can help anyone with anything, until a few hours before I intend to sleep. But if I'm feeling anxious or tired, I just disconnect entirely and turn off phone notifications (in an emergency my team can call me).
+
+![](https://docs.monadical.com/uploads/upload_04e8f3d9a3f23b94452906b3cafd108a.jpg)
+
+#### Prioritize Mental Health and Emotional Stability
+
+Getting better at modulating my own mood is one of the most valuable things I've invested effort into in my life. I started doing this when I was a poker player, because "tilt" as they call it was expensive in a very direct way. That made it easier to start recognizing all the ways mood has indirect effects.
+
+Feeling good means I work better, which makes me feel good. The converse is also true. But it's not a chicken-and-egg thing; mental health comes first.
+
+If I'm feeling remotely cranky, tired, frustrated, or lethargic at the beginning or end of my workday, I try to pin it to a cause. I put things into perspective: what do I really care about here, and which parts can I control? What are my choices, and what's likely to happen if I go through with each one?
+
+I have to do this habitually, because it's easiest not to introspect when I'm feeling terrible and just want to escape.
+
+If it's a struggle to get started working, and I've been feeling a lot of pressure and/or frustration, I will take a half-day. Sometimes I'll do everything that's urgent and take the whole next day off as well. Maybe I make up for it on the weekend, but I don't feel guilty if I don't. Taking some time away from work today is an investment in tomorrow. A good rest of the week is better than a mediocre today plus rest of the week.
+
+I have a tendency to be hard on myself, and it's extra-easy to think of yourself as totally worthless when you've been unproductive, alone, without distractions, all day. I have to actively fight this feeling.
+
+Of course, I had to learn how to notice the signs that I need a break and when to act on them. When I started actively paying attention, noticing how unproductive my low-points were, I started prioritizing emotional stability. I can still get better at this but it has paid off a ton so far.
+
+#### Prioritize Physical Health
+
+Eat healthy foods[^food]. Get enough sleep[^sleep]. Get regular exercise[^exercise]. Get regular sunlight[^light]. These things always seem to matter more than I think. We're chemical machines, and we require a lot of maintenance.
+
+[^food]: While it's [undeniable that diet affects mood and mental health](https://www.apa.org/monitor/2017/09/food-mental-health), exactly how is not well understood, and [nutrition studies are fundamentally unreliable](https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/). I believe that everyone's microbiome is different, and different diets work for different people: I just pay attention to how foods affect me, and adjust my diet accordingly. Mostly, I don't drink coffee and limit alcohol and deserts/sugary foods.
+
+[^sleep]: According to [this research](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1739867/), sleep-deprived work is comparable to working drunk. Which always made me wonder: why do doctors work such crazy shifts? I've come to understand it like this: if every time I had to debug a problem it was a random codebase that I'd never seen before, I would have to adjust a lot of things around how I work to maximize the time I'd get to investigate each case.
+
+[^exercise]: Whenever you see an ad for [snake oil](https://www.npr.org/sections/codeswitch/2013/08/26/215761377/a-history-of-snake-oil-salesmen), a fad diet, or "clever tip" that claims outlandish benefits, just replace it with "regular exercise" and it probably becomes true. Regular exercise improves [focus, mental endurance, processing speed, and memory](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2897704/). It [delays age-related cognitive decline](https://www.hindawi.com/journals/jar/2013/657508/). It's correlated with a [31% decline in all-cause mortality](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5574458/). It helps with [anxiety and depression](https://www.sciencedirect.com/science/article/pii/S0091743505002331). Regular exercise is the miracle cure.
+
+[^light]: This becomes more of a concern the farther you are from the equator. See [this review](https://www.julkari.fi/bitstream/handle/10024/78481/2006a08.pdf?sequence=1) from Finland's dept of health for more info on the effects of light on mood. tl;dr: if you're affected by seasonal affective disorder, [get a sun lamp](https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/in-depth/seasonal-affective-disorder-treatment/art-20048298) and in any case, get outside every day.
+
+The relationships between physical health and mental health aren't well-understood, but they absolutely have a bi-directional causal relationship. Investing in one is an investment in the other.
+
+It's especially tempting to eschew fundamentals, like sleep or good food or going to the gym, when work becomes demanding or stressful. Those are the worst times to do so. So I have to fight the temptation.
+
+A lot of these things take advance planning:
+* I sometimes prepare meals in advance for a week I know is going to be demanding. 
+* I go dark and turn off all notifications hours before I intend to fall asleep. 
+* I got a membership at a gym that's a block away and cordon off time in my calendar for working out that I don't replace with meetings. 
+* In winter months I use a sun lamp in the morning, and I go out for 20-40 min walks during the day whenever I can.
+
+Over the course of months, the investment in physical health is very much worth it. Over the course of years it can be the difference between satisfaction and existential despair.
+
+![](https://docs.monadical.com/uploads/upload_387dce69fe916c41249ee506400ecfb9.jpg)
+
+
+#### Communicate Proactively, Frequently, and Effectively
+
+In an office, many interactions happen in conversations that are face-to-face. In a remote setting, the best replacement is video chat, which can hardly be considered a replacement at all. There's also a very jarring lack of incidental communication. I don't overhear my coworkers gossipping, nor can I wander over to the break room and chat with whoever is there. These challenges mean I have to go out of my way to talk to people, and I need to be much more intentional about how I go about it.
+
+I try to avoid going a full day without getting at least some high-quality personal interaction with someone on my team, and I also try not to ping the same people over and over. Sometimes I just want to reach out to someone because I haven't spoken to them in a week. But often I am looking for some specific information. I try to be smart about how I do it.
+
+I spend a lot of time honing my communication skills. I **always consider the objective** of my communication, explicitly. It's hard to get better at something if you don't define what getting better means for yourself. After a conversation I consider whether I accomplished what I'd hoped. This is a lot easier to do on a remote team than in person, because you have pauses to think after you type out messages in chat!
+
+We go into a lot more detail in our [principles document](https://docs.monadical.com/s/principles-handbook), but I'll go over a few of the most important communication concepts we've developed for remote work.
+
+First, I **assume competence** and **assume good intentions**. My teammates are on my team. It's very easy, when there's a stressful problem, to forget this. Someone I haven't had any recent quality interactions with can become a caricature, a manifestation of all that is wrong in this moment, and in my organization. Really they're probably just trying to do the thing that makes sense to them, so I try find out what that is and why. If they're struggling with something, getting frustrated with them will likely make things worse.
+
+To do that, I **reach out early and often**, and **lead with questions**. I try to explicitly identify the facts from my judgments, and then assume that whatever looks bad or wrong is probably something I don't understand. Then I ask questions to figure out what it is I'm not understanding. "What is your thought process behind ..." is better than "why did you..." which is much better than "don't you realize...". This takes humility, and isn't always as easy as it sounds. When I mess it up, I apologize. If someone is frustrated I acknowledge how they feel (even if I think I'm right).
+
+#### Develop an Asynchronous Flow
+
+I need something right now, and the person I need it from isn't responding. I can try calling them on the phone, but that can be pretty intrusive--they're probably not answering because they're busy. What do I do?
+
+I probably just have to wait, and consider how I got myself in that situation.
+
+I have to actively avoid organizing my schedule such that I become blocked by teammates or it happens a lot. I have to think, in advance, about how to break up my work into 1-3 hour pieces which I can do without input from other people. I also consider my teammates' tendencies and schedules when setting my own schedule.
+
+I try to respect that other people are working in their own async flows, and if I ping someone and don't get a response, I assume it's because they're busy and give them gentle nudges once every few hours or once a day, depending on the urgency of the issue.
+
+#### Find a Good Toolset
+
+I use SimpleCalendar for Android on my phone, which is hooked up to my company calendar via CalDAV.
+
+We use Zulip (company chat) in an organized way: things I want to bring up are categorized in the right place. I always @-ping anyone I expect to reply to anything I say. I avoid using private messages except to talk about things that are personal or sensitive.
+
+We use whereby.com for video chat. It's free for individuals (though my company pays for it), and "just works" more often than any of the other ~5 services we've tried. I have three headsets with mics: one that is always in my backpack, one that sits at my home office, and a spare in case one of them breaks.
+
+I use a text editor for TODOs. And I try to type up a new one every day. That forces me to decide whether something I've been procrastinating about is really worth being on the list, and if it is, to consider why I've been procrastinating.
+
+Finally, I use a [good, reliable headset](https://en-ca.sennheiser.com/call-center-office-headset-usb-sc-60-usb-ml), an [ergonomic wired mouse](https://www.anker.com/products/variant/anker-ergonomic-optical-usb-wired-vertical-mouse/A7851011), a [rigid mousepad](https://www.allsop.com/product/redmond-mousepad-hex-30862/) (so I can reliably work at any table when I travel), and a [chair with good lumbar support](https://www.ikea.com/ca/en/p/markus-office-chair-vissle-dark-gray-90289172/).
+
+![](https://docs.monadical.com/uploads/upload_6b1f664459404d331d32d3f37f506fe9.jpg)
+
+
+#### Deliberate and Iterate
+
+I try to build good habits. It's so much easier to maintain a habit than to motivate myself to do something new. I improve my habits a little bit at a time: when I started with remote work I forced myself to just do one productive thing per day, even if it took 10 minutes. 10 minutes of work on a bad day is a lot better than zero because zero erases habits. I built up from there.
+
+If I've been keeping up a good rhythm, I'll try adding a bit more to it, but I have to be careful because I'm naturally obsessive and prone to getting carried away and burning myself out.
+
+If I find myself failing at something regularly, I change my approach. For example, it took a lot of failed TODO apps before I arrived on simply writing a new list of things down each day.
+
+Ultimately, I believe the real power of remote work is that you can fine-tune your work experience to be exactly what works best for you. Everyone is different! 
+
+To that end, I think the most important thing is to regularly reflect on your experience and figure out what works best for you[^practice].
+
+[^practice]: Make sure to pay attention to *how* you get better. I recommend reading the [wikipedia entry on practice](https://en.wikipedia.org/wiki/Practice_(learning_method)). For something much more detailed, check out [the article that wikipedia quotes](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1553-2712.2008.00227.x) at the beginning of the "deliberate practice" section.
+
+---

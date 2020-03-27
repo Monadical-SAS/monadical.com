@@ -55,13 +55,16 @@
                             <a class="nav-link" href="/index.html">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/team.html">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/blog.html">Blog</a>
+                            <a class="nav-link" href="/projects.html">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/projects.html">Projects</a>
+                            <a class="nav-link" href="/blog.html">Blog</a>
                         </li>
                     </ul>
                         
@@ -77,13 +80,13 @@
 
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About</a>
+                            <a class="nav-link" href="/about.html">How it works</a>
                         </li>
                         <li class="nav-item">
-                            <a class="beta-btn nav-link btn btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
-                                &nbsp;<span class="spade">♠</span> &nbsp;
-                                Hire Us 
-                                &nbsp; <span class="diamond">♦</span>&nbsp;
+                            <a class="beta-btn nav-link btn btn-lg btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
+                                &nbsp;<span class="diamond" style="font-size: 24px;vertical-align: -3px;"><i class="fa fa-phone"></i></span>&nbsp;
+                                Free Quote
+                                &nbsp;
                             </a>
                         </li>
                     </ul>
@@ -162,7 +165,7 @@
                 <h2>We specialize in full-stack web development and custom software solutions.</h2>
                 <br/>
                 <b style="line-height: 1.8">
-                    But we're comfortable learning and working with a <a href="/projects.html#tags">wide range</a> of tech stacks, scopes, and project requirements.
+                    We're comfortable learning and working with a <a href="/projects.html#tags">wide range</a> of tech stacks, scopes, and project requirements.
                     <br/><br/>
                 </b>
                 <br/>
@@ -270,13 +273,11 @@
             <b>⚡️ &nbsp; We ramp up fast and can prototype MVPs within days of taking on new projects. &nbsp; ⚡️</b>
             <br/><br/>
             <a href="/about.html#contact" class="btn beta-btn btn-shadow btn-success">
-                <span style="color:black; opacity: 0.8">♠</span>
-                <span style="color:red; opacity: 0.8">♦</span>
+                <span style="color:black; opacity: 0.3"><i class="fa fa-phone"></i></span>
                 &nbsp; &nbsp;
-                <span class="break-contact" style="font-size: 1.1em">Contact us to get started</span>
+                <span class="break-contact" style="font-size: 1.1em">Contact us to get a free quote</span>
                 &nbsp;&nbsp;
-                <span style="color:black; opacity: 0.8">♣</span>
-                <span style="color:red; opacity: 0.8">♥</span>
+                <span style="color:black; opacity: 0.3"><i class="fa fa-comments"></i></span>
             </a>&nbsp;&nbsp;
             <br/><br/>
             <div class="container">
@@ -290,7 +291,7 @@
                 </b>
                 <br/><br/>
             </div>
-            <small>(We're flexible with payment methods too, we can handle USD/CAD/COP domestically, and crypto/wire-transfers internationally.)</small>
+            <small>(We're comfortable working with remote clients all over the world. Most of our projects are mid/long-term projects lasting >4 weeks.)</small>
             <br/><br/><br/><br/>
             <div style="background-color: rgba(96, 214, 43, 0.08); position: relative">
                 <div id="bubbles"></div>
@@ -337,13 +338,14 @@
             <div class="container text-center text-darkgrey">
                 
                     <div class="social-links">
-    <div class="follow-intro">Follow us on:</div>
-    <div class="follow-links">
-        <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a><a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a><a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
-    </div>
-    <br/>
-    <a href="#top"><img src="/static/logo-blue.png" style="height: 50px; opacity: 1"></a>
-</div>
+                        
+                        <a href="#top"><img src="/static/logo-black.png" style="height: 50px; opacity: 1"></a>
+                        <br/><br/><br/>
+                        <div class="follow-links">
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a><a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a><a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+
                 
                 <small>Monadical Inc. © 2020</small>
             </div>
@@ -440,124 +442,133 @@
 
         <!-- Smooth Scroll to Anchor Links Animation -->
         <script>
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            function smoothScroll(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Scrolling to', this.getAttribute('href'))
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-            });
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+              document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+              })
+              document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                  anchor.addEventListener('click', smoothScroll);
+              });
+            })
         </script>
 
         <!-- Particles.js Network Graph Animation -->
         <script type="text/javascript">
-            particlesJS("particles-js", {
-              "particles": {
-                "number": {
-                  "value": 250,
-                  "density": {
-                    "enable": true,
-                    "value_area": 800
-                  }
-                },
-                "color": {
-                  "value": "#f7fcff"
-                },
-                "shape": {
-                  "type": "square",
-                  "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                  },
-                  "polygon": {
-                    "nb_sides": 5
-                  },
-                },
-                "opacity": {
-                  "value": 0.5,
-                  "random": false,
-                  "anim": {
-                    "enable": false,
-                    "speed": 0.5,
-                    "opacity_min": 0.1,
-                    "sync": false
-                  }
-                },
-                "size": {
-                  "value": 3,
-                  "random": true,
-                  "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                  }
-                },
-                "line_linked": {
-                  "enable": true,
-                  "distance": 150,
-                  "color": "#3dbe4c",
-                  "opacity": 0.4,
-                  "width": 1
-                },
-                "move": {
-                  "enable": true,
-                  "speed": 1,
-                  "direction": "none",
-                  "random": false,
-                  "straight": false,
-                  "out_mode": "out",
-                  "bounce": true,
-                  "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                  }
-                }
-              },
-              "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                  "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                  },
-                  "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                  },
-                  "resize": true
-                },
-                "modes": {
-                  "grab": {
-                    "distance": 140,
+            if (document.getElementById('particles-js')) {
+                particlesJS("particles-js", {
+                  "particles": {
+                    "number": {
+                      "value": 250,
+                      "density": {
+                        "enable": true,
+                        "value_area": 800
+                      }
+                    },
+                    "color": {
+                      "value": "#f7fcff"
+                    },
+                    "shape": {
+                      "type": "square",
+                      "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                      },
+                      "polygon": {
+                        "nb_sides": 5
+                      },
+                    },
+                    "opacity": {
+                      "value": 0.5,
+                      "random": false,
+                      "anim": {
+                        "enable": false,
+                        "speed": 0.5,
+                        "opacity_min": 0.1,
+                        "sync": false
+                      }
+                    },
+                    "size": {
+                      "value": 3,
+                      "random": true,
+                      "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                      }
+                    },
                     "line_linked": {
-                      "opacity": 1
+                      "enable": true,
+                      "distance": 150,
+                      "color": "#3dbe4c",
+                      "opacity": 0.4,
+                      "width": 1
+                    },
+                    "move": {
+                      "enable": true,
+                      "speed": 1,
+                      "direction": "none",
+                      "random": false,
+                      "straight": false,
+                      "out_mode": "out",
+                      "bounce": true,
+                      "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                      }
                     }
                   },
-                  "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
+                  "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                      "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                      },
+                      "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                      },
+                      "resize": true
+                    },
+                    "modes": {
+                      "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                          "opacity": 1
+                        }
+                      },
+                      "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                      },
+                      "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                      },
+                      "push": {
+                        "particles_nb": 4
+                      },
+                      "remove": {
+                        "particles_nb": 2
+                      }
+                    }
                   },
-                  "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
-                  },
-                  "push": {
-                    "particles_nb": 4
-                  },
-                  "remove": {
-                    "particles_nb": 2
-                  }
-                }
-              },
-              "retina_detect": true
-            });
+                  "retina_detect": true
+                });
+              }
         </script>
 
         <!-- D3 Cursor Waves Animation -->
@@ -614,16 +625,17 @@
 
         <!-- Matomo -->
         <script type="text/javascript">
-          var _paq = _paq || [];
+          var _paq = window._paq || [];
           /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+          _paq.push(["setCookieDomain", "*.monadical.com"]);
           _paq.push(['trackPageView']);
           _paq.push(['enableLinkTracking']);
           (function() {
-            var u="//nicksweeting.com/piwik/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', '14']);
+            var u="//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '12']);
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
           })();
         </script>
         <!-- End Matomo Code -->

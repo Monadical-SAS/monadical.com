@@ -112,9 +112,8 @@ article .container-full {
     border-radius: 15px;
     overflow: hidden;
     margin: auto;
-    margin-top: 30px;
-    line-height: 0.1;
-    border: 4px solid #58d665;
+    margin-top: 10px;
+    border: 0px solid #58d665;
 }
 .article-featured-image {
     display: block;
@@ -598,12 +597,11 @@ article iframe {
 }
 
 .post-footer .authorbox {
-    /* float: left; */
-    max-width: 300px;
-    margin: 2rem;
-    flex-grow: 1;
+    width: 370px;
+    /* margin: auto; */
+    float: left;
+    margin-left: 14%;
 }
-
 
 .post-footer .authorbox img {
     width: 100px;
@@ -613,6 +611,7 @@ article iframe {
 .post-footer .authorbox div {
     float: right;
     text-align: left;
+    padding-right: 15px;
 }
 .post-footer .authorbox > a {
     font-size: 14px;
@@ -1021,7 +1020,7 @@ article .apply center .progress{
     }
     nav.navbar {
         padding-bottom: 16px;
-        margin: 20px;
+        /*margin: 20px;*/
         border-radius: 4px;
     }
 

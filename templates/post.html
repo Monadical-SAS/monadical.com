@@ -2,17 +2,69 @@
 
 {% block title %}{{title}}{% endblock %}
 {% block subtitle %}<a href="{{PAGES.blog.url}}">Blog</a>{% endblock %}
+
+{% block beforebody %}{% endblock %}
+{% block logo %}{% endblock %}
+
 {% block article %}
-    <!--<canvas class="animated-color-grid" height="100"></canvas>-->
-    <div class="article-body">
+    <style>
+        nav.navbar {
+            border-radius: 0px !important;
+            padding-top: 15px;
+            padding-bottom: 35px;
+        }
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        nav.navbar .navbar-collapse.collapse {
+            display: flex !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+    </style>
+    <canvas class="animated-color-grid" height="20"></canvas>
+    <div id="post-contentopticle-body">
         {% block post %}
-            <div class="article-content">
-                <div style="background-image: url({{img}}); height: 60px; background-attachment: fixed; opacity: 0.7" class="article-featured-image"></div>
-                <iframe src="{{iframe}}" style="width:100%; height: {{height|default('200vh', true)}};"></iframe>
-                <div style="background-image: url({{img}}); height: 60px; background-attachment: fixed; opacity: 0.7" class="article-featured-image"></div>
+            <article class="article-content">
+                {{ include_raw(template) }}
             </article>
         {% endblock %}
-        <div class="container post-footer">
+        <br/><br/>
+        <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
                     {{author.name}}
@@ -27,23 +79,68 @@
                 </div>
                 <img src="{{author.image}}" width="100px"/>
             </div>
-            <div class="likebox">
-                <a href="#like" name="like">
-                    
-                    <i class="fa fa-heart-o"></i><i class="fa fa-heart"></i>
-                    <small>Like Post</small>
-                </a>
-            </div>
-            <div class="infobox">
-                <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-dark btn-success" target="_blank" rel="noopener">
-                    <i class="fa fa-twitter"></i> Tweet
-                </a>
-            </div>
         </div>
-    </div>
-    <canvas class="animated-color-grid" height="40"></canvas>
-{% endblock %}
+        <br/>
+        <br/>
+        <br/>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#top" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Some other posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                {% for post in POSTS.values() %}
+                    {% if loop.index < 5 %}
+                        <li><a href="{{post.url}}">{{post.title}}</a></li>
+                    {% endif %}
+                {% endfor %}
+                <li>
+                    <a href="{{PAGES.blog.url}}">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                for (let elem of document.querySelectorAll('.animated-color-grid')) {
+                  const sqrs = new Squares(elem, {height: elem.height})
+                  sqrs.tick()
 
-{% block footerbefore %}
-    
+                  window.addEventListener('resize', function(e) {
+                      sqrs.options.width = document.body.offsetWidth
+                      sqrs.updateDimensions()
+                  })
+                }
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+            })
+        </script>
+        <br/><br/>
+    </div>
 {% endblock %}

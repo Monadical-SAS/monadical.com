@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 import json
+import subprocess
+from threading import Thread
 from datetime import datetime
 
+from jinja2 import Markup
 from flask import Flask, render_template, redirect
 
 
 ### Config
 app = Flask(__name__)
+app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.get_source(app.jinja_env, filename)[0])
 CONFIG_FILE = 'content.json'
 HOST = 'http://127.0.0.1:5000'
 
@@ -16,6 +21,17 @@ def load_config(fname=CONFIG_FILE):
     """read the content.json file and load it as a dictionary"""
     with open(fname, 'r') as f:
         return json.load(f)
+
+def download_post(post):
+    CMD = [
+        "/usr/local/bin/wget",
+        "--convert-links",
+        "--output-document",
+        os.path.join('templates', post['template']),
+        post['source'],
+    ]
+    proc = subprocess.run(CMD, capture_output=True)
+
 
 CONFIG = load_config(CONFIG_FILE)
 
@@ -44,8 +60,13 @@ def render_page(path):
 
 @app.route('/posts/<path>')
 def render_post(path):
-    print(path)
     post = POSTS[f'/posts/{path}']
+    # if os.path.exists(os.path.join('templates', post['template'])):
+    #     thread = Thread(target=download_post, args=(post,))
+    #     thread.start()
+    # else:
+    #    download_post(post)
+    download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 
 if __name__ == '__main__':

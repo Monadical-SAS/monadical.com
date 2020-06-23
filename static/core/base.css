@@ -1,88 +1,206 @@
-body{
-    font-family: Arial;
-    color: #000000;
-}
-
-.text-size-1{
-    font-size: 4rem;
-    font-weight: bold;
-    line-height: 4.3rem;
-
-}
-
-.text-size-2{
-    font-size: 2.5rem;
-}
-
-.subtext-size-1{
-    font-size: 1.2rem;
-}
-
-.subtext-size-2{
-    font-size: 1rem;
-}
-
-.gray-text{
-    color: #818182;
-}
-
 .container-full {
     /*max-width: 1400px;*/
     margin: auto;
     float: none;
-    background: #f7fcff;
+    background-color: #ffffff;
     color: #1a1a1a;
     position: relative;
     border-radius: 4px;
-    box-shadow: 2px 10px 20px 24px rgba(0,0,0,0.03);
+    box-shadow: 2px 10px 20px 24px rgba(0, 0, 0, 0.03);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+}
+
+.text-size-1 {
+    font-size: 82px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.98;
+    letter-spacing: normal;
+    color: #2b2b2b;
+
+}
+
+.text-size-2 {
+    font-size: 48px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #020202;
+}
+
+.subtext-size-1 {
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.subtext-size-2 {
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    color: #818182;
+}
+
+.subtext-size-3{
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #818182;
 }
 
 .btn-info {
-  font-size: 13px;
-  color: rgba(91, 192, 222, 0.75);
-  letter-spacing: 1px;
-  line-height: 15px;
-  border: 2px solid rgba(91, 192, 222, 0.75);
-  border-radius: 40px;
-  background: transparent;
-  transition: all 0.3s ease 0s;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(91, 192, 222, 0.75);
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #0086b4;
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
 }
 
 .btn-info:hover {
-  color: #FFF;
-  background: rgba(91, 192, 222, 0.75);
-  border: 2px solid rgba(91, 192, 222, 0.75);
+    color: #FFF;
+    background: #0086b4;
+    border: 2px solid #0086b4;
 }
 
 .btn-info-inverse {
-  font-size: 13px;
-  color: #FFF;
-  letter-spacing: 1px;
-  line-height: 15px;
-  border: 2px solid rgba(91, 192, 222, 0.75);
-  border-radius: 40px;
-  background: rgba(91, 192, 222, 0.75);
-  transition: all 0.3s ease 0s;
+    font-size: 16px;
+    color: #FFF;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #0086b4;
+    border-radius: 40px;
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    background-color: #0086b4;
+    transition: all 0.3s ease 0s;
 }
 
 .btn-info-inverse:hover {
-  color: rgba(91, 192, 222, 0.75);
-  background: #FFF;
-  border: 2px solid rgba(91, 192, 222, 0.75);
+    color: #0086b4;
+    background: #FFF;
+    border: 2px solid #0086b4;
 }
 
-.first-section{
+.first-section {
 
 }
 
-.second-section{
+.second-section {
     margin-top: 15rem;
 }
 
-.third-section{
-
+.padding-second-section{
+    padding: 0 110px;
 }
 
-.card-guaranties{
+.third-section {
+    margin-top: 150px;
+}
+
+.fourth-section{
+    margin-top: 160px;
+}
+
+.card-guaranties {
     background-color: #2b2b2b;
+    width: 350px;
+    height: 250px;
+}
+
+.card-guaranties > p{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #f6f6f6;
+}
+
+.team-card-title{
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2b2b2b;
+}
+
+.team-card-text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.team-card{
+    border: none;
+}
+
+.team-card > .card-body > ul{
+    padding-left: 15px;
+}
+
+.team-card > .card-body{
+    padding: 10px;
+}
+
+.open-source-card-text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.open-source-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.open-source-card-foot-page{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
 }

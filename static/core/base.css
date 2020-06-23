@@ -1,0 +1,88 @@
+body{
+    font-family: Arial;
+    color: #000000;
+}
+
+.text-size-1{
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 4.3rem;
+
+}
+
+.text-size-2{
+    font-size: 2.5rem;
+}
+
+.subtext-size-1{
+    font-size: 1.2rem;
+}
+
+.subtext-size-2{
+    font-size: 1rem;
+}
+
+.gray-text{
+    color: #818182;
+}
+
+.container-full {
+    /*max-width: 1400px;*/
+    margin: auto;
+    float: none;
+    background: #f7fcff;
+    color: #1a1a1a;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 2px 10px 20px 24px rgba(0,0,0,0.03);
+}
+
+.btn-info {
+  font-size: 13px;
+  color: rgba(91, 192, 222, 0.75);
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid rgba(91, 192, 222, 0.75);
+  border-radius: 40px;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-info:hover {
+  color: #FFF;
+  background: rgba(91, 192, 222, 0.75);
+  border: 2px solid rgba(91, 192, 222, 0.75);
+}
+
+.btn-info-inverse {
+  font-size: 13px;
+  color: #FFF;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid rgba(91, 192, 222, 0.75);
+  border-radius: 40px;
+  background: rgba(91, 192, 222, 0.75);
+  transition: all 0.3s ease 0s;
+}
+
+.btn-info-inverse:hover {
+  color: rgba(91, 192, 222, 0.75);
+  background: #FFF;
+  border: 2px solid rgba(91, 192, 222, 0.75);
+}
+
+.first-section{
+
+}
+
+.second-section{
+    margin-top: 15rem;
+}
+
+.third-section{
+
+}
+
+.card-guaranties{
+    background-color: #2b2b2b;
+}

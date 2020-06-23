@@ -12,231 +12,634 @@
             <i>To create the most engaging eSports experience to ever hit the poker market.</i>
             <hr style="max-width: 645px"/>
         </center> #}
-        <center>
-            <br/><br/><br/>
-            <h2>Monadical is a full-stack development consultancy.</h2>
-            <b>est. 2016. Medellín, Montréal, NYC.</b>
-            
-            <br/><br/><br/>
-            
-            <b style="font-size: 1.2em">
-                Our <a href="{{PAGES.team.url}}#main">fully-remote team</a> of engineers provide work on a variety of tasks,<br/>
-                from <a href="{{PAGES.projects.url}}#main">shipping major new product releases</a>,
-                <a href="{{PAGES.projects.url}}#main">growing existing projects</a>, and
-                <a href="{{PAGES.projects.url}}#main">refactoring gnarly codebases</a>,<br/>
-                to <a href="{{PAGES.projects.url}}#main">designing custom data pipelines</a>,
-                <a href="{{PAGES.projects.url}}#open-source">providing security review</a>, 
-                <a href="{{PAGES.projects.url}}#open-source">building devops infrastructure</a>,
-                and <a href="{{PAGES.projects.url}}#open-source">more</a>...
-            </b>
-            <br/><br/>
-        </center>
-        <div class="row container__steps">
-            <div class="container__step col-md-4 text-center">
-                <h2 class="icon"><img src="static/product-management.png" height="180px"></h2>
-                <h2>Product Management</h2>
-                <p>
-                    Monadical can work as a self-directed unit to deliver a full product,
-                    or we can integrate into an existing team to assist with management, engineering, &amp; operations.
-                </p>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <h2 class="icon"><img src="static/full-stack.png" height="180px"></h2>
-                <h2>Full-Stack Web Development</h2>
-                <p>
-                    With over 36 years of development and operations experience, 
-                    we're comfortable building, scaling, and managing remote
-                    teams and complex software.
-                </p> 
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <h2 class="icon"><img src="static/ops.png" height="180px"></h2>
-                <h2>Ops, Data Science, Security</h2>
-                <p>
-                    We go beyond app-building and provide full solutions,
-                    including ops setup, data science, and lifecycle duties
-                    like refactoring, security review, and documentation.
-                </p>
-            </div>
-        </div>
-
-        
-        <center style="overflow: hidden">
-            <br/>
-            <b>
-                Have a quick question?
-                You can chat with us via <a href="{{PAGES.about.url}}#contact">email</a> or <a href="{{PAGES.about.url}}#contact">phone call</a>. You can also find us on <a href="{{SOCIAL.Twitter.url}}">Twitter</a>.
-            </b>
-            <br/><br/><br/><br/>
+{#        <center>#}
+{#            <br/><br/><br/>#}
+{#            <h2>Monadical is a full-stack development consultancy.</h2>#}
+{#            <b>est. 2016. Medellín, Montréal, NYC.</b>#}
+{#            #}
+{#            <br/><br/><br/>#}
+{#            #}
+{#            <b style="font-size: 1.2em">#}
+{#                Our <a href="{{PAGES.team.url}}#main">fully-remote team</a> of engineers provide work on a variety of tasks,<br/>#}
+{#                from <a href="{{PAGES.projects.url}}#main">shipping major new product releases</a>,#}
+{#                <a href="{{PAGES.projects.url}}#main">growing existing projects</a>, and#}
+{#                <a href="{{PAGES.projects.url}}#main">refactoring gnarly codebases</a>,<br/>#}
+{#                to <a href="{{PAGES.projects.url}}#main">designing custom data pipelines</a>,#}
+{#                <a href="{{PAGES.projects.url}}#open-source">providing security review</a>, #}
+{#                <a href="{{PAGES.projects.url}}#open-source">building devops infrastructure</a>,#}
+{#                and <a href="{{PAGES.projects.url}}#open-source">more</a>...#}
+{#            </b>#}
+{#            <br/><br/>#}
+{#        </center>#}
+{#        <div class="row container__steps">#}
+{#            <div class="container__step col-md-4 text-center">#}
+{#                <h2 class="icon"><img src="static/product-management.png" height="180px"></h2>#}
+{#                <h2>Product Management</h2>#}
+{#                <p>#}
+{#                    Monadical can work as a self-directed unit to deliver a full product,#}
+{#                    or we can integrate into an existing team to assist with management, engineering, &amp; operations.#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="container__step col-md-4 text-center">#}
+{#                <h2 class="icon"><img src="static/full-stack.png" height="180px"></h2>#}
+{#                <h2>Full-Stack Web Development</h2>#}
+{#                <p>#}
+{#                    With over 36 years of development and operations experience, #}
+{#                    we're comfortable building, scaling, and managing remote#}
+{#                    teams and complex software.#}
+{#                </p> #}
+{#            </div>#}
+{#            <div class="container__step col-md-4 text-center">#}
+{#                <h2 class="icon"><img src="static/ops.png" height="180px"></h2>#}
+{#                <h2>Ops, Data Science, Security</h2>#}
+{#                <p>#}
+{#                    We go beyond app-building and provide full solutions,#}
+{#                    including ops setup, data science, and lifecycle duties#}
+{#                    like refactoring, security review, and documentation.#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        #}
+{#        <center style="overflow: hidden">#}
+{#            <br/>#}
+{#            <b>#}
+{#                Have a quick question?#}
+{#                You can chat with us via <a href="{{PAGES.about.url}}#contact">email</a> or <a href="{{PAGES.about.url}}#contact">phone call</a>. You can also find us on <a href="{{SOCIAL.Twitter.url}}">Twitter</a>.#}
+{#            </b>#}
+{#            <br/><br/><br/><br/>#}
             {# <canvas class="animated-color-grid" height="20"></canvas> #}
-            <div id="waves"></div>
+{#            <div id="waves"></div>#}
+{##}
+{#            <div class="alert alert-success" style="color: #1a1a1a">#}
+{#                <br/><br/><br/><br/>#}
+{#                <h2>We specialize in full-stack web development and custom software solutions.</h2>#}
+{#                <br/>#}
+{#                <b style="line-height: 1.8">#}
+{#                    We're comfortable learning and working with a <a href="{{PAGES.projects.url}}#tags">wide range</a> of tech stacks, scopes, and project requirements.#}
+{#                    <br/><br/>#}
+{#                </b>#}
+{#                <br/>#}
+{#                <a href="{{PAGES.projects.url}}#tags">#}
+{#                    <span class="tag tag-industry" style="color: lightblue">desktop &amp; mobile web</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">native</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">data science</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">dev-ops</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">security</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">game theory</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">networking</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">digital preservation</span> &nbsp; &nbsp;#}
+{#                    <span class="tag tag-industry" style="color: lightblue">marketing</span>#}
+{#                </a>#}
+{#                <br/><br/><br/>#}
+{#                <b style="line-height: 1.8">#}
+{#                    We can also help with other business lifecycle needs, from intial legal and accounting setup, to product growth, marketing, and support.#}
+{#                    <br/><br/>#}
+{#                    We have years of experience launching and growing startups of our own, and we love using <br/>#}
+{#                    that knowledge to help our clients cross any hurdles they might face. At the end of the day, <br/>#}
+{#                    we want our clients to succeed, and we're willing to help with everything needed to get them there.#}
+{#                </b>#}
+{#                <br/><br/><br/>#}
+{#                #}
+{#                <img src="static/python.png" style="height: 150px; opacity: 0.6; margin-right: 15px"/>#}
+{#                <img src="static/javascript.png" style="height: 150px; opacity: 0.6; margin-left: 15px; margin-right: 15px"/>#}
+{#                <img src="static/django.png" style="height: 150px; opacity: 0.6; margin-left: 15px; margin-right: 15px"/>#}
+{#                <img src="static/react.png" style="height: 150px; opacity: 0.6; margin-left: 15px; margin-right: 15px"/>#}
+{#                <img src="static/ethereum.png" style="height: 150px; opacity: 0.6; margin-left: 15px"/>#}
+{#                <br/><br/><br/>#}
+{#                <b>Check out the <a href="{{PAGES.projects.url}}#main">projects page</a> to get a feel for the types of projects we've worked on...</b>#}
+{#                <br/><br/>#}
+{#                <br/><br/><br/>#}
+{#            </div>#}
+{#            <br/><br/><br/>#}
+{#            <br/><br>#}
+{#            <h2>#}
+{#                <img src="static/octopus.png" class="octopus">&nbsp; &nbsp;#}
+{#                Here are some of the things we care about.&nbsp; &nbsp;#}
+{#                <img src="static/octopus.png" class="octopus">#}
+{#            </h2>#}
+{#            <br/><br/>#}
+{#            <b style="font-size: 1.2em; line-height: 1.8">#}
+{#                Hiring <a href="{{PAGES.team.url}}#join">curious people</a> who love to learn, communicating <a href="https://docs.oddslingers.com/s/principles-handbook">effectively &amp;  transparently</a>, <br/>#}
+{#                practicing <a href="https://monadical.com/posts/functional-declarative-animations.html">good design</a>,#}
+{#                contributing back to the <a href="{{PAGES.projects.url}}#open-source">open-source</a> community, and <a href="https://github.com/Monadical-SAS/ArchiveBox">keeping information accessible</a>.#}
+{#            </b>#}
+{#            <br/><br/><br/><br/>#}
+{#            <b>Check out some of our previous <a href="{{PAGES.projects.url}}#main">projects</a> or our <a href="{{PAGES.team.url}}">team page</a> to learn more about our company culture.#}
+{#            <br/><br/><br/>#}
+{#            <br/><br/><br/>#}
+{#            <div class="alert alert-success" style="background-color: rgba(96, 214, 43, 0.08);margin-bottom: -2px">#}
+{#                <div class="container">#}
+{#                    <br/><br/><br/>#}
+{#                    <div class="row" style="max-width: 96%; color: #1a1a1a">#}
+{#                        <div class="col-md-12">#}
+{#                            <h2 style="color: #1a1a1a">#}
+{#                                We don't just ship features, we build projects that outlast us. &nbsp;#}
+{#                                <br/>#}
+{#                            </h2>#}
+{#                            <br/>#}
+{#                            <b>#}
+{#                                We're commited to providing a quality experience for both the end users#}
+{#                                <b style="font-size: 1em; text-decoration: underline">and</b><br/>#}
+{#                                the developers that end up inheriting and extending our projects years in the future.#}
+{#                            </b>#}
+{#                            <br/><br/>#}
+{#                        </div>#}
+{#                        <div class="col-md-6">#}
+{#                            <br/>#}
+{#                            <img src="static/quality.png" style="height: 180px; opacity: 0.5; margin-right: 10px"/>#}
+{#                            <img src="static/docs.png" style="height: 200px; opacity: 0.7; margin-left: 10px"/>#}
+{#                            <br/><br/>#}
+{#                                We ship well-tested, beautifully-documented#}
+{#                                codebases with complete deployement, growth, and maintenance stories.<br/><br/>#}
+{#                                You'll never be left in the dark wondering how to deploy, maintain, or support your project.#}
+{#                                <br/><br/>#}
+{#                        </div>#}
+{#                        <div class="col-md-6">#}
+{#                            <br/>#}
+{#                            <img src="static/refactoring.png" style="height: 160px; opacity: 0.6; margin-left: 40px"/>#}
+{#                            <img src="static/support.png" style="height: 180px; opacity: 0.6; margin-top: 20px; margin-left: 30px"/>#}
+{#                            <br/><br/>#}
+{#                                We stand behind our code and are willing to provide long-term support, #}
+{#                                refactoring, and security reviews.<br/><br/>#}
+{#                                Without that guarantee, unsupported code quickly becomes dead code and ends up costing more down the road.#}
+{#                                <br/>#}
+{#                                <br/>#}
+{#                        </div>#}
+{#                        <div class="col-md-12">#}
+{#                            <br/><br/>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="green-squares-static"></div>#}
+{##}
+{#            <br/><br/>#}
+{#            <a id="consulting"><br/></a>#}
+{#            <br/><br/>#}
+{#            <h2>Interested in working with us?&nbsp;</h2><br/>#}
+{#            <h4 style="color: #555; line-height: 1.8">#}
+{#                Initial consultations are free, no surprise bills.&nbsp;#}
+{#            </h4>#}
+{#            <b>⚡️ &nbsp; We ramp up fast and can prototype MVPs within days of taking on new projects. &nbsp; ⚡️</b>#}
+{#            <br/><br/>#}
+{#            <a href="{{PAGES.about.url}}#contact" class="btn beta-btn btn-shadow btn-success">#}
+{#                <span style="color:black; opacity: 0.3"><i class="fa fa-phone"></i></span>#}
+{#                &nbsp; &nbsp;#}
+{#                <span class="break-contact" style="font-size: 1.1em">Contact us to get a free quote</span>#}
+{#                &nbsp;&nbsp;#}
+{#                <span style="color:black; opacity: 0.3"><i class="fa fa-comments"></i></span>#}
+{#            </a>&nbsp;&nbsp;#}
+{#            <br/><br/>#}
+{#            <div class="container">#}
+{#                <b>#}
+{#                    After you reach out to us, we'll work together to provide a proposal<br/>#}
+{#                    with an estimated timeline and budget based on project requirements.#}
+{#                    <br/><br/>#}
+{#                    When all parties are satisfied with the proposal, we provide a straightforward,#}
+{#                    customizable contract with weekly or monthly invoicing, and regular check-in calls with guaranteed response times#}
+{#                    once development work begins.<br/>#}
+{#                </b>#}
+{#                <br/><br/>#}
+{#            </div>#}
+{#            <small>(We're comfortable working with remote clients all over the world. Most of our projects are mid/long-term projects lasting >4 weeks.)</small>#}
+{#            <br/><br/><br/><br/>#}
+{#            <div style="background-color: rgba(96, 214, 43, 0.08); position: relative">#}
+{#                <div id="bubbles"></div>#}
+{#                <span style="position: relative; z-index: 20">#}
+                    {# <img src="static/book.png" style="height: 200px; filter: invert(0.3); margin: 20px 0px;"> #}
+                    {# <h2>Want to learn more?</h2> #}
+{#                    <br/><br/><br/>#}
+{#                    <b>#}
+{#                    <b>Follow our newsletter and social feeds to get updates and announcements.</b>#}
+{#                    <br/><br/><br/>#}
+{#                    <span class="library">#}
+{#                        <a href="{{PAGES.blog.url}}#newsletter" class="btn btn-shadow btn-success btn-dark">#}
+{#                            <i class="fa fa-envelope"></i> Newsletter#}
+{#                        </a>#}
+{#                        &nbsp; #}
+{#                        <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">#}
+{#                            <i class="fa fa-github"></i> Github#}
+{#                        </a>#}
+{#                        &nbsp; #}
+{#                        <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">#}
+{#                            <i class="fa fa-twitter"></i> Twitter#}
+{#                        </a>#}
+{#                        &nbsp; #}
+{#                        <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">#}
+{#                            <i class="fa fa-linkedin"></i> LinkedIn#}
+{#                        </a>#}
+{#                    </span>#}
+{#                    <br/><br/><br/>#}
+{#                    Or send us an email at <a href="mailto:hello@monadical.com">hello@monadical.com</a> if you want to say hi!#}
+{#                    </b>#}
+{#                    <br/><br/><br/><br/>#}
+{#                </span>#}
+{#            </div>#}
+{#        </center>#}
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 first-section" style="margin-top: 3rem">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p class="text-size-1">
+                                We build software that outlast us
+                            </p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 2rem">
+                            <p class="gray-text subtext-size-1">
+                                You'll never be left in the dark wondering how
+                                to deploy, maintain, or support your project
+                            </p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <a href="" class="btn btn-info-inverse">
+                                GET A TECHNICAL REVIEW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 second-section text-center">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0 10rem;">
+                            <p class="text-size-2">
+                                Monadical revolutionizes how software teams operate
+                            </p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 2rem">
+                            <p class="gray-text subtext-size-2">
+                                We're committed to providing a high quality experience for both the end-user and developers that
+                                end up inheriting and extending our projects years in the future
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 third-section text-center">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p class="text-size-2">
+                                Our quality guarantee
+                            </p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 2rem">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="card card-body card-guaranties">
+                                        You will get well-tested, beautifully-documented
+                                        codebase with complete deployment, growth,
+                                        and maintenance stories
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="card card-body card-guaranties">
+                                        You will get long-term support, refactoring,
+                                        and security reviews. We stand behind our code
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="card card-body card-guaranties">
+                                        Without that guarantee, unsupported code
+                                        quickly becomes dead code and ends up costing
+                                        more down the road
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 fourth-section">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0 10rem;">
+                            <p class="text-size-2">
+                                monadical is a full-stack development consultancy
+                            </p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 2rem">
+                            <p class="gray-text subtext-size-2">
+                                We specialize in full-stack web development, custom
+                                software solutions and software consulting
+                            </p>
+                            <p class="gray-text subtext-size-3">
+                                Our team of engineers provide work on a variety of
+                                tasks, from shipping major new product releases,
+                                growing existing projects, and refactoring codebases,
+                                to designing custom data pipelines, provinding
+                                security review, building devops infrastructure,
+                                and more...
+                            </p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 2rem">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Work with the world's most skilled developers
+                                            </p>
+                                            <p class="card-text">
+                                                <ul>
+                                                    <li>
+                                                        We are remote since 2016
+                                                        - we are not limited to
+                                                        30-mile radius talent
+                                                    </li>
+                                                    <li>
+                                                        Working with us is mor
+                                                        efficient than hiring in-house
+                                                    </li>
+                                                    <li>
+                                                        We write long-lasting,
+                                                        maintainable, reusable, and testable code
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Our awesome team = your awesome team
+                                            </p>
+                                            <p class="card-text">
+                                                <ul>
+                                                    <li>
+                                                        Keep control over the progress
+                                                        of your project
+                                                    </li>
+                                                    <li>
+                                                        Your team is laser-focused
+                                                        on your project
+                                                    </li>
+                                                    <li>
+                                                        Quickly increase or
+                                                        decrease capacity
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Have a comuple transparency & security
+                                                over your IP
+                                            </p>
+                                            <p class="card-text">
+                                                <ul>
+                                                    <li>
+                                                        Have a clear project
+                                                        overview at any time
+                                                    </li>
+                                                    <li>
+                                                        Communicate directly with
+                                                        your team, no chatbots
+                                                    </li>
+                                                    <li>
+                                                        Access your code any time
+                                                        from dedicated dashboard
+                                                        and own your IP
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Flexible Contracts
+                                            </p>
+                                            <p class="card-text">
+                                                <ul>
+                                                    <li>
+                                                        Work on a month-to-month
+                                                        basis
+                                                    </li>
+                                                    <li>
+                                                        No long-term contracts
+                                                    </li>
+                                                    <li>
+                                                        Pay for what you need
+                                                        when you need it
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <a href="" class="btn btn-info-inverse">
+                                GET TECHNICAL PROJECT REVIEW
+                            </a>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <p class="text-size-2">Our team and our projects have been features in:</p>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            buttons
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <p class="text-size-2">
+                                        We love open-source projects
+                                    </p>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <p>
+                                        Check our most successful open-source project with active users in 100+ countries.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Novel library for fast, declarative
+                                                animations in JavaScript.
+                                            </p>
+                                            <div class="card-post-image">
 
-            <div class="alert alert-success" style="color: #1a1a1a">
-                <br/><br/><br/><br/>
-                <h2>We specialize in full-stack web development and custom software solutions.</h2>
-                <br/>
-                <b style="line-height: 1.8">
-                    We're comfortable learning and working with a <a href="{{PAGES.projects.url}}#tags">wide range</a> of tech stacks, scopes, and project requirements.
-                    <br/><br/>
-                </b>
-                <br/>
-                <a href="{{PAGES.projects.url}}#tags">
-                    <span class="tag tag-industry" style="color: lightblue">desktop &amp; mobile web</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">native</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">data science</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">dev-ops</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">security</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">game theory</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">networking</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">digital preservation</span> &nbsp; &nbsp;
-                    <span class="tag tag-industry" style="color: lightblue">marketing</span>
-                </a>
-                <br/><br/><br/>
-                <b style="line-height: 1.8">
-                    We can also help with other business lifecycle needs, from intial legal and accounting setup, to product growth, marketing, and support.
-                    <br/><br/>
-                    We have years of experience launching and growing startups of our own, and we love using <br/>
-                    that knowledge to help our clients cross any hurdles they might face. At the end of the day, <br/>
-                    we want our clients to succeed, and we're willing to help with everything needed to get them there.
-                </b>
-                <br/><br/><br/>
-                
-                <img src="static/python.png" style="height: 150px; opacity: 0.6; margin-right: 15px"/>
-                <img src="static/javascript.png" style="height: 150px; opacity: 0.6; margin-left: 15px; margin-right: 15px"/>
-                <img src="static/django.png" style="height: 150px; opacity: 0.6; margin-left: 15px; margin-right: 15px"/>
-                <img src="static/react.png" style="height: 150px; opacity: 0.6; margin-left: 15px; margin-right: 15px"/>
-                <img src="static/ethereum.png" style="height: 150px; opacity: 0.6; margin-left: 15px"/>
-                <br/><br/><br/>
-                <b>Check out the <a href="{{PAGES.projects.url}}#main">projects page</a> to get a feel for the types of projects we've worked on...</b>
-                <br/><br/>
-                <br/><br/><br/>
-            </div>
-            <br/><br/><br/>
-            <br/><br>
-            <h2>
-                <img src="static/octopus.png" class="octopus">&nbsp; &nbsp;
-                Here are some of the things we care about.&nbsp; &nbsp;
-                <img src="static/octopus.png" class="octopus">
-            </h2>
-            <br/><br/>
-            <b style="font-size: 1.2em; line-height: 1.8">
-                Hiring <a href="{{PAGES.team.url}}#join">curious people</a> who love to learn, communicating <a href="https://docs.oddslingers.com/s/principles-handbook">effectively &amp;  transparently</a>, <br/>
-                practicing <a href="https://monadical.com/posts/functional-declarative-animations.html">good design</a>,
-                contributing back to the <a href="{{PAGES.projects.url}}#open-source">open-source</a> community, and <a href="https://github.com/Monadical-SAS/ArchiveBox">keeping information accessible</a>.
-            </b>
-            <br/><br/><br/><br/>
-            <b>Check out some of our previous <a href="{{PAGES.projects.url}}#main">projects</a> or our <a href="{{PAGES.team.url}}">team page</a> to learn more about our company culture.
-            <br/><br/><br/>
-            <br/><br/><br/>
-            <div class="alert alert-success" style="background-color: rgba(96, 214, 43, 0.08);margin-bottom: -2px">
-                <div class="container">
-                    <br/><br/><br/>
-                    <div class="row" style="max-width: 96%; color: #1a1a1a">
-                        <div class="col-md-12">
-                            <h2 style="color: #1a1a1a">
-                                We don't just ship features, we build projects that outlast us. &nbsp;
-                                <br/>
-                            </h2>
-                            <br/>
-                            <b>
-                                We're commited to providing a quality experience for both the end users
-                                <b style="font-size: 1em; text-decoration: underline">and</b><br/>
-                                the developers that end up inheriting and extending our projects years in the future.
-                            </b>
-                            <br/><br/>
+                                            </div>
+                                            <p class="card-text">
+                                                Define animations declaratively,
+                                                trigger them using pure redux actions.
+                                                It supports complex interactive animations,
+                                                time-reversal, CSS animations, and can
+                                                plug into any pure render layer like
+                                                React, Inferno, or Three.js.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="#">
+                                                       Github
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="#">
+                                                        Examples
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <p>
+                                                        Handles > 5,000 animations
+                                                        @ 100FPS Perfect for dataviz,
+                                                        games, & interactivity
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Freem real-time, Django + React
+                                                powered online poker platform.
+                                            </p>
+                                            <div class="card-post-image">
+
+                                            </div>
+                                            <p class="card-text">
+                                                Real-time gaming platform powered
+                                                by HTML5 + React/Redux and Django
+                                                Channels WebSockets works on desktop,
+                                                mobile, and tablets without downloads
+                                                or plugins, Built, launched, and scaled
+                                                over 3 years, with 6 full-time people
+                                                and > 50k LOC.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <a href="#">
+                                                       PLAY POKER FOR FREE, NO ADS
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <p>
+                                                        Active users in 100+ countries
+                                                        5+ million hands played to date
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                                    <div class="card card-small">
+                                        <div class="card-post-image">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-title">
+                                                Self-hosted internet archive powered
+                                                by Chrome headless and wget.
+                                            </p>
+                                            <div class="card-post-image">
+
+                                            </div>
+                                            <p class="card-text">
+                                                Import links from browser history /
+                                                bookmarks / text lists, and outputs
+                                                archived HTML, JS, PDFs, media, and
+                                                more. Automatically import and snapshot
+                                                browsing history, bookmarks, or other
+                                                feeds in formats that will last 50+
+                                                years.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="#">
+                                                       Github
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="#">
+                                                       Website
+                                                    </a>
+                                                </div>
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <p>
+                                                        Used by thousands of people
+                                                        30+ contributors and an active
+                                                        community
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <br/>
-                            <img src="static/quality.png" style="height: 180px; opacity: 0.5; margin-right: 10px"/>
-                            <img src="static/docs.png" style="height: 200px; opacity: 0.7; margin-left: 10px"/>
-                            <br/><br/>
-                                We ship well-tested, beautifully-documented
-                                codebases with complete deployement, growth, and maintenance stories.<br/><br/>
-                                You'll never be left in the dark wondering how to deploy, maintain, or support your project.
-                                <br/><br/>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <p>What our client say</p>
                         </div>
-                        <div class="col-md-6">
-                            <br/>
-                            <img src="static/refactoring.png" style="height: 160px; opacity: 0.6; margin-left: 40px"/>
-                            <img src="static/support.png" style="height: 180px; opacity: 0.6; margin-top: 20px; margin-left: 30px"/>
-                            <br/><br/>
-                                We stand behind our code and are willing to provide long-term support, 
-                                refactoring, and security reviews.<br/><br/>
-                                Without that guarantee, unsupported code quickly becomes dead code and ends up costing more down the road.
-                                <br/>
-                                <br/>
-                        </div>
-                        <div class="col-md-12">
-                            <br/><br/>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="card card-small">
+                                        <div class="row">
+                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                <div class="card-profile-image">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <p>John Doe</p>
+                                                    </div>
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <p>CEO, PrettyDopeDesigns</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                 <img src="" width="60" height="46">
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                "We were looking for a reliable
+                                                software team  and we have found
+                                                a long-term, high quality partner
+                                                we can count on and who cares in
+                                                Monadical.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    VIDEO
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="green-squares-static"></div>
-
-            <br/><br/>
-            <a id="consulting"><br/></a>
-            <br/><br/>
-            <h2>Interested in working with us?&nbsp;</h2><br/>
-            <h4 style="color: #555; line-height: 1.8">
-                Initial consultations are free, no surprise bills.&nbsp;
-            </h4>
-            <b>⚡️ &nbsp; We ramp up fast and can prototype MVPs within days of taking on new projects. &nbsp; ⚡️</b>
-            <br/><br/>
-            <a href="{{PAGES.about.url}}#contact" class="btn beta-btn btn-shadow btn-success">
-                <span style="color:black; opacity: 0.3"><i class="fa fa-phone"></i></span>
-                &nbsp; &nbsp;
-                <span class="break-contact" style="font-size: 1.1em">Contact us to get a free quote</span>
-                &nbsp;&nbsp;
-                <span style="color:black; opacity: 0.3"><i class="fa fa-comments"></i></span>
-            </a>&nbsp;&nbsp;
-            <br/><br/>
-            <div class="container">
-                <b>
-                    After you reach out to us, we'll work together to provide a proposal<br/>
-                    with an estimated timeline and budget based on project requirements.
-                    <br/><br/>
-                    When all parties are satisfied with the proposal, we provide a straightforward,
-                    customizable contract with weekly or monthly invoicing, and regular check-in calls with guaranteed response times
-                    once development work begins.<br/>
-                </b>
-                <br/><br/>
-            </div>
-            <small>(We're comfortable working with remote clients all over the world. Most of our projects are mid/long-term projects lasting >4 weeks.)</small>
-            <br/><br/><br/><br/>
-            <div style="background-color: rgba(96, 214, 43, 0.08); position: relative">
-                <div id="bubbles"></div>
-                <span style="position: relative; z-index: 20">
-                    {# <img src="static/book.png" style="height: 200px; filter: invert(0.3); margin: 20px 0px;"> #}
-                    {# <h2>Want to learn more?</h2> #}
-                    <br/><br/><br/>
-                    <b>
-                    <b>Follow our newsletter and social feeds to get updates and announcements.</b>
-                    <br/><br/><br/>
-                    <span class="library">
-                        <a href="{{PAGES.blog.url}}#newsletter" class="btn btn-shadow btn-success btn-dark">
-                            <i class="fa fa-envelope"></i> Newsletter
-                        </a>
-                        &nbsp; 
-                        <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                            <i class="fa fa-github"></i> Github
-                        </a>
-                        &nbsp; 
-                        <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                            <i class="fa fa-twitter"></i> Twitter
-                        </a>
-                        &nbsp; 
-                        <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                            <i class="fa fa-linkedin"></i> LinkedIn
-                        </a>
-                    </span>
-                    <br/><br/><br/>
-                    Or send us an email at <a href="mailto:hello@monadical.com">hello@monadical.com</a> if you want to say hi!
-                    </b>
-                    <br/><br/><br/><br/>
-                </span>
-            </div>
-        </center>
+        </div>
     </div>
 {% endblock %}
 

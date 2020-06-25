@@ -36,6 +36,17 @@ body {
     color: #020202;
 }
 
+.text-size-3{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+}
+
 .subtext-size-1 {
     font-size: 24px;
     font-weight: normal;
@@ -71,7 +82,7 @@ body {
 .btn-info {
     font-size: 16px;
     font-weight: bold;
-    color: rgba(91, 192, 222, 0.75);
+    color: #0086b4;
     letter-spacing: 1px;
     line-height: 15px;
     border: 2px solid #0086b4;
@@ -104,12 +115,49 @@ body {
     border: 2px solid #0086b4;
 }
 
+.btn-default {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b2b2b;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #2b2b2b;
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-default:hover {
+    color: #FFF;
+    background: #2b2b2b;
+    border: 2px solid #2b2b2b;
+}
+
+.btn-default-inverse {
+    font-size: 16px;
+    color: #FFF;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #2b2b2b;
+    border-radius: 40px;
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    background-color: #2b2b2b;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-default-inverse:hover {
+    color: #2b2b2b;
+    background: #FFF;
+    border: 2px solid #2b2b2b;
+}
+
+
 .first-section {
 
 }
 
 .second-section {
-    margin-top: 15rem;
+    margin-top: 311px;
 }
 
 .padding-second-section{
@@ -128,9 +176,10 @@ body {
     background-color: #2b2b2b;
     width: 350px;
     height: 250px;
+    box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
 }
 
-.card-guaranties > p{
+.card-guaranties-text {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -203,4 +252,39 @@ body {
     letter-spacing: normal;
     text-align: center;
     color: #2b2b2b;
+}
+
+.card-small{
+    box-shadow: 0 2px 6px 0 rgba(47, 83, 151, 0.1);
+    border: none;
+}
+
+.working-us-text{
+    margin-top: 60px;
+    margin-bottom: 150px;
+    padding: 0 260px;
+}
+
+.cube-img{
+    position: absolute;
+    top: 599px;
+    left: 0px;
+}
+
+.cube-img-right{
+    position: absolute;
+    top: 3149px;
+    right: 0px;
+}
+
+.tentacle-img-left{
+    position: absolute;
+    top: 2749px;
+    left: 0px;
+}
+
+.tentacle-img-right{
+    position: absolute;
+    top: 1722px;
+    right: 0px;
 }

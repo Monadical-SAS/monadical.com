@@ -314,3 +314,75 @@ a.bigger-size{
     letter-spacing: normal;
     color: #0086b4;
 }
+
+.octopus-img{
+    max-height: 681px;
+    max-width: 559px;
+}
+
+.documented-code-img{
+    max-height: 80px;
+    max-width: 80px
+}
+
+.security-review-img{
+    max-height: 63px;
+    max-width: 80px;
+}
+
+.dead-code-img{
+    max-height: 61px;
+    max-width: 80px
+}
+
+.card-reference{
+    min-height: 320px
+}
+
+div.card-reference > div.card-body{
+    padding-left: 40px
+}
+
+
+
+/* Basic properties */
+
+.margin-top-90{
+    margin-top: 90px;
+}
+
+.margin-top-150{
+    margin-top: 150px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+
+.margin-top-15{
+    margin-top: 15px;
+}
+
+.margin-top-60{
+    margin-top: 60px;
+}
+
+.margin-top-50{
+    margin-top: 50px;
+}
+
+.margin-top-35{
+    margin-top: 35px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
+.margin-bottom-50{
+    margin-bottom: 50px;
+}

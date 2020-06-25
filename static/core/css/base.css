@@ -43,7 +43,6 @@ body {
     font-style: normal;
     line-height: 1.25;
     letter-spacing: normal;
-    text-align: center;
     color: #2b2b2b;
 }
 
@@ -174,8 +173,8 @@ body {
 
 .card-guaranties {
     background-color: #2b2b2b;
-    width: 350px;
-    height: 250px;
+    min-width: 350px;
+    min-height: 250px;
     box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
 }
 
@@ -287,4 +286,31 @@ body {
     position: absolute;
     top: 1722px;
     right: 0px;
+}
+
+.card-open-source{
+    min-height: 630px;
+    min-width: 350px;
+}
+
+a.bigger-size{
+    font-size: 24px;
+}
+
+.card-clients-name{
+    font-size: 20px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2b2b2b;
+}
+
+.card-clients-position{
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #0086b4;
 }

@@ -411,7 +411,23 @@ footer .footer .row b {
 footer .footer .row .col {
     text-align: left;
 }
-.octopus-img{
+
+footer .footer .row.social a {
+    color: white;
+}
+
+footer .footer .row.social ul {
+    display: flex;
+}
+
+footer .footer .row.social li {
+    margin-right: 20px;
+}
+
+footer .footer hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}.octopus-img{
     max-height: 681px;
     max-width: 559px;
 }

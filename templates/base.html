@@ -40,25 +40,12 @@
                             />
                         </a>
                     {% endblock %}
-                    <ul class="navbar-nav navbar-left ">
+                    <ul class="navbar-nav navbar-left">
+                        {% for link in HeaderLinks %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Transparent Process</a>
+                            <a class="nav-link" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Monadical Principles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Case Studies & Open-Source</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
+                        {% endfor %}
                     </ul>
                     <a class="beta-btn nav-link" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
                         Get Technical Project Review
@@ -80,7 +67,7 @@
         <footer>
             {% block footerbefore %}
             {% endblock %}
-            <div class="container text-center footer">
+            <div class="container footer">
                 {% block footersocial %}
                 <div class="row">
                     <div class="col col-4">
@@ -129,8 +116,31 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
-
+                <div class="row social">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <hr>
                 <div class="row contact-row">

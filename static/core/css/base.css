@@ -1,0 +1,388 @@
+.container-full {
+    /*max-width: 1400px;*/
+    margin: auto;
+    float: none;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 2px 10px 20px 24px rgba(0, 0, 0, 0.03);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+}
+
+.text-size-1 {
+    font-size: 82px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.98;
+    letter-spacing: normal;
+    color: #2b2b2b;
+
+}
+
+.text-size-2 {
+    font-size: 48px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #020202;
+}
+
+.text-size-3{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #2b2b2b;
+}
+
+.subtext-size-1 {
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.subtext-size-2 {
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    color: #818182;
+}
+
+.subtext-size-3{
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #818182;
+}
+
+.btn-info {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0086b4;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #0086b4;
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-info:hover {
+    color: #FFF;
+    background: #0086b4;
+    border: 2px solid #0086b4;
+}
+
+.btn-info-inverse {
+    font-size: 16px;
+    color: #FFF;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #0086b4;
+    border-radius: 40px;
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    background-color: #0086b4;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-info-inverse:hover {
+    color: #0086b4;
+    background: #FFF;
+    border: 2px solid #0086b4;
+}
+
+.btn-default {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b2b2b;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #2b2b2b;
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-default:hover {
+    color: #FFF;
+    background: #2b2b2b;
+    border: 2px solid #2b2b2b;
+}
+
+.btn-default-inverse {
+    font-size: 16px;
+    color: #FFF;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 2px solid #2b2b2b;
+    border-radius: 40px;
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    background-color: #2b2b2b;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-default-inverse:hover {
+    color: #2b2b2b;
+    background: #FFF;
+    border: 2px solid #2b2b2b;
+}
+
+
+.first-section {
+
+}
+
+.second-section {
+    margin-top: 311px;
+}
+
+.padding-second-section{
+    padding: 0 110px;
+}
+
+.third-section {
+    margin-top: 150px;
+}
+
+.fourth-section{
+    margin-top: 160px;
+}
+
+.card-guaranties {
+    background-color: #2b2b2b;
+    min-width: 350px;
+    min-height: 250px;
+    box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
+}
+
+.card-guaranties-text {
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #f6f6f6;
+}
+
+.team-card-title{
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2b2b2b;
+}
+
+.team-card-text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.team-card{
+    border: none;
+}
+
+.team-card > .card-body > ul{
+    padding-left: 15px;
+}
+
+.team-card > .card-body{
+    padding: 10px;
+}
+
+.open-source-card-text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.open-source-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.open-source-card-foot-page{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.card-small{
+    box-shadow: 0 2px 6px 0 rgba(47, 83, 151, 0.1);
+    border: none;
+}
+
+.working-us-text{
+    margin-top: 60px;
+    margin-bottom: 150px;
+    padding: 0 260px;
+}
+
+.cube-img{
+    position: absolute;
+    top: 599px;
+    left: 0px;
+}
+
+.cube-img-right{
+    position: absolute;
+    top: 3149px;
+    right: 0px;
+}
+
+.tentacle-img-left{
+    position: absolute;
+    top: 2749px;
+    left: 0px;
+}
+
+.tentacle-img-right{
+    position: absolute;
+    top: 1722px;
+    right: 0px;
+}
+
+.card-open-source{
+    min-height: 630px;
+    min-width: 350px;
+}
+
+a.bigger-size{
+    font-size: 24px;
+}
+
+.card-clients-name{
+    font-size: 20px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #2b2b2b;
+}
+
+.card-clients-position{
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #0086b4;
+}
+
+.octopus-img{
+    max-height: 681px;
+    max-width: 559px;
+}
+
+.documented-code-img{
+    max-height: 80px;
+    max-width: 80px
+}
+
+.security-review-img{
+    max-height: 63px;
+    max-width: 80px;
+}
+
+.dead-code-img{
+    max-height: 61px;
+    max-width: 80px
+}
+
+.card-reference{
+    min-height: 320px
+}
+
+div.card-reference > div.card-body{
+    padding-left: 40px
+}
+
+
+
+/* Basic properties */
+
+.margin-top-90{
+    margin-top: 90px;
+}
+
+.margin-top-150{
+    margin-top: 150px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+
+.margin-top-15{
+    margin-top: 15px;
+}
+
+.margin-top-60{
+    margin-top: 60px;
+}
+
+.margin-top-50{
+    margin-top: 50px;
+}
+
+.margin-top-35{
+    margin-top: 35px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
+.margin-bottom-50{
+    margin-bottom: 50px;
+}

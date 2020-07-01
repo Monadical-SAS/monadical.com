@@ -8,11 +8,13 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
-        <link rel="stylesheet" href="/static/main.css">
+{#        <link rel="stylesheet" href="/static/main.css">#}
+        <link rel="stylesheet" href="/static/core/css/base.css">
 
         <link rel="canonical" href="https://{{SITE_DOMAIN}}{{request.path}}"/> 
 
@@ -22,73 +24,73 @@
     
     <body>
         {% block beforebody %}
-            <div id="particles-js"></div>
+{#            <div id="particles-js"></div>#}
             {# <div id="bubbles"></div> #}
         {% endblock %}
         
         {% block header %}
-        <header>
-            <a id="top"></a>
-
-            {% block headerbefore %}
-            {% endblock %}
-
-            <nav class="navbar navbar-expand-sm navbar-light">
-                <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{PAGES.index.url}}">
-                        {% block logo %}
-                            <center>
-                                <img src="/static/logo-black.png" id="brand-img"/>
-                            </center>
-                        {% endblock %}
-                        <h1 style="white-space: normal">
-                            Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span>
-                        </h1>
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav navbar-left ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES.index.url}}">{{PAGES.index.title}}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES.about.url}}">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES.team.url}}">{{PAGES.team.title}}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES.projects.url}}">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES.blog.url}}">{{PAGES.blog.title}}</a>
-                        </li>
-                    </ul>
-                        
-                    <h1 class="nav-item main-brand-link d-none d-sm-block {% block enableLogo %}{% endblock %}">
-                        {{ self.logo() }}
-                        <a href="{{PAGES.index.url}}">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
-                        <small><i class="fa fa-angle-double-right"></i>  {{ self.subtitle() }} <i class="fa fa-angle-double-left"></i></small>
-                    </h1>
-
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES.about.url}}#contact">How it works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="beta-btn nav-link btn btn-lg btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
-                                &nbsp;<span class="diamond" style="font-size: 24px;vertical-align: -3px;"><i class="fa fa-phone"></i></span>&nbsp;
-                                Free Quote
-                                &nbsp;
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+{#        <header>#}
+{#            <a id="top"></a>#}
+{##}
+{#            {% block headerbefore %}#}
+{#            {% endblock %}#}
+{##}
+{#            <nav class="navbar navbar-expand-sm navbar-light">#}
+{#                <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">#}
+{#                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">#}
+{#                        <span class="navbar-toggler-icon"></span>#}
+{#                    </button>#}
+{#                    <a class="navbar-brand" href="{{PAGES.index.url}}">#}
+{#                        {% block logo %}#}
+{#                            <center>#}
+{#                                <img src="/static/logo-black.png" id="brand-img"/>#}
+{#                            </center>#}
+{#                        {% endblock %}#}
+{#                        <h1 style="white-space: normal">#}
+{#                            Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span>#}
+{#                        </h1>#}
+{#                    </a>#}
+{#                </div>#}
+{#                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">#}
+{#                    <ul class="navbar-nav navbar-left ">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{PAGES.index.url}}">{{PAGES.index.title}}</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{PAGES.about.url}}">About</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{PAGES.team.url}}">{{PAGES.team.title}}</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{PAGES.projects.url}}">Projects</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{PAGES.blog.url}}">{{PAGES.blog.title}}</a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                        #}
+{#                    <h1 class="nav-item main-brand-link d-none d-sm-block {% block enableLogo %}{% endblock %}">#}
+{#                        {{ self.logo() }}#}
+{#                        <a href="{{PAGES.index.url}}">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>#}
+{#                        <small><i class="fa fa-angle-double-right"></i>  {{ self.subtitle() }} <i class="fa fa-angle-double-left"></i></small>#}
+{#                    </h1>#}
+{##}
+{#                    <ul class="navbar-nav navbar-right">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{{PAGES.about.url}}#contact">How it works</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="beta-btn nav-link btn btn-lg btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">#}
+{#                                &nbsp;<span class="diamond" style="font-size: 24px;vertical-align: -3px;"><i class="fa fa-phone"></i></span>&nbsp;#}
+{#                                Free Quote#}
+{#                                &nbsp;#}
+{#                            </a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </nav>#}
+{#        </header>#}
         {% endblock %}
         
 

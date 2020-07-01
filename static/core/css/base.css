@@ -2,16 +2,42 @@
     /*max-width: 1400px;*/
     margin: auto;
     float: none;
-    background-color: #ffffff;
     color: #1a1a1a;
     position: relative;
     border-radius: 4px;
-    box-shadow: 2px 10px 20px 24px rgba(0, 0, 0, 0.03);
+    /*box-shadow: 2px 10px 20px 24px rgba(0, 0, 0, 0.03);*/
 }
 
 body {
+    background-color: #ffffff;
     font-family: 'Lato', sans-serif;
     color: #000000;
+}
+
+header .collapse{
+    justify-content: space-between;
+}
+
+header .container .collapse {
+    border-bottom: 1px solid #2b2b2b;
+    padding-bottom: 12px;
+}
+
+header .container .nav-item .nav-link {
+    color: #2b2b2b;
+    font-family: Lato;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: right;
+    object-fit: contain;
+}
+
+header .container .nav-item a.nav-link:hover {
+    color: #0086b4;
 }
 
 .text-size-1 {
@@ -315,7 +341,93 @@ a.bigger-size{
     color: #0086b4;
 }
 
-.octopus-img{
+.beta-btn {
+    border-radius: 15px;
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    border: solid 1px #0086b4;
+    color: #2b2b2b;
+    font-family: Lato;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: normal;
+    object-fit: contain;
+    text-align: center;
+}
+
+.beta-btn:hover {
+    color: #0086b4;
+}
+
+footer {
+    background-color: #2b2b2b;
+}
+
+footer .footer .row ul {
+    list-style: none;
+    padding-inline-start: 10px;
+}
+
+footer .footer:first-child {
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+footer .footer hr {
+    background-color: rgba(246, 246, 246, 0.8);
+}
+
+footer .footer .row ul li {
+    object-fit: contain;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+footer .footer .row ul li > b {
+    font-size: 14px;
+}
+
+footer .footer .row ul li > a {
+    color: #0086b4;
+}
+
+footer .footer .row.contact-row ul li {
+    font-size: 16px;
+}
+
+footer .footer .row b {
+    font-weight: bold;
+    color: #f6f6f6;
+}
+
+footer .footer .row .col {
+    text-align: left;
+}
+
+footer .footer .row.social a {
+    color: white;
+}
+
+footer .footer .row.social ul {
+    display: flex;
+}
+
+footer .footer .row.social li {
+    margin-right: 20px;
+}
+
+footer .footer hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}.octopus-img{
     max-height: 681px;
     max-width: 559px;
 }

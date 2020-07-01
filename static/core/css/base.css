@@ -1,5 +1,7 @@
 .container-full {
     /*max-width: 1400px;*/
+    overflow: hidden;
+    padding-bottom: 150px;
     margin: auto;
     float: none;
     color: #1a1a1a;
@@ -58,7 +60,6 @@ header .container .nav-item a.nav-link:hover {
     font-style: normal;
     line-height: 1.29;
     letter-spacing: normal;
-    text-align: center;
     color: #020202;
 }
 
@@ -89,7 +90,6 @@ header .container .nav-item a.nav-link:hover {
     font-style: normal;
     line-height: 1.75;
     letter-spacing: normal;
-    text-align: center;
     color: #818182;
 }
 
@@ -102,6 +102,19 @@ header .container .nav-item a.nav-link:hover {
     letter-spacing: normal;
     text-align: center;
     color: #818182;
+}
+
+.title-card-size-1{
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+}
+
+.blue-text{
+    color: #0086b4;
 }
 
 .btn-info {
@@ -282,11 +295,16 @@ header .container .nav-item a.nav-link:hover {
 .card-small{
     box-shadow: 0 2px 6px 0 rgba(47, 83, 151, 0.1);
     border: none;
+    min-width: 350px;
+    min-height: 260px;
+}
+
+.card-title-padding{
+    padding: 40px 40px 0 40px;
 }
 
 .working-us-text{
     margin-top: 60px;
-    margin-bottom: 150px;
     padding: 0 260px;
 }
 
@@ -455,6 +473,21 @@ div.card-reference > div.card-body{
     padding-left: 40px
 }
 
+.card-table{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Basic properties */
@@ -465,6 +498,10 @@ div.card-reference > div.card-body{
 
 .margin-top-150{
     margin-top: 150px;
+}
+
+.margin-top-200{
+    margin-top: 200px;
 }
 
 .margin-top-20{
@@ -481,6 +518,10 @@ div.card-reference > div.card-body{
 
 .margin-top-60{
     margin-top: 60px;
+}
+
+.margin-top-70{
+    margin-top: 70px;
 }
 
 .margin-top-50{

@@ -31,6 +31,26 @@
             "title": "Sales",
             "url": "/sales.html",
             "template": "sales.html"
+        },
+        "process": {
+            "title": "Transparent Process",
+            "url": "/process.html",
+            "template": "process.html"
+            },
+        "principles": {
+            "title": "Monadical Principles",
+            "url": "/principles.html",
+            "template": "principles.html"
+        },
+        "services": {
+            "title": "Services",
+            "url": "/services.html",
+            "template": "services.html"
+        },
+        "cases": {
+            "title": "Case Studies & Open-Source",
+            "url": "/cases.html",
+            "template": "cases.html"
         }
     },
     "POSTS": {
@@ -435,5 +455,13 @@
             "title": "Monadical Github",
             "icon": "github"
         }
-    }
+    },
+    "HeaderLinks": [
+        "process",
+        "principles",
+        "services",
+        "cases",
+        "team",
+        "blog"
+    ]
 }

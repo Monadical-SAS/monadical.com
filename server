@@ -15,11 +15,18 @@ from flask import Flask, render_template, redirect
 app = Flask(__name__)
 app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.get_source(app.jinja_env, filename)[0])
 CONFIG_FILE = 'content.json'
+TEAM_FILE = 'team.json'
 HOST = 'http://127.0.0.1:5000'
 
 
 def load_config(fname=CONFIG_FILE):
     """read the content.json file and load it as a dictionary"""
+    with open(fname, 'r') as f:
+        return json.load(f)
+
+
+def load_team_info(fname=TEAM_FILE):
+    """read the team.json file to load the team information"""
     with open(fname, 'r') as f:
         return json.load(f)
 
@@ -60,6 +67,9 @@ def favicon():
 @app.route('/<path>')
 def render_page(path):
     page = PAGES[f'/{path}']
+    if page['title'] == "Team":
+        team_list = load_team_info()
+        page['team'] = team_list
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 
 

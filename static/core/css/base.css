@@ -113,6 +113,26 @@ header .container .nav-item a.nav-link:hover {
     letter-spacing: normal;
 }
 
+.title-card-size-2{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.07;
+    letter-spacing: normal;
+    color: #0086b4;
+}
+
+.title-card-size-3{
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #2b2b2b;
+}
+
 .blue-text{
     color: #0086b4;
 }
@@ -478,8 +498,100 @@ div.card-reference > div.card-body{
     margin-top: 15px;
 }
 
+.text-title-bold{
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+  color: #020202;
+}
 
+.line-height-card{
+    line-height: 1.88;
+}
 
+.card-long.card-team{
+    padding: 15px 15px 30px 15px;
+    border: solid 1px #e5e5e5;
+    min-height: 560px;
+    min-width: 255px;
+    border-radius: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.profile-img-card{
+    max-height: 140px;
+    max-width: 140px;
+    border-radius: 50%;
+}
+
+.profile-name-card{
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-skills-card{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #999999;
+}
+
+.profile-summary-card{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #666666;
+}
+
+.profile-item-list-card {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #818182;
+    margin-bottom: 5px;
+}
+
+.profile-item-list-card > span{
+    color: #2b2b2b;
+}
+
+.profile-social-networks-card > a{
+    border: solid 1px #818182;
+    border-radius: 50%;
+    padding: 10px;
+    color: #818182;
+}
+
+.secret-user{
+    width: 140px;
+    height: 140px;
+    background-color: #2b2b2b;
+    border-radius: 50%;
+}
 
 
 
@@ -538,4 +650,12 @@ div.card-reference > div.card-body{
 
 .margin-bottom-50{
     margin-bottom: 50px;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.margin-top-40{
+    margin-top: 40px;
 }

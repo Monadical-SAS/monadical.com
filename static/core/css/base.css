@@ -137,6 +137,8 @@ header .container .nav-item a.nav-link:hover {
     color: #0086b4;
 }
 
+/* start button styles */
+
 .btn-info {
     font-size: 16px;
     font-weight: bold;
@@ -209,10 +211,35 @@ header .container .nav-item a.nav-link:hover {
     border: 2px solid #2b2b2b;
 }
 
-
-.first-section {
-
+.btn-circle.btn-circle-raised {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    color: #818182;
 }
+
+.btn-circle {
+    height: 50px;
+    width: 50px;
+    color: #818182;
+    display: inline-block;
+    border-radius: 200rem;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    transition: color ease .5s;
+    transition: box-shadow ease-in-out 0s;
+    border: solid 1px #818182;
+    background-color: #ffffff;
+    margin: 5px;
+}
+
+.btn-circle:hover{
+    color: #ffffff;
+    background-color: #818182;
+    border: 1px solid #818182;
+}
+
+/* end button styles */
 
 .second-section {
     margin-top: 311px;
@@ -515,7 +542,7 @@ div.card-reference > div.card-body{
 .card-long.card-team{
     padding: 15px 15px 30px 15px;
     border: solid 1px #e5e5e5;
-    min-height: 560px;
+    min-height: 600px;
     min-width: 255px;
     border-radius: 0;
     margin-top: 15px;
@@ -526,6 +553,7 @@ div.card-reference > div.card-body{
     max-height: 140px;
     max-width: 140px;
     border-radius: 50%;
+    background-color: #bdbdbd;
 }
 
 .profile-name-card{
@@ -579,13 +607,6 @@ div.card-reference > div.card-body{
     color: #2b2b2b;
 }
 
-.profile-social-networks-card > a{
-    border: solid 1px #818182;
-    border-radius: 50%;
-    padding: 10px;
-    color: #818182;
-}
-
 .secret-user{
     width: 140px;
     height: 140px;
@@ -593,8 +614,115 @@ div.card-reference > div.card-body{
     border-radius: 50%;
 }
 
+.card.card-borderless{
+    border: none;
+}
+
+.card-header.card-services-header{
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.card-body.card-services-body{
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    padding: 0;
+}
+
+.card-services-img{
+    max-width: 350px;
+    max-height: 264px;
+}
+
+.card-footer.card-services-footer{
+    background-color: transparent;
+}
+
+.card.card-shadow{
+    border: none;
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+}
+
+.card-first-way-work{
+    background: url("/static/core/img/img-services-006.png") no-repeat;
+    width: 100%;
+    min-height: 250px;
+}
+
+.card-second-way-work{
+    background: url("/static/core/img/img-services-007.png") no-repeat right;
+    width: 100%;
+    min-height: 250px;
+}
+
+.card-blue-title{
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #0086b4;
+}
+
+.card-white-title{
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #f6f6f6;
+}
+
+.card-header.card-expertise-header{
+    background: #0086b4;
+    border-radius: 0;
+}
+
+.expertise-list > li{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.card.card-expertise{
+    border-radius: 0;
+    min-height: 455px;
+}
 
 
+
+
+
+@media all {
+    .blue-card-margin {
+        margin: 25px 0 0 40px;
+    }
+}
+
+@media (min-width: 768px){
+    .blue-card-margin{
+        margin-right: 50px;
+    }
+
+    .card-header.card-expertise-header{
+        padding-left: 65px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .card-header.card-expertise-header{
+        padding-left: 10px;
+    }
+}
 
 
 
@@ -658,4 +786,8 @@ div.card-reference > div.card-body{
 
 .margin-top-40{
     margin-top: 40px;
+}
+
+.margin-top-80{
+    margin-top: 80px;
 }

@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="col-xl-12 text-center margin-top-10">
                                             <p class="profile-item-list-card">
-                                                <span>Survival skills:</span> {{ employee['survival_skils'] }}
+                                                <span>Survival skills:</span> {{ employee['survival_skills'] }}
                                             </p>
                                         </div>
                                         <div class="col-xl-12 text-center">
@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="col-xl-12 profile-social-networks-card text-center margin-top-30">
                                             {% for name, link  in employee['social_networks'].items() %}
-                                                <a href="{{ link }}" class="fa fa-{{ name }}"></a>
+                                                <a href="{{ link }}" class="fa fa-{{ name }} btn-circle btn-circle-raised"></a>
                                             {% endfor %}
                                         </div>
                                     </div>

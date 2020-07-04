@@ -608,10 +608,17 @@ div.card-reference > div.card-body{
 }
 
 .secret-user{
-    width: 140px;
-    height: 140px;
-    background-color: #2b2b2b;
-    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: solid 1px #e5e5e5;
+    height: 200px;
+    width: 200px;
+}
+
+.secret-user-img{
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
 
 .card.card-borderless{

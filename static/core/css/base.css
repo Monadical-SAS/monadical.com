@@ -352,31 +352,96 @@ header .container .nav-item a.nav-link:hover {
 
 .working-us-text{
     margin-top: 60px;
-    padding: 0 260px;
 }
 
-.cube-img{
-    position: absolute;
-    top: 599px;
-    left: 0px;
+@media (min-width: 768px) {
+
+    .cube-img-left {
+        position: absolute;
+        left: 0;
+    }
+
+    .cube-img-right {
+        position: absolute;
+        right: 0;
+    }
+
+    .tentacle-img-left {
+        position: absolute;
+        left: 0;
+    }
+
+
+    .tentacle-img-right {
+        position: absolute;
+        right: 0;
+    }
+
+    .circle-img-left {
+        position: absolute;
+        left: 0;
+    }
+
+    .cloud-img-left {
+        position: absolute;
+        left: 0;
+    }
+
+    .cloud-img-right {
+        position: absolute;
+        right: 0;
+    }
+
 }
 
-.cube-img-right{
-    position: absolute;
-    top: 3149px;
-    right: 0px;
+@media (max-width: 768px) {
+
+    .cube-img-left {
+        display: none;
+    }
+
+    .cube-img-right {
+        display: none;
+    }
+
+    .tentacle-img-left {
+        display: none;
+    }
+
+    .tentacle-img-right {
+        display: none;
+    }
+
+    .circle-img-left{
+        display: none;
+    }
+
+    .cloud-img-left {
+        display: none;
+    }
+
+    .cloud-img-right {
+        display: none;
+    }
+    
+    .xs-hide{
+        display: none;
+    }
+
+    .margin-top-xs{
+        margin-top: 20px;
+
+    }
+
 }
 
-.tentacle-img-left{
-    position: absolute;
-    top: 2749px;
-    left: 0px;
-}
+@media (max-width: 400px) {
 
-.tentacle-img-right{
-    position: absolute;
-    top: 1722px;
-    right: 0px;
+    .card-guaranties{
+        min-width: 100%;
+        min-height: 100%;
+    }
+
 }
 
 .card-open-source{
@@ -797,4 +862,8 @@ div.card-reference > div.card-body{
 
 .margin-top-80{
     margin-top: 80px;
+}
+
+.max-width-100{
+    max-width: 100%;
 }

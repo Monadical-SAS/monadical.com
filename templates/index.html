@@ -4,69 +4,73 @@
 {% block subtitle %}Home{% endblock %}
 {% block enableLogo %}enable-logo{% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" href="/static/core/css/index.css">
+{% endblock %}
+
 {% block article %}
     <div class="container-full">
-        <img class="cube-img" src="/static/core/img/img-home-002.png">
+        <img class="cube-img-left" src="/static/core/img/img-home-002.png">
         <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
         <img class="tentacle-img-left" src="/static/core/img/img-home-011.png">
         <img class="cube-img-right" src="/static/core/img/img-home-012.png">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7 first-section margin-top-90">
+                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 first-section margin-top-90">
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <p class="text-size-1">
                                 We build software that outlast us
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-20">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-20">
                             <p class="subtext-size-1">
                                 You'll never be left in the dark wondering how
                                 to deploy, maintain, or support your project
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <a href="" class="btn btn-info-inverse">
                                 GET A TECHNICAL REVIEW
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                    <img src="/static/core/img/img-home-001.png" class="octopus-img">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
+                    <img src="/static/core/img/img-home-001.png" class="octopus-img xs-hide">
                 </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 second-section text-center">
+                <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 offset-xl-2 offset-md-1 second-section text-center">
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <p class="text-size-2 padding-second-section">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <p class="text-size-2">
                                 Monadical revolutionizes how
                                 software teams operate
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-30">
-                            <p class="subtext-size-2 padding-second-section">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
+                            <p class="subtext-size-2">
                                 We're committed to providing a high quality experience for both the end-user and the developers that
                                 end up inheriting and extending our projects years in the future
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 third-section text-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 third-section text-center">
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <p class="text-size-2">
                                 Our quality guarantee
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-20">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-20">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 margin-top-xs">
                                     <div class="card card-body card-guaranties">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                                 <img src="/static/core/img/img-home-003.png" class="documented-code-img">
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <p class="card-guaranties-text margin-bottom-30 margin-top-15">
                                                     You will get well-tested, beautifully-documented
                                                     codebase with complete deployment, growth,
@@ -76,13 +80,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 margin-top-xs">
                                     <div class="card card-body card-guaranties">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                                 <img src="/static/core/img/img-home-004.png" class="security-review-img">
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <p class="card-guaranties-text margin-bottom-50 margin-top-30">
                                                     You will get long-term support, refactoring,
                                                     and security reviews. We stand behind our code
@@ -91,13 +95,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 margin-top-xs">
                                     <div class="card card-body card-guaranties">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                                 <img src="/static/core/img/img-home-005.png" class="dead-code-img">
                                             </div>
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <p class="card-guaranties-text margin-bottom-50 margin-top-30">
                                                     Without that guarantee, unsupported code
                                                     quickly becomes dead code and ends up costing
@@ -111,16 +115,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 fourth-section">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 fourth-section">
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <p class="text-size-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <p class="text-size-2 text-center">
                                 monadical is a full-stack
                                 development consultancy
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-30">
-                            <p class="subtext-size-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
+                            <p class="subtext-size-2 text-center">
                                 We specialize in full-stack web development, custom
                                 software solutions and software consulting
                             </p>
@@ -133,9 +137,9 @@
                                 and more...
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-60">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-60">
                             <div class="row">
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 margin-top-xs">
                                     <div class="card team-card">
                                         <img src="/static/core/img/img-home-006.png" style="max-height: 265px; max-width: 255px">
                                         <div class="card-body">
@@ -162,7 +166,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 margin-top-xs">
                                     <div class="card team-card">
                                         <img src="/static/core/img/img-home-007.png" style="max-width: 255px; max-height: 265px">
                                         <div class="card-body">
@@ -188,7 +192,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 margin-top-xs">
                                     <div class="card team-card">
                                         <img src="/static/core/img/img-home-008.png" style="max-height: 265px; max-width: 255px">
                                         <div class="card-body">
@@ -216,7 +220,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 margin-top-xs">
                                     <div class="card team-card">
                                         <img src="/static/core/img/img-home-009.png" style="max-width: 255px; max-height: 265px">
                                         <div class="card-body">
@@ -243,132 +247,132 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center margin-top-60">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-60">
                             <a href="" class="btn btn-info-inverse">
                                 GET TECHNICAL PROJECT REVIEW
                             </a>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center margin-top-150">
-                            <p class="text-size-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-150">
+                            <p class="text-size-2 text-center">
                                 Our team and our projects have
                                 been features in:
                             </p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center margin-top-50">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-50">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-021.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-022.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-023.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-024.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-025.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-026.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-027.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-028.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-029.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-030.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-xs-3">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-031.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-032.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-033.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-034.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-035.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-036.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
                                     <div href="#">
                                         <img src="/static/core/img/img-home-037.png" style="max-height: 100%; max-width: 100%">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center margin-top-150">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-150">
                             <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                     <p class="text-size-2">
                                         We love open-source projects
                                     </p>
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                     <p class="subtext-size-2">
                                         Check our most successful open-source project with active users in 100+ countries.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 text-center margin-top-xs">
                                     <div class="card card-small card-open-source">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                                 <img src="/static/core/img/img-home-013.png" style="max-height: 41px; max-width: 163px">
                                             </div>
                                         </div>
@@ -387,17 +391,17 @@
                                                 plug into any pure render layer like React, Inferno, or Three.js.
                                             </p>
                                             <div class="row margin-top-35">
-                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="#" class="btn btn-default-inverse bigger-size">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                                    <a href="https://github.com/Monadical-SAS/redux-time" class="btn btn-default-inverse bigger-size" target="_blank">
                                                        Github
                                                     </a>
                                                 </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="#" class="btn btn-default-inverse bigger-size">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                                    <a href="https://github.com/Monadical-SAS/redux-time/tree/master/examples" target="_blank" class="btn btn-default-inverse bigger-size">
                                                         Examples
                                                     </a>
                                                 </div>
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-30">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
                                                     <p class="open-source-card-foot-page">
                                                         Handles > 5,000 animations
                                                         @ 100FPS Perfect for dataviz,
@@ -408,10 +412,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 text-center margin-top-xs">
                                     <div class="card card-small card-open-source">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                                 <img src="/static/core/img/img-home-015.png" style="max-height: 46px; max-width: 244px">
                                             </div>
                                         </div>
@@ -431,12 +435,12 @@
                                                 and > 50k LOC.
                                             </p>
                                             <div class="row" style="margin-top: 34px">
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <a href="#" class="btn btn-info-inverse">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <a href="https://oddslingers.com" class="btn btn-info-inverse" target="_blank">
                                                        PLAY POKER FOR FREE, NO ADS
                                                     </a>
                                                 </div>
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-30">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
                                                     <p class="open-source-card-foot-page">
                                                         Active users in 100+ countries
                                                         5+ million hands played to date
@@ -446,10 +450,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-6 text-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 text-center margin-top-xs">
                                     <div class="card card-small card-open-source">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                                                 <img src="/static/core/img/img-home-017.png" style="max-height: 46px; max-width: 241px">
                                             </div>
                                         </div>
@@ -469,17 +473,17 @@
                                                 years.
                                             </p>
                                             <div class="row margin-top-30">
-                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="#" class="btn btn-default-inverse bigger-size">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                                    <a href="https://github.com/pirate/ArchiveBox" target="_blank" class="btn btn-default-inverse bigger-size">
                                                        Github
                                                     </a>
                                                 </div>
-                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                                                     <a href="#" class="btn btn-default-inverse bigger-size">
                                                        Website
                                                     </a>
                                                 </div>
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-30">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
                                                     <p class="open-source-card-foot-page">
                                                         Used by thousands of people
                                                         30+ contributors and an active
@@ -492,28 +496,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-150">
-                            <p class="text-size-2">What our client say</p>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-150">
+                            <p class="text-size-2 text-center">What our client say</p>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="card card-small card-reference">
                                         <div class="row" style="margin: 40px 40px 15px 40px">
-                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                                 <img src="/static/core/img/img-home-020.png" style="max-height: 100px; max-width: 100px">
                                             </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                                                 <div class="row">
-                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <p class="card-clients-name">John Doe</p>
                                                     </div>
-                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <p class="card-clients-position">CEO, PrettyDopeDesigns</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                                                  <img src="/static/core/img/img-home-019.png" style="max-height: 46px; max-width: 60px">
                                             </div>
                                         </div>
@@ -528,7 +532,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                      <video style="width: 100%" controls>
                                       <source src="" type="video/mp4">
                                     Your browser does not support the video tag.
@@ -536,24 +540,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center margin-top-150">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-150">
                             <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <p class="text-size-2">
                                         Interested in working with us?
                                     </p>
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <p class="subtext-size-2">
                                         Initial consultations are free, no surprise bills
                                     </p>
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-60">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-60">
                                     <a href="#" class="btn btn-info-inverse">
                                         FREE TECHNICAL PROJECT REVIEW
                                     </a>
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center working-us-text">
+                                <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 offset-xl-2 offset-md-1 text-center working-us-text">
                                     <p class="text-size-3">
                                         We ramp up fast and can prototype MVPs within
                                         days of taking on new projects.

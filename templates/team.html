@@ -4,286 +4,125 @@
 {% block subtitle %}Team{% endblock %}
 {% block logo %}
 {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/core/css/team.css">
+{% endblock %}
+
 {% block article %}
-    <style type="text/css">
-        article {
-            background-color: #333;
-            border-radius: 14px;
-            max-width: 1024px;
-            margin: auto;
-            float: none;
-            overflow: hidden;
-            padding: 0px;
-        }
-        article center {
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-        }
-        .profile-img {
-            height: 240px;
-            width: auto;
-            max-width: 100%;
-            border-radius: 4px;
-            box-shadow: 4px 4px 4px rgba(0,0,0,0.02);
-        }
-        .team-profiles .col-md-4 {
-            display: inline-block;
-            margin: auto;
-        }
-    </style>
-    <article class="container-full">
-        <br/>
-        <center>
-            <b style="font-size: 1.3em">
-                We're a fully remote development and ops team working from Montréal, Cali, Medellín, and NYC.<br/>
-                <br/>
-                We value curiosity, transparency, and work-life balance, among other <a href="https://docs.oddslingers.com/s/principles-handbook">core principles</a>.
-            </b>
-            <br/><br/><br/>
-            <canvas class="animated-color-grid" height="20"></canvas>
-            <br/><br/>
-            <b>We've spent the past 3 years building projects together, including:</b><br/><br/>
-             a <a href="{{PAGES.projects.url}}#main">real-time gaming platform</a> with over 5M+ hands played by ~6k users in 100+ countries,<br/>
-             an open source <a href="https://archivebox.io">self-hosted internet archiving solution</a> with over 5k+ stars on Github, <br/>
-             and a variety of other <a href="{{PAGES.projects.url}}#open-source">custom projects and open-source tools</a>...
-            <br/><br/><br/>
-            <a href="{{PAGES.about.url}}#contact" target="_blank" class="btn btn-success" style="font-size: 1.2em; color: rgba(246, 246, 246, 0.9);">
-                &nbsp;&nbsp;&nbsp; Contact us &nbsp;<i class="fa fa-comments"></i> &nbsp;<br/>
-            </a>
-            <br/><br/>
-            <small style="opacity: 0.4">
-                We operate primarily in English, but you can also contact us in Spanish, 
-                French, Chinese, or German.
-            </small>
-            <br><br/>
-            <hr style="max-width: 645px"/>
-        </center>
-        <div class="row container__steps team-profiles" style="text-align: center">
-            <div class="container__step col-md-4 text-center">
-                <a href="http://cowpig.github.io/about/">
-                    <img src="static/max.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Max McCrea<br/><small style="opacity:0.6; color: gray">🇨🇦 Senior Dev / Co-Founder<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Expert data scientist, ex-pro poker player,<br/>
-                    senior full-stack engineer, founder,<br/>
-                    aspiring to be Monadical chef.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://nicksweeting.com/blog#About">
-                    <img src="static/nick.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Nick Sweeting<br/><small style="opacity:0.6; color: gray">🇨🇦 Senior Dev / Co-Founder<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Mesh networker, internet archiving hobbyist,<br/>
-                    senior full-stack engineer, founder,<br/>
-                    public transit &amp; bicycle fanatic.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="#">
-                    <img src="static/ana.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Ana Gonzales<br/><small style="opacity:0.6; color: gray">🇨🇴 COO<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Computational linguistics specialist,<br/>
-                    head of Colombian operations and hiring,<br/>
-                    travel &amp; language-learning afficianado.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://github.com/yamijuan">
-                    <img src="static/juan.png" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Juan Diego Garcia<br/><small style="opacity:0.6; color: gray">🇨🇴 Senior Dev / PM<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Principled product manager,<br/>
-                    senior full-stack engineer,<br/>
-                    expert motocross rider.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://github.com/josezy">
-                    <img src="static/jose.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Jose Benitez<br/><small style="opacity:0.6; color: gray">🇨🇴 Full-Stack Dev<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Fast-moving UI &amp; UX wizard,<br/>
-                    full-stack product engineer,<br/>
-                    serious quadcopter lover.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://www.linkedin.com/in/henry-alexander-polindara-magè-3b8805149/">
-                    <img src="static/henry.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Henry Polindara<br/><small style="opacity:0.6; color: gray">🇨🇴 Junior Dev<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Jack-of-all-trades Python & JS expert,<br/>
-                    full-stack product engineer,<br/>
-                    relentless learner and basketball fan.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://www.linkedin.com/in/tess-mccrea-7a4841155/">
-                    <img src="static/tess.png" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Tess McCrea<br/><small style="opacity:0.6; color: gray">🇨🇦 COO<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Master of ops, logistics, and video production,<br/>
-                    head of Canadian operations and billing,<br/>
-                    bioscience researcher and mental health expert.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://github.com/caroguza">
-                    <img src="static/carolina.png" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Carolina Guzmán<br/><small style="opacity:0.6; color: gray">🇨🇴 Full-Stack Dev<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Skillful Django & React maestro,<br/>
-                    full-stack product engineer,<br/>
-                    polylinguist and rapid ramper-up.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://www.linkedin.com/in/karimmarzouq/">
-                    <img src="static/karim.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Karim Marzouq<br/><small style="opacity:0.6; color: gray">🇨🇦 Full-Stack Dev / DevOps<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Back-end developer with a focus on<br/> 
-                    infrastructure, security, and Python DevOps<br/>
-                    Interested in learning - humans &amp; machines.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://github.com/afreydev">
-                    <img src="static/angel.png" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Angel Rey<br/><small style="opacity:0.6; color: gray">🇨🇴 DevOps / PM <br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Innovation and technology management expert,<br/> 
-                    DevOps / full-stack engineering / PM,<br/>
-                    basketball player and urban music lover.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://dobleuber.github.io">
-                    <img src="static/adrian.png" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Adrian Castro<br/><small style="opacity:0.6; color: gray">🇨🇴 Full-Stack Dev / PM<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Experienced polylingual web/mobile developer,<br/> 
-                    senior full-stack engineer / PM,<br/>
-                    adventure bike enthusiast and tech meetup host.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <div class="container__step col-md-4 text-center">
-                <a href="https://github.com/jdcaballerov">
-                    <img src="static/jdc.jpg" class="profile-img"/>
-                    <br/><br/>
-                    <h5>Juan Diego Caballero<br/><small style="opacity:0.6; color: gray">🇨🇴 Full-Stack Dev / PM<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Practiced data scientist and startup founder<br/> 
-                    senior full-stack engineer / PM<br/>
-                    physicist, engineer, infosec researcher.
-                </small>
-                <br/><br/><br/>
-            </div>
-            <hr/>
-            <div class="container__step col-md-offset-4 col-md-4 text-center">
-                <a href="#join">
-                    <img src="static/person.png" class="profile-img"/>
-                    <br/><br/>
-                    <h5>This could be you...<br/><small style="opacity:0.6; color: gray">Click to apply<br/>〰〰〰〰</small></h5>
-                </a>
-                <small>
-                    Apply to Monadical to join our team of<br/> 
-                    skilled engineers worldwide.<br/>
-                </small>
-                <br/><br/><br/>
+    <div class="container-full">
+        <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+        <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
+        <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+        <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-70">
+                    <p class="text-size-2">
+                        Why Monadical Team?
+                    </p>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 offset-xl-1 text-center">
+                    <p class="subtext-size-2 margin-top-10">
+                        We're fully remote development and ops  team working from
+                        Montreal, California, Medellin, and NYC.<br>
+                        We value curiosity, transparency, and work-life balance, among
+                        other core principles.
+                    </p>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 text-center">
+                    <p class="subtext-size-3 margin-top-10">
+                        We've spent the past 4 years building projects together. Our
+                        developers have been featured in Forbes, CNN, WSJ, ... and our
+                        products have been used by users in 100+ countries.<br>
+                        We operate primarily in English, but you can also contact us
+                        in Spanish, French, Chinese, or German.
+                    </p>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-150">
+                    <p class="text-size-2">
+                        Meet the Team
+                    </p>
+                    <p class="subtext-size-2">
+                        We pride ourselves on being generalist who love to learn.
+                    </p>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-40">
+                    <div class="row">
+                        {% for employee in team %}
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                <div class="card card-long card-team">
+                                    <div class="row card-head">
+                                        <div class="col-xl-12">
+                                            <span class="float-left title-card-size-2">
+                                                {{ employee['position'] }}
+                                            </span>
+                                            <span class="float-right title-card-size-3">
+                                                {{ employee['country'] }}
+                                            </span>
+                                        </div>
+                                        <div class="col-xl-12 margin-top-30 text-center">
+                                            <img src="{{ employee['image_path'] }}" class="profile-img-card">
+                                        </div>
+                                        <div class="col-xl-12 text-center">
+                                            <p class="profile-name-card">
+                                                {{ employee['name'] }}
+                                            </p>
+                                        </div>
+                                        <div class="col-xl-12 text-center">
+                                            <p class="profile-skills-card">
+                                                {{ employee['other_skills'] }}
+                                            </p>
+
+                                        </div>
+                                        <div class="col-xl-12 text-center">
+                                            <p class="profile-summary-card">
+                                                {{ employee['summary'] }}
+                                            </p>
+                                        </div>
+                                        <div class="col-xl-12 text-center margin-top-10">
+                                            <p class="profile-item-list-card">
+                                                <span>Survival skills:</span> {{ employee['survival_skills'] }}
+                                            </p>
+                                        </div>
+                                        <div class="col-xl-12 text-center">
+                                            <p class="profile-item-list-card">
+                                                <span>Favorite gadget:</span> {{ employee['gadget'] }}
+                                            </p>
+                                        </div>
+                                        <div class="col-xl-12 profile-social-networks-card text-center margin-top-30">
+                                            {% for name, link  in employee['social_networks'].items() %}
+                                                <a href="{{ link }}" class="fa fa-{{ name }} btn-circle btn-circle-raised"></a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-150">
+                    <p class="text-size-2">
+                        Interested in working for Monadical? We'd love to have you join us.
+                    </p>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center align-self-center margin-top-60">
+                    <span class="secret-user">
+                        <img src="/static/core/img/img-team-017.png" class="secret-user-img">
+                    </span>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-30">
+                    <p class="subtext-size-2">
+                        This could be you...<br>
+                        Apply to Monadical to join our team of skilled engineers worldwide.
+                    </p>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-60">
+                    <a href="" class="btn btn-info-inverse">
+                        JOIN THE TEAM
+                    </a>
+                </div>
             </div>
         </div>
-        <hr/>
-        <center>
-            Want to learn more? Read our <a href="{{PAGES.blog.url}}#main">blog posts</a>, explore our <a href="{{PAGES.projects.url}}#main">projects</a>, or subscribe to our <a href="{{PAGES.blog.url}}#newsletter">newsletter</a>.
-            <br/><br/>
-            <small>Just shoot us an email at <a href="mailto:hello@monadical.com">hello@monadical.com</a> if you want to say hi!</small>
-        </center>
-        <br/>
-    </article>
-    <br/><br/><br/>
-    <h2 style="text-align: center">
-        <a id="join">Interested in working for Monadical? &nbsp; We'd love to have you join us.</a><br/>
-    </h2>
-    <br/><br/>
-    <div class="container row">
-        <div class="col-md-6" style="color:#ddd; text-align: center">
-            <div style="min-height: 400px">
-                <img src="static/medellin.jpg" style="width: 100%; border-radius: 14px"/>
-            </div>
-            <i>We're hiring primarily in Montréal &amp; Colombia, but we're open to people with remote experience working from anywhere.</i>
-            <br/><br/>
-            We're also always intrested in <a href="{{PAGES.about.url}}#contact">talking to people</a> in our industries, 
-            whether or not they're interested in applying for one of our open positions.
-            <br/><br/>
-            <a href="https://docs.oddslingers.com/s/principles-handbook" class="btn btn-warning">
-                &nbsp;<i class="fa fa-file"></i>&nbsp; Read about our company principles &nbsp;
-            </a>
-            <br/><br/>
-        </div>
-        <div class="col-md-6" style="color:#ddd; text-align: center;">
-            <div style="min-height: 400px">
-                <h3>We're always hiring!</h3>
-                <br/>
-                Currently open remote positions:
-                <br/><br/>
-                <ul style="color: #eee; max-width: 320px; text-align: left; margin: auto; font-size: 18px; font-weight: 200;">
-                    <li>Full-Stack Engineers (Python & JS)</li>
-                    <li>Senior Full-Stack Engineers</li>
-                    <li>Junior Engineers (Python & JS)</li>
-                    <li>DevOps + Full-Stack Engineers</li>
-                    <hr/>
-                    <li>Digital Marketing Specialists</li>
-                    <li>Sales / Client Relations Manager</li>
-                </ul>
-            </div>
-            <i>We offer competitive salaries, interesting projects, flexible hours, and 31+ days of paid vacation!</i>
-            <br/><br/>
-            We fly new hires to Cali or Medellín for onboarding.<br/>
-            After that, everyone works remotely with occasional on-site reunions in Colombia, Montréal, or NYC.
-            <br/><br/>
-            <a href="#apply-now" id="apply-now" class="btn btn-info">
-                &nbsp;<i class="fa fa-envelope"></i>&nbsp; Apply to join Monadical! &nbsp;
-            </a>
-            <br/><br/>
-        </div>
-        <iframe src="https://nick764452.typeform.com/to/foY2K2" style="width: 100%; height: 600px; border: 0px; margin: 0px;border-radius: 14px 14px 0px 0px"></iframe>
     </div>
-    <canvas class="animated-color-grid" height="100"></canvas>
 {% endblock %}

@@ -6,6 +6,7 @@ blue=${txtbld}$(tput setaf 4)
 green=${txtbld}$(tput setaf 2)
 white=${txtbld}$(tput setaf 7)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
+RSYNC_LOCAL="${DEPLOY_LOCAL:-0}"
 
 echo "$blue[+] Starting Flask server to render pages...$normal"
 ./server > /dev/null &
@@ -41,7 +42,11 @@ echo "$blue[^] Pushing build to origin/live...$normal"
 git push origin "$current_branch":live --force
 
 echo "$blue[^] Deploying output/ to https://monadical.com...$normal"
-rsync -r output/ grape:/opt/monadical.www/output
+if [ "${RSYNC_LOCAL}" -eq 1 ]; then
+	rsync -r output/ /opt/monadical.www/output
+else
+	rsync -r output/ grape:/opt/monadical.www/output
+fi
 # ssh monadical.com "cd /opt/monadical.com; git checkout -f live; git pull"
 
 echo ""

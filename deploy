@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git pull
+export DEPLOY_LOCAL=1
+./build

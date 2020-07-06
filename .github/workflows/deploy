@@ -1,0 +1,19 @@
+name: Deploy portal
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy monadical site
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MONADICAL_HOST }}
+          username: ${{ secrets.MONADICAL_USERNAME }}
+          key: ${{ secrets.MONADICAL_KEY }}
+          port: ${{ secrets.MONADICAL_PORT }}
+          script: | 
+            cd /opt/monadical.com
+            ./deploy

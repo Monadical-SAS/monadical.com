@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+{% block title %}Kiwix - Case Study{% endblock %}
+{% block subtitle %}Kiwix{% endblock %}
+{% block article %}
+<div class="container-full cases-home">
+    <div class="project-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <div class="row project-header">
+                        <div class="col">
+                            <h1><a href="//kiwix.org">Kiwix.org</a> - Case Study (2020)</h1>
+                            <img
+                                    srcset="
+                                            /static/core/img/icons/kiwix-large@3x.png 3x,
+                                            /static/core/img/icons/kiwix-large@2x.png 2x"
+                                    src="/static/core/img/icons/kiwix-large.png"
+                                    alt="Kiwix Logo"
+                            >
+                            <p>
+                                Technicality level: <b>4/5</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img
+                                    srcset="
+                                            /static/core/img/clients/kiwix-large@3x.jpg 3x,
+                                            /static/core/img/clients/kiwix-large@2x.jpg 2x"
+                                    src="/static/core/img/clients/kiwix-large.jpg"
+                                    alt="Kiwix Home"
+                            />
+                        </div>
+                    </div>
+                    <div id="about" class="row">
+                        <div class="col">
+                            <h3>About the client</h3>
+                            <p>
+                                Kiwix lets you access free knowledge - even offline. You can store Wikipedia, Project Gutenberg, TED Talks or any website on your mobile phone or computer. Kiwix makes knowledge available to people with no or limited internet access. The software as well as the content is free to use for anyone.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="challenge" class="row col">
+                        <h3>The challenge</h3>
+                        <p>
+                            Kiwix makes online knowledge available to the parts of the world without internet. In order to do that, Kiwix needs to collect data from Wikipedia, write the data in the correct format and store in the library. However, the process is not that simple. Downloading those pages requires a lot of technical knowledge. Some pages might consist of text only, but most have photos or even videos. Thus, Kiwix needs an efficient process that will make it easier to scale and grow the library.
+                        </p>
+                        <p>
+                            English Wikipedia right now has more than 6 million articles with an average of 592 words in each article.
+                        </p>
+                        <p>
+                            Here is a comparison of sizes of different encyclopedias.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/wikipedia@3x.jpg 3x,
+                                        /static/core/img/clients/wikipedia@2x.jpg 2x"
+                                    src="/static/core/img/clients/wikipedia.jpg"
+                                    alt="Wikipedia Size Comparisons"
+                            >
+                            <p class="source-title">
+                                Source: <b>https://en.wikipedia.org/wiki/Wikipedia:Size_comparisons</b>
+                            </p>
+                            <p>
+                                As a comparison, this image is estimating the size of a printed version of Wikipedia as of August 2010!
+                            </p>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/size-comparation@3x.jpg 3x,
+                                        /static/core/img/clients/size-comparation@2x.jpg 2x"
+                                    src="/static/core/img/clients/size-comparation.jpg"
+                                    alt="Wikipedia Size Comparisons"
+                            >
+                            <p class="source-title">
+                                Source: <b>https://en.wikipedia.org/wiki/Wikipedia:Size_comparisons</b>
+                            </p>
+                            <p>
+                                Kiwix used two separate programs in order to download and store articles from Wikipedia. The first one was in Python. It downloaded the content and stored it to the hard drive. The second one was in C++. It read content from the hard drive (used the libzim library) and bundled the Zim file. Only after this 3-step process finished, the content was ready for the library.
+                            </p>
+                            <p>
+                                The problem was these two programs did not communicate with each other because they were programmed in different languages. It made the process inefficient.
+                            </p>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/kiwix-workflow@3x.png 3x,
+                                        /static/core/img/clients/kiwix-workflow@2x.png 2x"
+                                    src="/static/core/img/clients/kiwix-workflow.png"
+                                    alt="Original Worflow"
+                            >
+                            <p class="source-title">Original Workflow</p>
+                        </div>
+                    </div>
+                    <div id="project-goal" class="row">
+                        <div class="col">
+                            <h3>Project goal</h3>
+                            <p>
+                                Our goal was to think of a new workflow that would make it possible for those two programs in Python and C++ communicate. It would make the process more efficient and scalable. We found the best way for the two programs to communicate would be to create a wrapper.
+                            </p>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/kiwix-new-workflow@3x.png 3x,
+                                        /static/core/img/clients/kiwix-new-workflow@2x.png 2x"
+                                    src="/static/core/img/clients/kiwix-new-workflow.png"
+                                    alt="New Workflow"
+                            >
+                            <p class="source-title">New Workflow</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 id="scope" >Scope of work</h4>
+                            <ul>
+                                <li>
+                                    Working python-libzim PyPI package for sotoki that doesn’t use zimwriterfs
+                                </li>
+                                <li>
+                                    pip install … process that works across Linux, and Docker (macOS not yet)
+                                </li>
+                                <li>
+                                    C++ compilation process that works seamlessly in Docker
+                                </li>
+                                <li>
+                                    Tests that build & run in CI automatically upon pull requests / merges (+release if needed) (just for the bindings, not all of libzim)
+                                </li>
+                                <li>
+                                    Python binding library refactoring and implementation
+                                </li>
+                                <li>
+                                    https://github.com/openzim/python-libzim/
+                                </li>
+                                <li>
+                                    Documentation for both end-users and developers
+                                </li>
+                                <li>
+                                    Update sotoki to work with the new python-libzim (update from zimwriterfs)
+                                </li>
+                            </ul>
+                            <h4 id="time-team">
+                                Time & team:
+                            </h4>
+                            <ul>
+                                <li>
+                                    4 weeks of full-time work with 1 senior developer on the project.
+                                </li>
+                            </ul>
+                            <p>Technical stack:</p>
+                            <ul>
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>Cython</li>
+                            </ul>
+                            <h4 id="final-deliverables">Final Deliverables</h4>
+                            <p>
+                                We created a Class Blend Wrapper. Now, there is no need to write intermediate content to the hard drive and there is no need to create copies between Python and C++.
+                                <br>
+                                We created a Class Blend Wrapper that makes the process more efficient. It passes an interface implemented in Python instead of creating unnecessary copies.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="wrapper" class="row">
+                        <div class="col">
+                            <h3>Simple Wrapper vs Class Blend Wrapper</h3>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/simple-wrapper@3x.png 3x,
+                                        /static/core/img/clients/simple-wrapper@2x.png 2x"
+                                    src="/static/core/img/clients/simple-wrapper.png"
+                                    alt="Simple Wrapper"
+                            >
+                            <p class="source-title">Simple Wrapper</p>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/blend-wrapper@3x.png 3x,
+                                        /static/core/img/clients/blend-wrapper@2x.png 2x"
+                                    src="/static/core/img/clients/blend-wrapper.png"
+                                    alt="Class Blend Wrapper"
+                            >
+                            <p class="source-title">Class Blend Wrapper</p>
+                        </div>
+                    </div>
+                    <div id="workflow" class="row">
+                        <div class="col">
+                            <h3>Original Workflow vs New Workflow</h3>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/kiwix-workflow@3x.png 3x,
+                                        /static/core/img/clients/kiwix-workflow@2x.png 2x"
+                                    src="/static/core/img/clients/kiwix-workflow.png"
+                                    alt="Original Workflow"
+                            >
+                            <p>Original Workflow</p>
+                            <img
+                                    srcset="
+                                        /static/core/img/clients/kiwix-new-workflow@3x.png 3x,
+                                        /static/core/img/clients/kiwix-new-workflow@2x.png 2x"
+                                    src="/static/core/img/clients/kiwix-new-workflow.png"
+                                    alt="New Workflow"
+                            >
+                            <p>New Workflow</p>
+                        </div>
+                    </div>
+                    {% include "clients-reviews.html" %}
+                    {% include "work-with-us.html" %}
+                </div>
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav id="navbar-case-use" class="navbar navbar-light flex-column">
+                                  <h4>Case Study</h4>
+                                  <nav class="nav nav-pills flex-column">
+                                      <a class="nav-link" href="#about">About the client</a>
+                                      <a class="nav-link" href="#challenge">The challenge</a>
+                                      <a
+                                              class="nav-link"
+                                              href="#project-goal"
+                                              data-toggle="collapse"
+                                              data-target="#goal-section"
+                                      >
+                                          Project Goal
+                                      </a>
+                                      <nav
+                                              id="goal-section"
+                                              class="nav nav-pills flex-column collapse"
+                                      >
+                                          <a class="nav-link ml-3 my-1" href="#scope">Scope of work</a>
+                                          <a class="nav-link ml-3 my-1" href="#time-team">Time & team</a>
+                                          <a class="nav-link ml-3 my-1" href="#final-deliverables">Final Deliverables</a>
+                                      </nav>
+                                      <a class="nav-link" href="#wrapper">
+                                          Simple Wrapper vs Class Blend Wrapper
+                                      </a>
+                                      <a class="nav-link" href="#workflow">
+                                          Original Workflow vs New Workflow
+                                      </a>
+                                  </nav>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

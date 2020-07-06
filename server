@@ -52,6 +52,7 @@ CONFIG = load_config(CONFIG_FILE)
 
 PAGES = {page['url']: page for page in list(CONFIG['PAGES'].values())}  # {url: {page_data}}
 POSTS = {post['url']: post for post in list(CONFIG['POSTS'].values())}  # {url: {post_data}}
+CASES = {case['url']: case for case in list(CONFIG['CASES'].values())}  # {url: {post_data}}
 
 
 ### Routes
@@ -94,6 +95,13 @@ def render_post(path):
     #    download_post(post)
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
+
+
+@app.route('/cases/<path>')
+def render_case(path):
+    case = CASES[f'/cases/{path}']
+    print(case)
+    return render_template(case['template'], now=datetime.now(), **CONFIG, **case)
 
 
 if __name__ == '__main__':

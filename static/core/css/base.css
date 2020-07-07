@@ -768,10 +768,8 @@ div.card-reference > div.card-body{
     min-height: 455px;
 }
 
-@media all {
-    .blue-card-margin {
-        margin: 25px 0 0 40px;
-    }
+.blue-card-margin {
+    margin: 25px 0 0 40px;
 }
 
 @media screen and (max-width: 412px){

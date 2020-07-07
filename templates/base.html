@@ -29,7 +29,7 @@
 
             <div class="container">
                 <nav class="navbar navbar-expand-sm navbar-dark bg-white">
-                {% block logo %}
+                    {% block logo %}
                         <a class="navbar-brand" href="{{PAGES.index.url}}">
                             <img
                                 srcset="
@@ -75,7 +75,7 @@
             <div class="container footer">
                 {% block footersocial %}
                 <div class="row">
-                    <div class="col col-4">
+                    <div class="col-12 col-md-4">
                         <ul>
                             <li><b>CA-</b> Remote/Office : 51 Sherbrooke St W Unit 210, Montreal</li>
                             <li><b>US-</b> Remote/Office: 99 Wall St, New York</li>
@@ -83,7 +83,7 @@
                             <li><b>Medellin:</b> Remote</li>
                         </ul>
                     </div>
-                    <div class="col col-3">
+                    <div class="col-12 col-md-3">
                         <ul>
                             <li>
                                 <b>Monadical Quality</b>
@@ -93,7 +93,7 @@
                             <li><a href="#">Get a Technical Project Review</a></li>
                         </ul>
                     </div>
-                    <div class="col col-3">
+                    <div class="col-12 col-md-3">
                         <ul>
                             <li>
                                 <b>About Us</b>
@@ -104,7 +104,7 @@
                             <li><a href="#">Join us</a></li>
                         </ul>
                     </div>
-                    <div class="col col-2">
+                    <div class="col-12 col-md-2">
                         <ul>
                             <li>
                                 <b>Company</b>
@@ -149,19 +149,17 @@
                 </div>
                 <hr>
                 <div class="row contact-row">
-                    <div class="col col-4">
+                    <div class="col-12 col-md-4">
                         <ul>
-                            <li>
-                                {% block footercopyright %}Monadical Inc. © 2020 All rights reserved.{% endblock %}
-                            </li>
+                            <li>{% block footercopyright %}Monadical Inc. © 2020 All rights reserved.{% endblock %}</li>
                         </ul>
                     </div>
-                    <div class="col col-3 offset-3">
+                    <div class="col-12 col-md-3 offset-md-3">
                         <ul>
                             <li>luka@monadical.com</li>
                         </ul>
                     </div>
-                    <div class="col col-2">
+                    <div class="col-12 col-md-2">
                         <ul>
                             <li>+1 (917) 933-3760</li>
                         </ul>

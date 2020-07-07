@@ -768,13 +768,65 @@ div.card-reference > div.card-body{
     min-height: 455px;
 }
 
-
-
-
-
 @media all {
     .blue-card-margin {
         margin: 25px 0 0 40px;
+    }
+}
+
+@media screen and (max-width: 412px){
+    .cases-home .projects .container > h1 {
+        width: 100%;
+        font-size: 16px;
+        margin: 15px auto;
+    }
+
+    .project.card > h4 {
+        width: 100%;
+    }
+
+    .cases-home .row.project-header {
+        margin-top: 15px;
+    }
+
+    .cases-home .project-header .col h1 {
+        font-size: 16px;
+    }
+
+    .cases-home .project-header .col img {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .cases-home .project-detail .row .col img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 412px) and (max-width: 768px){
+    .cases-home .projects .container > h1 {
+        width: 100%;
+        font-size: 24px;
+        margin: 30px auto;
+    }
+
+    .cases-home .row.project-header {
+        margin-top: 20px;
+    }
+
+    .cases-home .project-header .col h1 {
+        font-size: 24px;
+    }
+
+    .cases-home .project-header .col img {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .cases-home .project-detail .row .col img {
+        width: 100%;
     }
 }
 
@@ -923,7 +975,7 @@ button.black-button {
     font-weight: bold;
     margin-top: 30px;
     text-align: center;
-    width: 330px;
+    width: 100%;
 }
 
 .project.card > p{

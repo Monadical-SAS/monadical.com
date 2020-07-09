@@ -2,8 +2,7 @@
 
 {% block title %}Team{% endblock %}
 {% block subtitle %}Team{% endblock %}
-{% block logo %}
-{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
 
 {% block head %}
     <link rel="stylesheet" href="/static/core/css/team.css">
@@ -17,12 +16,12 @@
         <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-70">
-                    <p class="text-size-2">
+                <div class="col-12 text-center margin-top-70">
+                    <h2 class="text-size-2">
                         Why Monadical Team?
-                    </p>
+                    </h2>
                 </div>
-                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 offset-xl-1 text-center">
+                <div class="col-md-10 col-12 offset-md-1 text-center">
                     <p class="subtext-size-2 margin-top-10">
                         We're fully remote development and ops  team working from
                         Montreal, California, Medellin, and NYC.<br>
@@ -30,7 +29,7 @@
                         other core principles.
                     </p>
                 </div>
-                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 text-center">
+                <div class="col-md-8 col-12 offset-md-2 text-center">
                     <p class="subtext-size-3 margin-top-10">
                         We've spent the past 4 years building projects together. Our
                         developers have been featured in Forbes, CNN, WSJ, ... and our
@@ -39,10 +38,10 @@
                         in Spanish, French, Chinese, or German.
                     </p>
                 </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center margin-top-150">
-                    <p class="text-size-2">
+                <div class="col-12 text-center margin-top-150">
+                    <h2 class="text-size-2">
                         Meet the Team
-                    </p>
+                    </h2>
                     <p class="subtext-size-2">
                         We pride ourselves on being generalist who love to learn.
                     </p>
@@ -50,7 +49,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-40">
                     <div class="row">
                         {% for employee in team %}
-                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="card card-long card-team">
                                     <div class="row card-head">
                                         <div class="col-xl-12">
@@ -61,36 +60,36 @@
                                                 {{ employee['country'] }}
                                             </span>
                                         </div>
-                                        <div class="col-xl-12 margin-top-30 text-center">
+                                        <div class="col-12 margin-top-30 text-center">
                                             <img src="{{ employee['image_path'] }}" class="profile-img-card">
                                         </div>
-                                        <div class="col-xl-12 text-center">
+                                        <div class="col-12 text-center">
                                             <p class="profile-name-card">
                                                 {{ employee['name'] }}
                                             </p>
                                         </div>
-                                        <div class="col-xl-12 text-center">
+                                        <div class="col-12 text-center">
                                             <p class="profile-skills-card">
                                                 {{ employee['other_skills'] }}
                                             </p>
 
                                         </div>
-                                        <div class="col-xl-12 text-center">
+                                        <div class="col-12 text-center">
                                             <p class="profile-summary-card">
                                                 {{ employee['summary'] }}
                                             </p>
                                         </div>
-                                        <div class="col-xl-12 text-center margin-top-10">
+                                        <div class="col-12 text-center margin-top-10">
                                             <p class="profile-item-list-card">
                                                 <span>Survival skills:</span> {{ employee['survival_skills'] }}
                                             </p>
                                         </div>
-                                        <div class="col-xl-12 text-center">
+                                        <div class="col-12 text-center">
                                             <p class="profile-item-list-card">
                                                 <span>Favorite gadget:</span> {{ employee['gadget'] }}
                                             </p>
                                         </div>
-                                        <div class="col-xl-12 profile-social-networks-card text-center margin-top-30">
+                                        <div class="col-12 profile-social-networks-card text-center margin-top-30">
                                             {% for name, link  in employee['social_networks'].items() %}
                                                 <a href="{{ link }}" class="fa fa-{{ name }} btn-circle btn-circle-raised"></a>
                                             {% endfor %}

@@ -6,7 +6,7 @@
     position: relative;
     border-radius: 4px;
     /*box-shadow: 2px 10px 20px 24px rgba(0, 0, 0, 0.03);*/
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -33,7 +33,6 @@ header .container .nav-item .nav-link {
     font-weight: normal;
     line-height: 1.43;
     letter-spacing: normal;
-    text-align: right;
     object-fit: contain;
 }
 
@@ -341,8 +340,6 @@ header .container .nav-item a.nav-link:hover {
 .card-small{
     box-shadow: 0 2px 6px 0 rgba(47, 83, 151, 0.1);
     border: none;
-    min-width: 350px;
-    min-height: 260px;
 }
 
 .card-title-padding{
@@ -423,10 +420,6 @@ header .container .nav-item a.nav-link:hover {
         display: none;
     }
 
-    .xs-hide{
-        display: none;
-    }
-
     .margin-top-xs{
         margin-top: 20px;
 
@@ -441,11 +434,10 @@ header .container .nav-item a.nav-link:hover {
         min-height: 100%;
     }
 
-}
+    .xs-hide{
+        display: none;
+    }
 
-.card-open-source{
-    min-height: 630px;
-    min-width: 350px;
 }
 
 a.bigger-size{
@@ -576,12 +568,13 @@ footer .footer hr {
     max-width: 80px
 }
 
-.card-reference{
-    min-height: 320px
+.card-reference img{
+    width: 100%;
 }
 
-div.card-reference > div.card-body{
-    padding-left: 40px
+div.card-reference div.card-body{
+    margin-top: 10px;
+    padding: 10px 0 0 0;
 }
 
 .card-table{
@@ -606,8 +599,6 @@ div.card-reference > div.card-body{
 .card-long.card-team{
     padding: 15px 15px 30px 15px;
     border: solid 1px #e5e5e5;
-    min-height: 600px;
-    min-width: 255px;
     border-radius: 0;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -771,85 +762,6 @@ div.card-reference > div.card-body{
 .blue-card-margin {
     margin: 25px 0 0 40px;
 }
-
-@media screen and (max-width: 412px){
-    .cases-home .projects .container > h1 {
-        width: 100%;
-        font-size: 16px;
-        margin: 15px auto;
-    }
-
-    .project.card > h4 {
-        width: 100%;
-    }
-
-    .cases-home .row.project-header {
-        margin-top: 15px;
-    }
-
-    .cases-home .project-header .col h1 {
-        font-size: 16px;
-    }
-
-    .cases-home .project-header .col img {
-        margin-bottom: 10px;
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .cases-home .project-detail .row .col img {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 412px) and (max-width: 768px){
-    .cases-home .projects .container > h1 {
-        width: 100%;
-        font-size: 24px;
-        margin: 30px auto;
-    }
-
-    .cases-home .row.project-header {
-        margin-top: 20px;
-    }
-
-    .cases-home .project-header .col h1 {
-        font-size: 24px;
-    }
-
-    .cases-home .project-header .col img {
-        margin-bottom: 20px;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .cases-home .project-detail .row .col img {
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px){
-    .blue-card-margin{
-        margin-right: 50px;
-    }
-
-    .card-header.card-expertise-header{
-        padding-left: 65px;
-    }
-}
-
-@media (max-width: 768px){
-
-    .card-header.card-expertise-header{
-        padding-left: 10px;
-    }
-}
-
-
-
-
-
-
 
 /* Basic properties */
 
@@ -1078,6 +990,10 @@ button.read-more {
     display: none;
 }
 
+.row.our-clients .card-reference {
+    padding: 40px;
+}
+
 .row.our-clients .text-size-2 {
     color: #020202;
 }
@@ -1195,4 +1111,296 @@ button.read-more {
     line-height: 1.75;
     letter-spacing: normal;
     text-align: center;
+}
+
+.media-section .col-md-3.col-4 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.media-section img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 412px){
+    .cases-home .projects .container > h1 {
+        width: 100%;
+        font-size: 16px;
+        margin: 15px auto;
+    }
+
+    .project.card > h4 {
+        width: 100%;
+    }
+
+    .cases-home .row.project-header {
+        margin-top: 15px;
+    }
+
+    .cases-home .project-header .col h1 {
+        font-size: 16px;
+    }
+
+    .cases-home .project-header .col img {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .cases-home .project-detail .row .col img {
+        width: 100%;
+    }
+
+    .work-with-us .margin-top-60 {
+        margin-top: 5px;
+    }
+
+    .our-clients h1, .work-with-us h1 {
+        font-size: 24px;
+    }
+
+    .our-clients .card-clients-name{
+        font-size: 14px;
+    }
+    .our-clients .card-clients-position{
+        font-size: 12px;
+    }
+
+    .cases-home .container > h1 {
+        font-size: 20px;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .row.our-clients .card-reference {
+        padding: 10px;
+    }
+
+    .work-with-us .working-us-text {
+        margin-top: 20px;
+    }
+
+    .subtext-size-2 {
+        font-size: 14px;
+    }
+
+    .margin-top-90 {
+        margin-top: 20px;
+    }
+
+    h1.text-size-1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .second-section, .third-section, .fourth-section {
+        margin-top: 20px;
+    }
+
+    h2.text-size-2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    p.subtext-size-1 {
+        text-align: center;
+    }
+
+    .col-12.button-container {
+        text-align: center;
+    }
+
+    .margin-top-200 {
+        margin-top: 20px;
+    }
+
+    .margin-top-150 {
+        margin-top: 15px;
+    }
+
+    .margin-top-70 {
+        margin-top: 25px;
+    }
+
+    .margin-top-60 {
+        margin-top: 20px;
+    }
+
+    .margin-top-50 {
+        margin-top: 15px;
+    }
+
+    .margin-top-40 {
+        margin-top: 15px;
+    }
+
+    .margin-top-30 {
+        margin-top: 15px;
+    }
+
+    .card-table {
+        margin: 10px;
+    }
+}
+
+@media screen and (min-width: 412px) and (max-width: 768px){
+    .cases-home .projects .container > h1 {
+        width: 100%;
+        font-size: 24px;
+        margin: 30px auto;
+    }
+
+    .cases-home .row.project-header {
+        margin-top: 20px;
+    }
+
+    .cases-home .project-header .col h1 {
+        font-size: 24px;
+    }
+
+    .cases-home .project-header .col img {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .cases-home .project-detail .row .col img {
+        width: 100%;
+    }
+
+    .margin-top-150 {
+        margin-top: 20px;
+    }
+
+    .our-clients h1, .work-with-us h1 {
+        font-size: 24px;
+    }
+
+    .our-clients .card-clients-name{
+        font-size: 16px;
+    }
+    .our-clients .card-clients-position{
+        font-size: 12px;
+    }
+
+    .cases-home .container > h1 {
+        font-size: 24px;
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .work-with-us .working-us-text {
+        margin-top: 10px;
+    }
+
+    .subtext-size-2 {
+        font-size: 16px;
+    }
+
+    h1.text-size-1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .card-table {
+        margin: 10px;
+    }
+
+    h1.text-size-1 {
+        font-size: 42px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    h2.text-size-2 {
+        font-size: 32px;
+        margin-bottom: 14px;
+    }
+
+    .margin-top-200 {
+        margin-top: 50px;
+    }
+
+    .margin-top-150 {
+        margin-top: 40px;
+    }
+
+    .margin-top-70 {
+        margin-top: 36px;
+    }
+
+    .margin-top-60 {
+        margin-top: 32px;
+    }
+
+    .margin-top-50 {
+        margin-top: 30px;
+    }
+
+    .margin-top-40 {
+        margin-top: 24px;
+    }
+
+    .margin-top-30 {
+        margin-top: 20px;
+    }
+
+    .card-table {
+        margin: 10px;
+    }
+
+    .second-section, .third-section, .fourth-section {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 768px){
+    .blue-card-margin{
+        margin-right: 50px;
+    }
+
+    .card-header.card-expertise-header{
+        padding-left: 65px;
+    }
+
+    .card-small {
+        min-height: 260px;
+    }
+
+    .card-reference {
+      min-height: 320px;
+    }
+
+    .card-open-source{
+        min-height: 630px;
+        min-width: 350px;
+    }
+
+    .team-card .monad-image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .card-long.card-team{
+        min-height: 600px;
+        min-width: 255px;
+    }
+
+    .col-12.button-container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px){
+
+    .card-header.card-expertise-header{
+        padding-left: 10px;
+    }
+
+    .card-open-source {
+
+    }
 }

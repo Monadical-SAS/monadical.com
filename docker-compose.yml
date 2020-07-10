@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+    flask:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+            args:
+                - 'USER_ID=1000'
+        image: monadical:flask_base
+        working_dir: /opt/monadical.com/
+        command: bash run
+        ports:
+            - 5000:5000
+        volumes:
+            - ./:/opt/monadical.com/
+              #        networks:
+              #- default
+              #- hera
+        stdin_open: true
+        tty: true
+        expose:
+            - 5000
+              #networks:
+              #hera:
+              #external:
+              #name: hera

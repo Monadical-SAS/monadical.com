@@ -56,14 +56,19 @@
             transition: opacity 400ms ease;
         }
     </style>
-    <canvas class="animated-color-grid" height="20"></canvas>
+
     <div id="post-contentopticle-body">
-        {% block post %}
-            <article class="article-content">
-                {{ include_raw(template) }}
-            </article>
-        {% endblock %}
-        <br/><br/>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    {% block post %}
+                        <article class="article-content">
+                            {{ include_raw(template) }}
+                        </article>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
@@ -124,15 +129,6 @@
                 });
             });
             document.addEventListener('DOMContentLoaded', () => {
-                for (let elem of document.querySelectorAll('.animated-color-grid')) {
-                  const sqrs = new Squares(elem, {height: elem.height})
-                  sqrs.tick()
-
-                  window.addEventListener('resize', function(e) {
-                      sqrs.options.width = document.body.offsetWidth
-                      sqrs.updateDimensions()
-                  })
-                }
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'

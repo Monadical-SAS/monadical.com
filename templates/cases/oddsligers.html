@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}OddSligers{% endblock %}
+{% block subtitle %}OddSligers{% endblock %}
+{% block article %}
+<div class="container-full cases-home">
+    <div class="project-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-9">
+                    <div class="row project-header">
+                        <div class="col">
+                            <h1><a href="https://oddslingers.com">oddslingers.com</a> - Case Study (2018)</h1>
+                            <img src="/static/core/img/odd-slingers.png" style="max-height: 46px; max-width: 244px">
+                            <p>
+                                Technicality level: <b>4/5</b>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img
+                                    src="/static/core/img/img-cases-002.png"
+                                    alt="Syncroplicity"
+                                    class="syncro-img"
+                            >
+                        </div>
+                    </div>
+                    <div id="about" class="row">
+                        <div class="col">
+                            <h3>About the project</h3>
+                            <p>
+                                A modern take on the aging online poker platform:
+                                new game variants, ad-free online games for desktop
+                                & mobile using React animations and django-channels
+                                websockets.<br><br>
+                                Implemented bleeding-edge technology, including an
+                                event stream system, <a class="blue-text" href="https://cirw.in/blog/time-to-move-on">MOVE</a>-like
+                                architecture, pure-functional reactive frontend animations (to do this we had to write our own
+                                <a class="blue-text" href="https://github.com/Monadical-SAS/redux-time">frontend animations library</a>),
+                                and an in-house system for time-travel debugging and introspection tools.
+                            </p>
+                        </div>
+                    </div>
+                    {% include "clients-reviews.html" %}
+                    {% include "work-with-us.html" %}
+                </div>
+{#                <div class="xs-hide col-lg-3">#}
+{#                    <div class="row">#}
+{#                        <div class="col-12">#}
+{#                            <nav id="navbar-case-use" class="navbar navbar-light flex-column">#}
+{#                                  <h4>Case Study</h4>#}
+{#                                  <nav class="nav nav-pills flex-column">#}
+{#                                      <a class="nav-link" href="#about">About the client</a>#}
+{#                                      <a class="nav-link" href="#challenge">The challenge</a>#}
+{#                                      <a#}
+{#                                              class="nav-link"#}
+{#                                              href="#project-goal"#}
+{#                                              data-toggle="collapse"#}
+{#                                              data-target="#goal-section"#}
+{#                                      >#}
+{#                                          Project Goal#}
+{#                                      </a>#}
+{#                                      <nav#}
+{#                                              id="goal-section"#}
+{#                                              class="nav nav-pills flex-column collapse"#}
+{#                                      >#}
+{#                                          <a class="nav-link ml-3 my-1" href="#scope">Scope of work</a>#}
+{#                                          <a class="nav-link ml-3 my-1" href="#time-team">Time & team</a>#}
+{#                                          <a class="nav-link ml-3 my-1" href="#final-deliverables">Final Deliverables</a>#}
+{#                                      </nav>#}
+{#                                      <a class="nav-link" href="#wrapper">#}
+{#                                          Simple Wrapper vs Class Blend Wrapper#}
+{#                                      </a>#}
+{#                                      <a class="nav-link" href="#workflow">#}
+{#                                          Original Workflow vs New Workflow#}
+{#                                      </a>#}
+{#                                  </nav>#}
+{#                            </nav>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

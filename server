@@ -99,6 +99,8 @@ def render_post(path):
 
 @app.route('/cases/<path>')
 def render_case(path):
+    print (CASES)
+    print (f'/cases/{path}')
     case = CASES[f'/cases/{path}']
     print(case)
     return render_template(case['template'], now=datetime.now(), **CONFIG, **case)

@@ -181,6 +181,26 @@
         {% block bodyafter %}
         {% endblock %}
 
+        <!-- Smooth Scroll to Anchor Links Animation -->
+        <script>
+            function smoothScroll(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Scrolling to', this.getAttribute('href'))
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+              document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+              })
+              document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                  anchor.addEventListener('click', smoothScroll);
+              });
+            })
+        </script>
+
         <!-- Matomo -->
         <script type="text/javascript">
           var _paq = window._paq || [];

@@ -737,12 +737,14 @@ div.card-reference div.card-body{
     background: url("/static/core/img/img-services-006.png") no-repeat;
     width: 100%;
     min-height: 250px;
+    padding: 20px;
 }
 
 .card-second-way-work{
     background: url("/static/core/img/img-services-007.png") no-repeat right;
     width: 100%;
     min-height: 250px;
+    padding: 20px;
 }
 
 .card-blue-title{
@@ -778,15 +780,6 @@ div.card-reference div.card-body{
     line-height: 1.88;
     letter-spacing: normal;
     color: #818182;
-}
-
-.card.card-expertise{
-    border-radius: 0;
-    min-height: 455px;
-}
-
-.blue-card-margin {
-    margin: 25px 0 0 40px;
 }
 
 /* Basic properties */
@@ -1249,6 +1242,14 @@ button.read-more {
         margin-top: 15px;
     }
 
+    .margin-top-90{
+        margin-top: 35px;
+    }
+
+    .margin-top-80{
+        margin-top: 30px;
+    }
+
     .margin-top-70 {
         margin-top: 25px;
     }
@@ -1271,6 +1272,23 @@ button.read-more {
 
     .card-table {
         margin: 10px;
+    }
+
+    .card-first-way-work, .card-second-way-work{
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .btn.btn-info-inverse {
+        font-size: 12px;
+    }
+
+    .card-white-title {
+        font-size: 20px;
+    }
+
+    .card.card-expertise{
+     margin-bottom: 10px;
     }
 }
 
@@ -1356,6 +1374,14 @@ button.read-more {
         margin-top: 40px;
     }
 
+    .margin-top-90{
+        margin-top: 40px;
+    }
+
+    .margin-top-80{
+        margin-top: 36px;
+    }
+
     .margin-top-70 {
         margin-top: 36px;
     }
@@ -1385,11 +1411,7 @@ button.read-more {
     }
 }
 
-@media (min-width: 768px){
-    .blue-card-margin{
-        margin-right: 50px;
-    }
-
+@media (min-width: 768px) {
     .card-header.card-expertise-header{
         padding-left: 65px;
     }
@@ -1400,11 +1422,6 @@ button.read-more {
 
     .card-reference {
       min-height: 320px;
-    }
-
-    .card-open-source{
-        min-height: 630px;
-        min-width: 350px;
     }
 
     .team-card .monad-image {
@@ -1419,6 +1436,18 @@ button.read-more {
 
     .col-12.button-container {
         text-align: center;
+    }
+
+    .card.card-expertise{
+        border-radius: 0;
+        min-height: 455px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-open-source{
+        min-height: 630px;
+        min-width: 350px;
     }
 }
 

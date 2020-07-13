@@ -15,7 +15,7 @@ body {
     color: #000000;
 }
 
-header .collapse{
+header .collapse {
     justify-content: space-between;
 }
 
@@ -27,7 +27,7 @@ header .navbar {
 header .container .nav-item .nav-link {
     color: #2b2b2b;
     font-family: Lato;
-    font-size: 14px;
+    font-size: 18px;
     font-stretch: normal;
     font-style: normal;
     font-weight: normal;
@@ -40,12 +40,12 @@ header .container .nav-item a.nav-link:hover {
     color: #0086b4;
 }
 
-a{
+a {
     color: #0086b4;
     background: transparent;
 }
 
-a:hover{
+a:hover {
     color: #818182;
 }
 
@@ -70,7 +70,7 @@ a:hover{
     color: #020202;
 }
 
-.text-size-3{
+.text-size-3 {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -100,7 +100,7 @@ a:hover{
     color: #818182;
 }
 
-.subtext-size-3{
+.subtext-size-3 {
     font-size: 16px;
     font-weight: 300;
     font-stretch: normal;
@@ -111,7 +111,7 @@ a:hover{
     color: #818182;
 }
 
-.title-card-size-1{
+.title-card-size-1 {
     font-size: 18px;
     font-weight: normal;
     font-stretch: normal;
@@ -120,7 +120,7 @@ a:hover{
     letter-spacing: normal;
 }
 
-.title-card-size-2{
+.title-card-size-2 {
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
@@ -130,7 +130,7 @@ a:hover{
     color: #0086b4;
 }
 
-.title-card-size-3{
+.title-card-size-3 {
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
@@ -140,7 +140,7 @@ a:hover{
     color: #2b2b2b;
 }
 
-.blue-text{
+.blue-text {
     color: #0086b4;
 }
 
@@ -240,13 +240,13 @@ a:hover{
     margin: 5px;
 }
 
-.btn-circle:hover{
+.btn-circle:hover {
     color: #ffffff;
     background-color: #818182;
     border: 1px solid #818182;
 }
 
-.btn-circle.btn-info{
+.btn-circle.btn-info {
     color: #0086b4;
     border: 2px solid #0086b4;
     border-radius: 40px;
@@ -254,7 +254,7 @@ a:hover{
     transition: all 0.3s ease 0s;
 }
 
-.btn-circle.btn-info:hover{
+.btn-circle.btn-info:hover {
     color: #FFF;
     background: #0086b4;
     border: 1px solid #0086b4;
@@ -266,7 +266,7 @@ a:hover{
     margin-top: 311px;
 }
 
-.padding-second-section{
+.padding-second-section {
     padding: 0 110px;
 }
 
@@ -274,7 +274,7 @@ a:hover{
     margin-top: 150px;
 }
 
-.fourth-section{
+.fourth-section {
     margin-top: 160px;
 }
 
@@ -296,7 +296,7 @@ a:hover{
     color: #f6f6f6;
 }
 
-.team-card-title{
+.team-card-title {
     font-size: 20px;
     font-weight: bold;
     font-stretch: normal;
@@ -306,7 +306,7 @@ a:hover{
     color: #2b2b2b;
 }
 
-.team-card-text{
+.team-card-text {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -316,19 +316,19 @@ a:hover{
     color: #818182;
 }
 
-.team-card{
+.team-card {
     border: none;
 }
 
-.team-card > .card-body > ul{
+.team-card>.card-body>ul {
     padding-left: 15px;
 }
 
-.team-card > .card-body{
+.team-card>.card-body {
     padding: 10px;
 }
 
-.open-source-card-text{
+.open-source-card-text {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -349,7 +349,7 @@ a:hover{
     color: #2b2b2b;
 }
 
-.open-source-card-foot-page{
+.open-source-card-foot-page {
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
@@ -360,16 +360,16 @@ a:hover{
     color: #2b2b2b;
 }
 
-.card-small{
+.card-small {
     box-shadow: 0 2px 6px 0 rgba(47, 83, 151, 0.1);
     border: none;
 }
 
-.card-title-padding{
+.card-title-padding {
     padding: 40px 40px 0 40px;
 }
 
-.working-us-text{
+.working-us-text {
     margin-top: 60px;
 }
 
@@ -431,7 +431,7 @@ a:hover{
         display: none;
     }
 
-    .circle-img-left{
+    .circle-img-left {
         display: none;
     }
 
@@ -443,11 +443,12 @@ a:hover{
         display: none;
     }
 
-    .margin-top-xs{
+    .margin-top-xs {
         margin-top: 20px;
 
     }
-    .margin-bottom-xs{
+
+    .margin-bottom-xs {
         margin-bottom: 30px;
     }
 
@@ -455,22 +456,22 @@ a:hover{
 
 @media (max-width: 400px) {
 
-    .card-guaranties{
+    .card-guaranties {
         min-width: 100%;
         min-height: 100%;
     }
 
-    .xs-hide{
+    .xs-hide {
         display: none;
     }
 
 }
 
-a.bigger-size{
+a.bigger-size {
     font-size: 24px;
 }
 
-.our-clients .card-clients-name{
+.our-clients .card-clients-name {
     font-size: 20px;
     font-stretch: normal;
     font-style: normal;
@@ -479,7 +480,7 @@ a.bigger-size{
     color: #2b2b2b;
 }
 
-.our-clients .card-clients-position{
+.our-clients .card-clients-position {
     font-size: 14px;
     font-stretch: normal;
     font-style: normal;
@@ -538,11 +539,11 @@ footer .footer .row ul li {
     color: #818182;
 }
 
-footer .footer .row ul li > b {
+footer .footer .row ul li>b {
     font-size: 14px;
 }
 
-footer .footer .row ul li > a {
+footer .footer .row ul li>a {
     color: #0086b4;
 }
 
@@ -574,55 +575,57 @@ footer .footer .row.social li {
 footer .footer hr {
     margin-left: 10px;
     margin-right: 10px;
-}.octopus-img{
+}
+
+.octopus-img {
     max-height: 681px;
     max-width: 559px;
 }
 
-.documented-code-img{
+.documented-code-img {
     max-height: 80px;
     max-width: 80px
 }
 
-.security-review-img{
+.security-review-img {
     max-height: 63px;
     max-width: 80px;
 }
 
-.dead-code-img{
+.dead-code-img {
     max-height: 61px;
     max-width: 80px
 }
 
-.card-reference img{
+.card-reference img {
     width: 100%;
 }
 
-div.card-reference div.card-body{
+div.card-reference div.card-body {
     margin-top: 10px;
     padding: 10px 0 0 0;
 }
 
-.card-table{
+.card-table {
     margin-bottom: 15px;
     margin-top: 15px;
 }
 
-.text-title-bold{
-  font-size: 36px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.39;
-  letter-spacing: normal;
-  color: #020202;
+.text-title-bold {
+    font-size: 36px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    color: #020202;
 }
 
-.line-height-card{
+.line-height-card {
     line-height: 1.88;
 }
 
-.card-long.card-team{
+.card-long.card-team {
     padding: 15px 15px 30px 15px;
     border: solid 1px #e5e5e5;
     border-radius: 0;
@@ -630,14 +633,14 @@ div.card-reference div.card-body{
     margin-bottom: 15px;
 }
 
-.profile-img-card{
+.profile-img-card {
     height: 140px;
     width: 140px;
     border-radius: 50%;
     background-color: #bdbdbd;
 }
 
-.profile-name-card{
+.profile-name-card {
     font-size: 16px;
     font-weight: bold;
     font-stretch: normal;
@@ -650,7 +653,7 @@ div.card-reference div.card-body{
     margin-bottom: 5px;
 }
 
-.profile-skills-card{
+.profile-skills-card {
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
@@ -661,7 +664,7 @@ div.card-reference div.card-body{
     color: #999999;
 }
 
-.profile-summary-card{
+.profile-summary-card {
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
@@ -684,11 +687,11 @@ div.card-reference div.card-body{
     margin-bottom: 5px;
 }
 
-.profile-item-list-card > span{
+.profile-item-list-card>span {
     color: #2b2b2b;
 }
 
-.secret-user{
+.secret-user {
     display: inline-block;
     position: relative;
     border: solid 1px #e5e5e5;
@@ -696,17 +699,17 @@ div.card-reference div.card-body{
     width: 200px;
 }
 
-.secret-user-img{
+.secret-user-img {
     position: absolute;
     top: 30px;
     left: 30px;
 }
 
-.card.card-borderless{
+.card.card-borderless {
     border: none;
 }
 
-.card-header.card-services-header{
+.card-header.card-services-header {
     border: none;
     border-radius: 0;
     background-color: transparent;
@@ -714,50 +717,50 @@ div.card-reference div.card-body{
     padding-bottom: 0;
 }
 
-.card-body.card-services-body{
+.card-body.card-services-body {
     box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
     padding: 0;
 }
 
-.card-services-img{
+.card-services-img {
     max-width: 350px;
     max-height: 264px;
 }
 
-.card-footer.card-services-footer{
+.card-footer.card-services-footer {
     background-color: transparent;
 }
 
-.card.card-shadow{
+.card.card-shadow {
     border: none;
     box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
 }
 
-.card-first-way-work{
+.card-first-way-work {
     background: url("/static/core/img/img-services-006.png") no-repeat;
     width: 100%;
     min-height: 250px;
     padding: 20px;
 }
 
-.card-second-way-work{
+.card-second-way-work {
     background: url("/static/core/img/img-services-007.png") no-repeat right;
     width: 100%;
     min-height: 250px;
     padding: 20px;
 }
 
-.card-blue-title{
-  font-size: 24px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.67;
-  letter-spacing: normal;
-  color: #0086b4;
+.card-blue-title {
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #0086b4;
 }
 
-.card-white-title{
+.card-white-title {
     font-size: 24px;
     font-weight: bold;
     font-stretch: normal;
@@ -767,12 +770,12 @@ div.card-reference div.card-body{
     color: #f6f6f6;
 }
 
-.card-header.card-expertise-header{
+.card-header.card-expertise-header {
     background: #0086b4;
     border-radius: 0;
 }
 
-.expertise-list > li{
+.expertise-list>li {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -784,75 +787,75 @@ div.card-reference div.card-body{
 
 /* Basic properties */
 
-.margin-top-90{
+.margin-top-90 {
     margin-top: 90px;
 }
 
-.margin-top-150{
+.margin-top-150 {
     margin-top: 150px;
 }
 
-.margin-top-200{
+.margin-top-200 {
     margin-top: 200px;
 }
 
-.margin-top-20{
+.margin-top-20 {
     margin-top: 20px;
 }
 
-.margin-top-30{
+.margin-top-30 {
     margin-top: 30px;
 }
 
-.margin-top-15{
+.margin-top-15 {
     margin-top: 15px;
 }
 
-.margin-top-60{
+.margin-top-60 {
     margin-top: 60px;
 }
 
-.margin-top-70{
+.margin-top-70 {
     margin-top: 70px;
 }
 
-.margin-top-50{
+.margin-top-50 {
     margin-top: 50px;
 }
 
-.margin-top-35{
+.margin-top-35 {
     margin-top: 35px;
 }
 
-.margin-bottom-30{
+.margin-bottom-30 {
     margin-bottom: 30px;
 }
 
-.margin-bottom-50{
+.margin-bottom-50 {
     margin-bottom: 50px;
 }
 
-.margin-top-10{
+.margin-top-10 {
     margin-top: 10px;
 }
 
-.margin-top-40{
+.margin-top-40 {
     margin-top: 40px;
 }
 
-.margin-top-80{
+.margin-top-80 {
     margin-top: 80px;
 }
 
-.max-width-100{
+.max-width-100 {
     max-width: 100%;
 }
 
-.margin-bottom-150{
+.margin-bottom-150 {
     margin-bottom: 150px;
 }
 
-.cases-home .container > h1 {
+.cases-home .container>h1 {
     color: #020202;
     font-size: 48px;
     line-height: 1.29;
@@ -873,7 +876,7 @@ div.card-reference div.card-body{
     margin-top: 30px;
 }
 
-.cases-home > .projects {
+.cases-home>.projects {
     background: url("/static/core/img/cases-background.png") no-repeat;
     background-size: cover;
 }
@@ -899,7 +902,7 @@ button.black-button {
     justify-content: normal;
 }
 
-.project.card > h4 {
+.project.card>h4 {
     color: #2b2b2b;
     font-size: 16px;
     font-weight: bold;
@@ -908,7 +911,7 @@ button.black-button {
     width: 100%;
 }
 
-.project.card > p{
+.project.card>p {
     color: #666666;
     font-size: 14px;
     letter-spacing: normal;
@@ -917,11 +920,11 @@ button.black-button {
     width: 305px;
 }
 
-.project.card .languages{
+.project.card .languages {
     margin: 20px auto;
 }
 
-.project.card > img {
+.project.card>img {
     width: 100%;
 }
 
@@ -951,7 +954,7 @@ button.read-more {
     margin-top: 60px;
 }
 
-.cases-home .project-header h1{
+.cases-home .project-header h1 {
     color: #171717;
     font-size: 30px;
 }
@@ -971,11 +974,12 @@ button.read-more {
     font-weight: bold;
 }
 
-.cases-home .project-header p > b {
+.cases-home .project-header p>b {
     color: #2b2b2b;
 }
 
-.cases-home p, .cases-home li {
+.cases-home p,
+.cases-home li {
     color: #666666;
 }
 
@@ -1002,7 +1006,7 @@ button.read-more {
     font-weight: normal;
 }
 
-#navbar-case-use .nav-pills.collapse.show .nav-link{
+#navbar-case-use .nav-pills.collapse.show .nav-link {
     background-color: white;
 }
 
@@ -1022,13 +1026,14 @@ button.read-more {
     color: #2b2b2b;
 }
 
-.row.work-with-us .text-size-2{
+.row.work-with-us .text-size-2 {
     color: #020202;
 }
 
-.row.work-with-us .text-size-3{
+.row.work-with-us .text-size-3 {
     color: #2b2b2b;
 }
+
 .open-source-logos {
     display: flex;
     justify-content: space-around;
@@ -1044,7 +1049,7 @@ button.read-more {
 }
 
 
-.cases-home .container > h1 {
+.cases-home .container>h1 {
     color: #020202;
     font-size: 48px;
     line-height: 1.29;
@@ -1055,7 +1060,7 @@ button.read-more {
     width: 945px;
 }
 
-.cases-home > .projects {
+.cases-home>.projects {
     background: url("/static/core/img/cases-background.png") no-repeat;
     background-size: cover;
 }
@@ -1080,7 +1085,7 @@ button.black-button {
     box-shadow: 0px 0px 5px 1px #ddd;
 }
 
-.project.card > h4 {
+.project.card>h4 {
     color: #2b2b2b;
     font-size: 16px;
     font-weight: bold;
@@ -1089,7 +1094,7 @@ button.black-button {
     width: 330px;
 }
 
-.project.card > p{
+.project.card>p {
     color: #666666;
     font-size: 14px;
     letter-spacing: normal;
@@ -1098,11 +1103,11 @@ button.black-button {
     width: 305px;
 }
 
-.project.card .languages{
+.project.card .languages {
     margin: 20px auto;
 }
 
-.project.card > img {
+.project.card>img {
     width: 100%;
 }
 
@@ -1144,14 +1149,14 @@ button.read-more {
     max-width: 100%;
 }
 
-@media screen and (max-width: 412px){
-    .cases-home .projects .container > h1 {
+@media screen and (max-width: 412px) {
+    .cases-home .projects .container>h1 {
         width: 100%;
         font-size: 16px;
         margin: 15px auto;
     }
 
-    .project.card > h4 {
+    .project.card>h4 {
         width: 100%;
     }
 
@@ -1177,18 +1182,20 @@ button.read-more {
         margin-top: 5px;
     }
 
-    .our-clients h1, .work-with-us h1 {
+    .our-clients h1,
+    .work-with-us h1 {
         font-size: 24px;
     }
 
-    .our-clients .card-clients-name{
+    .our-clients .card-clients-name {
         font-size: 14px;
     }
-    .our-clients .card-clients-position{
+
+    .our-clients .card-clients-position {
         font-size: 12px;
     }
 
-    .cases-home .container > h1 {
+    .cases-home .container>h1 {
         font-size: 20px;
         margin: 10px 0;
         width: 100%;
@@ -1216,7 +1223,9 @@ button.read-more {
         text-align: center;
     }
 
-    .second-section, .third-section, .fourth-section {
+    .second-section,
+    .third-section,
+    .fourth-section {
         margin-top: 20px;
     }
 
@@ -1245,11 +1254,11 @@ button.read-more {
         margin-bottom: 15px;
     }
 
-    .margin-top-90{
+    .margin-top-90 {
         margin-top: 35px;
     }
 
-    .margin-top-80{
+    .margin-top-80 {
         margin-top: 30px;
     }
 
@@ -1277,7 +1286,8 @@ button.read-more {
         margin: 10px;
     }
 
-    .card-first-way-work, .card-second-way-work{
+    .card-first-way-work,
+    .card-second-way-work {
         margin: 10px 0;
         padding: 10px;
     }
@@ -1290,13 +1300,13 @@ button.read-more {
         font-size: 20px;
     }
 
-    .card.card-expertise{
-     margin-bottom: 10px;
+    .card.card-expertise {
+        margin-bottom: 10px;
     }
 }
 
-@media screen and (min-width: 412px) and (max-width: 768px){
-    .cases-home .projects .container > h1 {
+@media screen and (min-width: 412px) and (max-width: 768px) {
+    .cases-home .projects .container>h1 {
         width: 100%;
         font-size: 24px;
         margin: 30px auto;
@@ -1328,18 +1338,20 @@ button.read-more {
         margin-bottom: 20px;
     }
 
-    .our-clients h1, .work-with-us h1 {
+    .our-clients h1,
+    .work-with-us h1 {
         font-size: 24px;
     }
 
-    .our-clients .card-clients-name{
+    .our-clients .card-clients-name {
         font-size: 16px;
     }
-    .our-clients .card-clients-position{
+
+    .our-clients .card-clients-position {
         font-size: 12px;
     }
 
-    .cases-home .container > h1 {
+    .cases-home .container>h1 {
         font-size: 24px;
         margin: 20px auto;
         width: 90%;
@@ -1385,11 +1397,11 @@ button.read-more {
         margin-bottom: 40px;
     }
 
-    .margin-top-90{
+    .margin-top-90 {
         margin-top: 40px;
     }
 
-    .margin-top-80{
+    .margin-top-80 {
         margin-top: 36px;
     }
 
@@ -1417,13 +1429,15 @@ button.read-more {
         margin: 10px;
     }
 
-    .second-section, .third-section, .fourth-section {
+    .second-section,
+    .third-section,
+    .fourth-section {
         margin-top: 30px;
     }
 }
 
 @media (min-width: 768px) {
-    .card-header.card-expertise-header{
+    .card-header.card-expertise-header {
         padding-left: 65px;
     }
 
@@ -1432,7 +1446,7 @@ button.read-more {
     }
 
     .card-reference {
-      min-height: 320px;
+        min-height: 320px;
     }
 
     .team-card .monad-image {
@@ -1440,7 +1454,7 @@ button.read-more {
         width: 100%;
     }
 
-    .card-long.card-team{
+    .card-long.card-team {
         min-height: 600px;
         min-width: 255px;
     }
@@ -1449,7 +1463,7 @@ button.read-more {
         text-align: center;
     }
 
-    .card.card-expertise{
+    .card.card-expertise {
         border-radius: 0;
         min-height: 455px;
     }
@@ -1460,32 +1474,30 @@ button.read-more {
 }
 
 @media (min-width: 992px) {
-    .card-open-source{
+    .card-open-source {
         min-height: 630px;
         min-width: 350px;
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .card-header.card-expertise-header{
+    .card-header.card-expertise-header {
         padding-left: 10px;
     }
 
-    .card-open-source {
+    .card-open-source {}
 
-    }
-
-    h4 > a {
+    h4>a {
         font-size: 1rem;
     }
 }
 
-.green-syncro{
+.green-syncro {
     color: #41a428;
 }
 
-.syncro-img{
+.syncro-img {
     max-width: 100%;
     max-height: 100%;
 }

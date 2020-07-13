@@ -37,12 +37,12 @@ echo ""
 git add output
 git commit -q --short -m "built static site" > /dev/null
 
-echo "$blue[^] Pushing build to origin/live...$normal"
-git push origin "$current_branch":live --force
+echo "$blue[^] Pushing build to origin/beta...$normal"
+git push origin "$current_branch":beta --force
 
 echo "$blue[^] Deploying output/ to https://monadical.com...$normal"
 rsync -r output/ grape:/opt/monadical.www/output
-# ssh monadical.com "cd /opt/monadical.com; git checkout -f live; git pull"
+# ssh monadical.com "cd /opt/monadical.beta; git checkout -f beta; git pull"
 
 echo ""
 echo "$green[√] Deploy to https://monadical.com complete.$normal"

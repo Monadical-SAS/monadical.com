@@ -41,7 +41,9 @@
             {% for post in POSTS.values() %}
                 <div class="col-12 col-md-6 text-center article mb-4">
                     <div class="card h-100 ">
-                        <img class="card-img-top" src="{{post.img}}" alt="Card image cap">
+                        <a href="{{post.url}}">
+                            <img class="card-img-top" src="{{post.img}}" alt="Card image cap">
+                        </a>
                         <div class="card-body">
                             <a class="card-link" href="{{post.url}}">
                                 <div class="post-tags">

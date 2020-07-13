@@ -57,7 +57,24 @@
             "template": "contact-us.html"
         }
     },
-    "POSTS": {
+    "POSTS": { 
+        "how-to-make-remote-work-zulip": {
+            "date": "2020-07-08",
+            "img": "/static/zulip.jpg",
+            "title": "How to Make Remote Work: Zulip, Part Two",
+            "tags": ["remote-work", "soft-skills", "remote", "home-office", "tools", "chat", "communication"],
+            "length": "10 min read",
+            "source": "https://docs.monadical.com/s/how-to-make-remote-work-zulip",
+            "url": "/posts/how-to-make-remote-work-part-zulip.html",
+            "template": "posts/how-to-make-remote-work-part-zulip.html",
+            "description": "How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.",
+            "author": {
+                "name": "Max",
+                "title": "Monadical CEO",
+                "url": "/team.html",
+                "image": "/static/max.jpg"
+            }  
+        },
         "how-to-make-remote-work-part-one": {
             "date": "2020-03-18",
             "img": "/static/remote-work.jpg",
@@ -71,8 +88,7 @@
             "author": {
                 "name": "Max McCrea",
                 "title": "Monadical CEO",
-                "handle": "@cowpig",
-                "url": "https://twitter.com/ACowpig",
+                "url": "/team.html",
                 "image": "/static/max.jpg"
             }  
         },

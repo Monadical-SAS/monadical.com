@@ -49,6 +49,15 @@ a:hover {
     color: #818182;
 }
 
+a{
+    color: #0086b4;
+    background: transparent;
+}
+
+a:hover{
+    color: #818182;
+}
+
 .text-size-1 {
     font-size: 82px;
     font-weight: bold;
@@ -246,7 +255,7 @@ a:hover {
     border: 1px solid #818182;
 }
 
-.btn-circle.btn-info {
+.btn-circle.btn-info{
     color: #0086b4;
     border: 2px solid #0086b4;
     border-radius: 40px;
@@ -254,7 +263,7 @@ a:hover {
     transition: all 0.3s ease 0s;
 }
 
-.btn-circle.btn-info:hover {
+.btn-circle.btn-info:hover{
     color: #FFF;
     background: #0086b4;
     border: 1px solid #0086b4;
@@ -446,6 +455,9 @@ a:hover {
     .margin-top-xs {
         margin-top: 20px;
 
+    }
+    .margin-bottom-xs{
+        margin-bottom: 30px;
     }
 
     .margin-bottom-xs {
@@ -900,6 +912,7 @@ button.black-button {
     border: none;
     box-shadow: 0px 0px 5px 1px #ddd;
     justify-content: normal;
+    min-height: 790px;
 }
 
 .project.card>h4 {
@@ -1488,7 +1501,7 @@ button.read-more {
 
     .card-open-source {}
 
-    h4>a {
+    h4 > a {
         font-size: 1rem;
     }
 }

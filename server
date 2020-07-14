@@ -73,14 +73,13 @@ def favicon():
 
 @app.route('/<path>')
 def render_page(path):
-    page = PAGES[f'/{path}']
+    page = PAGES[f'/{path}'].copy()
 
     if page['title'] == "Team":
         team_list = load_team_info()
         page['team'] = team_list
     if page['title'] == "Services":
         page['stacks'] = load_stacks_info()
-
 
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 

@@ -6,6 +6,24 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="{{description}}" />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="{{title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{{img}}" />
+<meta property="og:url" content="{{url}}" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="{{description}}" />
+<meta property="og:site_name" content="{{SITE_TITLE}}" />
+<meta property="og:locale" content="en_us" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="{{description}}">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{img}}">
 {% endblock %}
 
 {% block article %}

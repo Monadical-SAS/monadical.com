@@ -95,7 +95,7 @@ header .navbar {
     margin-bottom: -20px;
 }
 article .container-full {
-    max-width: 1400px;
+    /*max-width: 1400px;*/
     margin: auto;
     float: none;
     background: #f7fcff;
@@ -472,9 +472,7 @@ article iframe {
     }
 }
 
-/*.bg-primary {
-    background-color: #714cdf !important;
-}
+/*
 .progress-bar-striped {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);

@@ -57,7 +57,24 @@
             "template": "contact-us.html"
         }
     },
-    "POSTS": { 
+    "POSTS": {
+        "principles-handbook": {
+            "date": "2020-07-08",
+            "img": "/static/full-stack.jpg",
+            "title": "Monadical Principles Handbook",
+            "tags": ["remote-work", "soft-skills", "remote", "home-office", "tools", "chat", "communication"],
+            "length": "20 min read",
+            "source": "https://docs.monadical.com/s/principles-handbook",
+            "url": "/posts/principles-handbook.html",
+            "template": "posts/principles-handbook.html",
+            "description": "Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.",
+            "author": {
+                "name": "Max",
+                "title": "Monadical CEO",
+                "url": "/team.html",
+                "image": "/static/max.jpg"
+            }
+        },
         "how-to-make-remote-work-zulip": {
             "date": "2020-07-08",
             "img": "/static/zulip.jpg",

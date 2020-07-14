@@ -2,11 +2,14 @@
 
 {% block title %}{{title}}{% endblock %}
 {% block subtitle %}<a href="{{PAGES.blog.url}}">Blog</a>{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
 
-{% block beforebody %}{% endblock %}
-{% block logo %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/core/css/index.css">
+{% endblock %}
 
 {% block article %}
+
     <style>
         nav.navbar {
             border-radius: 0px !important;

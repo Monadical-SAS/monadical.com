@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # Storing Database ORM Operations as Data **A Strategy for Linearizing Database Operations">
+    
+    <title>Storing Database ORM Operations as Data - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:50:27 GMT+0000 (UTC)" data-updatetime="Thu Feb 14 2019 13:00:25 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">250 views <a href="Linearizing-database-operations-django.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+# Storing Database ORM Operations as Data
+**A Strategy for Linearizing Database Operations**
+
+*Originally published 2018-09-05 on [labs.oddslingers.com](https://labs.oddslingers.com/posts/Linearizing-database-operations-django.html).*
+
+&lt;img src=&#34;https://i.imgur.com/YiU19Lv.jpg&#34; style=&#34;width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.04);&#34;&gt;
+
+&lt;br/&gt;&lt;br/&gt;
+&lt;/center&gt;
+
+
+**This post outlines a technique that can be used to queue database ORM operations in a data structure instead of in imperative code form.**
+
+Declarative design is great for dealing with complex logic that produces a series of state changes that need to be executed later in a specific order. This is the core idea behind the Redux state management library.  Another good example is a game engine that needs to perform a bunch of database writes when each player moves, but wants all the writes to happen atomically at the end of each game step rather than scattered throughout the game loop code.
+
+*How do you know when you might need something like this?*
+
+Here are some code smells that often indicate hidden complexity and potentially unsafe database transactions lurking in a codebase:
+ - are database logic and view logic intertwined in the codebase?
+ - can two processes update the same rows without enforced locks or atomic operations?
+ - are there a lack of tests that confirm data integrity when multiple processes modify the same rows?
+
+&lt;br/&gt;
+&lt;center&gt;
+&lt;img src=&#34;https://i.imgur.com/kBITVs1.png&#34; style=&#34;width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.04);&#34;&gt;
+&lt;/center&gt;
+
+## Why would data be better than code?
+
+As a system becomes more advanced, there is a natural tendency for procedures to transition from being inscribed as code, to expressed as data.
+
+For example, typical CI/CD pipelines have gradually moved from  bash scripts in the past, to YAML, json, or other data-centric config files now. Declarative Infrastructure as Code has been a great advancement in managing systems, from BSD jail config files, to docker-compose, to ansible-playbooks, all find ways to express complex system requirements as simple raw values in a text file.
+
+This principle extends beyond config management to code actual implementation.  We can build systems in the form of pure functional layers that pass around some data, then perform side effects at the very end safely.
+
+Having as much complexity expressed as data aids in keeping layers of systems cleanly separated, and does wonders for testability. As you&#39;re probably heard a compsci teacher say before &#34;find the right data structure and the problem solves itself&#34;. You can pass around a data structure that represents a complex sequence of events as simple values and test it like data by making assertions about its content. LISP discovered the power of code as data long ago.
+
+That being said, we&#39;re not going whole-hog into the meta-programming heavens like LISP, here we&#39;re illustrating a compact structure that solves one problem well: describing database changes.
+
+## How can we represent a database operation as data?
+
+Here&#39;s a database operation you might see in imperative form, as it is typically written in Django codebases:
+```python
+user = User.objects.get(id=123)
+user.balance = user.balance + 100
+```
+
+Now we&#39;re going to transform that example from imperative code that *outlines steps*, into declarative data that *describes a desired outcome*.
+
+We can represent each operation on a database as a tuple, and each set of operations as a list of those tuples, forming a transaction.
+
+```python
+Operation = Tuple[QuerySet, str, Dict[str, Any]]       # NamedTuple works well too
+Transaction = List[Operation]
+```
+
+An individual operation can now look like this in data form:
+```python
+operation: Operation = (
+    User.objects.filter(id=123),        # QuerySet to update
+    &#39;update&#39;,                           # func to call on the queryset
+    {&#39;balance&#39;: F(&#39;balance&#39;) + 100},    # kwargs for the func
+)
+```
+
+Django documents this as: [Avoiding Race Conditions With `F()`](https://docs.djangoproject.com/en/2.1/ref/models/expressions/#avoiding-race-conditions-using-f).
+
+This structure works not only for updates, but also equally well for object creation and deletion:
+```python
+operation1 = (User.objects, &#39;get_or_create&#39;, {&#39;username&#39;: &#39;bob&#39;})
+operation2 = (User.objects.filter(username=&#39;bob&#39;), &#39;delete&#39;, {})
+```
+
+If `F()` expressions aren&#39;t enough, you can reuse this design to aquire a list of locks before your logic executes, and execute a different list of operations afterwards. 
+
+```jsx
+pre_logic_locks = [
+    (User.objects.filter(id=123), &#39;select_for_update, {}),
+]
+...
+post_logic_writes = [
+    (User.objects.filter(id=123), &#39;update&#39;, {&#39;some_field&#39;: new_val})
+]
+```
+
+Of course, the ultimate declarative language is SQL, we can only get close with the Django ORM.
+
+&lt;center&gt;
+
+&lt;img src=&#34;https://i.imgur.com/WVMRrDq.png&#34; style=&#34;width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.08);&#34;&gt;
+&lt;/center&gt;
+
+## How do we process a list of operations?
+
+Once we have any set of operations queued up in a list, we can execute them atomically together:
+
+```python
+def execute_operations(operations: Transaction):
+    with transaction.atomic():
+        for qs, func_name, kwargs in operations:
+            func = getattr(qs, func_name)
+            yield func(**kwargs)
+```
+
+In this way we can perform 20 or 30 field and row updates scattered across various tables while mitigating TOCTTOU bugs and excessively expensive locking.
+
+## Why would we need this?
+
+Imagine you have a game loop with complex logic that takes 100ms to calculate the next gamestate after each player action.  The logic needs to access and update several datase rows representing the game state, but the reads and writes happen scattered throughout the game loop.
+
+Because each game loop step needs to write all changes in a single transaction, and writes are scattered in a 100ms window, we know that to operate it safely we will need to hold some locks for the entire 100ms window.  Lets take the example of a person joining a game and paying for some chips out of their wallet to start playing.  To make sure we have enough chips balance to pay the join-game fee for the whole duration of the join transaction, we have to prevent concurrent games from modifying balance until we&#39;re done.  Additionally, if they don&#39;t have enough chips, or if the game fails for some reason during the transaction, we don&#39;t want to leave partially commited database changes, we want to roll everything back together.
+
+Locking other games for 100ms is not great, because it effectively rate-limits all table changes to 10/s, in a way that&#39;s difficult to fix later because it requires a fundamental structural change in the code. If we can come up with an atomic solution that performs all writes in one go at the end, maybe we can bring the locking down to under 5 or 10ms. Grouping writes into single short atomic transactions should allow more games to run simultaneously, no more long locks on all objects shared between games. 
+
+```python
+join_game: Transaction = [
+    (GameAction.objects, &#39;create&#39;, {&#39;user&#39;: bob, &#39;action&#39;: &#39;JOIN&#39;}),
+    (Game.objects.filter())
+    (UserBalance.objects.filter(user=bob), &#39;select_for_update&#39;, {}),
+    (UserBalance.objects.filter(user=bob, amt__gte=5000), &#39;update&#39;)
+]
+```
+    
+## Details
+
+### Testability
+
+With transactions outlined as data, we can test assumptions about their behavior by simply asserting statements about the values in the operation tuples.
+
+```python3
+def balance_transfer(src: User, dst: User, amt: int) -&gt; Transaction:
+    return [
+        (UserBalance.objects.filter(user=src), &#39;select_for_update&#39;, {}),
+        (BalanceTransfer.objects, &#39;create&#39;, {&#39;src&#39;: src, &#39;dst&#39;: dst, &#39;amt&#39;: amt}),
+        ...
+    ]
+
+class TestBalanceTransfer:
+    def test_lock_aquired(self):
+        operations = balance_transfer(test_user_a, test_user_b, 100)
+        assert operations[0].func = &#39;select_for_update&#39;
+        ...
+        assert all(execute_operations(operations)), &#39;Some operations did not run&#39;
+```
+
+These operation lists and objects can also be passed around, extended, and modified as needed much more easily than imperative code deep inside a view somewhere.
+
+### Lazy QuerySet evaluation is mandatory
+
+It&#39;s critical that QuerySets don&#39;t get accidentally evaluated before they run in the transaction, as that may lead to stale data read into memory early on being written back to the db after other logic executes.
+
+We can prevent this easily by adding an assertion in our `execute_operations` function:
+
+```python
+assert isinstance(queryset, QuerySet), &#39;QuerySets should not be evaluated before they are executed to maintain concurrency safety&#39;
+```
+
+Evaluated QuerySets will be instances of `List` instead of `QuerySet`.
+
+## Full example with locking &amp; updates across multiple tables
+
+Here I show an example of a bank that needs to store both an `Account.balance` and a table of `BalanceTransfers` to keep track of credits and debits for each of their users.  When transferring money between two users, it needs to update multiple inter-dependent rows and ensure that the assumptions about a user&#39;s balance hold true throughout the entire transaction. Specifically, we need to make sure that the source user doesn&#39;t have money withdrawn concurrently by other threads until we finish this transfer.
+
+```jsx
+src = User.objects.get(id=123)
+dst = User.objects.get(id=987)
+amt = 1000
+
+balance_transfer = [
+    # lock source&#39;s balance to prevent other withdrawals until transaction is over
+    (Account.objects.filter(user=src), &#39;select_for_update&#39;, {}),
+    
+    # throws a NotFoundError if src user doesn&#39;t have enough money
+    (Account.objects.filter(user=src, balance__gte=amt), &#39;get&#39;, {}),
+    
+    (BalanceTransfer.objects, &#39;create&#39;, {&#39;src&#39;: src, &#39;dst&#39;: dst, &#39;amt&#39;: amt}),
+    (Account.objects.filter(user=src, &#39;update&#39;, {&#39;balance&#39;: F(&#39;balance&#39;) - amt}),
+    (Account.objects.filter(user=dst, &#39;update&#39;, {&#39;balance&#39;: F(&#39;balance&#39;) + amt}),
+]
+
+execute_operations(balance_transfer)
+```
+
+## Further Reading
+
+You may not use the Django ORM or you may have a different preferred way of representing transactions.  If you think you&#39;ve found a better way, give us a shoutout at @MonadicalSAS, we&#39;d love to learn!
+
+If you&#39;re interested in database integrity and want to learn more, check out our other resources on designing safe systems with SQL databases and Python: 
+ - [Banking Blunders and Concurrency Challenges](https://labs.oddslingers.com/posts/Designing-A-Banking-System.html)
+ - [PyGotham2018 Talk](https://github.com/pirate/django-concurrency-talk)
+ - [Modeling Message Queues in TLA+](https://www.hillelwayne.com/post/tla-messages/) by Hillel Wayne (not our team)</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Linearizing-database-operations-django.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+

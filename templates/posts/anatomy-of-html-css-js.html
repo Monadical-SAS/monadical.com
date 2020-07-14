@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # The Anatomy of HTML, CSS, and JS  *Originally published 2019-01-29 on [docs.sweeting.me]">
+    
+    <title>The Anatomy of HTML, CSS, and JS - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 00:02:12 GMT+0000 (UTC)" data-updatetime="Wed Dec 11 2019 23:18:52 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">1698 views <a href="anatomy-of-html-css-js.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+# The Anatomy of HTML, CSS, and JS
+
+*Originally published 2019-01-29 on [docs.sweeting.me](https://docs.sweeting.me/s/blog).*
+
+&lt;/center&gt;
+
+[TOC]
+
+## Anatomy of HTML
+
+![](https://clearlydecoded.com/assets/images/posts/2017-09-04-anatomy-of-html-tag/html-tag-attributes.png)
+
+An HTML document is a tree of HTML **elements** in a hierarchy.  An HTML code file is made up of **tags** with content inside of them, which together describe the layout of the final rendered page the user sees in their browser.
+```html
+&lt;tag-name attribute-name=&#34;attribute-value1 attribute-value2 ...&#34; ...&gt;
+    tag content
+    ...
+&lt;/tag-name&gt;
+...
+```
+
+### HTML Elements
+
+&#34;**Element**&#34;&#34; is generally used to decribe one rendered component of a page, for example a picture, a shaded rectangle, or a paragraph of text. A **tag** refers to the code used to generate that element.  The distinction is not super important, but it&#39;s handy to keep in mind that **elements** are things you see in the browser, and **tags** are things you see in your code editor that become the things in the browser when viewed.
+
+
+### HTML Tags
+
+An HTML **tag** is written in HTML syntax using three parts:
+
+e.g. `&lt;div&gt;...children...&lt;/div&gt;`
+
+1. the **opening tag** = `&lt;div&gt;`
+2. the **`...children...`** = can contain more child tags, or text, etc.
+3.  the **closing tag** = `&lt;/div&gt;`
+
+*Some examples of tags:*
+
+`&lt;html&gt;...&lt;/html&gt;`, `&lt;body&gt;...&lt;/body&gt;`, `&lt;div&gt;...&lt;/div&gt;`, `&lt;span&gt;...&lt;/span&gt;`
+
+#### Self Closing tags
+
+Some tags are called **self-closing tags**, these tags do not need a closing tag because they don&#39;t have any child content.
+
+*Some examples of self-closing tags:*
+
+``&lt;img src=&#34;example.jpg&#34;/&gt;``, or `&lt;br/&gt;` for linebreak, and `&lt;hr/&gt;` for &#34;horizontal line&#34;, etc.
+
+You can usually distinguish self-closing tags by checking for the `/` at the end, like`&lt;tag-name/&gt;`, though some people don&#39;t follow this convention so it&#39;s not a 100% rule.
+
+---
+
+## Anatomy of CSS
+
+![](https://learnwebcode.com/wp-content/uploads/2010/02/anatomy-of-a-css-rule.gif)
+
+### CSS Rules
+
+CSS consists of **rules**. A CSS **rule** is made up of a **selector** and a list of **styles** aka **properties** to apply to the elements that the selector matches.
+
+```css
+tagname {
+    property-name: property value;
+    ...
+}
+
+.class-name {
+    ...
+}
+```
+
+#### CSS Selectors
+
+Examples of some CSS selectors:
+
+ - select all the elements with a certain tag name, e.g. `h1`, `body`, or `div`:
+    `h1 { ... }`, `body { ... }`, `div { ... }`
+    
+ - select all the elements with a certain class name, e.g. `featured-image`:
+    `.featured-image { ... }`
+
+The **selector** specifically refers to the `[h1]` part of the rule.  Selectors &#34;select&#34; which elements you want to style, and you can create more complex selectors that use multiple class names and tag names to find specific elements on the page and apply some styles;
+
+e.g. This selector will match all `&lt;small&gt;` elements that are inside of an `h1` tag that has the `header-text` class on it.
+```css
+h1.header-text small {
+    font-size: 14px;
+}
+```
+Which would match the inner `&lt;small&gt;` element here, and the &#34;Some subtext&#34; inside would be displayed with a `14px` font size.
+```html
+&lt;h1 class=&#34;header-text&#34;&gt;
+    Some header text...&lt;br/&gt;
+    &lt;small&gt;Some subtext&lt;/small&gt;
+&lt;/h1&gt;
+```
+
+
+#### CSS Properties
+
+Once you&#39;ve selected some elements to style, you can apply **properties** that describe which styles you want to change.
+
+E.g. if we wanted to make out entire document use a specific font, we could do:
+
+```css
+body {
+    font-family: Helvetica sans-serif;
+}
+```
+
+##### CSS Property Names
+
+In this example `font-family` is the **property name**, and `Helvetica sans-serif` is the **property value**.
+
+Some examples of **property names**:
+`font-size`, `width`, `display`, `white-space`, `opacity`, `text-align`
+
+##### CSS Property Values
+
+Some examples of **property values:**:
+`20px`, `30vw`, `1.5em`, `10%`, `200`, `&#39;Gill Sans&#39; Helvetica sans-serif`
+
+You&#39;ll notice that these property values can have different **units**.
+
+##### CSS Property Units
+
+Here are some examples of acceptable **CSS units**:
+
+ - `px`: pixels
+ - `%`: percentage of parent&#39;s value
+ - `vw`: percentage of entire screen&#39;s width (`100vw` = `100%` of screen width)
+ - `vh`: percentage of entire screen&#39;s height
+ - `cm`: centimeters
+ - `in`: inches
+ - `em`: scale factor of inherited default font size (`1.1em` = 1.1x default font size, e.g. `1.1em` when the default is `14px` would be `15.4px`)
+ - no unit: not all css values need units, e.g. `font-weight` or `opacity` can be `400` or `0.1` respectively
+
+
+---
+
+## Further Resources
+
+This is a fantastic, in-depth guide to learn the whole process of web development:
+https://btholt.github.io/intro-to-web-dev-v2/
+
+---</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="anatomy-of-html-css-js.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monadical Consulting | Reconciling Templates and JS Components</title>
+    <title>Monadical Consulting | How to Make Remote Work (Part Two): Zulip</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
     <link rel="stylesheet" href="/static/core/css/base.css">
 
-    <link rel="canonical" href="https://monadical.com/posts/Reconciling-Templates-With-Components.html" />
+    <link rel="canonical" href="https://monadical.com/posts/how-to-make-remote-work-part-two-zulip.html" />
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
@@ -150,9 +150,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  # Reconciling Backend Templates with Frontend Components **How to build a frontend without">
+    <meta name="description" content="How I&#39;ve learned to be productive working from home. I&#39;ll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.">
     
-    <title>Reconciling Backend Templates with Frontend Components - CodiMD</title>
+    <title>How to Make Remote Work (part two -- management goals) - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -177,251 +177,117 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/518753a2360b7cf60ecdc09f3664d0e3?s=96);" data-toggle="tooltip" data-placement="right" title="contact"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 12:11:31 GMT+0000 (UTC)" data-updatetime="Thu Feb 14 2019 00:20:05 GMT+0000 (UTC)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Jul 08 2020 16:48:49 GMT+0000 (UTC)" data-updatetime="Wed Jul 08 2020 18:11:31 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">668 views <a href="Reconciling-Templates-With-Components.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">12 views <a href="how-to-make-remote-work-part-two-zulip.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body">&lt;center&gt;
+    <div id="doc" class="container markdown-body">---
+title: How to Make Remote Work (part two -- management goals)
+description: How I&#39;ve learned to be productive working from home. I&#39;ll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.
+tags: remote-work, soft-skills, remote, home-office, tools, chat, communication
+---
 
-# Reconciling Backend Templates with Frontend Components
-**How to build a frontend without making a Single-Page-App**
 
-*Originally published 2017-02-02 on [HackerNoon.com](https://hackernoon.com/reconciling-djangos-mvc-templates-with-react-components-3aa986cf510a).*
+
+&lt;center&gt;
+
+# How to Make Remote Work: Zulip
+
+&lt;big&gt;
+
+**Company chat as a self-organizing Knowledge Management platform.**
+
+&lt;/big&gt;
+
+*Written by Max. Originally published 2020-03-26 on the [Monadical blog](https://monadical.com/blog.html).*
+
+*This article is part of a series on lessons we&#39;ve learned and processes we&#39;ve put into place for managing a remote team at Monadical.*
 
 &lt;/center&gt;
 
-At `$startupNameHere` we decided to write our backend in Django and our frontend in React. The combination is not unusual these days, but if you’ve ever tried it you’ve probably found there’s some friction between page composition with backend templating systems, and React’s component model.
+Among our core pricinples is transparency. In our ideal world, everyone in our organization has access to all of the organizational knowledge that exists, and is free to filter out whatever is irrelevant to them. This is the &#34;pull&#34; model of knowledge distribution, as opposed to a system where it&#39;s someone&#39;s responsibility to &#34;push&#34; the right knowledge to the right person. Unless you&#39;re the CIA, &#34;pull&#34; is probably a better model for you[^secrets].
 
-The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks. This conflict can also arise with Rails, Flask and any other backend framework that uses templating.
+[^secrets]: Did you know that [Google](https://www.washingtonpost.com/technology/2019/11/15/google-scales-back-its-culture-transparency-all-hands-meetings-become-monthly/) and [Tesla](https://www.tesla.com/blog/all-our-patent-are-belong-you) both provide open access to organizational knowledge to their employees?
 
-&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*B-kFzr8f4OF9rr6Ueg-UFg.png&#34; width=&#34;100%&#34;&gt;
-&lt;br/&gt;&lt;br/&gt;
+Of course, this is an impossible ideal. Some information is private, sensitive, or distracting, and a lot of knowledge lives inside the minds of other team members.
 
-I’m here to tell you these don’t necessarily have to conflict, it’s possible to use both without angering the Lilliputians.
+Every organization I&#39;ve worked for in the past has had a problem with knowledge management; I&#39;ve seen multiple failed attempts to create company wikis (they get out of date fast; people don&#39;t go out of their way to update them unless they&#39;re told to). People naturally want to communicate with one another verbally, and verbal communication is ephemeral.
 
-## Abandon SPA, embrace page-as-a-component
+**This is why [Zulip](https://zulipchat.com/) is the most important tool at Monadical.**
 
-Our solution was to abandon the single page app model, and instead let Django serve each page individually, with a root React component for each page. Our base site components that don’t change between pages (e.g. navbar, footer) are provided by the Django templates, and the content specific to each page (e.g. poker interface, leaderboard) are composed within React.
-&gt; Abandon the SPA, why would you say such a horrible thing?!
+If you&#39;re not familiar, Zulip is an open-source chat platform, similar to Slack or IRC. But Zulip is much better than either, and not just for privacy/security[^security] reasons: Zulip has a two-level conversation heirarchy, and that heirarchy is core to the UX. Here&#39;s what it looks like:
 
-* **Single page apps are not always the solution**, we’ve gained stability (bugs are limited to only one page), easier debugging, easy search engine indexing, and easier static page management by having page boilerplate and routing handled by Django
+[^security]: I&#39;ve always been perplexed by the lack of concern about storing data with external providers in industry. [Every few days there&#39;s a new data leak](https://selfkey.org/data-breaches-in-2019/) at a huge company. Not to mention that storing your private conversations on some big corp&#39;s servers means there are an unkonwn number of system administrators with direct access to everything you say and do. It doesn&#39;t take a tinfoil hat to see that this is a threat vector.
 
-* It’s much easier to create non-React pages for static content (e.g. about page, login page) when you have all your page boilerplate in Django templates
+![](https://docs.monadical.com/uploads/upload_c84b0929692660655f1e0cb4f6400a43.png)
 
-* No need to deal with React routers, the History API, or async fetching of page content behind the scenes (more on how we do page hotloading without refreshes in a later post)
-&gt; So what does this look like in practice?
 
-## The Django Template
+This is the general conversation feed. Note that conversations are broken up by &#34;stream,&#34; the equivalent of a channel in IRC or Slack. But they are also broken up into smaller divisions, `topics`, and it&#39;s simple to browse the conversation topics going on within a stream and to narrow your view down to just that topic:
 
-Here we have our base template used for React pages, notice how it extends `ui/base.html` (which contains our header, navbar, and all the usual things you put in a base template).
+![](https://docs.monadical.com/uploads/upload_ea12c1da07bcb65b70f739e76761e8f9.png)
 
-![](https://cdn-images-1.medium.com/max/3420/1*WVYdIiAszvP_zEqoLKEiDg.png)
 
-This base template can accept any combination of JS component file and props. If you wanted you don’t even have to pass a React component, you could pass in a Vue.js or Angular script, and have it render to `window.react_mount` and read `window.props`.
+This makes it easy to follow the thread of a single conversation. It also makes it easy to filter out information that&#39;s irrelevant to you:
 
+![](https://docs.monadical.com/uploads/upload_a036206bcafaddb722845cf0aefb9d8a.png)
 
-```html+django
-{% extends &#34;ui/base.html&#34; %}
+Coupled with a culture of using Zulip in an organized way, **it&#39;s difficult to overstate the impact it has on knowledge management.** The core reason for this is that using Zulip in a way that feels natural creates an organized repository of knowledge *as a side effect*. Knowledge management naturally emerges from good use of the tool. It is the essenence of good UX design.
 
-{% block title %}{{title}}{% endblock %}
+There are a few rules we follow as an organization to amplify the knowledge-management potential of Zulip:
 
-{% block inner %}
-    &lt;div id=&#34;react&#34;&gt;
-        &lt;!-- Contents get replaced by mounted React.Component --&gt;
-        &lt;i class=&#34;fa fa-lg fa-spinner fa-spin&#34;&gt;&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-        &lt;i class=&#34;pending&#34;&gt;Loading components...&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-    &lt;/div&gt;
+* We are careful about curating our stream/topic heirarchy: if we find ourselves having conversations that don&#39;t feel like they fit the stream description, we&#39;ll move it or create a new one. If a conversation within a `topic` goes on a tangent, we move it to a new `topic`.
 
-    &lt;script&gt;
-        window.props = {{props|json}};  // make sure to escape your props to prevent XSS! See here for the source for the json filter: https://gist.github.com/pirate/c18bfe4fd96008ffa0aef25001a2e88f
-        window.react_mount = document.getElementById(&#39;react&#39;);
-    &lt;/script&gt;
-    &lt;script src=&#34;/static/src/{{component}}&#34;&gt;&lt;/script&gt;
+* We take care to make Zulip the central communication channel for *everything*. That means that any external document or resource (spreadsheets, documents, repositories, videos, contracts, etc) is always linked to in some `topic` where they were used or discussed.
 
-```
+* We avoid calls out of habit. Video calls are reserved for situations where the added nonverbal communication is explicitly helpful (social interactions, difficult conversations, team checkins). Anything that&#39;s communicated in a call that could be relevant to someone else should be summarized in the topic (where the call will have been linked to in the first place). It&#39;s hard to remember to do this (it&#39;s hard to remember to step out of natural patterns!), which is why we avoid high-content calls in general.
 
-&gt; But this page is empty, how do I render my React components?
+* If we want a reply from a specific person, we always @-mention them. If someone wants a reply sooner, we can PM them again saying so. If it&#39;s urgent, we can send an SMS or call the person, saying &#34;please check Zulip&#34;. This makes it possible to safely tune out of most company communication in moments of concentrated work.
 
-The `{{component}}` is a path to a script, e.g. `leaderboard.js`, which contains a standard React component, rendered using ReactDOM. The script should be compiled and readily accessible by browsers from your staticfiles folder. It can be aggressively cached by your backend and nginx, since the contents never change, all dynamic content is passed via `window.props`.
+* We avoid PMs out of habit. For personal conversations or sensitive information, it&#39;s fine. But whenever a new employee sends me a private message asking about some project, I find or create the relevant `topic` in the relevant `stream` and answer them there, and @-mention them.
 
-So far this gives us a basic page with a navbar, and a loading message. Once we have a component to mount, the loading message is replaced by the component (this process happens so fast your users will never see the `Loading Components...` message).
+* We try to fit Zulip directly into our workstreams. For example, in a recent brainstorm session for new ideas for articles to write for our blog, we created a `stream` called `ideas`, and a new `topic` for each one. We could have used something like google docs, but this removes the barrier of having to find a link to a document and change workstreams. Plus the stream&#39;s existence in the list is a permanent reminder that that information exists. It lowers the inertia for reentering that creative workflow.
+ 
+This produces some really nice advantages over other communication mediums:
 
-## The React Component
+ * By putting conversations in the right place on Zulip, anyone in the company who wants to be aware of the conversation can be. Nobody gets left out (and nobody needs to sit in a meeting they don&#39;t care about either).
 
-Now we define a basic React component which lays out our page. We can import reusable components from other JS files, or just write it all in one file. I’ll do that here for simplicity. A more complex page may mount a redux Provider, import dozens of components, or setup websocket connections here. Think of this as your `index.js` entry point, similar to an SPA&#39;s `index.js`, except it only defines the contents of one page.
+* Ramping up on or reviewing a project is simple and easy.
 
-Here I implement a simple leaderboard, which shows a list of users.
+* It becomes a [content-addressable storage](https://en.wikipedia.org/wiki/Content-addressable_storage) system. Want to re-watch the video of that talk your coworker linked to, but can&#39;t remember who it was or what conference it was from? Just search the stream for some word you can remember from the conversation about and it&#39;ll come up.
 
-```jsx
-import React from &#39;react&#39;
-import ReactDOM from &#39;react-dom&#39;
+* It lowers communication barriers. Getting the attention of the founder of an organization can be hard and intimidating. And information can get lost or distorted in the game of information dissemination telephone. With mostly publicly-accessible streams on Zulip, everyone can get an unfiltered version of what anyone else said about any `topic`.
 
-const Leaderboard = ({users}) =&gt;
-    &lt;div&gt;
-        &lt;h1&gt;Featured Players&lt;/h1&gt;
+* It encourages asynchronous workflows. When conversations are organized, context doesn&#39;t degrade nearly as much over time. In Zulip, the context for my specific issue is confined to a `topic`, and so it doesn&#39;t get washed out by every other conversation. By contrast, I find that active Slack or IRC channels usually lose most of the context of what I want within minutes.
 
-        {users.map(user =&gt;
-            &lt;a href={`/user/${user.username}/`}&gt;
-                {user.username}
-            &lt;/a&gt;)}
-    &lt;/div&gt;
+* Work chat becomes much less distracting: the escalation ladder of msg -&gt; @-mention -&gt; PM -&gt; phone makes it possible to tune out all messages below some tier, depending on the situation.
 
+* Having a culture of organized conversation puts an organizational emphasis on effective communication, which has tons of positive side-effects on information flow and also peoples&#39; professional relationships.
 
-ReactDOM.render(
-    React.createElement(Leaderboard, window.props),    // gets the props that are passed in the template
-    window.react_mount,                                // a reference to the #react div that we render to
-```
+Of course, we&#39;re not always perfect. Sometimes I find myself talking about the status of a server that&#39;s hosting a project in a stream that&#39;s about that project&#39;s development, even though we have a stream specifically dedicated to server status. Sometimes I find myself asking people about their weekend in a topic that&#39;s supposed to be about an outreach initiative.
 
-### Building the Javascript Component
+But in general we&#39;re pretty good about it, and pretty good is enough that I find accessing organizational knowledge at Monadical is better than any company I&#39;ve worked before, even though I can&#39;t tap anyone on the shoulder to ask.
 
-We compile this source file from ES6 to ancient JS using [browserify](http://browserify.org/), and stick it in our staticfiles folder so it can be served (and cached) easily. I chose browserify for simplicity, but you can use webpack in your project and get the same results.
 
-```bash
-browserify src/pages/leaderboard.js &gt; static/src/pages/leaderboard.js
-```
 
-Great, now we have something on the screen!
+---
 
-![](https://cdn-images-1.medium.com/max/3184/1*wRKrVOiG61f1IfD_eIhBuA.png)
-&gt; But where did Alice &amp; Bob come from, how did we pass data to the template?
-
-## The View
-
-The Django view just needs to provide the following context to the react_base.html template in order to render this page properly:
-
-1. `component` = `&#34;leaderboard.js&#34;` (our React file above)
-
-1. `props` = `{users: [{username: ‘alice’}, {username: ‘bob’}]}` (the data passed to the React component as props)
-
-1. `title` = `&#34;Leaderboard&#34;` (used for the browser tab title)
-
-```python
-from django.views import View
-from django.shortcuts import render
-
-
-class Leaderboard(View):
-    title = &#39;Leaderboard&#39;
-    template = &#39;ui/react_base.html&#39;
-    component = &#39;pages/leaderboard.js&#39;
-
-    def get(self, request):
-        # gets passed to react via window.props
-        props = {
-            &#39;users&#39;: [
-                {&#39;username&#39;: &#39;alice&#39;},
-                {&#39;username&#39;: &#39;bob&#39;},
-            ]
-        }
-
-        context = {
-            &#39;title&#39;: self.title,
-            &#39;component&#39;: self.component,
-            &#39;props&#39;: props,
-        }
-
-        render(request, self.template, context)
-```
-
-## Why use this pattern, are there alternatives?
-
-This simple pattern of mounting components inside of a base template which passes things to React is very powerful. It lets you freely mix and match template composition with React components, depending on which you need for a given page.
-&gt; But we already built our whole frontend on top of an intricate REST API with endpoints for everything from user info to page content, why is this better?
-
-Don’t go and rewrite your whole frontend if you already have a REST API-based SPA. You get some advantages with REST API + SPA that you don’t get with page-as-a-component, such as reduced bundle sizes because webpack can optimize shared code across pages. It might also be easier to scale if you split your backend functionality into separate micro-services. The page-as-a-component approach is great if you’re ok with slightly larger bundles, in order to get flexibility and nice interplay with Django templates and routing.
-&gt; What are my options if I’m building an app from scratch these days?
-
-* **SPA + granular API:** Use Django as a REST API backend, and provide all your page data via API endpoints that are queried by a monolithic SPA React app (this is the approach I see taught online the most). This approach is great for a microservices-style backend, because the frontend doesn’t care how the backend is built, or what endpoints it hits, as long as it gets the data it needs.
-  - Webpack is optimized for this approach.
-  - Frontend can be built on top of lots of separate microservice endpoints
-  - Frontend handles routing &amp; switching to new pages
-  - Very hard to nail server-side rendering (could be bad for search indexing)
-  - Loads slowly on bad connections since data takes many round trips
-
-* **SPA + 1 request-per-page API:** Provide each page’s data as one request The frontend still handles routing, but the backend is built with 1 view per page, instead of many smaller REST API endpoints. It’s generally easier to start this way rather than exposing separate endpoints for every query, but it couples your backend &amp; frontend logic fairly tightly.
-  - Frontend handles routing &amp; switching to new pages
-  - Frontend relies on all almost its data coming from one endpoint
-  - Faster load times, easier caching than having separate endpoints
-  - Easier to do server-side rendering because views match the frontend data
-  - Decent performance on bad connections, but still requires 2 round-trips
-
-* **Templated JS Snippets:** Compose React components using the template system, by including fragments of JS code to build up an html template that renders the desired page (instead of mounting one component file with the whole page defined in JS). This approach requires the most haxxing in my experience, as you totally ignore the benefits of JS imports and break your ability to lint pages, minify JS, and compile pages to the minimum amount of JS needed. This is the approach libraries like [django-react-templatetags](https://github.com/Frojd/django-react-templatetags) use, it allows for server-side rendering, but it introduces a lot of complexity (including a node server!) into your backend.
-  - No AJAX requests needed, all data is served with the page
-  - Backend handles all routing, frontend links are normal hrefs
-  - Server side rendering is very easy, data is all provided by one view, and snippets can be rendered independently and cached
-  - Easy to swap out react components for non-react on a piece-by-piece basis
-  - Very fast load times, rendered snippets can be cached and served together with their data (great for search indexing)
-  - 1 round-trip page-loads if html page is cached
-
-* **Page as a Component** (our approach): Compose pages in JS, include each page as a cacheable `&lt;script&gt;` in the template, pass it data via `props`. This approach combines the best of both worlds, you get page composition in React, but also easy server-side rendering and caching of whole pages at a time. It’s also easier to manage the data flow when you don’t have separate react snippets, as all components are laid out hierarchically from one mount point downwards.
-  - Slightly harder to mix &amp; match template fragments with React components
-  - More customizable* *build process than with *Templated JS Snippets
-  - Flexible, works equally well for non-React pages like Vue.js or Angular
-  - Easier to manage data flow bc. of single JS entry point (esp. with redux)
-  - 1 round-trip page-loads if script bundle is cached
-
-* Have a pattern your team uses but that I didn’t mention?
- *I’m always looking for new ones, contact me [@theSquashSH](https://twitter.com/theSquashSH) and I’ll include it here.*
-
-## Extending the Page-as-a-Component pattern
-&gt; Ok, the Lilliputians are satisfied with the design, but they want more features!
-
-The code samples above are overly simplified. A real app in 2017+ probably mounts Redux providers, creates WebSocket connections, fetches content over the wire, and imports many dozens of components to assemble a full page.
-
-Now that I’ve introduced a basic pattern, it’s time to think about extending it with the next layers of functionality. Depending on your application you may decide to add:
-
-* More advanced, extensible page views on the Django side
-
-* Adding some props shared by all pages (e.g. current user’s info, viewing language, time-zone, `get_base_props(request)`)
-
-* A redux store for [managing frontend state](https://hackernoon.com/shape-your-redux-store-like-your-database-98faa4754fd5)
-
-* **WebSocket connections to Django using django-channels**, where the handler code lives next to the page’s view (check out our [django-channels-router](https://github.com/Monadical-SAS/django-channels-router) library)
-
-* real-time updated [react animations](https://github.com/Monadical-SAS/redux-time) with backend time-synchronization
-
-* Hot-loaded new pages when you click links without refreshing. This is one of the strong points of an SPA with react-router, but we can get pretty close without needing to go full SPA:
-  1. Load the the JS component file for the next page by appending a new script tag to `&lt;body&gt;`
-  2. query an endpoint that serves that page’s props as a JSON response, and save them to `window.props`
-  3. Render the new page with:
- `ReactDOM.render(&lt;NewPage {...window.props}/&gt;, window.react_mount)`
-Hot-loading can be hard to get right though, recovering from errors cleanly and falling back to normal navigation difficult to do while loading JS scripts and querying API endpoints that could fail in numerous ways independently. You’ll probably also have to mess with the History API to change the URL and browser title when navigating.
-
-You can ping me on Twitter [@theSquashSH](https://twitter.com/theSquashSH) if you have any questions, or check out our site in action at [https://oddslingers.com](https://oddslingers.com)!
-
-In our app (a poker site) we use django-channels to send data over a WebSockets to a react-redux frontend. The frontend animates some game state in real-time, while remaining time-synchronized with all the other site viewers to within ~25ms. We didn’t find any libraries that pulled off web animation in a way that we liked, so we ended up implementing our own: [redux-time](https://github.com/Monadical-SAS/redux-time). It’s worth checking out if you’re trying to do real-time animation in a functional, declarative way with redux-style state management. We also developed [django-channels-router](https://github.com/Monadical-SAS/django-channels-router) which is the backend routing to handle socket messages to/from the frontend. Let me know if you find either library useful, or if you’ve worked on anything similar in the past!
-
-## Links and Resources:
-
-* If you’re new to Django and structuring apps in general, start here for a gentle introduction: [Build Your First Python &amp; Django App](https://scotch.io/tutorials/build-your-first-python-and-django-application)
-
-* [django-react-templatetags](https://github.com/Frojd/django-react-templatetags) a library for templating react snippets
-
-* Who the hell are the [Lilliputians](https://en.wikipedia.org/wiki/Lilliput_and_Blefuscu)?!
-
-* [Why You Might not Need MVC with React.js](http://www.code-experience.com/why-you-might-not-need-mvc-with-reactjs/)
-
-* Tutorial that covers more of the details, with some different design decisions: [How the fuck do I set up Django, Django REST Framework, ReactJS and Browserify?](http://gregblogs.com/how-django-reactjs-and-browserify/)
-
-* [Next.js](https://learnnextjs.com): a build environment/library for React &amp; Node that uses a system very similar to *page-as-a-component*
-&gt; tl;dr let Django manage your routing, make separate JS files for each page, pass props data to your components via the template
-
-## —
-
-Hopefully you find this useful! If so, give this article a 💚, or ping me on twitter [@theSquashSH](https://twitter.com/theSquashSH).
-
-If you’re interested working on cool Django + React/Redux projects involving Ethereum, [Monadical is hiring](https://monadical.com) remote &amp; local devs (we’ll fly you to sunny Medellín for the first month)!
-
-![](https://cdn-images-1.medium.com/max/3796/1*uRMpX-1G6q12KDu23mGcvQ.png)</div>
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Reconciling-Templates-With-Components.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="how-to-make-remote-work-part-two-zulip.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
@@ -464,17 +330,17 @@ If you’re interested working on cool Django + React/Redux projects involving E
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
-                    Nick Sweeting
+                    Max
                     <h4>
-                        Monadical CTO
+                        Monadical CEO
                         
-                        <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
-                            @theSquashSH
+                        <a href="/team.html" target="_blank" rel="noopener">
+                            
                         </a>
                     </h4>
-                    <h5>Published on <a href="#permalink">2017-03-02</a></h5>
+                    <h5>Published on <a href="#permalink">2020-07-08</a></h5>
                 </div>
-                <img src="/static/nick.jpg" width="100px"/>
+                <img src="/static/max.jpg" width="100px"/>
             </div>
         </div>
         <br/>

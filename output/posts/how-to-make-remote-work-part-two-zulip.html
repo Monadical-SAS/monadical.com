@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Monadical Consulting | An Introduction to HTML and CSS Anatomy</title>
+        <title>Monadical Consulting | How to Make Remote Work (Part Two): Zulip</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
         <link rel="stylesheet" href="/static/main.css">
 
-        <link rel="canonical" href="https://monadical.com/posts/anatomy-of-html-css-js.html"/> 
+        <link rel="canonical" href="https://monadical.com/posts/how-to-make-remote-work-part-two-zulip.html"/> 
 
         
         
@@ -153,9 +153,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  # The Anatomy of HTML, CSS, and JS  *Originally published 2019-01-29 on [docs.sweeting.me]">
+    <meta name="description" content="How I&#39;ve learned to be productive working from home. I&#39;ll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.">
     
-    <title>The Anatomy of HTML, CSS, and JS - CodiMD</title>
+    <title>How to Make Remote Work (part two -- management goals) - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -180,167 +180,117 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/518753a2360b7cf60ecdc09f3664d0e3?s=96);" data-toggle="tooltip" data-placement="right" title="contact"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 00:02:12 GMT+0000 (UTC)" data-updatetime="Wed Dec 11 2019 23:18:52 GMT+0000 (UTC)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Jul 08 2020 16:48:49 GMT+0000 (UTC)" data-updatetime="Wed Jul 08 2020 18:11:31 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">1694 views <a href="anatomy-of-html-css-js.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">13 views <a href="how-to-make-remote-work-part-two-zulip.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body">&lt;center&gt;
+    <div id="doc" class="container markdown-body">---
+title: How to Make Remote Work (part two -- management goals)
+description: How I&#39;ve learned to be productive working from home. I&#39;ll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.
+tags: remote-work, soft-skills, remote, home-office, tools, chat, communication
+---
 
-# The Anatomy of HTML, CSS, and JS
 
-*Originally published 2019-01-29 on [docs.sweeting.me](https://docs.sweeting.me/s/blog).*
+
+&lt;center&gt;
+
+# How to Make Remote Work: Zulip
+
+&lt;big&gt;
+
+**Company chat as a self-organizing Knowledge Management platform.**
+
+&lt;/big&gt;
+
+*Written by Max. Originally published 2020-03-26 on the [Monadical blog](https://monadical.com/blog.html).*
+
+*This article is part of a series on lessons we&#39;ve learned and processes we&#39;ve put into place for managing a remote team at Monadical.*
 
 &lt;/center&gt;
 
-[TOC]
+Among our core pricinples is transparency. In our ideal world, everyone in our organization has access to all of the organizational knowledge that exists, and is free to filter out whatever is irrelevant to them. This is the &#34;pull&#34; model of knowledge distribution, as opposed to a system where it&#39;s someone&#39;s responsibility to &#34;push&#34; the right knowledge to the right person. Unless you&#39;re the CIA, &#34;pull&#34; is probably a better model for you[^secrets].
 
-## Anatomy of HTML
+[^secrets]: Did you know that [Google](https://www.washingtonpost.com/technology/2019/11/15/google-scales-back-its-culture-transparency-all-hands-meetings-become-monthly/) and [Tesla](https://www.tesla.com/blog/all-our-patent-are-belong-you) both provide open access to organizational knowledge to their employees?
 
-![](https://clearlydecoded.com/assets/images/posts/2017-09-04-anatomy-of-html-tag/html-tag-attributes.png)
+Of course, this is an impossible ideal. Some information is private, sensitive, or distracting, and a lot of knowledge lives inside the minds of other team members.
 
-An HTML document is a tree of HTML **elements** in a hierarchy.  An HTML code file is made up of **tags** with content inside of them, which together describe the layout of the final rendered page the user sees in their browser.
-```html
-&lt;tag-name attribute-name=&#34;attribute-value1 attribute-value2 ...&#34; ...&gt;
-    tag content
-    ...
-&lt;/tag-name&gt;
-...
-```
+Every organization I&#39;ve worked for in the past has had a problem with knowledge management; I&#39;ve seen multiple failed attempts to create company wikis (they get out of date fast; people don&#39;t go out of their way to update them unless they&#39;re told to). People naturally want to communicate with one another verbally, and verbal communication is ephemeral.
 
-### HTML Elements
+**This is why [Zulip](https://zulipchat.com/) is the most important tool at Monadical.**
 
-&#34;**Element**&#34;&#34; is generally used to decribe one rendered component of a page, for example a picture, a shaded rectangle, or a paragraph of text. A **tag** refers to the code used to generate that element.  The distinction is not super important, but it&#39;s handy to keep in mind that **elements** are things you see in the browser, and **tags** are things you see in your code editor that become the things in the browser when viewed.
+If you&#39;re not familiar, Zulip is an open-source chat platform, similar to Slack or IRC. But Zulip is much better than either, and not just for privacy/security[^security] reasons: Zulip has a two-level conversation heirarchy, and that heirarchy is core to the UX. Here&#39;s what it looks like:
+
+[^security]: I&#39;ve always been perplexed by the lack of concern about storing data with external providers in industry. [Every few days there&#39;s a new data leak](https://selfkey.org/data-breaches-in-2019/) at a huge company. Not to mention that storing your private conversations on some big corp&#39;s servers means there are an unkonwn number of system administrators with direct access to everything you say and do. It doesn&#39;t take a tinfoil hat to see that this is a threat vector.
+
+![](https://docs.monadical.com/uploads/upload_c84b0929692660655f1e0cb4f6400a43.png)
 
 
-### HTML Tags
+This is the general conversation feed. Note that conversations are broken up by &#34;stream,&#34; the equivalent of a channel in IRC or Slack. But they are also broken up into smaller divisions, `topics`, and it&#39;s simple to browse the conversation topics going on within a stream and to narrow your view down to just that topic:
 
-An HTML **tag** is written in HTML syntax using three parts:
+![](https://docs.monadical.com/uploads/upload_ea12c1da07bcb65b70f739e76761e8f9.png)
 
-e.g. `&lt;div&gt;...children...&lt;/div&gt;`
 
-1. the **opening tag** = `&lt;div&gt;`
-2. the **`...children...`** = can contain more child tags, or text, etc.
-3.  the **closing tag** = `&lt;/div&gt;`
+This makes it easy to follow the thread of a single conversation. It also makes it easy to filter out information that&#39;s irrelevant to you:
 
-*Some examples of tags:*
+![](https://docs.monadical.com/uploads/upload_a036206bcafaddb722845cf0aefb9d8a.png)
 
-`&lt;html&gt;...&lt;/html&gt;`, `&lt;body&gt;...&lt;/body&gt;`, `&lt;div&gt;...&lt;/div&gt;`, `&lt;span&gt;...&lt;/span&gt;`
+Coupled with a culture of using Zulip in an organized way, **it&#39;s difficult to overstate the impact it has on knowledge management.** The core reason for this is that using Zulip in a way that feels natural creates an organized repository of knowledge *as a side effect*. Knowledge management naturally emerges from good use of the tool. It is the essenence of good UX design.
 
-#### Self Closing tags
+There are a few rules we follow as an organization to amplify the knowledge-management potential of Zulip:
 
-Some tags are called **self-closing tags**, these tags do not need a closing tag because they don&#39;t have any child content.
+* We are careful about curating our stream/topic heirarchy: if we find ourselves having conversations that don&#39;t feel like they fit the stream description, we&#39;ll move it or create a new one. If a conversation within a `topic` goes on a tangent, we move it to a new `topic`.
 
-*Some examples of self-closing tags:*
+* We take care to make Zulip the central communication channel for *everything*. That means that any external document or resource (spreadsheets, documents, repositories, videos, contracts, etc) is always linked to in some `topic` where they were used or discussed.
 
-``&lt;img src=&#34;example.jpg&#34;/&gt;``, or `&lt;br/&gt;` for linebreak, and `&lt;hr/&gt;` for &#34;horizontal line&#34;, etc.
+* We avoid calls out of habit. Video calls are reserved for situations where the added nonverbal communication is explicitly helpful (social interactions, difficult conversations, team checkins). Anything that&#39;s communicated in a call that could be relevant to someone else should be summarized in the topic (where the call will have been linked to in the first place). It&#39;s hard to remember to do this (it&#39;s hard to remember to step out of natural patterns!), which is why we avoid high-content calls in general.
 
-You can usually distinguish self-closing tags by checking for the `/` at the end, like`&lt;tag-name/&gt;`, though some people don&#39;t follow this convention so it&#39;s not a 100% rule.
+* If we want a reply from a specific person, we always @-mention them. If someone wants a reply sooner, we can PM them again saying so. If it&#39;s urgent, we can send an SMS or call the person, saying &#34;please check Zulip&#34;. This makes it possible to safely tune out of most company communication in moments of concentrated work.
+
+* We avoid PMs out of habit. For personal conversations or sensitive information, it&#39;s fine. But whenever a new employee sends me a private message asking about some project, I find or create the relevant `topic` in the relevant `stream` and answer them there, and @-mention them.
+
+* We try to fit Zulip directly into our workstreams. For example, in a recent brainstorm session for new ideas for articles to write for our blog, we created a `stream` called `ideas`, and a new `topic` for each one. We could have used something like google docs, but this removes the barrier of having to find a link to a document and change workstreams. Plus the stream&#39;s existence in the list is a permanent reminder that that information exists. It lowers the inertia for reentering that creative workflow.
+ 
+This produces some really nice advantages over other communication mediums:
+
+ * By putting conversations in the right place on Zulip, anyone in the company who wants to be aware of the conversation can be. Nobody gets left out (and nobody needs to sit in a meeting they don&#39;t care about either).
+
+* Ramping up on or reviewing a project is simple and easy.
+
+* It becomes a [content-addressable storage](https://en.wikipedia.org/wiki/Content-addressable_storage) system. Want to re-watch the video of that talk your coworker linked to, but can&#39;t remember who it was or what conference it was from? Just search the stream for some word you can remember from the conversation about and it&#39;ll come up.
+
+* It lowers communication barriers. Getting the attention of the founder of an organization can be hard and intimidating. And information can get lost or distorted in the game of information dissemination telephone. With mostly publicly-accessible streams on Zulip, everyone can get an unfiltered version of what anyone else said about any `topic`.
+
+* It encourages asynchronous workflows. When conversations are organized, context doesn&#39;t degrade nearly as much over time. In Zulip, the context for my specific issue is confined to a `topic`, and so it doesn&#39;t get washed out by every other conversation. By contrast, I find that active Slack or IRC channels usually lose most of the context of what I want within minutes.
+
+* Work chat becomes much less distracting: the escalation ladder of msg -&gt; @-mention -&gt; PM -&gt; phone makes it possible to tune out all messages below some tier, depending on the situation.
+
+* Having a culture of organized conversation puts an organizational emphasis on effective communication, which has tons of positive side-effects on information flow and also peoples&#39; professional relationships.
+
+Of course, we&#39;re not always perfect. Sometimes I find myself talking about the status of a server that&#39;s hosting a project in a stream that&#39;s about that project&#39;s development, even though we have a stream specifically dedicated to server status. Sometimes I find myself asking people about their weekend in a topic that&#39;s supposed to be about an outreach initiative.
+
+But in general we&#39;re pretty good about it, and pretty good is enough that I find accessing organizational knowledge at Monadical is better than any company I&#39;ve worked before, even though I can&#39;t tap anyone on the shoulder to ask.
+
+
 
 ---
 
-## Anatomy of CSS
-
-![](https://learnwebcode.com/wp-content/uploads/2010/02/anatomy-of-a-css-rule.gif)
-
-### CSS Rules
-
-CSS consists of **rules**. A CSS **rule** is made up of a **selector** and a list of **styles** aka **properties** to apply to the elements that the selector matches.
-
-```css
-tagname {
-    property-name: property value;
-    ...
-}
-
-.class-name {
-    ...
-}
-```
-
-#### CSS Selectors
-
-Examples of some CSS selectors:
-
- - select all the elements with a certain tag name, e.g. `h1`, `body`, or `div`:
-    `h1 { ... }`, `body { ... }`, `div { ... }`
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
     
- - select all the elements with a certain class name, e.g. `featured-image`:
-    `.featured-image { ... }`
-
-The **selector** specifically refers to the `[h1]` part of the rule.  Selectors &#34;select&#34; which elements you want to style, and you can create more complex selectors that use multiple class names and tag names to find specific elements on the page and apply some styles;
-
-e.g. This selector will match all `&lt;small&gt;` elements that are inside of an `h1` tag that has the `header-text` class on it.
-```css
-h1.header-text small {
-    font-size: 14px;
-}
-```
-Which would match the inner `&lt;small&gt;` element here, and the &#34;Some subtext&#34; inside would be displayed with a `14px` font size.
-```html
-&lt;h1 class=&#34;header-text&#34;&gt;
-    Some header text...&lt;br/&gt;
-    &lt;small&gt;Some subtext&lt;/small&gt;
-&lt;/h1&gt;
-```
-
-
-#### CSS Properties
-
-Once you&#39;ve selected some elements to style, you can apply **properties** that describe which styles you want to change.
-
-E.g. if we wanted to make out entire document use a specific font, we could do:
-
-```css
-body {
-    font-family: Helvetica sans-serif;
-}
-```
-
-##### CSS Property Names
-
-In this example `font-family` is the **property name**, and `Helvetica sans-serif` is the **property value**.
-
-Some examples of **property names**:
-`font-size`, `width`, `display`, `white-space`, `opacity`, `text-align`
-
-##### CSS Property Values
-
-Some examples of **property values:**:
-`20px`, `30vw`, `1.5em`, `10%`, `200`, `&#39;Gill Sans&#39; Helvetica sans-serif`
-
-You&#39;ll notice that these property values can have different **units**.
-
-##### CSS Property Units
-
-Here are some examples of acceptable **CSS units**:
-
- - `px`: pixels
- - `%`: percentage of parent&#39;s value
- - `vw`: percentage of entire screen&#39;s width (`100vw` = `100%` of screen width)
- - `vh`: percentage of entire screen&#39;s height
- - `cm`: centimeters
- - `in`: inches
- - `em`: scale factor of inherited default font size (`1.1em` = 1.1x default font size, e.g. `1.1em` when the default is `14px` would be `15.4px`)
- - no unit: not all css values need units, e.g. `font-weight` or `opacity` can be `400` or `0.1` respectively
-
-
----
-
-## Further Resources
-
-This is a fantastic, in-depth guide to learn the whole process of web development:
-https://btholt.github.io/intro-to-web-dev-v2/
-
----</div>
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="anatomy-of-html-css-js.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="how-to-make-remote-work-part-two-zulip.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
@@ -381,17 +331,17 @@ https://btholt.github.io/intro-to-web-dev-v2/
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
-                    Nick Sweeting
+                    Max
                     <h4>
-                        Monadical CTO
+                        Monadical CEO
                         
-                        <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
-                            @theSquashSH
+                        <a href="/team.html" target="_blank" rel="noopener">
+                            
                         </a>
                     </h4>
-                    <h5>Published on <a href="#permalink">2019-02-19</a></h5>
+                    <h5>Published on <a href="#permalink">2020-07-08</a></h5>
                 </div>
-                <img src="/static/nick.jpg" width="100px"/>
+                <img src="/static/max.jpg" width="100px"/>
             </div>
         </div>
         <br/>

@@ -183,9 +183,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:32:01 GMT+0000 (UTC)" data-updatetime="Thu Jan 30 2020 02:09:54 GMT+0000 (UTC)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:32:01 GMT+0000 (UTC)" data-updatetime="Thu May 14 2020 14:55:55 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">637 views <a href="monadical-study-guide.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1093 views <a href="monadical-study-guide.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -453,7 +453,7 @@ the pairing task is to add the words for the first person to draw, and build a s
 https://docs.zalad.io/s/an-intro-to-the-opt-directory
 
 **When finished:** enable access to the server using SSH with the following key:
-`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdwUnQvH0opeOLJi3HTBIHKMgOIAwBNfWdZUa7gWZWD <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d1e1c180c1e052d1e1a08081904030a430008">[email&#160;protected]</a>`, and send us the public IP.  During the interview call afterwards, we will SSH in and inspect the setup and you&#39;ll walk us through your setup over the call, explaining any decisions made and answering any questions we might have.  We&#39;ll ask you to run the scripts in `bin/` on the call as well to confirm they work.
+`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdwUnQvH0opeOLJi3HTBIHKMgOIAwBNfWdZUa7gWZWD <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f0c0e0a1e0c173f0c081a1a0b16111851121a">[email&#160;protected]</a>`, and send us the public IP.  During the interview call afterwards, we will SSH in and inspect the setup and you&#39;ll walk us through your setup over the call, explaining any decisions made and answering any questions we might have.  We&#39;ll ask you to run the scripts in `bin/` on the call as well to confirm they work.
 
 Don&#39;t hesitate to ask if you have questions about this task, the interview process, or Monadical in general! Just send me an email here:
 &lt;img src=&#34;https://i.imgur.com/4w0TJur.png&#34; height=&#34;30px&#34;&gt;
@@ -463,7 +463,7 @@ Don&#39;t hesitate to ask if you have questions about this task, the interview p
 
 ##### Server Setup
 
-- must be on a clean Ubuntu 19.04 install (no &#34;one-click&#34; setups from AWS, DigitalOcean, etc.)
+- must work in a fresh Ubuntu &gt;=20.04 environment (e.g. don&#39;t use the &#34;one-click django&#34; droplet template provided by DigitalOcean)
 - must be running nginx, postgres, and django, managed by a service manager other than `systemd`/`initd`, you can use `supervisord` or `docker-compose`
 - app code, data, binaries, config, and backups must be stored entirely in subfolders under `/opt/banana` (hint, use a virtualenv for the code, and supervisord/docker to save output to logfiles in `./data/logs`)
 - app must be an empty django app created using `django-admin startproject banana` (you can fork https://github.com/Monadical-SAS/example-devops-app, don&#39;t waste time writing code in the app, this project is testing your devops skills, not your python backend skills)
@@ -650,6 +650,14 @@ Interested in joining Monadical? &amp;nbsp;Check out our [team page](https://mon
                 <br/><br/>
                 
                     
+                        <li><a href="/posts/principles-handbook.html">Monadical Principles Handbook</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/how-to-make-remote-work-part-two-zulip.html">How to Make Remote Work (Part Two): Zulip</a></li>
+                    
+                
+                    
                         <li><a href="/posts/how-to-make-remote-work-part-one.html">How to Make Remote Work: Part One</a></li>
                     
                 
@@ -658,11 +666,7 @@ Interested in joining Monadical? &amp;nbsp;Check out our [team page](https://mon
                     
                 
                     
-                        <li><a href="/posts/our-favorite-technical-blogs.html">Our Favorite Technical Blogs</a></li>
-                    
                 
-                    
-                        <li><a href="/posts/monadical-study-guide.html">Monadical Applicant Study Guide</a></li>
                     
                 
                     

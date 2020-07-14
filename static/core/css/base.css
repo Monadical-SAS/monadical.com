@@ -589,11 +589,6 @@ footer .footer hr {
     margin-right: 10px;
 }
 
-.octopus-img {
-    max-height: 681px;
-    max-width: 559px;
-}
-
 .documented-code-img {
     max-height: 80px;
     max-width: 80px
@@ -1485,6 +1480,11 @@ button.read-more {
         min-height: 790px;
         overflow: hidden;
     }
+
+    .octopus-img {
+        max-height: 681px;
+        max-width: 559px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1495,7 +1495,6 @@ button.read-more {
 }
 
 @media (max-width: 768px) {
-
     .card-header.card-expertise-header {
         padding-left: 10px;
     }
@@ -1504,6 +1503,10 @@ button.read-more {
 
     h4 > a {
         font-size: 1rem;
+    }
+
+    .octopus-img {
+        width: 100%;
     }
 }
 

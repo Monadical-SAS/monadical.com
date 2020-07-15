@@ -71,6 +71,11 @@ def favicon():
     return redirect("/static/favicon.ico")
 
 
+@app.route('/robots.txt')
+def static_from_root():
+    return redirect("/static/robots.txt")
+
+
 @app.route('/<path>')
 def render_page(path):
     page = PAGES[f'/{path}'].copy()

@@ -195,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:47:42 GMT+0000 (UTC)" data-updatetime="Mon May 14 2018 17:50:09 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">269 views <a href="Downswings-and-the-Information-Game.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">272 views <a href="Downswings-and-the-Information-Game.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -382,7 +382,8 @@ I often hear players say, &#34;I hate that site. It&#39;s completely rigged. I c
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/B186oSPAM', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

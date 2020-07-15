@@ -195,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:31:29 GMT+0000 (UTC)" data-updatetime="Sun Jan 12 2020 21:47:45 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">265 views <a href="avoiding-dry-for-easier-refactoring.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">269 views <a href="avoiding-dry-for-easier-refactoring.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -406,7 +406,8 @@ https://overreacted.io/goodbye-clean-code/</div>
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/effective-refactoring', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

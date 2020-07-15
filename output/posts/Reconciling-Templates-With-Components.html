@@ -195,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 12:11:31 GMT+0000 (UTC)" data-updatetime="Thu Feb 14 2019 00:20:05 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">678 views <a href="Reconciling-Templates-With-Components.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">681 views <a href="Reconciling-Templates-With-Components.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -589,7 +589,8 @@ If you’re interested working on cool Django + React/Redux projects involving E
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/Hks_9j_hz', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

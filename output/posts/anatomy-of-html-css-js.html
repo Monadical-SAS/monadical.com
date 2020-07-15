@@ -195,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 00:02:12 GMT+0000 (UTC)" data-updatetime="Wed Dec 11 2019 23:18:52 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">1831 views <a href="anatomy-of-html-css-js.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1840 views <a href="anatomy-of-html-css-js.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -505,6 +505,7 @@ https://btholt.github.io/intro-to-web-dev-v2/
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
+                // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
             })
 

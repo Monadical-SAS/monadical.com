@@ -195,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 27 2020 11:24:36 GMT+0000 (UTC)" data-updatetime="Fri Mar 27 2020 11:30:56 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">39 views <a href="how-to-make-remote-work-part-one.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">43 views <a href="how-to-make-remote-work-part-one.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -543,7 +543,8 @@ To that end, I think the most important thing is to regularly reflect on your ex
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/how-to-make-remote-work-part-one', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

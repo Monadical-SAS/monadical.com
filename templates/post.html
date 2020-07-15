@@ -29,11 +29,6 @@
 {% block article %}
 
     <style>
-        nav.navbar {
-            border-radius: 0px !important;
-            padding-top: 15px;
-            padding-bottom: 35px;
-        }
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
         }
@@ -157,6 +152,8 @@
                 
                 fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
             })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>

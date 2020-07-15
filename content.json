@@ -32,15 +32,6 @@
             "url": "/sales.html",
             "template": "sales.html"
         },
-        "process": {
-            "title": "Transparent Process",
-            "url": "/process.html",
-            "template": "process.html"
-            },
-        "principles": {
-            "title": "Principles",
-            "url": "https://docs.monadical.com/s/principles-handbook"
-        },
         "services": {
             "title": "Services",
             "url": "/services.html",
@@ -55,11 +46,16 @@
             "title": "Contact us",
             "url": "/contact-us.html",
             "template": "contact-us.html"
+        },
+        "principles": {
+            "title": "Principles",
+            "url": "/principles.html",
+            "template": "posts/principles-handbook.html"
         }
     },
     "POSTS": {
         "principles-handbook": {
-            "date": "2020-07-08",
+            "date": "2028-07-08",
             "img": "/static/full-stack.jpg",
             "title": "Monadical Principles Handbook",
             "tags": ["remote-work", "soft-skills", "remote", "home-office", "tools", "chat", "communication"],

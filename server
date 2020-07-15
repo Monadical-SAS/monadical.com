@@ -78,9 +78,12 @@ def render_page(path):
     if page['title'] == "Team":
         team_list = load_team_info()
         page['team'] = team_list
-    if page['title'] == "Services":
+    elif page['title'] == "Services":
         page['stacks'] = load_stacks_info()
-
+    elif page['title'] == "Principles":
+        post = POSTS[f'/posts/principles-handbook.html']
+        download_post(post)
+        return render_template('post.html', now=datetime.now(), **CONFIG, **post)
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 
 

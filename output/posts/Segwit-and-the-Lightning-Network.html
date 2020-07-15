@@ -20,6 +20,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="An Explanation of Segwit and the Lighning Network" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/static/segwit.jpg" />
+<meta property="og:url" content="/posts/Segwit-and-the-Lightning-Network.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_us" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="An Explanation of Segwit and the Lighning Network">
+<meta name="twitter:description" content="Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.">
+<meta name="twitter:image" content="/static/segwit.jpg">
 
 </head>
 
@@ -29,7 +47,7 @@
         
         
 
-        <div class="container">
+        <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
                 <a class="navbar-brand" href="/index.html">
@@ -47,7 +65,7 @@
                     <ul class="navbar-nav navbar-left">
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="https://docs.monadical.com/s/principles-handbook">Principles</a>
+                            <a class="nav-link" href="/principles.html">Principles</a>
                         </li>
                         
                         <li class="nav-item">
@@ -67,7 +85,7 @@
                         </li>
                         
                     </ul>
-                    <a class="beta-btn nav-link" href="/index.html#consulting"
+                    <a class="beta-btn nav-link" href="/contact-us.html"
                         onmousedown="/*this.classList.add('hinge'), true*/">
                         GET A TECHNICAL ASSESSMENT
                     </a>
@@ -83,11 +101,6 @@
         
 
     <style>
-        nav.navbar {
-            border-radius: 0px !important;
-            padding-top: 15px;
-            padding-bottom: 35px;
-        }
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
         }
@@ -182,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:20:52 GMT+0000 (UTC)" data-updatetime="Mon May 14 2018 17:25:42 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">328 views <a href="Segwit-and-the-Lightning-Network.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">333 views <a href="Segwit-and-the-Lightning-Network.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -493,6 +506,8 @@ So that if the overwritten `TxID:1` is ever committed, it allows Bob to claim al
                 
                 fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
             })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>
@@ -522,7 +537,7 @@ So that if the overwritten `TxID:1` is ever committed, it allows Bob to claim al
                         </li>
                         <li><a href=/services.html>Services</a></li>
                         <li><a href=/projects.html>Projects</a></li>
-                        <li><a href=/about.html#contact>GET A TECHNICAL ASSESSMENT</a></li>
+                        <li><a href="/contact-us.html">GET A TECHNICAL ASSESSMENT</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">
@@ -532,7 +547,7 @@ So that if the overwritten `TxID:1` is ever committed, it allows Bob to claim al
                         </li>
                         <li><a href=/team.html>Team</a></li>
 
-                        <li><a href=https://docs.monadical.com/s/principles-handbook>Principles Handbook</a></li>
+                        <li><a href=/principles.html>Principles Handbook</a></li>
                         <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
                     </ul>
                 </div>
@@ -545,7 +560,7 @@ So that if the overwritten `TxID:1` is ever committed, it allows Bob to claim al
                             <a href=/blog.html>Blog</a>
                         </li>
                         <li>
-                            <a href=/about.html#contact>Contact us</a>
+                            <a href="/contact-us.html">Contact us</a>
                         </li>
                     </ul>
                 </div>

@@ -20,6 +20,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical&#39; vision goes far beyond short-term fundraising." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="We’re Building A Company, Not An ICO" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/static/company-not-ico-light.jpg" />
+<meta property="og:url" content="/posts/Building-a-Company-Not-an-ICO.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical&#39; vision goes far beyond short-term fundraising." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_us" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical&#39; vision goes far beyond short-term fundraising.">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="We’re Building A Company, Not An ICO">
+<meta name="twitter:description" content="A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical&#39; vision goes far beyond short-term fundraising.">
+<meta name="twitter:image" content="/static/company-not-ico-light.jpg">
 
 </head>
 
@@ -29,7 +47,7 @@
         
         
 
-        <div class="container">
+        <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
                 <a class="navbar-brand" href="/index.html">
@@ -47,7 +65,7 @@
                     <ul class="navbar-nav navbar-left">
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="https://docs.monadical.com/s/principles-handbook">Principles</a>
+                            <a class="nav-link" href="/principles.html">Principles</a>
                         </li>
                         
                         <li class="nav-item">
@@ -67,7 +85,7 @@
                         </li>
                         
                     </ul>
-                    <a class="beta-btn nav-link" href="/index.html#consulting"
+                    <a class="beta-btn nav-link" href="/contact-us.html"
                         onmousedown="/*this.classList.add('hinge'), true*/">
                         GET A TECHNICAL ASSESSMENT
                     </a>
@@ -83,11 +101,6 @@
         
 
     <style>
-        nav.navbar {
-            border-radius: 0px !important;
-            padding-top: 15px;
-            padding-bottom: 35px;
-        }
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
         }
@@ -182,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 19 2018 07:10:56 GMT+0000 (UTC)" data-updatetime="Thu Jun 21 2018 01:47:14 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">486 views <a href="Building-a-Company-Not-an-ICO.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">491 views <a href="Building-a-Company-Not-an-ICO.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -366,6 +379,8 @@ This doesn&#39;t mean that all token sales are illegitimate or that we&#39;ve co
                 
                 fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
             })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>
@@ -395,7 +410,7 @@ This doesn&#39;t mean that all token sales are illegitimate or that we&#39;ve co
                         </li>
                         <li><a href=/services.html>Services</a></li>
                         <li><a href=/projects.html>Projects</a></li>
-                        <li><a href=/about.html#contact>GET A TECHNICAL ASSESSMENT</a></li>
+                        <li><a href="/contact-us.html">GET A TECHNICAL ASSESSMENT</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">
@@ -405,7 +420,7 @@ This doesn&#39;t mean that all token sales are illegitimate or that we&#39;ve co
                         </li>
                         <li><a href=/team.html>Team</a></li>
 
-                        <li><a href=https://docs.monadical.com/s/principles-handbook>Principles Handbook</a></li>
+                        <li><a href=/principles.html>Principles Handbook</a></li>
                         <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
                     </ul>
                 </div>
@@ -418,7 +433,7 @@ This doesn&#39;t mean that all token sales are illegitimate or that we&#39;ve co
                             <a href=/blog.html>Blog</a>
                         </li>
                         <li>
-                            <a href=/about.html#contact>Contact us</a>
+                            <a href="/contact-us.html">Contact us</a>
                         </li>
                     </ul>
                 </div>

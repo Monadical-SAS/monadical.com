@@ -20,6 +20,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="An Introduction to HTML and CSS Anatomy" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/static/html-tag-attributes.png" />
+<meta property="og:url" content="/posts/anatomy-of-html-css-js.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_us" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="An Introduction to HTML and CSS Anatomy">
+<meta name="twitter:description" content="A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.">
+<meta name="twitter:image" content="/static/html-tag-attributes.png">
 
 </head>
 
@@ -29,7 +47,7 @@
         
         
 
-        <div class="container">
+        <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
                 <a class="navbar-brand" href="/index.html">
@@ -47,7 +65,7 @@
                     <ul class="navbar-nav navbar-left">
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="https://docs.monadical.com/s/principles-handbook">Principles</a>
+                            <a class="nav-link" href="/principles.html">Principles</a>
                         </li>
                         
                         <li class="nav-item">
@@ -67,7 +85,7 @@
                         </li>
                         
                     </ul>
-                    <a class="beta-btn nav-link" href="/index.html#consulting"
+                    <a class="beta-btn nav-link" href="/contact-us.html"
                         onmousedown="/*this.classList.add('hinge'), true*/">
                         GET A TECHNICAL ASSESSMENT
                     </a>
@@ -83,11 +101,6 @@
         
 
     <style>
-        nav.navbar {
-            border-radius: 0px !important;
-            padding-top: 15px;
-            padding-bottom: 35px;
-        }
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
         }
@@ -182,7 +195,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 00:02:12 GMT+0000 (UTC)" data-updatetime="Wed Dec 11 2019 23:18:52 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">1698 views <a href="anatomy-of-html-css-js.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1825 views <a href="anatomy-of-html-css-js.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -416,10 +429,6 @@ https://btholt.github.io/intro-to-web-dev-v2/
                 <br/><br/>
                 
                     
-                        <li><a href="/posts/principles-handbook.html">Monadical Principles Handbook</a></li>
-                    
-                
-                    
                         <li><a href="/posts/how-to-make-remote-work-part-two-zulip.html">How to Make Remote Work: Part Two, Zulip</a></li>
                     
                 
@@ -429,6 +438,10 @@ https://btholt.github.io/intro-to-web-dev-v2/
                 
                     
                         <li><a href="/posts/anatomy-of-html-css-js.html">An Introduction to HTML and CSS Anatomy</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/principles-handbook.html">Monadical Principles Handbook</a></li>
                     
                 
                     
@@ -494,6 +507,8 @@ https://btholt.github.io/intro-to-web-dev-v2/
                 
                 fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
             })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>
@@ -523,7 +538,7 @@ https://btholt.github.io/intro-to-web-dev-v2/
                         </li>
                         <li><a href=/services.html>Services</a></li>
                         <li><a href=/projects.html>Projects</a></li>
-                        <li><a href=/about.html#contact>GET A TECHNICAL ASSESSMENT</a></li>
+                        <li><a href="/contact-us.html">GET A TECHNICAL ASSESSMENT</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">
@@ -533,7 +548,7 @@ https://btholt.github.io/intro-to-web-dev-v2/
                         </li>
                         <li><a href=/team.html>Team</a></li>
 
-                        <li><a href=https://docs.monadical.com/s/principles-handbook>Principles Handbook</a></li>
+                        <li><a href=/principles.html>Principles</a></li>
                         <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
                     </ul>
                 </div>
@@ -546,7 +561,7 @@ https://btholt.github.io/intro-to-web-dev-v2/
                             <a href=/blog.html>Blog</a>
                         </li>
                         <li>
-                            <a href=/about.html#contact>Contact us</a>
+                            <a href="/contact-us.html">Contact us</a>
                         </li>
                     </ul>
                 </div>

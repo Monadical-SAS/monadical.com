@@ -701,15 +701,10 @@ div.card-reference div.card-body {
 .secret-user {
     display: inline-block;
     position: relative;
-    border: solid 1px #e5e5e5;
-    height: 200px;
-    width: 200px;
 }
 
 .secret-user-img {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+    border-radius: 5px;
 }
 
 .card.card-borderless {

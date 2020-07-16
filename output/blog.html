@@ -1,643 +1,1031 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Monadical Consulting | Posts &amp; Articles</title>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
-        <link rel="stylesheet" href="/static/main.css">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monadical Consulting | Posts &amp; Articles</title>
 
-        <link rel="canonical" href="https://monadical.com/blog.html"/> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        
-        
-    </head>
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+    <link rel="stylesheet" href="/static/core/css/base.css">
+
+    <link rel="canonical" href="https://monadical.com/blog.html" />
+
     
-    <body>
-        
-            <div id="particles-js"></div>
-            
-        
-        
-        
-        <header>
-            <a id="top"></a>
+    
+</head>
 
-            
-            
+<body>
+    
+    <header>
+        
+        
 
-            <nav class="navbar navbar-expand-sm navbar-light">
-                <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index.html">
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="
+                                /static/core/img/logo@3x.png 3x,
+                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-left">
                         
-                            <center>
-                                <img src="/static/logo-black.png" id="brand-img"/>
-                            </center>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/principles.html">Principles</a>
+                        </li>
                         
-                        <h1 style="white-space: normal">
-                            Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span>
-                        </h1>
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav navbar-left ">
                         <li class="nav-item">
-                            <a class="nav-link" href="/index.html">Home</a>
+                            <a class="nav-link" href="/services.html">Services</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About</a>
+                            <a class="nav-link" href="/cases.html">Projects</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/team.html">Team</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/projects.html">Projects</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/blog.html">Blog</a>
                         </li>
+                        
                     </ul>
-                        
-                    <h1 class="nav-item main-brand-link d-none d-sm-block ">
-                        
-                            <center>
-                                <img src="/static/logo-black.png" id="brand-img"/>
-                            </center>
-                        
-                        <a href="/index.html">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
-                        <small><i class="fa fa-angle-double-right"></i>  Blog <i class="fa fa-angle-double-left"></i></small>
-                    </h1>
-
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about.html#contact">How it works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="beta-btn nav-link btn btn-lg btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
-                                &nbsp;<span class="diamond" style="font-size: 24px;vertical-align: -3px;"><i class="fa fa-phone"></i></span>&nbsp;
-                                Free Quote
-                                &nbsp;
-                            </a>
-                        </li>
-                    </ul>
+                    <a class="beta-btn nav-link" href="/contact-us.html"
+                        onmousedown="/*this.classList.add('hinge'), true*/">
+                        GET A TECHNICAL ASSESSMENT
+                    </a>
                 </div>
             </nav>
-        </header>
-        
-        
+        </div>
+    </header>
+    
 
+
+    
+    <article>
         
-        <article>
-            
     <!--<canvas class="animated-color-grid" height="100"></canvas>-->
-    <div class="container-full post" style="padding: 10px">
-        <div style="width: 100%; text-align: center;">
-            <br/><br/>
-            <h2><a id="main">Blog Posts from the Monadical Team</a></h2><br/>
-            <span class="label" style="font-size: 20px">
-                Read about: &nbsp; &nbsp;
-                #Django &nbsp; &nbsp;
-                #React &nbsp; &nbsp;
-                #Animations &nbsp; &nbsp;
-                #Engineering &nbsp; &nbsp;
-                #Management &nbsp; &nbsp;
-                #Poker &nbsp; &nbsp;
-                #Ops &nbsp; &nbsp;
-                and more...
-            </span><br/><br/>
-            <a href="https://twitter.com/MonadicalSAS" class="btn btn-info btn-dark">
-                Follow us on Twitter <i class="fa fa-twitter"></i>
-            </a>
-            &nbsp; &nbsp;
-            <a href="#newsletter" class="btn btn-success btn-dark">Subscribe to our newsletter <i class="fa fa-angle-double-down"></i></a>
+    <div class="container-full post">
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col text-center">
+                    <br/><br/>
+                    <h2><a id="main">Blog Posts from the Monadical Team</a></h2><br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12 text-center mb-4">
+                    <a href="https://twitter.com/MonadicalSAS" class="btn btn-info btn-dark">
+                        Follow us on Twitter <i class="fa fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-12 text-center mb-4">
+                    <a href="#newsletter" class="btn btn-success btn-dark">Subscribe to our newsletter <i class="fa fa-angle-double-down"></i></a>
+                </div>
+            </div>
         </div>
-        <br/>
-        <hr/>
-        <div class="row articles">
+        <div class="container">
+            <div class="row articles">
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/how-to-make-remote-work-part-one.html">
-                        <h2>How to Make Remote Work: Part One</h2>
-                        <div style="background-image: url(/static/remote-work.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Management</span>
-                            
-                                <span class="label">#Transparency</span>
-                            
-                                <span class="label">#Teambuilding</span>
-                            
-                                <span class="label">#Process</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/principles-handbook.html">
+                          <img class="card-img-top" src="/static/full-stack.jpg" alt="Monadical Principles Handbook">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/principles-handbook.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#remote-work</span>
+                                    
+                                        <span class="label">#soft-skills</span>
+                                    
+                                        <span class="label">#remote</span>
+                                    
+                                        <span class="label">#home-office</span>
+                                    
+                                        <span class="label">#tools</span>
+                                    
+                                        <span class="label">#chat</span>
+                                    
+                                        <span class="label">#communication</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/principles-handbook.html">
+                                    <h2>Monadical Principles Handbook</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.
+                            </div>
                         </div>
-                    </a>
-                    <div>How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.</div>
-                    <div class="author small">
-                        <hr/>
-                        Max McCrea - 2020-03-18<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            10 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Max - 2017-01-01<br/><br/>
+                                <a href="/posts/principles-handbook.html">
+                                    <button class="btn btn-primary">
+                                        20 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/anatomy-of-html-css-js.html">
-                        <h2>An Introduction to HTML and CSS Anatomy</h2>
-                        <div style="background-image: url(/static/html-tag-attributes.png)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Beginner</span>
-                            
-                                <span class="label">#HTML</span>
-                            
-                                <span class="label">#CSS</span>
-                            
-                                <span class="label">#Frontend</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/how-to-make-remote-work-part-two-zulip.html">
+                          <img class="card-img-top" src="/static/zulip.jpg" alt="How to Make Remote Work: Part Two, Zulip">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/how-to-make-remote-work-part-two-zulip.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#remote-work</span>
+                                    
+                                        <span class="label">#soft-skills</span>
+                                    
+                                        <span class="label">#remote</span>
+                                    
+                                        <span class="label">#home-office</span>
+                                    
+                                        <span class="label">#tools</span>
+                                    
+                                        <span class="label">#chat</span>
+                                    
+                                        <span class="label">#communication</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/how-to-make-remote-work-part-two-zulip.html">
+                                    <h2>How to Make Remote Work: Part Two, Zulip</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                How I&#39;ve learned to be productive working from home. I&#39;ll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.
+                            </div>
                         </div>
-                    </a>
-                    <div>A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2019-02-19<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            5 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Max - 2020-07-08<br/><br/>
+                                <a href="/posts/how-to-make-remote-work-part-two-zulip.html">
+                                    <button class="btn btn-primary">
+                                        10 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/our-favorite-technical-blogs.html">
-                        <h2>Our Favorite Technical Blogs</h2>
-                        <div style="background-image: url(/static/blogs.png)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Reading</span>
-                            
-                                <span class="label">#Links</span>
-                            
-                                <span class="label">#Development</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/how-to-make-remote-work-part-one.html">
+                          <img class="card-img-top" src="/static/remote-work.jpg" alt="How to Make Remote Work: Part One">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/how-to-make-remote-work-part-one.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Management</span>
+                                    
+                                        <span class="label">#Transparency</span>
+                                    
+                                        <span class="label">#Teambuilding</span>
+                                    
+                                        <span class="label">#Process</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/how-to-make-remote-work-part-one.html">
+                                    <h2>How to Make Remote Work: Part One</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.
+                            </div>
                         </div>
-                    </a>
-                    <div>A list of our favorite technical blogs by friends, prominent programmers, and other companies we follow.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2019-02-18<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            5 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Max McCrea - 2020-03-18<br/><br/>
+                                <a href="/posts/how-to-make-remote-work-part-one.html">
+                                    <button class="btn btn-primary">
+                                        10 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/monadical-study-guide.html">
-                        <h2>Monadical Applicant Study Guide</h2>
-                        <div style="background-image: url(/static/study-guide.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Backeng</span>
-                            
-                                <span class="label">#Frontend</span>
-                            
-                                <span class="label">#Hiring</span>
-                            
-                                <span class="label">#Resources</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/anatomy-of-html-css-js.html">
+                          <img class="card-img-top" src="/static/html-tag-attributes.png" alt="An Introduction to HTML and CSS Anatomy">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/anatomy-of-html-css-js.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Beginner</span>
+                                    
+                                        <span class="label">#HTML</span>
+                                    
+                                        <span class="label">#CSS</span>
+                                    
+                                        <span class="label">#Frontend</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/anatomy-of-html-css-js.html">
+                                    <h2>An Introduction to HTML and CSS Anatomy</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.
+                            </div>
                         </div>
-                    </a>
-                    <div>A list of documentation, resources, and example projects for potential applicants who are thinking about joining Monadical.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2019-02-13<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            9 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2019-02-19<br/><br/>
+                                <a href="/posts/anatomy-of-html-css-js.html">
+                                    <button class="btn btn-primary">
+                                        5 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/avoiding-dry-for-easier-refactoring.html">
-                        <h2>Easier Refactoring by Avoiding DRY Patterns</h2>
-                        <div style="background-image: url(/static/dry.gif)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Computer Science</span>
-                            
-                                <span class="label">#Refactoring</span>
-                            
-                                <span class="label">#Code Design</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/our-favorite-technical-blogs.html">
+                          <img class="card-img-top" src="/static/blogs.png" alt="Our Favorite Technical Blogs">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/our-favorite-technical-blogs.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Reading</span>
+                                    
+                                        <span class="label">#Links</span>
+                                    
+                                        <span class="label">#Development</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/our-favorite-technical-blogs.html">
+                                    <h2>Our Favorite Technical Blogs</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A list of our favorite technical blogs by friends, prominent programmers, and other companies we follow.
+                            </div>
                         </div>
-                    </a>
-                    <div>A short post about a particularly nice pattern for future refactorers that breaks the Don&#39;t-Repeat-Yourself principle commonly taught to beginners.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2019-01-25<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            3 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2019-02-18<br/><br/>
+                                <a href="/posts/our-favorite-technical-blogs.html">
+                                    <button class="btn btn-primary">
+                                        5 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/security-breach-response-guidelines.html">
-                        <h2>Security Breach Response Guidelines</h2>
-                        <div style="background-image: url(/static/breach-response.png)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Security</span>
-                            
-                                <span class="label">#Breach Response</span>
-                            
-                                <span class="label">#Management</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/monadical-study-guide.html">
+                          <img class="card-img-top" src="/static/study-guide.jpg" alt="Monadical Applicant Study Guide">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/monadical-study-guide.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Backeng</span>
+                                    
+                                        <span class="label">#Frontend</span>
+                                    
+                                        <span class="label">#Hiring</span>
+                                    
+                                        <span class="label">#Resources</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/monadical-study-guide.html">
+                                    <h2>Monadical Applicant Study Guide</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A list of documentation, resources, and example projects for potential applicants who are thinking about joining Monadical.
+                            </div>
                         </div>
-                    </a>
-                    <div>What should you do if your company gets hacked? What are the things to avoid and what are the procedures to follow? We explore the whole process in this post.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2018-12-06<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            7 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2019-02-13<br/><br/>
+                                <a href="/posts/monadical-study-guide.html">
+                                    <button class="btn btn-primary">
+                                        9 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/functional-declarative-animations.html">
-                        <h2>Cleaner JS Animation Architecture With Functional Declarative Patterns</h2>
-                        <div style="background-image: url(/static/declarative-animations.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Javascript</span>
-                            
-                                <span class="label">#Animation</span>
-                            
-                                <span class="label">#Frontend</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/avoiding-dry-for-easier-refactoring.html">
+                          <img class="card-img-top" src="/static/dry.gif" alt="Easier Refactoring by Avoiding DRY Patterns">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/avoiding-dry-for-easier-refactoring.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Computer Science</span>
+                                    
+                                        <span class="label">#Refactoring</span>
+                                    
+                                        <span class="label">#Code Design</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/avoiding-dry-for-easier-refactoring.html">
+                                    <h2>Easier Refactoring by Avoiding DRY Patterns</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A short post about a particularly nice pattern for future refactorers that breaks the Don&#39;t-Repeat-Yourself principle commonly taught to beginners.
+                            </div>
                         </div>
-                    </a>
-                    <div>As systems get more complex, they trend towards expressing more of their complexity as data. Animations can be defined in data too.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2018-10-31<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            5 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2019-01-25<br/><br/>
+                                <a href="/posts/avoiding-dry-for-easier-refactoring.html">
+                                    <button class="btn btn-primary">
+                                        3 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/intro-to-opt-directory.html">
-                        <h2>Server Provisioning and the /opt Directory</h2>
-                        <div style="background-image: url(/static/opt-directory.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#DevOps</span>
-                            
-                                <span class="label">#Sysadmin</span>
-                            
-                                <span class="label">#Deployment</span>
-                            
-                                <span class="label">#UNIX</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/security-breach-response-guidelines.html">
+                          <img class="card-img-top" src="/static/breach-response.png" alt="Security Breach Response Guidelines">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/security-breach-response-guidelines.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Security</span>
+                                    
+                                        <span class="label">#Breach Response</span>
+                                    
+                                        <span class="label">#Management</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/security-breach-response-guidelines.html">
+                                    <h2>Security Breach Response Guidelines</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                What should you do if your company gets hacked? What are the things to avoid and what are the procedures to follow? We explore the whole process in this post.
+                            </div>
                         </div>
-                    </a>
-                    <div>An overview of how we provision and organize code and data on servers using the UNIX /opt directory.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2018-09-10<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            8 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2018-12-06<br/><br/>
+                                <a href="/posts/security-breach-response-guidelines.html">
+                                    <button class="btn btn-primary">
+                                        7 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Linearizing-database-operations-django.html">
-                        <h2>A Strategy for Linearizing Database Operations</h2>
-                        <div style="background-image: url(/static/django-operation-queue.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Django</span>
-                            
-                                <span class="label">#ORM</span>
-                            
-                                <span class="label">#Database Integrity</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/functional-declarative-animations.html">
+                          <img class="card-img-top" src="/static/declarative-animations.jpg" alt="Cleaner JS Animation Architecture With Functional Declarative Patterns">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/functional-declarative-animations.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Javascript</span>
+                                    
+                                        <span class="label">#Animation</span>
+                                    
+                                        <span class="label">#Frontend</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/functional-declarative-animations.html">
+                                    <h2>Cleaner JS Animation Architecture With Functional Declarative Patterns</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                As systems get more complex, they trend towards expressing more of their complexity as data. Animations can be defined in data too.
+                            </div>
                         </div>
-                    </a>
-                    <div>Everyone wants their writes strictly ordered, if we can represent a list of write operations as a data structure, that gets easier.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2018-09-05<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            3 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2018-10-31<br/><br/>
+                                <a href="/posts/functional-declarative-animations.html">
+                                    <button class="btn btn-primary">
+                                        5 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Building-a-Company-Not-an-ICO.html">
-                        <h2>We’re Building A Company, Not An ICO</h2>
-                        <div style="background-image: url(/static/company-not-ico-light.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Poker</span>
-                            
-                                <span class="label">#Mission</span>
-                            
-                                <span class="label">#Cryptocurrencies</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/intro-to-opt-directory.html">
+                          <img class="card-img-top" src="/static/opt-directory.jpg" alt="Server Provisioning and the /opt Directory">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/intro-to-opt-directory.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#DevOps</span>
+                                    
+                                        <span class="label">#Sysadmin</span>
+                                    
+                                        <span class="label">#Deployment</span>
+                                    
+                                        <span class="label">#UNIX</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/intro-to-opt-directory.html">
+                                    <h2>Server Provisioning and the /opt Directory</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                An overview of how we provision and organize code and data on servers using the UNIX /opt directory.
+                            </div>
                         </div>
-                    </a>
-                    <div>A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical&#39; vision goes far beyond short-term fundraising.</div>
-                    <div class="author small">
-                        <hr/>
-                        Jerry Feng - 2018-06-21<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            3 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2018-09-10<br/><br/>
+                                <a href="/posts/intro-to-opt-directory.html">
+                                    <button class="btn btn-primary">
+                                        8 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Review-of-Online-Poker-Networks.html">
-                        <h2>The State of Poker Platforms in 2018</h2>
-                        <div style="background-image: url(/static/poker-networks.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Poker</span>
-                            
-                                <span class="label">#Gaming Industry</span>
-                            
-                                <span class="label">#Cryptocurrencies</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Linearizing-database-operations-django.html">
+                          <img class="card-img-top" src="/static/django-operation-queue.jpg" alt="A Strategy for Linearizing Database Operations">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Linearizing-database-operations-django.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Django</span>
+                                    
+                                        <span class="label">#ORM</span>
+                                    
+                                        <span class="label">#Database Integrity</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Linearizing-database-operations-django.html">
+                                    <h2>A Strategy for Linearizing Database Operations</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                Everyone wants their writes strictly ordered, if we can represent a list of write operations as a data structure, that gets easier.
+                            </div>
                         </div>
-                    </a>
-                    <div>An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features.</div>
-                    <div class="author small">
-                        <hr/>
-                        Jerry Feng - 2018-06-05<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            14 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2018-09-05<br/><br/>
+                                <a href="/posts/Linearizing-database-operations-django.html">
+                                    <button class="btn btn-primary">
+                                        3 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Designing-A-Banking-System.html">
-                        <h2>Database Integrity Principles for Safe Systems</h2>
-                        <div style="background-image: url(/static/atomic.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Django</span>
-                            
-                                <span class="label">#ORM</span>
-                            
-                                <span class="label">#Database Integrity</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Building-a-Company-Not-an-ICO.html">
+                          <img class="card-img-top" src="/static/company-not-ico-light.jpg" alt="We’re Building A Company, Not An ICO">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Building-a-Company-Not-an-ICO.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Poker</span>
+                                    
+                                        <span class="label">#Mission</span>
+                                    
+                                        <span class="label">#Cryptocurrencies</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Building-a-Company-Not-an-ICO.html">
+                                    <h2>We’re Building A Company, Not An ICO</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical&#39; vision goes far beyond short-term fundraising.
+                            </div>
                         </div>
-                    </a>
-                    <div>Design strategies and common pitfalls that come into play when designing a banking service to handle concurrent transactions in a distributed environment.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2018-04-20<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            10 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Jerry Feng - 2018-06-21<br/><br/>
+                                <a href="/posts/Building-a-Company-Not-an-ICO.html">
+                                    <button class="btn btn-primary">
+                                        3 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Trustless-is-A-Myth.html">
-                        <h2>The Myth of Trustlessness</h2>
-                        <div style="background-image: url(/static/trustless.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Game Theory</span>
-                            
-                                <span class="label">#Cryptocurrencies</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Review-of-Online-Poker-Networks.html">
+                          <img class="card-img-top" src="/static/poker-networks.jpg" alt="The State of Poker Platforms in 2018">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Review-of-Online-Poker-Networks.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Poker</span>
+                                    
+                                        <span class="label">#Gaming Industry</span>
+                                    
+                                        <span class="label">#Cryptocurrencies</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Review-of-Online-Poker-Networks.html">
+                                    <h2>The State of Poker Platforms in 2018</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features.
+                            </div>
                         </div>
-                    </a>
-                    <div>The word “trustless” implies that trust has been removed from the system altogether. But in reality, systems like Bitcoin require plenty of trust, it&#39;s just less obvious.</div>
-                    <div class="author small">
-                        <hr/>
-                        Max McCrea - 2018-01-29<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            10 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Jerry Feng - 2018-06-05<br/><br/>
+                                <a href="/posts/Review-of-Online-Poker-Networks.html">
+                                    <button class="btn btn-primary">
+                                        14 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/full-stack-developer-checklist.html">
-                        <h2>The Full-Stack Developer Checklist</h2>
-                        <div style="background-image: url(/static/full-stack.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Computer Science</span>
-                            
-                                <span class="label">#Self-Improvement</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Designing-A-Banking-System.html">
+                          <img class="card-img-top" src="/static/atomic.jpg" alt="Database Integrity Principles for Safe Systems">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Designing-A-Banking-System.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Django</span>
+                                    
+                                        <span class="label">#ORM</span>
+                                    
+                                        <span class="label">#Database Integrity</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Designing-A-Banking-System.html">
+                                    <h2>Database Integrity Principles for Safe Systems</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                Design strategies and common pitfalls that come into play when designing a banking service to handle concurrent transactions in a distributed environment.
+                            </div>
                         </div>
-                    </a>
-                    <div>A checklist of things for full-stack developers to strive to learn, spanning everything front frontend, to backend, to native development and devops.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2017-08-25<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            8 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2018-04-20<br/><br/>
+                                <a href="/posts/Designing-A-Banking-System.html">
+                                    <button class="btn btn-primary">
+                                        10 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Using-Redux-As-A-Database.html">
-                        <h2>The Redux Store as the Frontend&#39;s Database</h2>
-                        <div style="background-image: url(/static/redux.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Redux</span>
-                            
-                                <span class="label">#Index</span>
-                            
-                                <span class="label">#Memoization</span>
-                            
-                                <span class="label">#SQL</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Trustless-is-A-Myth.html">
+                          <img class="card-img-top" src="/static/trustless.jpg" alt="The Myth of Trustlessness">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Trustless-is-A-Myth.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Game Theory</span>
+                                    
+                                        <span class="label">#Cryptocurrencies</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Trustless-is-A-Myth.html">
+                                    <h2>The Myth of Trustlessness</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                The word “trustless” implies that trust has been removed from the system altogether. But in reality, systems like Bitcoin require plenty of trust, it&#39;s just less obvious.
+                            </div>
                         </div>
-                    </a>
-                    <div>Storing data in a normalized form allows us to calculate fast indexes for lookups.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2017-07-27<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            7 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Max McCrea - 2018-01-29<br/><br/>
+                                <a href="/posts/Trustless-is-A-Myth.html">
+                                    <button class="btn btn-primary">
+                                        10 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Segwit-and-the-Lightning-Network.html">
-                        <h2>An Explanation of Segwit and the Lighning Network</h2>
-                        <div style="background-image: url(/static/segwit.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Bitcoin</span>
-                            
-                                <span class="label">#Cryptocurrencies</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/full-stack-developer-checklist.html">
+                          <img class="card-img-top" src="/static/full-stack.jpg" alt="The Full-Stack Developer Checklist">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/full-stack-developer-checklist.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Computer Science</span>
+                                    
+                                        <span class="label">#Self-Improvement</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/full-stack-developer-checklist.html">
+                                    <h2>The Full-Stack Developer Checklist</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A checklist of things for full-stack developers to strive to learn, spanning everything front frontend, to backend, to native development and devops.
+                            </div>
                         </div>
-                    </a>
-                    <div>Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.</div>
-                    <div class="author small">
-                        <hr/>
-                        Max McCrea - 2017-06-24<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            11 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2017-08-25<br/><br/>
+                                <a href="/posts/full-stack-developer-checklist.html">
+                                    <button class="btn btn-primary">
+                                        8 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Reconciling-Templates-With-Components.html">
-                        <h2>Reconciling Templates and JS Components</h2>
-                        <div style="background-image: url(/static/reconciling.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Django</span>
-                            
-                                <span class="label">#React</span>
-                            
-                                <span class="label">#Templates</span>
-                            
-                                <span class="label">#SPA</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Using-Redux-As-A-Database.html">
+                          <img class="card-img-top" src="/static/redux.jpg" alt="The Redux Store as the Frontend&#39;s Database">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Using-Redux-As-A-Database.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Redux</span>
+                                    
+                                        <span class="label">#Index</span>
+                                    
+                                        <span class="label">#Memoization</span>
+                                    
+                                        <span class="label">#SQL</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Using-Redux-As-A-Database.html">
+                                    <h2>The Redux Store as the Frontend&#39;s Database</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                Storing data in a normalized form allows us to calculate fast indexes for lookups.
+                            </div>
                         </div>
-                    </a>
-                    <div>The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2017-03-02<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            9 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2017-07-27<br/><br/>
+                                <a href="/posts/Using-Redux-As-A-Database.html">
+                                    <button class="btn btn-primary">
+                                        7 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Django-Concurrent-Write-Safety.html">
-                        <h2>Two Approaches to Concurrent Write-Safety in Django</h2>
-                        <div style="background-image: url(/static/concurrent.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Django</span>
-                            
-                                <span class="label">#ORM</span>
-                            
-                                <span class="label">#Database Integrity</span>
-                            
-                                <span class="label">#Distributed Systems</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Segwit-and-the-Lightning-Network.html">
+                          <img class="card-img-top" src="/static/segwit.jpg" alt="An Explanation of Segwit and the Lighning Network">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Segwit-and-the-Lightning-Network.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Bitcoin</span>
+                                    
+                                        <span class="label">#Cryptocurrencies</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Segwit-and-the-Lightning-Network.html">
+                                    <h2>An Explanation of Segwit and the Lighning Network</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.
+                            </div>
                         </div>
-                    </a>
-                    <div>When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2016-08-03<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            5 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Max McCrea - 2017-06-24<br/><br/>
+                                <a href="/posts/Segwit-and-the-Lightning-Network.html">
+                                    <button class="btn btn-primary">
+                                        11 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Sharing-State-Between-Redux-Reducers.html">
-                        <h2>Redux State-Sharing Approaches</h2>
-                        <div style="background-image: url(/static/reduxsharing.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#React</span>
-                            
-                                <span class="label">#Redux</span>
-                            
-                                <span class="label">#Javascript</span>
-                            
-                                <span class="label">#State Management</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Reconciling-Templates-With-Components.html">
+                          <img class="card-img-top" src="/static/reconciling.jpg" alt="Reconciling Templates and JS Components">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Reconciling-Templates-With-Components.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Django</span>
+                                    
+                                        <span class="label">#React</span>
+                                    
+                                        <span class="label">#Templates</span>
+                                    
+                                        <span class="label">#SPA</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Reconciling-Templates-With-Components.html">
+                                    <h2>Reconciling Templates and JS Components</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks.
+                            </div>
                         </div>
-                    </a>
-                    <div>When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2016-02-18<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            2 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2017-03-02<br/><br/>
+                                <a href="/posts/Reconciling-Templates-With-Components.html">
+                                    <button class="btn btn-primary">
+                                        9 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/map-of-cs-subfields.html">
-                        <h2>A Map of Computer Science Subfields</h2>
-                        <div style="background-image: url(/static/cs-map.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Computer Science</span>
-                            
-                                <span class="label">#Self-Improvement</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Django-Concurrent-Write-Safety.html">
+                          <img class="card-img-top" src="/static/concurrent.jpg" alt="Two Approaches to Concurrent Write-Safety in Django">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Django-Concurrent-Write-Safety.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Django</span>
+                                    
+                                        <span class="label">#ORM</span>
+                                    
+                                        <span class="label">#Database Integrity</span>
+                                    
+                                        <span class="label">#Distributed Systems</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Django-Concurrent-Write-Safety.html">
+                                    <h2>Two Approaches to Concurrent Write-Safety in Django</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.
+                            </div>
                         </div>
-                    </a>
-                    <div>A map of all the subfields encompassed by computer science, with job titles commonly used to hire people in those areas.</div>
-                    <div class="author small">
-                        <hr/>
-                        Nick Sweeting - 2016-05-26<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            8 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2016-08-03<br/><br/>
+                                <a href="/posts/Django-Concurrent-Write-Safety.html">
+                                    <button class="btn btn-primary">
+                                        5 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
-                <div class="col-md-6 text-center article">
-                    <a href="/posts/Downswings-and-the-Information-Game.html">
-                        <h2>Downswings and the Information Game</h2>
-                        <div style="background-image: url(/static/downswings.jpg)" class="article-featured-image"></div>
-                        <div class="post-tags">
-                            
-                                <span class="label">#Game Theory</span>
-                            
-                                <span class="label">#Poker Theory</span>
-                            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Sharing-State-Between-Redux-Reducers.html">
+                          <img class="card-img-top" src="/static/reduxsharing.jpg" alt="Redux State-Sharing Approaches">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Sharing-State-Between-Redux-Reducers.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#React</span>
+                                    
+                                        <span class="label">#Redux</span>
+                                    
+                                        <span class="label">#Javascript</span>
+                                    
+                                        <span class="label">#State Management</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Sharing-State-Between-Redux-Reducers.html">
+                                    <h2>Redux State-Sharing Approaches</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.
+                            </div>
                         </div>
-                    </a>
-                    <div>I often hear players say, “I hate that site. It’s completely rigged. I can never win there.” Perhaps those players simply ran bad at first on that site...</div>
-                    <div class="author small">
-                        <hr/>
-                        Max McCrea - 2009-02-23<br/><br/>
-                        <button class="btn btn-shadow text-mono btn-outline-secondary">
-                            6 min read
-                        </button>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2016-02-18<br/><br/>
+                                <a href="/posts/Sharing-State-Between-Redux-Reducers.html">
+                                    <button class="btn btn-primary">
+                                        2 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/map-of-cs-subfields.html">
+                          <img class="card-img-top" src="/static/cs-map.jpg" alt="A Map of Computer Science Subfields">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/map-of-cs-subfields.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Computer Science</span>
+                                    
+                                        <span class="label">#Self-Improvement</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/map-of-cs-subfields.html">
+                                    <h2>A Map of Computer Science Subfields</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                A map of all the subfields encompassed by computer science, with job titles commonly used to hire people in those areas.
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Nick Sweeting - 2016-05-26<br/><br/>
+                                <a href="/posts/map-of-cs-subfields.html">
+                                    <button class="btn btn-primary">
+                                        8 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-12 col-md-6 text-center article mb-4">
+                    <div class="card h-100 ">
+                        <a href="/posts/Downswings-and-the-Information-Game.html">
+                          <img class="card-img-top" src="/static/downswings.jpg" alt="Downswings and the Information Game">
+                        </a>
+                        <div class="card-body">
+                            <a class="card-link" href="/posts/Downswings-and-the-Information-Game.html">
+                                <div class="post-tags">
+                                    
+                                        <span class="label">#Game Theory</span>
+                                    
+                                        <span class="label">#Poker Theory</span>
+                                    
+                                </div>
+                            </a>
+                            <div class="card-title">
+                                <a class="card-link" href="/posts/Downswings-and-the-Information-Game.html">
+                                    <h2>Downswings and the Information Game</h2>
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                I often hear players say, “I hate that site. It’s completely rigged. I can never win there.” Perhaps those players simply ran bad at first on that site...
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="author small">
+                                Max McCrea - 2009-02-23<br/><br/>
+                                <a href="/posts/Downswings-and-the-Information-Game.html">
+                                    <button class="btn btn-primary">
+                                        6 min read
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
         </div>
 
-        <div style="width: 100%; text-align: center;">
+        <div class="container">
             <br/>
             <div style="background-color: #191919; color: #eee; border-radius: 14px; overflow: hidden; max-width: 900px; margin: auto">
                 <canvas class="animated-color-grid" height="40" style="max-width: 900px;margin: auto"></canvas>
@@ -670,269 +1058,199 @@
         <br/><br/>
         <hr/>
         <br/>
-        <div class="row container">
-            <div class="col-md-6 alert alert-info" style="min-height: 200px; border-radius: 5px; text-align: center">
-                <br/><br/>
-                <b>For code &amp; projects, see the <a href="/projects.html#main">Projects</a> page.</b>
-                <br/>
-                <div class="library">
-                    <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
-                        <i class="fa fa-github"></i> Github
-                    </a>
-                    &nbsp; 
-                    <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                        <i class="fa fa-twitter"></i> Twitter
-                    </a>
-                    &nbsp; 
-                    <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
-                        <i class="fa fa-linkedin"></i> LinkedIn
-                    </a>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-6 alert alert-info" style="min-height: 200px; border-radius: 5px; text-align: center">
+                    <br/><br/>
+                    <b>For code &amp; projects, see the <a href="/projects.html#main">Projects</a> page.</b>
+                    <br/>
+                    <div class="library">
+                        <a href="https://github.com/Monadical-SAS" class="btn btn-shadow btn-success btn-dark">
+                            <i class="fa fa-github"></i> Github
+                        </a>
+                        &nbsp;
+                        <a href="https://twitter.com/MonadicalSAS" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                        &nbsp;
+                        <a href="https://linkedin.com/company/monadical" class="btn btn-shadow btn-success btn-outline-secondary btn-dark">
+                            <i class="fa fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div style="height: 200px;overflow: scroll; width: 100%; max-width: 800px;border-radius: 4px">            
-                    <a class="twitter-timeline" href="https://twitter.com/MonadicalSAS?ref_src=twsrc%5Etfw">Tweets by Monadical</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div class="col-md-6">
+                    <div style="height: 200px;overflow: scroll; width: 100%; max-width: 800px;border-radius: 4px">
+                        <a class="twitter-timeline" href="https://twitter.com/MonadicalSAS?ref_src=twsrc%5Etfw">Tweets by Monadical</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
                 </div>
             </div>
         </div>
-        <br/><br/><br/>
     </div>
 
-        </article>
-        
+    </article>
+    
 
+    
+    <footer>
         
-        <footer>
+        
+        <div class="container footer">
             
-            
-            <div class="container text-center text-darkgrey">
-                
-                    <div class="social-links">
-                        
-                        <a href="#top"><img src="/static/logo-black.png" style="height: 50px; opacity: 1"></a>
-                        <br/><br/><br/>
-                        <div class="follow-links">
-                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a><a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a><a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b> Remote & Physical Offices</li>
+                        <li><b title="NYC, USA">New York</b> Remote Offices</li>
+                        <li><b title="Medellín, Colombia">Medellín</b> Remote Offices</li>
+                        <li><b title="Cali, Colombia">Cali</b> Remote Offices</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <li><a href=/services.html>Services</a></li>
+                        <li><a href=/projects.html>Projects</a></li>
+                        <li><a href="/contact-us.html">GET A TECHNICAL ASSESSMENT</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href=/team.html>Team</a></li>
 
-                
-                <small>Monadical Inc. © 2020</small>
+                        <li><a href=/principles.html>Principles</a></li>
+                        <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Company</b>
+                        </li>
+                        <li>
+                            <a href=/blog.html>Blog</a>
+                        </li>
+                        <li>
+                            <a href="/contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>Monadical Inc. © 2020 All rights reserved.</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>luka@monadical.com</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>+1 (917) 933-3760</li>
+                    </ul>
+                </div>
             </div>
             
-            
-        </footer>
+        </div>
         
+        
+    </footer>
+    
 
-        <script src="/static/squares.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="/static/squares.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
 
-        
-        
 
-        <!-- Smooth Scroll to Anchor Links Animation -->
-        <script>
-            function smoothScroll(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Scrolling to', this.getAttribute('href'))
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            document.addEventListener('DOMContentLoaded', () => {
-              document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
                 elem.parentNode.outerHTML = elem.parentNode.outerHTML
-              })
-              document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
-                  anchor.addEventListener('click', smoothScroll);
-              });
             })
-        </script>
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
 
-        <!-- Particles.js Network Graph Animation -->
-        <script type="text/javascript">
-            if (document.getElementById('particles-js')) {
-                particlesJS("particles-js", {
-                  "particles": {
-                    "number": {
-                      "value": 250,
-                      "density": {
-                        "enable": true,
-                        "value_area": 800
-                      }
-                    },
-                    "color": {
-                      "value": "#f7fcff"
-                    },
-                    "shape": {
-                      "type": "square",
-                      "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                      },
-                      "polygon": {
-                        "nb_sides": 5
-                      },
-                    },
-                    "opacity": {
-                      "value": 0.5,
-                      "random": false,
-                      "anim": {
-                        "enable": false,
-                        "speed": 0.5,
-                        "opacity_min": 0.1,
-                        "sync": false
-                      }
-                    },
-                    "size": {
-                      "value": 3,
-                      "random": true,
-                      "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                      }
-                    },
-                    "line_linked": {
-                      "enable": true,
-                      "distance": 150,
-                      "color": "#3dbe4c",
-                      "opacity": 0.4,
-                      "width": 1
-                    },
-                    "move": {
-                      "enable": true,
-                      "speed": 1,
-                      "direction": "none",
-                      "random": false,
-                      "straight": false,
-                      "out_mode": "out",
-                      "bounce": true,
-                      "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                      }
-                    }
-                  },
-                  "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                      "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                      },
-                      "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                      },
-                      "resize": true
-                    },
-                    "modes": {
-                      "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                          "opacity": 1
-                        }
-                      },
-                      "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                      },
-                      "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                      },
-                      "push": {
-                        "particles_nb": 4
-                      },
-                      "remove": {
-                        "particles_nb": 2
-                      }
-                    }
-                  },
-                  "retina_detect": true
-                });
-              }
-        </script>
-
-        <!-- D3 Cursor Waves Animation -->
-        <!--<script type="text/javascript">
-
-          var width = Math.max(960, innerWidth),
-              height = Math.max(500, innerHeight);
-
-          var x1 = width / 2,
-              y1 = height / 2,
-              x0 = x1,
-              y0 = y1,
-              i = 0,
-              r = 200,
-              τ = 2 * Math.PI;
-
-          var canvas = d3.select("#waves").append("canvas")
-              .attr("width", width)
-              .attr("height", height)
-              .on("ontouchstart" in document ? "touchmove" : "mousemove", move);
-
-          var context = canvas.node().getContext("2d");
-          context.globalCompositeOperation = "lighter";
-          context.lineWidth = 2;
-
-          d3.timer(function() {
-            context.clearRect(0, 0, width, height);
-
-            var z = d3.hsl(++i % 360, 1, .5).rgb(),
-                c = "rgba(" + z.r + "," + z.g + "," + z.b + ",",
-                x = x0 += (x1 - x0) * .1,
-                y = y0 += (y1 - y0) * .1;
-
-            d3.select({}).transition()
-                .duration(2000)
-                .ease(Math.sqrt)
-                .tween("circle", function() {
-                  return function(t) {
-                    context.strokeStyle = c + (1 - t) + ")";
-                    context.beginPath();
-                    context.arc(x, y, r * t, 0, τ);
-                    context.stroke();
-                  };
-                });
-          });
-
-          function move() {
-            var mouse = d3.mouse(this);
-            x1 = mouse[0];
-            y1 = mouse[1];
-            d3.event.preventDefault();
-          }
-        </script>-->
-
-        <!-- Matomo -->
-        <script type="text/javascript">
-          var _paq = window._paq || [];
-          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-          _paq.push(["setCookieDomain", "*.monadical.com"]);
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="//analytics.zervice.io/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
             _paq.push(['setSiteId', '12']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <!-- End Matomo Code -->
-    </body>
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
 </html>

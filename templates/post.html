@@ -2,22 +2,35 @@
 
 {% block title %}{{title}}{% endblock %}
 {% block subtitle %}<a href="{{PAGES.blog.url}}">Blog</a>{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
 
-{% block beforebody %}{% endblock %}
-{% block logo %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="{{description}}" />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="{{title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{{img}}" />
+<meta property="og:url" content="{{url}}" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="{{description}}" />
+<meta property="og:site_name" content="{{SITE_TITLE}}" />
+<meta property="og:locale" content="en_us" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="{{description}}">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{img}}">
+{% endblock %}
 
 {% block article %}
+
     <style>
-        nav.navbar {
-            border-radius: 0px !important;
-            padding-top: 15px;
-            padding-bottom: 35px;
-        }
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
-        }
-        nav.navbar .navbar-collapse.collapse {
-            display: flex !important;
         }
         .article-content {
             border: 0px;
@@ -134,8 +147,11 @@
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('{{source}}', {mode: 'no-cors'})
             })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>

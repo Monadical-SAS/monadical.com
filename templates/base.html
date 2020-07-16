@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{SITE_TITLE}} | {% block title %}Home{% endblock %}</title>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
-        <link rel="stylesheet" href="/static/core/css/base.css">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{SITE_TITLE}} | {% block title %}Home{% endblock %}</title>
 
-        <link rel="canonical" href="https://{{SITE_DOMAIN}}{{request.path}}"/> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        {% block head %}
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+    <link rel="stylesheet" href="/static/core/css/base.css">
+
+    <link rel="canonical" href="https://{{SITE_DOMAIN}}{{request.path}}" />
+
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block header %}
+    <header>
+        {% block headerbefore %}
         {% endblock %}
-    </head>
-    
-    <body>
-        {% block header %}
-        <header>
-            {% block headerbefore %}
-            {% endblock %}
 
-            <div class="container">
-                <nav class="navbar navbar-expand-sm navbar-dark bg-white">
-                    {% block logo %}
-                        <a class="navbar-brand" href="{{PAGES.index.url}}">
-                            <img
-                                srcset="
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                {% block logo %}
+                <a class="navbar-brand" href="{{PAGES.index.url}}">
+                    <img srcset="
                                 /static/core/img/logo@3x.png 3x,
-                                /static/core/img/logo@2x.png 2x"
-                                src="/static/core/img/logo.png"
-                                id="brand-img"
-                            />
-                        </a>
-                    {% endblock %}
-                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                {% endblock %}
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                 </button>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav navbar-left">
                         {% for link in HeaderLinks %}
@@ -51,172 +50,184 @@
                         </li>
                         {% endfor %}
                     </ul>
-                    <a class="beta-btn nav-link" href="/contact-us.html" onmousedown="/*this.classList.add('hinge'), true*/">
-                        Get Technical Project Review
+                    <a class="beta-btn nav-link" href="/contact-us.html"
+                        onmousedown="/*this.classList.add('hinge'), true*/">
+                        GET A TECHNICAL ASSESSMENT
                     </a>
                 </div>
             </nav>
+        </div>
+    </header>
+    {% endblock %}
+
+
+    {% block outer %}
+    <article>
+        {% block article %}
+        {% endblock %}
+    </article>
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+        {% block footerbefore %}
+        {% endblock %}
+        <div class="container footer">
+            {% block footersocial %}
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b> Remote & Physical Offices</li>
+                        <li><b title="NYC, USA">New York</b> Remote Offices</li>
+                        <li><b title="Medellín, Colombia">Medellín</b> Remote Offices</li>
+                        <li><b title="Cali, Colombia">Cali</b> Remote Offices</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <li><a href={{PAGES.services.url}}>Services</a></li>
+                        <li><a href={{PAGES.projects.url}}>Projects</a></li>
+                        <li><a href="/contact-us.html">GET A TECHNICAL ASSESSMENT</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href={{PAGES.team.url}}>Team</a></li>
+
+                        <li><a href={{PAGES.principles.url}}>Principles</a></li>
+                        <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Company</b>
+                        </li>
+                        <li>
+                            <a href={{PAGES.blog.url}}>Blog</a>
+                        </li>
+                        <li>
+                            <a href="/contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </header>
-        {% endblock %}
-        
-
-        {% block outer %}
-        <article>
-            {% block article %}
-            {% endblock %}
-        </article>
-        {% endblock %}
-
-        {% block footer %}
-        <footer>
-            {% block footerbefore %}
-            {% endblock %}
-            <div class="container footer">
-                {% block footersocial %}
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <ul>
-                            <li><b>CA-</b> Remote/Office : 51 Sherbrooke St W Unit 210, Montreal</li>
-                            <li><b>US-</b> Remote/Office: 99 Wall St, New York</li>
-                            <li><b>California:</b> Remote</li>
-                            <li><b>Medellin:</b> Remote</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <ul>
-                            <li>
-                                <b>Monadical Quality</b>
-                            </li>
-                            <li>Services</li>
-                            <li>Case Studies & Open-Source</li>
-                            <li><a href="/contact-us.html">Get a Technical Project Review</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <ul>
-                            <li>
-                                <b>About Us</b>
-                            </li>
-                            <li>Team</li>
-                            <li>Transparent Process Workbook</li>
-                            <li>Principles Handbook</li>
-                            <li><a href="#">Join us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-2">
-                        <ul>
-                            <li>
-                                <b>Company</b>
-                            </li>
-                            <li>
-                                Blog
-                            </li>
-                            <li>
-                                Contact us
-                            </li>
-                            <li>
-                                <a href="#">Privacy Policy</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row social">
-                    <div class="col-12">
-                        <ul>
-                            <li>
-                                <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row contact-row">
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <ul>
-                            <li>{% block footercopyright %}Monadical Inc. © 2020 All rights reserved.{% endblock %}</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
-                        <ul>
-                            <li>luka@monadical.com</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-lg-2 col-md-4">
-                        <ul>
-                            <li>+1 (917) 933-3760</li>
-                        </ul>
-                    </div>
-                </div>
-                {% endblock %}
             </div>
-            {% block footerafter %}
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>{% block footercopyright %}Monadical Inc. © 2020 All rights reserved.{% endblock %}</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>luka@monadical.com</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>+1 (917) 933-3760</li>
+                    </ul>
+                </div>
+            </div>
             {% endblock %}
-        </footer>
+        </div>
+        {% block footerafter %}
         {% endblock %}
+    </footer>
+    {% endblock %}
 
-        <script src="/static/squares.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        {# <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> #}
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="/static/squares.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    {# <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> #}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
 
 
-        {% block bodyafter %}
-        {% endblock %}
+    {% block bodyafter %}
+    {% endblock %}
 
-        <!-- Smooth Scroll to Anchor Links Animation -->
-        <script>
-            function smoothScroll(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Scrolling to', this.getAttribute('href'))
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            document.addEventListener('DOMContentLoaded', () => {
-              document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
                 elem.parentNode.outerHTML = elem.parentNode.outerHTML
-              })
-              document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
-                  anchor.addEventListener('click', smoothScroll);
-              });
             })
-        </script>
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
 
-        <!-- Matomo -->
-        <script type="text/javascript">
-          var _paq = window._paq || [];
-          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-          _paq.push(["setCookieDomain", "*.monadical.com"]);
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="//analytics.zervice.io/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
             _paq.push(['setSiteId', '12']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <!-- End Matomo Code -->
-    </body>
-</html>
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
 
+</html>

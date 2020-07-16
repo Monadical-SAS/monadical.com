@@ -32,22 +32,13 @@
             "url": "/sales.html",
             "template": "sales.html"
         },
-        "process": {
-            "title": "Transparent Process",
-            "url": "/process.html",
-            "template": "process.html"
-            },
-        "principles": {
-            "title": "Monadical Principles",
-            "url": "https://docs.monadical.com/s/principles-handbook"
-        },
         "services": {
             "title": "Services",
             "url": "/services.html",
             "template": "services.html"
         },
         "cases": {
-            "title": "Case Studies & Open-Source",
+            "title": "Projects",
             "url": "/cases.html",
             "template": "cases.html"
         },
@@ -55,9 +46,48 @@
             "title": "Contact us",
             "url": "/contact-us.html",
             "template": "contact-us.html"
+        },
+        "principles": {
+            "title": "Principles",
+            "url": "/principles.html",
+            "template": "posts/principles-handbook.html"
         }
     },
     "POSTS": {
+        "principles-handbook": {
+            "date": "2017-01-01",
+            "img": "/static/full-stack.jpg",
+            "title": "Monadical Principles Handbook",
+            "tags": ["remote-work", "soft-skills", "remote", "home-office", "tools", "chat", "communication"],
+            "length": "20 min read",
+            "source": "https://docs.monadical.com/s/principles-handbook",
+            "url": "/posts/principles-handbook.html",
+            "template": "posts/principles-handbook.html",
+            "description": "Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.",
+            "author": {
+                "name": "Max",
+                "title": "Monadical CEO",
+                "url": "/team.html",
+                "image": "/static/max.jpg"
+            }
+        },
+        "how-to-make-remote-work-part-two-zulip": {
+            "date": "2020-07-08",
+            "img": "/static/zulip.jpg",
+            "title": "How to Make Remote Work: Part Two, Zulip",
+            "tags": ["remote-work", "soft-skills", "remote", "home-office", "tools", "chat", "communication"],
+            "length": "10 min read",
+            "source": "https://docs.monadical.com/s/how-to-make-remote-work-zulip",
+            "url": "/posts/how-to-make-remote-work-part-two-zulip.html",
+            "template": "posts/how-to-make-remote-work-part-two-zulip.html",
+            "description": "How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.",
+            "author": {
+                "name": "Max",
+                "title": "Monadical CEO",
+                "url": "/team.html",
+                "image": "/static/max.jpg"
+            }  
+        },
         "how-to-make-remote-work-part-one": {
             "date": "2020-03-18",
             "img": "/static/remote-work.jpg",
@@ -71,8 +101,7 @@
             "author": {
                 "name": "Max McCrea",
                 "title": "Monadical CEO",
-                "handle": "@cowpig",
-                "url": "https://twitter.com/ACowpig",
+                "url": "/team.html",
                 "image": "/static/max.jpg"
             }  
         },

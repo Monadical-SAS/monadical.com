@@ -71,28 +71,32 @@ def favicon():
     return redirect("/static/favicon.ico")
 
 
+@app.route('/robots.txt')
+def static_from_root():
+    return redirect("/static/robots.txt")
+
 @app.route('/<path>')
 def render_page(path):
-    page = PAGES[f'/{path}']
+    page = PAGES[f'/{path}'].copy()   # get it from content.json
 
+    # special cases
     if page['title'] == "Team":
         team_list = load_team_info()
         page['team'] = team_list
-    if page['title'] == "Services":
+
+    elif page['title'] == "Services":
         page['stacks'] = load_stacks_info()
 
+    elif page['title'] == "Principles":
+        return render_post('principles-handbook.html')
 
+    # common case
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 
 
 @app.route('/posts/<path>')
 def render_post(path):
     post = POSTS[f'/posts/{path}']
-    # if os.path.exists(os.path.join('templates', post['template'])):
-    #     thread = Thread(target=download_post, args=(post,))
-    #     thread.start()
-    # else:
-    #    download_post(post)
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 

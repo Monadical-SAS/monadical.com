@@ -192,7 +192,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 10:55:25 GMT+0000 (UTC)" data-updatetime="Tue May 15 2018 14:30:25 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">448 views <a href="Trustless-is-A-Myth.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">449 views <a href="Trustless-is-A-Myth.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -444,7 +444,8 @@ As blockchain technologies move into the mainstream, it will be our designs that
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/SyBidc_hG', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

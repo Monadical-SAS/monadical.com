@@ -192,7 +192,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Jul 08 2020 16:48:49 GMT+0000 (UTC)" data-updatetime="Wed Jul 08 2020 18:11:31 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">43 views <a href="how-to-make-remote-work-part-two-zulip.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">44 views <a href="how-to-make-remote-work-part-two-zulip.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -452,7 +452,8 @@ Monadical.com | Full-Stack Consultancy
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/how-to-make-remote-work-zulip', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

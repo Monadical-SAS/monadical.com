@@ -192,7 +192,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:31:54 GMT+0000 (UTC)" data-updatetime="Thu Feb 14 2019 00:23:25 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">641 views <a href="Django-Concurrent-Write-Safety.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">642 views <a href="Django-Concurrent-Write-Safety.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -528,7 +528,8 @@ P.S. Sorry about the ads and lack of syntax highlighting on my blog!  I&#39;ll 
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/SJXzOrvAf', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

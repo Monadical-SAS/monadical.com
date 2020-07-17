@@ -18,6 +18,13 @@
 
     <link rel="canonical" href="https://monadical.com/posts/Sharing-State-Between-Redux-Reducers.html" />
 
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     
 <link rel="stylesheet" href="/static/core/css/index.css">
 <meta name="description" content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app." />
@@ -25,8 +32,8 @@
 <!-- Required Open Graph data -->
 <meta property="og:title" content="Redux State-Sharing Approaches" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="/static/reduxsharing.jpg" />
-<meta property="og:url" content="/posts/Sharing-State-Between-Redux-Reducers.html" />
+<meta property="og:image" content="https://monadical.com//static/reduxsharing.jpg" />
+<meta property="og:url" content="https://monadical.com//posts/Sharing-State-Between-Redux-Reducers.html" />
 <!-- Optional Open Graph data -->
 <meta property="og:description" content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app." />
 <meta property="og:site_name" content="Monadical Consulting" />
@@ -148,135 +155,7 @@
                 <div class="col">
                     
                         <article class="article-content">
-                            <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Sharing State Between Redux Reducers  *Originally published 2016-02-18 on [labs.OddSling">
-    
-    <title>Sharing State Between Redux Reducers - CodiMD</title>
-    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
-    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
-    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
-<![endif]-->
-
-  
-</head>
-
-<body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
-                
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:38:02 GMT+0000 (UTC)" data-updatetime="Thu Feb 14 2019 00:06:03 GMT+0000 (UTC)"></span>
-            </span>
-            <span class="pull-right">853 views <a href="Sharing-State-Between-Redux-Reducers.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body">&lt;center&gt;
-
-# Sharing State Between Redux Reducers
-
-*Originally published 2016-02-18 on [labs.OddSlingers.com](https://labs.oddslingers.com/posts/Sharing-State-Between-Redux-Reducers.html).*
-
-&lt;/center&gt;
-
-When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.
-
-Don’t worry, you aren’t the first to have this problem, here are some resources to help you out.
-
-## Your options:
-
- - don’t use `combineReducers` (write your own that shares state/selector between two components)
- - use the `redux-thunk` middleware
- - pass pre-bound selectors to the store down through your components or `mapDispatchToProps` (as recommended by `reselect`)
- - use a global store like `window.store` and call `window.store.getState().myreducer.myvalue` to directly access state
-
-## On Managing state hierarchy in general:
-
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/34299460/how-to-handle-global-state-data-into-deeply-nested-components-in-redux&#34;&gt;How to hand global state data into deeply nested components in redux?&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33852704/should-i-put-all-components-state-in-the-store&#34;&gt;Should I put all component state into the redux store? &lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33953739/how-to-reduce-nested-data-in-redux?rq=1&#34;&gt;How to reduce nested data in redux?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;strong&gt;Specifically on sharing state between reducers:&lt;/strong&gt;
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/34333979/accessing-other-parts-of-the-state-when-using-combined-reducers?rq=1&#34;&gt;Accessing other parts of the state when using combined reducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/35375810/how-do-i-share-readonly-state-between-two-or-more-reducers&#34;&gt;How do I share readonly state between several reducers?&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/34711512/sharing-data-between-two-redux-reducers-states&#34;&gt;Sharing state between two redux reducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/35430389/redux-where-to-prepare-data&#34;&gt;Redux: where to prepare shared data&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33962774/how-to-compose-redux-reducers-with-dependent-state?lq=1&#34;&gt;How to compose redux reducers with dependent state&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/35300419/redux-do-i-have-to-import-store-in-all-my-containers-if-i-want-to-have-access-t&#34;&gt;Redux: do I have to import store in all my containers to access shared state?&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33408151/redux-reducer-state-shape-design-for-dependent-state-slices?rq=1&#34;&gt;Redux reducer state shape design for dependent state slices?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-Related Documentation:
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href=&#34;http://redux.js.org/docs/basics/Reducers.html&#34;&gt;Redux Docs: Reducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://redux.js.org/docs/api/combineReducers.html&#34;&gt;Redux Docs: combineReducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;https://github.com/acdlite/reduce-reducers&#34;&gt;github: reduce-reducers&lt;/a&gt; (combineReducers wo/ forced namespacing)&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;https://egghead.io/lessons/javascript-redux-implementing-store-from-scratch?series=getting-started-with-redux&#34;&gt;egghead.io lesson: implementing a redux store from scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Sharing-State-Between-Redux-Reducers.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
-</body>
-
-</html>
-<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
-
-
-
-
+                            
                         </article>
                     
                 </div>

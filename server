@@ -68,12 +68,43 @@ def index():
 
 @app.route('/favicon.ico')
 def favicon():
-    return redirect("/static/favicon.ico")
+    return redirect("/static/favicon/favicon.ico")
+
+
+@app.route('/favicon-32x32.png')
+def favicon_32x32():
+    return redirect("/static/favicon/favicon-32x32.png")
+
+
+@app.route('/favicon-16x16.png')
+def favicon_16x16():
+    return redirect("/static/favicon/favicon-16x16.png")
+
+
+@app.route('/site.webmanifest')
+def web_manifest():
+    return redirect("/static/favicon/site.webmanifest")
+
+
+@app.route('/safari-pinned-tab.svg')
+def safari_pinned_tab():
+    return redirect("/static/favicon/safari-pinned-tab.svg")
+
+
+@app.route('/apple-touch-icon.png')
+def apple_touch_icon():
+    return redirect("/static/favicon/apple-touch-icon.png")
+
+
+@app.route('/android-chrome-72x72.png')
+def android_favicon():
+    return redirect("/static/favicon/android-chrome-72x72.png")
 
 
 @app.route('/robots.txt')
 def static_from_root():
     return redirect("/static/robots.txt")
+
 
 @app.route('/<path>')
 def render_page(path):

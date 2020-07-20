@@ -1534,3 +1534,12 @@ button.read-more {
 a.card-link > h2 {
     color: black;
 }
+
+ul.open-positions {
+    padding: 0;
+}
+
+ul.open-positions > li {
+    color: #818182;
+    list-style: none;
+}

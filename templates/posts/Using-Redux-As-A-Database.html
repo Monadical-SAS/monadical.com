@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # Using the Redux Store Like a Database  *Originally published 2017-07-27 on [HackerNoon.c">
+    
+    <title>Using the Redux Store Like a Database - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Apr 20 2018 00:45:05 GMT+0000 (UTC)" data-updatetime="Wed Feb 13 2019 23:59:18 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">394 views <a href="Using-Redux-As-A-Database.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+# Using the Redux Store Like a Database
+
+*Originally published 2017-07-27 on [HackerNoon.com](https://hackernoon.com/shape-your-redux-store-like-your-database-98faa4754fd5). Also available in [中文](http://it.uu01.me/p/ovdfze.html).*
+
+
+![Your store data can be viewed from many angles by using indexes.](https://cdn-images-1.medium.com/max/2000/1*b-Rc3m2h_oQjbplfvp9s6w.gif)
+*Your store data can be viewed from many angles by using indexes.*
+&lt;/center&gt;
+
+Recently I was browsing some of the Javascript discussions on the [RC](https://recurse.com) chat system, and I noticed a great question by [Kate Ray](https://twitter.com/kraykray):
+&gt; How should we structure the data in our redux store?
+
+This is a common question when using redux, certainly one that I’ve asked myself many times. I’ve found the answer usually depends on how I plan to interact with my data.
+
+There are a number of things to consider: am I frequently going to be iterating over the store data like a list of rows? Do I need fast O(1) access to individual items?
+
+I’ve seen a bunch of approaches in practice, usually with some tradeoffs between access time and ease of iteration.
+
+## Common approaches
+
+If you’re storing some data where each item has an id, you could shape your store as an Object or as an Array of Objects.
+
+**Array of flat objects [{values}]:
+**This is the most common one by far that I’ve seen. It makes iteration easy and you can store your data in a particular order, but you cant access a specific item by id or name without iterating and filtering.
+
+    categories: [
+      {name: &#39;abs&#39;,  id: &#39;32o8wafe&#39;, exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
+      {name: &#39;arms&#39;, id: &#39;oaiwefjo&#39;, exercises: [...]},
+      {name: &#39;legs&#39;, id: &#39;aoijwfeo&#39;, exercises: [...]},
+    ]
+
+**Object keyed on id {id: {values}}:
+**This gives you fast O(1) access to each item, but you cant easily access the id of a given item while you’re iterating using Object.values().
+
+    categories: {
+      &#39;32o8wafe&#39;: {name: &#39;abs&#39;,  exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
+      &#39;oaiwefjo&#39;: {name: &#39;arms&#39;, exercises: [...]},
+      &#39;3oij2e3c&#39;: {name: &#39;legs&#39;, exercises: [...]},
+    }
+
+    Object.values(categories).map(row =&gt; // cant access id here)
+&gt; **Food for thought:**
+Arrays and Objects are [the same thing in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Description).
+(V8 stores them using different internal representations though)
+
+## Structure it like a database of rows indexed by id
+
+On our journey implementing a large redux app at [Monadical](https://monadical.com), we stumbled upon a different approach that gives us the benefit of both easy iteration with Object.values(state.categories), and fast O(1) access to individual items:
+
+    categories: {
+      &#39;32o8wafe&#39;: {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;,  exercises: [...]},
+      &#39;oaiwefjo&#39;: {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, exercises: [...]},
+      &#39;3oij2e3c&#39;: {id: &#39;3oij2e3c&#39;, name: &#39;legs&#39;, exercises: [...]},
+    }
+
+Notice how the id is both the key for the row, and a property in the row itself. This little bit of duplication affords us great flexibility at access time. It’s also compatible with the [normalized](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html) (*aka* flat) shape that the redux docs recommend.
+
+Now you can loop over the data, and have access to the id while iterating!
+
+Object.values(categories).map(cat =&gt; ({id: cat.id, name: cat.name}))
+
+Or access any individual item instantly by id!
+
+categories[‘32o8wafe’].name // &#39;abs&#39;
+
+We send our data to the frontend already shaped like this, so the frontend doesn’t need to do any processing to produce the mapping of id: values. It’s easy to do from the backend, since you’re likely pulling data out of a database where it already has an id field that you can use as a key.
+
+## The power of indexes
+
+The new shape we introduce above is a trivial change to make, and likely not one a team will spend much time deliberating over when designing their redux store. The real magic comes in when we access store data using different keys besides id.
+
+Notice how the shape we introduce above is just a list of rows, with a key used to uniquely identify each row. With your store shaped like this, you can produce indexes that let you do O(1) access using any other key you desire:
+
+**Index categories by name:**
+
+To make the index, we write a function that takes the store data, and returns a mapping of name -&gt; id.
+
+    const index_by_name = (categories) =&gt;
+        Object.values(categories)
+              .reduce((index, row) =&gt; {
+                          index[row.name] = row.id
+                          return index
+                      }, {})
+
+    // {abs: &#39;32o8wafe&#39;, arms: &#39;oaiwefjo&#39;, legs: &#39;3oij2e3c&#39;}
+
+![](https://cdn-images-1.medium.com/max/2572/1*y3bELbeb5YMOFNwIotJ6QQ.png)
+
+    const ids_by_name = index_by_name(categories)
+
+    categories[ids_by_name[&#39;abs&#39;]] // {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;, ...}
+
+You can build as many indexes as you want for the same data, which gives you O(1) access based on any column, just like you’d have in a database.
+
+If your data doesn’t change, your indexes just need to be computed once, otherwise they should be recomputed with memoized functions.
+&gt; **Food for thought:**
+How can you make an index for keys that are non-unique?
+
+&lt;center&gt;
+
+![Trippy photo break. Rest your eyes for a second, then read on :)](https://cdn-images-1.medium.com/max/2000/1*z-jt1KCPbEFCaPBDOpSBrQ.gif)
+*Trippy photo break. Rest your eyes for a second, then read on :)*
+&lt;/center&gt;
+
+## Sorted data
+
+What if your categories have an inherent order (like in an array), and you need to be able to get them in order whenever iterating over your data?
+
+You might think to do something like:
+
+    const category_order = [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
+    category_order.map(id =&gt; categories[id])
+
+This is a good approach, however, it requires keeping an array separately from our data to store the order, which is suboptimal. Lets do it properly with indexes.
+
+We send the data from our backend with an order (or idx) key specifying each row’s position, then we **make an index for order just like we would for any other key**:
+
+    const ids_by_order =
+          Object.values(categories)
+                .reduce((ordered_ids, category) =&gt; {
+                            ordered_ids[category.order] = category.id
+                            return ordered_ids
+                        }, [])
+
+    // [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
+
+Notice how this reduce operation produces an index Array instead of an Object. In JS, an array is actually just an object with the keys 0, 1, 2, …, so now we have both O(1) access to a specific id by order, and we can iterate using map, filter, and reduce on the ordered list:
+
+    const second_category = categories[ids_by_order[1]]
+    // {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, order: &#39;1&#39;}
+
+    const ordered_names = ids_by_order.map(id =&gt; categories[id].name)
+    // [&#39;abs&#39;, &#39;arms&#39;, &#39;legs&#39;]
+&gt; **Food for thought:**
+Why does this work even if your order numbers [have gaps](http://www.htmlgoodies.com/beyond/javascript/dont-fear-sparse-arrays-in-javascript.html)? e.g. 0, 2, 41, 399
+
+## Memoization
+
+If your data never changes, you can call ids_by_key once on startup and use the produced index as a static object every time after that. However, if you’re working with changing data that will be accessed frequently, memoization is essential to avoid recalculating the index on every access (which is O(n)).
+
+Memoized-index selectors can be accomplished with [reselect](https://github.com/reactjs/reselect), or by writing a [custom memoizer function](https://www.sitepoint.com/implementing-memoization-in-javascript/) (which is not too difficult depending on your data).
+
+Memoized indexes mean you can call the index function on every read, instead of having to store the index in redux.
+
+The flat data pattern with indexes that I describe above is also congruent with the pattern used by the library [Normalizr](https://github.com/paularmstrong/normalizr). If you’re into storing your data flat (separated by type), and like the index concept introduced in this article, give the [Redux Without Profanity docs](https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html) on Normalizr a read.
+&gt; **Food for thought:**
+Memoizing using the .hash() on immutable.js objects is [**fast](https://egghead.io/lessons/javascript-lightning-fast-immutable-js-equality-checks-with-hash-codes)**.
+
+## Higher order index functions
+
+**All indexes are pure results of our data, **so we can also make cool higher-order index functions (*aka* functions that return functions), e.g. :
+
+    const ids_by_key = (key) =&gt; (data) =&gt;  // make index(data) for key
+          Object.values(data)
+                .reduce((index, row) =&gt; {
+                            index[row[key]] = row.id
+                            return index
+                        }, {})
+
+    const ids_by_name = ids_by_key(&#39;name&#39;)  // returns an index function
+    const abs_id = ids_by_name(categories)[&#39;abs&#39;]
+    // &#39;32o8wafe&#39;
+&gt; **Food for thought:**
+Write an index maker function that makes indexes keyed on a tuple of two keys: `${row[key1]}-${row[key2]}` -&gt; id
+
+## Why does any of this matter?
+&gt; React and Flux/Redux solved […] rendering and state management. It became possible now to build truly advanced web apps, focusing on actual domain, instead of struggling with underlying implementation.
+&gt; The problem however is that systems keeps growing. We are building more UIs and loading and transforming even more data…
+
+— Roman Liutikov: [On Web Apps and Databases](https://medium.com/@roman01la/on-web-apps-and-databases-c026f77b93f4)
+
+As frontends start to approach the complexity of backends, we end up manually reimplementing things that have already existed for decades in the backend: databases, message queues, and other stereotypically server-only infrastructure. Many of the frontend patterns that are considered modern— like functional reactive programming — have been around [since Windows 3.1](https://tomjoro.github.io/2017-02-03-why-reactive-fp-sucks/).
+
+State management lessons that we’ve already learned from SQL databases in the 90’s can be applied to our frontend to help us maintain the clarity, elegance, and consistency of our data. Using indexes to avoid duplication and jump to specific parts of a a central, consistent data set is one such example, and I’m sure there are many more that I have yet to discover.
+
+## Further reading
+
+If you want more database-like features in the browser, check out: [redux-orm](https://github.com/tommikaikkonen/redux-orm), [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB) (the replacement to Web SQL), and [GraphQL](http://graphql.org/). Remember though, don’t start installing libraries until you know exactly why you need them.
+
+* [http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape](http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape)
+
+* [http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html)
+
+* [https://egghead.io/lessons/javascript-redux-normalizing-the-state-shape](https://egghead.io/lessons/javascript-redux-normalizing-the-state-shape)
+
+* [https://stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina](https://stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina)
+
+* [https://stackoverflow.com/questions/34995822/how-to-get-best-practice-react-redux-nested-array-data](https://stackoverflow.com/questions/34995822/how-to-get-best-practice-react-redux-nested-array-data?noredirect=1&amp;lq=1)
+
+* [https://codeburst.io/how-to-store-your-state-data-f17ceca37aa](https://codeburst.io/how-to-store-your-state-data-f17ceca37aa)
+
+* [https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html](https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html)
+
+* [https://github.com/tommikaikkonen/redux-orm](https://github.com/tommikaikkonen/redux-orm)
+
+—
+&gt; **tl;dr**
+- Store your redux data in normalized form {id: {id, attr1, attr2, attr3}}
+- Make{attr: id} indexes for fast O(1) access by other keys e.g. ids_by_name
+- Iterate sorted data using an Array index *ids_by_order.map(id =&gt; data[id])
+- *Use pure index functions and memoize them if your data changes frequently
+
+## —
+
+Hopefully you find this useful! If so, give this article a 💚, or ping me on twitter [@theSquashSH](https://twitter.com/theSquashSH).
+
+If you’re interested in working on cool Django + React/Redux projects involving Ethereum, [OddSlingers Labs](https://monadical.com/apply) is hiring remote devs.</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Using-Redux-As-A-Database.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+

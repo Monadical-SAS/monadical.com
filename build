@@ -15,7 +15,7 @@ sleep 1.5
 rm -Rf output
 mkdir -p output/posts
 cp -r static output/static
-cp -r static/favicon output/favicon
+cp static/favicon.ico output/favicon.ico
 cp static/robots.txt output/robots.txt
 ./server --pages > output/pages.txt
 ./server --posts > output/posts.txt

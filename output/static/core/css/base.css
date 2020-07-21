@@ -1306,6 +1306,10 @@ button.read-more {
     .card.card-expertise {
         margin-bottom: 10px;
     }
+
+    .blog-card img.card-img-top {
+        height: 240px;
+    }
 }
 
 @media screen and (min-width: 412px) and (max-width: 768px) {
@@ -1480,12 +1484,25 @@ button.read-more {
         max-height: 681px;
         max-width: 559px;
     }
+
+    .card-project-img{
+        height: 250px;
+        width: 360px;
+    }
+
+    .blog-card img.card-img-top {
+        height: 240px;
+    }
 }
 
 @media (min-width: 992px) {
     .card-open-source {
         min-height: 630px;
         min-width: 350px;
+    }
+
+    .blog-card img.card-img-top {
+        height: 360px;
     }
 }
 
@@ -1516,4 +1533,13 @@ button.read-more {
 
 a.card-link > h2 {
     color: black;
+}
+
+ul.open-positions {
+    padding: 0;
+}
+
+ul.open-positions > li {
+    color: #818182;
+    list-style: none;
 }

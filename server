@@ -75,6 +75,7 @@ def favicon():
 def static_from_root():
     return redirect("/static/robots.txt")
 
+
 @app.route('/<path>')
 def render_page(path):
     page = PAGES[f'/{path}'].copy()   # get it from content.json

@@ -383,6 +383,38 @@ a:hover{
     margin-top: 60px;
 }
 
+.scroll-down{
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.scroll-down > span{
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.scroll-down > i{
+    font-size: 30px;
+    display: inline-block;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+
+}
+
 @media (min-width: 768px) {
 
     .cube-img-left {

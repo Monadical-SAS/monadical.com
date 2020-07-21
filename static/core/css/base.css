@@ -961,7 +961,7 @@ button.black-button {
     border: none;
     box-shadow: 0px 0px 5px 1px #ddd;
     justify-content: normal;
-    min-height: 790px;
+    /*min-height: 790px;*/
 }
 
 .project.card>h4 {
@@ -971,19 +971,24 @@ button.black-button {
     margin-top: 30px;
     text-align: center;
     width: 100%;
+    min-height: 40px;
+    padding: 0 10px;
 }
 
-.project.card>p {
+.project.card > p.card-content {
     color: #666666;
     font-size: 14px;
     letter-spacing: normal;
     line-height: 1.71;
     text-align: center;
     width: 305px;
+    min-height: 170px;
+    padding: 0 10px;
 }
 
 .project.card .languages {
     margin: 20px auto;
+    padding: 0 10px;
 }
 
 .project.card>img {
@@ -1145,32 +1150,6 @@ button.black-button {
 .project.card {
     border: none;
     box-shadow: 0px 0px 5px 1px #ddd;
-}
-
-.project.card>h4 {
-    color: #2b2b2b;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 30px;
-    text-align: center;
-    width: 330px;
-}
-
-.project.card>p {
-    color: #666666;
-    font-size: 14px;
-    letter-spacing: normal;
-    line-height: 1.71;
-    text-align: center;
-    width: 305px;
-}
-
-.project.card .languages {
-    margin: 20px auto;
-}
-
-.project.card>img {
-    width: 100%;
 }
 
 button.read-more {
@@ -1535,7 +1514,7 @@ button.read-more {
     }
 
     .project.card {
-        min-height: 790px;
+        /*min-height: 790px;*/
         overflow: hidden;
     }
 

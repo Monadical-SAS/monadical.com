@@ -22,11 +22,6 @@
             "url": "/team.html",
             "template": "team.html"
         },
-        "projects": {
-            "title": "Projects",
-            "url": "/projects.html",
-            "template": "projects.html"
-        },
         "sales": {
             "title": "Sales",
             "url": "/sales.html",
@@ -37,10 +32,10 @@
             "url": "/services.html",
             "template": "services.html"
         },
-        "cases": {
+        "projects": {
             "title": "Projects",
-            "url": "/cases.html",
-            "template": "cases.html"
+            "url": "/projects.html",
+            "template": "projects.html"
         },
         "contact-us": {
             "title": "Contact us",
@@ -492,24 +487,24 @@
     "CASES": {
         "index": {
             "title": "Kiwix",
-            "url": "/cases/kiwix.html",
-            "template": "cases/kiwix.html"
+            "url": "/projects/kiwix.html",
+            "template": "projects/kiwix.html"
         },
         "syncroplicity": {
             "title": "syncroplicity",
-            "url": "/cases/syncroplicity.html",
-            "template": "cases/syncroplicity.html"
+            "url": "/projects/syncroplicity.html",
+            "template": "projects/syncroplicity.html"
         },
         "oddsligers": {
             "title": "oddsligers",
-            "url": "/cases/oddsligers.html",
-            "template": "cases/oddsligers.html"
+            "url": "/projects/oddsligers.html",
+            "template": "projects/oddsligers.html"
         }
     },
     "HeaderLinks": [
-        "principles",
         "services",
-        "cases",
+        "principles",
+        "projects",
         "team",
         "blog"
     ]

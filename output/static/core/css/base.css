@@ -274,7 +274,7 @@ a:hover{
 /* end button styles */
 
 .second-section {
-    margin-top: 50px;
+    margin-top: 200px;
 }
 
 .padding-second-section {
@@ -408,6 +408,50 @@ a:hover{
 
 .working-us-text {
     margin-top: 60px;
+}
+
+.scroll-down-container {
+    position: relative;
+}
+
+.scroll-down-container div.scroll-down {
+    bottom: -2em;
+    display: none;
+    left: 50%;
+    margin-left: -45px;
+    position: absolute;
+}
+
+.scroll-down-container a.scroll-down {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.scroll-down > span{
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.scroll-down > i{
+    font-size: 30px;
+    display: inline-block;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.94;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2b2b2b;
+
 }
 
 @media (min-width: 768px) {
@@ -929,7 +973,7 @@ button.black-button {
     border: none;
     box-shadow: 0px 0px 5px 1px #ddd;
     justify-content: normal;
-    min-height: 790px;
+    /*min-height: 790px;*/
 }
 
 .project.card>h4 {
@@ -939,19 +983,24 @@ button.black-button {
     margin-top: 30px;
     text-align: center;
     width: 100%;
+    min-height: 40px;
+    padding: 0 10px;
 }
 
-.project.card>p {
+.project.card > p.card-content {
     color: #666666;
     font-size: 14px;
     letter-spacing: normal;
     line-height: 1.71;
     text-align: center;
     width: 305px;
+    min-height: 170px;
+    padding: 0 10px;
 }
 
 .project.card .languages {
     margin: 20px auto;
+    padding: 0 10px;
 }
 
 .project.card>img {
@@ -1113,32 +1162,6 @@ button.black-button {
 .project.card {
     border: none;
     box-shadow: 0px 0px 5px 1px #ddd;
-}
-
-.project.card>h4 {
-    color: #2b2b2b;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 30px;
-    text-align: center;
-    width: 330px;
-}
-
-.project.card>p {
-    color: #666666;
-    font-size: 14px;
-    letter-spacing: normal;
-    line-height: 1.71;
-    text-align: center;
-    width: 305px;
-}
-
-.project.card .languages {
-    margin: 20px auto;
-}
-
-.project.card>img {
-    width: 100%;
 }
 
 button.read-more {
@@ -1503,7 +1526,7 @@ button.read-more {
     }
 
     .project.card {
-        min-height: 790px;
+        /*min-height: 790px;*/
         overflow: hidden;
     }
 
@@ -1529,6 +1552,10 @@ button.read-more {
 
     .blog-card .card-img-top img {
         height: 360px;
+    }
+
+    .scroll-down-container div.scroll-down {
+        display: inherit;
     }
 }
 

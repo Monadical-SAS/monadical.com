@@ -1357,7 +1357,7 @@ button.read-more {
         margin-bottom: 10px;
     }
 
-    .blog-card .card-img-top img {
+    .blog-card .blog-img {
         height: 240px;
     }
 }
@@ -1540,7 +1540,7 @@ button.read-more {
         width: 360px;
     }
 
-    .blog-card .card-img-top img {
+    .blog-card .blog-img {
         height: 240px;
     }
 }
@@ -1550,7 +1550,7 @@ button.read-more {
         min-height: 630px;
     }
 
-    .blog-card .card-img-top img {
+    .blog-card .blog-img {
         height: 360px;
     }
 
@@ -1615,8 +1615,9 @@ ul.open-positions > li {
     height: 6em;
 }
 
-.blog-card .card-img-top {
-    overflow: hidden;
-    position: relative;
+.blog-card .blog-img {
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
 }
 

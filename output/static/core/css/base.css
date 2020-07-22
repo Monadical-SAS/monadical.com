@@ -337,8 +337,10 @@ a:hover{
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
+    height: 3em;
     line-height: 1.5;
     letter-spacing: normal;
+    margin-top: 1em;
 }
 
 .team-card-text {
@@ -795,9 +797,8 @@ div.card-reference div.card-body {
     padding: 0;
 }
 
-.card-services-img {
-    max-width: 350px;
-    max-height: 264px;
+.card-services-body .card-img-top {
+    height: 264px;
 }
 
 .card-footer.card-services-footer {
@@ -1536,6 +1537,9 @@ button.read-more {
     }
 
     .card-project-img{
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
         height: 250px;
         width: 360px;
     }

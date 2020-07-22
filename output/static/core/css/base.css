@@ -183,6 +183,7 @@ a:hover{
     box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
     background-color: #0086b4;
     transition: all 0.3s ease 0s;
+    white-space: normal;
 }
 
 .btn-info-inverse:hover {
@@ -256,6 +257,7 @@ a:hover{
 }
 
 .btn-circle.btn-info{
+    font-size: 20px;
     color: #0086b4;
     border: 2px solid #0086b4;
     border-radius: 40px;
@@ -272,7 +274,7 @@ a:hover{
 /* end button styles */
 
 .second-section {
-    margin-top: 311px;
+    margin-top: 50px;
 }
 
 .padding-second-section {
@@ -280,16 +282,40 @@ a:hover{
 }
 
 .third-section {
-    margin-top: 150px;
+    margin-top: 80px;
 }
 
 .fourth-section {
-    margin-top: 160px;
+    margin-top: 200px;
+}
+
+.card.card-guaranties .card-img-top {
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+.card.card-guaranties .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.card-guaranties .card-text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #f6f6f6;
 }
 
 .card-guaranties {
     background-color: #2b2b2b;
-    min-width: 350px;
     min-height: 250px;
     box-shadow: 0 4px 21px -5px rgba(97, 97, 97, 0.23);
 }
@@ -306,23 +332,24 @@ a:hover{
 }
 
 .team-card-title {
+    color: #2b2b2b;
     font-size: 20px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    color: #2b2b2b;
 }
 
 .team-card-text {
+    color: #818182;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.25;
     letter-spacing: normal;
-    color: #818182;
+    margin-bottom: 0.75em;
 }
 
 .team-card {
@@ -356,6 +383,7 @@ a:hover{
     letter-spacing: normal;
     text-align: center;
     color: #2b2b2b;
+    height: 4em;
 }
 
 .open-source-card-foot-page {
@@ -420,6 +448,9 @@ a:hover{
         right: 0;
     }
 
+    .open-source-card-text {
+        height: 10em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -477,10 +508,6 @@ a:hover{
         display: none;
     }
 
-}
-
-a.bigger-size {
-    font-size: 24px;
 }
 
 .our-clients .card-clients-name {
@@ -1307,7 +1334,7 @@ button.read-more {
         margin-bottom: 10px;
     }
 
-    .blog-card img.card-img-top {
+    .blog-card .card-img-top img {
         height: 240px;
     }
 }
@@ -1472,7 +1499,7 @@ button.read-more {
 
     .card.card-expertise {
         border-radius: 0;
-        min-height: 455px;
+        min-height: 350px;
     }
 
     .project.card {
@@ -1490,7 +1517,7 @@ button.read-more {
         width: 360px;
     }
 
-    .blog-card img.card-img-top {
+    .blog-card .card-img-top img {
         height: 240px;
     }
 }
@@ -1498,10 +1525,9 @@ button.read-more {
 @media (min-width: 992px) {
     .card-open-source {
         min-height: 630px;
-        min-width: 350px;
     }
 
-    .blog-card img.card-img-top {
+    .blog-card .card-img-top img {
         height: 360px;
     }
 }
@@ -1543,3 +1569,27 @@ ul.open-positions > li {
     color: #818182;
     list-style: none;
 }
+
+.card-open-source .card-img-top{
+    align-items: center;
+    display: flex;
+    height: 46px;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.card-open-source .row.footer-buttons {
+    align-content: center;
+    height: 3em;
+}
+
+.card-open-source .row.footer-text {
+    align-content: center;
+    height: 6em;
+}
+
+.blog-card .card-img-top {
+    overflow: hidden;
+    position: relative;
+}
+

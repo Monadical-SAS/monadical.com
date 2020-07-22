@@ -1617,7 +1617,8 @@ ul.open-positions > li {
 
 .blog-card .blog-img {
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 10px;
 }
 

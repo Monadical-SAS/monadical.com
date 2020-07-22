@@ -16,16 +16,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-12 text-center mb-4">
+                <div class="col-12 text-center mb-4">
                     <a href="https://twitter.com/MonadicalSAS"
                        class="btn btn-info btn-dark">
                         Follow us on Twitter <i class="fa fa-twitter"></i>
                     </a>
-                </div>
-                <div class="col-md-6 col-12 text-center mb-4">
-                    <a href="#newsletter" class="btn btn-success btn-dark">Subscribe
-                        to our newsletter <i
-                                class="fa fa-angle-double-down"></i></a>
                 </div>
             </div>
         </div>
@@ -34,10 +29,12 @@
                 {% for post in POSTS.values() %}
                     <div class="col-12 col-md-6 text-center article mb-4 blog-card">
                         <div class="card h-100 ">
-                            <a href="{{ post.url }}">
-                                <img class="card-img-top" src="{{ post.img }}"
-                                     alt="{{ post.title }}">
-                            </a>
+                            <div class="card-img-top">
+                                <a href="{{ post.url }}">
+                                    <img src="{{ post.mini }}"
+                                         alt="{{ post.title }}">
+                                </a>
+                            </div>
                             <div class="card-body">
                                 <a class="card-link" href="{{ post.url }}">
                                     <div class="post-tags">

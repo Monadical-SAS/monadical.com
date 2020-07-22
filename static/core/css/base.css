@@ -274,7 +274,7 @@ a:hover{
 /* end button styles */
 
 .second-section {
-    margin-top: 50px;
+    margin-top: 200px;
 }
 
 .padding-second-section {
@@ -410,7 +410,19 @@ a:hover{
     margin-top: 60px;
 }
 
-.scroll-down{
+.scroll-down-container {
+    position: relative;
+}
+
+.scroll-down-container div.scroll-down {
+    bottom: -2em;
+    display: none;
+    left: 50%;
+    margin-left: -45px;
+    position: absolute;
+}
+
+.scroll-down-container a.scroll-down {
     cursor: pointer;
     position: relative;
     text-align: center;
@@ -1540,6 +1552,10 @@ button.read-more {
 
     .blog-card img.card-img-top {
         height: 360px;
+    }
+
+    .scroll-down-container div.scroll-down {
+        display: inherit;
     }
 }
 

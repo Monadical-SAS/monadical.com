@@ -299,7 +299,6 @@ a:hover{
 
 .card.card-guaranties .card-body {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -461,6 +460,7 @@ a:hover{
     .cube-img-left {
         position: absolute;
         left: 0;
+        z-index: 1;
     }
 
     .cube-img-right {
@@ -495,7 +495,7 @@ a:hover{
     }
 
     .open-source-card-text {
-        height: 10em;
+        height: 8em;
     }
 }
 
@@ -1301,7 +1301,7 @@ button.read-more {
     }
 
     .margin-top-150 {
-        margin-top: 15px;
+        margin-top: 30px;
     }
 
     .margin-bottom-150 {
@@ -1360,6 +1360,10 @@ button.read-more {
 
     .blog-card .blog-img {
         height: 240px;
+    }
+
+    .first-section {
+        text-align: center;
     }
 }
 

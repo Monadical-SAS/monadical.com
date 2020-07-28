@@ -6,6 +6,7 @@ blue=${txtbld}$(tput setaf 4)
 green=${txtbld}$(tput setaf 2)
 white=${txtbld}$(tput setaf 7)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
+LOCAL_RSYNC="${LOCAL_DEPLOY:-0}"
 
 echo "$blue[+] Starting Flask server to render pages...$normal"
 ./server > /dev/null &
@@ -25,6 +26,11 @@ echo "$blue[+] Saving pages as static HTML to output/...$normal"
 (cd output; wget -q $(<pages.txt))
 (cd output/posts; wget -q $(<../posts.txt))
 
+echo ""
+echo "$blue[+] Including stevie king to output/...$normal"
+(cd stevie-king; npm install stevie-king; npm run build:dist)
+rsync -avh stevie-king/dist/ output/publishing/
+
 # echo "$red[*] Stopping Flask server...$normal"
 kill %1 > /dev/null
 echo ""
@@ -42,7 +48,12 @@ echo "$blue[^] Pushing build to origin/beta...$normal"
 git push origin "$current_branch":beta --force
 
 echo "$blue[^] Deploying output/ to https://beta.monadical.com...$normal"
-rsync -r output/ grape:/opt/monadical.beta/output
+if [ "$LOCAL_RSYNC" -eq 1 ]; then
+        rsync -r output/ /opt/monadical.beta/output
+else
+        rsync -r output/ grape:/opt/monadical.beta/output
+fi
+
 # ssh monadical.com "cd /opt/monadical.beta; git checkout -f beta; git pull"
 
 echo ""

@@ -31,6 +31,7 @@ def load_team_info(fname=TEAM_FILE):
     with open(fname, 'r') as f:
         return json.load(f)
 
+
 def load_stacks_info(fname=STACK_FILE):
     """read the team.json file to load the stacks information"""
     with open(fname, 'r') as f:
@@ -74,6 +75,12 @@ def favicon():
 @app.route('/robots.txt')
 def static_from_root():
     return redirect("/static/robots.txt")
+
+
+@app.route('/cases.html')
+def render_projects():
+    page = PAGES['/projects.html'].copy()  # get it from content.json
+    return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 
 
 @app.route('/<path>')

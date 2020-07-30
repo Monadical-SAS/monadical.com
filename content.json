@@ -22,15 +22,35 @@
             "url": "/team.html",
             "template": "team.html"
         },
+        "sales": {
+            "title": "Sales",
+            "url": "/sales.html",
+            "template": "sales.html"
+        },
+        "services": {
+            "title": "Services",
+            "url": "/services.html",
+            "template": "services.html"
+        },
         "projects": {
             "title": "Projects",
             "url": "/projects.html",
             "template": "projects.html"
+        },
+        "contact-us": {
+            "title": "Contact us",
+            "url": "/contact-us.html",
+            "template": "contact-us.html"
+        },
+        "principles": {
+            "title": "Principles",
+            "url": "/principles.html",
+            "template": "posts/principles-handbook.html"
         }
     },
     "POSTS": {
         "principles-handbook": {
-            "date": "2020-07-08",
+            "date": "2017-01-01",
             "img": "/static/full-stack.jpg",
             "title": "Monadical Principles Handbook",
             "tags": ["remote-work", "soft-skills", "remote", "home-office", "tools", "chat", "communication"],
@@ -41,7 +61,7 @@
             "description": "Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.",
             "author": {
                 "name": "Max",
-                "title": "Monadical CEO",
+                "title": "Monadical Co-founder",
                 "url": "/team.html",
                 "image": "/static/max.jpg"
             }
@@ -58,7 +78,7 @@
             "description": "How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.",
             "author": {
                 "name": "Max",
-                "title": "Monadical CEO",
+                "title": "Monadical Co-founder",
                 "url": "/team.html",
                 "image": "/static/max.jpg"
             }  
@@ -75,7 +95,7 @@
             "description": "How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.",
             "author": {
                 "name": "Max McCrea",
-                "title": "Monadical CEO",
+                "title": "Monadical Co-founder",
                 "url": "/team.html",
                 "image": "/static/max.jpg"
             }  
@@ -291,7 +311,7 @@
             "description": "The word “trustless” implies that trust has been removed from the system altogether. But in reality, systems like Bitcoin require plenty of trust, it's just less obvious.",
             "author": {
                 "name": "Max McCrea",
-                "title": "Monadical CEO",
+                "title": "Monadical Co-founder",
                 "handle": "@cowpig",
                 "url": "https://twitter.com/ACowpig",
                 "image": "/static/max.jpg"
@@ -345,7 +365,7 @@
             "description": "Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.",
             "author": {
                 "name": "Max McCrea",
-                "title": "Monadical CEO",
+                "title": "Monadical Co-founder",
                 "handle": "@cowpig",
                 "url": "https://twitter.com/ACowpig",
                 "image": "/static/max.jpg"
@@ -435,7 +455,7 @@
             "description": "I often hear players say, “I hate that site. It’s completely rigged. I can never win there.” Perhaps those players simply ran bad at first on that site...",
             "author": {
                 "name": "Max McCrea",
-                "title": "Monadical CEO",
+                "title": "Monadical Co-founder",
                 "handle": "@cowpig",
                 "url": "https://twitter.com/ACowpig",
                 "image": "/static/max.jpg"
@@ -463,5 +483,29 @@
             "title": "Monadical Github",
             "icon": "github"
         }
-    }
+    },
+    "CASES": {
+        "index": {
+            "title": "Kiwix",
+            "url": "/projects/kiwix.html",
+            "template": "projects/kiwix.html"
+        },
+        "syncroplicity": {
+            "title": "syncroplicity",
+            "url": "/projects/syncroplicity.html",
+            "template": "projects/syncroplicity.html"
+        },
+        "oddsligers": {
+            "title": "oddsligers",
+            "url": "/projects/oddsligers.html",
+            "template": "projects/oddsligers.html"
+        }
+    },
+    "HeaderLinks": [
+        "services",
+        "principles",
+        "projects",
+        "team",
+        "blog"
+    ]
 }

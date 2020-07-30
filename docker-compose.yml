@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  flask:
+    image: python:3-alpine
+    entrypoint: python3 -m http.server --directory /var/www --bind 0.0.0.0 8000
+    volumes:
+      - ./:/var/www
+
+  argo:
+    image: cloudflare/cloudflared
+    command: tunnel --hostname monadical-beta.zervice.io http://localhost:8000
+    network_mode: service:flask
+    volumes:
+      - ./data/certs/zervice.io.pem:/etc/cloudflared/cert.pem
+    depends_on:
+      - flask

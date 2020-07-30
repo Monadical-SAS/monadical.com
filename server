@@ -15,12 +15,28 @@ from flask import Flask, render_template, redirect
 app = Flask(__name__)
 app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.get_source(app.jinja_env, filename)[0])
 CONFIG_FILE = 'content.json'
+TEAM_FILE = 'team.json'
+STACK_FILE = 'stacks.json'
 HOST = 'http://127.0.0.1:5000'
+
 
 def load_config(fname=CONFIG_FILE):
     """read the content.json file and load it as a dictionary"""
     with open(fname, 'r') as f:
         return json.load(f)
+
+
+def load_team_info(fname=TEAM_FILE):
+    """read the team.json file to load the team information"""
+    with open(fname, 'r') as f:
+        return json.load(f)
+
+
+def load_stacks_info(fname=STACK_FILE):
+    """read the team.json file to load the stacks information"""
+    with open(fname, 'r') as f:
+        return json.load(f)
+
 
 def download_post(post):
     CMD = [
@@ -35,8 +51,9 @@ def download_post(post):
 
 CONFIG = load_config(CONFIG_FILE)
 
-PAGES = {page['url']: page for page in  list(CONFIG['PAGES'].values())}  # {url: {page_data}}
-POSTS = {post['url']: post for post in  list(CONFIG['POSTS'].values())}  # {url: {post_data}}
+PAGES = {page['url']: page for page in list(CONFIG['PAGES'].values())}  # {url: {page_data}}
+POSTS = {post['url']: post for post in list(CONFIG['POSTS'].values())}  # {url: {post_data}}
+CASES = {case['url']: case for case in list(CONFIG['CASES'].values())}  # {url: {post_data}}
 
 
 ### Routes
@@ -49,25 +66,54 @@ POSTS = {post['url']: post for post in  list(CONFIG['POSTS'].values())}  # {url:
 def index():
     return redirect("/index.html")
 
+
 @app.route('/favicon.ico')
 def favicon():
     return redirect("/static/favicon.ico")
 
+
+@app.route('/robots.txt')
+def static_from_root():
+    return redirect("/static/robots.txt")
+
+
+@app.route('/cases.html')
+def render_projects():
+    page = PAGES['/projects.html'].copy()  # get it from content.json
+    return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
+
+
 @app.route('/<path>')
 def render_page(path):
-    page = PAGES[f'/{path}']
+    page = PAGES[f'/{path}'].copy()   # get it from content.json
+
+    # special projects
+    if page['title'] == "Team":
+        team_list = load_team_info()
+        page['team'] = team_list
+
+    elif page['title'] == "Services":
+        page['stacks'] = load_stacks_info()
+
+    elif page['title'] == "Principles":
+        return render_post('principles-handbook.html')
+
+    # common case
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
+
 
 @app.route('/posts/<path>')
 def render_post(path):
     post = POSTS[f'/posts/{path}']
-    # if os.path.exists(os.path.join('templates', post['template'])):
-    #     thread = Thread(target=download_post, args=(post,))
-    #     thread.start()
-    # else:
-    #    download_post(post)
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
+
+
+@app.route('/projects/<path>')
+def render_case(path):
+    case = CASES[f'/projects/{path}']
+    return render_template(case['template'], now=datetime.now(), **CONFIG, **case)
+
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == '--pages':

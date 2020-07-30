@@ -1,104 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Monadical Consulting | How to Make Remote Work: Part One</title>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
-        <link rel="stylesheet" href="/static/main.css">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monadical Consulting | How to Make Remote Work: Part One</title>
 
-        <link rel="canonical" href="https://monadical.com/posts/how-to-make-remote-work-part-one.html"/> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        
-        
-    </head>
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+    <link rel="stylesheet" href="/static/core/css/base.css">
+
+    <link rel="canonical" href="https://monadical.com/posts/how-to-make-remote-work-part-one.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     
-    <body>
-        
-        
-        
-        <header>
-            <a id="top"></a>
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="How to build asyncronous processes that enable you to work efficiently with a distributed engineering team." />
 
-            
-            
+<!-- Required Open Graph data -->
+<meta property="og:title" content="How to Make Remote Work: Part One" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://monadical.com//static/remote-work.jpg" />
+<meta property="og:url" content="https://monadical.com//posts/how-to-make-remote-work-part-one.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="How to build asyncronous processes that enable you to work efficiently with a distributed engineering team." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_us" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="How to Make Remote Work: Part One">
+<meta name="twitter:description" content="How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.">
+<meta name="twitter:image" content="/static/remote-work.jpg">
 
-            <nav class="navbar navbar-expand-sm navbar-light">
-                <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="/index.html">
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="
+                                /static/core/img/logo@3x.png 3x,
+                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-left">
                         
-                        <h1 style="white-space: normal">
-                            Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span>
-                        </h1>
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav navbar-left ">
                         <li class="nav-item">
-                            <a class="nav-link" href="/index.html">Home</a>
+                            <a class="nav-link" href="/services.html">Services</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About</a>
+                            <a class="nav-link" href="/principles.html">Principles</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/team.html">Team</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/projects.html">Projects</a>
                         </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/blog.html">Blog</a>
                         </li>
-                    </ul>
                         
-                    <h1 class="nav-item main-brand-link d-none d-sm-block ">
-                        
-                        <a href="/index.html">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
-                        <small><i class="fa fa-angle-double-right"></i>  <a href="/blog.html">Blog</a> <i class="fa fa-angle-double-left"></i></small>
-                    </h1>
-
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about.html#contact">How it works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="beta-btn nav-link btn btn-lg btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
-                                &nbsp;<span class="diamond" style="font-size: 24px;vertical-align: -3px;"><i class="fa fa-phone"></i></span>&nbsp;
-                                Free Quote
-                                &nbsp;
-                            </a>
-                        </li>
                     </ul>
+                    <a class="beta-btn nav-link" href="/contact-us.html"
+                        onmousedown="/*this.classList.add('hinge'), true*/">
+                        GET A TECHNICAL ASSESSMENT
+                    </a>
                 </div>
             </nav>
-        </header>
-        
+        </div>
+    </header>
+    
+
+
+    
+    <article>
         
 
-        
-        <article>
-            
     <style>
-        nav.navbar {
-            border-radius: 0px !important;
-            padding-top: 15px;
-            padding-bottom: 35px;
-        }
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
-        }
-        nav.navbar .navbar-collapse.collapse {
-            display: flex !important;
         }
         .article-content {
             border: 0px;
@@ -137,11 +148,14 @@
             transition: opacity 400ms ease;
         }
     </style>
-    <canvas class="animated-color-grid" height="20"></canvas>
-    <div id="post-contentopticle-body">
-        
-            <article class="article-content">
-                <!DOCTYPE html>
+
+    <div id="post-content">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -185,7 +199,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 27 2020 11:24:36 GMT+0000 (UTC)" data-updatetime="Fri Mar 27 2020 11:30:56 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">79 views <a href="how-to-make-remote-work-part-one.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">82 views <a href="how-to-make-remote-work-part-one.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -413,15 +427,17 @@ To that end, I think the most important thing is to regularly reflect on your ex
 
 
 
-            </article>
-        
-        <br/><br/>
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
                     Max McCrea
                     <h4>
-                        Monadical CEO
+                        Monadical Co-founder
                         
                         <a href="/team.html" target="_blank" rel="noopener">
                             
@@ -445,7 +461,7 @@ To that end, I think the most important thing is to regularly reflect on your ex
         </script>
         <center>
             <br/><br/>
-            <a href="#top" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
                 Back to top <i class="fa fa-arrow-up"></i>
             </a>
             <br/>
@@ -526,260 +542,182 @@ To that end, I think the most important thing is to regularly reflect on your ex
                 });
             });
             document.addEventListener('DOMContentLoaded', () => {
-                for (let elem of document.querySelectorAll('.animated-color-grid')) {
-                  const sqrs = new Squares(elem, {height: elem.height})
-                  sqrs.tick()
-
-                  window.addEventListener('resize', function(e) {
-                      sqrs.options.width = document.body.offsetWidth
-                      sqrs.updateDimensions()
-                  })
-                }
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
-                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/how-to-make-remote-work-part-one', {mode: 'no-cors'})
             })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>
 
-        </article>
-        
+    </article>
+    
 
+    
+    <footer>
         
-        <footer>
+        
+        <div class="container footer">
             
-            
-            <div class="container text-center text-darkgrey">
-                
-                    <div class="social-links">
-                        
-                        <a href="#top"><img src="/static/logo-black.png" style="height: 50px; opacity: 1"></a>
-                        <br/><br/><br/>
-                        <div class="follow-links">
-                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a><a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a><a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b> Remote & Physical Offices</li>
+                        <li><b title="NYC, USA">New York</b> Remote Offices</li>
+                        <li><b title="Medellín, Colombia">Medellín</b> Remote Offices</li>
+                        <li><b title="Cali, Colombia">Cali</b> Remote Offices</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <li><a href=/services.html>Services</a></li>
+                        <li><a href=/projects.html>Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href=/team.html>Team</a></li>
 
-                
-                <small>Monadical Inc. © 2020</small>
+                        <li><a href=/principles.html>Principles</a></li>
+                        <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Company</b>
+                        </li>
+                        <li>
+                            <a href=/blog.html>Blog</a>
+                        </li>
+                        <li>
+                            <a href="/contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>Monadical Inc. © 2020 All rights reserved.</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>hello@monadical.com</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>+1 (917) 933-3760</li>
+                    </ul>
+                </div>
             </div>
             
-            
-        </footer>
+        </div>
         
+        
+    </footer>
+    
 
-        <script src="/static/squares.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="/static/squares.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
 
-        
-        
 
-        <!-- Smooth Scroll to Anchor Links Animation -->
-        <script>
-            function smoothScroll(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Scrolling to', this.getAttribute('href'))
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            document.addEventListener('DOMContentLoaded', () => {
-              document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
                 elem.parentNode.outerHTML = elem.parentNode.outerHTML
-              })
-              document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
-                  anchor.addEventListener('click', smoothScroll);
-              });
             })
-        </script>
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
 
-        <!-- Particles.js Network Graph Animation -->
-        <script type="text/javascript">
-            if (document.getElementById('particles-js')) {
-                particlesJS("particles-js", {
-                  "particles": {
-                    "number": {
-                      "value": 250,
-                      "density": {
-                        "enable": true,
-                        "value_area": 800
-                      }
-                    },
-                    "color": {
-                      "value": "#f7fcff"
-                    },
-                    "shape": {
-                      "type": "square",
-                      "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                      },
-                      "polygon": {
-                        "nb_sides": 5
-                      },
-                    },
-                    "opacity": {
-                      "value": 0.5,
-                      "random": false,
-                      "anim": {
-                        "enable": false,
-                        "speed": 0.5,
-                        "opacity_min": 0.1,
-                        "sync": false
-                      }
-                    },
-                    "size": {
-                      "value": 3,
-                      "random": true,
-                      "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                      }
-                    },
-                    "line_linked": {
-                      "enable": true,
-                      "distance": 150,
-                      "color": "#3dbe4c",
-                      "opacity": 0.4,
-                      "width": 1
-                    },
-                    "move": {
-                      "enable": true,
-                      "speed": 1,
-                      "direction": "none",
-                      "random": false,
-                      "straight": false,
-                      "out_mode": "out",
-                      "bounce": true,
-                      "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                      }
-                    }
-                  },
-                  "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                      "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                      },
-                      "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                      },
-                      "resize": true
-                    },
-                    "modes": {
-                      "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                          "opacity": 1
-                        }
-                      },
-                      "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                      },
-                      "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                      },
-                      "push": {
-                        "particles_nb": 4
-                      },
-                      "remove": {
-                        "particles_nb": 2
-                      }
-                    }
-                  },
-                  "retina_detect": true
-                });
-              }
-        </script>
-
-        <!-- D3 Cursor Waves Animation -->
-        <!--<script type="text/javascript">
-
-          var width = Math.max(960, innerWidth),
-              height = Math.max(500, innerHeight);
-
-          var x1 = width / 2,
-              y1 = height / 2,
-              x0 = x1,
-              y0 = y1,
-              i = 0,
-              r = 200,
-              τ = 2 * Math.PI;
-
-          var canvas = d3.select("#waves").append("canvas")
-              .attr("width", width)
-              .attr("height", height)
-              .on("ontouchstart" in document ? "touchmove" : "mousemove", move);
-
-          var context = canvas.node().getContext("2d");
-          context.globalCompositeOperation = "lighter";
-          context.lineWidth = 2;
-
-          d3.timer(function() {
-            context.clearRect(0, 0, width, height);
-
-            var z = d3.hsl(++i % 360, 1, .5).rgb(),
-                c = "rgba(" + z.r + "," + z.g + "," + z.b + ",",
-                x = x0 += (x1 - x0) * .1,
-                y = y0 += (y1 - y0) * .1;
-
-            d3.select({}).transition()
-                .duration(2000)
-                .ease(Math.sqrt)
-                .tween("circle", function() {
-                  return function(t) {
-                    context.strokeStyle = c + (1 - t) + ")";
-                    context.beginPath();
-                    context.arc(x, y, r * t, 0, τ);
-                    context.stroke();
-                  };
-                });
-          });
-
-          function move() {
-            var mouse = d3.mouse(this);
-            x1 = mouse[0];
-            y1 = mouse[1];
-            d3.event.preventDefault();
-          }
-        </script>-->
-
-        <!-- Matomo -->
-        <script type="text/javascript">
-          var _paq = window._paq || [];
-          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-          _paq.push(["setCookieDomain", "*.monadical.com"]);
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="//analytics.zervice.io/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
             _paq.push(['setSiteId', '12']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <!-- End Matomo Code -->
-    </body>
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
 </html>

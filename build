@@ -28,7 +28,7 @@ echo "$blue[+] Saving pages as static HTML to output/...$normal"
 
 echo ""
 echo "$blue[+] Including stevie king to output/...$normal"
-(cd stevie-king; npm install stevie-king; npm run build:dist)
+(cd stevie-king; npm install; npm run build:dist)
 rsync -avh stevie-king/dist/ output/publishing/
 
 # echo "$red[*] Stopping Flask server...$normal"

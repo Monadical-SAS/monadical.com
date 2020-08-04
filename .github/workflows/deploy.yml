@@ -16,5 +16,6 @@ jobs:
           port: ${{ secrets.MONADICAL_PORT }}
           script: |
             cd /opt/monadical.www/
+            git pull
             export LOCAL_DEPLOY=1
             ./build

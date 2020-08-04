@@ -15,6 +15,6 @@ jobs:
           key: ${{ secrets.MONADICAL_KEY }}
           port: ${{ secrets.MONADICAL_PORT }}
           script: |
-            cd ${{secrets.MONADICAL_BUILD_PATH}}
+            cd /opt/monadical.www/
             export LOCAL_DEPLOY=1
             ./build

@@ -40,7 +40,7 @@ def load_stacks_info(fname=STACK_FILE):
 
 def download_post(post):
     CMD = [
-        "/usr/local/bin/wget",
+        "wget",
         "--convert-links",
         "--output-document",
         os.path.join('templates', post['template']),

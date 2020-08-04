@@ -16,4 +16,5 @@ jobs:
           port: ${{ secrets.MONADICAL_PORT }}
           script: |
             cd ${{secrets.MONADICAL_BUILD_PATH}}
-            ./ci-deploy
+            export LOCAL_DEPLOY=1
+            ./build

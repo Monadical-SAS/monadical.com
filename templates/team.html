@@ -124,12 +124,18 @@
                         Currently open remote positions:
                     </p>
                     <ul class="open-positions">
-                        <li>Full-Stack Engineers (Python & JS)</li>
-                        <li>Senior Full-Stack Engineers</li>
-                        <li>Junior Engineers (Python & JS)</li>
-                        <li>DevOps + Full-Stack Engineers</li>
-                        <li>Digital Marketing Specialists</li>
-                        <li>Sales / Client Relations Manager</li>
+                        {% for position in positions %}
+                            {% if position.active %}
+                                {% if position.description %}
+                                    <li>
+                                        <a href="{{position.description}}" target="_blank">{{position.role}}</a>
+                                    </li>
+                                {% else %}
+                                    <li>{{position.role}}</li>
+                                {% endif %}
+
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-12 text-center margin-top-60 margin-bottom-150">

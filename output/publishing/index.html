@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Stevie Monadical's King - Blog Post publishing automation</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.min.css" integrity="sha512-3g+prZHHfmnvE1HBLwUnVuunaPOob7dpksI7/v6UnF/rnKGwHf/GdEq9K7iEN7qTtW+S0iivTcGpeTBqqB04wA==" crossorigin="anonymous" />
+    <style>
+      .dropzone {
+        border-style: dashed;
+      }
+      .dropzone .dz-preview .dz-error-message {
+        visibility: hidden;
+      }
+    </style>
+    <link href="style.0833833b6b75a00f048d.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Stevie Monadical's King <i class="fas fa-feather"></i></h1>
+        </div>
+        <div class="row"><img src="images/stephen-king.ec24cd4c8bc4153c62535b4626a286e0.jpg" class="img-thumbnail"></div>
+        <div class="row">
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto"><label class="sr-only" for="githubTokenInput">Github Token</label> <input type="password" class="form-control mb-2" id="githubTokenInput" placeholder="Github Token"></div>
+                    <div class="col-auto">
+                        <div class="form-check mb-2"><input class="form-check-input" type="checkbox" id="githubTokenSaveCheck"> <label class="form-check-label" for="githubTokenSaveCheck">Remember me</label></div>
+                    </div>
+                    <div class="col-auto"><button id="publishPost" type="button" class="btn btn-success mb-2 btn-lg">Publish !</button></div>
+                </div>
+            </form>
+        </div>
+        <div class="row d-none" id="form-success">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>Aww yeah, you successfully posted the entry.</p>
+                <hr>
+                <p class="mb-0">Allow a couple of minutes to run and check the published post.</p>
+            </div>
+        </div>
+        <div class="row d-none" id="form-errors">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">There are some errors</h4>
+                <hr>
+                <div id="form-errors-items"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <form>
+                <h1><label class="my-1 mr-2" for="slugInput">Post Slug</label></h1>
+                <div class="form-row align-items-center">
+                    <div class="col-auto"><input class="form-control mb-2" id="slugInput" placeholder="i.e poker-networks"></div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="clsbox-1" runat="server">
+                <div class="dropzone clsbox" id="mydropzone"></div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div id="editor_holder"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.min.js" integrity="sha512-Dq6kqg3S+qRPKNx2EHFC+qEHC2TkX8WNFQymh1FxCeurkVEeYknooSSjAFNeLhEZuOl6lfLULnl9kFLJWIn43w==" crossorigin="anonymous"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+    </script>
+    <script src="main.02c787d11250a9df3102.js"></script>
+</body>
+</html>

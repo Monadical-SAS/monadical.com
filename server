@@ -17,6 +17,7 @@ app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.
 CONFIG_FILE = 'content.json'
 TEAM_FILE = 'team.json'
 STACK_FILE = 'stacks.json'
+OPEN_POSITIONS = 'open-positions.json'
 HOST = 'http://127.0.0.1:5000'
 
 
@@ -26,21 +27,9 @@ def load_config(fname=CONFIG_FILE):
         return json.load(f)
 
 
-def load_team_info(fname=TEAM_FILE):
-    """read the team.json file to load the team information"""
-    with open(fname, 'r') as f:
-        return json.load(f)
-
-
-def load_stacks_info(fname=STACK_FILE):
-    """read the team.json file to load the stacks information"""
-    with open(fname, 'r') as f:
-        return json.load(f)
-
-
 def download_post(post):
     CMD = [
-        "/usr/local/bin/wget",
+        "wget",
         "--convert-links",
         "--output-document",
         os.path.join('templates', post['template']),
@@ -89,11 +78,13 @@ def render_page(path):
 
     # special projects
     if page['title'] == "Team":
-        team_list = load_team_info()
+        team_list = load_config(TEAM_FILE)
+        open_positions = load_config(OPEN_POSITIONS)
         page['team'] = team_list
+        page['positions'] = open_positions
 
     elif page['title'] == "Services":
-        page['stacks'] = load_stacks_info()
+        page['stacks'] = load_config(STACK_FILE)
 
     elif page['title'] == "Principles":
         return render_post('principles-handbook.html')

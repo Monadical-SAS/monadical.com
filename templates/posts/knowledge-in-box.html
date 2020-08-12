@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content=" &lt;center&gt;  # How to Fit All Human Knowledge in a Box  &lt;big&gt;  **How we used the power of Cython to he">
+    
+    <title>How to Fit All Human Knowledge in a Box - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/518753a2360b7cf60ecdc09f3664d0e3?s=96);" data-toggle="tooltip" data-placement="right" title="contact"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Aug 11 2020 18:43:41 GMT+0000 (UTC)" data-updatetime="Tue Aug 11 2020 20:34:05 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">13 views <a href="knowledge-in-box.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">
+&lt;center&gt;
+
+# How to Fit All Human Knowledge in a Box
+
+&lt;big&gt;
+
+**How we used the power of Cython to help streamline the way that knowledge can be packaged and shared all over the world -- even without the internet.**
+
+&lt;/big&gt;
+
+*Written by Tess McCrea and Juan Diego Caballero.
+ Originally published 2020-08-11 on the [Monadical blog](https://monadical.com/blog.html).*
+
+
+&lt;/center&gt;
+
+## Knowledge for All! 
+
+If you asked for a list of the three things we love most excessively at Monadical, I might say open source projects, free exchange of information, and all forms of learning. So we were all super excited when Kiwix founder Emmanuel Engelhart contacted us a few months ago after coming across our co-founder Nick’s open source side-project [archivebox.io](https://archivebox.io/) (a tool to allow people to create their own self-hosted archives or their favourite pieces of the internet). If you haven’t heard of Kiwix, they’re awesome -- they’ve created a whole suite of open source software components to compress the world’s greatest repositories of human knowledge, starting with [Wikipedia](https://www.wikipedia.org/) and now including stuff like [Project Gutenberg](https://www.gutenberg.org/), [Stack Exchange](https://stackexchange.com/), [YouTube](https://www.youtube.com/) and [Ted Talks](https://www.ted.com/talks), as well as an offline browser to access all this info. 
+
+![Kiwix logo](https://docs.monadical.com/uploads/upload_035e06066e7e34d8d328aa37089a8f8f.png)
+
+
+
+“Cool,” you may be thinking, Hypothetical Reader, “I’d love to have Stack Overflow at my fingertips while I’m trying to debug on an 8-hour WiFi-less flight”. Or perhaps, “Great! Next time the power goes out I’ll still be able to learn about how to [maximize my misery](https://www.youtube.com/watch?v=LO1mTELoj6o) most efficiently!”.  
+
+![maximize my misery](https://docs.monadical.com/uploads/upload_eea70f6d9d481f612849adeec758d06b.png)
+
+And, indeed, you will! However, in addition to these noble use cases, Kiwix lets people who don’t have internet access, or who have limited internet access, utilise the massive wealth of human knowledge many of us take for granted. If you’re like me, you probably barely even  register the fact that you have virtually instantaneous, constant access to an unimaginable trove of information (and, of course, [seductive radishes](https://www.sadanduseless.com/radish-hotness/?fbclid=IwAR1_psKlYDxE2vy4Uk55ku83hzBKgIIP0O6-vs0Nn53HVfjQyEvpuq2t7uk)) anymore. But did you know that according to a [2017 study](https://www.itu.int/dms_pub/itu-s/opb/pol/S-POL-BROADBAND.18-2017-PDF-E.pdf) by the UN Broadband Commission for Sustainable Development, over half the world’s population (close to **4 billion** people!) doesn’t have access to the internet? The main reasons are lack of infrastructure and lack of affordability -- an issue of growing concern in a world increasingly reliant on digital information exchange.
+
+![internet usage world map](https://docs.monadical.com/uploads/upload_c45845b29fd8e65be931c5d0fa35e617.png)
+
+
+And that’s to say nothing of countries where the information access is heavily controlled or tracked -- Wikipedia itself has been [intermittently censored or banned outright](https://en.wikipedia.org/wiki/Censorship_of_Wikipedia) in countries as varied as the U.K., Russia, Venezuela, and Turkey. In China, Wikipedia is blocked in its entirety. In Cuba, internet infrastructure is increasingly available, but private internet access remains prohibitively expensive (in part due to the U.S.’s historical trade embargo), and all internet usage is heavily [monitored by the government](https://freedomhouse.org/country/cuba/freedom-net/2019). According to freedomhouse.org, which produces yearly Freedom on the Net reports tracking internet access, freedom of expression, and privacy issues in 65 representative countries around the world, as of 2018, [internet freedom is on the decline](https://freedomhouse.org/report/freedom-net/2018/rise-digital-authoritarianism#:~:text=Freedom%20on%20the%20Net%20is,internet%20freedom%20conditions%20each%20year.) overall -- including in the U.S. 
+
+With Kiwix, massive knowledge bases are bundled and organized for offline use. They can then be downloaded directly by users with unreliable or low-bandwidth internet (the method used by the [Afripedia Project](https://en.wikipedia.org/wiki/Afripedia_Project)), or accessed via USB or external hard drive.  
+
+![Kiwix content manager](https://docs.monadical.com/uploads/upload_cc1f6360512c292d6730e4257a137e73.png)
+
+&lt;center&gt; Kiwix offline browser with files available for download.  
+&lt;/center&gt;
+
+## The Problem:
+
+I hear you, dear Hypothetical Reader, saying to yourself “Great, I’m definitely convinced that Kiwix is awesome! But what does it have to do with Monadical??” 
+
+Oh, Hypothetical. You always know just the right question to ask. 
+
+As you can imagine, bundling massive amounts of internet-based content into a downloadable and browseable file comes with some challenges. Basically, Kiwix created a library called libzim, and content (images, videos, text, links, etc.) is scraped from internet-based sources and put into the library. The library bundles and organizes it into what’s called a [ZIM file](https://en.wikipedia.org/wiki/ZIM_(file_format)), which users can acquire (by download, or on a USB stick, for example) and browse using the [Kiwix ZIM reader](https://www.kiwix.org/en/downloads/kiwix-reader/).  
+
+Sounds simple, right? Not so fast! 
+
+The library is written in C++. This makes sense, because C++ is a relatively low-level language, meaning that it’s closer to machine language (think ones and zeroes), compared to a higher-level language, which is more abstracted from machine language, and closer in syntax and structure to human language. Lower-level languages are faster to execute than higher-level languages, and the programmer has direct control over how memory is handled, which makes it ideal for a library like libzim. So far, so good! 
+
+However, the content scraper is written in Python. Uh-oh. This meant that the library couldn’t communicate directly with the scraper. 
+
+“Uh...then why was the scraper written in Python?” I hear you asking. So inquisitive! 
+
+A higher-level language like Python, which is closer to human language, is more “natural” and easier to use for a lot of programmers. In C++, tons of information is needed from the user in order to make it work, while Python comes with a lot of built-in data structures like vectors, dictionaries and iterators that make it easier to use right out of the box. 
+
+
+![Python vs C++](https://docs.monadical.com/uploads/upload_36a979d3a2a8044d432bd2e73641c926.png)
+
+
+Nowadays, self-taught programmers more often opt for the softer learning curve Python offers, and universities have been coming to similar conclusions. C programmers (who are proficient in C languages like C, C++, and C#) are increasingly uncommon, and having the scraper in Python made it more accessible for contributors, and easier to adapt to different data sources. Usually, only sections of code that need to be optimized are written in low-level languages like C/C++, as modern computers are plenty fast anyway, and it&#39;s much more time-consuming to write low-level code. Basically, developer time is usually the limiting factor, as opposed to processor cycles.
+
+Kiwix’s workaround for the communication problems between the scraper and the library was to use a disk (the file system hard drive) as an intermediary. Content scraped by the scraper was copied onto a disk, which was then bundled into the library by another tool, so that the library could create the ZIM file:
+
+
+![Original Workflow](https://docs.monadical.com/uploads/upload_0ec9a9e9ac4d37741bfc9518f2a91401.png)
+
+
+
+
+As you can imagine, this workflow was non-ideal; it was slow and took up a lot of disk space. In addition, using the library to write more complex data sources was complicated and difficult. Generally speaking, using the hard disk as RAM is something to be avoided, because of the computer’s [memory hierarchies](https://en.wikipedia.org/wiki/Memory_hierarchy).
+
+Fixing it would require a mechanism that could communicate in both worlds. That&#39;s where Monadical came in.
+
+
+## Our Solution:
+
+Our job was to create this intermediary mechanism. So we decided to develop a “wrapper” to take Python data structures and translate them to C++. A simple wrapper would pass data (in the form of strings, such as a sequence of characters e.g. “hola”) into the library, from which it could be retrieved with a function:
+
+
+![Simple Wrapper](https://docs.monadical.com/uploads/upload_ead6eeb127d3aafaa5c836de6c7ad074.png)
+
+
+
+
+But this posed a problem. The library was expecting input in the form of a function, not a string. Our solution was to create a class blend wrapper, which would allow libzim to get data from Python by passing pointers to Python functions to be called from C++. This was equivalent to implementing a virtual C++ class in python:
+
+
+
+
+![Class Blend Wrapper](https://docs.monadical.com/uploads/upload_23da7cec77494d3341d9502afcd49ced.png)
+
+
+
+
+Brilliant! A perfect solution, case closed. 
+
+But wait! As the old adage says, a programmer’s work is never done. Once we started to implement this plan, we ran into another issue. Libzim is a multi-threaded library, which means it can execute more than one sequential set or “thread” of instructions at the same time, making it faster and more efficient. However, in Python, while many threads can exist, only one can run Python at a time. This is mediated by a mechanism known as the GIL, or Global Interpreter Lock. So with libzim calling and passing Python functions directly, its multi-threading capacity was incapacitated by GIL. 
+
+In order to unleash the multi-threaded potential of libzim, while still maintaining GIL when running Python functions in Python (to avoid memory collisions), we used the ability of the Cython wrapper to run with nogil, so that GIL could be turned on and off.  When the library is called, GIL is off, and libzim, much like She-Ra the Princess of Power, has the power (of multi-threading). When data is retrieved from Python by running Python functions, GIL is on, so as not to mess up Python&#39;s data and execution. 
+
+
+
+![multi-threading power](https://docs.monadical.com/uploads/upload_00c21c41aa52798266a44457aeb9e66d.png)
+
+
+
+
+With these adaptations, the old workflow (using Python to scrape the source and copy to a disc (filesystem) and then using another program to bundle content into the library, which could then create the ZIM file) became the new workflow: scraping the source and syphoning the content directly into the library.
+
+
+
+
+![original workflow](https://docs.monadical.com/uploads/upload_525fbe5c98082a61bd5312b006da7087.png)
+
+![new workflow](https://docs.monadical.com/uploads/upload_d3f7d446a6c235955e0d1786d1141def.png)
+
+
+The new workflow is faster, easier, and uses Python -- the C++ library is able to call Python functions (not content), and the time- and space-consuming intermediate copy is eliminated. The result is that the library can write more complex sources, since the way that data can be brought in can be manipulated more easily. Overall, the process is more efficient and faster. 
+
+We had tons of fun working through the challenges of this project with Kiwix’s team. We hope you had as much fun reading about it as we had doing it! The whole thing is open source, so if you’re interested in taking a look at it, you can find it [here](https://github.com/openzim/python-libzim/).
+
+
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+
+---</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="knowledge-in-box.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+

@@ -49,6 +49,38 @@
     }
   },
   "POSTS": {
+    "knowledge-in-box": {
+      "title": "How to Fit All Human Knowledge in a Box",
+      "description": "How we used the power of Cython to help streamline how knowledge can be packaged and accessed all over the world – even without the internet.",
+      "date": "2020-08-11",
+      "img": "/static/knowledge-in-box.png",
+      "tags": [
+        "Kiwix",
+        "Knowledge-for-all",
+        "python",
+        "C++",
+        "Scraper",
+        "wrapper",
+        "libzim",
+        "zimwrite",
+        "wikipedia",
+        "Cython",
+        "nogil",
+        "zimfile",
+        "internet-freedom"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/SyI1vwxMw",
+      "url": "/posts/knowledge-in-box.html",
+      "template": "posts/knowledge-in-box.html",
+      "author": {
+        "name": "Tess McCrea and Juan Diego Caballero",
+        "title": "COO",
+        "handle": "@tessipedia",
+        "url": "https://twitter.com/tessipedia ",
+        "image": "/static/tess.png"
+      }
+    },
     "principles-handbook": {
       "date": "2017-01-01",
       "img": "/static/full-stack.jpg",
@@ -562,38 +594,6 @@
         "handle": "@cowpig",
         "url": "https://twitter.com/ACowpig",
         "image": "/static/max.jpg"
-      }
-    },
-    "knowledge-in-box": {
-      "title": "How to Fit All Human Knowledge in a Box",
-      "description": "How we used the power of Cython to help streamline how knowledge can be packaged and accessed all over the world – even without the internet.",
-      "date": "2020-08-11",
-      "img": "/static/knowledge-in-box.png",
-      "tags": [
-        "Kiwix",
-        "Knowledge-for-all",
-        "python",
-        "C++",
-        "Scraper",
-        "wrapper",
-        "libzim",
-        "zimwrite",
-        "wikipedia",
-        "Cython",
-        "nogil",
-        "zimfile",
-        "internet-freedom"
-      ],
-      "length": "15 min read min read",
-      "source": "https://docs.monadical.com/s/SyI1vwxMw",
-      "url": "/posts/knowledge-in-box.html",
-      "template": "posts/knowledge-in-box.html",
-      "author": {
-        "name": "Tess McCrea and Juan Diego Caballero",
-        "title": "COO",
-        "handle": "@tessipedia",
-        "url": "https://twitter.com/tessipedia ",
-        "image": "/static/tess.png"
       }
     }
   },

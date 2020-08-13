@@ -76,3 +76,14 @@ Static HTMML output will be produced in `output/`, and can be rsyned to a server
 ## Stack
 
 The static site generator is build using Flask + Jinja2 and wget to save the output as static html.
+
+## UI Test
+
+Right now I must test every change in the next resolutions:
+
+* IPad Landscape and Portrait
+* IPhone Portrait
+* Medium devices in Landscape and Portrait
+* Other small devices in Portrait
+
+For desktop we must test in every resolution from 1920px to 500px. Or at least 800px to 500px.

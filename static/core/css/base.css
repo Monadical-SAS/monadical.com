@@ -553,7 +553,6 @@ a:hover{
     .xs-hide {
         display: none;
     }
-
 }
 
 .our-clients .card-clients-name {
@@ -937,7 +936,7 @@ div.card-reference div.card-body {
     margin: 60px auto;
     object-fit: contain;
     text-align: center;
-    width: 945px;
+    max-width: 945px;
 }
 
 .cases-home .container h3 {
@@ -1128,22 +1127,6 @@ button.read-more {
     object-fit: contain;
 }
 
-
-.cases-home .container>h1 {
-    color: #020202;
-    font-size: 48px;
-    line-height: 1.29;
-    letter-spacing: normal;
-    margin: 60px auto;
-    object-fit: contain;
-    text-align: center;
-    width: 945px;
-}
-
-.cases-home>.projects {
-    background: url("/static/core/img/cases-background.png") no-repeat;
-    background-size: cover;
-}
 
 button.black-button {
     background-color: #1A1A1A;
@@ -1580,6 +1563,18 @@ button.read-more {
 
     .octopus-img {
         width: 100%;
+    }
+
+    .card-img > img {
+        width: 100%;
+    }
+
+    .card-open-source .container {
+        padding: 0;
+    }
+
+    .card-open-source .container .col-6 {
+        padding: 0;
     }
 }
 

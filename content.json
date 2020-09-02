@@ -49,8 +49,31 @@
     }
   },
   "POSTS": {
-    
-   "moving-to-linux-desktop":  {
+    "system-monitoring-tools":  {
+      "title": "Unix System Monitoring and Diagnostic CLI Tools",
+      "description": "An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems.",
+      "date": "2020-09-01",
+      "img": "/static/system-monitoring-tools.png",
+      "tags": [
+        "cli",
+        "tools",
+        "linux",
+        "devops",
+        "sysadmin"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/system-monitoring-tools",
+      "url": "/posts/system-monitoring-tools.html",
+      "template": "posts/system-monitoring-tools.html",
+      "author": {
+        "name": "Nick Sweeting",
+        "title": "Co-Founder",
+        "handle": "@theSquashSH",
+        "url": "https://twitter.com/theSquashSH",
+        "image": "/static/nick.jpg"
+      }
+    },
+    "moving-to-linux-desktop":  {
       "title": "The Year of the Linux Desktop",
       "description": "The year of the Linux desktop has arrived. This is a guide for how to improve the Linux desktop experience.",
       "date": "2020-08-25",
@@ -76,7 +99,7 @@
         "url": "https://twitter.com/jdcaballerov",
         "image": "/static/jdc.jpg"
       }
-  },  
+    },
     "open-source-innovation-technology": {
       "title": "Why Open Source Projects Are Key to Innovation & Technology",
       "description": "Find out how open source projects are essential to innovation and the development of new technology.",
@@ -125,7 +148,7 @@
       "template": "posts/knowledge-in-box.html",
       "author": {
         "name": "Tess McCrea and Juan Diego Caballero",
-        "title": "COO",
+        "title": "Monadical COO",
         "handle": "@tessipedia",
         "url": "https://twitter.com/tessipedia ",
         "image": "/static/tess.png"
@@ -151,7 +174,7 @@
       "description": "Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.",
       "author": {
         "name": "Max",
-        "title": "Monadical Co-founder",
+        "title": "Monadical Co-Founder",
         "url": "/team.html",
         "image": "/static/max.jpg"
       }
@@ -176,7 +199,7 @@
       "description": "How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.",
       "author": {
         "name": "Max",
-        "title": "Monadical Co-founder",
+        "title": "Monadical Co-Founder",
         "url": "/team.html",
         "image": "/static/max.jpg"
       }
@@ -198,7 +221,7 @@
       "description": "How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.",
       "author": {
         "name": "Max McCrea",
-        "title": "Monadical Co-founder",
+        "title": "Monadical Co-Founder",
         "url": "/team.html",
         "image": "/static/max.jpg"
       }
@@ -220,7 +243,7 @@
       "description": "A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -242,7 +265,7 @@
       "description": "A list of our favorite technical blogs by friends, prominent programmers, and other companies we follow.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -265,7 +288,7 @@
       "description": "A list of documentation, resources, and example projects for potential applicants who are thinking about joining Monadical.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -287,7 +310,7 @@
       "description": "A short post about a particularly nice pattern for future refactorers that breaks the Don't-Repeat-Yourself principle commonly taught to beginners.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -309,7 +332,7 @@
       "description": "What should you do if your company gets hacked? What are the things to avoid and what are the procedures to follow? We explore the whole process in this post.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -331,7 +354,7 @@
       "description": "As systems get more complex, they trend towards expressing more of their complexity as data. Animations can be defined in data too.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -354,7 +377,7 @@
       "description": "An overview of how we provision and organize code and data on servers using the UNIX /opt directory.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -376,7 +399,7 @@
       "description": "Everyone wants their writes strictly ordered, if we can represent a list of write operations as a data structure, that gets easier.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -442,7 +465,7 @@
       "description": "Design strategies and common pitfalls that come into play when designing a banking service to handle concurrent transactions in a distributed environment.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -464,7 +487,7 @@
       "description": "The word “trustless” implies that trust has been removed from the system altogether. But in reality, systems like Bitcoin require plenty of trust, it's just less obvious.",
       "author": {
         "name": "Max McCrea",
-        "title": "Monadical Co-founder",
+        "title": "Monadical Co-Founder",
         "handle": "@cowpig",
         "url": "https://twitter.com/ACowpig",
         "image": "/static/max.jpg"
@@ -485,7 +508,7 @@
       "description": "A checklist of things for full-stack developers to strive to learn, spanning everything front frontend, to backend, to native development and devops.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -508,7 +531,7 @@
       "description": "Storing data in a normalized form allows us to calculate fast indexes for lookups.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -529,7 +552,7 @@
       "description": "Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.",
       "author": {
         "name": "Max McCrea",
-        "title": "Monadical Co-founder",
+        "title": "Monadical Co-Founder",
         "handle": "@cowpig",
         "url": "https://twitter.com/ACowpig",
         "image": "/static/max.jpg"
@@ -552,7 +575,7 @@
       "description": "The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -575,7 +598,7 @@
       "description": "When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -598,7 +621,7 @@
       "description": "When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -619,7 +642,7 @@
       "description": "A map of all the subfields encompassed by computer science, with job titles commonly used to hire people in those areas.",
       "author": {
         "name": "Nick Sweeting",
-        "title": "Monadical CTO",
+        "title": "Monadical Co-Founder",
         "handle": "@theSquashSH",
         "url": "https://twitter.com/theSquashSH",
         "image": "/static/nick.jpg"
@@ -640,7 +663,7 @@
       "description": "I often hear players say, “I hate that site. It’s completely rigged. I can never win there.” Perhaps those players simply ran bad at first on that site...",
       "author": {
         "name": "Max McCrea",
-        "title": "Monadical Co-founder",
+        "title": "Monadical Co-Founder",
         "handle": "@cowpig",
         "url": "https://twitter.com/ACowpig",
         "image": "/static/max.jpg"

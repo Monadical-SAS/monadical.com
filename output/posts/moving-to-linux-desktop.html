@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monadical Consulting | The Year of the Linux Desktop</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+    <link rel="stylesheet" href="/static/core/css/base.css">
+
+    <link rel="canonical" href="https://monadical.com/posts/moving-to-linux-desktop.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="The year of the Linux desktop has arrived. This is a guide for how to improve the Linux desktop experience." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="The Year of the Linux Desktop" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://monadical.com/static/moving-to-linux-desktop.png" />
+<meta property="og:url" content="https://monadical.com/posts/moving-to-linux-desktop.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="The year of the Linux desktop has arrived. This is a guide for how to improve the Linux desktop experience." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_US" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="The Year of the Linux Desktop">
+<meta name="twitter:description" content="The year of the Linux desktop has arrived. This is a guide for how to improve the Linux desktop experience.">
+<meta name="twitter:image" content="https://monadical.com/static/moving-to-linux-desktop.png">
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="
+                                /static/core/img/logo@3x.png 3x,
+                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-left">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services.html">Services</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/principles.html">Principles</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects.html">Projects</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                        
+                    </ul>
+                    <a class="beta-btn nav-link" href="/contact-us.html"
+                        onmousedown="/*this.classList.add('hinge'), true*/">
+                        GET A TECHNICAL ASSESSMENT
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+    </style>
+
+    <div id="post-content">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="  &lt;center&gt;      # 2020: The Year of the Linux Desktop - Moving from Macbook to Linux      &lt;/center&gt; ">
+    
+    <title>2020: The Year of the Linux Desktop - Moving from Macbook to Linux - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Aug 24 2020 16:16:53 GMT+0000 (UTC)" data-updatetime="Tue Aug 25 2020 15:38:30 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">35 views <a href="moving-to-linux-desktop.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">---
+tags: remote-work, soft-skills, remote, home-office, tools, chat, communication, Linux
+---
+
+&lt;center&gt;
+    
+# 2020: The Year of the Linux Desktop - Moving from Macbook to Linux
+    
+&lt;/center&gt;
+
+
+
+
+Finally. [The year of the Linux desktop](https://www.reddit.com/r/linux/comments/3038d4/when_was_the_first_year_of_the_linux_desktop/) has arrived. After many years of using Macbook Pros, I’m finally saying “Enough!”. 
+
+I have a great 2010-2012 Macbook Pro that still rocks. But in 2014, I decided to buy a mid-2014 model and after only two years, it started falling apart. First, one of the speakers started sounding tinny. Then the power plug port pins burnt out. Then, just after the warranty expired, came [staingate](https://en.wikipedia.org/wiki/Staingate): the anti-reflective coating started to peel off, staining large portions of the screen. I dug around on the internets for advice and solved the problem by rubbing the film off the glass with metal polish. A few months later, the other speaker went the way of the first, and the power plug port pins burnt out again. Finally, the screen started to flicker (and it wasn&#39;t the LVDS display cable). 
+
+Enough!!
+
+![MacBook with stained screen](https://docs.monadical.com/uploads/upload_b1855534d988e8257e0daffe3567dab9.png)
+
+
+
+I still like the look and feel of the macOS, but with Apple downgrading its hardware (but still keeping those Apple prices!), the problems just kept stacking up. I couldn’t justify it anymore. So, after doing some research, I decided to go back to Linux on a Lenovo and tweak it to make it as similar as possible to what I was used to on macOS. Here’s my guide for how to improve the Linux desktop experience
+
+
+[TOC]
+
+## Distro 
+
+There are many flavours of Linux: Mint, Manjaro, Ubuntu, Debian… Most major distros will do the job, however, some of them come with useful out-of-the-box features. Two are especially worth mentioning: 
+
+1. [Pop OS](https://pop.system76.com/)
+
+This distro not only stands out for not being loaded with crapware (unnecessary, probably useless software), it also has its own distro version to manage Nvidia [video cards](https://en.wikipedia.org/wiki/Video_card). Nvidia cards are usually a headache for Linux users, since some cards only work with signed proprietary drivers. And once you manage to get the card working, your pain isn’t over: you’ll find out you&#39;ve given birth to a power hog and your battery won&#39;t last. The latest Pop OS allows you to just turn off the GPU [without manually blacklisting modules](https://www.reddit.com/r/pop_os/comments/cu4au4/fix_battery_life_with_nvidia_gpu_mx250_on_lenovo/) and use the onboard card or operate in hybrid mode. There’s no need for [ACPI table hacks](https://major.io/2020/01/24/disable-nvidia-gpu-thinkpad-t490/) or [vgaswitcheroo](https://01.org/linuxgraphics/gfx-docs/drm/gpu/vga-switcheroo.html). The ability to turn off the GPU is integrated into the desktop. One click, finito. It also includes a simple tiling manager that can be turned on and off at will with a single click.
+    
+    
+2. [Fedora](https://getfedora.org/en/workstation/download/)
+
+Fedora does a [great job](https://fedoraproject.org/wiki/Changes/ImprovedLaptopBatteryLife) with [power consumption](https://www.youtube.com/watch?v=mypteFGjwH4) and the latest version (32) works well out-of-the-box. With Fedora, many new features, such as [Wayland](https://wayland.freedesktop.org/), become available sooner than they do with other major distros. The troubles with Docker are mostly [gone](https://fedoramagazine.org/docker-and-fedora-32/).
+
+
+## Battery life
+
+
+Battery life has always been a nightmare with Linux laptops. Fortunately, distros like Fedora, mentioned above, come with reasonable defaults so that laptops are more power efficient out-of-the-box. 
+
+The old tools for optimizing battery life have evolved a lot—I’m talking about the duo [TLP](https://linrunner.de/tlp/) and [powertop](https://01.org/powertop/).
+
+To optimize battery power, the first thing to do is to establish a baseline while running on battery power. I prefer to start measuring idle power consumption (discharge rate depends on workload). If Windows is available, [BatteryInfoView](https://www.nirsoft.net/utils/battery_information_view.html) is useful for setting a goal by looking at the charge/discharge rate value.
+
+1. powertop: `sudo powertop -c` will calibrate the measurement and present an estimate.
+2. [powerstat](https://github.com/ColinIanKing/powerstat): `sudo powerstat` will wait for a delay and take measurements over time to generate statistics.
+
+If battery life is a major concern, for example, if you’re working away from a power source for the day, it’s better to be able to completely turn off the GPU. (The GPU consumes a lot of power and will run down your battery.) The section above on Pop OS contains some links and strategies for this. For Nvidia GPUs, the command `ndvia-smi` should confirm that the card is turned off. After turning off the GPU, set a new idle power consumption baseline.
+
+[TLP and powertop can get along together](https://gvisoc.com/tech/linux/2020/04/26/Lenovo-ThinkPad-T490s-a-Battery-Review-under-Linux.html), however, it&#39;s better if only one of them is in charge. I usually start with TLP, check and modify settings using `sudo tlpui` and then check with `sudo powertop` to see if there’s any optimization that’s not turned on. With this new tweak I can establish a new baseline.
+
+When you feel comfortable, you can start optimizing on your usual workload (browser + code editor + bluetooth headset, etc). Powertop is handy here.
+
+
+Some power hogs to watch out for:
+
+- Docker, containerd (switch them to on demand)
+- Browser tabs with misconfigured ads, mining, flash, etc.
+- Social networks (they are constantly polling or receiving socket events)
+- Unused interfaces (use `sudo ifdown interface_name down` to turn them off)
+- Any disk indexer
+- Monitoring software
+- Daemons checking for updates, file modifications, and syncs
+
+To get some extra milliwatts, you can try correcting throttling (if necessary) and undervolting. If undervolting is used, it’s advisable to test it on your usual workload and try to suspend and unsuspend the laptop to test for stability. It’s typical to undervolt identically on the CPU and cache.
+
+- https://github.com/erpalma/throttled
+- https://github.com/kitsunyan/intel-undervolt
+- https://github.com/georgewhewell/undervolt
+
+Battery lifespan
+
+For some Lenovo laptops, TLP allows you to set a different charge/discharge threshold so that the battery won&#39;t charge while it operates in the threshold band. This will prolong the battery lifespan. 
+
+## Scaling 
+
+Screen scaling out-of-the-box on Linux usually sucks since it tends to make the elements tiny. To correct the scaling, a common solution for Gnome users is to install the tweaks package:
+
+```bash
+sudo apt install gnome-tweaks
+gnome-tweaks
+```
+
+and then go to the Fonts panel and adjust the scaling factor to between 1.4 and 1.5 for a similar scaling to a Macbook Pro.
+
+## Mouse
+
+After switching from a Macbook Pro, your new trackpad can feel awful.You might need to experiment on your own with what feels right to you, but I found that after using it for a few days, I got comfortable with this adaptive profile of Gnome tweaks:
+
+1. Open `gnome-tweaks`
+2. Keyboard &amp; mouse panel
+3. Acceleration profile: choose adaptive
+4. Check disable while typing
+5. Check mouse click emulation: fingers
+
+## CTRL Key
+
+Most of the shortcuts are the same on Linux, but instead of the Command key you use the Control key. I prefer macOS shortcuts so I remapped the keys using `gnome-tweaks`.
+
+1. Go to Keyboard &amp; Mouse Panel
+2. Click on Additional Layout Options
+3. Find Alt/Win Key Behavior
+4. Check: CTRL is mapped to Alt; Alt is mapped to Win.
+
+A full working solution is to use [kinto](https://github.com/rbreaves/kinto).
+
+If more options are needed, you might need to use `xmodmap` or `kinto`.
+
+http://xahlee.info/linux/linux_xmodmap_tutorial.html
+https://github.com/rbreaves/kinto
+
+## Shortcuts 
+
+If you don&#39;t use [kinto](https://github.com/rbreaves/kinto), you can set shortcuts up manually.
+
+Since I’ve been using Macbooks for so long, I’m used to Apple shortcuts. In Gnome-based systems you can manually configure or import shortcuts [using this script](https://gist.github.com/jdcaballerov/2fcfb817e332e290bf0943d57b8b4bfc) from [askubuntu](https://askubuntu.com/questions/26056/where-are-gnome-keyboard-shortcuts-stored).
+
+To export key bindings:
+
+`./keybindings.pl -e /tmp/keys.csv`
+
+To import:
+
+`./keybindings.pl -i /tmp/keys.csv`
+
+[You can find my bindings here](https://gist.github.com/jdcaballerov/9d08ff82b701cd5b54c70f1a9f651ef7).
+
+Since Alt was remapped, window related shortcuts should bind to Control. I use some other shortcuts included with my bindings to try to match my [spectacle](https://www.spectacleapp.com/) profile on macOS.
+
+## Multitouch Gestures
+
+You can use [Fusuma](https://github.com/iberianpig/fusuma) to enable your Linux to recognize swipes or pinches and assign commands.
+
+
+
+## Gifs and screenshots  (peek and flameshot)
+Making screenshots and Gifs is easy and seamless on MacOS. To replicate these streamlined processes, I suggest the following:
+
+**Screencast**
+
+```bash
+sudo apt-get install appmenu-gtk2-module appmenu-gtk3-module
+
+git clone https://github.com/lolilolicon/xrectsel.git
+sudo apt-install autoconf
+./bootstrap
+
+```
+
+```bash
+#!/usr/bin/env sh
+
+[ $# -lt 2 ] &amp;&amp; \
+  echo &#39;You have to pass a duration in seconds and a filename: &#34;gif.sh 10 /tmp/record.gif&#34;&#39; &amp;&amp; \
+  exit 1
+
+byzanz-record                                        \
+  --cursor                                           \
+  --verbose                                          \
+  --delay=2                                          \
+  --duration=&#34;${1}&#34;                                    \
+  &#34;$(xrectsel &#34;--x=%x --y=%y --width=%w --height=%h&#34;)&#34; \
+  &#34;${2}&#34;
+```
+
+From: https://github.com/lupoDharkael/flameshot/issues/172#issuecomment-466657937
+
+
+## Emoji Keyboard
+
+The emoji keyboard shortcut can collide with some text editors as vscode—since it is configured as `shift+ctrl+e`—so it needs to be changed. To change it, open `ibus-setup` and remap it so that it won&#39;t collide.
+
+## Clipboard Manager
+
+For a very simple clipboard manager, I use clipit. 
+
+`sudo apt install clipit`
+
+## Password Manager
+
+[KeepassXC](https://keepassxc.org/download/#linux) can import 1password files and many others.
+
+
+## xournal
+
+To annotate and sign PDFs, Apple&#39;s preview works amazingly well. On Linux, [xournal](https://github.com/xournalpp/xournalpp)
+can accomplish pretty much the same thing.
+
+___
+
+
+As Apple continues to downgrade the quality of its hardware (to match its pricey, disposable adaptors), we need to look for other options. These steps will give you a much better user experience—comparable to that of macOS—on a Gnome-based desktop on Linux. 
+
+Please feel free to  contribute your own tips and tweaks! You can send your contributions to [this Github repository](https://github.com/jdcaballerov/YOTLD/). 
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="moving-to-linux-desktop.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                <div style="padding-top: 10px">
+                    JDC
+                    <h4>
+                        Engineering
+                        
+                        <a href="https://twitter.com/jdcaballerov" target="_blank" rel="noopener">
+                            @jdcaballerov
+                        </a>
+                    </h4>
+                    <h5>Published on <a href="#permalink">2020-08-25</a></h5>
+                </div>
+                <img src="/static/jdc.jpg" width="100px"/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Some other posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/system-monitoring-tools.html">Unix System Monitoring and Diagnostic CLI Tools</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/moving-to-linux-desktop.html">The Year of the Linux Desktop</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/open-source-innovation-technology.html">Why Open Source Projects Are Key to Innovation &amp; Technology</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/knowledge-in-box.html">How to Fit All Human Knowledge in a Box</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/SJagdPZ7w', {mode: 'no-cors'})
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <br/><br/>
+    </div>
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b> Remote & Physical Offices</li>
+                        <li><b title="NYC, USA">New York</b> Remote Offices</li>
+                        <li><b title="Medellín, Colombia">Medellín</b> Remote Offices</li>
+                        <li><b title="Cali, Colombia">Cali</b> Remote Offices</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <li><a href=/services.html>Services</a></li>
+                        <li><a href=/projects.html>Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href=/team.html>Team</a></li>
+
+                        <li><a href=/principles.html>Principles</a></li>
+                        <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Company</b>
+                        </li>
+                        <li>
+                            <a href=/blog.html>Blog</a>
+                        </li>
+                        <li>
+                            <a href="/contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>Monadical Inc. © 2020 All rights reserved.</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>hello@monadical.com</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>+1 (917) 933-3760</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script src="/static/squares.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
+</html>

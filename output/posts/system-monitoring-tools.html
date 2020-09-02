@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monadical Consulting | Unix System Monitoring and Diagnostic CLI Tools</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+    <link rel="stylesheet" href="/static/core/css/base.css">
+
+    <link rel="canonical" href="https://monadical.com/posts/system-monitoring-tools.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="Unix System Monitoring and Diagnostic CLI Tools" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://monadical.com/static/system-monitoring-tools.png" />
+<meta property="og:url" content="https://monadical.com/posts/system-monitoring-tools.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_US" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="Unix System Monitoring and Diagnostic CLI Tools">
+<meta name="twitter:description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems.">
+<meta name="twitter:image" content="https://monadical.com/static/system-monitoring-tools.png">
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="
+                                /static/core/img/logo@3x.png 3x,
+                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-left">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services.html">Services</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/principles.html">Principles</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects.html">Projects</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                        
+                    </ul>
+                    <a class="beta-btn nav-link" href="/contact-us.html"
+                        onmousedown="/*this.classList.add('hinge'), true*/">
+                        GET A TECHNICAL ASSESSMENT
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+    </style>
+
+    <div id="post-content">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links.">
+    
+    <title>Unix System Monitoring and Diagnostic CLI Tools - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (UTC)" data-updatetime="Wed Sep 02 2020 05:51:05 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">497 views <a href="system-monitoring-tools.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">---
+title: Unix System Monitoring and Diagnostic CLI Tools
+description: An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links. 
+tags: cli, tools, linux, devops, sysadmin, ubuntu, debian, freebsd, macos
+---
+
+&lt;center&gt;
+
+# Unix System Monitoring and Diagnostic CLI Tools
+
+*Originally published 2020-09-01 on [docs.sweeting.me](https://docs.sweeting.me/s/blog).*
+*Also published on the [Monadical Blog](https://monadical.com/posts/system-monitoring-tools.html), [HackerNews](https://news.ycombinator.com/item?id=24344520), and [ /r/Sysadmin](https://www.reddit.com/r/sysadmin/comments/ikynyo/an_opinionated_list_of_system_monitoring_and/).*
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_8293c5cdcc3cf0dc6a6024ea0b18a2ee.png&#34; style=&#34;width: 70%; border-radius: 4px; border: 1px solid #ccc; box-shadow: 4px 4px 4px rgba(0,0,0,0.08)&#34;&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+*An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems.*
+    
+&lt;/center&gt;
+&lt;hr/&gt;
+
+[TOC]
+
+---
+
+## Getting Started
+
+**CLI Usage Reference Tools:**
+
+- https://linux.die.net/man/
+- https://explainshell.com/
+- https://tldr.sh/
+- http://bropages.org/
+
+**Guides:**
+
+- https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/
+- https://www.thegeekstuff.com/2011/03/linux-performance-monitoring-intro/
+- https://www.opsdash.com/blog/disk-monitoring-linux.html
+- https://www.binarytides.com/linux-commands-monitor-network/
+- https://www.cyberciti.biz/faq/network-statistics-tools-rhel-centos-debian-linux/
+
+Below is a collection of CLI tools that I&#39;ve personally used while doing Linux/BSD systems administration over the past 10+ years. Some of them I use daily, others I only use once a year... but when I need them, boy am I glad they exist!
+
+I&#39;ve addedd a ⭐️ next to utilities that I find to be extremely well-built or well-suited to solving their particular task.
+
+On non-Ubuntu/Debian-based Linuxes you should replace any instance of `apt install xyz` below with `pkg install xyz`/`brew install xyz`/`yum install xyz`/`nix install xyz`/etc. depending on your respective system.
+
+
+If you would like to suggest changes/additions to this list you can comment on [Reddit](https://www.reddit.com/r/sysadmin/comments/ikynyo/an_opinionated_list_of_system_monitoring_and/), ping me on Twitter [`@theSquashSH`](https://twitter.com/theSquashSH), or find my contact email on [sweeting.me](https://nicksweeting.com).
+
+---
+
+## All-in-one tools
+
+### `glances` ⭐️
+
+`htop`, `iftop`, `iotop`, `gpustat`, `ctop`, and more, all rolled into one tool.
+Prints pretty much everything you need to know at a glance, including container resource usage, active processes, network and disk IO usage, and other stats.
+
+```bash
+pip install &#39;glances[action,browser,cloud,cpuinfo,docker,export,folders,gpu,graph,ip,raid,snmp,web,wifi]&#39;
+
+# launch glances CL
+glances
+
+# start a webserver to view glances output in a web UI on http://0.0.0.0:8787/
+glances -w -B 0.0.0.0 -p 8787
+```
+
+- https://github.com/nicolargo/glances
+- https://glances.readthedocs.io/en/stable/cmds.html
+- https://opensource.com/article/19/11/monitoring-linux-glances
+
+### `nmon`
+
+Jack-of-all-trades tool similar to `glances`, but with an interactive CLI UI to switch between panes for each type of resource.
+
+```bash
+# run nmon then press c/m/r/etc to enable/disable each pane in the ncurses UI
+nmon
+```
+
+- http://nmon.sourceforge.net/pmwiki.php
+- https://www.admin-magazine.com/HPC/Articles/Nmon-All-Purpose-Admin-Tool
+- https://www.tecmint.com/nmon-analyze-and-monitor-linux-system-performance/
+- https://www.techrepublic.com/article/how-to-monitor-your-linux-servers-with-nmon/
+
+### `dstat`
+
+A minimalist utility that prints a colored one-line summary of system stats every second.
+
+```bash
+# give an update of cpu, disk, and network usage every 5sec
+dstat -cdn 5
+
+# show advanced cpu, filesystem, ipc, locking, and asyncio stats every 2sec
+dstat --cpu-adv --fs --aio --ipc --lock 2
+```
+
+- https://www.sanfoundry.com/5-dstat-command-usage-examples-in-linux/
+- https://www.tecmint.com/dstat-monitor-linux-server-performance-process-memory-network/
+- https://www.geeksforgeeks.org/dstat-command-in-linux-with-examples/
+- https://www.networkworld.com/article/3291616/examining-linux-system-performance-with-dstat.html
+
+### `atop` ⭐️
+
+Great for finding out what&#39;s causing system-wide slowness when you&#39;re not sure whether what the culprit is (e.g. CPU/disk/network/temperature/hardware/etc.).
+
+Ranks all possible sources of slowness independent of individual processes, highlights potential bottlenecks or high resource usage areas in red. Very useful when you can&#39;t tell what&#39;s causing slowness from `htop` alone.
+
+```bash
+apt install atop
+
+# show all processes and individual threads
+atop -y
+```
+
+- https://github.com/Atoptool/atop
+- https://linux.die.net/man/1/atop
+- https://haydenjames.io/use-atop-linux-server-performance-analysis/
+
+### `osquery` ⭐️
+
+
+Run SQL queries on your system setup and resources.
+
+```bash
+# show all processes listening on local ports 
+osqueryi &#34;SELECT DISTINCT
+        process.name,
+        listening.port,
+        process.pid
+    FROM processes AS process
+    JOIN listening_ports AS listening
+    ON process.pid = listening.pid
+    WHERE listening.address = &#39;0.0.0.0&#39;&#34;
+    
+# show all gateway routes to the internet in json format
+osqueryi --json &#34;SELECT * FROM routes WHERE destination = &#39;::1&#39;&#34;
+
+# show number of threads by process name
+osqueryi &#39;SELECT count(pid) AS total, name FROM processes GROUP BY name ORDER BY total desc LIMIT 10&#39;
+```
+
+- https://osquery.io/
+- https://blog.rapid7.com/2016/05/09/introduction-to-osquery-for-threat-detection-dfir/
+- https://osquery.readthedocs.io/en/stable/introduction/sql/
+
+### `sar`
+
+```bash
+apt install sysstat
+echo &#39;ENABLED=&#34;true&#34;&#39; &gt; /etc/default/sysstat
+systemctl restart sysstat
+
+# print all basic stats every 1sec
+sar -A 1
+
+# show network stats by interface/device every 2sec
+sar -n DEV 2
+
+# show all available stats every 1sec
+sar -B -b -d -I ALL -m ALL -n ALL -q -r ALL -S -u ALL -v -W -w -y 1
+```
+
+- https://kirelos.com/how-to-install-and-configure-sysstat-on-ubuntu-20-04/
+- https://www.linuxtechi.com/generate-cpu-memory-io-report-sar-command/
+- https://www.poftut.com/linux-sysstat-utilities-monitoring-system-performance/
+- https://www.thegeekstuff.com/2011/03/sar-examples/
+- https://github.com/sysstat/sysstat
+
+### `landscape-sysinfo`
+
+Ubuntu&#39;s builtin system status summary tool that displays whenever you SSH in.
+
+```bash
+landscape-sysinfo
+```
+
+---
+
+## CPU/Memory
+
+### `lscpu`
+
+Show info about the available CPU slots and installed CPUs.
+
+```bash
+apt install util-linux
+
+lscpu
+```
+
+- https://manpages.ubuntu.com/manpages/focal/man1/lscpu.1.html
+- https://www.howtoforge.com/linux-lscpu-command/
+
+### `lsmem`
+
+Show info about the available RAM slots and installed chips.
+```bash
+apt install util-linux
+
+lsmem -a
+```
+
+- https://manpages.ubuntu.com/manpages/focal/en/man1/lsmem.1.html
+- https://zoomadmin.com/HowToLinux/LinuxCommand/lsmem
+
+### `top`
+
+Barebones process resource usage monitoring.
+
+```bash
+apt install top
+
+top
+```
+
+- https://linux.die.net/man/1/top
+- https://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/
+
+### `htop` ⭐️
+
+A better version of `top`.
+
+```bash
+apt install htop
+
+htop
+```
+
+- https://linux.die.net/man/1/htop
+- https://www.deonsworld.co.za/2012/12/20/understanding-and-using-htop-monitor-system-resources/
+- https://www.thegeekstuff.com/2011/09/linux-htop-examples/
+- https://devanswers.co/ubuntu-system-monitoring-with-htop/
+
+
+### `mpstat`
+
+Show per-core CPU usage statistics including IO load, interrupt load, system load, user load, etc. Gets its data from `/proc/stat`.
+
+```bash
+apt install sysstat
+
+# show all stats every 1sec
+mpstat -A 1
+
+# show utilization of all processors on the system every 1sec
+mpstat -P ALL 1
+```
+
+- https://manpages.ubuntu.com/manpages/focal/man1/mpstat.1.html
+- https://www.linuxnix.com/7-mpstat-command-examples-in-linux/
+
+
+### `pidstat`
+
+Show per-process CPU usage statistics including IO load, interrupt load, wait time, etc. Gets its data from `/proc/&lt;pid&gt;/stat`.
+
+```bash
+apt install sysstat
+
+# show stats for each pid with human-readable sizes and full commands w/ args
+pidstat --human -l
+
+# show reports of page faults and memory statistics for PID 1234 every 2sec
+pidstat -r -p 1234 2
+```
+
+- https://manpages.ubuntu.com/manpages/focal/en/man1/pidstat.1.html
+- https://www.thegeekstuff.com/2014/11/pidstat-examples/
+- https://linoxide.com/linux-command/linux-pidstat-monitor-statistics-procesess/
+
+### `free`
+
+Show RAM and SWAP usage information.
+
+```bash
+# show RAM and SWAP usage info along with buffer/cache stats and totals
+free -h -t -l
+```
+
+- https://manpages.ubuntu.com/manpages/focal/en/man1/free.1.html
+- https://www.howtoforge.com/linux-free-command/
+- https://linuxize.com/post/free-command-in-linux/
+
+### `vmstat`
+
+Show virtual memory, buffer, cache, and paging information.
+
+```bash
+apt install sysstat
+
+# show all virtual memory stats in megabytes every 1sec
+vmstat -S M -a 1
+
+# show aggregate statistics and totals
+vmstat -s
+
+# show disk-related virtual memory access statistics
+vmstat -d
+```
+
+- https://linux.die.net/man/8/vmstat
+- https://www.linode.com/docs/uptime/monitoring/use-vmstat-to-monitor-system-performance/
+- https://www.tecmint.com/linux-performance-monitoring-with-vmstat-and-iostat-commands/
+
+---
+
+## GPU
+
+### `gpustat` ⭐️
+
+```bash
+pip install gpustat
+
+# print GPU performance stats with color every second
+watch -c gpustat -cp --color
+```
+
+- https://github.com/wookayin/gpustat
+
+### `intel_gpu_top`
+
+Show GPU usage stats for Intel, NVidia, or Radeon GPUs.
+
+```bash
+apt install intel-gpu-tools
+
+intel_gpu_top
+```
+
+- https://gitlab.freedesktop.org/drm/igt-gpu-tools
+- https://manpages.ubuntu.com/manpages/focal/en/man1/intel_gpu_top.1.html
+
+### `nvtop`
+
+```bash
+apt install nvtop
+
+nvtop
+```
+
+- https://github.com/Syllo/nvtop
+- https://manpages.ubuntu.com/manpages/focal/en/man1/nvtop.1.html
+
+### `radeontop`
+
+```bash
+apt install radeontop
+
+radeontop
+```
+
+- https://github.com/clbr/radeontop
+- https://manpages.ubuntu.com/manpages/focal/en/man1/radeontop.1.html
+
+### `nvidia-smi`
+
+Monitor NVidia hardware sensor values (e.g. temperature, frequency, etc.).
+
+```bash
+apt install nvidia-smi
+
+# print nvidia performance and sensor stats every second
+nvidia-smi -l 1
+
+# print nvidia utilization stats for GPU 0 every second
+nvidia-smi -q -g 0 -d UTILIZATION -l 1
+```
+
+- https://developer.nvidia.com/nvidia-system-management-interface
+- https://subscription.packtpub.com/book/programming/9781788996242/app01/app01sec01/useful-nvidia-smi-commands
+- https://www.microway.com/hpc-tech-tips/nvidia-smi_control-your-gpus/
+- https://developer.download.nvidia.com/compute/DCGM/docs/nvidia-smi-367.38.pdf
+
+### `glmark2`
+
+Stress-test GPU performance.
+
+```bash
+apt install glmark2
+
+glmark2
+```
+
+- https://github.com/glmark2/glmark2
+- https://linuxreviews.org/Glmark2
+- https://manpages.ubuntu.com/manpages/focal/man1/glmark2.1.html
+- https://www.howtoforge.com/tutorial/linux-gpu-benchmark/
+- https://wiki.archlinux.org/index.php/Benchmarking
+
+### `glxgears`
+
+Stress-test GPU performance.
+
+```bash
+apt install mesa-utils
+
+glxgears
+```
+
+- https://linux.die.net/man/1/glxgears
+- https://www.howtoforge.com/tutorial/linux-gpu-benchmark/
+- https://wiki.archlinux.org/index.php/Benchmarking
+
+---
+
+## Filesystem
+
+
+### `iotop` ⭐️
+
+Ranks processes by disk IO usage and throughput in realtime.
+
+### `ioping`
+
+Check the response time of a given device or socket. &lt;1ms times with low variance are indicators of a healthy storage device.
+
+```bash
+apt install ioping
+
+ioping /dev/sda
+```
+
+### `lsof` ⭐️
+
+View processes actively reading/writing/locking a given path or device.
+```bash
+lsof +D /some/path/here
+
+# see which processes are actively using a connected USB drive
+lsof +D /media/usb
+
+# see which processes are actively using nvidia GPUs
+lsof /dev/nvidia*
+```
+
+### `fuser`
+
+View processes actively reading/writing/locking a given directory or path.
+```bash
+fuser -a -v -u /some/path/here
+```
+
+### `iostat`
+
+View IO usage stats and avg response times for a given drive in realtime.
+```bash
+# show io stats in human readable sizes for all devices
+iostat -d -m
+
+# show extended stats (w/ human readable sizes) for /dev/sda every 1sec
+iostat -d -m -x 1 /dev/sda
+```
+
+`d_await` is the avg time it took to respond to IO in ms (lower is better)
+`%util` is the percent utilization (lower is better)
+
+- https://www.geeksforgeeks.org/iostat-command-in-linux-with-examples/
+- https://www.thegeekstuff.com/2011/07/iostat-vmstat-mpstat-examples/
+- https://linoxide.com/linux-command/linux-iostat-command/
+- https://www.linuxtechi.com/monitor-linux-systems-performance-iostat-command/
+
+### `zpool iostat` ⭐️
+
+View realtime ZFS IO stats for a pool.
+```bash
+zpool iostat -v poolnametotest 1
+```
+
+### `nfsiostat`
+
+View realtime NFS IO stats.
+```bash
+apt install nfs-common
+
+# show NFS IO stats sorted by operations per second every 1sec
+nfsiostat -s 1
+
+# show NFS IO stats for the mount /mnt/nfs-drive
+nfsiostat /mnt/nfs-drive
+```
+
+- https://manpages.ubuntu.com/manpages/focal/man8/nfsiostat.8.html
+- https://www.thegeekdiary.com/understanding-the-nfsiostat-command-output-examples-included/
+
+### `cifsiostat`
+
+View realtime CIFS IO stats.
+```bash
+apt install sysstat
+
+# show human-readable CIFS IO stats in megabytes every 1sec
+cifsiostat -h -m 1
+```
+
+- https://manpages.ubuntu.com/manpages/focal/en/man1/cifsiostat.1.html
+- https://zoomadmin.com/HowToLinux/LinuxCommand/cifsiostat
+- https://github.com/sysstat/sysstat
+
+### `hdparm`
+
+One-off command to test disk read/write speed.
+```bash
+hdparm -Tt /dev/sda
+```
+
+### `bonnie++`
+
+One-off command to test disk read/write speed at a variety of block sizes.
+```bash
+# bonnie++ -d [TEST_LOCATION] -s [TEST_SIZE] -n 0 -m [TEST_NAME] -f -b -u [USER]
+
+# simple example with a 1 gigabyte test file on /media/somedisk
+bonnie++ -d /media/somedisk -s 1G ...
+
+# full example with a 4 gigabyte test file on 
+bonnie++ -d /media/somedisk -s 4G -n 0 -m TEST -f -b
+```
+
+### `dd` ⭐️
+
+The jack-of-all-trades tool `dd` can also be used for simple disk speed tests.
+```bash
+# create a ramdisk with a large test file in it
+#  this is needed to avoid being CPU or disk-speed limited
+#  when reading our random test data to write during the test
+mkdir /mnt/ramdisk
+mount -t tmpfs -o size=1024m tmpfs /mnt/ramdisk
+dd if=/dev/urandom of=/mnt/ramdisk/testfile bs=1M count=1024 status=progress
+
+# to test the write speed of a disk
+sync
+dd if=/mnt/ramdisk/testfile of=/mnt/disktotest/testfile bs=1M count=1024 oflag=dsync status=progress
+
+# to test the read speed of a disk
+echo 3 &gt; /proc/sys/vm/drop_caches
+dd if=/mnt/disktotest/testfile of=/dev/null bs=1M count=1024 status=progress
+```
+
+### `df`
+
+Show the space available on a given filesystem.
+
+```bash
+df -h /
+```
+
+### `ncdu` ⭐️
+
+Analyze a directory to find all the largest files.
+```bash
+# show tree of largest files and dirs on / filesystem
+ncdu -x /
+
+# show tree of largest files and dirs in all filesystems below /mnt
+ncdu /mnt
+```
+
+### `find`
+
+```bash
+# list files ordered by modified date from most recent to least recently modified
+find /some/path -mtime -1 -lsblk
+```
+
+### `parted`
+
+```bash
+# list all drives and partitions
+parted /dev print all
+```
+
+### `blkid`
+
+```bash
+# list all partitions with their UUIDs, filesystem types, and labels
+blkid
+```
+
+### `lsblk` ⭐️
+
+```bash
+# show the partition tree with filesystem types, mountpoints, permissions, and sizes
+lsblk -f -m
+
+# show drives only with no partitions or headers
+lsblk --nodeps --noheadings
+```
+
+### `fdisk` ⭐️
+
+```bash
+# list detailed information about disk device models, sector alignment and sizes, partition maps, partition types, block sizes
+fdisk -l
+```
+
+---
+
+## Network
+
+### `nethogs` ⭐️
+
+Show a list of processes sorted by network activity in realtime.
+
+```bash
+apt install nethogs
+
+# show process traffic across all interfaces
+nethogs
+
+# show process traffic between all hosts on eno2 in promiscous mode
+nethogs -p eno2
+```
+
+### `iftop`
+
+Lists active network connections sorted by activity level in realtime.
+
+```bash
+# show all connections with ports
+iftop -P
+
+# show only connections on eno1 to/from 192.168.1.10
+iftop -P -i eno1 -f &#34;host 192.168.1.10&#34;
+
+# show traffic between all hosts on eno2 in promiscuous mode (if available)
+iftop -P -i eno2 -p
+
+# when inside of tmux/screen you may need to set TERM manually for pretty output
+env TERM=xterm-256color iftop
+```
+
+- https://www.systutorials.com/docs/linux/man/8-iftop/
+- https://www.thegeekstuff.com/2008/12/iftop-guide-display-network-interface-bandwidth-usage-on-linux/
+- https://github.com/srix/iftopcolor
+
+### `iptraf-ng`
+
+Show a real-time updating list of all connections by host `iftop`, with a log of the packets being sent. Can also show a statistical summaries of traffic per-host, per-interface, or per-packet-type.
+
+```bash
+iptraf-ng
+```
+
+- https://linux.die.net/man/8/iptraf-ng
+- https://wiki.ipfire.org/addons/iptraf-ng
+
+### `pktstat`
+
+Display list of active connections including any HTTP requests within each connection.
+```bash
+# list active connections and requests on all interfaces sorted by traffic volume
+pktstat -t
+
+# list active connections and requests on eth0 with full hostnames and Byte totals
+pktstat -i eth0 -t -B -F -T
+```
+
+### `speedometer` / `nload` / `bmon` / `slurm` / `bwm-ng` / `cbm` / `netload` / `ifstat` / etc.
+
+Show realtime staticstics/graphs of total network traffic on the system.
+These all work similarly and can be installed via most system package managers.
+
+```bash
+# Show a fancy colored realtime graph of sent and received traffic on eth0
+speedometer -r eth0 -t eth0
+```
+
+- https://www.binarytides.com/linux-commands-monitor-network/
+
+### `netstat` ⭐️
+
+View information about processes bound to ports and active network connections.
+
+```bash
+# list processes listening on all ports (UDP &amp; TCP, IPv4 &amp; IPv6)
+netstat -tulpn
+
+# list all active connections with their current status
+netstat -tupn
+
+# list all active connections with their current status and realtime updating
+netstat -tupnc
+
+# show summary stats each type of socket
+netstat -i
+
+# show summary stats for type of protocol
+netstat -s
+
+# or show socket stats using ss
+ss -s
+```
+
+- https://www.geeksforgeeks.org/netstat-command-linux/
+- https://www.thegeekstuff.com/2010/03/netstat-command-examples/
+
+### `ethtool`
+
+Show information about the kernel module / driver powering a given network interface.
+
+```bash
+apt install ethtool
+
+# show speed, duplex, and additional metadata for eth0 interface
+ethtool eth0
+
+# show feature flags status for eth0 interface
+ethtool -k eth0
+
+# show transfer stats for eth0 interface
+ethtool -S eth0
+
+# show the eth0 driver / kernel module
+ethtool -i eth0
+
+# identify the physical eth0 ethernet port by blinking its LED
+ethtool -p eth0
+```
+
+- https://linux.die.net/man/8/ethtool
+- https://www.thegeekstuff.com/2010/10/ethtool-command/
+
+### `ip`/`ifconfig`
+
+View network interface and routing table information.
+
+```bash
+# print entire routing table
+ip route
+# or on BSD systems
+route -n
+
+# get the default &#34;next hop&#34; route for the end destination 192.168.1.2
+ip route get 192.168.1.2
+# or on BSD systems
+route get 192.168.1.2
+
+# interface info with human-readable sizes for the eno1 interface
+ip -s -h link show eno1
+# or on BSD systems
+ifconfig eno1
+
+# show transfer stats for each interface
+ip -s link
+# or on BSD systems
+ifconfig
+```
+
+- https://linuxize.com/post/linux-ip-command/
+- https://www.cyberciti.biz/faq/linux-ip-command-examples-usage-syntax/
+- https://www.tecmint.com/ip-command-examples/
+- https://phoenixnap.com/kb/linux-ip-command-examples
+
+### `ping`/`tcping`/`arping`
+
+Basic ICMP/TCP/ARP ping utilities (you cant ping over UDP unless you have a process running on the server to send back a UDP response, like `iperf`).
+
+```bash
+apt install ping
+
+# ping a given IP/host 10 times using ICMP with a 5sec timeout for each packet
+ping -c 10 -t 5 &lt;IP/host&gt;
+```
+
+- https://linux.die.net/man/8/ping
+- https://www.howtoforge.com/linux-ping-command/
+
+```
+apt install tcping
+# send 10 TCP packgets to a given IP/host:80 with a 1sec delay between each
+tcping -ip &lt;IP/host&gt; --port 80 --number 10 --sleep 1000
+```
+
+- https://github.com/AyoobAli/TCPing
+- https://techtalk.gfi.com/troubleshooting-networks-with-tcping/
+
+
+```bash
+apt install arping
+
+# ask peers on the network for the MAC address associated with 192.168.1.2
+arping 192.168.1.2
+
+# check for duplicate responses for the IP 192.168.1.5 (to detect ARP spoofing)
+arping -d 192.168.1.4
+```
+
+- https://manpages.ubuntu.com/manpages/focal/man8/arping.8.html
+- https://www.poftut.com/arping-command-tutorial-examples-linux/
+- https://devconnected.com/arping-command-on-linux-explained/
+
+### `arpwatch`
+
+Monitor new ARP cache entries broadcased by devices on your local network.
+
+```bash
+apt install net-tools arpwatch
+
+# show new ARP mappings announced on eth0 interface
+arpwatch -i eth0
+
+# show entire arp table
+arp -a -v
+
+# print only the arp entries for the host 192.168.1.2 on the interface eno1
+arp -i eno1 -a 192.168.1.2
+```
+
+- https://linux.die.net/man/8/arpwatch
+- https://www.tecmint.com/monitor-ethernet-activity-in-linux/
+- https://www.geeksforgeeks.org/arp-command-in-linux-with-examples/
+- https://www.computerhope.com/unix/arp.htm
+
+### `iperf`/`iperf3` ⭐️
+
+One-off command to test network speed over a single/multiple connections.
+
+```bash
+apt install iperf
+
+# on the server
+iperf -s
+
+# on the client
+iperf -c &lt;ip/host of server&gt;
+```
+
+```bash
+apt install iperf3
+
+# on the server
+iperf3 -s
+
+# on the client
+iperf3 -c &lt;ip/host of server&gt;
+```
+
+(make sure to swap the client &amp; server to test in both directions for the most accurate results)
+
+- https://iperf.fr/iperf-doc.php
+- https://fasterdata.es.net/performance-testing/network-troubleshooting-tools/iperf/
+- https://support.cumulusnetworks.com/hc/en-us/articles/216509388-Throughput-Testing-and-Troubleshooting
+- https://www.tecmint.com/test-network-throughput-in-linux/
+
+### `nuttcp`
+
+One-off command to test network speed with advanced options for TCP/UDP bursting, timing, packet sizes, and more. Better than `iperf` for stress testing network edge-conditions, buffer sizes of intermediate devices, or extremely high-bandwidth links.
+
+```bash
+apt install nuttcp
+
+# on the server
+nuttcp -S
+
+# on the client
+nuttcp -i1 &lt;ip/host of server&gt;
+
+# send 300 Mbps of UDP traffic in bursts of 50 packets for 5 seconds
+nuttcp -u -Ri300m/50 -i 1 -T5 &lt;ip/host of server&gt;
+
+# saturate a 10Gbit connection with a 9K MTU using max-size UDP packets (len=8972)
+nuttcp -l8972 -T30 -u -w4m -Ru -i1 &lt;ip/host of server&gt;
+```
+
+- https://fasterdata.es.net/performance-testing/network-troubleshooting-tools/nuttcp/
+- https://www.systutorials.com/docs/linux/man/8-nuttcp/
+- https://manpages.ubuntu.com/manpages/focal/man8/nuttcp.8.html
+
+### `speedtest-cli`
+
+A CLI to test your internet speed using the speedtest.net service.
+
+```bash
+pip install speedtest-cli
+
+speedtest-cli
+```
+
+- https://github.com/sivel/speedtest-cli
+- https://www.speedtest.net/apps/cli
+
+### `dig`
+
+You can test DNS resolution time using dig.
+
+```bash
+apt install dnsutils
+
+# simple example using system default resolver
+dig -4 +trace example.com
+
+# full example using 1.1.1.1 as the resolver with DNSSEC checking
+dig -4 +dnssec +multi +trace @1.1.1.1 example.com
+
+# get your public IP address using the opendns reflector resolver
+dig -4 +short myip.opendns.com @resolver1.opendns.com
+```
+
+### `mtr` ⭐️
+
+Traceroute tool that shows realtime ping speed to all hops between you and a destination in realtime.
+
+```bash
+apt install mtr
+
+# Simple trace of connection to example.com using ICMP
+mtr example.com
+
+# Full trace showing AS numbers, IP addresses, and ICMP extension info
+mtr --show-ips --aslookup --mpls --max-ttl 20 example.com
+
+# Trace using TCP port 80 instead
+mtr --tcp --port 80 example.com
+
+# Trace using UDP port 
+mtr --udp --port 80 example.com
+```
+
+- https://www.digitalocean.com/community/tutorials/how-to-use-traceroute-and-mtr-to-diagnose-network-issues
+- https://www.cloudflare.com/learning/network-layer/what-is-mtr/
+- https://vitux.com/how-to-use-the-linux-mtr-command/
+
+### `nmap` ⭐️
+
+Jack-of-all-trades port-scanner, network scanner, fingerprinter, and network tester.
+
+```bash
+apt install nmap
+
+# scan all TCP ports on a given host
+nmap -p 1-65535 -T4 -A -v &lt;IP/hostname&gt;
+
+# detect host OS and protocols on open ports
+nmap -sO &lt;IP/hostname&gt;
+```
+
+- https://nmap.org/
+- https://nmap.org/book/man-examples.html
+- https://www.tecmint.com/nmap-command-examples/
+
+### `tcpdump` + `wireshark`
+
+Collect a dump of all packets sent/received and inspect their contents.
+
+```bash
+# capture all packets on eth0 port 80, without resolving hostnames/ports
+tcpdump -i eth0 -nn -s0 -v port 80
+
+# show all HTTP GET/POST requests on all interfaces
+tcpdump -s0 -v -n -l | grep -E -i &#34;POST /|GET /|Host:&#34;
+
+# capture all packets on eth0 and write them to test.pcap
+tcpdump -i eth0 -s0 -w test.pcap
+
+# open a given pcap capture file in the wireshark GUI
+wireshark -r test.pcap
+```
+
+- https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html
+- https://hackertarget.com/tcpdump-examples/
+- https://danielmiessler.com/study/tcpdump/
+
+### `ssldump`
+
+```bash
+ssldump -k cert.key -i eth0 -dn host 123.123.123.123 and port 443
+```
+
+---
+
+## Hardware
+
+### `sensors`
+
+Monitor hardware sensor values (e.g. temp, frequency, etc.).
+
+```bash
+apt install lm-sensors
+sensors-detect
+
+watch sensors
+```
+
+### `ipmitool`
+
+Show additional sensor values not accessible to `lm-sensors`.
+
+```bash
+apt install ipmitool
+
+# show all sensor values including voltage, current, temp, fan speeds, etc.
+ipmitool sensor
+
+# show ambient air temperature
+ipmitool sdr type temperature | grep &#39;degrees C&#39;
+
+# get chassis hardware and power status information
+ipmitool chassis status
+```
+
+### `i7z`
+
+Show the the C-states and temperature for i3, i5 and i7 based Core processors from Intel.
+
+```bash
+apt install i7z
+
+i7z
+```
+
+### `cpufreq-info` ⭐️
+
+Show information about current CPU frequency, hardware limits, active governor policy, and more.
+
+```bash
+apt install cpufrequtils
+
+# view CPU frequency info
+cpufreq-info
+
+# set upper CPU frequency limit to 1.6Ghz
+cpufreq-set -u 1.6Ghz
+
+# set the governor to userspace-controlled frequency with a constant 800Mhz frequency
+cpufreq-set -g userspace
+cpufreq-set -f 800Mhz
+```
+
+- http://www.thinkwiki.org/wiki/How_to_use_cpufrequtils
+- https://wiki.debian.org/CpuFrequencyScaling
+- https://wiki.archlinux.org/index.php/CPU_frequency_scaling
+- https://www.kernel.org/doc/Documentation/cpu-freq/boost.txt
+
+### `cpupower`
+
+Get information about CPU clock speeds, governors, and power modes.
+
+```bash
+# show information on frequencies, turbo-boost, and transition speeds of installed CPUs
+cpupower frequency-info
+
+# show information about available idle states of installed CPUs
+cpupower idle-info
+
+# show per-core breakdown of usage, frequency, clock speed, and idle stats
+cpupower monitor
+```
+
+### `powertop` ⭐️
+
+Monitor CPU power consumption and power management on Linux.
+
+```bash
+apt install powertop
+
+# show breakdown of power usage per-process in watts, cpu usage time, events/s and more
+powertop
+```
+
+- https://github.com/fenrus75/powertop
+- https://wiki.archlinux.org/index.php/Powertop
+
+
+### `dmidecode`
+
+```bash
+# show SMBIOS data from sysfs about CPU sockets, vendors, architectures, available feature flags, versions, clock speeds, hyperthreading, turbo-boost, and more
+dmidecode -t 4
+
+# show system hardware summary
+dmidecode --type system -q
+
+# show processor hardware summary
+dmidecode -q --type processor
+
+# show memory hardware summary
+dmidecode -q --type memory
+dmidecode --type 17
+free -m -h -t
+```
+
+
+### `smartctl` ⭐️
+
+Monitor disk SMART sensor values and statuses (e.g. temp, power-on hours, write errors, etc.).
+
+```bash
+apt install smartmontools
+
+# get all the SMART values and information for /dev/sdc
+smartctl --all /dev/sdc
+```
+
+
+### `apcaccess status`
+
+Monitor UPS power usage, battery level, voltage, and other stats.
+
+```bash
+apt install apcupsd
+
+# enable in config
+ echo &#34;UPSCABLE usb&#34; &gt;&gt; /etc/apcupsd/apcupsd.conf
+echo &#34;UPSTYPE usb&#34; &gt;&gt; /etc/apcupsd/apcupsd.conf
+echo &#34;DEVICE&#34; &gt;&gt; /etc/apcupsd/apcupsd.conf
+echo &#34;ISCONFIGURED=yes&#34; &gt; /etc/default/apcupsd
+systemctl enable apcupsd
+systemctl start apcupsd
+
+# show curent power draw, max power draw, battery level, voltage, runtime, etc.
+apcaccess status
+```
+
+
+### `lshw` ⭐️
+
+Show the entire hardware information tree with all info.
+
+```bash
+lshw
+
+# less verbose output
+lshw -short
+
+# fetch SCISI, USB, PCI, etc. extended bus information
+lshw -businfo
+
+# output an HTML summary
+lshw -html &gt; hardware.html
+```
+
+- https://linux.die.net/man/1/lshw
+- https://ezix.org/project/wiki/HardwareLiSter
+- https://github.com/lyonel/lshw
+- https://www.howtoforge.com/linux-lshw-command/
+
+### `lsusb`
+
+Show information about attached USB devices and connection topology.
+
+```bash
+# show all USB device info in tree format including vendor information
+lsusb -v -t
+```
+
+### `usb-devices` ⭐️
+
+List attached USB device BUS IDs + type, device IDs, vendor IDs, serial numbers, driver, feature flags, and power consumption info.
+
+```bash
+usb-devices
+```
+
+### `camcontrol`
+
+Show information about available hardware on FreeBSD systems using the CAM system.
+
+```bash
+camcontrol devlist
+```
+
+- https://www.freebsd.org/cgi/man.cgi?query=camcontrol&amp;sektion=8
+
+
+### `dmesg` ⭐️
+
+View kernel log output related to hardware devices, including connection/disconnection events, errors, warnings, debug info, and more.
+
+```bash
+dmesg
+```
+
+- https://man7.org/linux/man-pages/man1/dmesg.1.html
+- https://www.tecmint.com/dmesg-commands/
+- https://www.linuxtechi.com/10-tips-dmesg-command-linux-geeks/
+
+### `last`
+
+Show information and logs from the most recent boot.
+
+```bash
+# show last boot log w/ init level changes, full usernames, and timestamps
+last -x -w -F | tac
+```
+
+---
+
+## Virtual Machines / Containers
+
+### `ctop` ⭐️
+
+`htop` equivalent for monitoring containers, works for Docker and runC and has pretty colors.
+```bash
+brew install ctop
+
+# show performance stats, entrypoint, and health of all active containers
+ctop -a
+```
+
+(see [`glances`](#glances-⭐%EF%B8%8F) for `htop` + `ctop` all-in-one)
+
+- https://github.com/bcicen/ctop
+- https://www.tecmint.com/ctop-monitor-docker-containers/
+
+### `docker stats`
+
+The docker equivalent of `top`. Uncolored output, one row per container.
+```bash
+docker stats
+```
+
+- https://docs.docker.com/engine/reference/commandline/stats/
+
+### `virt-top`
+
+Monitor performance statistics of virtual machines on a KVM host.
+
+```bash
+apt install virt-top
+
+virt-top
+```
+
+- https://linux.die.net/man/1/virt-top
+- https://github.com/olafhering/virt-top
+- https://packages.debian.org/stretch/virt-top
+
+### `esxtop`
+
+Monitor performance statistics of virtual machines on an ESXi host.
+
+```bash
+ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="44372b2921313721360421373c2d692c2b3730">[email&#160;protected]</a> esxtop
+```
+
+- https://kb.vmware.com/s/article/1008205
+- http://www.yellow-bricks.com/esxtop/
+- https://www.virten.net/vmware/esxtop/
+
+---
+
+## Services
+
+### `pg_top` ⭐️
+
+Show PostgreSQL performance information.
+
+```bash
+apt install pgtop
+
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bacad5c9ceddc8dfc9fad6d5d9dbd6d2d5c9ce">[email&#160;protected]</a>:5432/example and show perf stats w/ color
+pg_top --color-mode -h localhost -p 5432 -d example -U postgres
+```
+
+- https://gitlab.com/pg_top/pg_top
+- https://manpages.ubuntu.com/manpages/focal/man1/pg_top.1.html
+- https://metacpan.org/pod/release/COSIMO/pgtop-0.05/pgtop
+- https://severalnines.com/database-blog/dynamic-monitoring-postgresql-instances-using-pgtop
+
+### `mytop`
+
+Show MySQL performance information.
+
+```bash
+apt install mytop myps
+
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="422f3b31332e022e2d21232e2a2d3136">[email&#160;protected]</a>:3306/example and show perf stats w/ color
+mytop -color -h localhost -P 3306 -u mysql -d example
+```
+
+- http://jeremy.zawodny.com/mysql/mytop
+- https://manpages.ubuntu.com/manpages/focal/en/man1/mytop.1p.html
+- https://www.tecmint.com/mytop-mysql-mariadb-database-performance-monitoring-in-linux/
+- https://github.com/kazeburo/myps
+
+### `redis-stat`
+
+Show Redis performance information.
+
+```bash
+gem install redis-stat    # also available as a JAR file
+
+# show performance stats of a redis db on localhost:6380 every 1sec
+redis-stat --verbose localhost:6380 1
+
+# you can also use redis&#39;s built-in monitoring commands
+redis-cli INFO
+redis-cli MONITOR
+```
+
+- https://github.com/junegunn/redis-stat
+- https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/
+- https://redis.io/commands/monitor
+- https://blog.serverdensity.com/monitor-redis/
+
+### `ngxtop` ⭐️
+
+Show Nginx performance information.
+
+```bash
+pip install ngxtop
+
+# show summary of performance and breakdown by request URL
+ngxtop
+
+# show summary of usage by client IP
+ngxtop top remote_addr
+
+# show 4xx/5xx responses by referrer
+ngxtop -i &#39;status &gt;= 400&#39; print request status http_referer
+```
+
+- https://github.com/lebinh/ngxtop
+- https://github.com/gsquire/topngx
+
+### `apachetop`
+
+Show Apache performance information.
+
+```bash
+apt install apachetop
+
+# show performance statistics parsed from the example.com access_log
+apachetop -f /var/www/vhosts/example.com/statistics/logs/access_log
+```
+
+- https://linux.die.net/man/1/apachetop
+- https://www.howtogeek.com/howto/ubuntu/monitor-your-website-in-real-time-with-apachetop/
+- https://www.liquidweb.com/kb/how-to-install-and-use-apachetop/
+- https://github.com/fr3nd/apache-top
+- https://www.tecmint.com/monitor-apache-web-server-load-and-page-statistics/
+- https://httpd.apache.org/docs/2.4/mod/mod_status.html
+
+### `uwsgitop`
+
+Show uWSGI performance information.
+
+```bash
+pip install uwsgitop
+
+# enable the stats socket on the server
+uwsgi --module myapp --socket :3030 --stats /tmp/stats.socket
+
+# then connect to it with uwsgitop
+uwsgitop /tmp/stats.socket
+```
+
+- https://github.com/xrmx/uwsgitop
+- https://www.engagespark.com/blog/deploying-monitoring-python-web-apps-uwsgi/
+
+---
+
+## Other
+
+
+### `systemd-analyze`
+
+Useful for track down the cause of slow boots and other startup service issues.
+
+```bash
+# list all processes that started at boot, ordered from slowest to fastest
+systemd-analyze blame
+
+# plot the services that ran at boot as a pretty SVG with colors
+systemd-analyze plot &gt; boot-trace.svg
+
+# see what security permissions the docker service has enabled
+systemd-analyze security docker
+```
+
+### `strace`/`dtrace` ⭐️
+
+Trace the system calls of a given process to watch what it&#39;s doing internally.
+```bash
+# Run `ls /home` and print all system calls to stdout
+strace ls /home
+
+# Print &#39;open&#39; or &#39;read&#39; system calls with timestamps
+strace -t -e open,read ls /home
+
+# Attach to a running process by PID
+strace -p 1234
+```
+
+(`dtrace` is the BSD equivalent to `strace`)
+
+- https://www.tecmint.com/strace-commands-for-troubleshooting-and-debugging-linux/
+- https://www.thegeekstuff.com/2011/11/strace-examples/
+
+### `ltrace`
+
+Trace the dynamic calls made to shared libraries to see how processes are using shared libs.
+
+```bash
+# attach to a specific PID and show call names with start timestamp and duration
+ltrace -t -T -p 1234
+
+# Run `docker ps` and only show calls made to the libselinux.so dylib (with timestamps)
+ltrace -t -T -l /lib/libselinux.so.1 docker ps
+```
+
+- https://gitlab.com/cespedes/ltrace
+- https://manpages.ubuntu.com/manpages/cosmic/man1/ltrace.1.html
+
+### `watch`
+
+Watch the output of any command for changes and highlight the diff, useful in conjuction with other tools below.
+
+```bash
+# show changes in the output of `ip -s link show eno1` highlighting network IO
+watch -n1 -d ip -s link show eno1
+
+# show changes in the output of `lsof +D /mnt/somedrive` highlighting accesses
+watch -n1 -d lsof +D /media/kenza
+```
+
+### `uname`
+
+Get active kernel and architecture information.
+```bash
+uname --all
+
+# or to only get architecture
+arch
+```
+
+### `lsmod`
+
+Get active kernel module list.
+
+```bash
+lsmod
+```
+
+### `lsb_release`
+
+Get Ubuntu version info.
+
+```bash
+lsb_release --all
+```
+
+---
+
+## Bonus tools
+
+These tools are not related to system monitoring and introspection, but nevertheless I use them enough that I figure they might be useful to people reading this article.
+
+### `fish`/`tmux`/`tmux2html`/`nohup`/`shellcheck`
+
+Shells / screen / script running utils.
+
+```bash
+# stream your tmux window as a live-updating HTML UI on http://0.0.0.0:8000
+pip install tmux2html
+tmux2html -o index.html --stream --interval 1 0
+python3 -m http.server --directory . --bind 0.0.0.0 --port 8000
+```
+
+### `ag`/`ripgrep`
+
+`grep -r`/`git grep` replacement with much faster performance and additional features.
+
+```bash
+apt install silversearcher-ag
+
+ag &#39;some-regex&#39; .
+```
+
+### `autojump`/`exa`
+
+`cd` and `ls` replacements.
+```bash
+brew install exa
+
+exa --header --group-directories-first -s name \
+    --time-style=long-iso --created --modified \
+    --all --long --extended --group --git --classify --icons \
+    --ignore-glob=.DS_Store \
+    /some/directory/path
+```
+
+### `micro`/`bat`/`most`
+
+`nano`, `cat`, and `less` alternatives with multi-cursor selection, syntax highlighting, mouse support, and more.
+
+```bash
+apt install bat most
+brew install micro
+
+most /path/to/some/file.js
+bat /path/to/some/file.js
+micro /path/to/some/file.js
+```
+
+### `jq`/`yq`/`mlr`/`confget`/`plutil`
+
+Parsers for JSON, YAML, XML, CSV, INI, and PLIST formats.
+
+### `rsync`/`rclone`/`rsnapshotd`
+
+Backup and file syncing tools.
+
+```bash
+apt install rclone rsync rsnapshotd
+
+# sync some local files to a remote server over ssh/rsyncd
+rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d383e283f0d25223e39">[email&#160;protected]</a>:/some/remote/path
+
+# sync some local files to a remote directory on a cloud storage provider
+rclone sync source:path dest:path [flags]
+
+# mount remote dir as a local FUSE filesystem
+rclone mount remote:path/to/files /path/to/local/mount
+
+# take an rsync+hardlink snapshot of all the sources set in /etc/rsnapshot.conf
+rsnapshot
+
+# or take a zfs snapshot of a given pool/dataset
+zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="224643564351475662514c4352514a4d564c434f47">[email&#160;protected]</a>
+```
+
+### `watchdog`/`auditd`/`acct`
+
+System event mointoring and alerting tools.
+
+### `gddrescue`/`dd_rescue`/`ddrescue-gui`/`recoverdisk`/`safecopy`
+
+- https://askubuntu.com/questions/211578/whats-the-difference-between-ddrescue-gddrescue-and-dd-rescue
+
+### `apt-mark showmanual`/`apt list --installed`/`apt-file search &lt;filename&gt;`
+
+Useful package management commands.
+
+### `mkcert`/`certbot`
+
+SSL certificate issuing tools.
+
+### `tailscale`/`wireguard`
+
+VPN layers.
+
+### `webmin`/`cockpit`
+
+Web GUI system control panels.
+
+### `op`/`passman`/`keyring`/`uuidgen`
+
+Password, secret, and token generators/managers.
+
+### `zfs`/`nfs`/`samba`/`glusterfs`
+
+Filesystems.
+
+---
+
+&lt;center&gt;
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_b1a12c430204a4d8e76fdd8c982e5dd1.png&#34; style=&#34;height: 40px;&#34;&gt; &amp;nbsp; &lt;i style=&#34;font-size: 1.1em&#34;&gt;&lt;a href=&#34;https://monadical.com/contact-us.html&#34;&gt;Monadical does system administration, dev-ops, and web development for-hire &lt;i class=&#34;fa fa-angle-double-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/i&gt;
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="system-monitoring-tools.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+<script data-cfasync="false" src="https://docs.monadical.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                <div style="padding-top: 10px">
+                    Nick Sweeting
+                    <h4>
+                        Co-Founder
+                        
+                        <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
+                            @theSquashSH
+                        </a>
+                    </h4>
+                    <h5>Published on <a href="#permalink">2020-09-01</a></h5>
+                </div>
+                <img src="/static/nick.jpg" width="100px"/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Some other posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/system-monitoring-tools.html">Unix System Monitoring and Diagnostic CLI Tools</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/moving-to-linux-desktop.html">The Year of the Linux Desktop</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/open-source-innovation-technology.html">Why Open Source Projects Are Key to Innovation &amp; Technology</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/knowledge-in-box.html">How to Fit All Human Knowledge in a Box</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/system-monitoring-tools', {mode: 'no-cors'})
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <br/><br/>
+    </div>
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b> Remote & Physical Offices</li>
+                        <li><b title="NYC, USA">New York</b> Remote Offices</li>
+                        <li><b title="Medellín, Colombia">Medellín</b> Remote Offices</li>
+                        <li><b title="Cali, Colombia">Cali</b> Remote Offices</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <li><a href=/services.html>Services</a></li>
+                        <li><a href=/projects.html>Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href=/team.html>Team</a></li>
+
+                        <li><a href=/principles.html>Principles</a></li>
+                        <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Company</b>
+                        </li>
+                        <li>
+                            <a href=/blog.html>Blog</a>
+                        </li>
+                        <li>
+                            <a href="/contact-us.html">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>Monadical Inc. © 2020 All rights reserved.</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>hello@monadical.com</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>+1 (917) 933-3760</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script src="/static/squares.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
+</html>

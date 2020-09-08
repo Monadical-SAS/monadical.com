@@ -197,9 +197,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (UTC)" data-updatetime="Wed Sep 02 2020 05:51:05 GMT+0000 (UTC)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (UTC)" data-updatetime="Fri Sep 04 2020 00:29:37 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">832 views <a href="system-monitoring-tools.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3009 views <a href="system-monitoring-tools.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -234,12 +234,14 @@ tags: cli, tools, linux, devops, sysadmin, ubuntu, debian, freebsd, macos
 **CLI Usage Reference Tools:**
 
 - https://linux.die.net/man/
+- https://wiki.tilde.fun/admin/linux/cli/start
 - https://explainshell.com/
 - https://tldr.sh/
 - http://bropages.org/
 
 **Guides:**
 
+- http://www.brendangregg.com/linuxperf.html
 - https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/
 - https://www.thegeekstuff.com/2011/03/linux-performance-monitoring-intro/
 - https://www.opsdash.com/blog/disk-monitoring-linux.html
@@ -248,7 +250,8 @@ tags: cli, tools, linux, devops, sysadmin, ubuntu, debian, freebsd, macos
 
 Below is a collection of CLI tools that I&#39;ve personally used while doing Linux/BSD systems administration over the past 10+ years. Some of them I use daily, others I only use once a year... but when I need them, boy am I glad they exist!
 
-I&#39;ve addedd a ⭐️ next to utilities that I find to be extremely well-built or well-suited to solving their particular task.
+- `⭐️` I&#39;ve added a star next to utilities that I find to be extremely well-built or well-suited to solving their particular task
+- `🌈` Utiltities marked with a rainbow have glorious xterm256/full-color output
 
 On non-Ubuntu/Debian-based Linuxes you should replace any instance of `apt install xyz` below with `pkg install xyz`/`brew install xyz`/`yum install xyz`/`nix install xyz`/etc. depending on your respective system.
 
@@ -259,7 +262,7 @@ If you would like to suggest changes/additions to this list you can comment on [
 
 ## All-in-one tools
 
-### `glances` ⭐️
+### `glances` ⭐️ 🌈
 
 `htop`, `iftop`, `iotop`, `gpustat`, `ctop`, and more, all rolled into one tool.
 Prints pretty much everything you need to know at a glance, including container resource usage, active processes, network and disk IO usage, and other stats.
@@ -278,7 +281,7 @@ glances -w -B 0.0.0.0 -p 8787
 - https://glances.readthedocs.io/en/stable/cmds.html
 - https://opensource.com/article/19/11/monitoring-linux-glances
 
-### `nmon`
+### `nmon` 🌈
 
 Jack-of-all-trades tool similar to `glances`, but with an interactive CLI UI to switch between panes for each type of resource.
 
@@ -426,7 +429,7 @@ top
 - https://linux.die.net/man/1/top
 - https://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/
 
-### `htop` ⭐️
+### `htop` ⭐️ 🌈
 
 A better version of `top`.
 
@@ -516,7 +519,9 @@ vmstat -d
 
 ## GPU
 
-### `gpustat` ⭐️
+### `gpustat`
+
+(Only works for NVidia GPUs.)
 
 ```bash
 pip install gpustat
@@ -754,7 +759,7 @@ Show the space available on a given filesystem.
 df -h /
 ```
 
-### `ncdu` ⭐️
+### `ncdu` ⭐️🌈
 
 Analyze a directory to find all the largest files.
 ```bash
@@ -796,7 +801,7 @@ lsblk -f -m
 lsblk --nodeps --noheadings
 ```
 
-### `fdisk` ⭐️
+### `fdisk` ⭐️🌈
 
 ```bash
 # list detailed information about disk device models, sector alignment and sizes, partition maps, partition types, block sizes
@@ -807,7 +812,7 @@ fdisk -l
 
 ## Network
 
-### `nethogs` ⭐️
+### `nethogs` ⭐️🌈
 
 Show a list of processes sorted by network activity in realtime.
 
@@ -843,7 +848,7 @@ env TERM=xterm-256color iftop
 - https://www.thegeekstuff.com/2008/12/iftop-guide-display-network-interface-bandwidth-usage-on-linux/
 - https://github.com/srix/iftopcolor
 
-### `iptraf-ng`
+### `iptraf-ng`🌈
 
 Show a real-time updating list of all connections by host `iftop`, with a log of the packets being sent. Can also show a statistical summaries of traffic per-host, per-interface, or per-packet-type.
 
@@ -865,7 +870,7 @@ pktstat -t
 pktstat -i eth0 -t -B -F -T
 ```
 
-### `speedometer` / `nload` / `bmon` / `slurm` / `bwm-ng` / `cbm` / `netload` / `ifstat` / etc.
+### `speedometer` / `nload` / `bmon` / `slurm` / `bwm-ng` / `cbm` / `netload` / `ifstat` / etc. 🌈
 
 Show realtime staticstics/graphs of total network traffic on the system.
 These all work similarly and can be installed via most system package managers.
@@ -1397,7 +1402,7 @@ last -x -w -F | tac
 
 ## Virtual Machines / Containers
 
-### `ctop` ⭐️
+### `ctop` ⭐️🌈
 
 `htop` equivalent for monitoring containers, works for Docker and runC and has pretty colors.
 ```bash
@@ -1440,7 +1445,7 @@ virt-top
 Monitor performance statistics of virtual machines on an ESXi host.
 
 ```bash
-ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="10637f7d756563756250756368793d787f6364">[email&#160;protected]</a> esxtop
+ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="24574b4941515741566441575c4d094c4b5750">[email&#160;protected]</a> esxtop
 ```
 
 - https://kb.vmware.com/s/article/1008205
@@ -1458,7 +1463,7 @@ Show PostgreSQL performance information.
 ```bash
 apt install pgtop
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e3e213d3a293c2b3d0e22212d2f2226213d3a">[email&#160;protected]</a>:5432/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7909160a0d1e0b1c0a3915161a181511160a0d">[email&#160;protected]</a>:5432/example and show perf stats w/ color
 pg_top --color-mode -h localhost -p 5432 -d example -U postgres
 ```
 
@@ -1474,7 +1479,7 @@ Show MySQL performance information.
 ```bash
 apt install mytop myps
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0bda9a3a1bc90bcbfb3b1bcb8bfa3a4">[email&#160;protected]</a>:3306/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdd0c4ceccd1fdd1d2dedcd1d5d2cec9">[email&#160;protected]</a>:3306/example and show perf stats w/ color
 mytop -color -h localhost -P 3306 -u mysql -d example
 ```
 
@@ -1612,6 +1617,26 @@ ltrace -t -T -l /lib/libselinux.so.1 docker ps
 - https://gitlab.com/cespedes/ltrace
 - https://manpages.ubuntu.com/manpages/cosmic/man1/ltrace.1.html
 
+### `binwalk`
+
+Decompiler utility normally used to inspect firmware binaries, but is usefule alon with `strings` to see what a binary contains before you run it.
+
+```python3
+pip3 install &#39;git+https://github.com/ReFirmLabs/binwalk.git&#39;
+
+# extract the full root filesystem from a firmware image binary
+binwalk --extract some_firmware.bin
+
+# show machine instructions used in a given firmware
+binwalk --opcodes some_executable.bin
+
+# show all strings found inside a binary blob
+strings some_binary_blob.exe
+```
+
+- https://github.com/ReFirmLabs/binwalk/blob/master/INSTALL.md
+- https://github.com/ReFirmLabs/binwalk/wiki/quick-start-guide
+
 ### `watch`
 
 Watch the output of any command for changes and highlight the diff, useful in conjuction with other tools below.
@@ -1677,7 +1702,7 @@ apt install silversearcher-ag
 ag &#39;some-regex&#39; .
 ```
 
-### `autojump`/`exa`
+### `autojump`/`exa` 🌈
 
 `cd` and `ls` replacements.
 ```bash
@@ -1690,7 +1715,7 @@ exa --header --group-directories-first -s name \
     /some/directory/path
 ```
 
-### `micro`/`bat`/`most`
+### `micro`/`bat`/`most` 🌈
 
 `nano`, `cat`, and `less` alternatives with multi-cursor selection, syntax highlighting, mouse support, and more.
 
@@ -1705,7 +1730,7 @@ micro /path/to/some/file.js
 
 ### `jq`/`yq`/`mlr`/`confget`/`plutil`
 
-Parsers for JSON, YAML, XML, CSV, INI, and PLIST formats.
+Command-line parsers and manipulators of JSON, YAML, XML, CSV, INI, and PLIST formats.
 
 ### `rsync`/`rclone`/`rsnapshotd`
 
@@ -1715,7 +1740,7 @@ Backup and file syncing tools.
 apt install rclone rsync rsnapshotd
 
 # sync some local files to a remote server over ssh/rsyncd
-rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7603051304361e190502">[email&#160;protected]</a>:/some/remote/path
+rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91e4e2f4e3d1f9fee2e5">[email&#160;protected]</a>:/some/remote/path
 
 # sync some local files to a remote directory on a cloud storage provider
 rclone sync source:path dest:path [flags]
@@ -1727,7 +1752,7 @@ rclone mount remote:path/to/files /path/to/local/mount
 rsnapshot
 
 # or take a zfs snapshot of a given pool/dataset
-zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0a4a1b4a1b3a5b480b3aea1b0b3a8afb4aea1ada5">[email&#160;protected]</a>
+zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="335752475240564773405d5243405b5c475d525e56">[email&#160;protected]</a>
 ```
 
 ### `watchdog`/`auditd`/`acct`

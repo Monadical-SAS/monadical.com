@@ -226,6 +226,53 @@
         "image": "/static/max.jpg"
       }
     },
+    "using-multiple-smtpd-sender-login-maps-in-postfix": {
+      "date": "2020-02-28",
+      "img": "/static/using-multiple-smtpd-sender-login-maps-in-postfix.png",
+      "title": "A Postfix deployment postmortem: Debugging short-circuiting of mapping lookups",
+      "tags": [
+        "yak-shaving",
+        "debugging",
+        "postfix",
+        "linux",
+        "sysadmin"
+      ],
+      "length": "10 min read",
+      "source": "https://docs.monadical.com/s/using-multiple-smtpd-sender-login-maps-in-postfix",
+      "url": "/posts/using-multiple-smtpd-sender-login-maps-in-postfix.html",
+      "template": "posts/using-multiple-smtpd-sender-login-maps-in-postfix.html",
+      "description": "How we tracked down and fixed a bug caused by Postfix’s type:table using the new unionmap feature.",
+      "author": {
+        "name": "Nick Sweeting",
+        "title": "Monadical Co-Founder",
+        "handle": "@theSquashSH",
+        "url": "https://twitter.com/theSquashSH",
+        "image": "/static/nick.jpg"
+      }
+    },
+    "python-performance-profiling": {
+      "date": "2019-12-05",
+      "img": "/static/python-performance-profiling.png",
+      "title": "Python Performance Profiling and Optimization",
+      "tags": [
+        "python",
+        "performance",
+        "profiling",
+        "optimization"
+      ],
+      "length": "5 min read",
+      "source": "https://docs.monadical.com/s/python-performance-profiling",
+      "url": "/posts/python-performance-profiling.html",
+      "template": "posts/python-performance-profiling.html",
+      "description": "Modern techniques for performance profiling & optimization of Python applications.",
+      "author": {
+        "name": "Nick Sweeting",
+        "title": "Monadical Co-Founder",
+        "handle": "@theSquashSH",
+        "url": "https://twitter.com/theSquashSH",
+        "image": "/static/nick.jpg"
+      }
+    },
     "anatomy-of-html-css-js": {
       "date": "2019-02-19",
       "img": "/static/html-tag-attributes.png",

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="Modern techniques for Python performance profiling and optimization.">
+    
+    <title>Python Performance Profiling and Optimization - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Dec 05 2019 23:12:11 GMT+0000 (UTC)" data-updatetime="Wed Sep 02 2020 11:14:30 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">336 views <a href="python-performance-profiling.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">---
+title: Python Performance Profiling and Optimization
+description: Modern techniques for Python performance profiling and optimization.
+tags: python, performance, profiling, optimization
+---
+
+&lt;center&gt;
+
+# Python Performance Profiling &amp; Optimization
+
+Originally published 2019-12-05 on &lt;a href=&#34;https://docs.sweeting.me/s/blog#About&#34;&gt;docs.sweeting.me&lt;/a&gt;, republished on &lt;a href=&#34;https://monadical.com/blog.html&#34;&gt;Monadical.com&lt;/a&gt;.
+    
+&lt;hr/&gt;
+    
+&lt;b style=&#34;opacity: 0.8&#34;&gt;Modern techniques for Python performance profiling &amp; optimization.&lt;/b&gt;
+&lt;small&gt;Tested with Python &gt;3.7 and Django &gt;2.2 as of 2019, but approaches are widely applicable.&lt;/small&gt;
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_7f6377d1e68f48ac9942ee9fd664e798.png&#34; style=&#34;width: 100%&#34;&gt;
+&lt;br/&gt;
+
+---
+    
+&lt;/center&gt;
+
+[TOC]
+
+---
+
+### General Process
+
+When a slow piece of code is identified in a codebase and singled out for improvement, the same general approaches can be used to improve performance, regarless of the type of project.
+
+Tests are first written, then run using a &#34;profiler&#34;: a tool that collects timing statics during runtime to measure how long the process spend executing each area of code, the code is improved, and the tests maintained to protect against future regressions.
+
+1. First, tests are written to solidify the boundaries around the slow piece of code that needs to be optimized, and ensure correctness.
+
+2. Then a suite of performance tests are written to verify baseline performance of the entire slow area.
+
+3. Then the tests are run using a profiler to find the slowest functions and IO.
+
+4. The code is then optimized in multiple passes, starting with the slowest things first.
+
+ - Blocking IO is reduced or batched as much as possible
+ - computational complexity of the algorithm is reduced, or caching/heuristic-based shortcuts added when complexity cannot be reduced
+ - only after everything else is stripped down should low-level performance or runtime optimization be considered. Only at this stage should we worry about things like cache alignment, function call overhead, recursion overhead, etc.
+ - As a last resort, and alterntive runtime or language can be considered for the slow code, e.g. a JIT like PyPy, or via bindings to a faster C++ or Rust subroutine.
+
+5. The improved performance is then enforced with ongoing performance tests to ensure regressions to occur.
+
+---
+
+###  The first step to performance is correctness.
+
+Writing tests is critical to the performance optimization process.
+
+1. it ensures the code stays correct as we make potentially breaking changes. attempts to improve performance often lead to unforseen bugs.
+2. it provides a quick feedback cycle when making changes, we can tweak somthing and re-run a performance test multiple times a minute, vs manual testing where it&#39;s cumbersome and difficult to precicely reproduce.
+3. It makes it easy to verify the real-world improvement of optimizations applied, and prevent regressions. it&#39;s easy to *feel* like something is 30% faster, but without hard numbers and reproducible performance tests, it might a fluke or quirk of the environement
+
+
+&gt; Write black-box tests around the slow code to ensure correctness at the boundary.
+
+Don&#39;t optimize code until you&#39;re sure it&#39;s correct.  Python.org says it best:
+
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/upload_683fb5616a0be983a485dd9317aec2ae.png)
+
+
+&lt;small&gt;From https://wiki.python.org/moin/PythonSpeed/PerformanceTips&lt;/small&gt;
+
+&lt;/center&gt;
+
+---
+
+### Using a profiler
+
+Profile with 3 levels of tests to evaluate each potential code change:
+
+1. the easiest, most straightforward case (to ensure best-case performance &amp; correctness)
+2. the gnarliest, most error-prone path (to ensure worst-case performance &amp; correctness)
+3. a hot, CPU/IO-intensive path tested in a loop (to quantitatively measure slowness)
+
+#### Check out these python profilers to get started
+
+- [`cprofile`](https://docs.python.org/3/library/profile.html)
+- [`silk`](https://github.com/jazzband/django-silk)
+- [`pyflame`](https://eng.uber.com/pyflame/)
+- [`pptop`](https://github.com/alttch/pptop)
+- [`profiling`](https://github.com/what-studio/profiling)
+
+#### Things to look for in profilers
+
+- is it sampling or tracing? (sampling has less overhead but also less granularity)
+- does it support multithreaded, multiprocess, or asyncronous code?
+- does it record timing per line, per expression, per function?
+- what sampling resolution / tracing depth is supported?
+- whats the overhead cost of running with profiling enabled?
+- does it require a different python binary or alter the runtime environment?
+- can it produce &amp; consume `cprofile` output or does it use custom formats?
+
+---
+
+### What to optimize first
+
+Always optimize big -&gt; small.  Don&#39;t prematurely optimize code that isn&#39;t the slowest area. Focus on the things that will provide the big gains first, and worry about microptimization of python when there are no other factors to rule out.
+
+
+#### The Big Stuff: Blocking IO
+
+Blocking IO is by far the most common source of slowness.  Whether it&#39;s a database query, a file read, or a network call. IO latency is almost always &gt;80% of a request lifecycle&#39;s wall-clock time, and should the first thing to optimize.
+
+Batch your IO as much as possible, do a small number of database queries at the beginning of a function to get everything needed up-front, then operate on the objects in-memory, with all the writes batched together at the end of the process.
+
+Be wary of causing inadverdent blocking IO by making things to big to fit in memory. When things no longer fit, the computer starts to swap pages to disk and you end up with blocking disk IO all over the place.
+
+#### Second-pass: Reduce algorithmic complexity
+
+The next big culprit of slow python code is accidental algorithmic complexity explosions. Eg. when you have a 10,000 items to compare with 10,000 other items, you can easily fall into the trap of doing it O(n2).
+
+
+```python
+# task: find the items that are present in both lists
+list_a, list_b = [... 10,000 items ...], [... 10,000 items ...]
+
+# BAD: O(n^2)
+matches = [item for item in list_a if item in list_b]
+#  10,000 items * 10,000 comparisons = 100 million operations total!
+
+# GOOD: O(n)
+set_b = set(list_b)
+matches = [item for item in list_a if item in set_b]
+# 10k ops to initialize the set + 10k * O(1) set lookups = only 20k ops total
+```
+
+#### Low-level Optimization Last
+
+&#34;instead of calling a function 1000x in a loop, call a one function that does 1000 things&#34;
+
+From https://wiki.python.org/moin/PythonSpeed/PerformanceTips#Data_Aggregation
+```python3
+import time
+x = 0
+def doit1(i):
+    global x
+    x = x + i
+
+list = range(100000)
+t = time.time()
+for i in list:
+    doit1(i)
+
+print &#34;%.3f&#34; % (time.time()-t)
+```
+vs
+```python3
+import time
+x = 0
+def doit2(list):
+    global x
+    for i in list:
+        x = x + i
+
+list = range(100000)
+t = time.time()
+doit2(list)
+print &#34;%.3f&#34; % (time.time()-t)
+```
+
+---
+
+### Alternative Python Implementations
+
+- CPython
+- Cython / Pyrec
+- PyPy
+- IronPython
+- MicroPython (microcontrollers)
+- Psyco (Deprecated)
+
+---
+
+### Resources
+
+#### General
+
+- https://wiki.python.org/moin/PythonSpeed/PerformanceTips
+- https://towardsdatascience.com/speeding-up-python-code-fast-filtering-and-slow-loops-8e11a09a9c2f
+- https://hackernoon.com/which-is-the-fastest-version-of-python-2ae7c61a6b2b
+- https://www.quora.com/Which-is-the-fastest-implementation-of-Python
+- https://eng.uber.com/pyflame/
+- https://github.com/evanhempel/python-flamegraph
+- https://github.com/Datamine/Function-Profiler
+- https://github.com/what-studio/profiling
+- https://github.com/alttch/pptop
+- https://github.com/jrfonseca/gprof2dot
+- https://github.com/csurfer/pyheat
+- https://github.com/leopd/timebudget
+- https://github.com/asottile/importtime-waterfall
+
+#### Django
+
+- https://github.com/jazzband/django-silk
+- https://github.com/23andMe/djdt-flamegraph
+- https://github.com/inglesp/django-debug-toolbar-template-flamegraph
+
+#### Pandas
+
+- https://realpython.com/fast-flexible-pandas/
+- https://www.kdnuggets.com/2019/11/speed-up-pandas-4x.html
+- https://realpython.com/fast-flexible-pandas/
+
+#### Outdated
+
+- https://intermediate-and-advanced-software-
+carpentry.readthedocs.io/en/latest/increasing-performance.html#speeding-up-python
+- https://en.wikipedia.org/wiki/Psyco (Deprecated)
+- https://wiki.python.org/moin/Pyrex
+
+---
+
+&lt;center&gt;
+
+&lt;a href=&#34;#&#34;&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_b097a513867451637b2b474f8d7196b1.png&#34; style=&#34;height: 60px;&#34;&gt;
+&lt;/a&gt;&lt;br/&gt;
+&lt;small&gt;
+&lt;br/&gt;&lt;a href=&#34;https://monadical.com&#34;&gt;Monadical&lt;/a&gt; is a fully-remote, full-stack software consultancy with years of experience&lt;br/&gt;profiling &amp; improving the performance of complex Python &amp; JS applications.&lt;br/&gt; &lt;a href=&#34;https://monadical.com/about.html#contact&#34;&gt;Hire us&lt;/a&gt; to work on your project!&lt;br/&gt;
+&lt;/small&gt;
+&lt;/i&gt;
+
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="python-performance-profiling.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+

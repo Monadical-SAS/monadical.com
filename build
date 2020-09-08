@@ -1,5 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+### Bash Environment Setup
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+# https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+# set -o xtrace
+set -o errexit
+set -o errtrace
+set -o nounset
+set -o pipefail
+IFS=$'\n'
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+source "$DIR/.venv/bin/activate" || echo "[X] Failed to source $DIR"
+
+txtbld=$(tput bold)
 normal=$(tput sgr0)
 red=${txtbld}$(tput setaf 1)
 blue=${txtbld}$(tput setaf 4)
@@ -8,7 +23,7 @@ white=${txtbld}$(tput setaf 7)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 LOCAL_RSYNC="${LOCAL_DEPLOY:-0}"
 
-echo "$blue[+] Starting Flask server to render pages...$normal"
+echo "${blue}[+] Starting Flask server to render pages...$normal"
 ./server > /dev/null &
 sleep 1.5
 
@@ -22,18 +37,18 @@ cp static/robots.txt output/robots.txt
 ./server --posts > output/posts.txt
 
 echo ""
-echo "$blue[+] Saving pages as static HTML to output/...$normal"
+echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd output; wget -q $(<pages.txt))
 (cd output/posts; wget -q $(<../posts.txt))
 
 echo ""
-echo "$blue[+] Including stevie king to output/...$normal"
+echo "${blue}[+] Including stevie king to output/...$normal"
 rsync -avh stevie-king/ output/publishing/
 
 # echo "$red[*] Stopping Flask server...$normal"
 kill %1 > /dev/null
 echo ""
-echo "$green[√] Build of static site to output/ complete.$normal"
+echo "${green}[√] Build of static site to output/ complete.$normal"
 echo ""
 echo ""
 echo "$red Committing & deploying output/ in 3 sec, press Ctrl+C to cancel..."
@@ -43,10 +58,10 @@ echo ""
 git add output
 git commit -q --short -m "built static site" > /dev/null
 
-echo "$blue[^] Pushing build to origin/live...$normal"
+echo "${blue}[^] Pushing build to origin/live...$normal"
 git push origin "$current_branch":live --force
 
-echo "$blue[^] Deploying output/ to https://monadical.com...$normal"
+echo "${blue}[^] Deploying output/ to https://monadical.com...$normal"
 # ssh monadical.com "cd /opt/monadical.com; git checkout -f live; git pull"
 if [ "$LOCAL_RSYNC" -eq 1 ]; then
     rsync -r output/ /opt/monadical.www/output
@@ -56,7 +71,7 @@ fi
 
 # ssh monadical.com "cd /opt/monadical.www; git checkout -f www; git pull"
 echo ""
-echo "$green[√] Deploy to https://monadical.com complete.$normal"
+echo "${green}[√] Deploy to https://monadical.com complete.$normal"
 
 echo
 echo "Make sure to clear CloudFlare caches in order to see changes."

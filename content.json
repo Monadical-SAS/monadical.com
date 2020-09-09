@@ -49,7 +49,30 @@
     }
   },
   "POSTS": {
-    "system-monitoring-tools":  {
+    "set-up-ci-workflow": {
+      "title": "How to set up a CI workflow",
+      "description": "How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.",
+      "date": "2020-09-09",
+      "img": "/static/set-up-ci-workflow.png",
+      "tags": [
+        "CIWorkflow",
+        "Docker",
+        "Monadical",
+        "DevOps"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/HJCjllSEw",
+      "url": "/posts/set-up-ci-workflow.html",
+      "template": "posts/set-up-ci-workflow.html",
+      "author": {
+        "name": "Cristian Vargas",
+        "title": "Devops and automation",
+        "handle": "@cdvv",
+        "url": "https://www.linkedin.com/in/cdvv/",
+        "image": "/static/cristian.png"
+      }
+    },
+    "system-monitoring-tools": {
       "title": "Unix System Monitoring and Diagnostic CLI Tools",
       "description": "An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems.",
       "date": "2020-09-01",
@@ -73,7 +96,7 @@
         "image": "/static/nick.jpg"
       }
     },
-    "moving-to-linux-desktop":  {
+    "moving-to-linux-desktop": {
       "title": "The Year of the Linux Desktop",
       "description": "The year of the Linux desktop has arrived. This is a guide for how to improve the Linux desktop experience.",
       "date": "2020-08-25",

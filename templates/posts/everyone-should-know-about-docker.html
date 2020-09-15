@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  Why Everyone Should Know About Docker ===  &lt;big&gt;  **What is Docker and how does it work? T">
+    
+    <title>Why Everyone Should Know About Docker - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/812039cd4e81222e17379ec460cc72e6?s=96);" data-toggle="tooltip" data-placement="right" title="angel"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 15 2020 16:25:09 GMT+0000 (UTC)" data-updatetime="Tue Sep 15 2020 16:26:55 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">3 views <a href="everyone-should-know-about-docker.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+Why Everyone Should Know About Docker
+===
+
+&lt;big&gt;
+
+**What is Docker and how does it work? This introduction walks you through the benefits of this core technology and shows you how to get started with it.**
+
+&lt;/big&gt;
+
+*Written by [Angel](https://twitter.com/afreydev). Originally published 2020-09-15 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+---
+
+If you’re keeping up with the [trends in technology](https://trends.google.com/trends/explore?date=today%205-y&amp;q=docker,%2Fg%2F11b7lxp79d), you’ll have seen a lot of articles about Docker and its increasing importance in an IT environment. There are a lot of conflicting opinions on Docker, and it doesn’t always get a good rap. Some say it’s too hard to learn, or is only really relevant to sysadmins and SREs. Others (especially people waiting for builds to complete) complain that it’s way too slow. However, fans of Docker, like me, love what it can do for scalability, homogenization, and deployment timelines.
+
+&lt;center&gt;
+    
+![docker logo](https://docs.monadical.com/uploads/upload_217069157fa4ce37bab61da18501434c.png)
+    
+&lt;/center&gt;
+
+
+So what is Docker? Docker is a technology that enables you to package software so that it can be easily deployed in any environment. These packages are called containers. Docker offers a range of benefits across different roles in a development team. For example:
+
+1. **IT support engineer:** Docker can help you to deploy applications, allowing you to take advantage of continuous integration and delivery platforms without having to compile or install dependencies directly. Docker is responsible for packaging and deploying the software so your team will have fewer problems with the building process and configuration management.
+
+2. **Developers:** Docker can help to standardize and homogenize environments. This means that the development environment you’re working in will be very similar to the staging and production environments (you won’t be able to get away with saying “but it works on my machine!”). For developers, this is like having a sprinkle of operations added into the codebase. Because of this, ultimately, containerized applications reduce the need for support work and save you time when it comes to debugging.
+ 
+3. **Software architects:** High scalability and availability are obviously requirements for a corporate platform. Docker enables your team to make better use of the available resources and allows you to grow your infrastructure in a horizontal way by distributing many containers across multiple servers. For example, if your company sells online, you’ll be able to survive rapidly scaling up and then back down again for Black Friday without any issues. Microservices architectures can also be implemented more easily when you have a container ecosystem.
+
+## The Nitty Gritty
+
+Docker is a technology that does something similar to virtualization (from a UX perspective). Under the hood, it actually uses the Linux kernel’s own mechanisms to divide up resources like process IDs, network sockets, and filesystem trees into separate namespaces for each container. The main difference between Docker and virtualization is the different low-level approach to application containment. With a virtual machine, an isolated pool of “virtual” computational resources are divvied out through a special kind of software called a hypervisor. (Examples of hypervisor technologies include VMWare, Xen, and VirtualBox.) By contrast, Docker uses un-virtualized resources shared with its host system, but uses cgroups and kernel namespaces to effectively present a fake “isolated” system to each application within. Practically speaking, Docker is able to more efficiently share system resources across applications and their host, because it doesn’t have the added overhead of passing all resource accesses through a hypervisor process.
+
+&lt;center&gt;
+    
+![docker and virtual machines comparisson](https://docs.monadical.com/uploads/upload_0bedfaf129c78f2ea21bc3b3dea33b1b.png)
+    
+&lt;/center&gt;
+
+
+## Some foundational concepts:
+
+**Image**: An image is a bit like a template. It has the “hard-coded” file layer of Docker. This means that it contains the file system of the operating system, the libraries you might need for your application, and, finally, the source code. (If you know a bit about object-oriented programming, an image is something like a Class definition.) To create an image, you need to write a special file called a Dockerfile. Dockerfile helps you to install and configure everything that your image needs to work.
+
+**Container**: A container is like an instance of an image. Docker takes an image definition and runs it like any other Linux process, but the application within the container sees a completely clean view of the system, untainted by anything else running on the host. Usually an image deploys a service or an application that you can use on its own or jointly with other containers.
+At a low-level, a container is something that groups a set of resources by using some Linux kernel features like namespaces and cgroups. Namespaces are a feature that help to segment different process groups from each other. They show specific resources (e.g., the hostname, the file system, the communication between processes, processes, network devices, and system users) to a set of processes (i.e., the containers). Cgroups are another Linux kernel feature used to limit and isolate computational resources (CPU, memory, disk I/O, network). There are different approaches to container technology, but Docker is the most popular.
+
+## What do I need to know before I learn Docker?
+
+One possible path is the one I took -- when I first started looking into Docker, I realized that if I wanted to take full advantage of it, I’d need to have a pretty good understanding of Linux. For tasks like software installation and decoupling configuration, and so you can use more advanced Docker tools like Docker-compose, I also recommend the following:
+
+* **Learn Linux OS, preferably Ubuntu/Debian.** When you are building a new image, you&#39;ll need to know the basic commands to navigate the file system and copy or move files. Ubuntu is a good distro if you are a new Linux user because it has a graphical interface that’s super user-friendly. 
+* **Learn how to install OS packages by using apt or yum commands.** This is important because in order for them to work, your Docker images might need some software packages. For example, if you’re working in Django, you need to install Python into the image. For that, usually you use package managers like apt in Debian/Ubuntu distros or yum in Red Hat derived flavors.
+* **Figure out how environment variables work.** Environment variables are the best way to decouple software from its [configuration](https://12factor.net/config). This is good practice if you don&#39;t want to edit a lot of config files before a deployment in production. For example, all you need to do is configure the right settings, depending on whether you are in development or production.
+* **Learn some scripting programming languages like bash (or Python).** This is basically so you can do more advanced stuff inside your containers, for example, compile something or connect to other services (or containers).
+* **Learn other programming languages like Java, PHP, or Python.** It&#39;s good to know a little more about the software you want to run using Docker and how it&#39;s made.
+* **Learn a little about basic networking.** If you want to use Docker-compose (an advanced topic used to run multiple containers simultaneously), sometimes you&#39;ll have to set a Docker network for it. Minimally, you should know how to define the possible IPs for your containers.
+
+&lt;center&gt;
+
+![learner](https://docs.monadical.com/uploads/upload_0b3d6bfe5f0d8692876290f3a28316ba.png)
+
+    
+&lt;/center&gt;
+
+## How do I start to use Docker?
+
+Learning Docker is a bit of an investment. If you don’t have a broad enough background, you might need to study quite a range of technologies. The payoff is worth it, though: once you’ve mastered Docker, you’ll have a better understanding of application distribution within modern architecture, and an insight into how corporate web applications are deployed.
+
+Docker has a lot of documentation on its official website, so you can study it directly there. There are also tons of good technical blogs and courses in ed-tech on platforms like Udemy. I’ve included some of my favorite resources at the end of this post. If you want to brush up on your background info before you get started, skip to the &#34;Resources for Docker&#34; section using the navigation menu. If you&#39;re ready to get going right away, read on!
+
+For some people who prefer practical hands-on learning to a theory-centric approach, it may be easier to start by learning Docker Compose before learning Docker itself. Docker Compose provides a high-level way to describe a collection of containers, the relationships between them, and the services they expose to the world. This allows you to see how Docker is used in production without needing to understand as much of the underlying theory, while still exposing you to the main concepts that you’ll need to understand container orchestration in general.
+
+To begin with, you should install Docker following the [official documentation]( 
+https://docs.docker.com/get-docker/).
+
+Once you’ve installed it, you can access Docker by using the shell of your operating system.
+
+To run your first container, you can run this command:
+
+```docker run --name my-first-container ubuntu echo &#34;Hello Monadical&#34;```
+
+You’ll see this execution:
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/upload_f91e3382784a836c4e05936c259a8e37.png)
+
+    
+&lt;/center&gt;
+
+### What’s happening in the first line here? 
+
+* The command option run says to Docker that it should start a container.
+* The **name** option tags the container with the “my-first-container” name.
+* **Ubuntu** is the image we want to use as a base for running our container.
+* Finally, **echo** is a Linux command that shows a message in the user screen. In this case “Hello Monadical”.
+
+After that, Docker begins to download the Ubuntu image, since it’s not available on the host machine. Finally, Docker adds CPU and RAM resources to the image and executes the echo command, showing us the message “Hello Monadical”.
+
+This is a basic example, but it shows you how to get started with this awesome technology.
+
+After that, Docker begins to download the Ubuntu image, since it’s not available on the host machine. Finally, Docker adds CPU and RAM resources to the image and executes the **echo** command, showing us the message “Hello Monadical”.
+
+This is a basic example, but it shows you how to get started with this awesome technology.
+
+## What other technologies does Docker enable?
+
+Nowadays, Docker can be considered a core technology in the corporate IT environment, since it has such a foundational role in most workflows (e.g., with development, testing and deployment). It also allows organizations to use other technologies like Swarm and Kubernetes. These technologies can be useful in orchestrating tons of services deployed through Docker and they help to maintain excellent availability. For example, they can ensure that your desired quota of containers is maintained, regardless of any server failures.
+
+&lt;center&gt;
+
+![kubernetes logo](https://docs.monadical.com/uploads/upload_deafecad512f7c7a42addbec7924a37f.png)
+
+&lt;/center&gt;
+
+At Monadical, we have used Docker in many of our projects, including [oddslingers](https://oddslingers.com/), synchroplicity, [archivebox](https://archivebox.io/), and [NWB](https://www.nwb.org/). If you want any help implementing Docker in your organization, give us a call!
+
+## Resources for Docker
+
+* dev.to is a community of software developers that believes in networked learning. Here you’ll find articles related to Docker aimed at people with a range of different levels of knowledge:
+https://dev.to/search?q=docker
+
+* Edx is an e-learning platform that collaborates with big institutions (companies and universities) on course sharing. For Docker, there are currently some courses supported by Red Hat, the Linux foundation, and AWS:
+https://www.edx.org/learn/docker
+
+* This is a really useful article from Digital Ocean with some foundational commands for working with Docker in Ubuntu:
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
+* Udemy is another good learning platform with cheap courses. You can find a lot of content on Docker here:
+https://www.udemy.com/courses/search/?q=docker
+
+* Once you start to get more proficient with Docker, Jess Fraz has loads of great stuff over on her blog:
+https://blog.jessfraz.com/
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+
+---</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="everyone-should-know-about-docker.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+

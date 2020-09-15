@@ -49,6 +49,28 @@
     }
   },
   "POSTS": {
+    "everyone-should-know-about-docker": {
+      "title": "Why Everyone Should Know About Docker",
+      "description": "What is Docker and how does it work? This introduction walks you through the benefits of this core technology and shows you how to get started with it.",
+      "date": "2020-09-15",
+      "img": "/static/everyone-should-know-about-docker.png",
+      "tags": [
+        "Docker",
+        "containers",
+        "Linux"
+      ],
+      "length": "10 min read",
+      "source": "https://docs.monadical.com/s/everyone-should-know-about-docker",
+      "url": "/posts/everyone-should-know-about-docker.html",
+      "template": "posts/everyone-should-know-about-docker.html",
+      "author": {
+        "name": "Angel Rey",
+        "title": "Devops, Technology and Innovation",
+        "handle": "@afreydev",
+        "url": "https://twitter.com/afreydev",
+        "image": "/static/angel.png"
+      }
+    },
     "set-up-ci-workflow": {
       "title": "How to set up a CI workflow",
       "description": "How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.",

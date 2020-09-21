@@ -49,6 +49,30 @@
     }
   },
   "POSTS": {
+    "drone-mapping": {
+      "title": "Drone Mapping: How to Create Your Own Terrain Surface Model",
+      "description": "An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.",
+      "date": "2020-09-22",
+      "img": "/static/drone-mapping.jpg",
+      "tags": [
+        "drone",
+        "drone-mapping",
+        "mission",
+        "modelling",
+        "photogrammetry"
+      ],
+      "length": "12 min read",
+      "source": "https://docs.monadical.com/s/drone-mapping",
+      "url": "/posts/drone-mapping.html",
+      "template": "posts/drone-mapping.html",
+      "author": {
+        "name": "Jose Benitez",
+        "title": "",
+        "handle": "@yojosebenitez",
+        "url": "https://twitter.com/yojosebenitez",
+        "image": "/static/core/img/img-team-005.jpg"
+      }
+    },
     "everyone-should-know-about-docker": {
       "title": "Why Everyone Should Know About Docker",
       "description": "What is Docker and how does it work? This introduction walks you through the benefits of this core technology and shows you how to get started with it.",

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monadical Consulting | The Redux Store as the Frontend&#39;s Database</title>
+    <title>Monadical Consulting | Drone Mapping: How to Create Your Own Terrain Surface Model</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
     <link rel="stylesheet" href="/static/core/css/base.css">
 
-    <link rel="canonical" href="https://monadical.com/posts/Using-Redux-As-A-Database.html" />
+    <link rel="canonical" href="https://monadical.com/posts/drone-mapping.html" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -27,24 +27,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="Storing data in a normalized form allows us to calculate fast indexes for lookups." />
+<meta name="description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone." />
 
 <!-- Required Open Graph data -->
-<meta property="og:title" content="The Redux Store as the Frontend&#39;s Database" />
+<meta property="og:title" content="Drone Mapping: How to Create Your Own Terrain Surface Model" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/redux.jpg" />
-<meta property="og:url" content="https://monadical.com/posts/Using-Redux-As-A-Database.html" />
+<meta property="og:image" content="https://monadical.com/static/drone-mapping.jpg" />
+<meta property="og:url" content="https://monadical.com/posts/drone-mapping.html" />
 <!-- Optional Open Graph data -->
-<meta property="og:description" content="Storing data in a normalized form allows us to calculate fast indexes for lookups." />
+<meta property="og:description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone." />
 <meta property="og:site_name" content="Monadical Consulting" />
 <meta property="og:locale" content="en_US" />
 <!-- Find additional markup on https://ogp.me -->
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@MonadicalSAS">
-<meta name="twitter:title" content="The Redux Store as the Frontend&#39;s Database">
-<meta name="twitter:description" content="Storing data in a normalized form allows us to calculate fast indexes for lookups.">
-<meta name="twitter:image" content="https://monadical.com/static/redux.jpg">
+<meta name="twitter:title" content="Drone Mapping: How to Create Your Own Terrain Surface Model">
+<meta name="twitter:description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.">
+<meta name="twitter:image" content="https://monadical.com/static/drone-mapping.jpg">
 
 </head>
 
@@ -167,9 +167,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  # Using the Redux Store Like a Database  *Originally published 2017-07-27 on [HackerNoon.c">
+    <meta name="description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.">
     
-    <title>Using the Redux Store Like a Database - CodiMD</title>
+    <title>How to Create Your Own Terrain Surface Model - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -194,228 +194,199 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/bd996ca3d6f681cbd3a036c679873b56?s=96);" data-toggle="tooltip" data-placement="right" title="jose.zdy"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Apr 20 2018 00:45:05 GMT+0000 (UTC)" data-updatetime="Wed Feb 13 2019 23:59:18 GMT+0000 (UTC)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Sep 17 2020 15:36:32 GMT+0000 (UTC)" data-updatetime="Fri Sep 18 2020 14:42:07 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">476 views <a href="Using-Redux-As-A-Database.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">15 views <a href="drone-mapping.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body">&lt;center&gt;
-
-# Using the Redux Store Like a Database
-
-*Originally published 2017-07-27 on [HackerNoon.com](https://hackernoon.com/shape-your-redux-store-like-your-database-98faa4754fd5). Also available in [中文](http://it.uu01.me/p/ovdfze.html).*
-
-
-![Your store data can be viewed from many angles by using indexes.](https://cdn-images-1.medium.com/max/2000/1*b-Rc3m2h_oQjbplfvp9s6w.gif)
-*Your store data can be viewed from many angles by using indexes.*
-&lt;/center&gt;
-
-Recently I was browsing some of the Javascript discussions on the [RC](https://recurse.com) chat system, and I noticed a great question by [Kate Ray](https://twitter.com/kraykray):
-&gt; How should we structure the data in our redux store?
-
-This is a common question when using redux, certainly one that I’ve asked myself many times. I’ve found the answer usually depends on how I plan to interact with my data.
-
-There are a number of things to consider: am I frequently going to be iterating over the store data like a list of rows? Do I need fast O(1) access to individual items?
-
-I’ve seen a bunch of approaches in practice, usually with some tradeoffs between access time and ease of iteration.
-
-## Common approaches
-
-If you’re storing some data where each item has an id, you could shape your store as an Object or as an Array of Objects.
-
-**Array of flat objects [{values}]:
-**This is the most common one by far that I’ve seen. It makes iteration easy and you can store your data in a particular order, but you cant access a specific item by id or name without iterating and filtering.
-
-    categories: [
-      {name: &#39;abs&#39;,  id: &#39;32o8wafe&#39;, exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
-      {name: &#39;arms&#39;, id: &#39;oaiwefjo&#39;, exercises: [...]},
-      {name: &#39;legs&#39;, id: &#39;aoijwfeo&#39;, exercises: [...]},
-    ]
-
-**Object keyed on id {id: {values}}:
-**This gives you fast O(1) access to each item, but you cant easily access the id of a given item while you’re iterating using Object.values().
-
-    categories: {
-      &#39;32o8wafe&#39;: {name: &#39;abs&#39;,  exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
-      &#39;oaiwefjo&#39;: {name: &#39;arms&#39;, exercises: [...]},
-      &#39;3oij2e3c&#39;: {name: &#39;legs&#39;, exercises: [...]},
-    }
-
-    Object.values(categories).map(row =&gt; // cant access id here)
-&gt; **Food for thought:**
-Arrays and Objects are [the same thing in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Description).
-(V8 stores them using different internal representations though)
-
-## Structure it like a database of rows indexed by id
-
-On our journey implementing a large redux app at [Monadical](https://monadical.com), we stumbled upon a different approach that gives us the benefit of both easy iteration with Object.values(state.categories), and fast O(1) access to individual items:
-
-    categories: {
-      &#39;32o8wafe&#39;: {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;,  exercises: [...]},
-      &#39;oaiwefjo&#39;: {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, exercises: [...]},
-      &#39;3oij2e3c&#39;: {id: &#39;3oij2e3c&#39;, name: &#39;legs&#39;, exercises: [...]},
-    }
-
-Notice how the id is both the key for the row, and a property in the row itself. This little bit of duplication affords us great flexibility at access time. It’s also compatible with the [normalized](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html) (*aka* flat) shape that the redux docs recommend.
-
-Now you can loop over the data, and have access to the id while iterating!
-
-Object.values(categories).map(cat =&gt; ({id: cat.id, name: cat.name}))
-
-Or access any individual item instantly by id!
-
-categories[‘32o8wafe’].name // &#39;abs&#39;
-
-We send our data to the frontend already shaped like this, so the frontend doesn’t need to do any processing to produce the mapping of id: values. It’s easy to do from the backend, since you’re likely pulling data out of a database where it already has an id field that you can use as a key.
-
-## The power of indexes
-
-The new shape we introduce above is a trivial change to make, and likely not one a team will spend much time deliberating over when designing their redux store. The real magic comes in when we access store data using different keys besides id.
-
-Notice how the shape we introduce above is just a list of rows, with a key used to uniquely identify each row. With your store shaped like this, you can produce indexes that let you do O(1) access using any other key you desire:
-
-**Index categories by name:**
-
-To make the index, we write a function that takes the store data, and returns a mapping of name -&gt; id.
-
-    const index_by_name = (categories) =&gt;
-        Object.values(categories)
-              .reduce((index, row) =&gt; {
-                          index[row.name] = row.id
-                          return index
-                      }, {})
-
-    // {abs: &#39;32o8wafe&#39;, arms: &#39;oaiwefjo&#39;, legs: &#39;3oij2e3c&#39;}
-
-![](https://cdn-images-1.medium.com/max/2572/1*y3bELbeb5YMOFNwIotJ6QQ.png)
-
-    const ids_by_name = index_by_name(categories)
-
-    categories[ids_by_name[&#39;abs&#39;]] // {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;, ...}
-
-You can build as many indexes as you want for the same data, which gives you O(1) access based on any column, just like you’d have in a database.
-
-If your data doesn’t change, your indexes just need to be computed once, otherwise they should be recomputed with memoized functions.
-&gt; **Food for thought:**
-How can you make an index for keys that are non-unique?
+    <div id="doc" class="container markdown-body">---
+title: How to Create Your Own Terrain Surface Model
+description: An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone. 
+tags: drones, drone-mapping, missions, modelling, photogrammetry
+---
 
 &lt;center&gt;
 
-![Trippy photo break. Rest your eyes for a second, then read on :)](https://cdn-images-1.medium.com/max/2000/1*z-jt1KCPbEFCaPBDOpSBrQ.gif)
-*Trippy photo break. Rest your eyes for a second, then read on :)*
+# Drone Mapping:&lt;br&gt;How to Create Your Own Terrain Surface Model
+
+*Written by Jose Benitez.
+ Originally published 2020-09-22 on the [Monadical blog](https://monadical.com/blog.html).*
+    
 &lt;/center&gt;
 
-## Sorted data
+---
 
-What if your categories have an inherent order (like in an array), and you need to be able to get them in order whenever iterating over your data?
+I first started learning about drones four years ago, at the University of Antioquia (Medellín). My interest soon grew into an obsession, and I spent a lot of my free time building them and flying them around campus, racing friends. Before long I was saving up for one of those cool flying 4k cameras so that I could get a drone’s eye view of things. I love that drones extend our vision of the world and allow us to see, sense and feel the environment at a new level of awesomeness. This hobby evolved into an interest in developing software for autonomous applications and custom drone solutions.
 
-You might think to do something like:
+With this post, I want to give you an idea of what drone mapping is and why it’s useful, and show how you can have a go at doing some yourself with your own drone. I’ve included the details of one of my flights and some of the results I’ve been able to achieve.
 
-    const category_order = [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
-    category_order.map(id =&gt; categories[id])
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_17503ddb2111439e8ed5c7ea5ad459d7.jpg&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;vector-image&#34;&gt;
+&lt;/center&gt;
+&lt;br&gt;
 
-This is a good approach, however, it requires keeping an array separately from our data to store the order, which is suboptimal. Lets do it properly with indexes.
+So let’s take off! But first...
 
-We send the data from our backend with an order (or idx) key specifying each row’s position, then we **make an index for order just like we would for any other key**:
+## What is drone mapping?
 
-    const ids_by_order =
-          Object.values(categories)
-                .reduce((ordered_ids, category) =&gt; {
-                            ordered_ids[category.order] = category.id
-                            return ordered_ids
-                        }, [])
+Drone mapping is the art of generating a digital model of the surface of an area using images that are taken with drones. These models provide useful information about the land (e.g, distances, areas or volume measurements) and can be used to create various types of plans/schemas used in civil industry, mining, real estate, and law. 
 
-    // [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
+As well as being great for the environment (no more paper, digital drawings are the future! :deciduous_tree:), drone mapping has lots of advantages over other types of satellite, human, or aircraft inspection. It’s much faster, cheaper, and more precise. It also allows us to track the progress of a project by keeping a record of developments as they happen.
 
-Notice how this reduce operation produces an index Array instead of an Object. In JS, an array is actually just an object with the keys 0, 1, 2, …, so now we have both O(1) access to a specific id by order, and we can iterate using map, filter, and reduce on the ordered list:
 
-    const second_category = categories[ids_by_order[1]]
-    // {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, order: &#39;1&#39;}
+### What do I need to get started?
+First of all, you need the right drone and the right conditions. Your drone must be able to cover the area that you want to map. Depending on the size of this area and the size of your drone, you might need to do more than one flight. The best conditions for flying are when it’s not too windy, dusty, or cloudy. Check out [UAV forecast](https://www.uavforecast.com/) to get a live weather forecast with information on important variables like wind speed, visibility, cloud cover, and GPS satellite health.
 
-    const ordered_names = ids_by_order.map(id =&gt; categories[id].name)
-    // [&#39;abs&#39;, &#39;arms&#39;, &#39;legs&#39;]
-&gt; **Food for thought:**
-Why does this work even if your order numbers [have gaps](http://www.htmlgoodies.com/beyond/javascript/dont-fear-sparse-arrays-in-javascript.html)? e.g. 0, 2, 41, 399
+Secondly, the drone must be able to perform *missions*, i.e., it has to be able to follow a sequence of waypoints in the air that will serve as a path for taking pictures. Not all drones are capable of performing missions. Missions are planned from a mobile app and the app defines which drones are supported.
 
-## Memoization
+And finally, the drone must have a camera. To create the surface model, you’re also going to need some software to process the images it takes.
 
-If your data never changes, you can call ids_by_key once on startup and use the produced index as a static object every time after that. However, if you’re working with changing data that will be accessed frequently, memoization is essential to avoid recalculating the index on every access (which is O(n)).
+:::info
+**Note:** For this article, I used a DJI Mavic Air drone. Full specs can be found on the [official page](https://www.dji.com/mavic-air).
+:::
 
-Memoized-index selectors can be accomplished with [reselect](https://github.com/reactjs/reselect), or by writing a [custom memoizer function](https://www.sitepoint.com/implementing-memoization-in-javascript/) (which is not too difficult depending on your data).
+## Capturing images
+For this task, the drone must be able to follow a path in the air, while taking overhead photos. These photos are taken at predefined spatial or temporal intervals and can sometimes include images from different angles to improve the accuracy of the model. Photos contain metadata, like [EXIF tags](https://en.wikipedia.org/wiki/Exif), that store the location (GPS coordinates) where the photo was taken -- this will be used to build the model.
 
-Memoized indexes mean you can call the index function on every read, instead of having to store the index in redux.
+### Mission platforms
+Before you take your drone out, you need to install an app that has drone mapping capabilities. There are also desktop applications for this, but most people find that a mobile app is more practical. Apps for drone mapping allow you to define your flying area and create a mission for your drone. 
 
-The flat data pattern with indexes that I describe above is also congruent with the pattern used by the library [Normalizr](https://github.com/paularmstrong/normalizr). If you’re into storing your data flat (separated by type), and like the index concept introduced in this article, give the [Redux Without Profanity docs](https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html) on Normalizr a read.
-&gt; **Food for thought:**
-Memoizing using the .hash() on immutable.js objects is [**fast](https://egghead.io/lessons/javascript-lightning-fast-immutable-js-equality-checks-with-hash-codes)**.
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_0f7bd139b906db07769cf5a10f5fb63b.jpeg&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;drone-apps&#34;&gt;
+&lt;/center&gt;
+&lt;br&gt;
 
-## Higher order index functions
+I’ve worked with a few different apps in the past and have found that these three work best for my drone:
 
-**All indexes are pure results of our data, **so we can also make cool higher-order index functions (*aka* functions that return functions), e.g. :
+**DroneDeploy:** Easy to operate and takes a good number of images. Usually generates a long path, but is fast to fly.
 
-    const ids_by_key = (key) =&gt; (data) =&gt;  // make index(data) for key
-          Object.values(data)
-                .reduce((index, row) =&gt; {
-                            index[row[key]] = row.id
-                            return index
-                        }, {})
+**DroneHarmony:** Easy to operate, has lots of options for area coverage planning, but takes fewer pics than some apps (depending on your settings) and requires more knowledge to run.
 
-    const ids_by_name = ids_by_key(&#39;name&#39;)  // returns an index function
-    const abs_id = ids_by_name(categories)[&#39;abs&#39;]
-    // &#39;32o8wafe&#39;
-&gt; **Food for thought:**
-Write an index maker function that makes indexes keyed on a tuple of two keys: `${row[key1]}-${row[key2]}` -&gt; id
+**DJI Pilot:** Generally works well and takes a good number of images, but uses mapbox (an outdated satellite map) and makes drone speed a little slow.
 
-## Why does any of this matter?
-&gt; React and Flux/Redux solved […] rendering and state management. It became possible now to build truly advanced web apps, focusing on actual domain, instead of struggling with underlying implementation.
-&gt; The problem however is that systems keeps growing. We are building more UIs and loading and transforming even more data…
+:::info
+**Note:** Pix4DCapture, MissionPlanner, UgCS for DJI, 3D Survey Pilot and Precision Flight do not support DJI Mavic Air.
+:::
 
-— Roman Liutikov: [On Web Apps and Databases](https://medium.com/@roman01la/on-web-apps-and-databases-c026f77b93f4)
+Once you’ve chosen your app, you’ll need to open a map on it, locate the place you want to model, and draw your area of interest. When you have your area defined, the app’s algorithm will generate a mission for the drone. The mission contains the path that the drone will follow with the points at which it will take pictures of the ground.
 
-As frontends start to approach the complexity of backends, we end up manually reimplementing things that have already existed for decades in the backend: databases, message queues, and other stereotypically server-only infrastructure. Many of the frontend patterns that are considered modern— like functional reactive programming — have been around [since Windows 3.1](https://tomjoro.github.io/2017-02-03-why-reactive-fp-sucks/).
 
-State management lessons that we’ve already learned from SQL databases in the 90’s can be applied to our frontend to help us maintain the clarity, elegance, and consistency of our data. Using indexes to avoid duplication and jump to specific parts of a a central, consistent data set is one such example, and I’m sure there are many more that I have yet to discover.
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_611968c5acbc34438abf2a9970959e19.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2);&#34; alt=&#34;overlap&#34;&gt;
+&lt;/center&gt;
 
-## Further reading
+*&lt;small style=&#34;float:right;margin-top:5px&#34;&gt;From https://support.dronedeploy.com/docs/making-successful-maps&lt;/small&gt;*
 
-If you want more database-like features in the browser, check out: [redux-orm](https://github.com/tommikaikkonen/redux-orm), [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB) (the replacement to Web SQL), and [GraphQL](http://graphql.org/). Remember though, don’t start installing libraries until you know exactly why you need them.
+&lt;br&gt;
 
-* [http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape](http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape)
+When setting up the mission in the app, you can adjust various parameters. One of the most important settings to consider is *overlap*. This defines how much one picture will overlap with its neighboring pictures, and is essential to the construction of the final image of the site (which is built from these smaller pictures). Having a good amount of overlap will improve the model quality, since it will allow for more detail in the final image. There’s a tradeoff to think about here: a longer mission and more pictures means more memory and more flying time. Height is another important parameter: at lower altitudes you can see more detail, but this will increase the mission length and the number of pictures that need to be taken.
 
-* [http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html)
+When I tested the apps mentioned above (DroneHarmony, DroneDeploy and DJI Pilot), I defined the flying area in roughly the same way each time. Each app created a slightly different mission, since they each use a different algorithm. To improve the quality of the final model, some apps extend the path to create more waypoints, and some generate double orthogonal paths (i.e., another path at a 90º angle).
 
-* [https://egghead.io/lessons/javascript-redux-normalizing-the-state-shape](https://egghead.io/lessons/javascript-redux-normalizing-the-state-shape)
+For my flight, I used DroneHarmony and planned the mission in the field, but you can define the area and generate the mission at any time, I did it just before takeoff.
 
-* [https://stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina](https://stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina)
 
-* [https://stackoverflow.com/questions/34995822/how-to-get-best-practice-react-redux-nested-array-data](https://stackoverflow.com/questions/34995822/how-to-get-best-practice-react-redux-nested-array-data?noredirect=1&amp;lq=1)
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_0260e8c71c8a1a0144755d24de544494.jpg&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;mission-paths&#34;&gt;
+&lt;/center&gt;
 
-* [https://codeburst.io/how-to-store-your-state-data-f17ceca37aa](https://codeburst.io/how-to-store-your-state-data-f17ceca37aa)
+*&lt;small style=&#34;float:right;margin-top:5px&#34;&gt;DroneHarmony planned (yellow) and traveled (green) paths&lt;/small&gt;*
 
-* [https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html](https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html)
+&lt;br&gt;
 
-* [https://github.com/tommikaikkonen/redux-orm](https://github.com/tommikaikkonen/redux-orm)
+## Processing images
+After gathering the images, the next step is a process called [*photogrammetry*](https://en.wikipedia.org/wiki/Photogrammetry) to construct the final model of the area. Photogrammetry is performed by software, and involves taking measurements from photos by using trigonometry and the GPS coordinates attached to each image. The resulting model contains information concerning the height of the surface of the terrain and can be used to create contour lines, a point cloud and/or an [orthophoto](https://en.wikipedia.org/wiki/Orthophoto).
 
-—
-&gt; **tl;dr**
-- Store your redux data in normalized form {id: {id, attr1, attr2, attr3}}
-- Make{attr: id} indexes for fast O(1) access by other keys e.g. ids_by_name
-- Iterate sorted data using an Array index *ids_by_order.map(id =&gt; data[id])
-- *Use pure index functions and memoize them if your data changes frequently
+Before you process your images, you need to have an idea of your desired result. Do you want a digital 3D model, a contour lines image, or an orthophoto? You will input this into your photogrammetry platform (if you don’t specify this up front, the software will churn out every possible result and take much longer to process your images). 
 
-## —
+### Photogrammetry platforms
 
-Hopefully you find this useful! If so, give this article a 💚, or ping me on twitter [@theSquashSH](https://twitter.com/theSquashSH).
+#### DroneDeploy / Pix4D
+Both of these photogrammetry platforms are super user-friendly since they have a good graphical interface. All you need to do is load your images and let the software do its job (this takes ~5 hours for ~150 images). After processing, you can preview and download the results from a web browser. Pix4D also has a desktop version.
 
-If you’re interested in working on cool Django + React/Redux projects involving Ethereum, [OddSlingers Labs](https://monadical.com/apply) is hiring remote devs.</div>
+The main disadvantage here is the price for the service (around US$150 per month), although both platforms do include mobile apps for mission planning (which make the workflow so much easier), along with a support center and an account-based management platform for multiple projects.
+
+#### OpenDroneMap
+`ODM` is an open source (yay! :confetti_ball:) photogrammetry tool that you can run yourself using [`Docker`](https://www.docker.com/why-docker) on your computer. If you’re not comfortable using the command line and Docker, `ODM` offers a web interface called [`WebODM`](https://webodm.net/) (around US$29/month or pay-as-you-go), a graphical version of the `ODM` command line interface.
+
+To process your images in `ODM`, first create a folder (e.g, `drone_mapping`) where you will keep your projects. Inside `drone_mapping`, create a folder to store your project (e.g., `ProjectName`), and inside `ProjectName`, create a folder called `images`, where you will manually transfer the images gathered by the drone. Now you can enter the following into the command line:
+
+```fish
+docker run -ti --rm -v /path/to/projects/drone_mapping:/datasets opendronemap/odm --project-path /datasets ProjectName
+```
+
+If you want to make the processing faster, you can also include some flags in the command line to let the program know whether or not you want to process a 3D model and/or a surface model. Set these flags according to what result you want, e.g., a 3D model, an orthophoto, a point cloud, etc. Take a look at the [ODM outputs](https://docs.opendronemap.org/outputs.html) and [ODM options and flags](https://docs.opendronemap.org/arguments.html) to learn more.
+
+## Results
+Here are the resulting models of some of my recent attempts. The first two are from the flight I’ve detailed in this post. I chose to model the area around a friend’s house, close to the top of a hill, since there are lots of nice slopes here.
+
+
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_4ff81f6fcf1cd64faa97c0a7af8969a5.gif&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;hill-gif&#34;&gt;
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_26b9204cef7d9dcf5eb3f09b29524bc3.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2); margin:12px 0 16px 0&#34; alt=&#34;hill-still&#34;&gt;
+&lt;/center&gt;
+
+
+The model below is from part of a highway at the edge of a mountain. You can see that, while the highway has come out well, the trees and the terrain on the right were harder to model (that’s why I’ve picked an angle that shows off more of the highway!).
+
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_edfa96dc3c5fb1f52a0baf5c85f9befd.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;highway&#34;&gt;
+&lt;/center&gt;
+
+&lt;br&gt;
+
+The next model shows a roadside area that is under construction. For construction projects like this one, drone mapping can be used to measure distances, calculate soil volume, or simply track the progress of a build.
+
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_8411819b145003e9b8112c71ca2cb0b3.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;civil-construction&#34;&gt;
+&lt;/center&gt;
+
+&lt;br&gt;
+
+
+This last model was done for a friend who wanted to make an architectural sketch of a house. He used the contour lines extracted from this digital surface model (built with ODM).
+
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_a746d3f5cb5c134b9e862f5672b9a8f5.jpeg&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;contour-lines&#34;&gt;
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_9c2223ed6a9110a2584f1ba3e535db68.jpeg&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2); margin:12px 0 5px 0&#34; alt=&#34;house-sketch&#34;&gt;
+
+*&lt;small style=&#34;float:right;&#34;&gt;From Constructo: Arquitectura, Diseño, Construcción&lt;/small&gt;*
+&lt;/center&gt;
+
+
+## Conclusion
+Drone mapping is no longer a new and exclusive technology. Even though the selection of drones available is still pretty limited (mostly to DJI), there are some great options when it comes to mobile apps and photogrammetry software.
+
+So grab a drone, a mission app, some photogrammetry software, and you&#39;re all set. Have a good flight and watch out for those trees! :sunglasses: 
+
+
+## Tips
+
+* Fly between 10AM and 2PM (less cloud coverage is better, light is very important, shadows downgrade model quality, and wind makes it harder for the drone).
+* High overlap helps (but weigh this against cost to battery life and processing time).
+* Repeat the path in an orthogonal direction to improve model accuracy quality.
+* Avoid any moving objects in the area -- don’t map a construction site with moving vehicles!
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Using-Redux-As-A-Database.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="drone-mapping.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
@@ -458,17 +429,17 @@ If you’re interested in working on cool Django + React/Redux projects involvin
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
-                    Nick Sweeting
+                    Jose Benitez
                     <h4>
-                        Monadical Co-Founder
+                        Drone enthusiast &amp; Web developer
                         
-                        <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
-                            @theSquashSH
+                        <a href="https://twitter.com/yojosebenitez" target="_blank" rel="noopener">
+                            @yojosebenitez
                         </a>
                     </h4>
-                    <h5>Published on <a href="#permalink">2017-07-27</a></h5>
+                    <h5>Published on <a href="#permalink">2020-09-22</a></h5>
                 </div>
-                <img src="/static/nick.jpg" width="100px"/>
+                <img src="/static/jose.jpg" width="100px"/>
             </div>
         </div>
         <br/>
@@ -589,7 +560,7 @@ If you’re interested in working on cool Django + React/Redux projects involvin
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/Skcz_hUhM', {mode: 'no-cors'})
+                fetch('https://docs.monadical.com/s/drone-mapping', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

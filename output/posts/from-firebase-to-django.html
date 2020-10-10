@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monadical Consulting | The State of Poker Platforms in 2018</title>
+    <title>Monadical Consulting | How to Migrate from Firebase to Django</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
     <link rel="stylesheet" href="/static/core/css/base.css">
 
-    <link rel="canonical" href="https://monadical.com/posts/Review-of-Online-Poker-Networks.html" />
+    <link rel="canonical" href="https://monadical.com/posts/from-firebase-to-django.html" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -27,24 +27,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features." />
+<meta name="description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)" />
 
 <!-- Required Open Graph data -->
-<meta property="og:title" content="The State of Poker Platforms in 2018" />
+<meta property="og:title" content="How to Migrate from Firebase to Django" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/poker-networks.jpg" />
-<meta property="og:url" content="https://monadical.com/posts/Review-of-Online-Poker-Networks.html" />
+<meta property="og:image" content="https://monadical.com/static/from-firebase-to-django.png" />
+<meta property="og:url" content="https://monadical.com/posts/from-firebase-to-django.html" />
 <!-- Optional Open Graph data -->
-<meta property="og:description" content="An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features." />
+<meta property="og:description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)" />
 <meta property="og:site_name" content="Monadical Consulting" />
 <meta property="og:locale" content="en_US" />
 <!-- Find additional markup on https://ogp.me -->
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@MonadicalSAS">
-<meta name="twitter:title" content="The State of Poker Platforms in 2018">
-<meta name="twitter:description" content="An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features.">
-<meta name="twitter:image" content="https://monadical.com/static/poker-networks.jpg">
+<meta name="twitter:title" content="How to Migrate from Firebase to Django">
+<meta name="twitter:description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)">
+<meta name="twitter:image" content="https://monadical.com/static/from-firebase-to-django.png">
 
 </head>
 
@@ -167,9 +167,9 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="# Online Poker: Where To Play?  ## Overview  In the past two decades, online poker has emerged as a ">
+    <meta name="description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)">
     
-    <title>Online Poker: Where To Play? - CodiMD</title>
+    <title>How to Migrate from Firebase to Django (or another SQL ORM) - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -194,281 +194,239 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4c332eed1fc511c1d8f54c0656135ce7?s=96);" data-toggle="tooltip" data-placement="right" title="jfeng5"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?s=96);" data-toggle="tooltip" data-placement="right" title="karim"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:48:03 GMT+0000 (UTC)" data-updatetime="Tue Jun 05 2018 05:45:38 GMT+0000 (UTC)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 29 2020 14:14:07 GMT+0000 (UTC)" data-updatetime="Wed Sep 30 2020 20:35:32 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">960 views <a href="Review-of-Online-Poker-Networks.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">185 views <a href="from-firebase-to-django.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body"># Online Poker: Where To Play?
+    <div id="doc" class="container markdown-body">---
+title: How to Migrate from Firebase to Django (or another SQL ORM)
+description: Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)
 
-## Overview
+tags: django, python, firebase
+---
 
-In the past two decades, online poker has emerged as a viable alternative for traditional brick and mortar poker rooms and casinos. The advantages for online players are obvious - convenience, game selection, ability to play multiple tables at once or, for some, ability to play at all, etc. - and the numbers reflect that: In a testimony before the United States Senate regarding Internet Gaming in 2011, Grant Eve, a Certified Public Accountant representing the US Accounting Firm Joseph Eve, Certified Public Accountants, estimated that one in every four dollars gambled is gambled online. Although finding reliable more recent statistics for online gambling is difficult due to the variance in regulations and reporting across jurisdictions, we can reasonably assume that this ratio has only increased with the advancement of technology and the growth in popularity of the game itself.
+&lt;center&gt;
 
-## Traditional Poker Networks
 
-The vast majority of online poker traffic occurs on just a few major &#34;networks&#34;. A poker network is a collection of individual companies, or &#34;skins&#34;, that pool their players together to create a larger poker room. Think of a car dealership: each store sells effectively the same vehicles, but each have different special offers and levels of customer service. The largest and most popular online poker networks today are:
+&lt;big&gt;
+    
+How to Migrate from Firebase to Django
+===
+&lt;/big&gt;
 
-### [PokerStars](https://www.pokerstars.com/)
+*Written by --- Karim Marzouq Originally published 2020-09-29 on the [Monadical blog](https://monadical.com/blog.html).*
 
-PokerStars is the largest and busiest online poker site in the world. On most weeks, it generates more traffic than all the other West-facing poker sites combined. It offers a very complete internet poker experience: tournaments, cash games, live events – if you want it, they probably have it. Many consider PokerStars the gold standard in online poker.
-	
-* Pros: 
-	* Largest poker site in the world (by far)
-	* Excellent selection of games to play
-	* High-stakes cash games around the clock
-	* The most satellites to the WSOP
-	* Great software, slick graphics, outstanding reliability
-	
-* Cons:
-	* Competition is generally tougher than average
-	* Increasing rake
-	* Decreasing player rewards
-	* Average customer service (no live-chat support, email-only)
+Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)
 
-### [Full Tilt Poker](http://www.fulltilt.com/)
+&lt;/center&gt;
 
-Full Tilt Poker was launched in 2004 and quickly became one of the largest and most successful poker sites in history. The entire site came crashing to the ground in 2011, however, when the company was unable to pay back its players after the events of Black Friday.
 
-Former rival PokerStars finally stepped in and purchased the site and paid back all players in a spectacular industry-defining move. Today, Full Tilt is as strong as ever (perhaps even better than ever with PokerStars-level security, and finances, and software).
+**Contents:**
+[TOC]
 
-The site also offers a complete casino, which draws the attention of many casual gamblers. If you’re looking for a site with soft competition and direct ties to the biggest poker room in the industry, then I suggest giving FullTilt a try.
+In recent years, Firebase has emerged as a strong contender in the NoSQL space, and in web application programming in general. It has allowed frontend developers with little to no backend knowledge to develop applications quickly by leveraging Firebase’s backend-as-a-service model. Django is an open-source web application framework that implements the [Model View Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern. Through Django, you also have access to the large and mature open-source Python ecosystem. Depending on your use case, this may save you an [unexpected bill of $30k](https://hackernoon.com/how-we-spent-30k-usd-in-firebase-in-less-than-72-hours-307490bd24d), since Firebase charges per request, while Django + a SQL database can be hosted on a single, fixed $5/month VPS, or scaled horizontally to however much you can afford. Indeed, one of the main reasons a recent client of ours decided to make the switch from Firebase to Django was that, as his app became more popular, the cost of Firebase was getting to be too high. In this blog post, I offer a migration path from Firebase to Django.
 
-* Pros:
-	* Very creative and innovative selection of games
-	* Great software, slick graphics, outstanding reliability
-	* Backed by PokerStars, the largest and most popular poker network in the world
+### Step One: Get your models in order
 
-* Cons:
-	* Softer competition than PokerStars, but still better than average
-	* Increasing rake
-	* Average customer service (no live-chat support, email-only) 
+The very first step in migrating your Firebase application to Django is to stabilize your models. By this, I mean that you should have a concrete idea of how your data is structured and [related](https://en.wikipedia.org/wiki/Relational_database). Take a look at the objects in your Firebase store and try to follow them as they move through your frontend application. Which fields are actually used? Which fields can be normalized? It&#39;s hard to overstate how important this step is. Look at your data in the collections interface of Firebase first, then as they flow into your application, and, finally, start defining your Django models.  
 
-### [888 Poker](https://888poker.com)
+If you have no experience with SQL, then you will need to familiarize yourself with at least [one-to-many relationships](https://docs.djangoproject.com/en/3.0/topics/db/examples/many_to_one/). Armed with this knowledge, you should have a Django model for each of your collections in Firebase.  If you are a developer who relies on Firebase, this will likely be the hardest step for you, since, unlike with Firebase, you will now need to make concrete decisions about how your objects should look and behave. However, just because you are using [Django&#39;s migrations](https://docs.djangoproject.com/en/dev/topics/migrations/) to manage our SQL database schema, this does not mean that the decisions for a model are set in stone. Indeed, the migration system exists precisely for that: propagating changes you make to your models into your SQL database schema.
 
-888 Poker is the world’s second largest online poker site. Launched in 1997, it has grown to become one of the best and most trusted poker sites in the industry. Over 25 million registered players have taken advantage and create a very steady traffic flow at all games and stakes.
+Django provides a [JSON field](https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.JSONField) that you can use as a &#39;catchall&#39; for fields where you aren&#39;t sure of their structure or presence. However, I don&#39;t recommend using it as your primary method for storing data - this would cost you the goodies that come with Django and its ORM, namely: type checking, serialization, forms, auto-indexing, and migrations.
 
-888 Poker has its own version of the ultra-popular fast-fold poker variant called SNAP poker that can be played both in Cash game and Tournament formats. It’s designed to reduce waiting time by dealing you new cards the instant you fold.
+But what about all those Firebase objects that contain data that you don&#39;t know what to do with, or that were derived using Cloud Functions? And what about data that you stored in objects at some point and didn&#39;t end up using, but don&#39;t want to leave behind in Firebase once you migrate? For those I suggest using a JSON field in Django and calling it `metadata`. I’ll expand on this some more below.
 
-888 is not for players who are higher-stakes tournament junkies who expect to play with pros at the tables. It’s known for having relatively softer players and high quality cash games.
+### Step Two: Migrate the user model
 
-* Pros:
-	* Second in player traffic worldwide
-	* Still one of the softer poker rooms online, drawing above-average flop percentages
-	* Instant Play option with no download required
-	* Fast-fold tournaments
-	* Sponsor of WSOP with lots of satellites
+The next step is to ensure you have a working user/auth model. This is because most applications&#39; models will have relationships with the user model. Firebase makes auth exceptionally easy with JWTs, which can optionally include claims that replace a complicated auth model. (E.g: you don’t need groups and permissions checks if each JWT includes all permissions the user has access to.) Luckily with the [Firebase cli](https://github.com/firebase/firebase-tools) you can do:
 
-* Cons:
-	* Tournament schedule isn’t the best
-	* Does not block HUDs (heads up displays)
-	* Relatively slow withdrawals (72 hours)
-	* Questionable exchange rates
+```
+firebase auth:export accounts.json --format=json --project &lt;project_name&gt;
+```
 
-### [Ignition Poker](https://www.ignitioncasino.eu/poker)
+and it will generate a JSON file with all your Firebase users&#39; details, including the hash and salt for their passwords if they set up their account with password-based authentication.
 
-Ignition Poker is the re-branded poker wing from Bovada, formerly Bodog. They have deep roots, having launched under Bodog during the heart of the poker boom in 2004. Ignition is the largest and most popular US poker network by far, trailing only PokerStars and 888 Poker for the largest in the world.
+For the user models loading, this script can be used:
+```python3
+import json
 
-Ignition is known to be one of the softest sites due to having anonymous tables that do not allow long-term player tracking with databases. They’re also one of the only US sites offering mobile gameplay, and their payout reputation is unmatched. Sick of tight games, payout worries, and bare tables? Ignition Poker is probably your best choice.
+from django.db import transaction
 
-However, the network comes with its flaws as well. The Ignition Poker software still launches and loads a blank lobby at times, and the only way to resolve it is to close and reopen the software. Users have reported that they’ve experienced occasional freezing both in the middle of and in between hands both on mobile and desktop. They’ve also been operating without an official gaming license: Bovada and Bodog operated for years under the Kahnawake Gaming Commission License originating in Quebec, they (and all US-facing online gaming sites) lost that license back in 2016.
+from django_firebase_scrypt import FirebaseScryptPasswordHasher
 
-* Pros:
-	* Largest US network by traffic
-	* Fish-friendly, competition relatively not as tough
-	* Mobile software for cash games
-	* Fast payouts, free first payout per month for any method of withdrawal
+from app_name.models import User # or wherever your user model is
 
-* Cons:
-	* Increasing rake levels
-	* Servers occasionally freeze during games
-	* No multi-table tournaments on mobile
-	* No official license
 
-### [Party Poker](https://www.partypoker.com/)
+def run(*args):
+    with open(&#34;../data/accounts.json&#34;) as users_file:
+        users = json.load(users_file)[&#34;users&#34;]
+    downloaded_from_firebase = len(users)
+    imported_users = 0
 
-Party Poker is a long-time stalwart of the poker gaming industry. Cash games, tournaments, Fast Forward Poker (fast-fold poker), and sit &amp; go tournaments are accessible wherever and whenever through their highly rated mobile apps.
+    for firebase_user in users:
+        # ensure each user has displayName
+        if &#39;displayName&#39; not in firebase_user:
+            firebase_user[&#34;displayName&#34;] = firebase_user[&#34;email&#34;]
+        with transaction.atomic(): # use transactions to guard against data corruption during loading
+            # Get first_name &amp; last_name for django User model by bisecting displayName
+            if len(firebase_user[&#34;displayName&#34;].split(&#34; &#34;)) &gt;= 2:
+                first_name = firebase_user[&#34;displayName&#34;].split(&#34; &#34;, maxsplit=1)[0][:30]
+                last_name = firebase_user[&#34;displayName&#34;].split(&#34; &#34;, maxsplit=1)[1]
+            else:
+                first_name = firebase_user[&#34;displayName&#34;][:30]
+                last_name = firebase_user[&#34;displayName&#34;]
+            # fields common to both normal login &amp; Google Sign-In
+            defaults = {
+                        &#34;email&#34;: firebase_user[&#34;email&#34;],
+                        &#34;firebase_id&#34;: firebase_user[&#34;localId&#34;],
+                        &#34;first_name&#34;: first_name,
+                        &#34;last_name&#34;: last_name,
+                        &#34;username&#34;: firebase_user[&#34;email&#34;],
+                    }
+            if &#39;passwordHash&#39; in firebase_user:
+                django_password = f&#34;{FirebaseScryptPasswordHasher.algorithm}${firebase_user[&#39;salt&#39;]}${firebase_user[&#39;passwordHash&#39;]}&#34;
+                defaults[&#34;password&#34;] = django_password
+            django_user, created = User.objects.update_or_create(
+                email=firebase_user[&#34;email&#34;], defaults=defaults
+                )
+            django_user.save()
+            # add any logic you want after loading a user
+            imported_users += 1
+    print(f&#34;Imported or updated {imported_users} users from a firebase dump of {downloaded_from_firebase} users.&#34;)
+```
+This script iterates through the file downloaded from the CLI and creates accounts for the users in it, setting their passwords to the hash+salt that were obtained from Firebase. Note that I use [update_or_create](https://docs.djangoproject.com/en/3.1/ref/models/querysets/#update-or-create) to allow the script to be [idempotent](https://en.wikipedia.org/wiki/Idempotence). Additionally, [transactions](https://en.wikipedia.org/wiki/Database_transaction) are used to ensure no broken database objects (rows) are created. Also note that not much can be done about users that used Sign-In with Google - they will have to reauthenticate. [You should use Django REST Framework to set up JWT auth.](https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html)
 
-Over the past few years, Party Poker has been heavily focusing on recreational players in response to the almost-irreparable tightening of cash games offered across the industry. All of their cash games are anonymous: as a result, many pros have turned away because of the inability to run poker tracking software and the playing field has been leveled significantly. It also offers fantastic bonuses and promotions.
+To run this script, I recommend adding it to a scripts folder at the root of your Django project and using [RunScript from the excellent django-extensions package](https://django-extensions.readthedocs.io/en/latest/runscript.html) to run it. You will also need to install [django-firebase-scrypt](https://github.com/mcsimps2/django-firebase-scrypt) to be able to save the hashed password correctly.
 
-* Pros:
-	* Long-standing room with tradition
-	* Decent cash game traffic, excellent tournament schedule
-	* Offer anonymous tables that eliminate pros from tracking you
-	* Excellent mobile client
-	* Reliable support available via numerous channels
+If you have set up everything correctly in this section, you should be able to sign in using password authentication.
 
-* Cons
-	* Almost non-existent VIP program
-	* Some users have reported connection issues
-	* Tournaments are not anonymous
+### Step Three: Migrating all other collections
 
-### [Winning Poker Network](https://www.americascardroom.eu/)
+Finally, you are ready to start migrating actual data!
 
-The Winning Poker Network, or WPN, has been around for many years under many different names. Their flagship site, America’s Cardroom, has been around since the early days of online poker. It is currently the 2nd largest provider of US-friendly cash games and tournaments, and the only American provider of the popular variable prize pool sit and go format, dubbed “JackPot Poker”.
+Since the Firebase CLI doesn&#39;t offer us a way to export our collections in JSON format, you will have to &#39;stream&#39; them (i.e: read them) one by one from Firebase using the Firebase Python SDK.
 
-The WPN is incredibly generous to their players in terms of rakeback, VIP programs, and rake races. Players can choose between earning a flat 27% rakeback or participating in the generous WPN benefits program (recommended for grinders as many exceed 27% in rewards fairly quickly).
+Make sure you install the [Firebase Admin Python SDK](https://github.com/firebase/firebase-admin-python). Then create a new file, firebase_helpers.py, in your application directory:
+```python
+from django.conf import settings
 
-* Pros
-	* Second largest player pool out of any US facing site
-	* Known to be one of the softest US facing site due to having anonymous tables that do not allow long-term player tracking with databases
-	* Quick payouts (and free first payout per month for any method of withdrawal)
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 
-* Cons
-	* A maximum of 4 tables may be played simultaneously; this applies to both cash games and sit-and-goes
-	* Hand Histories only available for download for 7 days
-	* Almost all tournaments allow re-buys
-	* No mobile software
-	* Does not block HUDs (heads up displays)
+# Use a service account
+if not firebase_admin._apps:
+    cred = credentials.Certificate(settings.FB_ADMIN_PATH) # path to fbadmin file
+    firebase_admin.initialize_app(cred)
 
-### [Chico Poker Network](https://www.tigergaming.com/)
 
-The Chico Poker Network has become increasingly popular over the past few years due to its recreational player infested cash games and appeal to SNG/MTT grinders. It is currently the 3rd most popular network for USA residents, partly due to the fact that it is one of the few networks that services all 50 states.
+db = firestore.client()
+```
+Now you have an instance of the Firestore database, which can be used to query our collections or stream them one by one. At Monadical, when we were helping a client achieve this, we decided to first download all the objects in a collection, pickle them, and save them to a file. We then dealt with how to load them in a separate script. That allowed for faster iteration on the loading of the objects from Firebase, since we didn’t have to stream them directly to the Django database, and could instead load them from the disk as pickled objects.
 
-The most popular network-owned skins are [Tiger Gaming](https://www.tigergaming.com/), [BetOnline](https://www.betonline.ag/), and [Sportsbetting](https://www.sportsbetting.ag/).
+To download the files in your collection, you need to write a script similar to the following:
 
-* Pros:
-	* Relatively weak cash game competition
-	* Third largest US player traffic; services all 50 states
-	* Bad Beat Jackpot and 4 Of A Kind Bonuses
+```python3
+import pickle
 
-* Cons: 
-	* Tournament selection is mediocre
-	* Mediocre software
-	* Video evidence of possible dealer cheating at live Blackjack at BetOnline
-	* High withdrawal threshold ($100 minimum) and fee (starts at a $40 fee for a $100-$200 withdrawal amount)
+from app_name.firebase_helpers import db
 
-## Problems With Traditional Online Poker Networks
 
-However, many of these traditional online poker networks have had their fair share of scandals and critics over the years. Rumors of fraud, insider cheating, collusion, operator insolvency, and insecurity of user funds have riddled the space since its inception. As a result, many players distrust traditional online poker rooms: surveys have shown that two-thirds of Americans do not trust any agency to provide fair and secure online poker.
+def run(*args):
+    blogs_dict = {&#34;blogs&#34;: []}
+    blogs = db.collection(&#39;blogs&#39;)
+    for blog in blogs.stream():
+        blog_dict = blog.to_dict()
+        blog_dict[&#34;id&#34;] = blog.id
+        blogs_dict[&#34;blogs&#34;].append(blog_dict)
+        print(f&#34;Saving blog with id {blog.id}&#34;)
+    blogs_filehandler = open(&#39;../data/blogs.objs&#39;, &#39;wb&#39;)
+    pickle.dump(blogs_dict, blogs_filehandler)
+    print(f&#34;Saved {len(blogs_dict[&#39;blogs&#39;])} blogs&#34;)
 
-## Crypto Poker
+```
+You will notice two things here; the first is that I am serializing them as pickled dicts, not JSON. That&#39;s because JSON objects are serialized to dicts in Python anyway, so there’s no need for an intermediary step. Second, I add the object id (the blog id in this case) to the dict of each blog object - this is to have the object as complete as possible when it enters the Django database.
 
-In 2012, the blockchain-based game Satoshi Dice introduced two revolutionary concepts to the online gambling world: 1) the possibility of checking every single result through a provably fair feature and 2) the ability for users to control their own funds at all times. But only recently have we began unlocking the technology’s full potential for games of skill like poker. 
+Next, you will have to load them. Similar to the script loading the users above, the goal is to be as idempotent as possible.
 
-Crypto poker is still in the very early stages of development. Very few of them have launched (Nitrogen, CoinPoker, Crypto Poker Club), some have working betas available to the public (Pokereum, Blockchain Poker, Oddslingers), but most are still in development (Virtue Poker, etc.). Because of this, the number of active online crypto poker players are very limited (a few hundred per site at most).
+```python3
+import pickle
 
-With that said, it&#39;s likely to become the future of online poker given its inherent trustworthiness and advantages over traditional centralized poker networks. So be on the lookout for further development of these projects! Some of the biggest names in this space are:
+from django.db import transaction
 
-### [Cubeia Network](http://www.cubeia.com/cubeia-poker/)
+from app_name.models import Blog
+from app_name.models import User
 
-The Cubeia Poker platform powers [Global Poker](https://globalpoker.com/) and [Nitrogen](https://nitrogensports.eu/), the latter being one of the most popular crypto poker sites on the Internet.
 
-Nitrogen offers a full sportsbook and casino (dice, baccarat, blackjack, three card poker, and slots) as well as a very solid poker room. All players are required to register and create accounts, but all accounts are anonymous and all deposits, withdrawals, and wagers are handled in Bitcoin (BTC).
+def run(*args):
+    blogs_filehandler = open(&#39;../data/blogs.objs&#39;, &#39;rb&#39;)
+    blogs_dict = pickle.load(blogs_filehandler)
+    downloaded_from_firebase = len(blogs_dict[&#34;blogs&#34;])
+    invalid_blog_objects = 0
+    failed_to_import_blogs = 0
+    imported_blogs = 0
+    for blog in blogs_dict[&#34;blogs&#34;]:
+        with transaction.atomic():
+            try:
+                owner = User.objects.get(firebase_id=blog[&#34;owner&#34;])
+                defaults = {
+                        &#34;name&#34;: blog[&#34;title&#34;],
+                        &#34;owner&#34;: owner,
+                        &#34;metadata&#34;: {&#34;firebase_id&#34;: blog[&#34;id&#34;]}
+                            }
+                if &#39;some_key&#39; in blog:
+                        defaults[&#34;metadata&#34;] = {&#34;firebase_id&#34;: blog[&#34;id&#34;], &#34;some_key&#34;: blog[&#34;some_key&#34;]}
+                django_blog, created = Blog.objects.update_or_create(
+                    metadata__firebase_id=blog[&#34;id&#34;],
+                    defaults=defaults)
+                django_blog.save()
+                imported_blogs += 1
+            except User.DoesNotExist:
+                print(f&#34;Couldn&#39;t find owner with firebase_id {blog[&#39;owner&#39;]} of blog {blog[&#39;id&#39;]}&#34;)
+                failed_to_import_blogs += 1
+print(
+    f&#34;Imported or updated {imported_blogs} of a total {downloaded_from_firebase} from firebase. {invalid_blog_objects} were invalid &amp; {failed_to_import_blogs} couldn&#39;t be loaded because their owner couldn&#39;t be found in Django DB.&#34;
+    )
 
-* Pros
-	* Anonymous accounts
-	* Very well-regarded sportsbook
-	* Quick, free deposits and withdrawals
-	* Software is tried and tested; poker room is live and working
-	* Every wager is handled solely in Bitcoin (BTC)
-	* Game selection (Texas Hold&#39;em, Telesina, Crazy Hold&#39;em, Five-card Stud, Seven-card Stud)
-	* Tournaments live and running
+```
+Note that as part of the loading of those pickled objects, I added the `firebase_id` key to the aforementioned `metadata` JSON field in our Django objects. This allows you to reference this object with `firebase_id` later should the need arise. I also check for the existence of `some_key` and, if found, it&#39;s added to the `metadata` field. This will allow us to access this data in the future, perhaps also adding it as `some_column` in the future for the Django objects.
 
-* Cons
-	* Doubts about the system&#39;s provably fairness (player suspicions)
+If the migration is a multi-week process and you want to be as close to the current Firebase production collections as possible, simply run those scripts as cron jobs on a daily basis. Their failures will point to problems that you have not addressed in the serialization of Firebase objects to your Django database. In the course of helping our client migrate to Django, we did this process several times to ensure that every object in Firebase could move to Django. Each time we ran the script and it failed, we examined the object that raised the exception thoroughly and added the necessary logic to load it. 
 
-### [CoinPoker](https://coinpoker.com/)
+Finally, there are use cases for which I do recommend using Firebase, since replicating the same functionality in Django would require a more in-depth engineering effort. Examples include real time apps such as whiteboards, and [push notifications](https://github.com/xtrinch/fcm-django). Still, even in those cases, Firebase can be used for part of your application, rather than as the main tool for the whole thing.  
 
-CoinPoker is a cryptocurrency-based online poker site launched in November 2017 that utilizes its own native CHP tokens. These tokens operate according to Ethereum-based, smart contract cryptocurrency protocols.
+Thanks to Juan Diego Caballero for his valuable contributions to this article.
 
-It is the first crypto poker platform to launch a Crypto Series of Poker (CSOP) tournament event.
+### Further Reading
 
-* Pros
-	* Software is tried and tested; poker room is live and working
-	* Android mobile app
-	* CHP tokens listed on several exchanges (largest being KuCoin)
-	* Team identities and biographies online; more credibility
-* Cons
-	* No mobile app for iOS (coming soon)
-	* Users must use CHP tokens; transferring fiat currency to CHP can be complicated for users unfamiliar with cryptocurrency exchanges
-	* CHP token value can fluctuate greatly due to lack of liquidity
+A common problem called the N+1 select problem in ORMs like Django’s: https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping 
 
-### [Pokereum](https://www.pokereum.io/)
+A new open-source project called Supabase that offers real time subscriptions on Postgresql databases, thus mimicking a core feature of Firebase: https://github.com/supabase
 
-Pokereum is a decentralized poker DApp that uses smart contract and client side cryptography to provide efficient, provably fair, secure and decentralized global poker. It was the first poker DApp to be announced (late 2013) and is the oldest poker program in the Ethereum ecosystem.
+A tool to convert Firebase databases (Firestores) to Postgresql-based GraphQL backends: https://github.com/hasura/firebase2graphql
 
-A demo version is out and working. However, news and development updates have stalled out recently, and rumors of a lack of continued funding has quieted the project.
 
-* Pros
-	* First poker Ethereum-based DApp
-	* Working Demo version
-* Cons
-	* Not many recent updates; social media accounts quiet
-	* Rumors of project development becoming defunct
-	* Anonymous team; questionable credibility?
 
-### [Blockchain Poker](https://blockchain.poker/)
 
-Blockchain Poker is an online poker room that opened in 2017. It&#39;s currently a working BETA. Players are pseudonymous, meaning that the platform does not store identifiable information about its players -- this both allows players to retain their privacy and protects them in the event of a data breach.
+---
 
-Currently, players can only sit down instantly at a single-table No-Limit Texas Hold&#39;em cash game, playing with chips representing real Bitcoins (BTC) or Bitcoin Cash (BCH). Each chip is worth one satoshi (1/100,000,000th of a bitcoin). There are no other features other than a seldom-used chatroom.
-
-* Pros
-	* There are no sign-ups, which means players can remain anonymous
-	* New players are automatically awarded free satoshis to play with, allowing anyone to jump in and play
-	* Aggressive rake caps and rakeback
-	* Players can choose to play with either Bitcoin (BTC) or Bitcoin Cash (BCH)
-* Cons
-	* Only option is to play a single-table No-Limit Texas Hold&#39;em cash game; no other features at all
-	* Virtually no players
-	* No mobile app support
-	* Anonymous team; questionable credibility?
-
-### [OddSlingers](https://beta.oddslingers.com/)
-
-OddSlingers is a platform powered by blockchain and distributed ledger technology that will allow people to securely place real-time wagers on poker, eSports, and other games of skill. It is currently in process of securing a legal gaming license in the Isle of Man.
-
-They currently offer a play-chip poker platform in beta. Several active tables are available for players to choose from, each differing in minimum buy-in amounts, blinds, and game type. They currently offer no-limit Hold&#39;em, no-limit Bounty, and pot-limit Omaha.
-
-* Pros
-	* Strong legal foundation: will be fully licensed unlike most crypto poker and gambling platforms
-	* Good game selection for a crypto poker platform
-	* Very interesting live-streaming, real-time wager concept
-	* Open-sourced code
-	* Team identities and biographies online; more credibility
-* Cons
-	* Cannot yet play with real money (play chips only) 
-
-### [Crypto Poker Club](https://cryptopokerclub.io/)
-
-Crypto Poker Club (CPC) is a crypto poker platform that launched on April 2018. Their goals are to &#34;transform the online poker industry by being more secure, fairer and providing higher profitability compared to traditional poker rooms&#34;. They&#39;ve built their own proprietary random number generating system that &#34;utilizes Quantum Properties &amp; Blockchain Hashes&#34; to shuffle cards fairly.
-
-CPC offers both a web and Windows client where players can choose between Hold&#39;em and Omaha cash and tournament games with Bitcoin (BTC) and Ethereum (ETH).
-
-* Pros
-	* Platform has launched
-	* Web and Windows clients
-	* Guaranteed &lt;5% rake
-	* 3x Freerolls every day
-	* Up to 50% rakeback
-* Cons
-	* Not many players
-	* No mobile app support
-	* Anonymous team; questionable credibility?
-
-
-### [Virtue Poker](https://virtue.poker/)
-
-Virtue Poker is a P2P decentralized poker platform built using Ethereum. The project plans to remove deposit risks by using Ethereum smart contracts to escrow tournament buy-ins and automatically distribute winnings based on outcomes. Furthermore, a cryptographic p2p protocol will reportedly be used to ensure that all players on a table take part in card shuffling, and that the shuffled deck does not remain on a central server.
-
-The Virtue Poker platform will be governed by an ERC223-compliant token, called VPP. VPP will serve as the in-game currency on the platform, it may also be staked in the Justice System’s registry, giving a token holder the permission to act as a Justice. Thirdly, players on the platform can access special tournaments using VPP.
-
-No working product has been released yet.
-
-* Pros
-	* Strong advisor team from the crypto sphere + three professional poker stars: Joe Lubin, Andrew Keys, Dan Colman, Phil Ivey, Brian Rast, etc.
-	* ConsenSys incubated company
-* Cons
-	* No working product yet (private alpha scheduled for late-May, 2018)</div>
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Review-of-Online-Poker-Networks.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="from-firebase-to-django.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
@@ -511,17 +469,17 @@ No working product has been released yet.
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
                 <div style="padding-top: 10px">
-                    Jerry Feng
+                    Karim
                     <h4>
-                        Monadical CMO
+                        Software Developer
                         
-                        <a href="https://twitter.com/jerryxfeng" target="_blank" rel="noopener">
-                            @jerryxfeng
+                        <a href="" target="_blank" rel="noopener">
+                            @apkallum
                         </a>
                     </h4>
-                    <h5>Published on <a href="#permalink">2018-06-05</a></h5>
+                    <h5>Published on <a href="#permalink">2020-09-29</a></h5>
                 </div>
-                <img src="/static/jerry.png" width="100px"/>
+                <img src="/static/karim.jpg" width="100px"/>
             </div>
         </div>
         <br/>
@@ -646,7 +604,7 @@ No working product has been released yet.
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/r1sAiBvAz', {mode: 'no-cors'})
+                fetch('https://docs.monadical.com/s/from-firebase-to-django', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

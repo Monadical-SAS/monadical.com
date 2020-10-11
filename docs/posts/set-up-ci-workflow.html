@@ -92,8 +92,7 @@
                         </li>
                         
                     </ul>
-                    <a class="beta-btn nav-link" href="/contact-us.html"
-                        onmousedown="/*this.classList.add('hinge'), true*/">
+                    <a class="beta-btn nav-link" href="/contact-us.html">
                         GET A TECHNICAL ASSESSMENT
                     </a>
                 </div>
@@ -199,7 +198,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (UTC)" data-updatetime="Fri Oct 02 2020 20:20:04 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">81 views <a href="set-up-ci-workflow.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">82 views <a href="set-up-ci-workflow.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -492,7 +491,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf8f4f5fdf2fceee9feb6faece8b6f8e9fefffef5eff2faf7e8dbedaa">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b5854555d525c4e495e165a4c481658495e5f5e554f525a57487b4d0a">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -500,7 +499,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="543539352e3b3a7931372679383b333d3a142265">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2a3afa3b8adacefa7a1b0efaeada5abac82b4f3">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -527,10 +526,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f7c777a7c74706a6b5f692d">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="46252e23252d293332063074">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c7f73727a757b696e79317d6b6f317f6e7978797268757d706f5c6a2d">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9af9f5f4fcf3fdefe8ffb7fbede9b7f9e8fffefff4eef3fbf6e9daecab">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -538,7 +537,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbdad6dac1d4d596ded8c996d7d4dcd2d5fbcd8a">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28494549524746054d4b5a0544474f4146685e19">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:
@@ -872,8 +871,9 @@ Monadical.com | Full-Stack Consultancy
                         <li>
                             <b>Monadical</b>
                         </li>
-                        <li><a href=/services.html>Services</a></li>
-                        <li><a href=/projects.html>Projects</a></li>
+                            <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">
@@ -881,23 +881,19 @@ Monadical.com | Full-Stack Consultancy
                         <li>
                             <b>About Us</b>
                         </li>
-                        <li><a href=/team.html>Team</a></li>
-
-                        <li><a href=/principles.html>Principles</a></li>
-                        <li><a href="https://nick764452.typeform.com/to/foY2K2" target="_blank">Join us</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-2">
                     <ul>
                         <li>
-                            <b>Company</b>
+                            <b>Contact Us</b>
                         </li>
-                        <li>
-                            <a href=/blog.html>Blog</a>
-                        </li>
-                        <li>
-                            <a href="/contact-us.html">Contact us</a>
-                        </li>
+                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
+                        <li><a href="/team.html#careers">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
                     </ul>
                 </div>
             </div>

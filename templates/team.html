@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-10 col-12 offset-md-1 text-center">
                     <p class="subtext-size-2 margin-top-10">
-                        We're a fully remote software development and ops  team working from
+                        We're a fully remote software development and ops team working from<br/>
                         Montreal, California, Medellin, and NYC.<br><br>
                         We value curiosity, transparency, and work-life balance, among
                         other <a target="_blank" href="https://docs.oddslingers.com/s/principles-handbook">core principles</a> .
@@ -31,11 +31,10 @@
                 </div>
                 <div class="col-md-8 col-12 offset-md-2 text-center">
                     <p class="subtext-size-2 margin-top-10">
-                        We've spent the past 4 years building projects together and growing as a team. Our
-                        developers have been featured in Forbes, CNN, WSJ, and other publications. Our
-                        products have been used by users in 100+ countries.<br><br>
-                        We operate primarily in English, but you can also contact us
-                        in Spanish, French, Chinese, or German.
+                        We've spent the past 4 years building projects together and growing as a team.<br/>
+                        Our projects have been praised by the NYTimes, Forbes, HackerNews, ProductHunt, and more. 
+                        Our apps have accumulated over <a href="https://hub.docker.com/r/nikisweeting/archivebox">500k downloads</a>, with <a href="https://oddslingers.com/leaderboard/#footer">30,000 web users</a> across 120+ countries.<br><br>
+                        We operate primarily in English, but you can also contact us in French or Spanish.
                     </p>
                 </div>
                 <div class="col-12 text-center margin-top-150">
@@ -101,13 +100,14 @@
                     </div>
                 </div>
                 <div class="col-12 text-center margin-top-150">
+                    <a id="careers" name="careers"></a>
                     <p class="text-size-2">
                         Interested in working for Monadical? We'd love to have you join us.
                     </p>
                 </div>
                 <div class="col-12 text-center align-self-center margin-top-60">
                     <span class="secret-user">
-                        <img src="/static/person.png" class="secret-user-img">
+                        <img src="/static/person.png" class="secret-user-img" style="opacity: 0.3; border: 1px dashed #333; box-shadow: 6px 4px 4px rgba(0,0,0,0.05)">
                     </span>
                 </div>
                 <div class="col-12 text-center margin-top-30">
@@ -117,13 +117,11 @@
                     </p>
                 </div>
                 <div class="col-12 col-lg-4 offset-lg-4 text-center">
-                    <p class="subtext-size-2">
-                        We're always hiring!
-                    </p>
+                    <br/>
                     <p class="subtext-size-2">
                         Currently open remote positions:
                     </p>
-                    <ul class="open-positions">
+                    <ul class="open-positions" style="font-size: 1.2em">
                         {% for position in positions %}
                             {% if position.active %}
                                 {% if position.description %}
@@ -133,14 +131,15 @@
                                 {% else %}
                                     <li>{{position.role}}</li>
                                 {% endif %}
-
                             {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
                 <div class="col-12 text-center margin-top-60 margin-bottom-150">
-                    <a href="https://nick764452.typeform.com/to/foY2K2" target="_blank" class="btn btn-info-inverse">
-                        JOIN THE TEAM
+                    <a href="https://nick764452.typeform.com/to/foY2K2" target="_blank" class="btn btn-lg btn-info-inverse" style="font-size: 24px">
+                        <br/>
+                        APPLY TO JOIN THE TEAM
+                        <br/><br/>
                     </a>
                 </div>
             </div>

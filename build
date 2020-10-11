@@ -30,7 +30,6 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
-ln -sf ./docs output
 cp -r static docs/static
 cp static/favicon.ico docs/favicon.ico
 cp static/robots.txt docs/robots.txt

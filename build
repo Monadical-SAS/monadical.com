@@ -48,3 +48,4 @@ rsync -avh stevie-king/ docs/publishing/
 kill %1 > /dev/null
 echo ""
 echo "${green}[√] Build of static site to docs/ complete.$normal"
+echo "    Commit and push the build to master, then wait ~2-5 minutes for the changes to show up on https://monadical.com"

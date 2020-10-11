@@ -199,7 +199,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (UTC)" data-updatetime="Fri Oct 02 2020 20:20:04 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">76 views <a href="set-up-ci-workflow.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">77 views <a href="set-up-ci-workflow.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -492,7 +492,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="06656968606f617374632b6771752b657463626368726f676a75467037">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cdaea2a3aba4aab8bfa8e0acbabee0aebfa8a9a8a3b9a4aca1be8dbbfc">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -500,7 +500,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcddd1ddc6d3d291d9dfce91d0d3dbd5d2fcca8d">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="30515d514a5f5e1d5553421d5c5f57595e704601">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -527,10 +527,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cba8a3aea8a0a4bebf8bbdf9">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7a4afa2a4aca8b2b387b1f5">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b6864656d626c7e796e266a7c782668796e6f6e657f626a67784b7d3a">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="caa9a5a4aca3adbfb8afe7abbdb9e7a9b8afaeafa4bea3aba6b98abcfb">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -538,7 +538,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e7f737f647170337b7d6c3372717977705e682f">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbaaa6aab1a4a5e6aea8b9e6a7a4aca2a58bbdfa">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:

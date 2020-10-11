@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monadical Consulting | Reconciling Templates and JS Components</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+        <link rel="stylesheet" href="/static/main.css">
+
+        <link rel="canonical" href="https://monadical.com/posts/Reconciling-Templates-With-Components.html"/> 
+
+        
+        
+    </head>
+    
+    <body>
+        
+        
+        
+        <header>
+            <a id="top"></a>
+
+            
+            
+
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <div class="nav-bar-wrapper mx-sm-auto d-sm-flex d-block flex-sm-nowrap">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">
+                        
+                        <h1 style="white-space: normal">
+                            Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span>
+                        </h1>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav navbar-left ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                    </ul>
+                        
+                    <h1 class="nav-item main-brand-link d-none d-sm-block ">
+                        
+                        <a href="/index.html">Monadical <span style="color: #58d665; opacity: 0.8;">Consulting</span></a><br/>
+                        <small><i class="fa fa-angle-double-right"></i>  <a href="/blog.html">Blog</a> <i class="fa fa-angle-double-left"></i></small>
+                    </h1>
+
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.html#contact">How it works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="beta-btn nav-link btn btn-lg btn-success btn-shadow" href="/index.html#consulting" onmousedown="/*this.classList.add('hinge'), true*/">
+                                &nbsp;<span class="diamond" style="font-size: 24px;vertical-align: -3px;"><i class="fa fa-phone"></i></span>&nbsp;
+                                Free Quote
+                                &nbsp;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        
+
+        
+        <article>
+            
+    <style>
+        nav.navbar {
+            border-radius: 0px !important;
+            padding-top: 15px;
+            padding-bottom: 35px;
+        }
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        nav.navbar .navbar-collapse.collapse {
+            display: flex !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+    </style>
+    <canvas class="animated-color-grid" height="20"></canvas>
+    <div id="post-contentopticle-body">
+        
+            <article class="article-content">
+                <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # Reconciling Backend Templates with Frontend Components **How to build a frontend without">
+    
+    <title>Reconciling Backend Templates with Frontend Components - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 12:11:31 GMT+0000 (UTC)" data-updatetime="Thu Feb 14 2019 00:20:05 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">670 views <a href="Reconciling-Templates-With-Components.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+# Reconciling Backend Templates with Frontend Components
+**How to build a frontend without making a Single-Page-App**
+
+*Originally published 2017-02-02 on [HackerNoon.com](https://hackernoon.com/reconciling-djangos-mvc-templates-with-react-components-3aa986cf510a).*
+
+&lt;/center&gt;
+
+At `$startupNameHere` we decided to write our backend in Django and our frontend in React. The combination is not unusual these days, but if you’ve ever tried it you’ve probably found there’s some friction between page composition with backend templating systems, and React’s component model.
+
+The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks. This conflict can also arise with Rails, Flask and any other backend framework that uses templating.
+
+&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*B-kFzr8f4OF9rr6Ueg-UFg.png&#34; width=&#34;100%&#34;&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+I’m here to tell you these don’t necessarily have to conflict, it’s possible to use both without angering the Lilliputians.
+
+## Abandon SPA, embrace page-as-a-component
+
+Our solution was to abandon the single page app model, and instead let Django serve each page individually, with a root React component for each page. Our base site components that don’t change between pages (e.g. navbar, footer) are provided by the Django templates, and the content specific to each page (e.g. poker interface, leaderboard) are composed within React.
+&gt; Abandon the SPA, why would you say such a horrible thing?!
+
+* **Single page apps are not always the solution**, we’ve gained stability (bugs are limited to only one page), easier debugging, easy search engine indexing, and easier static page management by having page boilerplate and routing handled by Django
+
+* It’s much easier to create non-React pages for static content (e.g. about page, login page) when you have all your page boilerplate in Django templates
+
+* No need to deal with React routers, the History API, or async fetching of page content behind the scenes (more on how we do page hotloading without refreshes in a later post)
+&gt; So what does this look like in practice?
+
+## The Django Template
+
+Here we have our base template used for React pages, notice how it extends `ui/base.html` (which contains our header, navbar, and all the usual things you put in a base template).
+
+![](https://cdn-images-1.medium.com/max/3420/1*WVYdIiAszvP_zEqoLKEiDg.png)
+
+This base template can accept any combination of JS component file and props. If you wanted you don’t even have to pass a React component, you could pass in a Vue.js or Angular script, and have it render to `window.react_mount` and read `window.props`.
+
+
+```html+django
+{% extends &#34;ui/base.html&#34; %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block inner %}
+    &lt;div id=&#34;react&#34;&gt;
+        &lt;!-- Contents get replaced by mounted React.Component --&gt;
+        &lt;i class=&#34;fa fa-lg fa-spinner fa-spin&#34;&gt;&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        &lt;i class=&#34;pending&#34;&gt;Loading components...&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        window.props = {{props|json}};  // make sure to escape your props to prevent XSS! See here for the source for the json filter: https://gist.github.com/pirate/c18bfe4fd96008ffa0aef25001a2e88f
+        window.react_mount = document.getElementById(&#39;react&#39;);
+    &lt;/script&gt;
+    &lt;script src=&#34;/static/src/{{component}}&#34;&gt;&lt;/script&gt;
+
+```
+
+&gt; But this page is empty, how do I render my React components?
+
+The `{{component}}` is a path to a script, e.g. `leaderboard.js`, which contains a standard React component, rendered using ReactDOM. The script should be compiled and readily accessible by browsers from your staticfiles folder. It can be aggressively cached by your backend and nginx, since the contents never change, all dynamic content is passed via `window.props`.
+
+So far this gives us a basic page with a navbar, and a loading message. Once we have a component to mount, the loading message is replaced by the component (this process happens so fast your users will never see the `Loading Components...` message).
+
+## The React Component
+
+Now we define a basic React component which lays out our page. We can import reusable components from other JS files, or just write it all in one file. I’ll do that here for simplicity. A more complex page may mount a redux Provider, import dozens of components, or setup websocket connections here. Think of this as your `index.js` entry point, similar to an SPA&#39;s `index.js`, except it only defines the contents of one page.
+
+Here I implement a simple leaderboard, which shows a list of users.
+
+```jsx
+import React from &#39;react&#39;
+import ReactDOM from &#39;react-dom&#39;
+
+const Leaderboard = ({users}) =&gt;
+    &lt;div&gt;
+        &lt;h1&gt;Featured Players&lt;/h1&gt;
+
+        {users.map(user =&gt;
+            &lt;a href={`/user/${user.username}/`}&gt;
+                {user.username}
+            &lt;/a&gt;)}
+    &lt;/div&gt;
+
+
+ReactDOM.render(
+    React.createElement(Leaderboard, window.props),    // gets the props that are passed in the template
+    window.react_mount,                                // a reference to the #react div that we render to
+```
+
+### Building the Javascript Component
+
+We compile this source file from ES6 to ancient JS using [browserify](http://browserify.org/), and stick it in our staticfiles folder so it can be served (and cached) easily. I chose browserify for simplicity, but you can use webpack in your project and get the same results.
+
+```bash
+browserify src/pages/leaderboard.js &gt; static/src/pages/leaderboard.js
+```
+
+Great, now we have something on the screen!
+
+![](https://cdn-images-1.medium.com/max/3184/1*wRKrVOiG61f1IfD_eIhBuA.png)
+&gt; But where did Alice &amp; Bob come from, how did we pass data to the template?
+
+## The View
+
+The Django view just needs to provide the following context to the react_base.html template in order to render this page properly:
+
+1. `component` = `&#34;leaderboard.js&#34;` (our React file above)
+
+1. `props` = `{users: [{username: ‘alice’}, {username: ‘bob’}]}` (the data passed to the React component as props)
+
+1. `title` = `&#34;Leaderboard&#34;` (used for the browser tab title)
+
+```python
+from django.views import View
+from django.shortcuts import render
+
+
+class Leaderboard(View):
+    title = &#39;Leaderboard&#39;
+    template = &#39;ui/react_base.html&#39;
+    component = &#39;pages/leaderboard.js&#39;
+
+    def get(self, request):
+        # gets passed to react via window.props
+        props = {
+            &#39;users&#39;: [
+                {&#39;username&#39;: &#39;alice&#39;},
+                {&#39;username&#39;: &#39;bob&#39;},
+            ]
+        }
+
+        context = {
+            &#39;title&#39;: self.title,
+            &#39;component&#39;: self.component,
+            &#39;props&#39;: props,
+        }
+
+        render(request, self.template, context)
+```
+
+## Why use this pattern, are there alternatives?
+
+This simple pattern of mounting components inside of a base template which passes things to React is very powerful. It lets you freely mix and match template composition with React components, depending on which you need for a given page.
+&gt; But we already built our whole frontend on top of an intricate REST API with endpoints for everything from user info to page content, why is this better?
+
+Don’t go and rewrite your whole frontend if you already have a REST API-based SPA. You get some advantages with REST API + SPA that you don’t get with page-as-a-component, such as reduced bundle sizes because webpack can optimize shared code across pages. It might also be easier to scale if you split your backend functionality into separate micro-services. The page-as-a-component approach is great if you’re ok with slightly larger bundles, in order to get flexibility and nice interplay with Django templates and routing.
+&gt; What are my options if I’m building an app from scratch these days?
+
+* **SPA + granular API:** Use Django as a REST API backend, and provide all your page data via API endpoints that are queried by a monolithic SPA React app (this is the approach I see taught online the most). This approach is great for a microservices-style backend, because the frontend doesn’t care how the backend is built, or what endpoints it hits, as long as it gets the data it needs.
+  - Webpack is optimized for this approach.
+  - Frontend can be built on top of lots of separate microservice endpoints
+  - Frontend handles routing &amp; switching to new pages
+  - Very hard to nail server-side rendering (could be bad for search indexing)
+  - Loads slowly on bad connections since data takes many round trips
+
+* **SPA + 1 request-per-page API:** Provide each page’s data as one request The frontend still handles routing, but the backend is built with 1 view per page, instead of many smaller REST API endpoints. It’s generally easier to start this way rather than exposing separate endpoints for every query, but it couples your backend &amp; frontend logic fairly tightly.
+  - Frontend handles routing &amp; switching to new pages
+  - Frontend relies on all almost its data coming from one endpoint
+  - Faster load times, easier caching than having separate endpoints
+  - Easier to do server-side rendering because views match the frontend data
+  - Decent performance on bad connections, but still requires 2 round-trips
+
+* **Templated JS Snippets:** Compose React components using the template system, by including fragments of JS code to build up an html template that renders the desired page (instead of mounting one component file with the whole page defined in JS). This approach requires the most haxxing in my experience, as you totally ignore the benefits of JS imports and break your ability to lint pages, minify JS, and compile pages to the minimum amount of JS needed. This is the approach libraries like [django-react-templatetags](https://github.com/Frojd/django-react-templatetags) use, it allows for server-side rendering, but it introduces a lot of complexity (including a node server!) into your backend.
+  - No AJAX requests needed, all data is served with the page
+  - Backend handles all routing, frontend links are normal hrefs
+  - Server side rendering is very easy, data is all provided by one view, and snippets can be rendered independently and cached
+  - Easy to swap out react components for non-react on a piece-by-piece basis
+  - Very fast load times, rendered snippets can be cached and served together with their data (great for search indexing)
+  - 1 round-trip page-loads if html page is cached
+
+* **Page as a Component** (our approach): Compose pages in JS, include each page as a cacheable `&lt;script&gt;` in the template, pass it data via `props`. This approach combines the best of both worlds, you get page composition in React, but also easy server-side rendering and caching of whole pages at a time. It’s also easier to manage the data flow when you don’t have separate react snippets, as all components are laid out hierarchically from one mount point downwards.
+  - Slightly harder to mix &amp; match template fragments with React components
+  - More customizable* *build process than with *Templated JS Snippets
+  - Flexible, works equally well for non-React pages like Vue.js or Angular
+  - Easier to manage data flow bc. of single JS entry point (esp. with redux)
+  - 1 round-trip page-loads if script bundle is cached
+
+* Have a pattern your team uses but that I didn’t mention?
+ *I’m always looking for new ones, contact me [@theSquashSH](https://twitter.com/theSquashSH) and I’ll include it here.*
+
+## Extending the Page-as-a-Component pattern
+&gt; Ok, the Lilliputians are satisfied with the design, but they want more features!
+
+The code samples above are overly simplified. A real app in 2017+ probably mounts Redux providers, creates WebSocket connections, fetches content over the wire, and imports many dozens of components to assemble a full page.
+
+Now that I’ve introduced a basic pattern, it’s time to think about extending it with the next layers of functionality. Depending on your application you may decide to add:
+
+* More advanced, extensible page views on the Django side
+
+* Adding some props shared by all pages (e.g. current user’s info, viewing language, time-zone, `get_base_props(request)`)
+
+* A redux store for [managing frontend state](https://hackernoon.com/shape-your-redux-store-like-your-database-98faa4754fd5)
+
+* **WebSocket connections to Django using django-channels**, where the handler code lives next to the page’s view (check out our [django-channels-router](https://github.com/Monadical-SAS/django-channels-router) library)
+
+* real-time updated [react animations](https://github.com/Monadical-SAS/redux-time) with backend time-synchronization
+
+* Hot-loaded new pages when you click links without refreshing. This is one of the strong points of an SPA with react-router, but we can get pretty close without needing to go full SPA:
+  1. Load the the JS component file for the next page by appending a new script tag to `&lt;body&gt;`
+  2. query an endpoint that serves that page’s props as a JSON response, and save them to `window.props`
+  3. Render the new page with:
+ `ReactDOM.render(&lt;NewPage {...window.props}/&gt;, window.react_mount)`
+Hot-loading can be hard to get right though, recovering from errors cleanly and falling back to normal navigation difficult to do while loading JS scripts and querying API endpoints that could fail in numerous ways independently. You’ll probably also have to mess with the History API to change the URL and browser title when navigating.
+
+You can ping me on Twitter [@theSquashSH](https://twitter.com/theSquashSH) if you have any questions, or check out our site in action at [https://oddslingers.com](https://oddslingers.com)!
+
+In our app (a poker site) we use django-channels to send data over a WebSockets to a react-redux frontend. The frontend animates some game state in real-time, while remaining time-synchronized with all the other site viewers to within ~25ms. We didn’t find any libraries that pulled off web animation in a way that we liked, so we ended up implementing our own: [redux-time](https://github.com/Monadical-SAS/redux-time). It’s worth checking out if you’re trying to do real-time animation in a functional, declarative way with redux-style state management. We also developed [django-channels-router](https://github.com/Monadical-SAS/django-channels-router) which is the backend routing to handle socket messages to/from the frontend. Let me know if you find either library useful, or if you’ve worked on anything similar in the past!
+
+## Links and Resources:
+
+* If you’re new to Django and structuring apps in general, start here for a gentle introduction: [Build Your First Python &amp; Django App](https://scotch.io/tutorials/build-your-first-python-and-django-application)
+
+* [django-react-templatetags](https://github.com/Frojd/django-react-templatetags) a library for templating react snippets
+
+* Who the hell are the [Lilliputians](https://en.wikipedia.org/wiki/Lilliput_and_Blefuscu)?!
+
+* [Why You Might not Need MVC with React.js](http://www.code-experience.com/why-you-might-not-need-mvc-with-reactjs/)
+
+* Tutorial that covers more of the details, with some different design decisions: [How the fuck do I set up Django, Django REST Framework, ReactJS and Browserify?](http://gregblogs.com/how-django-reactjs-and-browserify/)
+
+* [Next.js](https://learnnextjs.com): a build environment/library for React &amp; Node that uses a system very similar to *page-as-a-component*
+&gt; tl;dr let Django manage your routing, make separate JS files for each page, pass props data to your components via the template
+
+## —
+
+Hopefully you find this useful! If so, give this article a 💚, or ping me on twitter [@theSquashSH](https://twitter.com/theSquashSH).
+
+If you’re interested working on cool Django + React/Redux projects involving Ethereum, [Monadical is hiring](https://monadical.com) remote &amp; local devs (we’ll fly you to sunny Medellín for the first month)!
+
+![](https://cdn-images-1.medium.com/max/3796/1*uRMpX-1G6q12KDu23mGcvQ.png)</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="Reconciling-Templates-With-Components.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
+
+
+
+
+            </article>
+        
+        <br/><br/>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                <div style="padding-top: 10px">
+                    Nick Sweeting
+                    <h4>
+                        Monadical CTO
+                        
+                        <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
+                            @theSquashSH
+                        </a>
+                    </h4>
+                    <h5>Published on <a href="#permalink">2017-03-02</a></h5>
+                </div>
+                <img src="/static/nick.jpg" width="100px"/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#top" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Some other posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/principles-handbook.html">Monadical Principles Handbook</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/how-to-make-remote-work-part-two-zulip.html">How to Make Remote Work: Part Two, Zulip</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/how-to-make-remote-work-part-one.html">How to Make Remote Work: Part One</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/anatomy-of-html-css-js.html">An Introduction to HTML and CSS Anatomy</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                for (let elem of document.querySelectorAll('.animated-color-grid')) {
+                  const sqrs = new Squares(elem, {height: elem.height})
+                  sqrs.tick()
+
+                  window.addEventListener('resize', function(e) {
+                      sqrs.options.width = document.body.offsetWidth
+                      sqrs.updateDimensions()
+                  })
+                }
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                fetch('https://docs.monadical.com/s/anatomy-of-html-css-js', {mode: 'no-cors'})
+            })
+        </script>
+        <br/><br/>
+    </div>
+
+        </article>
+        
+
+        
+        <footer>
+            
+            
+            <div class="container text-center text-darkgrey">
+                
+                    <div class="social-links">
+                        
+                        <a href="#top"><img src="/static/logo-black.png" style="height: 50px; opacity: 1"></a>
+                        <br/><br/><br/>
+                        <div class="follow-links">
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a><a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a><a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a><a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+
+                
+                <small>Monadical Inc. © 2020</small>
+            </div>
+            
+            
+        </footer>
+        
+
+        <script src="/static/squares.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+
+        
+        
+
+        <!-- Smooth Scroll to Anchor Links Animation -->
+        <script>
+            function smoothScroll(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Scrolling to', this.getAttribute('href'))
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+              document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+              })
+              document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                  anchor.addEventListener('click', smoothScroll);
+              });
+            })
+        </script>
+
+        <!-- Particles.js Network Graph Animation -->
+        <script type="text/javascript">
+            if (document.getElementById('particles-js')) {
+                particlesJS("particles-js", {
+                  "particles": {
+                    "number": {
+                      "value": 250,
+                      "density": {
+                        "enable": true,
+                        "value_area": 800
+                      }
+                    },
+                    "color": {
+                      "value": "#f7fcff"
+                    },
+                    "shape": {
+                      "type": "square",
+                      "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                      },
+                      "polygon": {
+                        "nb_sides": 5
+                      },
+                    },
+                    "opacity": {
+                      "value": 0.5,
+                      "random": false,
+                      "anim": {
+                        "enable": false,
+                        "speed": 0.5,
+                        "opacity_min": 0.1,
+                        "sync": false
+                      }
+                    },
+                    "size": {
+                      "value": 3,
+                      "random": true,
+                      "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                      }
+                    },
+                    "line_linked": {
+                      "enable": true,
+                      "distance": 150,
+                      "color": "#3dbe4c",
+                      "opacity": 0.4,
+                      "width": 1
+                    },
+                    "move": {
+                      "enable": true,
+                      "speed": 1,
+                      "direction": "none",
+                      "random": false,
+                      "straight": false,
+                      "out_mode": "out",
+                      "bounce": true,
+                      "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                      }
+                    }
+                  },
+                  "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                      "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                      },
+                      "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                      },
+                      "resize": true
+                    },
+                    "modes": {
+                      "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                          "opacity": 1
+                        }
+                      },
+                      "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                      },
+                      "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                      },
+                      "push": {
+                        "particles_nb": 4
+                      },
+                      "remove": {
+                        "particles_nb": 2
+                      }
+                    }
+                  },
+                  "retina_detect": true
+                });
+              }
+        </script>
+
+        <!-- D3 Cursor Waves Animation -->
+        <!--<script type="text/javascript">
+
+          var width = Math.max(960, innerWidth),
+              height = Math.max(500, innerHeight);
+
+          var x1 = width / 2,
+              y1 = height / 2,
+              x0 = x1,
+              y0 = y1,
+              i = 0,
+              r = 200,
+              τ = 2 * Math.PI;
+
+          var canvas = d3.select("#waves").append("canvas")
+              .attr("width", width)
+              .attr("height", height)
+              .on("ontouchstart" in document ? "touchmove" : "mousemove", move);
+
+          var context = canvas.node().getContext("2d");
+          context.globalCompositeOperation = "lighter";
+          context.lineWidth = 2;
+
+          d3.timer(function() {
+            context.clearRect(0, 0, width, height);
+
+            var z = d3.hsl(++i % 360, 1, .5).rgb(),
+                c = "rgba(" + z.r + "," + z.g + "," + z.b + ",",
+                x = x0 += (x1 - x0) * .1,
+                y = y0 += (y1 - y0) * .1;
+
+            d3.select({}).transition()
+                .duration(2000)
+                .ease(Math.sqrt)
+                .tween("circle", function() {
+                  return function(t) {
+                    context.strokeStyle = c + (1 - t) + ")";
+                    context.beginPath();
+                    context.arc(x, y, r * t, 0, τ);
+                    context.stroke();
+                  };
+                });
+          });
+
+          function move() {
+            var mouse = d3.mouse(this);
+            x1 = mouse[0];
+            y1 = mouse[1];
+            d3.event.preventDefault();
+          }
+        </script>-->
+
+        <!-- Matomo -->
+        <script type="text/javascript">
+          var _paq = window._paq || [];
+          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+          _paq.push(["setCookieDomain", "*.monadical.com"]);
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+        <!-- End Matomo Code -->
+    </body>
+</html>

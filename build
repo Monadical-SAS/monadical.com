@@ -28,22 +28,23 @@ echo "${blue}[+] Starting Flask server to render pages...$normal"
 sleep 1.5
 
 # Recreate output folder
-rm -Rf output
-mkdir -p output/posts
-cp -r static output/static
-cp static/favicon.ico output/favicon.ico
-cp static/robots.txt output/robots.txt
-./server --pages > output/pages.txt
-./server --posts > output/posts.txt
+rm -Rf docs
+mkdir -p docs/posts
+ln -sf ./docs output
+cp -r static docs/static
+cp static/favicon.ico docs/favicon.ico
+cp static/robots.txt docs/robots.txt
+./server --pages > docs/pages.txt
+./server --posts > docs/posts.txt
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
-(cd output; wget -q $(<pages.txt))
-(cd output/posts; wget -q $(<../posts.txt))
+(cd docs; wget -q $(<pages.txt))
+(cd docs/posts; wget -q $(<../posts.txt))
 
 echo ""
 echo "${blue}[+] Including stevie king to output/...$normal"
-rsync -avh stevie-king/ output/publishing/
+rsync -avh stevie-king/ docs/publishing/
 
 # echo "$red[*] Stopping Flask server...$normal"
 kill %1 > /dev/null
@@ -64,9 +65,9 @@ git push origin "$current_branch":live --force
 echo "${blue}[^] Deploying output/ to https://monadical.com...$normal"
 # ssh monadical.com "cd /opt/monadical.com; git checkout -f live; git pull"
 if [ "$LOCAL_RSYNC" -eq 1 ]; then
-    rsync -r output/ /opt/monadical.www/output
+    rsync -r docs/ /opt/monadical.www/output
 else
-    rsync -r output/ grape:/opt/monadical.www/output
+    rsync -r docs/ grape:/opt/monadical.www/docs
 fi
 
 # ssh monadical.com "cd /opt/monadical.www; git checkout -f www; git pull"

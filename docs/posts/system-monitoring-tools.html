@@ -168,21 +168,6 @@
     
     <meta name="description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links.">
     
-    
-    
-    <meta property="og:title" content="Unix System Monitoring and Diagnostic CLI Tools - CodiMD">
-    
-    
-    <meta property="og:description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
-    <meta property="og:image:alt" content="CodiMD logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
     <title>Unix System Monitoring and Diagnostic CLI Tools - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
@@ -211,14 +196,18 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Sep 11 2020 01:29:36 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (UTC)" data-updatetime="Fri Sep 11 2020 01:29:36 GMT+0000 (UTC)"></span>
             </span>
-            <span class="pull-right">4849 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">4831 views <a href="system-monitoring-tools.html#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body">
+    <div id="doc" class="container markdown-body">---
+title: Unix System Monitoring and Diagnostic CLI Tools
+description: An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links. 
+tags: cli, tools, linux, devops, sysadmin, ubuntu, debian, freebsd, macos
+---
 
 &lt;center&gt;
 
@@ -1455,7 +1444,7 @@ virt-top
 Monitor performance statistics of virtual machines on an ESXi host.
 
 ```bash
-ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99eaf6f4fceceafcebd9fceae1f0b4f1f6eaed">[email&#160;protected]</a> esxtop
+ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="abd8c4c6ceded8ced9ebced8d3c286c3c4d8df">[email&#160;protected]</a> esxtop
 ```
 
 - https://kb.vmware.com/s/article/1008205
@@ -1473,7 +1462,7 @@ Show PostgreSQL performance information.
 ```bash
 apt install pgtop
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c7c637f786b7e697f4c60636f6d6064637f78">[email&#160;protected]</a>:5432/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="473728343320352234072b2824262b2f283433">[email&#160;protected]</a>:5432/example and show perf stats w/ color
 pg_top --color-mode -h localhost -p 5432 -d example -U postgres
 ```
 
@@ -1489,7 +1478,7 @@ Show MySQL performance information.
 ```bash
 apt install mytop myps
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="402d3933312c002c2f23212c282f3334">[email&#160;protected]</a>:3306/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cea3b7bdbfa28ea2a1adafa2a6a1bdba">[email&#160;protected]</a>:3306/example and show perf stats w/ color
 mytop -color -h localhost -P 3306 -u mysql -d example
 ```
 
@@ -1750,7 +1739,7 @@ Backup and file syncing tools.
 apt install rclone rsync rsnapshotd
 
 # sync some local files to a remote server over ssh/rsyncd
-rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d787e687f4d65627e79">[email&#160;protected]</a>:/some/remote/path
+rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f580869087b59d9a8681">[email&#160;protected]</a>:/some/remote/path
 
 # sync some local files to a remote directory on a cloud storage provider
 rclone sync source:path dest:path [flags]
@@ -1762,7 +1751,7 @@ rclone mount remote:path/to/files /path/to/local/mount
 rsnapshot
 
 # or take a zfs snapshot of a given pool/dataset
-zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb9f9a8f9a889e8fbb88959a8b8893948f959a969e">[email&#160;protected]</a>
+zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="395d584d584a5c4d794a5758494a51564d5758545c">[email&#160;protected]</a>
 ```
 
 ### `watchdog`/`auditd`/`acct`
@@ -1805,7 +1794,7 @@ Filesystems.
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="system-monitoring-tools.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
@@ -1828,14 +1817,14 @@ Filesystems.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js" integrity="sha256-M3OC0Q6g4/+Q4j73OvnsnA+lMkdAE5KgupRHqTiPbnI=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.769c6dde270ccfcc1be5.js" defer="defer"></script>
 
 
 

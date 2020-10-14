@@ -31,6 +31,7 @@ sleep 1.5
 rm -Rf docs
 mkdir -p docs/posts
 cp -r static docs/static
+cp CNAME docs/CNAME
 cp static/favicon.ico docs/favicon.ico
 cp static/robots.txt docs/robots.txt
 ./server --pages > docs/pages.txt

@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monadical Consulting | How to set up a CI workflow</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
+    <link rel="stylesheet" href="/static/core/css/base.css">
+
+    <link rel="canonical" href="https://monadical.com/posts/set-up-ci-workflow.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="How to set up a CI workflow" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://monadical.com/static/set-up-ci-workflow.png" />
+<meta property="og:url" content="https://monadical.com/posts/set-up-ci-workflow.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_US" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="How to set up a CI workflow">
+<meta name="twitter:description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.">
+<meta name="twitter:image" content="https://monadical.com/static/set-up-ci-workflow.png">
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="
+                                /static/core/img/logo@3x.png 3x,
+                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-left">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services.html">Services</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/principles.html">Principles</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects.html">Projects</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                        
+                    </ul>
+                    <a class="beta-btn nav-link" href="/contact-us.html">
+                        GET A TECHNICAL ASSESSMENT
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+    </style>
+
+    <div id="post-content">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;      # From GitHub Actions to AWS ECR      *Written by Cristian Vargas.  Originally publish">
+    
+    
+    
+    <meta property="og:title" content="From GitHub Actions to AWS ECR - CodiMD">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>From GitHub Actions to AWS ECR - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Oct 02 2020 20:20:04 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">98 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/518753a2360b7cf60ecdc09f3664d0e3?s=96);" data-toggle="tooltip" data-placement="right" title="contact"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+    
+# From GitHub Actions to AWS ECR
+    
+*Written by Cristian Vargas.
+ Originally published 2020-09-10 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+
+
+Creating an optimal continuous integration and continuous deployment workflow is something I&#39;ve wrangled with over the years, especially as DevOps has taken an increasingly central role in technology organizations [^modernDevOpsProcesses]. Setting up your CI/CD workflow can be a daunting task at first. There are millions of tools to choose from, and there&#39;s no definitive way to &#39;get it right&#39;.
+
+[^modernDevOpsProcesses]: The premise with modern DevOps processes is to empower the whole team to make meaningful contributions to the code without fear of breaking something, delivering code to production as often as possible. Your CI workflow will take every change to the code and test it against different scenarios, run linters, formatters, coverage, etc. It will make sure that everything follows organizational guidelines for quality, security, etc. The CD takes your tested code, and deploys it to an instance. The target instance depends on the organization, but it can be production, or a testing instance where the QA team can give it a final check before the final release. All of this happens in an automated way. This means that typically no intervention is required and resources that would be otherwise busy with this administrative overhead are freed up.
+
+
+A popular approach is to use containers (mainly, but not restricted to, [Docker](https://www.docker.com/)) because they allow for reproducibility and scale relatively easily. You can isolate the bits you need to have your application running inside of the container itself and use a more general approach for the deployment and orchestration of the container. In this post, I’ll show you how to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden. At the end, you will have a Docker image as your artifact, which can then be picked up by another process to make the deployment.
+
+[TOC]
+
+
+
+
+You can do a lot with [GitHub Actions](https://github.com/features/actions), from linting to testing and building images. With [AWS Elastic Container Registry (ECR)](https://aws.amazon.com/ecr/), you can host your Docker images in a private repository, accessible only to your organization. This is really useful when an organization uses AWS for its infrastructure because it reduces network latency and complexity when integrating with other services in this cloud provider.
+
+
+Google Cloud, Azure, and indeed Github themselves all provide private container registry services, so the ideas in this post can be extended to them too.
+
+
+
+## Roadmap
+
+
+To set up a CI workflow, there are several things you will need to do:
+
+* Create GitHub Actions in the repository of interest
+* Be able to build the containers in these actions
+* Create an AWS ECR repository to hold the images
+* Create an AWS user with permissions restricted specifically to ECR
+* Connect GitHub Actions with AWS ECR
+* Selectively tag and send the container builds to AWS ECR
+
+
+So without further ado, let’s get started!
+
+
+
+### How to create GitHub Actions in the repository of interest
+
+For this blog post, I will use a barebones [GitHub repository](https://github.com/cdvv7788/actions-and-aws-ecr):
+
+
+![barebones GitHub repository](https://docs.monadical.com/uploads/upload_7e728fad69d39c7072b80b1786be6d49.png)
+
+
+
+
+It contains a single file: [Dockerfile](https://docs.docker.com/engine/reference/builder/). This file controls how the containers are built. I’ll be using the [nginx official image](https://hub.docker.com/_/nginx/) for this scenario, but you can use your own repository, with a working Dockerfile. In this case, my project uses a Dockerfile of one line:
+
+
+```
+Dockerfile
+FROM nginx:latest
+```
+
+Locally, the command to build the image is simply:
+
+
+```bash
+docker build .
+```
+
+Now, back to enabling GitHub Actions for the repository. For this, you need to create a file under `.github/workflows` and add it to your repository.
+
+![add a file to your repository](https://docs.monadical.com/uploads/upload_82bf89a27a12d50c8e2e8d3db8b757e2.png)
+
+
+
+For now, it doesn’t do much:
+
+
+
+![Docker loading the workflow](https://docs.monadical.com/uploads/upload_d53332bf7a61c51987c5e7255f082273.png)
+
+
+It just loads the current commit into the workflow, so you have access to it inside of your actions; it doesn&#39;t do anything interesting yet. However, if you go to the `actions` tab, you’ll see that it ran:
+
+
+![Actions tab](https://docs.monadical.com/uploads/upload_1180777843baa1f73f1cc7df3b11441e.png)
+
+
+
+
+### Enable container building in Github Actions
+
+Do you remember the command to build Docker images locally that I mentioned earlier? To build your image in GitHub Actions, all you need to do is run that command.
+
+
+![build your image in GitHub Actions](https://docs.monadical.com/uploads/upload_b4a33b81c5c8c1db9742170ff1373f8d.png)
+
+
+
+And after pushing, you get:
+
+
+![image in GitHub Actions](https://docs.monadical.com/uploads/upload_dff720d96619a4a9fe50b3b33d6126b9.png)
+
+Congratulations! Now you know how to build an image in GitHub Actions.
+
+
+### Create an AWS ECR repository to hold the images
+
+You need to prepare your AWS account to hold the images that are being generated in GitHub Actions. The first step for this is to create the repository in ECR. This is just a matter of knowing which things to click on in Amazon’s UI.
+
+In the services tab of your AWS account, look for the `containers` section, and pick **Elastic Container Registry**:
+
+
+![Elastic containter registry](https://docs.monadical.com/uploads/upload_bf5ca844999a68344c0ba29398d678c7.png)
+
+
+
+
+Then on the left sidebar click **Repositories**. The service looks like this:
+
+![repositories](https://docs.monadical.com/uploads/upload_2b5c61803bc28f94e448b9dcceb20683.png)
+
+
+
+
+Just click on `create repository` and pick a name:
+
+
+
+![create repository](https://docs.monadical.com/uploads/upload_42645bec1a55eb1b1ae8ddbb9aff9575.png)
+
+
+
+
+You can ignore the options you are offered for now. You should see something like this:
+
+
+
+![successfully created repository](https://docs.monadical.com/uploads/upload_f731b948df25409c824c84700147def2.png)
+
+
+
+
+Take note of the `repository URL`. You will need it later.
+
+Now you are ready to receive the images. To do this, you just need to enable a user.
+
+Before you continue, we need to do something with the repository URI. It is structured in the following way:
+
+```
+&lt;account_id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repository-name&gt;
+```
+You will need to convert this to an [AWS ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html). To do so, just change it to be like this:
+
+```
+arn:aws:ecr:&lt;region&gt;:&lt;account_id&gt;:repository/&lt;repository-name&gt;
+```
+
+In this case, this value looks like:
+
+```
+arn:aws:ecr:us-west-2:382903967114:repository/github-actions
+```
+
+Save this for later, we will need it soon when assigning permissions.
+
+### Create an AWS user with permissions restricted specifically to ECR
+
+This step is crucial. You don’t want a root account or a user with administrative permissions accessible in GitHub Actions -- that could lead to some nasty damage to your infrastructure, even if it&#39;s unintentional. Always try to follow [the principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) when managing users in AWS. That is, you should always give users the minimum access and permissions required for them to work.
+
+To create the user, you will need [AWS IAM](https://aws.amazon.com/iam/). In the services tab, look for the `Security, Identity &amp; Compliance` section:
+
+![Security, Identity &amp; Compliance section](https://docs.monadical.com/uploads/upload_baa4fc32d77bb53de3526d2a2b6aa9f8.png)
+
+
+
+Once you have accessed the service, click `users` on the sidebar:
+
+
+![users section](https://docs.monadical.com/uploads/upload_8afd475cc7ca76cc47ff1e9e4831eb81.png)
+
+
+
+You may already have some users in your account if you have other services running. Click ‘Add user’. In this case, your user will not need to access the AWS console, so a password is unnecessary. Make sure that the user only has programmatic access:
+
+
+
+
+![add user](https://docs.monadical.com/uploads/upload_325b911ba0587fd91a51b3a8085b7953.png)
+
+
+
+
+This means that the user will be able to access services to which it has permissions, but only via API.
+
+For the permissions, attach them directly for now. (You could create a group, add these permissions, and move the user to that group too, but attaching them directly is faster). You do this by selecting **Attach existing policies directly** in the **set permissions** options.
+
+
+![set permissions options](https://docs.monadical.com/uploads/upload_2af701a7eeb75d79edaca4fd1f9d3321.png)
+
+
+
+There is no default policy in AWS as specific as what you need, so create one. Click `create policy` and select JSON. You will be prompted to an editor. You will need to input the following policy, however you will need to put the ARN you got earlier for your repository in the **Resource** key:
+
+```json
+{
+    &#34;Version&#34;: &#34;2012-10-17&#34;,
+    &#34;Statement&#34;: [
+        {
+            &#34;Sid&#34;: &#34;AuthToken&#34;,
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;ecr:GetAuthorizationToken&#34;
+            ],
+            &#34;Resource&#34;: &#34;*&#34;
+        },
+        {
+            &#34;Sid&#34;: &#34;AllowECR&#34;,
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;ecr:GetDownloadUrlForLayer&#34;,
+                &#34;ecr:BatchGetImage&#34;,
+                &#34;ecr:BatchCheckLayerAvailability&#34;,
+                &#34;ecr:PutImage&#34;,
+                &#34;ecr:InitiateLayerUpload&#34;,
+                &#34;ecr:UploadLayerPart&#34;,
+                &#34;ecr:CompleteLayerUpload&#34;
+            ],
+            &#34;Resource&#34;: &#34;&lt;your-repository-arn&gt;&#34;
+        }
+    ]
+}
+
+```
+
+Click on `review policy`, give it a name and create it. Go back to the user-creating form, refresh it and pick the newly created policy from the list:
+
+![review policy](https://docs.monadical.com/uploads/upload_e0c4cdae779d03d7a3d43f51f5ec4f48.png)
+
+
+
+Continue to the tags. Add tags to the user if you want to and continue to `create user`.
+
+
+
+![add user](https://docs.monadical.com/uploads/upload_bd9344abb6bee6c8a9d517ebae9011f9.png)
+
+
+Download the credentials (and keep them secret). You’ll need to use them soon.
+
+This is probably the most complicated step in the whole process, and it needs to be done well because you are exposing your AWS account to an external system. However, when this is ready, you can connect your two systems and get everything rolling.
+
+
+
+
+
+### Connect Github Actions with AWS ECR
+
+
+As it turns out, [Amazon has an official GitHub action](https://github.com/aws-actions/amazon-ecr-login) for this, so I’ll show you how to use it. But first, you need to store the AWS credentials in GitHub. **NEVER put them in a file in your repository**. [GitHub has a mechanism to safely store your credentials](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). Just go to repository settings and click `secrets` on the sidebar:
+
+![secrets section](https://docs.monadical.com/uploads/upload_38706b1454c9ec9bd75f942e43d74245.png)
+
+
+
+
+Add two entries: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`:
+
+![entries in the secrets section](https://docs.monadical.com/uploads/upload_20c8a7d5d9044cd22c9cefe8baa761f4.png)
+
+
+
+
+The values should correspond to the downloaded credentials for the user you created in the previous step. After doing this, you can safely use those secrets without exposing them in your repository code.
+
+The first thing you will want to confirm is that the user can log in to AWS ECR. To do this, add a couple of steps to your pipeline:
+
+```yaml
+      - name: Configure AWS credentials
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e4d41404847495b5c4b034f595d034d5c4b4a4b405a474f425d6e581f">[email&#160;protected]</a>
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: &lt;aws-region&gt;
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89e8e4e8f3e6e7a4eceafba4e5e6eee0e7c9ffb8">[email&#160;protected]</a>
+```
+
+Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
+
+    
+![Docker file us-west-2](https://docs.monadical.com/uploads/upload_64534bc377c570fdccf926de3b359178.png)
+
+
+The workflow should be successful after running:
+
+    
+![successfully running workflow](https://docs.monadical.com/uploads/upload_9b364b6c322c1204cc7684354052c5e2.png)
+
+Now, the next step is to finish the connection and actually send an image to the ECR repository. You can do this by adding a couple more steps. My version will differ from yours, because there are details that are different, like the region, and the ECR repository, so be careful with just copy-pasting. My final version will look like this:
+
+```yaml
+---
+name: Testing and Linting
+on: [push]
+
+jobs:
+  test:
+    name: Lint and build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6b5beb3b5bdb9a3a296a0e4">[email&#160;protected]</a>
+
+      - name: Configure AWS credentials
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="24474b4a424d43515641094553570947564140414a504d454857645215">[email&#160;protected]</a>
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e3f333f243130733b3d2c7332313937301e286f">[email&#160;protected]</a>
+
+      - name: Build, tag, and push image to amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: github-actions
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY
+          docker tag $ECR_REGISTRY/$ECR_REPOSITORY $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Logout of amazon ECR
+        if: always()
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
+```
+
+As you can see, the build step was replaced. The registry is retrieved from the login action, and a variable named `IMAGE_TAG` that corresponds to the current commit hash is set. The idea is to have the image tagged with that hash.
+
+After you push, and the GitHub Actions workflow is successful, you can confirm that the image was uploaded by checking the AWS ECR console:
+
+    
+![AWS ECR console - uploaded image](https://docs.monadical.com/uploads/upload_0341adebe625f47c8ae977b9f6a675f6.png)
+
+    
+Now, every time you push, the image will be pushed too. There is a caveat: for every push, if the image didn’t change, your image will be tagged again. You can end up with a single image with thousands of tags. This may or may not be useful depending on your use case, but it’s important to be aware of this feature.
+
+    
+### Selectively tag and send the container builds to AWS ECR
+    
+    
+To finish this post, you’ll restrict the uploading of images to a different event: releases. It&#39;s common practice to release artifacts only when a new release is out (with the artifact in this case being the image) and to use the version number as a tag. Given this use case, the workflow can be refactored to follow this practice.
+
+The simplest way to do this is to change the workflow trigger:
+
+```
+name: Build a docker image and push it to AWS ECR
+on:
+  release:
+  types: [published]
+```
+
+If you push this change, you’ll notice your action will not run. You can create a release to check that it’s triggered as expected. In GitHub:
+
+    
+![release in GitHub](https://docs.monadical.com/uploads/upload_65fc99e607e72fbd9e71ab99766c76a4.png)
+
+
+Now, checking Github Actions:
+
+    
+![Github Actions](https://docs.monadical.com/uploads/upload_6a15b5c7d9f7e68936aac02f826c00c9.png)
+
+    
+    
+This is great: you are automatically publishing new releases to your private registry. However, the tagging process can be enhanced. Rather than using the commit hash for tagging, it’s best to use the version of the release. To do this you need to modify the `IMAGE_TAG` variable a little:
+
+```yaml
+    - name: Extract tag
+        shell: bash
+        run: echo &#34;##[set-output name=release_tag;]$(echo ${GITHUB_REF#refs/tags/})&#34;
+        id: extract_tag
+
+      - name: Build, tag, and push image to amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: github-actions
+          IMAGE_TAG: ${{ steps.extract_tag.outputs.release_tag }}
+        run:...
+```
+
+Add an [extra step to extract the tag](https://stackoverflow.com/a/58035262/3509554) and then put it in IMAGE_TAG. The rest of the process is the same.
+    
+In my repository, the final version is `0.3.0`. After creating this release, that tag is present in the AWS ECR image:
+
+    
+![the tag in the AWS ECR image](https://docs.monadical.com/uploads/upload_d9bc61df9fb7e533711f13d96428fe79.png)
+
+    
+And...there it is!
+
+    
+## Conclusion
+
+    
+With this setup, both the GitHub Actions and AWS ECR services are managed so you don’t need to install any software on a server (or do any maintenance). You can just set this up once and forget about it!
+
+This post focused on the step of generating an artifact (docker image) and pushing it to a private repository. This covers the end of your CI workflow, and the beginning of the CD workflow. You can compliment it by finishing both ends.
+
+A complete CI workflow will need you to run your tests, linters and additional checks you have in place (that is specific to your project). If any of those fail, the image should not be built, because there may be something wrong with that version.
+
+After you have your images in the private repository, you can try using CodePipeline to create a working CD flow. You can, for example, listen to the new image event in your repository and trigger a Kubernetes deployment using EKS. That is a topic for another blog post.
+
+A big plus of this approach is that GitHub has no access to your infrastructure -- all it can do is upload new images. This means you have a  reduced surface of attack for possible vulnerabilities. And, you can deploy however you want -- it won’t affect the CI workflow you’ve configured here.
+
+With the information in this post, you should be able to set up a significant bit of CI/CD workflow. Extra improvements to it can easily be made:
+
+- Add a [hadolint](https://github.com/hadolint/hadolint) check to find any issues on your Dockerfile
+- Enable image scans on AWS ECR
+- Set up triggers to respond to AWS ECR changes using [AWS CodePipeline](https://aws.amazon.com/codepipeline/)
+
+If you created resources on amazon for this exercise and don’t intend to keep them in that account, remember to remove them.. They can lead to additional charges in your account.
+
+If you have any suggestions for how to improve this workflow, please leave a comment!
+
+    
+    
+    
+    
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+<script data-cfasync="false" src="https://docs.monadical.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                <div style="padding-top: 10px">
+                    Cristian Vargas
+                    <h4>
+                        Devops and automation
+                        
+                        <a href="https://www.linkedin.com/in/cdvv/" target="_blank" rel="noopener">
+                            @cdvv
+                        </a>
+                    </h4>
+                    <h5>Published on <a href="#permalink">2020-09-09</a></h5>
+                </div>
+                <img src="/static/cristian.png" width="100px"/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Some other posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/covid-affects-outsourcing.html">How COVID-19 will affect outsourcing trends</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/from-firebase-to-django.html">How to Migrate from Firebase to Django</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/drone-mapping.html">Drone Mapping: How to Create Your Own Terrain Surface Model</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/everyone-should-know-about-docker.html">Why Everyone Should Know About Docker</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/HJCjllSEw', {mode: 'no-cors'})
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <br/><br/>
+    </div>
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="NYC, USA">New York</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                        <li><b title="Cali, Colombia">Cali</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                            <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
+                        <li><a href="/team.html#careers">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>Monadical Inc. © 2020 All rights reserved.</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>hello@monadical.com</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>+1 (917) 933-3760</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script src="/static/squares.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
+</html>

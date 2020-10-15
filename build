@@ -30,17 +30,20 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
+mkdir -p docs/projects
 cp -r static docs/static
 cp CNAME docs/CNAME
 cp static/favicon.ico docs/favicon.ico
 cp static/robots.txt docs/robots.txt
 ./server --pages > docs/pages.txt
 ./server --posts > docs/posts.txt
+./server --cases > docs/cases.txt
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; wget -q $(<pages.txt))
 (cd docs/posts; wget -q $(<../posts.txt))
+(cd docs/projects; wget -q $(<../cases.txt))
 
 echo ""
 echo "${blue}[+] Including stevie king to docs/...$normal"

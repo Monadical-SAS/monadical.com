@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;      # A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in">
+    
+    
+    
+    <meta property="og:title" content="A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in to Firebase - CodiMD">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in to Firebase - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 20 2020 12:55:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 20 2020 22:21:41 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">17 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+    
+# A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in to Firebase
+
+*Getting DRF, SimpleJWT and Firebase to play nice.*
+
+&lt;/center&gt;
+
+---
+
+[Firebase](https://firebase.google.com/) is a Google platform composed of more than eighteen products that can speed up the development of mobile and web applications. It has some really nice advanced features, such as real-time updates and horizontal scalability for greenfield software projects. However, applications with a considerable user base can end up being expensive to host on Firebase. For cases like this, it’s usually worth migrating to a different solution like Django. For a general strategy for how to do this, have a look at [How to Migrate from Firebase to Django](https://monadical.com/posts/from-firebase-to-django.html). 
+
+Whether as a first step towards a larger migration, or a component of a hybrid approach (for example, if you want to augment Firebase with data that has to be hosted on your own servers), sometimes it’s useful to migrate the login process while retaining access to Firebase&#39;s services
+
+This post gives you a quick cheat sheet for **how to use Firebase services with a token emitted from your Django backend. The token will be both valid for Firebase and for your backend.** This way you’ll also be prepared for any future migrations from Firebase. We will set SimpleJWT, DRF and Django to log in to Firebase. 
+
+
+## Installation and Setup
+
+For this setup, we are going to use [DRF](https://www.django-rest-framework.org/) with [SimpleJWT](https://github.com/SimpleJWT/django-rest-framework-simplejwt).
+
+First, let’s install the packages.
+
+```bash
+pip install djangorestframework 
+pip install djangorestframework_simplejwt
+```
+
+Then let’s configure DRF to use `JWTAuthentication` and require authenticated requests as default. 
+
+These SimpleJWT settings tell SimpleJWT to use the appropriate algorithm and set some of the claims required by Firebase without needing to install and call [firebase-admin-python](https://github.com/firebase/firebase-admin-python) to create the token.
+
+`settings.py`
+
+```python3
+# django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
+
+REST_FRAMEWORK = {
+    &#34;DEFAULT_AUTHENTICATION_CLASSES&#34;: (
+        &#34;rest_framework_simplejwt.authentication.JWTAuthentication&#34;,  ),
+    &#34;DEFAULT_PERMISSION_CLASSES&#34;: (&#34;rest_framework.permissions.IsAuthenticated&#34;,),
+}
+
+# See https://firebase.google.com/docs/auth/admin/create-custom-tokens#create_custom_tokens_using_a_third-party_jwt_library
+
+SIMPLE_JWT = {
+    &#34;ALGORITHM&#34;: &#34;RS256&#34;,
+    &#34;SIGNING_KEY&#34;: env.str(&#34;FIREBASE_PRIVATE_KEY&#34;, multiline=True),
+    &#34;VERIFYING_KEY&#34;: env.str(&#34;FIREBASE_PUBLIC_KEY&#34;, multiline=True),
+    &#34;ISSUER&#34;: env.str(&#34;FIREBASE_SERVICE_EMAIL&#34;),
+    &#34;USER_ID_CLAIM&#34;: &#34;uid&#34;,
+    # Firebase allows only max=1h
+    &#34;ACCESS_TOKEN_LIFETIME&#34;: timedelta(hours=1),
+    &#34;AUDIENCE&#34;: &#34;https://identitytoolkit.googleapis.com/google.identity.identitytoolkit.v1.IdentityToolkit&#34;,
+}
+```
+
+Also notice that we loaded the secret and sensitive information (SIGNING_KEY, VERIFYING_KEY, ISSUER) from environment variables for the required [service account](https://firebase.google.com/support/guides/service-accounts).
+
+Next we&#39;ll need to add URL routes for our token endpoints.
+
+`urls.py`
+
+```python3
+from django.urls import path
+
+from rest_framework_simplejwt.views import TokenRefreshView
+
+from .views import FirebaseTokenObtainPairView 
+
+urlpatterns = [
+    path(&#39;api/token/&#39;, FirebaseTokenObtainPairView.as_view(), name=&#39;token_obtain_pair&#39;),
+    path(&#39;api/token/refresh/&#39;, TokenRefreshView.as_view(), name=&#39;token_refresh&#39;),
+    # Your other urls ….
+]
+```
+The URL routes need to be connected to views -- let’s add a view to obtain the token pair and a serializer that will add the additional claims required by Firebase.
+
+
+`views.py`
+
+```python3
+from django.conf import settings
+
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+
+class FirebaseTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Add custom claims
+        token[&#34;sub&#34;] = settings.SIMPLE_JWT.get(&#34;ISSUER&#34;, &#34;&#34;)
+        # When the serializer is called token[&#39;exp&#39;] does not reflect the settings.ACCES_TOKEN_LIFETIME
+        # and is set to now + 1day,thus we subtract a day to get iat
+        token[&#34;iat&#34;] = token[&#34;exp&#34;] - (60 * 60 * 24)
+        # Add additional claims here
+        token[&#34;claims&#34;] = {&#34;is_superuser&#34;: user.is_superuser, &#34;is_staff&#34;: user.is_staff}
+
+        return token
+
+
+class FirebaseTokenObtainPairView(TokenObtainPairView):
+    serializer_class = FirebaseTokenObtainPairSerializer
+
+```
+
+Here we overrode the view and the serializer to include all of the required fields for Firebase.
+
+An alternative approach would be to generate the token with `firebase-admin-python` as follows:
+
+```python3
+uid = &#39;some-uid&#39;
+additional_claims = {
+    &#39;premiumAccount&#39;: True
+}
+
+custom_token = auth.create_custom_token(uid, additional_claims)
+```
+When we have the token, we return it at the view. And that&#39;s it! We have our token. 
+
+## Test
+
+Let’s do a quick test with [httpie](https://httpie.org/) and one of our existing Django accounts.
+
+```bash
+http post localhost:8000/api/token username=test password=test 
+```
+We get a token valid for both our Django backend and Firebase services. Woot. 
+
+```bash
+HTTP/1.1 200 OK
+allow: POST, OPTIONS
+content-language: en
+content-length: 1945
+content-type: application/json
+date: Mon, 19 Oct 2020 21:22:21 GMT
+server: uvicorn
+vary: Accept, Accept-Language, Origin
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+
+{
+    &#34;access&#34;: &#34;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9…… &#34;,
+    &#34;refresh&#34;:&#34;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9…… &#34;
+}
+```
+
+## Credits and Further Reading
+
+1. https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html
+2. https://monadical.com/posts/from-firebase-to-django.html
+3. https://firebase.google.com/docs/auth/admin/create-custom-tokens
+4. https://firebase.google.com/support/guides/service-accounts
+
+
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+

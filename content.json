@@ -49,6 +49,31 @@
     }
   },
   "POSTS": {
+    "jwt-login-firebase": {
+      "title": "A Cheat Sheet for Using your JWT Authentication with Django ",
+      "description": "Getting DRF, SimpleJWT and Firebase to play nice.",
+      "date": "2020-10-20",
+      "img": "/static/jwt-login-firebase.png",
+      "tags": [
+        "django",
+        "firebase",
+        "jwt",
+        "login",
+        "DRF",
+        "simplejwt"
+      ],
+      "length": "5 min read",
+      "source": "https://docs.monadical.com/s/JWT-Login-Firebase",
+      "url": "/posts/jwt-login-firebase.html",
+      "template": "posts/jwt-login-firebase.html",
+      "author": {
+        "name": "JDC",
+        "title": "Dev/PM",
+        "handle": "@jdcaballerov",
+        "url": "https://twitter.com/jdcaballerov",
+        "image": "/static/jdc.jpg"
+      }
+    },
     "covid-affects-outsourcing": {
       "title": "How COVID-19 will affect outsourcing trends",
       "description": "How the increase in remote work during COVID-19 will affect companies’ decisions on whether to outsource.",

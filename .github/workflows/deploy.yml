@@ -21,7 +21,7 @@ jobs:
       - name: Detect last autodeployment
         run: |
           LAST_AUTODEPLOYED=$(git log --oneline -n 1 HEAD | grep -q "Autodeployed by git hub actions")
-          echo "$LAST_AUTODEPLOYED" | Out-File -FilePath $env:SKIP_STEP
+          echo "SKIP_STEP=$LAST_AUTODEPLOYED" >> $GITHUB_ENV
       - name: Create local changes
         if: ${{ env.SKIP_STEP }} == 1
         run: |

@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - autodeploy-test
+env:
+  ACTIVATE_VENV: 0
 jobs:
   deploy:
     runs-on: ubuntu-latest

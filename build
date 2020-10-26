@@ -11,8 +11,11 @@ set -o pipefail
 IFS=$'\n'
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ACTIVATE_VENV="${ACTIVATE_VENV:-1}"
 
-source "$DIR/.venv/bin/activate" || echo "[X] Failed to source $DIR"
+if [ "$ACTIVATE_VENV" ]; then
+    source "$DIR/.venv/bin/activate" || echo "[X] Failed to source $DIR"
+fi
 
 txtbld=$(tput bold)
 normal=$(tput sgr0)
@@ -21,7 +24,7 @@ blue=${txtbld}$(tput setaf 4)
 green=${txtbld}$(tput setaf 2)
 white=${txtbld}$(tput setaf 7)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
-LOCAL_RSYNC="${LOCAL_DEPLOY:-0}"
+
 
 echo "${blue}[+] Starting Flask server to render pages...$normal"
 ./server > /dev/null &

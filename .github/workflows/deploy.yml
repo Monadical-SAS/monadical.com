@@ -23,12 +23,12 @@ jobs:
           LAST_AUTODEPLOYED=$(git log --oneline -n 1 HEAD | grep -q "Autodeployed by git hub actions" && echo "1" || echo "0")
           echo "SKIP_STEP=$LAST_AUTODEPLOYED" >> $GITHUB_ENV
       - name: Create local changes
-        if: ${{ env.SKIP_STEP }} == "1"
+        if: ${{ env.SKIP_STEP }} == "0"
         run: |
           pip3 install flask
           ./build
       - name: Commit files
-        if: ${{ env.SKIP_STEP }} == "1"
+        if: ${{ env.SKIP_STEP }} == "0"
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

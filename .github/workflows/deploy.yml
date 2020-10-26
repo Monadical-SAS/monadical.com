@@ -20,7 +20,7 @@ jobs:
           architecture: x64
       - name: Detect last autodeployment
         run: |
-          LAST_AUTODEPLOYED=$(git log --oneline -n 1 HEAD | grep -q "Autodeployed by git hub actions")
+          LAST_AUTODEPLOYED=$(git log --oneline -n 1 HEAD | grep -q "Autodeployed by git hub actions" && echo "1" || echo "0")
           echo "SKIP_STEP=$LAST_AUTODEPLOYED" >> $GITHUB_ENV
       - name: Create local changes
         if: ${{ env.SKIP_STEP }} == 1

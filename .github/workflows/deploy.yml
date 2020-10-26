@@ -16,5 +16,6 @@ jobs:
           ./build
       - name: Commit files
         run: |
+          git diff
           git commit -m "Add changes" -a
           git log

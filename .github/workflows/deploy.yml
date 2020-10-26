@@ -31,6 +31,6 @@ jobs:
         if: env.SKIP_STEP == '0'
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.name "GitHub Actions"
           git commit -m "Add changes" -a
           git log

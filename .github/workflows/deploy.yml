@@ -5,6 +5,7 @@ on:
       - autodeploy-test
 env:
   ACTIVATE_VENV: 0
+  TERM: xterm
 jobs:
   deploy:
     runs-on: ubuntu-latest

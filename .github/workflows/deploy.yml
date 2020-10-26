@@ -27,7 +27,7 @@ jobs:
         run: |
           pip3 install flask
           ./build
-      - name: Commit files
+      - name: Commit filess
         if: ${{ env.SKIP_STEP }} == 1
         run: |
           git config --local user.email "action@github.com"

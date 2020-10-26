@@ -2,20 +2,19 @@ name: Deploy monadical.com
 on:
   push:
     branches:
-      - master
+      - autodeploy-test
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy monadical site
-        uses: appleboy/ssh-action@master
+      - uses: actions/checkout@v2
         with:
-          host: ${{ secrets.MONADICAL_HOST }}
-          username: ${{ secrets.MONADICAL_USERNAME }}
-          key: ${{ secrets.MONADICAL_KEY }}
-          port: ${{ secrets.MONADICAL_PORT }}
-          script: |
-            cd /opt/monadical.www/
-            git pull
-            export LOCAL_DEPLOY=1
-            ./build
+          fetch-depth: 1
+      - name: Create local changes
+        run: |
+          pip3 install flask
+          ./build
+      - name: Commit files
+        run: |
+          git commit -m "Add changes" -a
+          git log

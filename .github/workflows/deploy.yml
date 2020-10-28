@@ -6,6 +6,7 @@ on:
 env:
   ACTIVATE_VENV: 0
   TERM: xterm
+  BRANCH: autodeploy-test
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -30,7 +31,12 @@ jobs:
       - name: Commit files
         if: env.SKIP_STEP == '0'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Actions"
-          git commit -m "Add changes" -a
-          git log
+          git config --local user.email "ci@monadical.com"
+          git config --local user.name "CI monadical.com"
+          git commit -m "Autodeployed by git hub actions" -a
+      - name: Push changes
+        if: env.SKIP_STEP == '0'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.AUTODEPLOY_GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH }}

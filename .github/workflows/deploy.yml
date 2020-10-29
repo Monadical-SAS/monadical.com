@@ -3,19 +3,40 @@ on:
   push:
     branches:
       - master
+env:
+  ACTIVATE_VENV: 0
+  TERM: xterm
+  BRANCH: master
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy monadical site
-        uses: appleboy/ssh-action@master
+      - uses: actions/checkout@v2
         with:
-          host: ${{ secrets.MONADICAL_HOST }}
-          username: ${{ secrets.MONADICAL_USERNAME }}
-          key: ${{ secrets.MONADICAL_KEY }}
-          port: ${{ secrets.MONADICAL_PORT }}
-          script: |
-            cd /opt/monadical.www/
-            git pull
-            export LOCAL_DEPLOY=1
-            ./build
+          fetch-depth: 1
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+          architecture: x64
+      - name: Detect last autodeployment
+        run: |
+          LAST_AUTODEPLOYED=$(git log --oneline -n 1 HEAD | grep -q "Autodeployed by git hub actions" && echo "1" || echo "0")
+          echo "SKIP_STEP=$LAST_AUTODEPLOYED" >> $GITHUB_ENV
+      - name: Create local changes
+        if: env.SKIP_STEP == '0'
+        run: |
+          pip3 install flask
+          ./build
+      - name: Commit files
+        if: env.SKIP_STEP == '0'
+        run: |
+          git config --local user.email "ci@monadical.com"
+          git config --local user.name "CI monadical.com"
+          git commit -m "Autodeployed by git hub actions" -a
+      - name: Push changes
+        if: env.SKIP_STEP == '0'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.AUTODEPLOY_GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH }}

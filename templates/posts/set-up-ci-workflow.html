@@ -10,11 +10,11 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;      # From GitHub Actions to AWS ECR      *Written by Cristian Vargas.  Originally publish">
+    <meta name="description" content="&lt;center&gt;      # How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR      *Writt">
     
     
     
-    <meta property="og:title" content="From GitHub Actions to AWS ECR - CodiMD">
+    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR - CodiMD">
     
     
     
@@ -25,7 +25,7 @@
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>From GitHub Actions to AWS ECR - CodiMD</title>
+    <title>How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -50,12 +50,12 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Oct 02 2020 20:20:04 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Nov 02 2020 20:08:15 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">129 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">135 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -67,7 +67,7 @@
     </div>
     <div id="doc" class="container markdown-body">&lt;center&gt;
     
-# From GitHub Actions to AWS ECR
+# How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR
     
 *Written by Cristian Vargas.
  Originally published 2020-09-10 on the [Monadical blog](https://monadical.com/blog.html).*
@@ -348,7 +348,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab9b5b4bcb3bdafa8bff7bbada9f7b9a8bfbebfb4aeb3bbb6a99aaceb">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="33505c5d555a544641561e5244401e50415657565d475a525f40734502">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -356,7 +356,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c1d111d06131251191f0e5110131b15123c0a4d">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="77161a160d18195a1214055a1b18101e19370146">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -383,10 +383,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99faf1fcfaf2f6ecedd9efab">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a5aea3a5ada9b3b286b0f4">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f89b97969e919f8d8a9dd5998f8bd59b8a9d9c9d968c9199948bb88ec9">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0d01000807091b1c0b430f191d430d1c0b0a0b001a070f021d2e185f">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -394,7 +394,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83e2eee2f9ecedaee6e0f1aeefece4eaedc3f5b2">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e6f636f746160236b6d7c2362616967604e783f">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:
@@ -500,6 +500,7 @@ If you created resources on amazon for this exercise and don’t intend to keep 
 
 If you have any suggestions for how to improve this workflow, please leave a comment!
 
+You can read the second part of this post here.
     
     
     

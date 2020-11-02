@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monadical Consulting | How to set up a CI workflow</title>
+    <title>Monadical Consulting | How to Set Up a CI/CD Workflow, Part Two</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
     <link rel="stylesheet" href="/static/core/css/base.css">
 
-    <link rel="canonical" href="https://monadical.com/posts/set-up-ci-workflow.html" />
+    <link rel="canonical" href="https://monadical.com/posts/set-up-ci-workflow-part-two.html" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -27,24 +27,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden." />
+<meta name="description" content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline." />
 
 <!-- Required Open Graph data -->
-<meta property="og:title" content="How to set up a CI workflow" />
+<meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/set-up-ci-workflow.png" />
-<meta property="og:url" content="https://monadical.com/posts/set-up-ci-workflow.html" />
+<meta property="og:image" content="https://monadical.com/static/set-up-ci-workflow-part-two.png" />
+<meta property="og:url" content="https://monadical.com/posts/set-up-ci-workflow-part-two.html" />
 <!-- Optional Open Graph data -->
-<meta property="og:description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden." />
+<meta property="og:description" content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline." />
 <meta property="og:site_name" content="Monadical Consulting" />
 <meta property="og:locale" content="en_US" />
 <!-- Find additional markup on https://ogp.me -->
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@MonadicalSAS">
-<meta name="twitter:title" content="How to set up a CI workflow">
-<meta name="twitter:description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.">
-<meta name="twitter:image" content="https://monadical.com/static/set-up-ci-workflow.png">
+<meta name="twitter:title" content="How to Set Up a CI/CD Workflow, Part Two">
+<meta name="twitter:description" content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.">
+<meta name="twitter:image" content="https://monadical.com/static/set-up-ci-workflow-part-two.png">
 
 </head>
 
@@ -166,11 +166,11 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;      # How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR      *Writt">
+    <meta name="description" content="How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS ==  There are hug">
     
     
     
-    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR - CodiMD">
+    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS - CodiMD">
     
     
     
@@ -181,7 +181,7 @@
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR - CodiMD</title>
+    <title>How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -209,458 +209,273 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Nov 02 2020 20:08:15 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Oct 30 2020 13:48:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Nov 02 2020 14:37:15 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">139 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">7 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
-            <span class="ui-owner">
-                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/518753a2360b7cf60ecdc09f3664d0e3?s=96);" data-toggle="tooltip" data-placement="right" title="contact"></i>
-                &nbsp;<span class="text-uppercase">owned this note</span>
-            </span>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body">&lt;center&gt;
+    <div id="doc" class="container markdown-body">How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS
+==
+
+There are huge benefits to having a continuous deployment (CD) strategy. Automated deployments mean your team can pursue faster release cycles and experiment with live features more frequently. Automated processes mean fewer people have to worry about how to do something manually. A good CD setup is also essential when teams reach a certain size: having a clear process to release helps to avoid miscommunication.
+
+In a [previous article](https://monadical.com/posts/set-up-ci-workflow.html), I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.
+
+&lt;center&gt;
+
+![docker logo](https://docs.monadical.com/uploads/upload_217069157fa4ce37bab61da18501434c.png)
+
+&lt;/center&gt;
+
+There are several services for deploying images to production environments in the AWS ecosystem. I will explore a pipeline that takes the images received at AWS ECR and deploys them to AWS ECS using AWS CodePipeline. At a very high level, the AWS services that I will use to set up the pipeline are: 
+
+ - AWS ECR (Elastic Container Registry): Repository where you upload your images.
+ - AWS ECS (Elastic Container Service): The service that will serve as the deployment target for your images. This could be replaced by EBS (Elastic Beanstalk) or EKS (Elastic Kubernetes Service) with some modifications.
+ - AWS CodePipeline: This service listens to events and reacts to them. It can be configured to serve a wide range of use cases. In this case, it will listen to AWS ECR image uploads.
+ - AWS ELB (Elastic Load Balancer): This balances the load between the available instances. This demonstration will only use a single container, but AWS ELB is still needed to enable a public interface for the service. 
+
+&lt;center&gt;
+
+Target Architecture
+&lt;/center&gt;
+
+![target architecture](https://docs.monadical.com/uploads/upload_966497560d2d09ccb5a50dcb381eb6a2.png)
+
+
+
+The first thing you need is a functioning ECR repository. If you don’t know how to set one up, have a look at my article, [From GitHub Actions to AWS ECR](https://monadical.com/posts/set-up-ci-workflow.html).
+
+To create the load balancer, go to the EC2 console and select &#39;Create Load Balancer&#39; in the Load Balancers section:
+
+Create a new Application Load Balancer:
+
+![create load balancer](https://docs.monadical.com/uploads/upload_564ceed8afa652261c077e6f7b06ed26.png)
+
+&lt;center&gt;
+
+![application load balancer](https://docs.monadical.com/uploads/upload_c794e62c43e2e92045bc9c1471f50392.png)
+
+&lt;/center&gt;
+
+Enter a name and enable a couple of availability zones:
+
+&lt;center&gt;
+
+![configure load balancer](https://docs.monadical.com/uploads/upload_3bb7efbac629a6ff0c1b226cdc760827.png)
+
+&lt;/center&gt;
+
+
+Leave the defaults for the next step. Take note of the subnets you use, as they will need to match the ones you assign to the cluster service later on. (If you don’t do this, you might have issues with health checks.)
+
+You will get a warning about not using a secure endpoint (HTTPS). This can be explored later, but it will require an additional service to manage a SSL certificate and, depending on the setup, there may be a significant amount of work to do. How to set up a secure connection is out of the scope of this blog post, but if you’re interested in how to do that, check out [the official documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-certificates.html).
+
+For the security group, just enable anything that allows traffic from anywhere to port 80. If there aren’t any available, you can create a new one with these requirements:
+
+![security groups](https://docs.monadical.com/uploads/upload_4a7c706be3e1c0c6ad67470087dc493b.png)
+
+
+
+In the `Configure Routing` section, create a new group, assign a name, and leave the rest as is (http in port 80 with target type Instance).
+
+Leave the rest of the steps with the defaults and create the load balancer.
+
+The next resource you will need is a cluster to deploy to. However, this requires a task definition, which you will need to create first. Go to AWS Elastic Container Service in the AWS console:
+
+&lt;center&gt;
+
+![console container services](https://docs.monadical.com/uploads/upload_9d8b533e8b4f28fe450c2c3aff036c6a.png)
     
-# How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR
+&lt;/center&gt;
+
+The task definition will dictate how your task will be deployed and which strategy and resources you will use:
+
+![task definition - launch type](https://docs.monadical.com/uploads/upload_ecececf7e3a4a5c27c7c57649b1e61d4.png)
+
+Use FARGATE and click continue. In the next step, pick a name for your task definition, and select your preferred task size:
+
+![task definition - task size](https://docs.monadical.com/uploads/upload_a01c4dbabf84e6b1b3bb4ec3d3e1b332.png)
+
+&lt;center&gt;
     
-*Written by Cristian Vargas.
- Originally published 2020-09-10 on the [Monadical blog](https://monadical.com/blog.html).*
+![container definition](https://docs.monadical.com/uploads/upload_58e4936a35427e2db10b4737b319a8cf.png)
+
+&lt;/center&gt;
+
+
+For the next step you will need your ECR repository URL. Remember it has the following structure: `(aws_account_id.dkr.ecr.region.amazonaws.com)`. You can also find this information by going to the ECR service and checking it. If you prefer, you can use images from Docker Hub. Whatever name you use in this step (nginx in this case) will be needed later, so make a note of it.
+
+As mentioned in the [documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#standard_container_definition_params), after you create your cluster, it will use these container definitions to pull the latest image and tag from the repository. However, subsequent updates to the images will not be propagated to running instances. You will need to follow some additional steps to prevent stale containers.
+
+In the case of the nginx image, you will need a port mapping to port 80, to allow the service to forward the traffic in that port to the container. Also, in the health check you can add `/docker-entrypoint.sh` in the command field. This is the command that this container uses to start and is what the task definition will use to check it is still running.
+
+![task definition creation success](https://docs.monadical.com/uploads/upload_14775191f7d8978e89326b5209e2a7ce.png)
+
+
+If everything has been entered correctly, you can now create the cluster. Click on ‘Clusters’, and then create a cluster:
+
+&lt;center&gt;
+    
+![clusters - elastic container service](https://docs.monadical.com/uploads/upload_ad1af3935d7a46d7f44f66614f8fce3b.png)
+    
+&lt;/center&gt;
+
+
+You can leave the first template as it is:
+
+![cluster template](https://docs.monadical.com/uploads/upload_e7bfce56e3266e7f96690e047b38b086.png)
+
+Pick a name for your cluster. You may want to create a new VPC if you want to keep it isolated from the rest of your services, however, this is optional. If you create a new VPC, remember to update your load balancer, or it will be unable to find your cluster.
+
+![](https://docs.monadical.com/uploads/upload_21bfeea5387c384e3f1abf149365bf6f.png)
+
+
+You should see a screen like this:
+
+![configure cluster](https://docs.monadical.com/uploads/upload_3a697cbcea32dd69f6e6e119b301eb26.png)
+
+If you click ‘View Cluster’, you should see something similar to this:
+
+![cluster success](https://docs.monadical.com/uploads/upload_53abb280875b7dd1fc55e3b5e03e1fd6.png)
+
+
+In the services tab, click ‘Create’:
+
+![ecs - services list](https://docs.monadical.com/uploads/upload_465d1dc30876a4ea52d39363170c4a8e.png)
+
+Pick FARGATE, and set the number of tasks to 1 (you will need to change this in a production setup, because replication is important for availability). You can use the service name of your choice. For task definition, pick the one you just created a couple of steps back.
+
+For the next step, you will set up the load balancer you created earlier. Use the same subnets in the networking section and select the proper application load balancer:
+
+![ecs - configure service](https://docs.monadical.com/uploads/upload_0678b41e09227cec068c41aebe7676fe.png)
+
+In the load balancing section, you will see that our `nginx` container is listed as available to load balance. Click on ‘Add to Load Balancer’:
+
+![ecs - configure network](https://docs.monadical.com/uploads/upload_11ddf0428e90beece1409023c16b89a2.png)
+
+
+You will need to modify the settings according to your container after you click ‘Add to load balancer’:
+
+![load balancer configuration](https://docs.monadical.com/uploads/upload_8a5ce3e568274f6aab929bd6c1e8e7de.png)
+
+
+Notice that the `Path pattern` is not empty by default. Set it to `/`.
+
+
+Proceed with the defaults for the last step, and create the service. You will eventually have the task running in your service:
+
+![load balancer configuration](https://docs.monadical.com/uploads/upload_e4ff2499b427ccb89c73762b7145ab1a.png)
+
+Go back to the EC2 console and check the load balancer. Once the health check is blue, we are ready to go:
+
+![load balancer health check](https://docs.monadical.com/uploads/upload_19102d7b3837dcf8ba7369e41142a849.png)
+
+You can copy the DNS name to your browser. It should work properly now:
+
+![load balancer dns](https://docs.monadical.com/uploads/upload_25713488e6609ecace8c3eab34a980aa.png)
+
+
+
+Now you are ready for the next step: you need to set up a pipeline in AWS CodePipeline. To do this, go to the AWS console and click on ‘CodePipeline’:
+
+&lt;center&gt;
+    
+![nginx response](https://docs.monadical.com/uploads/upload_30bfd1e4526e90232e1f14b440af621b.png)
+    
+&lt;/center&gt;
+
+Once there, you should see this screen:
+
+![console developer tools](https://docs.monadical.com/uploads/upload_8ef2d401fde45b0491abd3a28c91072b.png)
+
+
+To get started, click `Create pipeline`:
+
+![create pipeline](https://docs.monadical.com/uploads/upload_7cf0aaad35c24b5a6c617f3b70c0fe51.png)
+
+Input a name, and leave the rest as it is by default. On the next screen, select AWS ECR as the source:
+
+![code pipeline settings](https://docs.monadical.com/uploads/upload_714580cb9f3b846057cf396a47fefd13.png)
+
+This pipeline must listen to your ECR repository so that it’s triggered every time a new image is uploaded with the `latest` tag. In my case, I’ll be using the ECR repository I created for the previous blog post.
+
+For the build step, select AWS CodeBuild as build provider and create a new project:
+
+&lt;center&gt;
+
+![create build project](https://docs.monadical.com/uploads/upload_60c0aa5562540ec2f930d02e06d75473.png)
+    
+&lt;/center&gt;
+
+
+This is necessary because the source step does not return an artifact compatible with the deploy stage requirements. We need to generate a file: `imagedefinitions.json`.
+
+Give the project a name and set up the environment as follows:
+
+![code build environment](https://docs.monadical.com/uploads/upload_4c0b5a1cadb48d778436adc903d5c803.png)
+
+
+In the buildspec, you will need to have the [following](https://stackoverflow.com/questions/58849736/did-not-find-the-image-definition-file-imagedefinitions-json):
+
+```yaml
+version: 0.2
+phases:
+    install:
+        runtime-versions:
+            docker: 18
+    build:
+        commands:
+            - apt-get install jq -y
+            - ContainerName=&#34;nginx&#34;
+            - ImageURI=$(cat imageDetail.json | jq -r &#39;.ImageURI&#39;)
+            - printf &#39;[{&#34;name&#34;:&#34;CONTAINER_NAME&#34;,&#34;imageUri&#34;:&#34;IMAGE_URI&#34;}]&#39; &gt; imagedefinitions.json
+            - sed -i -e &#34;s|CONTAINER_NAME|$ContainerName|g&#34; imagedefinitions.json
+            - sed -i -e &#34;s|IMAGE_URI|$ImageURI|g&#34; imagedefinitions.json
+            - cat imagedefinitions.json
+
+artifacts:
+    files:
+        - imagedefinitions.json
+```
+
+Be careful with the `ContainerName`. If you used a different name in your container definition while setting up your ECS cluster, you will need to use that name instead.
+
+![code build buildspec](https://docs.monadical.com/uploads/upload_449f6db16e91640ed72267da70719920.png)
+
+Finally, the build stage should look like this:
+
+![code pipeline build stage](https://docs.monadical.com/uploads/upload_65b43b29be8718a3f63b5285d3821e39.png)
+
+In the deploy stage, add the ECS cluster definitions you created earlier:
+&lt;center&gt;
+
+![code pipeline deploy stage](https://docs.monadical.com/uploads/upload_fabdc85abc2dcdf3652bd3dfd26c98eb.png)
 
 &lt;/center&gt;
 
 
 
-Creating an optimal continuous integration and continuous deployment workflow is something I&#39;ve wrangled with over the years, especially as DevOps has taken an increasingly central role in technology organizations [^modernDevOpsProcesses]. Setting up your CI/CD workflow can be a daunting task at first. There are millions of tools to choose from, and there&#39;s no definitive way to &#39;get it right&#39;.
+Click ‘Next’ and ‘Create the pipeline’ to finish.
 
-[^modernDevOpsProcesses]: The premise with modern DevOps processes is to empower the whole team to make meaningful contributions to the code without fear of breaking something, delivering code to production as often as possible. Your CI workflow will take every change to the code and test it against different scenarios, run linters, formatters, coverage, etc. It will make sure that everything follows organizational guidelines for quality, security, etc. The CD takes your tested code, and deploys it to an instance. The target instance depends on the organization, but it can be production, or a testing instance where the QA team can give it a final check before the final release. All of this happens in an automated way. This means that typically no intervention is required and resources that would be otherwise busy with this administrative overhead are freed up.
+The pipeline will now run and after it is finished, you should see something similar to this:
 
+![create pipeline success](https://docs.monadical.com/uploads/upload_79199b8eb77e0db3e4219136799c6cdd.png)
 
-A popular approach is to use containers (mainly, but not restricted to, [Docker](https://www.docker.com/)) because they allow for reproducibility and scale relatively easily. You can isolate the bits you need to have your application running inside of the container itself and use a more general approach for the deployment and orchestration of the container. In this post, I’ll show you how to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden. At the end, you will have a Docker image as your artifact, which can then be picked up by another process to make the deployment.
 
-[TOC]
 
+Hold your applause -- this pipeline hasn’t done anything interesting yet. After all, your setup was already fetching an image and booting up correctly before you set this up. The difference, however, is that now whenever you upload a new image to ECR with the `latest` tag, it will automatically be deployed. You can test this by updating your application and checking that it has changed.
 
+In my case, I updated the static file that the Docker image was serving and, after creating a new release in my repo (which triggers the action to upload to ECR), it was automatically deployed:
 
+![successful nginx message](https://docs.monadical.com/uploads/upload_1a68df31872da78b85e2dee6869862ae.png)
 
-You can do a lot with [GitHub Actions](https://github.com/features/actions), from linting to testing and building images. With [AWS Elastic Container Registry (ECR)](https://aws.amazon.com/ecr/), you can host your Docker images in a private repository, accessible only to your organization. This is really useful when an organization uses AWS for its infrastructure because it reduces network latency and complexity when integrating with other services in this cloud provider.
 
 
-Google Cloud, Azure, and indeed Github themselves all provide private container registry services, so the ideas in this post can be extended to them too.
+There are a lot of improvements that you can implement on this setup, but this will serve as a solid basis. If you don’t have an overwhelming number of tasks to run, this is a cost effective way to deploy high availability services. For example, you will want to play with blue/green deployments to avoid the small downtime introduced when the new container is starting up.
 
-
-
-## Roadmap
-
-
-To set up a CI workflow, there are several things you will need to do:
-
-* Create GitHub Actions in the repository of interest
-* Be able to build the containers in these actions
-* Create an AWS ECR repository to hold the images
-* Create an AWS user with permissions restricted specifically to ECR
-* Connect GitHub Actions with AWS ECR
-* Selectively tag and send the container builds to AWS ECR
-
-
-So without further ado, let’s get started!
-
-
-
-### How to create GitHub Actions in the repository of interest
-
-For this blog post, I will use a barebones [GitHub repository](https://github.com/cdvv7788/actions-and-aws-ecr):
-
-
-![barebones GitHub repository](https://docs.monadical.com/uploads/upload_7e728fad69d39c7072b80b1786be6d49.png)
-
-
-
-
-It contains a single file: [Dockerfile](https://docs.docker.com/engine/reference/builder/). This file controls how the containers are built. I’ll be using the [nginx official image](https://hub.docker.com/_/nginx/) for this scenario, but you can use your own repository, with a working Dockerfile. In this case, my project uses a Dockerfile of one line:
-
-
-```
-Dockerfile
-FROM nginx:latest
-```
-
-Locally, the command to build the image is simply:
-
-
-```bash
-docker build .
-```
-
-Now, back to enabling GitHub Actions for the repository. For this, you need to create a file under `.github/workflows` and add it to your repository.
-
-![add a file to your repository](https://docs.monadical.com/uploads/upload_82bf89a27a12d50c8e2e8d3db8b757e2.png)
-
-
-
-For now, it doesn’t do much:
-
-
-
-![Docker loading the workflow](https://docs.monadical.com/uploads/upload_d53332bf7a61c51987c5e7255f082273.png)
-
-
-It just loads the current commit into the workflow, so you have access to it inside of your actions; it doesn&#39;t do anything interesting yet. However, if you go to the `actions` tab, you’ll see that it ran:
-
-
-![Actions tab](https://docs.monadical.com/uploads/upload_1180777843baa1f73f1cc7df3b11441e.png)
-
-
-
-
-### Enable container building in Github Actions
-
-Do you remember the command to build Docker images locally that I mentioned earlier? To build your image in GitHub Actions, all you need to do is run that command.
-
-
-![build your image in GitHub Actions](https://docs.monadical.com/uploads/upload_b4a33b81c5c8c1db9742170ff1373f8d.png)
-
-
-
-And after pushing, you get:
-
-
-![image in GitHub Actions](https://docs.monadical.com/uploads/upload_dff720d96619a4a9fe50b3b33d6126b9.png)
-
-Congratulations! Now you know how to build an image in GitHub Actions.
-
-
-### Create an AWS ECR repository to hold the images
-
-You need to prepare your AWS account to hold the images that are being generated in GitHub Actions. The first step for this is to create the repository in ECR. This is just a matter of knowing which things to click on in Amazon’s UI.
-
-In the services tab of your AWS account, look for the `containers` section, and pick **Elastic Container Registry**:
-
-
-![Elastic containter registry](https://docs.monadical.com/uploads/upload_bf5ca844999a68344c0ba29398d678c7.png)
-
-
-
-
-Then on the left sidebar click **Repositories**. The service looks like this:
-
-![repositories](https://docs.monadical.com/uploads/upload_2b5c61803bc28f94e448b9dcceb20683.png)
-
-
-
-
-Just click on `create repository` and pick a name:
-
-
-
-![create repository](https://docs.monadical.com/uploads/upload_42645bec1a55eb1b1ae8ddbb9aff9575.png)
-
-
-
-
-You can ignore the options you are offered for now. You should see something like this:
-
-
-
-![successfully created repository](https://docs.monadical.com/uploads/upload_f731b948df25409c824c84700147def2.png)
-
-
-
-
-Take note of the `repository URL`. You will need it later.
-
-Now you are ready to receive the images. To do this, you just need to enable a user.
-
-Before you continue, we need to do something with the repository URI. It is structured in the following way:
-
-```
-&lt;account_id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repository-name&gt;
-```
-You will need to convert this to an [AWS ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html). To do so, just change it to be like this:
-
-```
-arn:aws:ecr:&lt;region&gt;:&lt;account_id&gt;:repository/&lt;repository-name&gt;
-```
-
-In this case, this value looks like:
-
-```
-arn:aws:ecr:us-west-2:382903967114:repository/github-actions
-```
-
-Save this for later, we will need it soon when assigning permissions.
-
-### Create an AWS user with permissions restricted specifically to ECR
-
-This step is crucial. You don’t want a root account or a user with administrative permissions accessible in GitHub Actions -- that could lead to some nasty damage to your infrastructure, even if it&#39;s unintentional. Always try to follow [the principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) when managing users in AWS. That is, you should always give users the minimum access and permissions required for them to work.
-
-To create the user, you will need [AWS IAM](https://aws.amazon.com/iam/). In the services tab, look for the `Security, Identity &amp; Compliance` section:
-
-![Security, Identity &amp; Compliance section](https://docs.monadical.com/uploads/upload_baa4fc32d77bb53de3526d2a2b6aa9f8.png)
-
-
-
-Once you have accessed the service, click `users` on the sidebar:
-
-
-![users section](https://docs.monadical.com/uploads/upload_8afd475cc7ca76cc47ff1e9e4831eb81.png)
-
-
-
-You may already have some users in your account if you have other services running. Click ‘Add user’. In this case, your user will not need to access the AWS console, so a password is unnecessary. Make sure that the user only has programmatic access:
-
-
-
-
-![add user](https://docs.monadical.com/uploads/upload_325b911ba0587fd91a51b3a8085b7953.png)
-
-
-
-
-This means that the user will be able to access services to which it has permissions, but only via API.
-
-For the permissions, attach them directly for now. (You could create a group, add these permissions, and move the user to that group too, but attaching them directly is faster). You do this by selecting **Attach existing policies directly** in the **set permissions** options.
-
-
-![set permissions options](https://docs.monadical.com/uploads/upload_2af701a7eeb75d79edaca4fd1f9d3321.png)
-
-
-
-There is no default policy in AWS as specific as what you need, so create one. Click `create policy` and select JSON. You will be prompted to an editor. You will need to input the following policy, however you will need to put the ARN you got earlier for your repository in the **Resource** key:
-
-```json
-{
-    &#34;Version&#34;: &#34;2012-10-17&#34;,
-    &#34;Statement&#34;: [
-        {
-            &#34;Sid&#34;: &#34;AuthToken&#34;,
-            &#34;Effect&#34;: &#34;Allow&#34;,
-            &#34;Action&#34;: [
-                &#34;ecr:GetAuthorizationToken&#34;
-            ],
-            &#34;Resource&#34;: &#34;*&#34;
-        },
-        {
-            &#34;Sid&#34;: &#34;AllowECR&#34;,
-            &#34;Effect&#34;: &#34;Allow&#34;,
-            &#34;Action&#34;: [
-                &#34;ecr:GetDownloadUrlForLayer&#34;,
-                &#34;ecr:BatchGetImage&#34;,
-                &#34;ecr:BatchCheckLayerAvailability&#34;,
-                &#34;ecr:PutImage&#34;,
-                &#34;ecr:InitiateLayerUpload&#34;,
-                &#34;ecr:UploadLayerPart&#34;,
-                &#34;ecr:CompleteLayerUpload&#34;
-            ],
-            &#34;Resource&#34;: &#34;&lt;your-repository-arn&gt;&#34;
-        }
-    ]
-}
-
-```
-
-Click on `review policy`, give it a name and create it. Go back to the user-creating form, refresh it and pick the newly created policy from the list:
-
-![review policy](https://docs.monadical.com/uploads/upload_e0c4cdae779d03d7a3d43f51f5ec4f48.png)
-
-
-
-Continue to the tags. Add tags to the user if you want to and continue to `create user`.
-
-
-
-![add user](https://docs.monadical.com/uploads/upload_bd9344abb6bee6c8a9d517ebae9011f9.png)
-
-
-Download the credentials (and keep them secret). You’ll need to use them soon.
-
-This is probably the most complicated step in the whole process, and it needs to be done well because you are exposing your AWS account to an external system. However, when this is ready, you can connect your two systems and get everything rolling.
-
-
-
-
-
-### Connect Github Actions with AWS ECR
-
-
-As it turns out, [Amazon has an official GitHub action](https://github.com/aws-actions/amazon-ecr-login) for this, so I’ll show you how to use it. But first, you need to store the AWS credentials in GitHub. **NEVER put them in a file in your repository**. [GitHub has a mechanism to safely store your credentials](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). Just go to repository settings and click `secrets` on the sidebar:
-
-![secrets section](https://docs.monadical.com/uploads/upload_38706b1454c9ec9bd75f942e43d74245.png)
-
-
-
-
-Add two entries: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`:
-
-![entries in the secrets section](https://docs.monadical.com/uploads/upload_20c8a7d5d9044cd22c9cefe8baa761f4.png)
-
-
-
-
-The values should correspond to the downloaded credentials for the user you created in the previous step. After doing this, you can safely use those secrets without exposing them in your repository code.
-
-The first thing you will want to confirm is that the user can log in to AWS ECR. To do this, add a couple of steps to your pipeline:
-
-```yaml
-      - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8deee2e3ebe4eaf8ffe8a0ecfafea0eeffe8e9e8e3f9e4ece1fecdfbbc">[email&#160;protected]</a>
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: &lt;aws-region&gt;
-
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3a2aea2b9acadeea6a0b1eeafaca4aaad83b5f2">[email&#160;protected]</a>
-```
-
-Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
-
-    
-![Docker file us-west-2](https://docs.monadical.com/uploads/upload_64534bc377c570fdccf926de3b359178.png)
-
-
-The workflow should be successful after running:
-
-    
-![successfully running workflow](https://docs.monadical.com/uploads/upload_9b364b6c322c1204cc7684354052c5e2.png)
-
-Now, the next step is to finish the connection and actually send an image to the ECR repository. You can do this by adding a couple more steps. My version will differ from yours, because there are details that are different, like the region, and the ECR repository, so be careful with just copy-pasting. My final version will look like this:
-
-```yaml
----
-name: Testing and Linting
-on: [push]
-
-jobs:
-  test:
-    name: Lint and build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e1828984828a8e9495a197d3">[email&#160;protected]</a>
-
-      - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="47242829212e203235226a2630346a243522232229332e262b34073176">[email&#160;protected]</a>
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d2c202c37222360282e3f6021222a24230d3b7c">[email&#160;protected]</a>
-
-      - name: Build, tag, and push image to amazon ECR
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: github-actions
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY
-          docker tag $ECR_REGISTRY/$ECR_REPOSITORY $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-      - name: Logout of amazon ECR
-        if: always()
-        run: docker logout ${{ steps.login-ecr.outputs.registry }}
-```
-
-As you can see, the build step was replaced. The registry is retrieved from the login action, and a variable named `IMAGE_TAG` that corresponds to the current commit hash is set. The idea is to have the image tagged with that hash.
-
-After you push, and the GitHub Actions workflow is successful, you can confirm that the image was uploaded by checking the AWS ECR console:
-
-    
-![AWS ECR console - uploaded image](https://docs.monadical.com/uploads/upload_0341adebe625f47c8ae977b9f6a675f6.png)
-
-    
-Now, every time you push, the image will be pushed too. There is a caveat: for every push, if the image didn’t change, your image will be tagged again. You can end up with a single image with thousands of tags. This may or may not be useful depending on your use case, but it’s important to be aware of this feature.
-
-    
-### Selectively tag and send the container builds to AWS ECR
-    
-    
-To finish this post, you’ll restrict the uploading of images to a different event: releases. It&#39;s common practice to release artifacts only when a new release is out (with the artifact in this case being the image) and to use the version number as a tag. Given this use case, the workflow can be refactored to follow this practice.
-
-The simplest way to do this is to change the workflow trigger:
-
-```
-name: Build a docker image and push it to AWS ECR
-on:
-  release:
-  types: [published]
-```
-
-If you push this change, you’ll notice your action will not run. You can create a release to check that it’s triggered as expected. In GitHub:
-
-    
-![release in GitHub](https://docs.monadical.com/uploads/upload_65fc99e607e72fbd9e71ab99766c76a4.png)
-
-
-Now, checking Github Actions:
-
-    
-![Github Actions](https://docs.monadical.com/uploads/upload_6a15b5c7d9f7e68936aac02f826c00c9.png)
-
-    
-    
-This is great: you are automatically publishing new releases to your private registry. However, the tagging process can be enhanced. Rather than using the commit hash for tagging, it’s best to use the version of the release. To do this you need to modify the `IMAGE_TAG` variable a little:
-
-```yaml
-    - name: Extract tag
-        shell: bash
-        run: echo &#34;##[set-output name=release_tag;]$(echo ${GITHUB_REF#refs/tags/})&#34;
-        id: extract_tag
-
-      - name: Build, tag, and push image to amazon ECR
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: github-actions
-          IMAGE_TAG: ${{ steps.extract_tag.outputs.release_tag }}
-        run:...
-```
-
-Add an [extra step to extract the tag](https://stackoverflow.com/a/58035262/3509554) and then put it in IMAGE_TAG. The rest of the process is the same.
-    
-In my repository, the final version is `0.3.0`. After creating this release, that tag is present in the AWS ECR image:
-
-    
-![the tag in the AWS ECR image](https://docs.monadical.com/uploads/upload_d9bc61df9fb7e533711f13d96428fe79.png)
-
-    
-And...there it is!
-
-    
-## Conclusion
-
-    
-With this setup, both the GitHub Actions and AWS ECR services are managed so you don’t need to install any software on a server (or do any maintenance). You can just set this up once and forget about it!
-
-This post focused on the step of generating an artifact (docker image) and pushing it to a private repository. This covers the end of your CI workflow, and the beginning of the CD workflow. You can compliment it by finishing both ends.
-
-A complete CI workflow will need you to run your tests, linters and additional checks you have in place (that is specific to your project). If any of those fail, the image should not be built, because there may be something wrong with that version.
-
-After you have your images in the private repository, you can try using CodePipeline to create a working CD flow. You can, for example, listen to the new image event in your repository and trigger a Kubernetes deployment using EKS. That is a topic for another blog post.
-
-A big plus of this approach is that GitHub has no access to your infrastructure -- all it can do is upload new images. This means you have a  reduced surface of attack for possible vulnerabilities. And, you can deploy however you want -- it won’t affect the CI workflow you’ve configured here.
-
-With the information in this post, you should be able to set up a significant bit of CI/CD workflow. Extra improvements to it can easily be made:
-
-- Add a [hadolint](https://github.com/hadolint/hadolint) check to find any issues on your Dockerfile
-- Enable image scans on AWS ECR
-- Set up triggers to respond to AWS ECR changes using [AWS CodePipeline](https://aws.amazon.com/codepipeline/)
-
-If you created resources on amazon for this exercise and don’t intend to keep them in that account, remember to remove them.. They can lead to additional charges in your account.
-
-If you have any suggestions for how to improve this workflow, please leave a comment!
-
-You can read the second part of this post here.
-    
-    
-    
-    
+If you follow the instructions in this blog post and the [last one](https://monadical.com/posts/set-up-ci-workflow.html), you should have a fully functional continuous deployment pipeline. This will reduce the need for someone to manually deploy updates and services. Your team will be able to focus on improving your applications and won’t have to worry about how to update them every time you need a new version out.
 
 ---
 
@@ -673,6 +488,7 @@ Monadical.com | Full-Stack Consultancy
     
 &lt;/center&gt;
 
+---
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
@@ -685,7 +501,7 @@ Monadical.com | Full-Stack Consultancy
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
     
-<script data-cfasync="false" src="https://docs.monadical.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
@@ -721,13 +537,13 @@ Monadical.com | Full-Stack Consultancy
                 <div style="padding-top: 10px">
                     Cristian Vargas
                     <h4>
-                        Devops and automation
+                        Backend Developer
                         
-                        <a href="https://www.linkedin.com/in/cdvv/" target="_blank" rel="noopener">
-                            @cdvv
+                        <a href="https://twitter.com/cdvv7788" target="_blank" rel="noopener">
+                            @cdvv7788
                         </a>
                     </h4>
-                    <h5>Published on <a href="#permalink">2020-09-09</a></h5>
+                    <h5>Published on <a href="#permalink">2020-11-02</a></h5>
                 </div>
                 <img src="/static/cristian.png" width="100px"/>
             </div>
@@ -858,7 +674,7 @@ Monadical.com | Full-Stack Consultancy
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/HJCjllSEw', {mode: 'no-cors'})
+                fetch('https://docs.monadical.com/s/deploying-docker-images-in-aws-using-ecs', {mode: 'no-cors'})
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

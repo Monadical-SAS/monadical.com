@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS ==  There are hug">
+    
+    
+    
+    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS - CodiMD">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Oct 30 2020 13:48:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Nov 02 2020 14:37:15 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">8 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS
+==
+
+There are huge benefits to having a continuous deployment (CD) strategy. Automated deployments mean your team can pursue faster release cycles and experiment with live features more frequently. Automated processes mean fewer people have to worry about how to do something manually. A good CD setup is also essential when teams reach a certain size: having a clear process to release helps to avoid miscommunication.
+
+In a [previous article](https://monadical.com/posts/set-up-ci-workflow.html), I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.
+
+&lt;center&gt;
+
+![docker logo](https://docs.monadical.com/uploads/upload_217069157fa4ce37bab61da18501434c.png)
+
+&lt;/center&gt;
+
+There are several services for deploying images to production environments in the AWS ecosystem. I will explore a pipeline that takes the images received at AWS ECR and deploys them to AWS ECS using AWS CodePipeline. At a very high level, the AWS services that I will use to set up the pipeline are: 
+
+ - AWS ECR (Elastic Container Registry): Repository where you upload your images.
+ - AWS ECS (Elastic Container Service): The service that will serve as the deployment target for your images. This could be replaced by EBS (Elastic Beanstalk) or EKS (Elastic Kubernetes Service) with some modifications.
+ - AWS CodePipeline: This service listens to events and reacts to them. It can be configured to serve a wide range of use cases. In this case, it will listen to AWS ECR image uploads.
+ - AWS ELB (Elastic Load Balancer): This balances the load between the available instances. This demonstration will only use a single container, but AWS ELB is still needed to enable a public interface for the service. 
+
+&lt;center&gt;
+
+Target Architecture
+&lt;/center&gt;
+
+![target architecture](https://docs.monadical.com/uploads/upload_966497560d2d09ccb5a50dcb381eb6a2.png)
+
+
+
+The first thing you need is a functioning ECR repository. If you don’t know how to set one up, have a look at my article, [From GitHub Actions to AWS ECR](https://monadical.com/posts/set-up-ci-workflow.html).
+
+To create the load balancer, go to the EC2 console and select &#39;Create Load Balancer&#39; in the Load Balancers section:
+
+Create a new Application Load Balancer:
+
+![create load balancer](https://docs.monadical.com/uploads/upload_564ceed8afa652261c077e6f7b06ed26.png)
+
+&lt;center&gt;
+
+![application load balancer](https://docs.monadical.com/uploads/upload_c794e62c43e2e92045bc9c1471f50392.png)
+
+&lt;/center&gt;
+
+Enter a name and enable a couple of availability zones:
+
+&lt;center&gt;
+
+![configure load balancer](https://docs.monadical.com/uploads/upload_3bb7efbac629a6ff0c1b226cdc760827.png)
+
+&lt;/center&gt;
+
+
+Leave the defaults for the next step. Take note of the subnets you use, as they will need to match the ones you assign to the cluster service later on. (If you don’t do this, you might have issues with health checks.)
+
+You will get a warning about not using a secure endpoint (HTTPS). This can be explored later, but it will require an additional service to manage a SSL certificate and, depending on the setup, there may be a significant amount of work to do. How to set up a secure connection is out of the scope of this blog post, but if you’re interested in how to do that, check out [the official documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-certificates.html).
+
+For the security group, just enable anything that allows traffic from anywhere to port 80. If there aren’t any available, you can create a new one with these requirements:
+
+![security groups](https://docs.monadical.com/uploads/upload_4a7c706be3e1c0c6ad67470087dc493b.png)
+
+
+
+In the `Configure Routing` section, create a new group, assign a name, and leave the rest as is (http in port 80 with target type Instance).
+
+Leave the rest of the steps with the defaults and create the load balancer.
+
+The next resource you will need is a cluster to deploy to. However, this requires a task definition, which you will need to create first. Go to AWS Elastic Container Service in the AWS console:
+
+&lt;center&gt;
+
+![console container services](https://docs.monadical.com/uploads/upload_9d8b533e8b4f28fe450c2c3aff036c6a.png)
+    
+&lt;/center&gt;
+
+The task definition will dictate how your task will be deployed and which strategy and resources you will use:
+
+![task definition - launch type](https://docs.monadical.com/uploads/upload_ecececf7e3a4a5c27c7c57649b1e61d4.png)
+
+Use FARGATE and click continue. In the next step, pick a name for your task definition, and select your preferred task size:
+
+![task definition - task size](https://docs.monadical.com/uploads/upload_a01c4dbabf84e6b1b3bb4ec3d3e1b332.png)
+
+&lt;center&gt;
+    
+![container definition](https://docs.monadical.com/uploads/upload_58e4936a35427e2db10b4737b319a8cf.png)
+
+&lt;/center&gt;
+
+
+For the next step you will need your ECR repository URL. Remember it has the following structure: `(aws_account_id.dkr.ecr.region.amazonaws.com)`. You can also find this information by going to the ECR service and checking it. If you prefer, you can use images from Docker Hub. Whatever name you use in this step (nginx in this case) will be needed later, so make a note of it.
+
+As mentioned in the [documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#standard_container_definition_params), after you create your cluster, it will use these container definitions to pull the latest image and tag from the repository. However, subsequent updates to the images will not be propagated to running instances. You will need to follow some additional steps to prevent stale containers.
+
+In the case of the nginx image, you will need a port mapping to port 80, to allow the service to forward the traffic in that port to the container. Also, in the health check you can add `/docker-entrypoint.sh` in the command field. This is the command that this container uses to start and is what the task definition will use to check it is still running.
+
+![task definition creation success](https://docs.monadical.com/uploads/upload_14775191f7d8978e89326b5209e2a7ce.png)
+
+
+If everything has been entered correctly, you can now create the cluster. Click on ‘Clusters’, and then create a cluster:
+
+&lt;center&gt;
+    
+![clusters - elastic container service](https://docs.monadical.com/uploads/upload_ad1af3935d7a46d7f44f66614f8fce3b.png)
+    
+&lt;/center&gt;
+
+
+You can leave the first template as it is:
+
+![cluster template](https://docs.monadical.com/uploads/upload_e7bfce56e3266e7f96690e047b38b086.png)
+
+Pick a name for your cluster. You may want to create a new VPC if you want to keep it isolated from the rest of your services, however, this is optional. If you create a new VPC, remember to update your load balancer, or it will be unable to find your cluster.
+
+![](https://docs.monadical.com/uploads/upload_21bfeea5387c384e3f1abf149365bf6f.png)
+
+
+You should see a screen like this:
+
+![configure cluster](https://docs.monadical.com/uploads/upload_3a697cbcea32dd69f6e6e119b301eb26.png)
+
+If you click ‘View Cluster’, you should see something similar to this:
+
+![cluster success](https://docs.monadical.com/uploads/upload_53abb280875b7dd1fc55e3b5e03e1fd6.png)
+
+
+In the services tab, click ‘Create’:
+
+![ecs - services list](https://docs.monadical.com/uploads/upload_465d1dc30876a4ea52d39363170c4a8e.png)
+
+Pick FARGATE, and set the number of tasks to 1 (you will need to change this in a production setup, because replication is important for availability). You can use the service name of your choice. For task definition, pick the one you just created a couple of steps back.
+
+For the next step, you will set up the load balancer you created earlier. Use the same subnets in the networking section and select the proper application load balancer:
+
+![ecs - configure service](https://docs.monadical.com/uploads/upload_0678b41e09227cec068c41aebe7676fe.png)
+
+In the load balancing section, you will see that our `nginx` container is listed as available to load balance. Click on ‘Add to Load Balancer’:
+
+![ecs - configure network](https://docs.monadical.com/uploads/upload_11ddf0428e90beece1409023c16b89a2.png)
+
+
+You will need to modify the settings according to your container after you click ‘Add to load balancer’:
+
+![load balancer configuration](https://docs.monadical.com/uploads/upload_8a5ce3e568274f6aab929bd6c1e8e7de.png)
+
+
+Notice that the `Path pattern` is not empty by default. Set it to `/`.
+
+
+Proceed with the defaults for the last step, and create the service. You will eventually have the task running in your service:
+
+![load balancer configuration](https://docs.monadical.com/uploads/upload_e4ff2499b427ccb89c73762b7145ab1a.png)
+
+Go back to the EC2 console and check the load balancer. Once the health check is blue, we are ready to go:
+
+![load balancer health check](https://docs.monadical.com/uploads/upload_19102d7b3837dcf8ba7369e41142a849.png)
+
+You can copy the DNS name to your browser. It should work properly now:
+
+![load balancer dns](https://docs.monadical.com/uploads/upload_25713488e6609ecace8c3eab34a980aa.png)
+
+
+
+Now you are ready for the next step: you need to set up a pipeline in AWS CodePipeline. To do this, go to the AWS console and click on ‘CodePipeline’:
+
+&lt;center&gt;
+    
+![nginx response](https://docs.monadical.com/uploads/upload_30bfd1e4526e90232e1f14b440af621b.png)
+    
+&lt;/center&gt;
+
+Once there, you should see this screen:
+
+![console developer tools](https://docs.monadical.com/uploads/upload_8ef2d401fde45b0491abd3a28c91072b.png)
+
+
+To get started, click `Create pipeline`:
+
+![create pipeline](https://docs.monadical.com/uploads/upload_7cf0aaad35c24b5a6c617f3b70c0fe51.png)
+
+Input a name, and leave the rest as it is by default. On the next screen, select AWS ECR as the source:
+
+![code pipeline settings](https://docs.monadical.com/uploads/upload_714580cb9f3b846057cf396a47fefd13.png)
+
+This pipeline must listen to your ECR repository so that it’s triggered every time a new image is uploaded with the `latest` tag. In my case, I’ll be using the ECR repository I created for the previous blog post.
+
+For the build step, select AWS CodeBuild as build provider and create a new project:
+
+&lt;center&gt;
+
+![create build project](https://docs.monadical.com/uploads/upload_60c0aa5562540ec2f930d02e06d75473.png)
+    
+&lt;/center&gt;
+
+
+This is necessary because the source step does not return an artifact compatible with the deploy stage requirements. We need to generate a file: `imagedefinitions.json`.
+
+Give the project a name and set up the environment as follows:
+
+![code build environment](https://docs.monadical.com/uploads/upload_4c0b5a1cadb48d778436adc903d5c803.png)
+
+
+In the buildspec, you will need to have the [following](https://stackoverflow.com/questions/58849736/did-not-find-the-image-definition-file-imagedefinitions-json):
+
+```yaml
+version: 0.2
+phases:
+    install:
+        runtime-versions:
+            docker: 18
+    build:
+        commands:
+            - apt-get install jq -y
+            - ContainerName=&#34;nginx&#34;
+            - ImageURI=$(cat imageDetail.json | jq -r &#39;.ImageURI&#39;)
+            - printf &#39;[{&#34;name&#34;:&#34;CONTAINER_NAME&#34;,&#34;imageUri&#34;:&#34;IMAGE_URI&#34;}]&#39; &gt; imagedefinitions.json
+            - sed -i -e &#34;s|CONTAINER_NAME|$ContainerName|g&#34; imagedefinitions.json
+            - sed -i -e &#34;s|IMAGE_URI|$ImageURI|g&#34; imagedefinitions.json
+            - cat imagedefinitions.json
+
+artifacts:
+    files:
+        - imagedefinitions.json
+```
+
+Be careful with the `ContainerName`. If you used a different name in your container definition while setting up your ECS cluster, you will need to use that name instead.
+
+![code build buildspec](https://docs.monadical.com/uploads/upload_449f6db16e91640ed72267da70719920.png)
+
+Finally, the build stage should look like this:
+
+![code pipeline build stage](https://docs.monadical.com/uploads/upload_65b43b29be8718a3f63b5285d3821e39.png)
+
+In the deploy stage, add the ECS cluster definitions you created earlier:
+&lt;center&gt;
+
+![code pipeline deploy stage](https://docs.monadical.com/uploads/upload_fabdc85abc2dcdf3652bd3dfd26c98eb.png)
+
+&lt;/center&gt;
+
+
+
+Click ‘Next’ and ‘Create the pipeline’ to finish.
+
+The pipeline will now run and after it is finished, you should see something similar to this:
+
+![create pipeline success](https://docs.monadical.com/uploads/upload_79199b8eb77e0db3e4219136799c6cdd.png)
+
+
+
+Hold your applause -- this pipeline hasn’t done anything interesting yet. After all, your setup was already fetching an image and booting up correctly before you set this up. The difference, however, is that now whenever you upload a new image to ECR with the `latest` tag, it will automatically be deployed. You can test this by updating your application and checking that it has changed.
+
+In my case, I updated the static file that the Docker image was serving and, after creating a new release in my repo (which triggers the action to upload to ECR), it was automatically deployed:
+
+![successful nginx message](https://docs.monadical.com/uploads/upload_1a68df31872da78b85e2dee6869862ae.png)
+
+
+
+There are a lot of improvements that you can implement on this setup, but this will serve as a solid basis. If you don’t have an overwhelming number of tasks to run, this is a cost effective way to deploy high availability services. For example, you will want to play with blue/green deployments to avoid the small downtime introduced when the new container is starting up.
+
+If you follow the instructions in this blog post and the [last one](https://monadical.com/posts/set-up-ci-workflow.html), you should have a fully functional continuous deployment pipeline. This will reduce the need for someone to manually deploy updates and services. Your team will be able to focus on improving your applications and won’t have to worry about how to update them every time you need a new version out.
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+
+---
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+

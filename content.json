@@ -49,6 +49,24 @@
     }
   },
   "POSTS": {
+    "set-up-ci-workflow-part-two": {
+      "title": "How to Set Up a CI/CD Workflow, Part Two",
+      "description": "In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.",
+      "date": "2020-11-02",
+      "img": "/static/set-up-ci-workflow-part-two.png",
+      "tags": [],
+      "length": "30 min read",
+      "source": "https://docs.monadical.com/s/deploying-docker-images-in-aws-using-ecs",
+      "url": "/posts/set-up-ci-workflow-part-two.html",
+      "template": "posts/set-up-ci-workflow-part-two.html",
+      "author": {
+        "name": "Cristian Vargas",
+        "title": "Backend Developer",
+        "handle": "@cdvv7788",
+        "url": "https://twitter.com/cdvv7788",
+        "image": "/static/cristian.png"
+      }
+    },
     "jwt-login-firebase": {
       "title": "A Cheat Sheet for Using your JWT Authentication with Django ",
       "description": "Getting DRF, SimpleJWT and Firebase to play nice.",

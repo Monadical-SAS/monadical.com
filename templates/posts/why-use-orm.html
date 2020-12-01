@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="Your description here">
+    
+    
+    
+    <meta property="og:title" content="Why should you use an ORM (Object Relational Mapper)? - CodiMD">
+    
+    
+    <meta property="og:description" content="Your description here">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Why should you use an ORM (Object Relational Mapper)? - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?s=96);" data-toggle="tooltip" data-placement="right" title="karim"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Nov 30 2020 16:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 01 2020 15:51:48 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">10 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">
+
+&lt;center&gt;
+
+&lt;big&gt;
+
+## Why should you use an ORM (Object Relational Mapper)?
+
+&lt;/big&gt;
+
+*Written by Karim --- Originally published 2020-11-30 on the [Monadical blog](https://monadical.com/blog.html).*
+
+
+&lt;/center&gt;
+
+Budding web developers learning [Model-View-Controller frameworks](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) are taught that they should use an Object Relational Mapper (ORM) to interface with their databases. But the “why” is often brushed aside or omitted entirely, leaving a fledgeling programmer with burning questions like ”What are ORMs, anyway?” and “What problems do they solve?”  
+
+ORMs are a class of tools that facilitate interactions between a programming language and a relational database management system. They can range in complexity and opinionation from a simple set of abstractions for interactions with relational databases (SQLAlchemy Base) to fully opinionated tools for mapping database rows to language structs (Django ORM, SQLAlchemy ORM). To get a better understanding of how ORMs work, it&#39;s helpful to work through the kind of problems they can solve.
+
+
+## Plain Python World 
+
+Let&#39;s think about how to model a simple polling application in Python. The application allows users to add questions and choices and vote on them. Using [(data)classes](https://docs.python.org/3/library/dataclasses.html), we can model what a Question and Choice are.
+
+```python
+class Question:
+    question_text: str
+    pub_date: datetime.datetime
+
+class Choice:
+    question: Question
+    choice_text: str
+    votes: int
+    
+    def vote(self):
+        self.votes += 1
+```
+
+This is great -- it means we can now create Questions and Choices in Python with this simple abstraction.
+
+```python
+question1 = Question(&#34;Who is the best band of the 20th century?&#34;, datetime.datetime(2020, 7, 14))
+q1_choice1 = Choice(question1, &#34;The Beatles&#34;, 0)
+q2_choice2 = Choice(question1, &#34;The Smiths&#34;, 0)
+
+question2 = Question(&#34;What is the best hour of the day?&#34;, datetime.datetime(2020, 7, 13))
+q2_choice1 = Choice(question2, &#34;7 in the morning&#34;)
+q2_choice2 = Choice(question2, &#34;9 in the evening&#34;)
+q2_choice3 = Choice(question2, &#34;11 in the morning&#34;)
+
+
+
+# Cast some votes
+q1_choice2.vote(); q1_choice2.vote(); q1_choice1.vote(); q1_choice2.vote()
+q2_choice1.vote(); q2_choice2.vote(); q2_choice1.vote(); q2_choice3.vote()
+```
+
+However, we now have two problems. The first is with querying our data. For example, how can we find out which Choice has the most votes, across all Questions? We can start by assuming we added a `choices` attribute of type `List[Choice]` to each Question, and insert each Choice there. Now, to get the Choice with the most votes, we would need a list of all winning Choices from all Questions. We can then sort that list by highest vote descendingly and return the first item.
+
+The second problem is persistence and retrieval. Everything we do in Python is done in-memory, meaning that as soon as you finish executing your program, its existence is erased altogether to free up space for other programs. How can we ensure that we can come back to our Questions and Choices if the program crashes? What if their size is too large to fit into memory?
+
+To solve those problems in Python, we could employ [pickling](https://docs.python.org/3/library/pickle.html). Pickling -- or [serialization](https://en.wikipedia.org/wiki/Serialization) -- refers to the process by which in-memory programming objects, such as our `Question` objects, are transformed into a format that can be saved to disk or transmitted over networks.[^1]
+
+So, bringing these ideas together, we can unpickle our objects to load them into memory and then find the highest choice of all time. 
+
+```python
+import pickle
+from operator import attrgetter
+
+# assuming questions and choice we already pickled and saved
+questions_filehandler = open(&#39;../data/questions.objs&#39;, &#39;rb&#39;)
+questions_list = pickle.load(questions_filehandler)
+
+choices_filehandler = open(&#39;../data/choices.objs&#39;, &#39;rb&#39;)
+choices_list = pickle.load(choices_filehandler)
+winning_choices = []
+for question in questions_list:
+    winning_choices.append(max(question.choices, key=attrgetter(&#39;votes&#39;)))
+
+highest_choice_of_all_time = winning_choices.sort(reverse=True)[0]
+
+#let’s add some a question and a choice while we are at it
+question7 = Question(&#34;What is the best cloud provider?&#34;, datetime.datetime(2020, 7, 13))
+q7_choice1 = Choice(question2, &#34;Digital Ocean&#34;)
+q7_choice2 = Choice(question2, &#34;Hetzner&#34;)
+
+questions_list.append(question7)
+choices_list.append(q7_choice1, q7_choice2)
+
+questions_filehandler = open(&#39;../data/questions.objs&#39;, &#39;wb&#39;)
+pickle.dump(questions_list, questions_filehandler)
+
+choices_filehandler = open(&#39;../data/choices.objs&#39;, &#39;wb&#39;)
+pickle.dump(choices_list, choices_filehandler)
+```
+
+Think about what we have to do now. Each time we interact with the program, we have to load our Question and Choice objects into memory, do what we need to do, then save them back to disk. 
+
+Now imagine having to answer more questions about our application data: What’s the total number of votes for a given Question? Which Questions have zero votes? Which Questions have exactly two Choices? Which Questions were created last month?
+
+But wait! Imagine that while we were writing the above script, another user of our lovely application had already gone ahead and added some Question and Choice objects. Our edits have now overwritten their edits. Next time they enter this application, they won’t be able to interact with the state they expect: A Question or Choice may have been deleted, or the number of votes changed on a certain Choice. Now imagine ten, one hundred, or even thousands of users making similar modifications. What happens if in the middle of the loop to add votes, the power goes out? What if we want to put certain restrictions on our data, e.g., that votes can only be positive integers?
+
+
+Finally, what if we have so many Questions and Choices that they can’t fit into memory anymore? A relational database system solves all of the above, and offers us [ACID guarantees](https://en.wikipedia.org/wiki/ACID).
+
+### Relational Database Systems
+
+A better solution for both problems would be to use [relational database systems](https://en.wikipedia.org/wiki/Relational_database). The history and evolution of relational database systems is beyond our scope, but they are some of the most mature pieces of software out there. Virtually any piece of software you have touched in the past twenty years relies on relational database systems.
+
+You can think of relational databases as working a bit like magic. That&#39;s because SQL - the language used to interact with relational databases - is a [declarative language](https://en.wikipedia.org/wiki/Declarative_programming), i.e.: programming in SQL involves describing the desired end state of your program. This is in contrast to imperative programming, where you rely on statements to change a program to the desired state.
+
+If you have ever used CSS, you have used declarative programming. For example, in CSS, if you want all level one headings to be the color red, you simply write `h1: {color: red}`, instead of traversing the whole document searching for level one headers, and applying the color red to them. The CSS engine takes care of finding all level one headers and applying the color red to them. Similarly, in SQL, if you make the query `SELECT * FROM Choices WHERE votes &gt; 10`, the SQL engine makes a [query plan](https://en.wikipedia.org/wiki/Query_plan) that will determine what sequence of steps it should take to return the result of your query.
+
+In SQL databases, data is organized in tables, which are made of rows and columns. Rows represent an entry, and columns represent the fields. We can model our polling application in SQL using two tables, Questions and Choices:
+
+```sql
+CREATE TABLE &#34;Questions&#34; (
+    &#34;id&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    &#34;question&#34;    TEXT NOT NULL,
+    &#34;pub_date&#34;    TEXT NOT NULL
+);
+
+CREATE TABLE &#34;Choices&#34; (
+    &#34;choiceid&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    &#34;questionid&#34;    INTEGER NOT NULL,
+    &#34;choice_text&#34;    TEXT NOT NULL,
+    &#34;votes&#34;    INTEGER
+);
+```
+(To follow along with this tutorial, you can use the [SQLite DB Browser](https://sqlitebrowser.org/), available for all major operating systems.)
+
+Now that we have our tables, let’s insert some Questions like we did in our Python implementation above.
+```sql
+INSERT INTO &#34;main&#34;.&#34;Questions&#34; (&#34;id&#34;, &#34;question&#34;, &#34;pub_date&#34;) VALUES (&#39;1&#39;, &#39;Who is the best band of the 20th century?&#39;, &#39;2020/7/14&#39;);
+INSERT INTO &#34;main&#34;.&#34;Questions&#34; (&#34;id&#34;, &#34;question&#34;, &#34;pub_date&#34;) VALUES (&#39;2&#39;, &#39;&#34;What is the best hour of the day?&#34;&#39;, &#39;2020/7/12&#39;);
+...
+```
+
+And some answers:
+
+```sql
+INSERT INTO &#34;main&#34;.&#34;Choices&#34;
+(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
+VALUES (1, 1, &#39;The Beatles&#39;, 0);
+INSERT INTO &#34;main&#34;.&#34;Choices&#34;
+(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
+VALUES (2, 1, &#39;The Smiths&#39;, 0);
+INSERT INTO &#34;main&#34;.&#34;Choices&#34;
+(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
+VALUES (3, 2, ‘7 in the morning&#39;, 0);
+INSERT INTO &#34;main&#34;.&#34;Choices&#34;
+(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
+VALUES (4, 2, ‘9 in the evening&#39;, 0);
+INSERT INTO &#34;main&#34;.&#34;Choices&#34;
+(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
+VALUES (5, 2, ‘11 in the morning&#39;, 0);
+```
+
+Now we can declaratively ask: Which choices have received more than 10 votes?
+
+```sql
+SELECT * FROM choices WHERE votes &gt; 10
+```
+
+How can we use this with our object-oriented Python code?
+
+A naive implementation could parameterize a query through the use of Python strings. We can create a function that abstracts this:
+
+```python3
+def get_more_than_n_votes(n: int):
+    return f&#39;SELECT * FROM choices WHERE votes &gt; {n}&#39;
+```  
+Then we can execute that on our database:
+
+```python
+import sqlite3
+conn = sqlite3.connect(&#39;example.db&#39;)
+c = conn.cursor()
+c.execute(get_more_than_n_votes(10))
+```
+The result would be a tuple in the form of (“id”, “question_id”, “choice_text”, “votes”), which we can then use to reconstruct our Choice object. 
+```python
+result = c.fetchone() # assuming it’s one
+choice = Choice(result[0], result[1], result[2], result[3])
+```
+What if we want the choices that have between 3-6 votes? We can go ahead and define another function that parametrizes another query:
+
+```python
+def vote_in_range(n1, n2):
+    return f’SELECT * FROM choices WHERE votes &gt; n1 AND votes &lt; n2’
+```
+
+However, if someone malicious were to give this function another input, such as `DROP TABLE votes`, they would be able to do a [SQL injection attack](https://en.wikipedia.org/wiki/SQL_injection).  
+
+![xkcd comic about SQL injection](https://imgs.xkcd.com/comics/exploits_of_a_mom.png)
+
+So we have to further parameterize our queries in those functions:
+```python
+def vote_in_range(cursor, n1, n2):
+    cursor.execute(’SELECT * FROM choices WHERE votes &gt; ? AND votes &lt; ?’, (n1, n2))
+    return cur.fetchall() 
+```
+
+Don’t forget that we have to construct our objects from the tuples we receive from the above function.
+
+```python
+choice_objects = []
+choices_tuples = vote_in_range(cursor, 3, 6)
+for choice_tuple in choice_tuples:
+    choice = Choice(choice_tuple[0], choice_tuple[1], choice_tuple[2], choice_tuple[3])
+choice_objects.append(choice) 
+```
+
+That may not look like much code, but remember all the different questions we wanted to ask? They will each require similar imperative code to parameterize their function and construct objects. Once you land on a set of abstractions to interact with the database, you will find yourself with a mini-ORM! 
+
+### ORMs
+
+ORMs are libraries that sit between the SQL database world and your object-oriented programming language world. For all intents and purposes, they are an abstraction layer that allows, among other things, for the translation of Python to SQL. Indeed, in most cases, every single ORM line is translated to an SQL line. The ORM is also responsible for all interactions with the database. 
+
+Let&#39;s consider how we write applications in Django with the Django ORM. We start by defining Models, which are Classes in the object-oriented sense, and tables in the relational database sense. Models are composed of attributes (fields) that, at their most basic level, describe what a model can contain. Those fields are the columns in the relational database. Those columns can only contain certain types (integers, charfields) for columns, which are predetermined by the database. 
+
+Consider the example from [Django&#39;s tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/#creating-models):
+
+```python
+from django.db import models
+
+class Question(models.Model):
+    id = models.AutoField(primary_key=True)
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField()
+    
+class Choice(models.Model):
+    id = models.AutoField(primary_key=True)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+```
+
+
+
+Here, we subclass Django&#39;s own `models.Model` to create a table and each attribute represents a database column, with the initialization attributes (e.g: max_length=200) representing a constraint that will be enforced at the application level (i.e, in Python) and at the database level (i.e, by your database engine).
+
+
+Additionally, each Choice object will have a [child relationship](https://en.wikipedia.org/wiki/One-to-many_(data_model)) with a Question. The reason for this is that each `Choice` object can only belong to one Question, but not the other way around. In practice this means that each `choice` object will contain a `question_id` field that links it back to the Question it’s related to. This relationship, and [similar relationships](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model), allow us to model our application based on interactions between different tables. Those relationships in turn determine how the database engine of your relational database will plan its queries and give you your results. 
+
+
+Since I promised you that all ORM code will turn into SQL code, the result of the above code will be translated to SQL to give: 
+
+```sql
+--
+-- Create model Question
+--
+CREATE TABLE &#34;app1_question&#34; (
+    &#34;id&#34; integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+    &#34;question_text&#34; varchar(200) NOT NULL,
+    &#34;pub_date&#34; datetime NOT NULL
+);
+--
+-- Create model Choice
+--
+CREATE TABLE &#34;app1_choice&#34; (
+    &#34;id&#34; integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+    &#34;choice_text&#34; varchar(200) NOT NULL,
+    &#34;votes&#34; integer NOT NULL,
+    &#34;question_id&#34; integer NOT NULL REFERENCES &#34;app1_question&#34; (&#34;id&#34;) DEFERRABLE INITIALLY DEFERRED
+);
+```
+
+That’s not really different from the code we used in SQL in the section above:
+
+```sql
+CREATE TABLE &#34;Questions&#34; (
+    &#34;id&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    &#34;question&#34;    TEXT NOT NULL,
+    &#34;pub_date&#34;    TEXT NOT NULL
+);
+
+CREATE TABLE &#34;Choices&#34; (
+    &#34;choiceid&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    &#34;questionid&#34;    INTEGER NOT NULL,
+    &#34;choice_text&#34;    TEXT NOT NULL,
+    &#34;votes&#34;    INTEGER
+);
+```
+
+As our Django app is running, we can see all our queries by following [this answer from the Django FAQ ](https://docs.djangoproject.com/en/dev/faq/models/#how-can-i-see-the-raw-sql-queries-django-is-running).
+
+Finally, if we want to get all choices with votes of more than 10, we can do:
+
+```python
+import datetime
+from myapp.models import Question, Choice
+# first create the questions
+q1 = Question.objects.create(question_text=“What is the best hour of the day?”, pub_date=datetime.datetime.now())
+Choice.objects.create(question=q1, choice_text=”7 in the morning”) 
+... 
+
+# then get all choices with votes &gt; 10
+Choice.objects.filter(votes__gt=10) 
+```
+
+Thus a cycle is formed: We define our Django models in the Python world as objects, the ORM layer translates those models to SQL statements with SQL types to create tables and columns. Then, in our application, we instantiate objects from those models, which creates rows in the aforementioned tables. Finally, when we want those objects back, we use Python code to retrieve them, which triggers the ORM layer to create the necessary query to retrieve the rows from the database. Then, the ORM layer takes the resulting rows and maps them back to objects.
+
+Another notable benefit of ORMs is their [migration system](https://en.wikipedia.org/wiki/Schema_migration). When we make some changes to our database schema, such as adding a column/attribute to a table/model, problems can arise if the application code depends on the existence of certain columns/attributes that don&#39;t exist. To manage these changes, a migration system is used, whereby changes to the schema of the database, which are the same as changes that the models undergo, are version-controlled and thus are well-known, predictable, and reversible.
+
+
+So that’s what ORMs are: a class of tools that facilitate interactions between a programming language and a relational database management system. In this guide, we started with solving the problem of retrieval and state inconsistencies by proposing the use of a relational database system. We then built on top of that knowledge the ability to query a relational database, and saw the limitations of doing so imperatively in Python. In production systems, it&#39;s better to start with something opinionated like the Django ORM and migrate to more advanced solutions as limitations arise.
+
+Further reading: 
+ZODB (Python Object Persistence Layer): https://zodb-docs.readthedocs.io/en/latest/tutorial.html#newtdb
+SQLAlchemy (Python Advanced SQL toolkit and ORM): https://www.sqlalchemy.org/ 
+Ecto (Elixir ORM): https://hexdocs.pm/ecto/Ecto.html
+Document Object Mapper: https://github.com/MongoEngine/mongoengine
+
+[^1]: One of the earlier implementations of this idea is the [ZODB](https://github.com/zopefoundation/ZODB) toolkit, released in the late 1990s with the [Zope Framework](https://en.wikipedia.org/wiki/Zope). Zope extends the idea of pickling objects to a tree data structure, specifically a [B-Tree](https://en.wikipedia.org/wiki/B-tree). ZODB extends the pickled objects with metadata and saves them in the tree, starting from the root node that the framework creates. ZODB then handles the saving and retrieval of those objects through transactions. The key thing here is that they are all pure Python objects, so no casting or other potentially useful properties arise as a result of this operation (in contrast to how ORMs operate). 
+
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+

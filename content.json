@@ -49,6 +49,24 @@
     }
   },
   "POSTS": {
+    "why-use-orm": {
+      "title": "Why should you use an ORM (Object Relational Mapper)?",
+      "description": "Budding web developers learning Model-View-Controller frameworks are taught that they should use an Object Relational Mapper (ORM) to interface with their databases. But the “why” is often brushed aside or omitted entirely, leaving a fledgling programmer with burning questions like ”What are ORMs, anyway?”",
+      "date": "2020-11-30",
+      "img": "/static/why-use-orm.png",
+      "tags": [],
+      "length": "10 min read",
+      "source": "https://docs.monadical.com/s/why-use-orm",
+      "url": "/posts/why-use-orm.html",
+      "template": "posts/why-use-orm.html",
+      "author": {
+        "name": "Karim",
+        "title": "Software Developer",
+        "handle": "@apkallum",
+        "url": "",
+        "image": "/static/karim.jpg"
+      }
+    },
     "set-up-ci-workflow-part-two": {
       "title": "How to Set Up a CI/CD Workflow, Part Two",
       "description": "In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.",
@@ -915,5 +933,5 @@
     "projects",
     "team",
     "blog"
-   ]
+  ]
 }

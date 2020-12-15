@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Acti">
+    
+    
+    
+    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS - CodiMD">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 15 2020 19:17:12 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 15 2020 21:37:16 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+# How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS
+
+*Written by Cristian.
+ Originally published 2020-12-15 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+In [Part One](https://monadical.com/posts/set-up-ci-workflow.html) and [Part Two](https://monadical.com/posts/set-up-ci-workflow-part-two.html), I explained how to send a Docker image from GitHub Actions to AWS ECR, and from there how to deploy it to AWS ECS. In this article, I&#39;ll fill in the missing steps you need to set up a complete CI/CD workflow. These jobs will help improve the quality of your application, while still keeping everything automated:
+
+- Testing for an application in GitHub Actions
+- Linting code and the Dockerfile
+- Using a containerized Python application (instead of a base Nginx image)
+
+These tests will ensure that any conditions you have put in place so that the application works as expected, are still there. Linting will help you avoid common pitfalls in style and syntax. Part Two of this series used a simple, default Nginx service. This post will look at a case with a more complex setup: you’ll learn how to adapt the workflow to different containers by using a containerized Python application. 
+
+To get started, you can use this repository as a base: https://github.com/cdvv7788/flask-to-ecs. It contains a sample hello world application written in Flask. It has a couple of utility scripts to run and build the image in the Makefile, and the required Dockerfile to create the image. Other than that, it&#39;s as basic as it gets.
+
+
+## Unittests and GitHub Actions
+
+
+For this repository, the unittests implementation is very simple. There’s a single test with a single assert that will always pass (since its sole purpose is to demonstrate how you would add tests to your workflow and run them using GitHub Actions).
+
+The first thing we need to add to the workflow is a new job to run the tests:
+
+```yaml
+---
+on:
+  release:
+    types: [published]
+
+
+jobs:
+  test:
+    name: Run the tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="06656e63656d697372467034">[email&#160;protected]</a>
+      - name: Install Python 3
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0b3a5b4b5b0edb0b9b4a8afae80b6f1">[email&#160;protected]</a>
+        with:
+          python-version: 3.6
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: python app/tests.py
+
+```
+
+After pushing this to the repository, the tests will be run and they should pass:
+
+![Github actions tests](https://docs.monadical.com/uploads/upload_03773550b722d36d63970d587f790cea.png)
+
+
+## Linting of code and the Dockerfile
+
+
+Another thing we can add to the repository is a linter for the Dockerfile. It will fail if we are doing anything strange in this file and warn us about potential issues. I’m going to use Hadolint here, but you can use your linter of preference. The job looks like this:
+
+```yaml
+lint:
+    name: Run linter for dockerfile (Hadolint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="debdb6bbbdb5b1abaa9ea8ec">[email&#160;protected]</a>
+      - name: Hadolint linting
+        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="711910151e1d181f055c101205181e1f311c1002051403">[email&#160;protected]</a>
+
+```
+
+&lt;center&gt;
+    
+![Hadolint running in github actions](https://docs.monadical.com/uploads/upload_78f3e9371a40e2892c8ac2082a244f8c.png)
+&lt;/center&gt;
+
+
+
+## Build the image and send it to ECR
+
+This is the last job you will need to do. In this case, you can follow the instructions in [Part One](https://monadical.com/posts/set-up-ci-workflow.html) to make it work as expected. Your final workflow file will look like this:
+
+```yaml
+---
+name: Build a docker image and push it to AWS ECR
+on:
+  release:
+    types: [published]
+
+jobs:
+  test:
+    name: Run the tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b78737e7870746e6f5b6d29">[email&#160;protected]</a>
+      - name: Install Python 3
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f08395848580dd808984989f9eb086c1">[email&#160;protected]</a>
+        with:
+          python-version: 3.6
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: python app/tests.py
+
+  lint:
+    name: Run linter for dockerfile(Hadolint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afccc7caccc4c0dadbefd99d">[email&#160;protected]</a>
+      - name: Hadolint linting
+        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b535a5f545752554f165a584f5254557b565a484f5e49">[email&#160;protected]</a>
+
+  build-push:
+    name: Build and push
+    runs-on: ubuntu-latest
+    needs: [test, lint]
+    steps:
+      - name: Checkout
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="690a010c0a02061c1d291f5b">[email&#160;protected]</a>
+
+      - name: Configure AWS credentials
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a7975747c737d6f687f377b6d693779687f7e7f746e737b76695a6c2b">[email&#160;protected]</a>
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2b3bfb3a8bdbcffb7b1a0ffbebdb5bbbc92a4e3">[email&#160;protected]</a>
+
+      - name: Extract tag
+        shell: bash
+        run: echo &#34;##[set-output name=release_tag;]$(echo ${GITHUB_REF#refs/tags/})&#34;
+        id: extract_tag
+
+      - name: Build, tag, and push image to amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: github-actions-flask
+          IMAGE_TAG: ${{ steps.extract_tag.outputs.release_tag }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY .
+          docker tag $ECR_REGISTRY/$ECR_REPOSITORY $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker tag $ECR_REGISTRY/$ECR_REPOSITORY $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+      - name: Logout of amazon ECR
+        if: always()
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
+
+```
+
+The biggest difference in this case compared to Part One is that now we have three jobs, and the job that uploads the image to the AWS ECR service is explicitly dependent on the `test` and `lint` jobs.
+
+
+## Connect ECR to ECS and to the pipeline
+
+
+Replacing the Nginx container that was used in [Part Two](https://monadical.com/posts/set-up-ci-workflow-part-two.html) is easy. You will need to pay special attention to a couple of things:
+
+- Elastic load balancer: when you are creating the load balancer, you will be asked to create a target group. Make sure that the health checks path is correct. For this case, it needs  to be `/`. ![Elastic Load Balancer target group](https://docs.monadical.com/uploads/upload_ebffd58c587083d2a07d95b9952a5f10.png)
+- When creating the container definition for your ECS cluster, add a health check command so that the cluster will know if the container is healthy. In this case, `curl -f http://localhost/ ` is enough for that.
+
+## And...that’s it!
+
+
+If you visit the endpoint for your load balancer, you should see the message `hello world` in the browser. If you push a change to the repository, it should pick up the changes just like it did in the second blog post of this series[^first]. 
+
+## Conclusion
+
+
+This blog post series has covered a lot of concepts related to CI/CD pipelines. Now, after this final post, you should be able to set up a Python Flask project--with tests and linting--that is deployed to ECS and automatically updated via CodePipeline in AWS.
+
+Congratulations, you now have a fully automated and functional DevOps pipeline!
+
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+
+
+
+[^first]: In case your container is not running on ECS, you may need to review the Dockerfile and the entrypoint. For the current example, we’re using an image based on https://hub.docker.com/r/tiangolo/uwsgi-nginx/dockerfile, so you can check how the services are started there for reference.
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+<script data-cfasync="false" src="https://docs.monadical.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+

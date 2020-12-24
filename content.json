@@ -49,6 +49,24 @@
     }
   },
   "POSTS": {
+    "oddslingers-open-source": {
+      "title": "Oddslingers Open Source Announcement",
+      "description": "The OddSlingers poker platform, built with python/django in the backend, and react/redux in the frontend, is now free and open source.",
+      "date": "2020-12-24",
+      "img": "/static/oddslingers-open-source.png",
+      "tags": [],
+      "length": "9 min read",
+      "source": "https://docs.monadical.com/s/oddslingers-open-source",
+      "url": "/posts/oddslingers-open-source.html",
+      "template": "posts/oddslingers-open-source.html",
+      "author": {
+        "name": "Max McCrea",
+        "title": "Founder",
+        "handle": "@cowpig",
+        "url": "https://monadical.com/team.html",
+        "image": "/static/oddslingers-open-source"
+      }
+    },
     "event-driven-architecture-1": {
       "title": "Event Diven Architecture part 1",
       "description": "Lessons learned in building a poker platform using event-driven architecture, part one--the backend.",

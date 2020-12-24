@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="The OddSlingers poker platform, built with python/django in the backend, and react/redux in the frontend, is now free and open source.">
+    
+    
+    
+    <meta property="og:title" content="OddSlingers Open Source Announcement - CodiMD">
+    
+    
+    <meta property="og:description" content="The OddSlingers poker platform, built with python/django in the backend, and react/redux in the frontend, is now free and open source.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>OddSlingers Open Source Announcement - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/9bdd52c193d004e65c5442c3d04ae25a?s=96);" data-toggle="tooltip" data-placement="right" title="max"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Dec 24 2020 15:48:33 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Dec 24 2020 15:54:02 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">
+
+&lt;center&gt;
+    
+# Oddslingers Open Source Announcement
+
+&lt;br/&gt;
+
+&lt;div style=&#34;width:200px; overflow:hidden&#34;&gt;
+&lt;div style=&#34;float: left; margin-right:20px&#34;&gt; &lt;a href=&#34;https://monadical.com/&#34;&gt; &lt;img style=&#34;height:80px; width:80px; &#34; src=&#34;https://docs.monadical.com/uploads/upload_d350895a514dd07e0b8e352572d403a3.png&#34; alt=&#34;Monadical logo&#34;/&gt; &lt;/a&gt; &lt;/div&gt;
+         
+&lt;div style=&#34;float:right; margin-left:20px;&#34;&gt; &lt;a href=&#34;https://oddslingers.com/&#34;&gt; &lt;img style=&#34;height:80px; width:80px; &#34; src=&#34;https://docs.monadical.com/uploads/upload_84f27fdc27fa582a40d512df3d8913d9.png&#34; alt=&#34;OddSlingers logo&#34;/&gt; &lt;/a&gt; &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/center&gt;
+
+&lt;br/&gt;&lt;br/&gt;
+    
+OddSlingers was born just over five years ago, in the summer of 2015. 
+
+Nick and I were in a coworking/coliving space in central Bogota, knocking back some BBC Chapineros and preparing a feast of memorable proportions for our friends who had come down to join in our travels--some poker people from my past life as a player, some programmers from my present life as a software engineer (most of whom I’d met at the [Recurse Center](https://www.recurse.com), back when it was called Hacker School). Some were working remotely, some traveling. Eventually someone brought up the state of online poker--a hot topic of the time that instantly set the poker players among us off on various rants, diatribes, and entertaining pontifications.
+
+The early years of online poker were full of excitement. After Chris Moneymaker’s improbable victory at the WSOP, [the floodgates opened](https://medium.com/@marianavamplew/a-brief-history-of-the-poker-boom-of-the-2000s-part-one-the-moneymaker-effect-b2a8149532eb) and the following years were magic. I remember Durrrr being a [prop bet](http://www.uschess.org/index.php/July/The-$50000-Game.html) fish[^fish], Perkyshmerky’s feud with Krantz/Whitelime/FoxWoodsFiend, a [threadcat](https://forumserver.twoplustwo.com/54/poker-beats-brags-variance/friends-trusted-me-their-cat-he-died-they-want-pics-him-387/)[^imageshack], the rises (and falls) of [legends](https://www.legitgamblingsites.com/blog/9-most-iconic-online-poker-players-in-history/) like bad_ip[^thinks], Mahatma, Ziigmund, [BBV](https://forumserver.twoplustwo.com/54/poker-beats-brags-variance/right-place-experiment-hhs-how-doing-modnote-surrealistic-artworks-itt-286949/), and later [Isildur](https://www.youtube.com/watch?v=uFq9sJMmbEg)…
+
+[^fish]: Outside the poker world, I’m often asked what I mean when I call something a “fish move” or call someone a “total fish”. Most people have heard the term “card [shark](https://en.wikipedia.org/wiki/Glossary_of_poker_terms#shark).” Well, sharks eat [fish](https://en.wikipedia.org/wiki/Glossary_of_poker_terms#fish).
+
+[^imageshack]: Tragically, it was common practice to host images on ImageShack back in the 2plus2 heyday, and it seems ImageShack took all of them down/deleted them, and I haven&#39;t been able to find archives of the images in any archives like [archive.is](archive.is) or [archive.org](archive.org). If anyone reading this knows where one can find images from the internet&#39;s past life, please let me know!
+
+[^thinks]: Speaking of which, [Lodden Thinks](https://en.wikipedia.org/wiki/Johnny_Lodden#Lodden_Thinks) is a wonderful drinking/road trip/just hanging out game for 3-5 people. The idea is to ask a question with an unknowable quantitative answer, like “How many people in the city of Montreal complained about the cold today?” One person, the “Lodden,” makes a guess, and keeps it private. The other players will then bid on Lodden’s guess, increasing the number until someone takes the “under”. For example, Alice bids “500 people,” to which Bob replies “let’s be real it’s -15 out there, I’ll bid 500,000”. Alice ups it to “1,000,000”, and Bob says “that’s more than half the population of the city, I’ll take the under.” Lodden says “I was thinking 1,123,551,” clarifying to an incredulous Bob that he was counting the whole Montreal metropolitan area. Alice wins, because guessing Lodden’s interpretation of the question is part of the game.
+
+There was a real sense of community back then. I remember being part of shared houses in Vegas and meetups in other cities where all sorts of characters would get together, exchange ideas, bet on everything, and engage in all kinds of debauchery. I remain close friends with some of the people I during these formative years of my life.
+
+As time passed, [and](http://www.pokerhistory.eu/history/online-poker-scandals/poker-spot-scandal) [scandals](http://www.pokerhistory.eu/history/major-changes/super-user-scandal-absolute-poker) [accumulated](http://www.pokerhistory.eu/history/online-poker-scandals/eurolinx-betonbet-scamdal), online poker culture became increasingly mercenary. People stopped exchanging ideas online, and started realizing that targeting weak players instead of fighting for the high stakes throne might be a better way to make a living out of the game. Online poker became less and less fun.
+
+I think I reached a tipping point when it turned out that our idols, the stars of the old-school poker world that we&#39;d grown up reading stories about [had stolen our money](https://www.highstakesdb.com/10040-the-rise-and-downfall-of-full-tilt.aspx)[^betraisefold]. For some people, it was when PokerStars was sold and they started pushing “spin n go” poker and canceling peoples’ bonuses. In any case, online poker today doesn’t feel anything like it did back in the heyday.
+
+[^betraisefold]: To those interested, I recommend a relatively obscure documentary titled “[Bet Raise Fold](https://www.kanopy.com/product/bet-raise-fold).” It really manages to capture what it felt like to be a professional online poker player at that time.
+
+As we talked about all this and more on that fateful night, with the heady mix of alcohol and camaraderie, we started asking: how could we fix this? What would it take to make things fun again?
+
+**We thought we could do better than what was out there.** We could focus on streaming and online events. We could create invitational tournaments, where top players and fan favourites would compete, creating a big incentive to be entertaining and become a fan favourite. We could emphasize playing with friends, while video streaming. We could mix up rake structure to be less punishing at lower levels, and make things more expensive for high-volume grinders, rather than the other way around. We could create a matchmaking system that would automatically put people with similar experience levels together, to soften the experiences of newcomers.
+
+&lt;center&gt;
+    
+&lt;img style=&#34;width:600px&#34; src=&#34;https://docs.monadical.com/uploads/upload_24a4f86145242d16f058a05065866f8b.jpg&#34; alt=&#34;Max and Nick at Magicville&#34;/&gt;
+
+ 
+&lt;small&gt;&lt;i&gt;Working on OddSlingers at Magicville.&lt;/i&gt;&lt;/small&gt;
+    
+&lt;/center&gt;
+
+___
+ 
+
+That summer, Nick and I started sketching out [the architecture](https://monadical.com/posts/event-driven-architecture-1.html) of what our poker site might look like. We didn’t want people to have to install anything to play: it should be a matter of logging onto the site and taking a seat. We also wanted to use modern, open-source tools. So we chose a Python/Django backend and a React/Redux frontend.
+
+But dynamic, animated UI is tricky in the browser and we wanted something that could scale. And Django wasn’t designed for real-time games. We would have to build a lot of custom parts.
+
+In 2016 Nick was finally convinced and left his job to start working on this idea full-time.
+
+It took us over a year, along with a few rewrites of chunks of the codebase, before we decided to write our own custom frontend animation library. It was purely functional and reactive, like our backend: now you could look at a game’s history and render it at any point in time (including mid-animation!) given a starting state and an event history (Fold, Call, Call…). This made testing and debugging extremely easy, and paid off massively in the long-run.
+
+By 2017 our beta play-chip site was up and running and we started getting users. We wrote some bots so people could sit and play if nobody else was around. We spent hundreds of in-person hours and millions of bot hours testing the game, and eventually reached a point where we weren’t seeing serious problems any more.
+
+We also now had a wonderful team in Colombia that we loved, and felt like we were ready to roll.
+
+&lt;center&gt;
+    
+&lt;img style=&#34;width:600px&#34; src=&#34;https://docs.monadical.com/uploads/upload_08fecc77dcc4865a42c23cb9f4350fca.jpeg&#34; alt=&#34;OddSlingers Team circa 2018&#34;/&gt;
+
+ 
+&lt;small&gt;&lt;i&gt;OddSlingers team &#34;album cover&#34; photo, taken in Medellin&#39;s botanical gardens.&lt;/i&gt;&lt;/small&gt;
+
+&lt;/center&gt;
+
+
+___
+ 
+
+Alas, the greatest barrier to entry in the Poker market is not the engineering (though building an in-browser game was no small feat)--it’s legal. And we were engineers, not lawyers.
+
+We did an enormous amount of research, and all of the options for licensing a real-money poker platform were bad: legally questionable, or expensive and slow. 
+
+After getting ripped off[^gzesh] and receiving a lot of directly conflicting advice, we finally found a group that we were happy to work with and prepared to get licensed in Malta, and then apply for gaming licenses in the UK. We figured that once we got licensed and had traction it would be easy to raise money.
+
+[^gzesh]: Be careful doing business with David Gzesh.
+
+Unfortunately, by this point it was early 2018, and the cryptocurrency economy crashed. People who were excited about investing in us got cold feet, and we were running out of money.
+
+By February 2018 it was clear we were in danger of going busto, so we talked to our team about it. Everyone agreed that they wanted to keep working together, even if it meant working on something else for a while. So we asked around and got some temporary consulting contracts. We were quickly able to find work and suddenly we found ourselves founding [a new company](https://monadical.com/), one focused on software consulting.
+
+___
+
+A bit over two years later, we’re a full-fledged software consultancy. **It turns out we’re a lot better at software, project management, and product design than we are at fundraising or legal wrangling, and software consulting plays to our strengths.** Plus, the work is fantastically rewarding: [we’ve built tools](https://monadical.com/projects) for doctors, for neuroscientists, for musicians, and more. The team has also grown quite a bit!
+
+The poker project went from paused to “maybe we’ll get back to that” to “we should probably do something with that awesome codebase…”
+
+&lt;center&gt;
+&lt;a href=&#34;https://github.com/Monadical-SAS/oddslingers.poker&#34;&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/upload_76fc847cf469ca784a437197d344437f.png&#34; style=&#34;height: 120px; width:120px&#34; alt=&#34;github logo&#34;&gt;&lt;/img&gt;
+&lt;br/&gt;
+&lt;small&gt;&lt;i&gt;Find OddSlingers on github!&lt;/i&gt;&lt;/small&gt;
+&lt;/a&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;/center&gt;
+
+Well, we’ve procrastinated enough and we think it’s time: **we’re open-sourcing the OddSlingers codebase**. We had always planned to open-source at least the core of it, and now we&#39;re open-sourcing the whole thing!
+
+OddSlingers.com will remain up and free to use. We will also keep it up-to-date with patches and new features (as time permits).
+
+It’ll be licensed under LGPL, which means you can use it for commercial purposes as long as your code is also open-source. You can find the codebase [here](https://github.com/Monadical-SAS/oddslingers.poker). A word of warning: this is a complex project and development was MVP/launch-focused before it was paused, so it&#39;s a little messy!
+
+I&#39;d love to see OddSlingers be put to good use.
+
+It&#39;s already an ideal place for people to organize invitational games. It’s already rake-free, and you could probably connect it to some kind of escrow service if you want to use it to host games electronically that are tied to real money.
+
+It could also be used to host charity games or competitions. I’ve also been working on some fairly in-depth technical writing on the project, to add to what’s already there in [our blog](https://monadical.com/blog.html).
+
+-Max
+
+PS: It also has a ~~ridiculous~~ perfectly sensible variant of 27-bounty in which the whole table is forced all-in the following hand if you win with 27 before showdown (and you choose whether to grim them). Check it out.
+
+PPS: Shoutouts to AJFenix, Skier_5, Kaby, magicninja, krantz, and ahnuld for their influence/help/input on this project.
+
+&lt;br/&gt;
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34; alt=&#34;monadical logo&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+

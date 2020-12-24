@@ -49,6 +49,31 @@
     }
   },
   "POSTS": {
+    "event-driven-architecture-1": {
+      "title": "Event Diven Architecture part 1",
+      "description": "Lessons learned in building a poker platform using event-driven architecture, part one--the backend.",
+      "date": "2020-12-24",
+      "img": "/static/event-driven-architecture-1.png",
+      "tags": [
+        "event-sourcing",
+        "event-driven-architecture",
+        "backend",
+        "architecture",
+        "python",
+        "django"
+      ],
+      "length": "20 min read",
+      "source": "https://docs.monadical.com/s/event-driven-architecture-1",
+      "url": "/posts/event-driven-architecture-1.html",
+      "template": "posts/event-driven-architecture-1.html",
+      "author": {
+        "name": "Max McCrea",
+        "title": "Founder",
+        "handle": "@nosocialmedia",
+        "url": "https://github.com/cowpig",
+        "image": "/static/logo-black.png"
+      }
+    },
     "set-up-ci-workflow-part-three": {
       "title": "How to Set Up a CI/CD Workflow, Part 3",
       "description": "CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS",

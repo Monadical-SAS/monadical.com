@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  How to Build a Python Library ===  &lt;big&gt;  **Share Developments and Contribute to the Commu">
+    
+    
+    
+    <meta property="og:title" content="How to Build a Python Library - CodiMD">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
+    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>How to Build a Python Library - CodiMD</title>
+    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Jan 18 2021 18:24:38 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Jan 18 2021 21:19:02 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+How to Build a Python Library
+===
+
+&lt;big&gt;
+
+**Share Developments and Contribute to the Community**
+
+&lt;/big&gt;
+
+*Written by [Angel](https://twitter.com/afreydev). Originally published 2021-01-19 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+---
+
+Before starting at Monadical, my Sysadmin and DevOps work always included a Java and MySQL/Oracle stack. I’d used Python for some web development and web DevOps stuff before, but I’d never really had a chance to dive deeper with it. This year, I’ve been working with a professional team of Python developers at Monadical, and the learning process has been awesome!
+
+As I’ve spent more time working with Python, I’ve realized that one of the biggest advantages it has over other programming languages is the depth and scope of its libraries. For example, there are Python libraries for: 
+
+* **Data analytics and data science:** NumPy, Pandas and Scikit-Learn
+* **Web development:** Django and Flask 
+* **Building desktop applications:** tkinter and pyqt 
+
+As developers (or DevOps), we use libraries in our projects all the time. But the deeper I got into Python, the more I was struck by how we rarely think about the other side of things: how are libraries created? Knowing how to build libraries gives you the ability to share developments with the community, give people tools for speeding up their projects, and add cool new features to the Python ecosystem.
+
+&lt;center&gt;
+    
+![shell](https://docs.monadical.com/uploads/upload_1919bd97e1a8114e0a2e932928e68042.png =x250)
+
+&lt;/center&gt;
+
+## Overview of the library creation process
+
+Python libraries are a collection of modules and packages. Packages are a collection of modules that work towards a common goal. Creating a new Python package involves several processes:
+
+* **A development process:** Basically this step is the creation of the software as such. The development process for a Python project is not so different from other programming languages. Usually for codebase management, the team (or developer) uses a source code repository with a tool like git hosted on GitHub, GitLab or Bitbucket. To give you an example of this, I created a toy Python Printer project containing a function that shows a message in the console. The project--available here: https://github.com/afreydev/python-printer includes the code, a functional test, and a GitHub Actions workflow. 
+
+* **Rigorous functional and integration testing:** A test-driven development has lots of advantages: you can catch bugs early, check the stability of different versions quickly, reduce manual testing (and human error), and launch versions quickly. Depending on the intended uses of the package, it might need testing to check that the functions it includes are working properly. If the package needs to work with external systems, these tests might simulate those integrations using light technologies like embedded web servers, or Docker containers. Tests can be configured in the CI workflow to check the functioning of software each time anybody updates the codebase. [Pytest](https://docs.pytest.org/en/stable/) is a good library for testing. If you want to get a better idea of concepts related to testing, have a look at this [reference](https://realpython.com/pytest-python-testing/). 
+
+* **A CI workflow to ensure that the package runs on various operating systems:** For Continuous Integration workflows, you can test your software across different environments (operating systems, versions of Python, etc). Testing your package in lots of different possible scenarios prevents bugs, and can help to reduce technical debt caused by smells or bad practices in your code.
+
+    For our example project, Python Printer, I’ve added a workflow that triggers the different tests. You can see that it checks for syntax or style errors (in the lint job), and that the test runs for different operating systems and Python versions.
+
+    &lt;center&gt;
+
+    ![ci process](https://docs.monadical.com/uploads/upload_4c78bc169e9aac439b6f10a17f42112d.png =x300)
+
+    &lt;/center&gt;
+
+
+    This next example can be used as a template for your Python projects. It includes some jobs for linting your code with [flake8](https://flake8.pycqa.org/en/latest/) and testing it using [pytest](https://docs.pytest.org/en/stable/).
+
+    ```
+    name: test
+    on: [push]
+    env:
+      MAX_LINE_LENGTH: 110
+    
+    jobs:
+      lint:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8deee5e8eee6e2f8f9cdfbbf">[email&#160;protected]</a>
+    
+          - name: Set up Python ${{ matrix.python }}
+            uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2b1a7b6b7b2efb2bbb6aaadac82b4f3">[email&#160;protected]</a>
+            with:
+              python-version: 3.6
+              architecture: x64
+    
+          - name: Lint with flake8
+            run: |
+              pip install flake8
+              flake8 . --count --select=E9,F63,F7,F82 --exclude=setup.py --show-source --statistics
+              flake8 . --count --exclude=setup.py --max-line-length=$MAX_LINE_LENGTH --statistics
+      test:
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os: [ubuntu-latest, macos-latest]
+            python: [3.6, 3.7, 3.8]
+
+        steps:
+          - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="187b707d7b73776d6c586e2a">[email&#160;protected]</a>
+
+          - name: Set up Python ${{ matrix.python }}
+            uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c6f7968696c316c65687473725c6a2d">[email&#160;protected]</a>
+            with:
+              python-version: ${{ matrix.python }}
+              architecture: x64
+          - name: Build sdist and bdist_wheel
+            run: |
+              pip install setuptools pip wheel
+              python3 setup.py sdist bdist_wheel
+          - name: Test package with pytest
+            run: |
+              pip install pytest
+              python setup.py install
+              pytest
+    ```
+
+* **A building distribution and publishing process:** The building component of this process basically involves configuring your package (creating a `setup.py` file) and running some building commands. The publishing component consists in uploading your distribution to a repo like [Pypi](https://pypi.org/). The rest of this article goes into more detail about this step.
+
+
+## Configuring your package
+
+`setup.py` is an important element related to the installation process for a Python package. This file describes the distribution that we want to create using our code. It includes other distributions that you use in your software like dependencies and it can be complex or simple depending on the kind of software you have created. Until quite recently, the setup was done using the [distutils](https://docs.python.org/3/library/distutils.html) library (the standard tool), but this is gradually being replaced by [setuptools](https://setuptools.readthedocs.io/en/latest/).
+
+A minimalistic `setup.py` can include only the package field:
+
+```python
+import setuptools
+
+setuptools.setup(
+    packages=setuptools.find_packages(),
+)
+```
+
+This minimal approach works, but a lot of metadata (including the “required” name, version and packages fields) is lost, and finding the package in a repo like Pypi without this metadata is virtually impossible.[^1]
+
+Here’s another example that includes more information:
+
+
+```python
+import pathlib
+from setuptools import setup
+
+BASE_PATH = pathlib.Path(__file__).parent
+README = (BASE_PATH / &#34;README.md&#34;).read_text()
+
+setup(
+    name=&#34;python-printer&#34;,
+    version=&#34;1.0.0&#34;,
+    description=&#34;Print awesome messages in your screen&#34;,
+    long_description=README,
+    long_description_content_type=&#34;text/markdown&#34;,
+    url=&#34;https://github.com/afreydev/python-printer&#34;,
+    author=&#34;Your Name&#34;,
+    author_email=&#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c4553494e1159515d55507c5b515d5550125f5351">[email&#160;protected]</a>&#34;,
+    license=&#34;MIT&#34;,
+    packages=[&#34;python_printer&#34;],
+    include_package_data=True,
+)
+```
+
+This kind of file is what helps to install Python distributions directly from the code:
+```bash
+python setup.py install
+```
+&lt;center&gt;
+    
+![pypi logo](https://docs.monadical.com/uploads/upload_e0d7aeed292ee9c6d9a090225f9bb28b.png =x300)
+    
+&lt;/center&gt;
+
+## Building distributions
+
+There are two different possible methods for building distributions: creating a source distribution and creating a wheel. Ultimately, the difference between the two processes comes down to where the code is compiled, or built. This might not seem like a big deal, but it introduces some important differences: 
+
+* **sdist:** This is an easy way to package the source distribution of your software. The building process occurs on the user’s side and requires users to have correctly configured their machines by installing the proper Python libraries and operating system software. Usually, this kind of package is bigger in size than a wheel. This is because the source distribution includes all the source code and dependencies (eventually, C or C++ extensions) that it needs to be built (if you want to use this kind of package, you need to build it first). In this case, from a developer’s perspective, creating a source distribution is easy, but it will make more work for the consumer. 
+
+    To create a source package, you just need to run the following command:
+
+    ```bash
+    python setup.py sdist
+    ```
+
+    This command creates a folder called ‘dist’ with a file inside it. In Windows, the generated file will be a zip file, while in Mac OS and Linux, it will be a tarball.
+
+    This kind of distribution does have some disadvantages. Python’s sdist packages depend on distutils and setuptools to be built and installed in an environment running code like `setup.py`. This method makes the process slow and it’s an additional thing to maintain.
+
+
+* **wheels:** This is another method for building and packaging your software. With this method, the building process happens on the machine of the producer of the package. There are a few different kinds of wheel:
+    * Universal wheels: These wheels work for Python 2 or 3. They can be installed everywhere.
+    * Pure-Python wheels: These wheels support either Python 2 or Python 3 (but not both).
+    * Platform wheels: These wheels support specific platforms and Python versions (including different operating systems and architecture). There are some [Docker images](https://quay.io/organization/pypa) that help to build platform wheels. These images package the libraries so that they can run on most Linux platforms. The Python software foundation is focused on improving this method for future use.
+
+&lt;center&gt;
+    
+![wheel process](https://docs.monadical.com/uploads/upload_159498e5982b3c52e01ccbc04780b5be.png =x200)
+
+&lt;/center&gt;
+
+
+With wheels, installation is faster than with a source distribution installation because wheels don’t require a build process and don’t depend on tools like distutils and setuptools. In this case, we don’t need compilers for the C extensions--everything is in the box. Finally, the continuous integration step is faster because of the more efficient and lightweight use of cache systems.
+
+
+
+A simple way to create a wheel is to run the following command:
+
+```bash
+python setup.py bdist_wheel
+```
+
+You can create the source distribution and wheel at the same time too:
+
+```bash
+python setup.py sdist bdist_wheel
+```
+
+Though you can get away with skipping this step, it’s a good idea to ensure that your wheels can run on different operating systems. There are tools that help with this, for example, the [manylinux](https://github.com/pypa/manylinux) project. Manylinux facilitates the distribution of binary Python extensions as wheels on Linux. The end result is a package that can run on most Linux distros without any problem. To use manylinux, you have to use the official Docker images (based on CentOS Linux distro)--these come with everything you need for the building process, including the auditwheel tool. 
+
+Knowing about the different compiling and building options for your package is important if you want it to have good uptake in the developer community. If your library only includes code (without external dependencies), a source distribution could be enough. However, for some projects it’s important to check that the code works for different Python versions (Python 3.6, python 3.7 and 3.8) and if you need external software and for these cases, wheels are a better option.
+
+
+
+## Publishing a distribution
+
+After distribution building, we can publish our Python packages in a repo like Pypi. The Python package index (Pypi) is the official third-party software repository for Python, and package managers like pip use it as a default source for downloading packages and their dependencies.
+
+An easy way to upload our packages in Pypi is to use the [twine tool](https://twine.readthedocs.io/en/latest/). To install this, you can use pip:
+
+```bash
+pip install twine
+```
+
+Before uploading your distribution to Pypi, you have to create an account in Pypi. This is easy to do--just fill out this form and confirm your email: https://pypi.org/account/register/.
+
+After that, you can run this command to upload your distribution:
+
+```
+twine upload dist/*
+```
+
+You will see something like this in your shell:
+
+&lt;center&gt;
+
+![twine command](https://docs.monadical.com/uploads/upload_313eb107fe86e8eb629f95c6eeba3f29.png =x150)
+    
+&lt;/center&gt;
+
+
+After this step, your package will be available to be downloaded and used by different developers around the world.
+
+&lt;center&gt;
+
+![package published](https://docs.monadical.com/uploads/upload_fea19e0728dcd18d39aab397f7f724ba.png =x300)
+
+
+&lt;/center&gt;
+
+
+## Conclusion
+
+As developers, we don’t spend a lot of time thinking about library creation: a lot of experienced Python developers have just never had to publish a new library. But, in general, the creation and publishing process is pretty easy, and it’s a great way to share developments with the community. 
+
+In my next post, I’m going to look at how we can make the distribution process for new libraries more accessible for developers. I’ll be digging into the details of the manylinux project and sharing my ideas for how to improve it.
+
+
+[^1]:  https://www.python.org/dev/peps/pep-0518/ explains more about the importance of these fields 
+
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+<script data-cfasync="false" src="https://docs.monadical.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+
+
+

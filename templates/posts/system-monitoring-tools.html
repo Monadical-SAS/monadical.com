@@ -55,9 +55,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Sep 11 2020 01:29:36 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun Jan 24 2021 17:30:13 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">13203 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">13387 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -653,6 +653,27 @@ lsblk -f -m
 
 # show drives only with no partitions or headers
 lsblk --nodeps --noheadings
+```
+
+### `lsscsi`
+
+```bash
+apt install lsscsi
+
+# list all drives with info about size, disk id, etc.
+$ lsscsi -s  -P -p -g -i -D
+[0:0:0:0]    0x0     ATA      CT120BX300SSD1   010   /dev/sda   -  /dev/sg0   -          none              -      120GB
+[2:0:0:0]    0x0     ATA      CT2000BX500SSD1  030   /dev/sdg   -  /dev/sg6   -          none              -     2.00TB
+[2:0:1:0]    0x0     ATA      Samsung SSD 860  1B6Q  /dev/sdh   -  /dev/sg7   -          none              -      500GB
+[2:0:2:0]    0x0     ATA      Samsung SSD 860  1B6Q  /dev/sdi   -  /dev/sg8   -          none              -      500GB
+[2:0:3:0]    0x0     ATA      WDC  WDS100T2B0A 00WD  /dev/sdj   -  /dev/sg9   -          none              -     1.00TB
+[2:0:4:0]    0x0     ATA      WDC  WDS100T2B0A 00WD  /dev/sdk   -  /dev/sg10  -          none              -     1.00TB
+[2:0:5:0]    0x0     ATA      WDC  WDS100T2B0A 00WD  /dev/sdl   -  /dev/sg11  -          none              -     1.00TB
+[3:0:0:0]    0x0     JMicron  Generic DISK00   0103  /dev/sdb   JMicron_Generic_DISK00_0123456789ABCDEF-0:0  /dev/sg1   -          none              -     8.00TB
+[3:0:0:1]    0x0     JMicron  Generic DISK01   0103  /dev/sdc   JMicron_Generic_DISK01_0123456789ABCDEF-0:1  /dev/sg2   -          none              -     8.00TB
+[3:0:0:2]    0x0     JMicron  Generic DISK02   0103  /dev/sdd   JMicron_Generic_DISK02_0123456789ABCDEF-0:2  /dev/sg3   -          none              -     8.00TB
+[3:0:0:3]    0x0     JMicron  Generic DISK03   0103  /dev/sde   JMicron_Generic_DISK03_0123456789ABCDEF-0:3  /dev/sg4   -          none              -     8.00TB
+[3:0:0:4]    0x0     JMicron  Generic DISK04   0103  /dev/sdf   JMicron_Generic_DISK04_0123456789ABCDEF-0:4  /dev/sg5   -          none              -     10.0TB
 ```
 
 ### `fdisk` ⭐️🌈
@@ -1299,7 +1320,7 @@ virt-top
 Monitor performance statistics of virtual machines on an ESXi host.
 
 ```bash
-ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c2f333139292f392e1c392f24357134332f28">[email&#160;protected]</a> esxtop
+ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8cffe3e1e9f9ffe9fecce9fff4e5a1e4e3fff8">[email&#160;protected]</a> esxtop
 ```
 
 - https://kb.vmware.com/s/article/1008205
@@ -1317,7 +1338,7 @@ Show PostgreSQL performance information.
 ```bash
 apt install pgtop
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7909160a0d1e0b1c0a3915161a181511160a0d">[email&#160;protected]</a>:5432/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94e4fbe7e0f3e6f1e7d4f8fbf7f5f8fcfbe7e0">[email&#160;protected]</a>:5432/example and show perf stats w/ color
 pg_top --color-mode -h localhost -p 5432 -d example -U postgres
 ```
 
@@ -1333,7 +1354,7 @@ Show MySQL performance information.
 ```bash
 apt install mytop myps
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ce1f5fffde0cce0e3efede0e4e3fff8">[email&#160;protected]</a>:3306/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d70646e6c715d71727e7c7175726e69">[email&#160;protected]</a>:3306/example and show perf stats w/ color
 mytop -color -h localhost -P 3306 -u mysql -d example
 ```
 
@@ -1594,7 +1615,7 @@ Backup and file syncing tools.
 apt install rclone rsync rsnapshotd
 
 # sync some local files to a remote server over ssh/rsyncd
-rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ce9eff9eedcf4f3efe8">[email&#160;protected]</a>:/some/remote/path
+rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd888e988fbd95928e89">[email&#160;protected]</a>:/some/remote/path
 
 # sync some local files to a remote directory on a cloud storage provider
 rclone sync source:path dest:path [flags]
@@ -1606,7 +1627,7 @@ rclone mount remote:path/to/files /path/to/local/mount
 rsnapshot
 
 # or take a zfs snapshot of a given pool/dataset
-zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d5d0c5d0c2d4c5f1c2dfd0c1c2d9dec5dfd0dcd4">[email&#160;protected]</a>
+zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f5b5e4b5e4c5a4b7f4c515e4f4c57504b515e525a">[email&#160;protected]</a>
 ```
 
 ### `watchdog`/`auditd`/`acct`

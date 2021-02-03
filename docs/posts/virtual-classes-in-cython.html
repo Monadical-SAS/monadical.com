@@ -206,18 +206,13 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 01 2021 20:09:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Feb 01 2021 22:34:56 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 01 2021 20:09:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 03 2021 12:54:07 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">34 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
-            <span class="ui-owner">
-                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i>
-                &nbsp;<span class="text-uppercase">owned this note</span>
-            </span>
             
         </small>
     </div>
@@ -302,7 +297,7 @@ setup(
     name = &#34;python-libzim&#34;,
     version = &#34;0.0.1&#34;,
     author = &#34;Monadical Inc - Juan Diego Caballero&#34;,
-    author_email = &#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="315b5552715c5e5f50555852505d1f525e5c">[email&#160;protected]</a>&#34;,
+    author_email = &#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3d57595e7d5052535c59545e5c51135e5250">[email&#160;protected]</a>&#34;,
     description = (&#34;A python-facing API for creating and interacting with ZIM files&#34;),
     license = &#34;GPLv3&#34;,
     long_description=read(&#39;README.md&#39;),
@@ -995,6 +990,7 @@ zim_creator.add_article(article2)
 ```
 ### Summary of the solution using the first strategy
 
+![](https://docs.monadical.com/uploads/upload_bd5d4032c302a212cdd36955504e9d88.png)
 
 
 In this solution, the article wrapper class `ArticleWrapper` in C++ Land implements the virtual functions of the abstract class `zim::writer::Article` i.e., `getData(), getTitle()` and declares public data members i.e., `title, content, etc`. 
@@ -1024,6 +1020,7 @@ To implement this strategy, we will declare a public Cython API that will receiv
 
 
 
+  ![](https://docs.monadical.com/uploads/upload_8e468898c543f7410bdea5b7aadfea45.png)
 
 
 
@@ -1274,7 +1271,7 @@ https://groups.google.com/forum/#!topic/cython-users/vAB9hbLMxRg
                     <h4>
                         PM / Dev
                         
-                        <a href="twitter.com/jdcaballerov" target="_blank" rel="noopener">
+                        <a href="https://twitter.com/jdcaballerov" target="_blank" rel="noopener">
                             @jdcaballerov
                         </a>
                     </h4>

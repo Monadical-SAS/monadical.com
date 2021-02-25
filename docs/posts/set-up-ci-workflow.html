@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monadical Consulting | How to set up a CI workflow</title>
+    <title>How to set up a CI workflow | Monadical Consulting</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 
-    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
-    <link rel="stylesheet" href="/static/core/css/base.css">
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
 
     <link rel="canonical" href="https://monadical.com/posts/set-up-ci-workflow.html" />
 
@@ -58,9 +56,8 @@
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
                 <a class="navbar-brand" href="/index.html">
-                    <img srcset="
-                                /static/core/img/logo@3x.png 3x,
-                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -211,7 +208,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Nov 03 2020 13:31:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1117 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1118 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -504,7 +501,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e88b87868e818f9d9a8dc5899f9bc58b9a8d8c8d869c8189849ba89ed9">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c5f53525a555b494e59115d4b4f115f4e5958595248555d504f7c4a0d">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -512,7 +509,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="23424e42594c4d0e4640510e4f4c444a4d635512">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a1b171b001514571f19085716151d13143a0c4b">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -539,10 +536,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3f34393f373329281c2a6e">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e2d262b2d25213b3a0e387c">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcbfb3b2bab5bba9aeb9f1bdabaff1bfaeb9b8b9b2a8b5bdb0af9caaed">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b7bbbab2bdb3a1a6b1f9b5a3a7f9b7a6b1b0b1baa0bdb5b8a794a2e5">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -550,7 +547,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="29484448534647044c4a5b0445464e4047695f18">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26474b475c49480b4345540b4a49414f48665017">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:
@@ -970,12 +967,12 @@ Monadical.com | Full-Stack Consultancy
                 </div>
                 <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
                     <ul>
-                        <li>hello@monadical.com</li>
+                        <li>hello<span class="plz-dont-scrape">@m</span>onadical.com</li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-2 col-md-4">
                     <ul>
-                        <li>+1 (917) 933-3760</li>
+                        <li>+1 (9<span class="we-dont-like-spam-calls">17)</span> 933-3<span class="please-dont-scrape-this">760</span></li>
                     </ul>
                 </div>
             </div>
@@ -990,7 +987,6 @@ Monadical.com | Full-Stack Consultancy
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
     </script>

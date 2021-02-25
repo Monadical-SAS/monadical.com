@@ -1,5 +1,7 @@
 # [Monadical](https://monadical.com)
 
+[![monadical.com build](https://github.com/Monadical-SAS/monadical.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/Monadical-SAS/monadical.com/actions/workflows/deploy.yml)
+
 Simple static site powering Monadical.com.
 
 Static HTML is produced using a short custom website generator powered by Flask, Jinja2, & wget.
@@ -11,7 +13,9 @@ Static files are in: `static/`
 ## Install
 
 ```bash
-brew install wget python3  # only needed on mac
+apt install wget python3   # on Ubuntu/Debian
+brew install wget python3  # on macOS
+
 pip3 install flask
 ```
 

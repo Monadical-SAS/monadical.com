@@ -154,6 +154,7 @@
                         <li>{% block footercopyright %}Monadical Inc. © 2021 All rights reserved.{% endblock %}</li>
                     </ul>
                 </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
                 <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
                     <ul>
                         <li>hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">example.com</span>m</span>onadical.com</li>
@@ -175,7 +176,7 @@
     <script type="text/javascript">
         // hide all the tags containing fake contact info that are there to throw off scrapers
         // most scrapers dont run JS, so this fairly effectively masks our real info from bots
-        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info') {
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
             elem.style.display = 'none'
         }
     </script>

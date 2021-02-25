@@ -210,7 +210,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Nov 30 2020 16:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Dec 09 2020 18:15:03 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">7506 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">7507 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -841,12 +841,12 @@ Monadical.com | Full-Stack Consultancy
                 </div>
                 <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
                     <ul>
-                        <li>hello<span class="plz-dont-scrape">@<span style="display:none">example.com</span>m</span>onadical.com</li>
+                        <li>hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">example.com</span>m</span>onadical.com</li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-2 col-md-4">
                     <ul>
-                        <li>+1 (9<span class="we-dont-like-spam-calls">17)</span> <span style="display:none">(212) </span>933-3<span class="please-dont-scrape-this">760</span></li>
+                        <li>+1 (9<span>17)</span> <span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">(212) </span>933-3<span>760</span></li>
                     </ul>
                 </div>
             </div>
@@ -856,6 +856,14 @@ Monadical.com | Full-Stack Consultancy
         
     </footer>
     
+    
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info') {
+            elem.style.display = 'none'
+        }
+    </script>
 
     <script src="/static/squares.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -1,8 +1,13 @@
 name: Deploy monadical.com
 on:
+  # autobuild whenever changes are pushed to master
   push:
     branches:
       - master
+  # autobuild every 2hr so that view post counts dont lag too far behind actual view counts
+  schedule:
+    - cron: "0 */2 * * *"
+  # allow manually running the build from github actions page button
   workflow_dispatch:
 
 env:

@@ -3,10 +3,13 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
 env:
   ACTIVATE_VENV: 0
   TERM: xterm
   BRANCH: master
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

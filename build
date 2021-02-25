@@ -12,7 +12,9 @@ IFS=$'\n'
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-source "$DIR/.venv/bin/activate" || echo "[X] Failed to source $DIR"
+if [[ "$ACTIVATE_VENV" != "0" ]]; then
+    source "$DIR/.venv/bin/activate" || echo "[X] Failed to source $DIR"
+fi
 
 txtbld=$(tput bold)
 normal=$(tput sgr0)

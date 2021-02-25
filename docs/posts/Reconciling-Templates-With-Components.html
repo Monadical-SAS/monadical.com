@@ -208,7 +208,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 12:11:31 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:20:05 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1018 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1019 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -739,6 +739,7 @@ If you’re interested working on cool Django + React/Redux projects involving E
                         <li>Monadical Inc. © 2021 All rights reserved.</li>
                     </ul>
                 </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
                 <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
                     <ul>
                         <li>hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">example.com</span>m</span>onadical.com</li>
@@ -760,7 +761,7 @@ If you’re interested working on cool Django + React/Redux projects involving E
     <script type="text/javascript">
         // hide all the tags containing fake contact info that are there to throw off scrapers
         // most scrapers dont run JS, so this fairly effectively masks our real info from bots
-        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info') {
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
             elem.style.display = 'none'
         }
     </script>

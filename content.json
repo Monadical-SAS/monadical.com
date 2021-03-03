@@ -49,6 +49,27 @@
     }
   },
   "POSTS": {
+    "django-packages": {
+      "title": "Five Django Packages We Love at Monadical",
+      "description": "One of the biggest draws to Django is its ecosystem. If you encounter a problem, the chances are that someone else in the community has too, and has been kind enough to abstract it into a package and release it. Here are five packages we find ourselves coming back to.",
+      "date": "2021-03-03",
+      "img": "/static/django-packages.png",
+      "tags": [
+        "django",
+        "packages"
+      ],
+      "length": "7 min read",
+      "source": "https://docs.monadical.com/s/django-packages",
+      "url": "/posts/django-packages.html",
+      "template": "posts/django-packages.html",
+      "author": {
+        "name": "Karim",
+        "title": "Software Developer",
+        "handle": "@apkallum",
+        "url": "https://twitter.com/apkallum",
+        "image": "/static/karim.jpg"
+      }
+    },
     "drone-web-platform": {
       "title": "Drone Web Platform ",
       "description": "A platform for operating drones through the internet.",

@@ -10,11 +10,11 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  Five Django Packages We Love at Monadical ===   *Written by Karim. Originally published 20">
+    <meta name="description" content="&lt;center&gt;  Cinco paquetes de Django que amamos en Monadical ===   *Escrito por Karim. Original public">
     
     
     
-    <meta property="og:title" content="Five Django Packages We Love at Monadical - CodiMD">
+    <meta property="og:title" content="Cinco paquetes de Django que amamos en Monadical - CodiMD">
     
     
     
@@ -25,7 +25,7 @@
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>Five Django Packages We Love at Monadical - CodiMD</title>
+    <title>Cinco paquetes de Django que amamos en Monadical - CodiMD</title>
     <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
     <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
   
@@ -50,73 +50,76 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Feb 23 2021 18:37:40 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Feb 23 2021 18:44:52 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Feb 23 2021 22:39:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Mar 05 2021 01:11:29 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">189 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
     <div id="doc" class="container markdown-body">&lt;center&gt;
 
-Five Django Packages We Love at Monadical
+Cinco paquetes de Django que amamos en Monadical
 ===
 
 
-*Written by Karim. Originally published 2021-03-02 on the [Monadical blog](https://monadical.com/blog.html).*
+*Escrito por Karim. Original publicado el 2021-03-02 en el [Blog de Monadical](https://monadical.com/blog.html).*
 
 &lt;/center&gt;
 
 
 
 
-One of the biggest draws to Django is its ecosystem. If you encounter a problem, the chances are that someone else in the community has too, and has been kind enough to abstract it into a package and release it. Here are five packages we find ourselves coming back to. 
+
+Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con regularidad en Monadical.
  
 
 ## 1 [django-polymorphic](https://github.com/django-polymorphic/django-polymorphic)
 
-In object-oriented programming, we use the term ‘polymorphism’ to refer to objects that share an interface but not an implementation. A common pedagogical example is modeling animals in object oriented code: a dog and a cat can both make a sound--which can be invoked by the same function--but the sound is different. A more practical example is items in an e-commerce store: items in the store share some characteristics, but differ in many others. There is an [excellent article on Real Python](https://realpython.com/modeling-polymorphism-django-python) that goes through some approaches to modeling polymorphism. 
+En la programación orientada a objetos usamos el término &#34;polimorfismo&#34; para referirnos a objetos que comparten una interfaz pero no la implementación. Un ejemplo pedagógico común es el que resulta de modelar un animal como un objeto: Los perros y los gatos producen un sonido que se puede invocar con la misma función `animal.sonido()`--pero el sonido es diferente. Un ejemplo más práctico resulta con los items de una tienda online: Los items comparten algunas características pero difieren en otras. Existe un [artículo excelente en Real Python](https://realpython.com/modeling-polymorphism-django-python) que presenta varios enfoques para modelar el polimorfismo.
 
-Where does django-polymorphic fit in? It makes modeling concrete, multi-table inheritance easy. If I define the following models to abstract a `Project`:
+¿ Y qué relación tiene el paquete django-polymorphic con todo esto ? Este paquete permite implementar de forma fácil, y de forma concreta, la herencia multi tabla. Si definimos los siguientes modelos para un `Proyecto` :
+
 
 ```python
 from polymorphic.models import PolymorphicModel
 
-class Project(PolymorphicModel):
-    topic = models.CharField(max_length=30)
+class Proyecto(PolymorphicModel):
+    tema = models.CharField(max_length=30)
 
-class ArtProject(Project):
-    artist = models.CharField(max_length=30)
+class ProyectoArte(Proyecto):
+    artista = models.CharField(max_length=30)
 
-class ResearchProject(Project):
+class ProyectoInvestigacion(Proyecto):
     supervisor = models.CharField(max_length=30)
 
 ``` 
-Then we create some projects:
+Y luego creamos algunos proyectos
 
 ```python
-&gt;&gt;&gt; Project.objects.create(topic=&#34;Department Party&#34;)
-&gt;&gt;&gt; ArtProject.objects.create(topic=&#34;Painting with Tim&#34;, artist=&#34;T. Turner&#34;)
-&gt;&gt;&gt; ResearchProject.objects.create(topic=&#34;Swallow Aerodynamics&#34;, supervisor=&#34;Dr. Winter&#34;)
+&gt;&gt;&gt; Proyecto.objects.create(topic=&#34;Fiesta de Departamento&#34;)
+&gt;&gt;&gt; ProyectoArte.objects.create(tema=&#34;Pintando con Tim&#34;, artista=&#34;T. Turner&#34;)
+&gt;&gt;&gt; ProyectoInvestigacion.objects.create(tema=&#34;Aerodinamica&#34;, supervisor=&#34;Dr. Winter&#34;)
 ```
-If we query `Projects`, we get polymorphic results: 
+Al realizar la consulta de `Proyectos`, obtenemos los resultados con polimorfismo: 
 ```python
-&gt;&gt;&gt; Project.objects.all()
-[ &lt;Project:         id 1, topic &#34;Department Party&#34;&gt;,
-  &lt;ArtProject:      id 2, topic &#34;Painting with Tim&#34;, artist &#34;T. Turner&#34;&gt;,
-  &lt;ResearchProject: id 3, topic &#34;Swallow Aerodynamics&#34;, supervisor &#34;Dr. Winter&#34;&gt; ]
+&gt;&gt;&gt; Proyecto.objects.all()
+[ &lt;Proyecto:        id 1, tema &#34;Fiesta de Departamento&#34;&gt;,
+  &lt;ArtProject:      id 2, tema &#34;Pintando con Tim&#34;, artista &#34;T. Turner&#34;&gt;,
+  &lt;ProjectoInvestigacion: id 3, tema &#34;Aerodinamica&#34;, supervisor &#34;Dr. Winter&#34;&gt; ]
 
 ``` 
 ## 2 [django-allauth](https://www.intenct.nl/projects/django-allauth/)
-django-allauth provides a set of modular, well-integrated apps that allow you to have any of the common signup and login flows, whether local or social. It shines when it comes to supporting both local and social login flows simultaneously, and it just works™.
+django-allauth provee un conjunto de aplicaciones modulares integradas que implementan los flujos comunes de registro y login, tanto locales como integrados con redes sociales. Se destaca especialmente al soportar de forma simultánea los flujos para login local y con redes social. It just works™.
 
 ## 3 [Django Lifecycle Hooks](https://rsinger86.github.io/django-lifecycle/)
-This is my new personal favorite. It&#39;s still in beta so I&#39;m not as eager to recommend it for use in production, but I think it has the potential to increase readability and maintenance of [fat models](https://django-best-practices.readthedocs.io/en/latest/applications.html). It can replace both [Signals](https://docs.djangoproject.com/en/dev/ref/signals/) and `__init__` &amp; `save` hooks.
 
-For example, if you are used to doing the following with model hooks:
+Este paquete es mi nuevo favorito. Aún se encuentra en beta así que no lo recomendaría de entrada para uso en producción. Sin embargo, creo que tiene el potencial de mejorar la claridad del código y el mantenimiento de [modelos gordos](https://django-best-practices.readthedocs.io/en/latest/applications.html). Puede reemplazar las [Signals](https://docs.djangoproject.com/en/dev/ref/signals/) y los hooks  `__init__` &amp; `save`. 
+
+Por ejemplo, si está acostumbrado a hacer lo siguiente con hooks:
 
 ```python
 class Article(LifecycleModel):
@@ -141,7 +144,7 @@ class Article(LifecycleModel):
         	send_email(self.editor.email, &#34;An article has published!&#34;)
 
 ```
-You can now do this:
+Con este paquete lo podría hacer de esta forma:
 ```python
 from django_lifecycle import LifecycleModel, hook, BEFORE_UPDATE, AFTER_UPDATE
 
@@ -160,15 +163,21 @@ class Article(LifecycleModel):
 	def on_publish(self):
     	send_email(self.editor.email, &#34;An article has published!&#34;)
 ```
-The hooks can also reference changes to fields of a related (e.g: foreign key-ed) object. Again, it&#39;s important to note that this package is in beta and thus benchmarking and viewing raw SQL is important.
+
+Los hooks también pueden referirse a cambios en campos de objetos relacionados (con foreign keys). Lo repito, es importante notar que este paquete se encuentra en beta y por tanto es importante examinarlo de forma detallada viendo el código que genera.
+
 
 ## 4 [Django Extensions](https://github.com/django-extensions/django-extensions)
-Django Extensions is one of the oldest Django packages that I know of, dating back to at least 2008. It deserves an article of its own, but here are a few of the features I use:
+
+Django Extensions es uno de los paquetes útiles más antiguos que conozco, algo así como desde el año 2008. Este paquete merece un artículo por si solo pero estas son algunas de las características que uso:
 
 ### shell_plus
-`./manage.py shell_plus` will launch a Django shell with all the models of all your apps imported and ready to use. I like to combine it with IPython for a better autocompletion experience.
+
+`./manage.py shell_plus` lanza un shell de Django con toos los modelos importados y listos para usar. Me gusta combinarlo con IPython para mejorar la experiencia con auto completado.
+
 ### RunScript
-Sometimes you want to run a script in your Django application. Typically when you are writing your script, you will use the Django shell to drive your development, then wrap the functionality in a Django command. However, with this command, you can run the script directly by wrapping it in a simple function. For example, if you wanted to write a script to delete all Question objects in your database, it would be as simple as:
+
+Algunas veces queremos correr un script en nuestra aplicación de Django, un flujo de trabajo típico es usar el shell de django y luego convertir esto en un script. Este comando nos permite correr una función simple como si estuvieramos en un shell de django. Por ejemplo, si quisieramos un script para borrar todos los objectos de tipo `Question` de la base datos lo podríamos hacer con este paquete de forma tan simple como:
 
 ```python
 # scripts/delete_all_questions.py
@@ -182,23 +191,23 @@ def run():
 	questions.delete()
 
 ```
-Then to run the script, you would:
+Y lueg correr el script:
 
 ```
 ./manage.py manage.py runscript  delete_all_questions
 ```
 ### syncdata
-syncdata will reset your database such that it only contains the fixtures you specified, exactly as you specified them in the fixtures file.
+syncdata resetea la base de datos de tal forma que solo contenga exactamente las fixtures especificadas en el archivo de fixtures.
 
 ### graph_models
-This command will graph the models of your applications, allowing you to see the underlying [relations](https://en.wikipedia.org/wiki/Relation_(database)), similar to an [entity-relationship diagram](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model).
+Este comando permite visualizar los modelos de la aplicación django permitiendo ver las [relaciones](https://en.wikipedia.org/wiki/Relation_(database)) de forma similar a un diagrama [entidad-relación]((https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model))
 
 ![entity-relationship diagram](https://docs.monadical.com/uploads/upload_77f772290b99de48fe5d20418345ec5c.png)
 
 
 ## 5 [Cookiecutter Django](https://github.com/pydanny/cookiecutter-django)
 
-If you have set up a Django project before, you will know that `django-admin startproject mysite` is not sufficient for any of the bells and whistles needed for modern web app development, such as environment variables for configuration, Postgres integration out of the box, docker(-compose) setup, etc. Django Cookiecutter takes care of that for you. I recommend using it *after* you have familiarized yourself with each component that you plan on utilizing separately. Otherwise, the amount of magic and decisions made for you will hinder your ability to debug your application in the future. Finally, it can also lead to a lot of dead code in your codebase if you don’t know what’s used for what, so be careful!
+Si alguna vez ha arrancado un proyecto de Django debe saber que el comando`django-admin startproject mysite` no es suficiente para tener todas las características de una aplicación web moderna. Por ejemplo, variables de entorno para la configuración, integración con Postgres, docker(-compose), etc. Django Cookiecutter se encarga de esto por usted. Recomiendo usarlo *después* de familiarizarse con cada componente por separado. De otra forma, la &#34;magia&#34; y las configuraciones dificultarán la depuración en el futuro así como también puede llevar a tener código muerto si no se entiende qué está haciendo cada cosa.
 
 ---
 

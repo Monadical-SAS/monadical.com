@@ -143,10 +143,21 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
+        @media (max-width: 400px) {
+            .authorbox {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            .newsletterbox{
+                margin-left: 50px;
+            }
+        }
     </style>
-
     <div id="post-content">
         <div class="container mb-5">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
                     
@@ -208,7 +219,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:31:29 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun Jan 12 2020 21:47:45 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">570 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">572 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -305,7 +316,7 @@ https://overreacted.io/goodbye-clean-code/</div>
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <div class="authorbox">
+            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
                 <div style="padding-top: 10px">
                     Nick Sweeting
                     <h4>
@@ -316,29 +327,25 @@ https://overreacted.io/goodbye-clean-code/</div>
                         </a>
                     </h4>
                     <h5>Published on <a href="#permalink">2019-01-25</a></h5>
+                    <img src="/static/nick.jpg" width="100px"/>
                 </div>
-                <img src="/static/nick.jpg" width="100px"/>
+                
+                <center>
+                    <div class="newsletterbox"style="padding-top: 10px;">
+                        <a href="/team.html#careers" style="font-weight: bold;">
+                            We are hiring!
+                        </a>
+                        <br/><br/>
+                        <a href="https://tinyletter.com/Monadical">
+                            Subscribe to our newsletter
+                        </a>
+                    </div>
+                </center>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <script src="https://utteranc.es/client.js"
-                repo="Monadical-SAS/monadical.com"
-                issue-term="pathname"
-                label="blog"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
         <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
             <br/><br/><br/>
-            <i style="font-size: 18px">Some other posts:</i>
+            <i style="font-size: 18px">Recent posts:</i>
             <ul style="max-width: 400px; text-align: left; font-size: 16px">
                 <br/><br/>
                 
@@ -450,6 +457,21 @@ https://overreacted.io/goodbye-clean-code/</div>
             </ul>
             <br/>
         </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
         <script>
             // hide the table of contents nav when you scroll down past the end
             $(window).scroll(function() {
@@ -473,6 +495,7 @@ https://overreacted.io/goodbye-clean-code/</div>
         </script>
         <br/><br/>
     </div>
+  
 
     </article>
     

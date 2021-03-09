@@ -143,10 +143,21 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
+        @media (max-width: 400px) {
+            .authorbox {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            .newsletterbox{
+                margin-left: 50px;
+            }
+        }
     </style>
-
     <div id="post-content">
         <div class="container mb-5">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
                     
@@ -208,7 +219,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Nov 03 2020 13:31:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1156 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1161 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -501,7 +512,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfdcd0d1d9d6d8cacdda92dec8cc92dccddadbdad1cbd6ded3ccffc98e">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="75161a1b131c12000710581402065816071011101b011c141906350344">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -509,7 +520,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41202c203b2e2f6c2422336c2d2e26282f013770">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1c101c07121350181e0f5011121a14133d0b4c">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -536,10 +547,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f0939895939b9f8584b086c2">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afccc7caccc4c0dadbefd99d">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="690a06070f000e1c1b0c44081e1a440a1b0c0d0c071d0008051a291f58">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3d5e52535b545a484f58105c4a4e105e4f5859585349545c514e7d4b0c">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -547,7 +558,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f2e222e352021622a2c3d6223202826210f397e">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c5d515d46535211595f4e1150535b55527c4a0d">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:
@@ -714,7 +725,7 @@ Monadical.com | Full-Stack Consultancy
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <div class="authorbox">
+            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
                 <div style="padding-top: 10px">
                     Cristian Vargas
                     <h4>
@@ -725,29 +736,25 @@ Monadical.com | Full-Stack Consultancy
                         </a>
                     </h4>
                     <h5>Published on <a href="#permalink">2020-09-09</a></h5>
+                    <img src="/static/cristian.png" width="100px"/>
                 </div>
-                <img src="/static/cristian.png" width="100px"/>
+                
+                <center>
+                    <div class="newsletterbox"style="padding-top: 10px;">
+                        <a href="/team.html#careers" style="font-weight: bold;">
+                            We are hiring!
+                        </a>
+                        <br/><br/>
+                        <a href="https://tinyletter.com/Monadical">
+                            Subscribe to our newsletter
+                        </a>
+                    </div>
+                </center>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <script src="https://utteranc.es/client.js"
-                repo="Monadical-SAS/monadical.com"
-                issue-term="pathname"
-                label="blog"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
         <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
             <br/><br/><br/>
-            <i style="font-size: 18px">Some other posts:</i>
+            <i style="font-size: 18px">Recent posts:</i>
             <ul style="max-width: 400px; text-align: left; font-size: 16px">
                 <br/><br/>
                 
@@ -859,6 +866,21 @@ Monadical.com | Full-Stack Consultancy
             </ul>
             <br/>
         </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
         <script>
             // hide the table of contents nav when you scroll down past the end
             $(window).scroll(function() {
@@ -882,6 +904,7 @@ Monadical.com | Full-Stack Consultancy
         </script>
         <br/><br/>
     </div>
+  
 
     </article>
     

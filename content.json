@@ -49,6 +49,31 @@
     }
   },
   "POSTS": {
+    "wireguard": {
+      "title": "Some Unofficial WireGuard Documentation",
+      "description": "Some unofficial documentation for the WireGuard VPN, including config API reference, tutorials, examples, and projects. (This is a mirror of the original on Github)",
+      "date": "2021-03-23",
+      "img": "/static/wireguard.jpg",
+      "tags": [
+        "networking",
+        "security",
+        "infrastructure",
+        "devops",
+        "documentation ",
+        "vpn"
+      ],
+      "length": "30 min read",
+      "source": "https://docs.monadical.com/s/wireguard",
+      "url": "/posts/wireguard.html",
+      "template": "posts/wireguard.html",
+      "author": {
+        "name": "Open Source",
+        "title": "",
+        "handle": "@Github",
+        "url": "https://github.com/pirate/wireguard-docs",
+        "image": "/static/github.png"
+      }
+    },
     "5-paquetes-django": {
       "title": "Cinco Paquetes de Django Que Amamos en Monadical",
       "description": "Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con",

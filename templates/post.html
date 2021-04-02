@@ -171,6 +171,9 @@
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('{{source}}', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

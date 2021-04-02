@@ -227,7 +227,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Dec 05 2019 23:12:11 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Sep 02 2020 11:14:30 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">822 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">828 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -666,6 +666,9 @@ carpentry.readthedocs.io/en/latest/increasing-performance.html#speeding-up-pytho
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/python-performance-profiling', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

@@ -225,7 +225,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Aug 24 2020 16:16:53 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Aug 25 2020 15:38:30 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">45040 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">45059 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -636,6 +636,9 @@ Please feel free to  contribute your own tips and tweaks! You can send your cont
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/SJagdPZ7w', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

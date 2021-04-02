@@ -225,7 +225,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 01:14:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jan 29 2021 15:58:45 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3403 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3424 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -665,6 +665,9 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/principles-handbook', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')

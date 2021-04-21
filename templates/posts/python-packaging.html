@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # Python Packaging Guide for APT/Debian  *A quick guide on how to package your Python/`pip">
+    
+    
+    
+    <meta property="og:title" content="Python Packaging Guide for APT/Debian - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Python Packaging Guide for APT/Debian - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+  
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.8b60ca65f33929a11b34.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.5b67375c73f1197b3ddd.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.dc8fadc9b46c6b8f0a45.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.a7a24105e8c52b832ac0.css" rel="stylesheet">
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 20 2021 17:04:29 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Apr 20 2021 19:13:51 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+# Python Packaging Guide for APT/Debian
+
+*A quick guide on how to package your Python/`pip` project into an `apt`-installable Debian package using `stdeb`.*
+
+&lt;div style=&#34;display: inline-block; width: 50%;vertical-align: top; min-width: 400px; margin-right: 4px; text-align: left&#34;&gt;
+
+```bash
+# how to go from this
+cd yourpackage/
+python setup.py install
+
+# to this:
+add-apt-repository ppa:yourppa/yourpackage
+apt install yourpackage
+```
+
+&lt;/div&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/upload_64a8d49f0a0b0690f3d3a43072e36d09.png&#34; style=&#34;width:300px; display: inline-block&#34;&gt;
+
+&lt;/center&gt;
+
+
+
+&lt;/center&gt;
+
+---
+
+
+*ArchiveBox is used as an example package throughout this guide, but you can replace anywhere you see `archivebox` with the name of your own package*
+
+## Goals
+
+Assuming you have a Python project with a `setup.py` file and `python setup.py install` already working, we aim to achieve:
+
+- a Debian package published, installable with `apt install yourpackage`
+- a static Debian bundle built, installable with `dpkg -i ./yourpackage.deb`
+- a source Debian changeset built, inspectable in `yourpackage.changes`
+
+You can host your repository anywhere, but Ubuntu/Launchpad (aka Canonical) provide a public PPA you can sign up for. This tutorial assumes you&#39;re using their PPA server, but you can use any. You must tell your users to add the PPA/repository sources to their machine in order to install your package.
+
+```bash
+# on ubuntu focal:
+sudo add-apt-repository -u ppa:archivebox/archivebox
+
+# on other deb systems should add these to /etc/apt/sources.list instead:
+deb http://ppa.launchpad.net/archivebox/archivebox/ubuntu focal main
+deb-src http://ppa.launchpad.net/archivebox/archivebox/ubuntu focal main
+```
+
+## Steps to Get Started
+
+1. Sign up for an [Ubuntu + Launchpad](https://launchpad.net/) account
+2. Verify your email address, and add a [PGP key](https://www.gnupg.org/gph/en/manual/c14.html ) to your account &lt;code style=&#34;color:blue&#34;&gt;https://launchpad.net/~YOURUSERNAME/+editpgpkeys&lt;/code&gt;
+3. Sign the code of conduct with your PGP key
+&lt;code style=&#34;color:blue&#34;&gt;https://launchpad.net/~YOURUSERNAME&lt;/code&gt;
+4. Create a new PPA for your packages (pick a good, short name)
+&lt;code style=&#34;color:blue&#34;&gt;https://launchpad.net/~YOURUSERNAME/+activate-ppa&lt;/code&gt;
+5. Set up your branding and PPA info:
+&lt;code style=&#34;color:blue&#34;&gt;https://launchpad.net/~YOURUSERNAME/+branding&lt;/code&gt;&lt;code style=&#34;color:blue&#34;&gt;https://launchpad.net/~YOURUSERNAME/+edit&lt;/code&gt;
+6. Set up your build machine (see below)
+7. Build, sign, and upload changes on each release (see below)
+
+
+### Build Machine Setup
+
+**Install the tools for python and debian packaging:**
+```bash
+apt install python3 python3-dev python3-pip python3-venv python3-all dh-python devscripts dput software-properties-common debhelper
+python3 -m pip install setuptools stdeb
+```
+
+**Set up your package definition and dependencies in `stdeb.cfg`:**
+```ini
+[DEFAULT]
+Package: archivebox
+Suite: focal
+Build-Depends: dh-python
+Depend: python3, nodejs, chromium, wget, curl, ffmpeg, git, python3-atomicwrites, python3-croniter, python3-crontab
+XS-Python-Version: &gt;= 3.7
+```
+
+**Set up your launchpad ppa upload location in `~/.dput.cf`:**
+```ini
+[archivebox-ppa]
+fqdn: ppa.launchpad.net
+method: ftp
+incoming: ~archivebox/ubuntu/archivebox/
+login: anonymous
+allow_unsigned_uploads: 0
+```
+No username/password is needed for launchpad FTP uploads because your PGP signature on the changeset is used to verify authenticity.
+
+## Common Tasks
+
+#### Build the package
+```bash
+python3 setup.py --command-packages=stdeb.command sdist_dsc --debian-version=2 bdist_deb
+```
+&lt;small&gt;The final version number will be `{version from setup.py}-{debian-version}` e.g. `0.4.21-2`.&lt;/small&gt;
+
+#### Manage your PGP keys
+
+```bash
+gpg --refresh-keys
+gpg --list-keys
+
+gpg --export YOURKEYID &gt; public.key
+gpg --export-secret-key YOURKEYID &gt; private.key
+
+gpg --import public.key
+gpg --import --allow-secret-key-import private.key
+
+gpg --verify deb_dist/archivebox_0.4.21-2_source.changes
+```
+
+#### Sign a build
+```bash
+debsign -k YOURGPGKEYID deb_dist/archivebox_0.4.21-2_source.changes
+gpg --verify deb_dist/archivebox_0.4.21-2_source.changes
+gpg --verify deb_dist/archivebox_0.4.21-2.dsc
+```
+
+#### Push a build to the launchpad ppa
+```bash
+dput archivebox deb_dist/archivebox_0.4.21-2_source.changes
+```
+&lt;small&gt;(check your email for build status updates)&lt;/small&gt;
+
+#### Install a source build from the launchpad ppa
+```bash
+add-apt-repository ppa:archivebox/archivebox
+apt update
+apt install archivebox
+```
+
+#### Install a binary build from `.deb`
+```bash
+dpkg -i $PWD/deb_dist/archivebox_0.4.21-2_all.deb
+apt install $PWD/deb_dist/archivebox_0.4.21-2_all.deb
+```
+
+#### Troubleshooting
+
+If you run into problems, you can always try fixing broken dependencies with apt, or purging and reinstalling the package.
+
+```bash
+apt --fix-broken install
+apt purge archivebox
+rm -Rf build deb_dist dist archivebox-*.tar.gz
+```
+https://help.launchpad.net/Packaging/UploadErrors
+https://www.youtube.com/watch?v=O83rIRRJysA
+
+
+## The Rules of Debian Packaging
+
+1. Debian packages can only install other Debian packages, if you need a Python package e.g. `django`, you have to install the Debian equivalent `python3-django` instead. If a Debian equivalent is not available, then you&#39;ll have to vendor the package yourself by downloading it and putting it in your source code folder.
+2. You can never upload different content with the same version number to launchpad (if anything is changed, you must bump `--debian-version n`).
+3. Every change must be signed with PGP before being uploaded (using key from launchpad).
+4. You cannot distribute compiled binaries via launchpad, only source code and build instructions (you can still offer compiled `.deb`s on your own website).
+
+## Summary
+
+You should now have a finished `apt`/`deb` package, available via Launchpad PPA that your users can easily install on Ubuntu and other Debian-based systems.
+
+If you have any trouble or want to try an alternative to `stdeb`, check out FPM: https://fpm.readthedocs.io/en/latest/intro.html
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/common.cd404741444d0e89d5fe.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.0fc262100594c59e284d.js" defer="defer"></script>
+
+
+

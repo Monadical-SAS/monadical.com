@@ -49,6 +49,29 @@
     }
   },
   "POSTS": {
+    "python-packaging": {
+      "title": "Python Packaging Guide for APT/Debian",
+      "description": "A quick guide on how to package your Python/pip project into an apt-installable Debian package using stdeb.",
+      "date": "2021-04-21",
+      "img": "/static/python-packaging.png",
+      "tags": [
+        "python",
+        "packages",
+        "debian",
+        "APT"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/python-packaging",
+      "url": "/posts/python-packaging.html",
+      "template": "posts/python-packaging.html",
+      "author": {
+        "name": "Nick Sweeting",
+        "title": "Co-Founder",
+        "handle": "@theSquashSH",
+        "url": "https://twitter.com/theSquashSH",
+        "image": "/static/nick.jpg"
+      }
+    },
     "cobol": {
       "title": "Learning COBOL: A Journey For The Modern Programmer",
       "description": "A guide to learning COBOL for the modern programmer. ",

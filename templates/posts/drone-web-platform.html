@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  Drone Web Platform ===  &lt;big&gt;  **A Platform for Operating Drones Through the Internet**  &lt;">
+    
+    
+    
+    <meta property="og:title" content="Drone Web Platform - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Drone Web Platform - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+  
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.8b60ca65f33929a11b34.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.5b67375c73f1197b3ddd.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.dc8fadc9b46c6b8f0a45.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.a7a24105e8c52b832ac0.css" rel="stylesheet">
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 22 2021 17:39:29 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Feb 22 2021 17:59:48 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">313 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+Drone Web Platform
+===
+
+&lt;big&gt;
+
+**A Platform for Operating Drones Through the Internet**
+
+&lt;/big&gt;
+
+*Written by [Jose](https://twitter.com/yojosebenitez). Originally published 2021-02-22 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+
+
+
+
+
+Have you ever piloted a quadcopter? How about a [rover](https://ardupilot.org/rover/)? Or an [ROV](https://en.wikipedia.org/wiki/Remotely_operated_underwater_vehicle)? You might have seen people using drones[^1] to take photos and videos of nature, or to race remote controlled cars, but they can also be used for other tasks, like agriculture, civil inspection, exploring nature, rescue, or security. In fact, once you&#39;ve mastered flying/driving a drone, the only limits are your budget and your imagination!
+
+Some time ago, a friend came to me with a project: a research group wanted to take measurements of the air quality in the city. Our first idea was to use an airship, but handling helium turned out to be very complicated. So, we decided to take the measurements with drones. Normally only the pilot of the drone has access to flight data in real time (pose, path, mission, etc…)--data is usually downloaded after the flight. For this project, though, I needed to set things up so that the whole team could see the drone mission and measurements live.
+
+![air quality experiment](https://docs.monadical.com/uploads/upload_16448b0ae2e65086bcf805b2e403b2e1.jpg)
+
+
+
+
+The research project was cut short, but I kept thinking about the idea. Wouldn’t it be cool if, as well as the flight data, the whole operation was accessible from a web browser, kind of like a game? There would need to be a map, controls, and a video view. Users could check the system status, create the mission, and fly their drone--all from their browser!
+
+
+Well, last year I finally decided to give the project a shot. In this post, I’ll explain some of the challenges of the build, what I’ve come up with, and why (I hope!) the platform will be useful.
+
+## The main idea
+
+Drones are mainly composed of two things: the vehicle and a remote controller or station. So, first of all, I needed to be able to interact with the drone from a server as if the server were the control station. This meant that the drone had to be able to connect to the internet! Nice, two problems at once: connect to the internet and create a web control station.
+
+I took a drone (a quadcopter to be precise), connected it to a mini PC (a Raspberry Pi), connected my mini PC to the internet through a 4G dongle, and started building the most freaking awesome web platform to manage drones 🥳. 
+
+What about the control station? Let me introduce you to the wonderful world of Mavlink! ✨ Mavlink is a message protocol, which means it’s a standard set of commands, messages and definitions that drones use to communicate with the external world. For example, you can send a message to the drone that says “MOVE FORWARD 10 METERS”, and the drone will understand. In the same way, a drone can say, “I&#39;M AT COORDINATES X,Y” and you will know where the drone is. This communication can occur through many channels: WiFi, 4G, Serial USB, etc.
+
+So, voilà! I had a way to connect the drone to the internet, and the tools to control the drone. Now it was just a matter of programming skills to bring those things together and create a usable web-based platform.
+
+
+![drone to internet](https://docs.monadical.com/uploads/upload_e681d177bcea575e1f5abf3087b3d775.png)
+
+
+
+
+## From Mavlink to the internet
+
+Drones that use Mavlink have so many capabilities--the number of messages available is huge[^2]--so I just started with the basics: taking off, landing, moving to points, and tracking the drone on a map. This is where I started communicating with the drone from my mini PC, and guess what? It worked! I could command the drone to take off and move around, and could see where it was, where it was heading, etc.
+
+The next step was to connect a 4G dongle to the mini PC to establish a communication channel to a server. This was straightforward, since the problem has already been solved--4G is what allows mobile networks to provide internet to devices (using a SIM card, like with your cell phone). There’s a small piece of software written in [Python](https://www.python.org/) that runs on the mini PC which simply serves as a bridge in the communication channel. There is no magic in it--it’s just a script to pass messages from the drone’s onboard controller to the server and vice versa. This is all done using [websockets](https://en.wikipedia.org/wiki/WebSocket).
+
+All that was left to build was the server and client software... 
+
+## Cloud control station
+
+Web applications use [client-server architecture](https://cio-wiki.org/wiki/Client_Server_Architecture), composed mainly of two parts called the &#39;backend&#39; and the &#39;frontend&#39;.[^3] For this project, I wrote the backend in Python using a framework called [Django](https://www.djangoproject.com/), and the frontend in [Javascript](https://www.javascript.com/) using a library called [‘React’](https://reactjs.org/)[^4]. 
+
+It’s really important to remember that the communication here happens through websockets, so once the connection is established, the mini PC, server and client can communicate in real time. The backend handles two major endpoints, one for drones and one for users (frontend/client). After the whole communication channel was up--i.e, the drone talks to the mini PC, the mini PC talks to the server, and the client talks to the server--it was time to start sending real commands and messages to control, and to manage the drone from a web browser.
+
+To give you an example of how this works, the drone sends a Mavlink message containing GPS coordinates to the mini PC, the mini PC sends a GPS message to the server using websockets, the server conveys the message to the client, and the frontend renders a map with an icon at the received coordinates.
+
+
+![drone to server](https://docs.monadical.com/uploads/upload_f15ce1cdac581484911c0853544dc999.png)
+
+
+## The magic land of React
+
+With the communication infrastructure built (at least the basics), the next step was to create a beautiful graphical user interface. I wanted this to look like a game interface, with panels, buttons, a main view, controls, info sections, and indicators. I made everything using React components.
+
+[ReactJS](https://reactjs.org/) is a tool created by Facebook to build user interfaces--with ReactJS, it was just a matter of doing some frontend design to place the components and interconnect them, including the websocket handler and the action of each button/click.
+
+Each [React component](https://reactjs.org/docs/react-component.html) has two main elements: [props and state](https://flaviocopes.com/react-state-vs-props/). These control the life and behavior of every component, allowing it to interact with Mavlink messages. GUI quickly became complex, so another cool tool arose--say hi to [React Redux](https://react-redux.js.org/). Without going into too much detail, basically Redux facilitates the interaction between components. This way, I can send a message through the websocket from any component and vice versa, and the interested components are notified and are passed the message data (and I don’t have to micro-manage those interactions).
+
+
+## What about measured data?
+
+Remember the air quality project? We wanted to have on-screen readings of the sensors mounted on the drone. Mavlink’s set of messages has the ability to define, compile and include custom messages for custom purposes like this one! If you want to read more about it, check out [this guide](https://mavlink.io/en/mavgen_python/). After adding the custom messages, you can tweak the mini PC script a little bit to grab the data from the extra sensors or actuators on board, and send that data to the client using custom Mavlink messages.
+
+
+## How does it look so far?
+
+
+![drone platform view](https://docs.monadical.com/uploads/upload_97b174d20d388ef6734fe6f948882883.png)
+
+
+
+The image above shows the current interface. The base is a map where the position of the drone is represented by an icon, the blue line indicates the programmed route to follow, and the red line is the traveled path. On the left is a pane with some buttons for things like takeoff, land, and return to launch. There are also some information sections with telemetry data. This is what a user would experience from a web browser while piloting their drone.
+
+One important component that is still a work in progress is the video streaming pane. The idea is to have it floating around, with the controls to move the gimbal, take pictures and/or record video. In the long-term future, I also plan to add some AI to it.
+
+Eventually, I want to create an authentication system, link drones to users, build flight rooms and scale the infrastructure to handle multiple connections. The platform will have a flight log, a dashboard, and a mission creator/editor. 
+
+
+## What’s next?
+
+I think there are some really exciting applications for this project...
+
+**Remote tourism** - There&#39;s been an increase in online tourism recently, as travel restrictions persist and people are missing travel and culture. We can take a tour of the [Louvre](https://www.louvre.fr/en/visites-en-ligne), the [British Museum](https://blog.britishmuseum.org/how-to-explore-the-british-museum-from-home/), and [MoMA](https://www.moma.org/calendar/groups/58) from our living rooms. But these are all compilations of pictures taken inside the buildings in advance. Imagine being able to get a sweeping view of rivers, forests, lakes, deserts, canyons and beaches live with a drone?
+
+
+![Egyptian Sculpture Gallery](https://docs.monadical.com/uploads/upload_611e308ca2b46eb00d59c45df26bbb1d.png)
+*The Egyptian Sculpture Gallery*
+
+During the pandemic, we’ve experienced what it&#39;s like to have our movement restricted and this has sparked a welcome increase in accessibility. With a web platform like this, everyone could visit the world from their phones or laptops. It wouldn’t even be necessary to own a drone: people could rent drones housed as sites of interest and explore places they’d otherwise never get a chance to see. 
+
+**Scheduled flights** - Drones are already being used for monitoring purposes, e.g., you can fly one around a farm to monitor the growing process of crops. However, you have to be there in person to do this. Having a docking station in place would allow you to remotely schedule flight routines and record (or livestream) what you have programmed the drone to see. With AI integrations, it could even identify intruders, sound alarms, or count trees or animals. This technology could also be useful on solar farms, where scheduled flights with AI integrations could inspect and detect faulty solar panels.
+
+
+**Special payloads** - As I mentioned above, this platform was born from a data collection project where we mounted air quality sensors on a drone and monitored the results live. The platform can interact with a number of other payloads too, including cameras and any type of sensor or actuator that can be carried onboard. This could be useful for detecting forest fires with thermal cameras, checking for crop disease with multispectral cameras, package delivery, and even remote sampling from tree tops with robotic arms!
+
+
+**Fleets of drones** - Another important application for this technology is in the  coordination of a group of drones. You may have already seen light shows, where hundreds of drones move together to produce images and words in the sky. Small groups of drones can also be programmed to perform tasks together, like searching for missing people or monitoring wildfires. This kind of platform is especially useful here as it allows for flight data to be seen live.
+
+
+
+![drone solar panel](https://docs.monadical.com/uploads/upload_15e7976872ba542df4be96f808878f21.png)
+
+
+## Concerns
+
+These possibilities are naturally going to raise privacy concerns for us. The prospect of a dystopian drone-surveilled future is not something to take lightly! But, as drones become more and more accessible, we need to think about how to legislate around their use. 
+
+One way to control drone use could be to create a public database with designated airspace available to drones. Drones would have to make contact with the database to get permissions and flying space instructions. As long as the drone is connected to the internet, it could be constrained to a certain airspace (the angle of its camera could also be constrained :+1:), and could be tracked and monitored.
+
+
+
+
+## Conclusion
+
+There are already a few web drone platforms out there[^5]. However, these platforms are still expensive and require some technical knowledge to get your drone connected. I hope this project can serve as a free, more user-friendly platform for remote drone use. I’ve had a lot of fun building this platform and testing drones with it: being able to manage remote drones through the internet is becoming a reality and is an exciting use for these amazing machines!
+
+[^1]: Drones are any unmanned vehicle controlled remotely (cars, boats, airplanes, etc.).
+
+[^2]: Check out the full list of Mavlink messages [here](https://mavlink.io/en/messages/common.html).
+
+[^3]: The backend is what happens in a server (away from you) and the frontend is whatever code is run on the client’s side (your own machine: phone, PC, tablet, tv). 
+
+[^4]: I chose these technologies because I’d seen how powerful they were when we used them to build [Oddslingers](https://oddslingers.com/), a super cool free poker site (now open source!)--go check out the site, it’s browser native and works wonderfully!
+
+[^5]: Check out https://flytnow.com/.
+
+---
+
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/common.cd404741444d0e89d5fe.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.0fc262100594c59e284d.js" defer="defer"></script>
+
+
+

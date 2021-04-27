@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monadical Consulting | Monadical Principles Handbook</title>
+    <title>Monadical Principles Handbook | Monadical Consulting</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 
-    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css">
-    <link rel="stylesheet" href="/static/core/css/base.css">
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
 
     <link rel="canonical" href="https://monadical.com/posts/principles-handbook.html" />
 
@@ -24,6 +22,13 @@
     <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
@@ -58,9 +63,8 @@
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
                 <a class="navbar-brand" href="/index.html">
-                    <img srcset="
-                                /static/core/img/logo@3x.png 3x,
-                                /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -146,10 +150,21 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
+        @media (max-width: 400px) {
+            .authorbox {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            .newsletterbox{
+                margin-left: 50px;
+            }
+        }
     </style>
-
     <div id="post-content">
         <div class="container mb-5">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
                     
@@ -170,34 +185,33 @@
     
     
     
-    <meta property="og:title" content="Monadical Principles Handbook - CodiMD">
+    <meta property="og:title" content="Monadical Principles Handbook - HedgeDoc">
     
     
     
     <meta property="og:type" content="website">
     
-    <meta property="og:image" content="https://docs.monadical.com/codimd-icon-1024.png">
-    <meta property="og:image:alt" content="CodiMD logo">
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>Monadical Principles Handbook - CodiMD</title>
-    <link rel="icon" type="image/png" href="https://docs.monadical.com/favicon.png">
-    <link rel="apple-touch-icon" href="https://docs.monadical.com/apple-touch-icon.png">
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
-    <link href="https://docs.monadical.com/build/font.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
-<![endif]-->
+    <title>Monadical Principles Handbook - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
 
+  
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.8b60ca65f33929a11b34.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.5b67375c73f1197b3ddd.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.dc8fadc9b46c6b8f0a45.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.a7a24105e8c52b832ac0.css" rel="stylesheet">
   
 </head>
 
@@ -211,7 +225,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 01:14:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jan 29 2021 15:58:45 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3000 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3602 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -462,23 +476,10 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js" integrity="sha256-bhm0lgEt6ITaZCDzZpkr/VXVrLa5RP4u9v2AYsbzSUk=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.7.0/js-yaml.min.js" integrity="sha256-8PanqYAVOGlOct+i65R+HqibK3KPsXINnrSfxN+Y/J0=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/Safe.js" integrity="sha256-0ygBUDksNDXZS4vm5HMNH1a33KUu6QT1cdNTN+ZLF+4=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" integrity="sha256-vvT7Ok9u6GbfnBPXnbM6FVDEO8E1kTdgHOFZOAXrktA=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.6/mermaid.min.js" integrity="sha256-wV/0jM5E/0V+KqyxUio2Ve5OAC/gweTTqdbnRX1fgAE=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" integrity="sha256-1O3BtOwnPyyRzOszK6P+gqaRoXHV6JXj8HkjZmPYhCI=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.0/viz.js" integrity="sha256-8t+rndrF+TU4JtelmOH1lDHTMe2ovhO2UbzDArp5lY8=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js" integrity="sha256-Sq1r2XXWXQoShQKsS0Wrf5r7fRkErd9Fat9vHYeU68s=" crossorigin="anonymous"></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/pretty.e400f66e13b71591a98f.js" defer="defer"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/common.cd404741444d0e89d5fe.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.0fc262100594c59e284d.js" defer="defer"></script>
 
 
 
@@ -489,7 +490,7 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <div class="authorbox">
+            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
                 <div style="padding-top: 10px">
                     Max
                     <h4>
@@ -500,46 +501,54 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
                         </a>
                     </h4>
                     <h5>Published on <a href="#permalink">2017-01-01</a></h5>
+                    <img src="/static/max.jpg" width="100px"/>
                 </div>
-                <img src="/static/max.jpg" width="100px"/>
+                
+                <center>
+                    <div class="newsletterbox"style="padding-top: 10px;">
+                        <a href="/team.html#careers" style="font-weight: bold;">
+                            We are hiring!
+                        </a>
+                        <br/><br/>
+                        <a href="https://tinyletter.com/Monadical">
+                            Subscribe to our newsletter
+                        </a>
+                    </div>
+                </center>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <script src="https://utteranc.es/client.js"
-                repo="Monadical-SAS/monadical.com"
-                issue-term="pathname"
-                label="blog"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
         <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
             <br/><br/><br/>
-            <i style="font-size: 18px">Some other posts:</i>
+            <i style="font-size: 18px">Recent posts:</i>
             <ul style="max-width: 400px; text-align: left; font-size: 16px">
                 <br/><br/>
                 
                     
-                        <li><a href="/posts/virtual-classes-in-cython.html">Implementing C++ Virtual Functions in Cython</a></li>
+                        <li><a href="/posts/how-to-package-python-for-apt-deb.html">Python Packaging Guide for APT/Debian</a></li>
                     
                 
                     
-                        <li><a href="/posts/a-many-linux-web-building-platform.html">How to Make Library Distribution Easier</a></li>
+                        <li><a href="/posts/cobol.html">Learning COBOL: A Journey For The Modern Programmer</a></li>
                     
                 
                     
-                        <li><a href="/posts/how-to-build-a-python-library.html">How to Build a Python Library</a></li>
+                        <li><a href="/posts/wireguard.html">Some Unofficial WireGuard Documentation</a></li>
                     
                 
                     
-                        <li><a href="/posts/oddslingers-open-source.html">Oddslingers Open Source Announcement</a></li>
+                        <li><a href="/posts/5-paquetes-django.html">Cinco Paquetes de Django Que Amamos en Monadical</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
                     
                 
                     
@@ -628,6 +637,21 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
             </ul>
             <br/>
         </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
         <script>
             // hide the table of contents nav when you scroll down past the end
             $(window).scroll(function() {
@@ -645,12 +669,16 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/principles-handbook', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
         </script>
         <br/><br/>
     </div>
+  
 
     </article>
     
@@ -735,17 +763,35 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
             <div class="row contact-row">
                 <div class="col-12 col-lg-4 col-md-4">
                     <ul>
-                        <li>Monadical Inc. © 2020 All rights reserved.</li>
+                        <li>
+                            
+                                Monadical Inc. © 2021<br/>
+                                <small>All rights reserved.</small>
+                            
+                        </li>
                     </ul>
                 </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
                 <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
                     <ul>
-                        <li>hello@monadical.com</li>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">example.com</span>m</span>onadical.com
+                            </span>
+                            <br/>
+                            <small>✉️&nbsp; Email us with your project idea.</small>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-2 col-md-4">
                     <ul>
-                        <li>+1 (917) 933-3760</li>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                +1 (9<span>17)</span> <span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">(212) </span>933-3<span>760</span>
+                            </span>
+                            <br/>
+                            <small>📞&nbsp; Call (EST 9-5p) or SMS.</small>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -755,15 +801,16 @@ Excellence in any field involves consistent, deliberate practice. We strongly va
         
     </footer>
     
+    
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
 
     <script src="/static/squares.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
-    </script>
 
 
     

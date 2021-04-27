@@ -49,6 +49,140 @@
     }
   },
   "POSTS": {
+    "how-to-package-python-for-apt-deb": {
+      "title": "Python Packaging Guide for APT/Debian",
+      "description": "A quick guide on how to package your Python/pip project into an apt-installable Debian package using stdeb.",
+      "date": "2021-04-21",
+      "img": "/static/python-packaging.png",
+      "tags": [
+        "python",
+        "packages",
+        "debian",
+        "APT"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/python-packaging",
+      "url": "/posts/how-to-package-python-for-apt-deb.html",
+      "template": "posts/how-to-package-python-for-apt-deb.html",
+      "author": {
+        "name": "Nick Sweeting",
+        "title": "Co-Founder",
+        "handle": "@theSquashSH",
+        "url": "https://twitter.com/theSquashSH",
+        "image": "/static/nick.jpg"
+      }
+    },
+    "cobol": {
+      "title": "Learning COBOL: A Journey For The Modern Programmer",
+      "description": "A guide to learning COBOL for the modern programmer. ",
+      "date": "2021-04-06",
+      "img": "/static/cobol.png",
+      "tags": [
+        "COLBOL",
+        "government",
+        "legacy",
+        "mainframe",
+        "learning"
+      ],
+      "length": "20 min read",
+      "source": "https://docs.monadical.com/s/cobol",
+      "url": "/posts/cobol.html",
+      "template": "posts/cobol.html",
+      "author": {
+        "name": "JDC",
+        "title": "PM / Dev",
+        "handle": "@jdcaballerov",
+        "url": "",
+        "image": "/static/jdc.jpg"
+      }
+    },
+    "wireguard": {
+      "title": "Some Unofficial WireGuard Documentation",
+      "description": "Some unofficial documentation for the WireGuard VPN, including config API reference, tutorials, examples, and projects. (This is a mirror of the original on Github)",
+      "date": "2021-03-23",
+      "img": "/static/wireguard.jpg",
+      "tags": [
+        "networking",
+        "security",
+        "infrastructure",
+        "devops",
+        "documentation ",
+        "vpn"
+      ],
+      "length": "30 min read",
+      "source": "https://docs.monadical.com/s/wireguard",
+      "url": "/posts/wireguard.html",
+      "template": "posts/wireguard.html",
+      "author": {
+        "name": "Open Source",
+        "title": "",
+        "handle": "@Github",
+        "url": "https://github.com/pirate/wireguard-docs",
+        "image": "/static/github.png"
+      }
+    },
+    "5-paquetes-django": {
+      "title": "Cinco Paquetes de Django Que Amamos en Monadical",
+      "description": "Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con",
+      "date": "2021-03-05",
+      "img": "/static/django-packages.png",
+      "tags": [
+        "django",
+        "paquetes",
+        "español"
+      ],
+      "length": "8 min read",
+      "source": "https://docs.monadical.com/s/5-paquetes-django",
+      "url": "/posts/5-paquetes-django.html",
+      "template": "posts/5-paquetes-django.html",
+      "author": {
+        "name": "Karim",
+        "title": "Software Developer",
+        "handle": "@apkallum",
+        "url": "https://twitter.com/apkallum",
+        "image": "/static/karim.jpg"
+      }
+    },
+    "django-packages": {
+      "title": "Five Django Packages We Love at Monadical",
+      "description": "One of the biggest draws to Django is its ecosystem. If you encounter a problem, the chances are that someone else in the community has too, and has been kind enough to abstract it into a package and release it. Here are five packages we find ourselves coming back to.",
+      "date": "2021-03-03",
+      "img": "/static/django-packages.png",
+      "tags": [
+        "django",
+        "packages",
+        "english"
+      ],
+      "length": "7 min read",
+      "source": "https://docs.monadical.com/s/django-packages",
+      "url": "/posts/django-packages.html",
+      "template": "posts/django-packages.html",
+      "author": {
+        "name": "Karim",
+        "title": "Software Developer",
+        "handle": "@apkallum",
+        "url": "https://twitter.com/apkallum",
+        "image": "/static/karim.jpg"
+      }
+    },
+    "drone-web-platform": {
+      "title": "Drone Web Platform ",
+      "description": "A platform for operating drones through the internet.",
+      "date": "2021-02-22",
+      "img": "/static/drone-web-platform.jpg",
+      "tags": [],
+      "length": "8 min read",
+      "source": "https://docs.monadical.com/s/drone-web-platform",
+      "url": "/posts/drone-web-platform.html",
+      "template": "posts/drone-web-platform.html",
+      "author": {
+        "name": "Jose Benitez",
+        "title": "Drone enthusiast & Web developer",
+        "handle": "@yojosebenitez",
+        "url": "https://twitter.com/yojosebenitez",
+        "image": "/static/jose.jpg "
+      }
+    },
     "virtual-classes-in-cython": {
       "title": "Implementing C++ Virtual Functions in Cython",
       "description": "This is an extensive article that assumes Cython knowledge and describes two strategies for using C++ code from Python, requiring the implementation of virtual functions in C++ abstract classes. ",

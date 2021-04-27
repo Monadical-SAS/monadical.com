@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinco Paquetes de Django Que Amamos en Monadical | Monadical Consulting</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
+
+    <link rel="canonical" href="https://monadical.com/posts/5-paquetes-django.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con" />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="Cinco Paquetes de Django Que Amamos en Monadical" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://monadical.com/static/django-packages.png" />
+<meta property="og:url" content="https://monadical.com/posts/5-paquetes-django.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con" />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_US" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="Cinco Paquetes de Django Que Amamos en Monadical">
+<meta name="twitter:description" content="Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con">
+<meta name="twitter:image" content="https://monadical.com/static/django-packages.png">
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-left">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services.html">Services</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/principles.html">Principles</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects.html">Projects</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/team.html">Team</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                        
+                    </ul>
+                    <a class="beta-btn nav-link" href="/contact-us.html">
+                        GET A TECHNICAL ASSESSMENT
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+        @media (max-width: 400px) {
+            .authorbox {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            .newsletterbox{
+                margin-left: 50px;
+            }
+        }
+    </style>
+    <div id="post-content">
+        <div class="container mb-5">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  Cinco Paquetes De Django Que Amamos En Monadical ===   *Escrito por Karim. Original public">
+    
+    
+    
+    <meta property="og:title" content="Cinco Paquetes De Django Que Amamos En Monadical - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Cinco Paquetes De Django Que Amamos En Monadical - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+  
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.8b60ca65f33929a11b34.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.5b67375c73f1197b3ddd.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.dc8fadc9b46c6b8f0a45.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.a7a24105e8c52b832ac0.css" rel="stylesheet">
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Feb 23 2021 22:39:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 08 2021 15:50:46 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">196 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body">&lt;center&gt;
+
+Cinco Paquetes De Django Que Amamos En Monadical
+===
+
+
+*Escrito por Karim. Original publicado el 2021-03-02 en el [Blog de Monadical](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+
+
+
+
+Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con regularidad en Monadical.
+ 
+
+## 1 [django-polymorphic](https://github.com/django-polymorphic/django-polymorphic)
+
+En la programación orientada a objetos usamos el término &#34;polimorfismo&#34; para referirnos a objetos que comparten una interfaz pero no la implementación. Un ejemplo pedagógico común es el que resulta de modelar un animal como un objeto: Los perros y los gatos producen un sonido que se puede invocar con la misma función `animal.sonido()`--pero el sonido es diferente. Un ejemplo más práctico resulta con los items de una tienda online: Los items comparten algunas características pero difieren en otras. Existe un [artículo excelente en Real Python](https://realpython.com/modeling-polymorphism-django-python) que presenta varios enfoques para modelar el polimorfismo.
+
+¿ Y qué relación tiene el paquete django-polymorphic con todo esto ? Este paquete permite implementar de forma fácil, y de forma concreta, la herencia multi tabla. Si definimos los siguientes modelos para un `Proyecto` :
+
+
+```python
+from polymorphic.models import PolymorphicModel
+
+class Proyecto(PolymorphicModel):
+    tema = models.CharField(max_length=30)
+
+class ProyectoArte(Proyecto):
+    artista = models.CharField(max_length=30)
+
+class ProyectoInvestigacion(Proyecto):
+    supervisor = models.CharField(max_length=30)
+
+``` 
+Y luego creamos algunos proyectos
+
+```python
+&gt;&gt;&gt; Proyecto.objects.create(topic=&#34;Fiesta de Departamento&#34;)
+&gt;&gt;&gt; ProyectoArte.objects.create(tema=&#34;Pintando con Tim&#34;, artista=&#34;T. Turner&#34;)
+&gt;&gt;&gt; ProyectoInvestigacion.objects.create(tema=&#34;Aerodinamica&#34;, supervisor=&#34;Dr. Winter&#34;)
+```
+Al realizar la consulta de `Proyectos`, obtenemos los resultados con polimorfismo: 
+```python
+&gt;&gt;&gt; Proyecto.objects.all()
+[ &lt;Proyecto:        id 1, tema &#34;Fiesta de Departamento&#34;&gt;,
+  &lt;ArtProject:      id 2, tema &#34;Pintando con Tim&#34;, artista &#34;T. Turner&#34;&gt;,
+  &lt;ProjectoInvestigacion: id 3, tema &#34;Aerodinamica&#34;, supervisor &#34;Dr. Winter&#34;&gt; ]
+
+``` 
+## 2 [django-allauth](https://www.intenct.nl/projects/django-allauth/)
+django-allauth provee un conjunto de aplicaciones modulares integradas que implementan los flujos comunes de registro y login, tanto locales como integrados con redes sociales. Se destaca especialmente al soportar de forma simultánea los flujos para login local y con redes social. It just works™.
+
+## 3 [Django Lifecycle Hooks](https://rsinger86.github.io/django-lifecycle/)
+
+Este paquete es mi nuevo favorito. Aún se encuentra en beta así que no lo recomendaría de entrada para uso en producción. Sin embargo, creo que tiene el potencial de mejorar la claridad del código y el mantenimiento de [modelos gordos](https://django-best-practices.readthedocs.io/en/latest/applications.html). Puede reemplazar las [Signals](https://docs.djangoproject.com/en/dev/ref/signals/) y los hooks  `__init__` &amp; `save`. 
+
+Por ejemplo, si está acostumbrado a hacer lo siguiente con hooks:
+
+```python
+class Article(LifecycleModel):
+	contents = models.TextField()
+	updated_at = models.DateTimeField(null=True)
+	status = models.ChoiceField(choices=[&#39;draft&#39;, &#39;published&#39;])
+	editor = models.ForeignKey(AuthUser)
+
+	def __init__(self, *args, **kwargs):
+    	super().__init__(*args, **kwargs)
+    	self._orig_contents = self.contents
+    	self._orig_status = self.status
+
+
+	def save(self, *args, **kwargs):
+    	if self.pk is not None and self.contents != self._orig_contents):
+        	self.updated_at = timezone.now()
+
+    	super().save(*args, **kwargs)
+
+    	if self.status != self._orig_status:
+        	send_email(self.editor.email, &#34;An article has published!&#34;)
+
+```
+Con este paquete lo podría hacer de esta forma:
+```python
+from django_lifecycle import LifecycleModel, hook, BEFORE_UPDATE, AFTER_UPDATE
+
+
+class Article(LifecycleModel):
+	contents = models.TextField()
+	updated_at = models.DateTimeField(null=True)
+	status = models.ChoiceField(choices=[&#39;draft&#39;, &#39;published&#39;])
+	editor = models.ForeignKey(AuthUser)
+
+	@hook(BEFORE_UPDATE, when=&#39;contents&#39;, has_changed=True)
+	def on_content_change(self):
+    	self.updated_at = timezone.now()
+
+	@hook(AFTER_UPDATE, when=&#34;status&#34;, was=&#34;draft&#34;, is_now=&#34;published&#34;)
+	def on_publish(self):
+    	send_email(self.editor.email, &#34;An article has published!&#34;)
+```
+
+Los hooks también pueden referirse a cambios en campos de objetos relacionados (con foreign keys). Lo repito, es importante notar que este paquete se encuentra en beta y por tanto es importante examinarlo de forma detallada viendo el código que genera.
+
+
+## 4 [Django Extensions](https://github.com/django-extensions/django-extensions)
+
+Django Extensions es uno de los paquetes útiles más antiguos que conozco, algo así como desde el año 2008. Este paquete merece un artículo por si solo pero estas son algunas de las características que uso:
+
+### shell_plus
+
+`./manage.py shell_plus` lanza un shell de Django con toos los modelos importados y listos para usar. Me gusta combinarlo con IPython para mejorar la experiencia con auto completado.
+
+### RunScript
+
+Algunas veces queremos correr un script en nuestra aplicación de Django, un flujo de trabajo típico es usar el shell de django y luego convertir esto en un script. Este comando nos permite correr una función simple como si estuvieramos en un shell de django. Por ejemplo, si quisieramos un script para borrar todos los objectos de tipo `Question` de la base datos lo podríamos hacer con este paquete de forma tan simple como:
+
+```python
+# scripts/delete_all_questions.py
+
+from polls.models import Question
+
+def run():
+	# Fetch all questions
+	questions = Question.objects.all()
+	# Delete questions
+	questions.delete()
+
+```
+Y lueg correr el script:
+
+```
+./manage.py manage.py runscript  delete_all_questions
+```
+### syncdata
+syncdata resetea la base de datos de tal forma que solo contenga exactamente las fixtures especificadas en el archivo de fixtures.
+
+### graph_models
+Este comando permite visualizar los modelos de la aplicación django permitiendo ver las [relaciones](https://en.wikipedia.org/wiki/Relation_(database)) de forma similar a un diagrama [entidad-relación]((https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model))
+
+![entity-relationship diagram](https://docs.monadical.com/uploads/upload_77f772290b99de48fe5d20418345ec5c.png)
+
+
+## 5 [Cookiecutter Django](https://github.com/pydanny/cookiecutter-django)
+
+Si alguna vez ha arrancado un proyecto de Django debe saber que el comando`django-admin startproject mysite` no es suficiente para tener todas las características de una aplicación web moderna. Por ejemplo, variables de entorno para la configuración, integración con Postgres, docker(-compose), etc. Django Cookiecutter se encarga de esto por usted. Recomiendo usarlo *después* de familiarizarse con cada componente por separado. De otra forma, la &#34;magia&#34; y las configuraciones dificultarán la depuración en el futuro así como también puede llevar a tener código muerto si no se entiende qué está haciendo cada cosa.
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/common.cd404741444d0e89d5fe.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.0fc262100594c59e284d.js" defer="defer"></script>
+
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
+                <div style="padding-top: 10px">
+                    Karim
+                    <h4>
+                        Software Developer
+                        
+                        <a href="https://twitter.com/apkallum" target="_blank" rel="noopener">
+                            @apkallum
+                        </a>
+                    </h4>
+                    <h5>Published on <a href="#permalink">2021-03-05</a></h5>
+                    <img src="/static/karim.jpg" width="100px"/>
+                </div>
+                
+                <center>
+                    <div class="newsletterbox"style="padding-top: 10px;">
+                        <a href="/team.html#careers" style="font-weight: bold;">
+                            We are hiring!
+                        </a>
+                        <br/><br/>
+                        <a href="https://tinyletter.com/Monadical">
+                            Subscribe to our newsletter
+                        </a>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <center>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Recent posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/how-to-package-python-for-apt-deb.html">Python Packaging Guide for APT/Debian</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/cobol.html">Learning COBOL: A Journey For The Modern Programmer</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/wireguard.html">Some Unofficial WireGuard Documentation</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/5-paquetes-django.html">Cinco Paquetes de Django Que Amamos en Monadical</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/5-paquetes-django', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <br/><br/>
+    </div>
+  
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="NYC, USA">New York</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                        <li><b title="Cali, Colombia">Cali</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                            <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
+                        <li><a href="/team.html#careers">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>
+                            
+                                Monadical Inc. © 2021<br/>
+                                <small>All rights reserved.</small>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">example.com</span>m</span>onadical.com
+                            </span>
+                            <br/>
+                            <small>✉️&nbsp; Email us with your project idea.</small>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-2 col-md-4">
+                    <ul>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                +1 (9<span>17)</span> <span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red" title="ignore this">(212) </span>933-3<span>760</span>
+                            </span>
+                            <br/>
+                            <small>📞&nbsp; Call (EST 9-5p) or SMS.</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+    
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
+
+    <script src="/static/squares.js"></script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
+</html>

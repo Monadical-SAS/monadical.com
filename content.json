@@ -49,6 +49,29 @@
     }
   },
   "POSTS": {
+    "human-systems": {
+      "title": "All Systems are Human Systems",
+      "description": "All systems in the field of software engineering are built by humans, to serve human purposes, and sometimes have broad but subtle influences in society and politics. It's in all of our best interests to to understand the broader, human scope that these systems operate within.",
+      "date": "2021-05-20",
+      "img": "/static/human-systems.png",
+      "tags": [
+        "engineering ",
+        "problem-solving",
+        "communication",
+        "politics"
+      ],
+      "length": "6 min read",
+      "source": "https://docs.monadical.com/s/human-systems",
+      "url": "/posts/human-systems.html",
+      "template": "posts/human-systems.html",
+      "author": {
+        "name": "Monadical",
+        "title": "-",
+        "handle": "@MonadicalSAS",
+        "url": "https://monadical.com/team.html",
+        "image": "/static/logo-blue.png"
+      }
+    },
     "how-to-package-python-for-apt-deb": {
       "title": "Python Packaging Guide for APT/Debian",
       "description": "A quick guide on how to package your Python/pip project into an apt-installable Debian package using stdeb.",

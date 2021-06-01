@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  Starting and Running Your First Program on a Mainframe ===  *Written by [JDC](https://twit">
+    
+    
+    
+    <meta property="og:title" content="Starting and Running Your First Program on a Mainframe - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Starting and Running Your First Program on a Mainframe - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+  
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.7f8ad7b6ec95ff6949ef.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.9cd53fdbe4b55450ea52.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.b12df11e62a64cd84713.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.a7a24105e8c52b832ac0.css" rel="stylesheet">
+  
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 01 2021 14:34:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 01 2021 14:35:37 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >&lt;center&gt;
+
+Starting and Running Your First Program on a Mainframe
+===
+
+*Written by [JDC](https://twitter.com/jdcaballerov). Published 2021-06-01 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+
+In a [previous article](https://monadical.com/posts/cobol.html), I presented a collection of resources for learning COBOL and running COBOL programs on Linux. However, most COBOL programs actually run on mainframes, so to work with COBOL properly, you need to be able to operate a mainframe. 
+
+Mainframes are infamous for being really expensive and inaccessible. On a budget, a  mainframe will typically set you back several thousand [dollars](https://www.quora.com/How-much-does-an-IBM-mainframe-cost). And even if you buy one at auction [like this guy did](https://www.youtube.com/watch?v=45X4VP8CGtk), you’ll need a lot of room to host it. Enter Hercules Hyperion: an open source software implementation of the mainframe System/370 and ESA/390 architectures, in addition to the latest 64-bit z/Architecture. Hercules is a free emulator that runs on Linux, Windows, Solaris, FreeBSD, and Mac OS X. 
+
+In this tutorial, I’ll walk you through installing Hercules and MVS 3.8j Tur(n)key 4- (&#34;TK4-&#34;), a ready-to-use OS/VS2 MVS 3.8j system built specifically to run under the Hercules System/370. Hercules will allow you to learn how to operate a mainframe and run programs. Let’s get started!
+
+
+![mainframes](https://docs.monadical.com/uploads/upload_8b6e81569ccb5a93c4a4d1ce57a2dc49.png)
+
+## Installing Hercules
+
+The Hercules project is hosted on [github](https://github.com/sdl-hercules-390/hyperion) and you can find its documentation and installation instructions [here](https://sdl-hercules-390.github.io/html/). You can follow the instructions according to your operating system to compile Hercules, or install it from your Linux distribution package manager.
+
+In this tutorial, I’ll be using Ubuntu 20.04. Here’s how to install Hercules on Ubuntu:
+
+```bash
+sudo apt-get update -y
+sudo apt-get install -y hercules
+```
+
+## Getting and installing MVS on the operating system
+
+Hercules is an emulator, so you need to have a mainframe operating system that runs on Hercules. Fortunately, for this there&#39;s [TK4](http://wotho.ethz.ch/tk4-/). TK4 can be downloaded and is a Hercules-compatible version of the [MVS](https://en.wikipedia.org/wiki/MVS) operating system.
+
+Go to the site and download the file `tk4-_v1.00_current.zip` (this is the latest distribution at the time of this writing). Once you get the file, create a directory you can easily locate and unzip the file inside it.
+
+## Installing a 3270 terminal emulator
+The communication with the mainframe occurs via a terminal, so you need to install an [IBM 3270 terminal emulator](https://en.wikipedia.org/wiki/IBM_3270).
+
+In Ubuntu, this can be installed as follows:
+
+```bash
+sudo apt-get update -y
+sudo apt-get install -y x3270
+```
+
+## Logging in into the mainframe
+Once the file `tk4-v_1.00.current.zip` is unzipped, it’s best to move the whole directory to `tk4` for easier access:
+
+```bash
+mv tk4-_v1.00_current/ tk4/
+cd tk4/
+```
+
+It’s recommended to set console mode to get feedback in the terminal:
+
+```bash
+cd unattended/
+./set_console_mode
+```
+Now you can start MVS:
+
+```bash
+cd tk4/
+./mvs
+```
+After this command, the mainframe will boot.
+
+![mainframe boot](https://docs.monadical.com/uploads/upload_820dd24c104ebbf2f39bb2c0192bd133.png)
+
+You can change the emulator view by pressing `ESC`.
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_96d66dcd1c0983e54947a786d3d3ff80.png)
+
+At this point, you need to start your x3270 emulator and connect it to localhost port 3270.
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_21b4414e1f59a5e7001cfd0bb3307bbd.png)
+
+Allow some time to boot with that image and hit the `ENTER` key. You will see this screen:
+
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_448a2e99dee90a310dc9e6c57416fd44.png)
+
+
+After this, input your username `herc01`. (There are other default users, but this guide will be using `herc01`, which has access privileges--for other users, check the manual http://wotho.ethz.ch/tk4-/MVS_TK4-_v1.00_Users_Manual.pdf.) You will be prompted to enter a password. 
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_3ec126719ca34878f3de9142925401ef.png)
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_1e216aefd5ad4f5bc58540f9cd9f0fa7.png)
+
+
+For this user, `herc01`, the current password is `CUL8TR`. Enter the password and hit `ENTER`.
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_1fedeb416f7ceabbfe4af85e8c28e306.png)
+
+Hit `ENTER` again.
+
+![mainframe emulator](https://docs.monadical.com/uploads/upload_6bc9aeef375e5d8015f9cbcddc05b8d5.png)
+
+And after one final `ENTER`, you will be logged in to the mainframe emulator running MVS!
+
+![mainframe emulator Hercules](https://docs.monadical.com/uploads/upload_54f01a53c13ecad14115f810a921db1f.png)
+
+If you get lost, try this video from moshix (one of the [recommended resources](https://monadical.com/posts/cobol.html#Resources) from my last article).
+
+&lt;center&gt;
+    
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/UOL0HtlXVKM&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;/center&gt;
+
+## Exploring MVS
+Once logged in, you can start moving on the mainframe. Input number four `4` and press `ENTER` to see the process QUEUE. Now go ahead and explore on your own. To go back, use the function key 3 `F3`.
+
+
+![mainframe](https://docs.monadical.com/uploads/upload_4106c911ac1cfd93d7109970ba051b65.png)
+
+
+You can see your terminal session listed. Again, to go back, use `F3`.
+
+## Stopping the mainframe
+Once you’ve finished exploring, you’ll need to stop the mainframe. To stop the mainframe, go back to your terminal running `./mvs` and hit `ESC` to get back to the registers and devices view (if you&#39;re not already there).
+
+![mainframe](https://docs.monadical.com/uploads/upload_15d81759fe56414d9c178c100a207c4c.png)
+
+
+Hit the letter `P` to stop. CPP00 will change to CPP00 STOPPED. Then hit `W` for PWR and confirm with `Y` yes. That’s it! You just started a mainframe, ran a monitoring program, and stopped and powered off the mainframe.
+
+It’s recommended to correctly power off the mainframe to prevent any issues the next time you use it.
+
+
+In my next article, I’ll explain how to run a COBOL script on the mainframe. Stay tuned.
+
+
+---
+
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/common.9a80e4667cfe74cd3793.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.ddb791d4dabf0dc0d882.js" defer="defer"></script>
+
+
+

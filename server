@@ -8,7 +8,10 @@ from threading import Thread
 from datetime import datetime
 
 from jinja2 import Markup
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, make_response
+
+# Library to implement rss
+from feedgen.feed import FeedGenerator
 
 
 ### Config
@@ -99,6 +102,27 @@ def render_post(path):
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 
+# Add feed rss
+@app.route("/posts/feed.xml")
+def generate_rss():
+
+    feedg = FeedGenerator()
+    feedg.title("Monadical Blog Posts")
+    feedg.description("Here you can find our publications")
+    feedg.link(href="https://monadical.com/blog.html")
+
+    for post_key, post_info in CONFIG["POSTS"].items():
+        feed_entry = feedg.add_entry()
+        feed_entry.title(post_info["title"])
+        feed_entry.guid(post_info["url"])
+        feed_entry.pubDate("{date} 00:00:00 UTC".format(**post_info))
+        feed_entry.description(post_info['description'])
+        feed_entry.link(href="https://{SITE_DOMAIN}{url}".format(**CONFIG, **post_info))
+        
+    response = make_response(feedg.rss_str(pretty=True))
+    response.headers.set('Content-Type', 'application/xml')  # headers dont work when serving the static site, this only applies when using the development server. however, it's still nice to have as it allows wget (or any other tool we use in the future to generate the static site) to verify that the content is indeed xml and not application/octet-stream, xhtml, or other random MIME types it might try to auto-detect/rename.
+    
+    return response
 
 @app.route('/projects/<path>')
 def render_case(path):

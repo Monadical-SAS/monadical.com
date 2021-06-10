@@ -34,7 +34,7 @@ jobs:
       - name: Create local changes
         if: env.SKIP_STEP == '0'
         run: |
-          pip3 install flask
+          pip3 install flask feedgen
           ./build
       - name: Commit files
         if: env.SKIP_STEP == '0'

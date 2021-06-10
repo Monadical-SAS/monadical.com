@@ -33,6 +33,7 @@ sleep 1.5
 rm -Rf docs
 mkdir -p docs/posts
 
+
 cp -r static docs/static
 cp CNAME docs/CNAME
 cp static/favicon.ico docs/favicon.ico
@@ -44,6 +45,10 @@ echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; wget -q $(<pages.txt))
 (cd docs/posts; wget -q $(<../posts.txt))
+
+echo ""
+echo "${blue}[+] Saving rss feed as static XML to output/...$normal"
+(cd docs/posts/; wget -q http://127.0.0.1:5000/posts/feed.xml)
 
 echo ""
 echo "${blue}[+] Including stevie king to docs/...$normal"

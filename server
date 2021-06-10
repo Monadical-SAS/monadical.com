@@ -103,7 +103,7 @@ def render_post(path):
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 
 # Add feed rss
-@app.route("/posts/feed")
+@app.route("/posts/feed.xml")
 def generate_rss():
 
     feedg = FeedGenerator()
@@ -111,16 +111,16 @@ def generate_rss():
     feedg.description("Here you can find our publications")
     feedg.link(href="https://monadical.com/blog.html")
 
-    for post_key,post_info in CONFIG["POSTS"].items():
+    for post_key, post_info in CONFIG["POSTS"].items():
         feed_entry = feedg.add_entry()
         feed_entry.title(post_info["title"])
         feed_entry.guid(post_info["url"])
-        feed_entry.pubDate(" ".join([post_info['date'],"00:00:00 UTC"]))
+        feed_entry.pubDate("{date} 00:00:00 UTC".format(**post_info))
         feed_entry.description(post_info['description'])
-        feed_entry.link(href="".join(["https://",CONFIG["SITE_DOMAIN"],post_info["url"]]))
+        feed_entry.link(href="https://{SITE_DOMAIN}{url}".format(**CONFIG, **post_info))
         
     response = make_response(feedg.rss_str(pretty=True))
-    response.headers.set('Content-Type','application/xml')
+    response.headers.set('Content-Type', 'application/xml')
     
     return response
 

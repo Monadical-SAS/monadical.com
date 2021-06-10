@@ -48,7 +48,7 @@ echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 
 echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"
-(cd docs/posts/; wget -q http://127.0.0.1:5000/posts/feed -O feed.xml)
+(cd docs/posts/; wget -q http://127.0.0.1:5000/posts/feed.xml)
 
 echo ""
 echo "${blue}[+] Including stevie king to docs/...$normal"

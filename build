@@ -32,7 +32,7 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
-mkdir docs/posts/feed
+
 
 cp -r static docs/static
 cp CNAME docs/CNAME
@@ -40,7 +40,6 @@ cp static/favicon.ico docs/favicon.ico
 cp static/robots.txt docs/robots.txt
 ./server --pages > docs/pages.txt
 ./server --posts > docs/posts.txt
-./server --feed > docs/rssfeed.txt
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
@@ -49,7 +48,7 @@ echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 
 echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"
-(cd docs/posts/feed/; wget -q $(<../../rssfeed.txt) -O feed.xml)
+(cd docs/posts/; wget -q http://127.0.0.1:5000/posts/feed -O feed.xml)
 
 echo ""
 echo "${blue}[+] Including stevie king to docs/...$normal"

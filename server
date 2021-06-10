@@ -120,7 +120,7 @@ def generate_rss():
         feed_entry.link(href="https://{SITE_DOMAIN}{url}".format(**CONFIG, **post_info))
         
     response = make_response(feedg.rss_str(pretty=True))
-    response.headers.set('Content-Type', 'application/xml')
+    response.headers.set('Content-Type', 'application/xml')  # headers dont work when serving the static site, this only applies when using the development server. however, it's still nice to have as it allows wget (or any other tool we use in the future to generate the static site) to verify that the content is indeed xml and not application/octet-stream, xhtml, or other random MIME types it might try to auto-detect/rename.
     
     return response
 

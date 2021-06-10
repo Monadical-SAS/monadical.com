@@ -137,9 +137,6 @@ if __name__ == '__main__':
     elif len(sys.argv) > 1 and sys.argv[1] == '--posts':
         # just print list of post urls
         print('\n'.join(HOST + url for url in POSTS.keys()))
-    elif len(sys.argv) > 1 and sys.argv[1] == '--feed':
-        #  just print rss feed url
-        print(''.join(HOST + '/posts/feed'))
     else:
         # run the flask http server
         app.run()

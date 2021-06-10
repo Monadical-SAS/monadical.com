@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Monadical Blog Posts</title>
+    <link>https://monadical.com/blog.html</link>
+    <description>Here you can find our publications</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <lastBuildDate>Thu, 10 Jun 2021 21:55:46 +0000</lastBuildDate>
+    <item>
+      <title>Downswings and the Information Game</title>
+      <link>https://monadical.com/posts/Downswings-and-the-Information-Game.html</link>
+      <description>I often hear players say, “I hate that site. It’s completely rigged. I can never win there.” Perhaps those players simply ran bad at first on that site...</description>
+      <guid isPermaLink="false">/posts/Downswings-and-the-Information-Game.html</guid>
+      <pubDate>Mon, 23 Feb 2009 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Map of Computer Science Subfields</title>
+      <link>https://monadical.com/posts/map-of-cs-subfields.html</link>
+      <description>A map of all the subfields encompassed by computer science, with job titles commonly used to hire people in those areas.</description>
+      <guid isPermaLink="false">/posts/map-of-cs-subfields.html</guid>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Redux State-Sharing Approaches</title>
+      <link>https://monadical.com/posts/Sharing-State-Between-Redux-Reducers.html</link>
+      <description>When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.</description>
+      <guid isPermaLink="false">/posts/Sharing-State-Between-Redux-Reducers.html</guid>
+      <pubDate>Thu, 18 Feb 2016 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Two Approaches to Concurrent Write-Safety in Django</title>
+      <link>https://monadical.com/posts/Django-Concurrent-Write-Safety.html</link>
+      <description>When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.</description>
+      <guid isPermaLink="false">/posts/Django-Concurrent-Write-Safety.html</guid>
+      <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Reconciling Templates and JS Components</title>
+      <link>https://monadical.com/posts/Reconciling-Templates-With-Components.html</link>
+      <description>The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks.</description>
+      <guid isPermaLink="false">/posts/Reconciling-Templates-With-Components.html</guid>
+      <pubDate>Thu, 02 Mar 2017 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>An Explanation of Segwit and the Lighning Network</title>
+      <link>https://monadical.com/posts/Segwit-and-the-Lightning-Network.html</link>
+      <description>Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.</description>
+      <guid isPermaLink="false">/posts/Segwit-and-the-Lightning-Network.html</guid>
+      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Redux Store as the Frontend's Database</title>
+      <link>https://monadical.com/posts/Using-Redux-As-A-Database.html</link>
+      <description>Storing data in a normalized form allows us to calculate fast indexes for lookups.</description>
+      <guid isPermaLink="false">/posts/Using-Redux-As-A-Database.html</guid>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Full-Stack Developer Checklist</title>
+      <link>https://monadical.com/posts/full-stack-developer-checklist.html</link>
+      <description>A checklist of things for full-stack developers to strive to learn, spanning everything front frontend, to backend, to native development and devops.</description>
+      <guid isPermaLink="false">/posts/full-stack-developer-checklist.html</guid>
+      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Myth of Trustlessness</title>
+      <link>https://monadical.com/posts/Trustless-is-A-Myth.html</link>
+      <description>The word “trustless” implies that trust has been removed from the system altogether. But in reality, systems like Bitcoin require plenty of trust, it's just less obvious.</description>
+      <guid isPermaLink="false">/posts/Trustless-is-A-Myth.html</guid>
+      <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Database Integrity Principles for Safe Systems</title>
+      <link>https://monadical.com/posts/Designing-A-Banking-System.html</link>
+      <description>Design strategies and common pitfalls that come into play when designing a banking service to handle concurrent transactions in a distributed environment.</description>
+      <guid isPermaLink="false">/posts/Designing-A-Banking-System.html</guid>
+      <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The State of Poker Platforms in 2018</title>
+      <link>https://monadical.com/posts/Review-of-Online-Poker-Networks.html</link>
+      <description>An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features.</description>
+      <guid isPermaLink="false">/posts/Review-of-Online-Poker-Networks.html</guid>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>We’re Building A Company, Not An ICO</title>
+      <link>https://monadical.com/posts/Building-a-Company-Not-an-ICO.html</link>
+      <description>A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical' vision goes far beyond short-term fundraising.</description>
+      <guid isPermaLink="false">/posts/Building-a-Company-Not-an-ICO.html</guid>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Strategy for Linearizing Database Operations</title>
+      <link>https://monadical.com/posts/Linearizing-database-operations-django.html</link>
+      <description>Everyone wants their writes strictly ordered, if we can represent a list of write operations as a data structure, that gets easier.</description>
+      <guid isPermaLink="false">/posts/Linearizing-database-operations-django.html</guid>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Provisioning and the /opt Directory</title>
+      <link>https://monadical.com/posts/intro-to-opt-directory.html</link>
+      <description>An overview of how we provision and organize code and data on servers using the UNIX /opt directory.</description>
+      <guid isPermaLink="false">/posts/intro-to-opt-directory.html</guid>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cleaner JS Animation Architecture With Functional Declarative Patterns</title>
+      <link>https://monadical.com/posts/functional-declarative-animations.html</link>
+      <description>As systems get more complex, they trend towards expressing more of their complexity as data. Animations can be defined in data too.</description>
+      <guid isPermaLink="false">/posts/functional-declarative-animations.html</guid>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Security Breach Response Guidelines</title>
+      <link>https://monadical.com/posts/security-breach-response-guidelines.html</link>
+      <description>What should you do if your company gets hacked? What are the things to avoid and what are the procedures to follow? We explore the whole process in this post.</description>
+      <guid isPermaLink="false">/posts/security-breach-response-guidelines.html</guid>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Easier Refactoring by Avoiding DRY Patterns</title>
+      <link>https://monadical.com/posts/avoiding-dry-for-easier-refactoring.html</link>
+      <description>A short post about a particularly nice pattern for future refactorers that breaks the Don't-Repeat-Yourself principle commonly taught to beginners.</description>
+      <guid isPermaLink="false">/posts/avoiding-dry-for-easier-refactoring.html</guid>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Monadical Applicant Study Guide</title>
+      <link>https://monadical.com/posts/monadical-study-guide.html</link>
+      <description>A list of documentation, resources, and example projects for potential applicants who are thinking about joining Monadical.</description>
+      <guid isPermaLink="false">/posts/monadical-study-guide.html</guid>
+      <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Our Favorite Technical Blogs</title>
+      <link>https://monadical.com/posts/our-favorite-technical-blogs.html</link>
+      <description>A list of our favorite technical blogs by friends, prominent programmers, and other companies we follow.</description>
+      <guid isPermaLink="false">/posts/our-favorite-technical-blogs.html</guid>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>An Introduction to HTML and CSS Anatomy</title>
+      <link>https://monadical.com/posts/anatomy-of-html-css-js.html</link>
+      <description>A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.</description>
+      <guid isPermaLink="false">/posts/anatomy-of-html-css-js.html</guid>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Python Performance Profiling and Optimization</title>
+      <link>https://monadical.com/posts/python-performance-profiling.html</link>
+      <description>Modern techniques for performance profiling &amp; optimization of Python applications.</description>
+      <guid isPermaLink="false">/posts/python-performance-profiling.html</guid>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Postfix deployment postmortem: Debugging short-circuiting of mapping lookups</title>
+      <link>https://monadical.com/posts/using-multiple-smtpd-sender-login-maps-in-postfix.html</link>
+      <description>How we tracked down and fixed a bug caused by Postfix’s type:table using the new unionmap feature.</description>
+      <guid isPermaLink="false">/posts/using-multiple-smtpd-sender-login-maps-in-postfix.html</guid>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Make Remote Work: Part One</title>
+      <link>https://monadical.com/posts/how-to-make-remote-work-part-one.html</link>
+      <description>How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.</description>
+      <guid isPermaLink="false">/posts/how-to-make-remote-work-part-one.html</guid>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Make Remote Work: Part Two, Zulip</title>
+      <link>https://monadical.com/posts/how-to-make-remote-work-part-two-zulip.html</link>
+      <description>How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.</description>
+      <guid isPermaLink="false">/posts/how-to-make-remote-work-part-two-zulip.html</guid>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Monadical Principles Handbook</title>
+      <link>https://monadical.com/posts/principles-handbook.html</link>
+      <description>Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.</description>
+      <guid isPermaLink="false">/posts/principles-handbook.html</guid>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Fit All Human Knowledge in a Box</title>
+      <link>https://monadical.com/posts/knowledge-in-box.html</link>
+      <description>How we used the power of Cython to help streamline how knowledge can be packaged and accessed all over the world – even without the internet.</description>
+      <guid isPermaLink="false">/posts/knowledge-in-box.html</guid>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why Open Source Projects Are Key to Innovation &amp; Technology</title>
+      <link>https://monadical.com/posts/open-source-innovation-technology.html</link>
+      <description>Find out how open source projects are essential to innovation and the development of new technology.</description>
+      <guid isPermaLink="false">/posts/open-source-innovation-technology.html</guid>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Year of the Linux Desktop</title>
+      <link>https://monadical.com/posts/moving-to-linux-desktop.html</link>
+      <description>The year of the Linux desktop has arrived. This is a guide for how to improve the Linux desktop experience.</description>
+      <guid isPermaLink="false">/posts/moving-to-linux-desktop.html</guid>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Unix System Monitoring and Diagnostic CLI Tools</title>
+      <link>https://monadical.com/posts/system-monitoring-tools.html</link>
+      <description>An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems.</description>
+      <guid isPermaLink="false">/posts/system-monitoring-tools.html</guid>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to set up a CI workflow</title>
+      <link>https://monadical.com/posts/set-up-ci-workflow.html</link>
+      <description>How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.</description>
+      <guid isPermaLink="false">/posts/set-up-ci-workflow.html</guid>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why Everyone Should Know About Docker</title>
+      <link>https://monadical.com/posts/everyone-should-know-about-docker.html</link>
+      <description>What is Docker and how does it work? This introduction walks you through the benefits of this core technology and shows you how to get started with it.</description>
+      <guid isPermaLink="false">/posts/everyone-should-know-about-docker.html</guid>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Drone Mapping: How to Create Your Own Terrain Surface Model</title>
+      <link>https://monadical.com/posts/drone-mapping.html</link>
+      <description>An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.</description>
+      <guid isPermaLink="false">/posts/drone-mapping.html</guid>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Migrate from Firebase to Django</title>
+      <link>https://monadical.com/posts/from-firebase-to-django.html</link>
+      <description>Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)</description>
+      <guid isPermaLink="false">/posts/from-firebase-to-django.html</guid>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How COVID-19 will affect Outsourcing Trends</title>
+      <link>https://monadical.com/posts/covid-affects-outsourcing.html</link>
+      <description>How the increase in remote work during COVID-19 will affect companies’ decisions on whether to outsource.</description>
+      <guid isPermaLink="false">/posts/covid-affects-outsourcing.html</guid>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Cheat Sheet for Using your JWT Authentication with Django </title>
+      <link>https://monadical.com/posts/jwt-login-firebase.html</link>
+      <description>Getting DRF, SimpleJWT and Firebase to play nice.</description>
+      <guid isPermaLink="false">/posts/jwt-login-firebase.html</guid>
+      <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Set Up a CI/CD Workflow, Part Two</title>
+      <link>https://monadical.com/posts/set-up-ci-workflow-part-two.html</link>
+      <description>In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.</description>
+      <guid isPermaLink="false">/posts/set-up-ci-workflow-part-two.html</guid>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why should you use an ORM (Object Relational Mapper)?</title>
+      <link>https://monadical.com/posts/why-use-orm.html</link>
+      <description>Budding web developers learning Model-View-Controller frameworks are taught that they should use an Object Relational Mapper (ORM) to interface with their databases. But the “why” is often brushed aside or omitted entirely, leaving a fledgling programmer with burning questions like ”What are ORMs, anyway?”</description>
+      <guid isPermaLink="false">/posts/why-use-orm.html</guid>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Set Up a CI/CD Workflow, Part 3</title>
+      <link>https://monadical.com/posts/set-up-ci-workflow-part-three.html</link>
+      <description>CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS</description>
+      <guid isPermaLink="false">/posts/set-up-ci-workflow-part-three.html</guid>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Event Diven Architecture part 1</title>
+      <link>https://monadical.com/posts/event-driven-architecture-1.html</link>
+      <description>Lessons learned in building a poker platform using event-driven architecture, part one--the backend.</description>
+      <guid isPermaLink="false">/posts/event-driven-architecture-1.html</guid>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Oddslingers Open Source Announcement</title>
+      <link>https://monadical.com/posts/oddslingers-open-source.html</link>
+      <description>The OddSlingers poker platform, built with python/django in the backend, and react/redux in the frontend, is now free and open source.</description>
+      <guid isPermaLink="false">/posts/oddslingers-open-source.html</guid>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Build a Python Library</title>
+      <link>https://monadical.com/posts/how-to-build-a-python-library.html</link>
+      <description>Share Developments and Contribute to the Community</description>
+      <guid isPermaLink="false">/posts/how-to-build-a-python-library.html</guid>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Make Library Distribution Easier</title>
+      <link>https://monadical.com/posts/a-many-linux-web-building-platform.html</link>
+      <description>A Manylinux-Based Web Building Platform</description>
+      <guid isPermaLink="false">/posts/a-many-linux-web-building-platform.html</guid>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Implementing C++ Virtual Functions in Cython</title>
+      <link>https://monadical.com/posts/virtual-classes-in-cython.html</link>
+      <description>This is an extensive article that assumes Cython knowledge and describes two strategies for using C++ code from Python, requiring the implementation of virtual functions in C++ abstract classes. </description>
+      <guid isPermaLink="false">/posts/virtual-classes-in-cython.html</guid>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Drone Web Platform </title>
+      <link>https://monadical.com/posts/drone-web-platform.html</link>
+      <description>A platform for operating drones through the internet.</description>
+      <guid isPermaLink="false">/posts/drone-web-platform.html</guid>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Five Django Packages We Love at Monadical</title>
+      <link>https://monadical.com/posts/django-packages.html</link>
+      <description>One of the biggest draws to Django is its ecosystem. If you encounter a problem, the chances are that someone else in the community has too, and has been kind enough to abstract it into a package and release it. Here are five packages we find ourselves coming back to.</description>
+      <guid isPermaLink="false">/posts/django-packages.html</guid>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cinco Paquetes de Django Que Amamos en Monadical</title>
+      <link>https://monadical.com/posts/5-paquetes-django.html</link>
+      <description>Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con</description>
+      <guid isPermaLink="false">/posts/5-paquetes-django.html</guid>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Some Unofficial WireGuard Documentation</title>
+      <link>https://monadical.com/posts/wireguard.html</link>
+      <description>Some unofficial documentation for the WireGuard VPN, including config API reference, tutorials, examples, and projects. (This is a mirror of the original on Github)</description>
+      <guid isPermaLink="false">/posts/wireguard.html</guid>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Learning COBOL: A Journey For The Modern Programmer</title>
+      <link>https://monadical.com/posts/cobol.html</link>
+      <description>A guide to learning COBOL for the modern programmer. </description>
+      <guid isPermaLink="false">/posts/cobol.html</guid>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Python Packaging Guide for APT/Debian</title>
+      <link>https://monadical.com/posts/how-to-package-python-for-apt-deb.html</link>
+      <description>A quick guide on how to package your Python/pip project into an apt-installable Debian package using stdeb.</description>
+      <guid isPermaLink="false">/posts/how-to-package-python-for-apt-deb.html</guid>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>All Systems are Human Systems</title>
+      <link>https://monadical.com/posts/human-systems.html</link>
+      <description>All systems in the field of software engineering are built by humans, to serve human purposes, and sometimes have broad but subtle influences in society and politics. It's in all of our best interests to to understand the broader, human scope that these systems operate within.</description>
+      <guid isPermaLink="false">/posts/human-systems.html</guid>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Starting and Running Your First Program on a Mainframe</title>
+      <link>https://monadical.com/posts/how-to-run-programs-on-a-mainframe.html</link>
+      <description>How to run your first program on a mainframe using open source software. </description>
+      <guid isPermaLink="false">/posts/how-to-run-programs-on-a-mainframe.html</guid>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Plot Mathematical Functions in 10 Lines of Python</title>
+      <link>https://monadical.com/posts/plot-mathematical-functions-in-python.html</link>
+      <description>How to build a mathematical functions plotter using Python, NumPy, SymPy, and Matplotlib.</description>
+      <guid isPermaLink="false">/posts/plot-mathematical-functions-in-python.html</guid>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

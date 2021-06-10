@@ -8,7 +8,10 @@ from threading import Thread
 from datetime import datetime
 
 from jinja2 import Markup
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, make_response
+
+# Library to implement rss
+from feedgen.feed import FeedGenerator
 
 
 ### Config
@@ -99,6 +102,27 @@ def render_post(path):
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 
+# Add feed rss
+@app.route("/posts/feed")
+def generate_rss():
+
+    feedg = FeedGenerator()
+    feedg.title("Monadical Blog Posts")
+    feedg.description("Here you can find our publications")
+    feedg.link(href="https://monadical.com/blog.html")
+
+    for post_key,post_info in CONFIG["POSTS"].items():
+        feed_entry = feedg.add_entry()
+        feed_entry.title(post_info["title"])
+        feed_entry.guid(post_info["url"])
+        feed_entry.pubDate(" ".join([post_info['date'],"00:00:00 UTC"]))
+        feed_entry.description(post_info['description'])
+        feed_entry.link(href="".join(["https://",CONFIG["SITE_DOMAIN"],post_info["url"]]))
+        
+    response = make_response(feedg.rss_str(pretty=True))
+    response.headers.set('Content-Type','application/xml')
+    
+    return response
 
 @app.route('/projects/<path>')
 def render_case(path):
@@ -113,6 +137,9 @@ if __name__ == '__main__':
     elif len(sys.argv) > 1 and sys.argv[1] == '--posts':
         # just print list of post urls
         print('\n'.join(HOST + url for url in POSTS.keys()))
+    elif len(sys.argv) > 1 and sys.argv[1] == '--feed':
+        #  just print rss feed url
+        print(''.join(HOST + '/posts/feed'))
     else:
         # run the flask http server
         app.run()

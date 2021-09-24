@@ -1,13 +1,16 @@
-{% extends "base.html" %} {% block title %}Portfolio{% endblock %} {% block
-subtitle %}Portfolio{% endblock %} {% block enableLogo %}enable-logo{%
-endblock%} {% block head %}
+{% extends "base.html" %} 
+{% block title %}Portfolio{% endblock %}
+{% block subtitle %}Portfolio{% endblock %} 
+{% block enableLogo %}enable-logo{% endblock %} 
+{% block head %}
 <link rel="stylesheet" href="/static/core/css/portfolio.css" />
-{% endblock %} {% block article %}
+{% endblock %} 
+{% block article %}
 <div class="container-full portfolio-full">
   <img
     class="octopus"
     src="/static/core/img/img-portfolio-001.png"
-    aria-hidden="true"
+    alt="Monadical's octopus mascot, happily typing away on a laptop."
   />
   <img
     class="left cube-1"
@@ -127,7 +130,11 @@ endblock%} {% block head %}
     <!-- ZoHuddle -->
     <div class="row project-row">
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/zohuddle-example.png" class="project-img" />
+        <img
+          src="/static/core/img/zohuddle-example.png"
+          class="project-img"
+          alt="An example of ZoHuddle's video-conferencing feature, showcasing a man in business-casual attire giving a presentation to four attendees."
+        />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
         <div class="project-title">ZoHuddle</div>
@@ -141,10 +148,7 @@ endblock%} {% block head %}
         <div class="project-stack">
           Full-stack web development, react, django, webrtc, websockets
         </div>
-        <a
-          class="align-self-center align-self-md-start"
-          href="https://zohuddle.com/app/"
-        >
+        <a class="align-self-center align-self-md-start" href="https://zohuddle.com/app/">
           <button class="btn btn-info-inverse">REVIEW THE PROJECT</button>
         </a>
       </div>
@@ -162,19 +166,27 @@ endblock%} {% block head %}
           Work includes frontend for Swap protocol, Lending protocol, Wormhole
           bridge, NFT Market place (Metaplex)
         </p>
-        <a class="align-self-center align-self-md-start" href="#">
+        <a class="align-self-center align-self-md-start" href="https://solana.com/">
           <button class="btn btn-info-inverse">CHECK SOLANA</button>
         </a>
       </div>
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/solana-example.png" class="project-img" />
+        <img
+          src="/static/core/img/solana-example.png"
+          class="project-img"
+          alt="A screenshot Solana’s Wormhole UI — a token bridge between Ethereum and Solana."
+        />
       </div>
     </div>
 
     <!-- Currents.fm -->
     <div class="row project-row">
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/currents.png" class="project-img" />
+        <img
+          src="/static/core/img/currents.png"
+          class="project-img"
+          alt="A partial screenshot from currents.fm homepage focused on the title and subtitle, which read ‘Currents is a playlist platform that directly supports the music community. Get a personal space to publish music lists to fans and subscribers via web and email. Keep it free or accept tips from subscribers to directly support your work.’"
+        />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
         <div class="project-title">Currents.fm</div>
@@ -191,7 +203,7 @@ endblock%} {% block head %}
           NodeJS backend, React MobX (javascript) frontend, social media,
           payments, audio streaming
         </div>
-        <a class="align-self-center align-self-md-start" href="#">
+        <a class="align-self-center align-self-md-start" href="https://a.currents.fm/">
           <button class="btn btn-info-inverse">CHECK CURRENTS FM</button>
         </a>
       </div>
@@ -211,12 +223,16 @@ endblock%} {% block head %}
           Data engineering, data hygiene, Django (python) backend, React Redux
           (javascript) frontend, API integration, HIPAA compliant, security
         </div>
-        <a class="align-self-center align-self-md-start" href="#">
+        <a class="align-self-center align-self-md-start" href="https://syncroplicity.com/">
           <button class="btn btn-info-inverse">REVIEW SYNCROPLICITY</button>
         </a>
       </div>
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/img-cases-001.png" class="project-img" />
+        <img
+          src="/static/core/img/img-cases-001.png"
+          class="project-img"
+          alt="A screenshot showing a patient profile filled with test data being updated in Syncroplicity."
+        />
       </div>
     </div>
 
@@ -226,6 +242,7 @@ endblock%} {% block head %}
         <img
           src="/static/core/img/pushforward-example.png"
           class="project-img"
+          alt="An example of the PushForward NYC interface, showing four home listings on the left half of the screen, and a map with those homes’ locations on the right."
         />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
@@ -270,21 +287,29 @@ endblock%} {% block head %}
           pure-functional code, functional reactive animations, Django (python)
           backend, React (javascript) frontend, mobile, security
         </div>
-        <a class="align-self-center align-self-md-start" href="#">
+        <a class="align-self-center align-self-md-start" href="https://oddslingers.com">
           <button class="btn btn-info-inverse">
             ODDSLINGERS POKER PROJECT REVIEW
           </button>
         </a>
       </div>
       <div class="img-wrapper col-12 col-md-6">
-        <img src="/static/core/img/img-cases-002.png" class="project-img" />
+        <img
+          src="/static/core/img/img-cases-002.png"
+          class="project-img"
+          alt="A hand of poker being played on OddSlingers. There are 3 players, Nanonapoleon, Rom Jeremy, and DLL cool J. The flop shows king of diamonds, jack of hearts, three of spades. There is $24 in the pot. The dealer button is on Nanonapoleon. Rom Jeremy just checked, DLL cool J is next to act."
+        />
       </div>
     </div>
 
     <!-- Resero Analytics -->
     <div class="row project-row">
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/resero-example.png" class="project-img" />
+        <img
+          src="/static/core/img/resero-example.png"
+          class="project-img"
+          alt="A screenshot of the Resero Analytics homepage. The featured text reads ‘Resero increases the quality and speed of toxicology data interpretation and reporting. Unlock your data. Resero Analytics — data, analytics, reporting.’ The text is followed by a prominent Contact Us button."
+        />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
         <div class="project-title">Resero Analytics</div>
@@ -299,7 +324,7 @@ endblock%} {% block head %}
           Data science, data engineering, Pandas, data hygiene, Django (python)
           backend
         </div>
-        <a class="align-self-center align-self-md-start" href="#">
+        <a class="align-self-center align-self-md-start" href="https://reseroanalytics.com/">
           <button class="btn btn-info-inverse">LEARN MORE</button>
         </a>
       </div>
@@ -317,15 +342,24 @@ endblock%} {% block head %}
         <img
           src="/static/core/img/redux-time-example2.png"
           class="project-img"
+          alt="A screenshot of a snippet of Redux Time’s documentation. The image representing the project shows the stages of a jump animation using a posed stick person on a height-over-time graph."
         />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
         <div class="subtitle">Real-time state syncronization & animations:</div>
         <div class="row">
-          <a class="col-6 col-md-12" href="#"> redux-time </a>
-          <a class="col-6 col-md-12" href="#"> inferno-redux-time </a>
-          <a class="col-6 col-md-12" href="#"> warped-time </a>
-          <a class="col-6 col-md-12" href="#"> netviz </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/redux-time">
+            redux-time
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/inferno-redux-time">
+            inferno-redux-time
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/warped-time">
+            warped-time
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/netviz">
+            netviz
+          </a>
         </div>
       </div>
     </div>
@@ -335,14 +369,26 @@ endblock%} {% block head %}
       <div class="project-text col-12 col-md-5 pr-md-5">
         <div class="subtitle">Django & Python packages released on PyPI:</div>
         <div class="row">
-          <a class="col-6 col-md-12" href="#"> django-http2-middleware </a>
-          <a class="col-6 col-md-12" href="#"> django-channels-router </a>
-          <a class="col-6 col-md-12" href="#"> mesh-networking </a>
-          <a class="col-6 col-md-12" href="#"> gzint </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/django-http2-middleware">
+            django-http2-middleware
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/django-channels-router">
+            django-channels-router
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/mesh-networking">
+            mesh-networking
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/gzint">
+            gzint
+          </a>
         </div>
       </div>
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/packages-example.png" class="project-img" />
+        <img
+          src="/static/core/img/packages-example.png"
+          class="project-img"
+          alt="The Python Package Index page for mesh-networking 0.06. The project description reads ‘This library helps you test large networks of nodes across physical and simulated links."
+        />
       </div>
     </div>
 
@@ -352,13 +398,18 @@ endblock%} {% block head %}
         <img
           src="/static/core/img/archive-box-example2.png"
           class="project-img"
+          alt="A screenshot of theArchiveBox homepage. The featured text reads ‘ARCHIVEBOX — Open source, self-hosted web archiving. Takes URLs, browser history, bookmarks, Pocket, Pinboard, etc., saves HTML, JS, PDFs, media, and more.’"
         />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
         <div class="subtitle">Archiving & digital preservation:</div>
         <div class="row">
-          <a class="col-6 col-md-12" href="#"> ArchiveBox </a>
-          <a class="col-6 col-md-12" href="#"> wikipedia-mirror </a>
+          <a class="col-6 col-md-12" href="https://archivebox.io/">
+            ArchiveBox
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/pirate/wikipedia-mirror">
+            wikipedia-mirror
+          </a>
         </div>
       </div>
     </div>
@@ -366,24 +417,35 @@ endblock%} {% block head %}
     <!-- Mesh Networking & Security -->
     <div class="row">
       <div class="thumb-wrapper offset-md-3">
-        <img src="/static/core/img/solana-dns-example.png" />
+        <img
+          src="/static/core/img/solana-dns-example.png"
+          alt="The header of Solana DNS’ documentation page. It reads ‘Solana DNS — A simple DNS server using the high-performance Solana blockchain to store signed records. Implemented in JavaScript and Solana BPF Rust, with an optional REST API and Web UI.’"
+        />
       </div>
     </div>
     <div class="row project-row flex-column-reverse flex-md-row">
       <div class="project-text col-12 col-md-5 pr-md-5">
         <div class="subtitle">Mesh networking & security:</div>
-
         <div class="row">
-          <a class="col-6 col-md-12" href="#"> solana-dns </a>
-          <a class="col-6 col-md-12" href="#"> wireguard-docs </a>
-          <a class="col-6 col-md-12" href="#"> mesh-networking </a>
-          <a class="col-6 col-md-12" href="#"> security-growler </a>
+          <a class="col-6 col-md-12" href="https://monadical-sas.github.io/solana-dns/">
+            solana-dns
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/pirate/wireguard-docs">
+            wireguard-docs
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/mesh-networking">
+            mesh-networking
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/security-growler">
+            security-growler
+          </a>
         </div>
       </div>
       <div class="img-wrapper col-12 col-md-7">
         <img
           src="/static/core/img/wire-guard-example.png"
           class="project-img"
+          alt="A partial screenshot of the unofficial WireGuard documentation page, which credits the contributors to the WireGuard project and introduces the document as an ‘unofficial attempt at providing more comprehensive documentation, API references, and examples’"
         />
       </div>
     </div>
@@ -391,20 +453,35 @@ endblock%} {% block head %}
     <!-- Devops -->
     <div class="row">
       <div class="thumb-wrapper offset-md-6">
-        <img src="/static/core/img/zervice-example2.png" />
+        <img
+          src="/static/core/img/zervice-example2.png"
+          alt="zervice.swarmpit UI thumbnail"
+        />
       </div>
     </div>
     <div class="row project-row">
       <div class="img-wrapper col-12 col-md-7">
-        <img src="/static/core/img/zervice-example.png" class="project-img" />
+        <img
+          src="/static/core/img/zervice-example.png"
+          class="project-img"
+          alt="Screenshot of the project documentation that highlights the ability to visualize and explore data, or manage and administer the elastic stack."
+        />
       </div>
       <div class="project-text col-12 col-md-5 pl-md-5">
         <div class="subtitle">Devops deployment templates and utilities:</div>
         <div class="row">
-          <a class="col-6 col-md-12" href="#"> zervice.elk/consul/vault/… </a>
-          <a class="col-6 col-md-12" href="#"> bash </a>
-          <a class="col-6 col-md-12" href="#"> fish-functions </a>
-          <a class="col-6 col-md-12" href="#"> security-growler </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/zervice.elk">
+            zervice.elk
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/pirate/bash-utils">
+            bash
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/pirate/fish-utils">
+            fish-functions
+          </a>
+          <a class="col-6 col-md-12" href="https://github.com/Monadical-SAS/security-growler">
+            security-growler
+          </a>
         </div>
       </div>
     </div>
@@ -422,10 +499,13 @@ endblock%} {% block head %}
       <div class="col-md-4 col-12 my-2">
         <div class="card">
           <div class="card-img-top">
-            <img src="/static/core/img/img-portfolio-003.svg" />
+            <img
+              src="/static/core/img/img-portfolio-003.svg"
+              aria-hidden="true"
+            />
           </div>
           <div class="card-link">
-            <a href="#">storycoin</a>
+            <a href="https://github.com/Monadical-SAS/storycoin">storycoin</a>
           </div>
         </div>
       </div>
@@ -434,10 +514,13 @@ endblock%} {% block head %}
       <div class="col-md-4 col-12 my-2">
         <div class="card">
           <div class="card-img-top">
-            <img src="/static/core/img/img-portfolio-004.svg" />
+            <img
+              src="/static/core/img/img-portfolio-004.svg"
+              aria-hidden="true"
+            />
           </div>
           <div class="card-link">
-            <a href="#">crypto-trader</a>
+            <a href="https://github.com/Monadical-SAS/crypto-trader">crypto-trader</a>
           </div>
         </div>
       </div>
@@ -446,10 +529,13 @@ endblock%} {% block head %}
       <div class="col-md-4 col-12 my-2">
         <div class="card">
           <div class="card-img-top">
-            <img src="/static/core/img/img-portfolio-005.svg" />
+            <img
+              src="/static/core/img/img-portfolio-005.svg"
+              aria-hidden="true"
+            />
           </div>
           <div class="card-link">
-            <a href="#">eth-sandbox</a>
+            <a href="https://github.com/cowpig/eth">eth-sandbox</a>
           </div>
         </div>
       </div>
@@ -504,20 +590,22 @@ endblock%} {% block head %}
 
         <ul>
           <li>
-            <a href="https://monadical.com/principles.html"
-              >Company Principles Handbook</a
-            >
+            <a href="https://monadical.com/principles.html">Company Principles Handbook</a>
           </li>
-          <li><a href="https://monadical.com/team.html">Our Team</a></li>
           <li>
-            <a href="https://monadical.com/posts/monadical-study-guide.html"
-              >Our Hiring Process</a
-            >
+            <a href="https://monadical.com/team.html">Our Team</a>
+          </li>
+          <li>
+            <a href="https://monadical.com/posts/monadical-study-guide.html">Our Hiring Process</a>
           </li>
         </ul>
       </div>
       <div class="col-12 col-md-6">
-        <img width="100%" src="/static/core/img/img-portfolio-006.png" alt="" />
+        <img
+          width="100%"
+          src="/static/core/img/img-portfolio-006.png"
+          alt="A Monadical employee and a Monadical cofounder manning a booth at PyCon. The former is holding up a branded notebook. Both are smiling."
+        />
       </div>
     </div>
 
@@ -525,117 +613,90 @@ endblock%} {% block head %}
     <div class="row link-row">
       <div class="subtitle text-center col-12">Related blog posts</div>
       <div class="blog-capsule col-12 col-md-4">
-        <a href="https://monadical.com/posts/Trustless-is-A-Myth.html"
-          >The Myth of Trustlessness</a
-        >
+        <a href="https://monadical.com/posts/Trustless-is-A-Myth.html">The Myth of Trustlessness</a>
       </div>
       <div class="blog-capsule col-12 col-md-4">
-        <a href="#">Feedback Game Theory</a>
+        <a href="https://monadical.com/posts/Downswings-and-the-Information-Game.html">Feedback Game Theory</a>
       </div>
       <div class="blog-capsule col-12 col-md-4">
-        <a href="#">Our Breach Response Guidelines</a>
+        <a href="https://monadical.com/posts/security-breach-response-guidelines.html">Our Breach Response Guidelines</a>
       </div>
       <div class="blog-capsule col-12 col-md-4">
-        <a href="#">Full-Stack Engineering Checklist</a>
+        <a href="https://monadical.com/posts/full-stack-developer-checklist.html">Full-Stack Engineering Checklist</a>
       </div>
       <div class="blog-capsule col-12 col-md-4">
-        <a href="#">Our Approach to Devops</a>
+        <a href="https://monadical.com/posts/set-up-ci-workflow.html">Our Approach to Devops</a>
       </div>
       <div class="blog-capsule col-12 col-md-4">
-        <a href="#">Our Style Guide</a>
+        <a href="https://github.com/Monadical-SAS/oddslingers.poker/wiki/Style-Guide">Our Style Guide</a>
       </div>
     </div>
 
     <!-- blog image row (md screens and up) -->
     <div class="row image-row d-none d-md-flex">
-      <a
-        class="col-md-4"
-        href="https://monadical.com/posts/principles-handbook.html"
-        ><img
+      <a class="col-md-4" href="https://monadical.com/posts/principles-handbook.html">
+        <img
           src="/static/core/img/img-portfolio-007.png"
-          alt="monadical principles handbook"
-      /></a>
+          alt="A screenshot from Monadical's Principles Handbook. The text reads 'Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment. This is a living document and we expect it to change as we grow and evolve over time.'"
+        />
+      </a>
 
-      <a class="col-md-4 img-wrapper" href="#"
-        ><img src="/static/core/img/img-portfolio-008.png" height="100%" alt=""
-      /></a>
+      <a class="col-md-4 img-wrapper" href="https://monadical.com/team.html">
+        <img
+          src="/static/core/img/img-portfolio-008.png"
+          height="100%"
+          alt="An art installation in a park consisting of large red letters that spell out ‘MEDELLIN.’ The letters are covered in graffiti. There is a beautiful green space with benches in the background."
+        />
+      </a>
 
-      <a class="col-md-4 img-wrapper" href="#"
-        ><img src="/static/core/img/img-portfolio-009.png" height="100%" alt=""
-      /></a>
+      <a class="col-md-4 img-wrapper" href="https://docs.monadical.com/s/pycon-puzzle">
+        <img
+          src="/static/core/img/img-portfolio-009.png"
+          height="100%"
+          alt="A screenshot from Monadical's 2020 PyCon.co coding challenge. Problem 1 involves sending vehicles and passengers from Bogotá to Medellin in the most efficient way possible. Problem 2 involves decoding secret messages."
+        />
+      </a>
     </div>
 
     <!-- blog carousel (mobile screens) -->
-    <div
-      id="blog-carousel"
-      class="carousel slide d-md-none"
-      data-ride="carousel"
-    >
+    <div id="blog-carousel" class="carousel slide d-md-none" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li
-          data-target="#blog-carousel"
-          data-slide-to="0"
-          class="rounded-circle active"
-        ></li>
-        <li
-          data-target="#blog-carousel"
-          data-slide-to="1"
-          class="rounded-circle"
-        ></li>
-        <li
-          data-target="#blog-carousel"
-          data-slide-to="2"
-          class="rounded-circle"
-        ></li>
+        <li data-target="#blog-carousel" data-slide-to="0" class="rounded-circle active"></li>
+        <li data-target="#blog-carousel" data-slide-to="1" class="rounded-circle"></li>
+        <li data-target="#blog-carousel" data-slide-to="2" class="rounded-circle"></li>
       </ol>
 
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="#"
-            ><img
+          <a href="https://monadical.com/posts/principles-handbook.html">
+            <img
               class="d-block w-100 p-4"
               src="/static/core/img/img-portfolio-007.png"
-              alt="monadical principles handbook"
-          /></a>
+              alt="A screenshot from Monadical's Principles Handbook. The text reads 'Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment. This is a living document and we expect it to change as we grow and evolve over time.'"
+            />
+          </a>
         </div>
         <div class="carousel-item">
-          <a href="#"
-            ><img
+          <a href="https://monadical.com/team.html">
+            <img
               class="d-block w-100"
               src="/static/core/img/img-portfolio-008.png"
               height="100%"
-              alt=""
-          /></a>
+              alt="An art installation in a park consisting of large red letters that spell out ‘MEDELLIN.’ The letters are covered in graffiti. There is a beautiful green space with benches in the background."
+            />
+          </a>
         </div>
         <div class="carousel-item">
-          <a href="#"
-            ><img
+          <a href="https://docs.monadical.com/s/pycon-puzzle">
+            <img
               class="d-block w-100"
               src="/static/core/img/img-portfolio-009.png"
               height="100%"
-              alt=""
-          /></a>
+              alt="A screenshot from Monadical's 2020 PyCon Columbia coding challenge. Problem 1 involves sending vehicles and passengers from Bogotá to Medellin in the most efficient way possible. Problem 2 involves decoding secret messages."
+            />
+          </a>
         </div>
       </div>
-
-      <!-- <a
-        class="carousel-control-prev carousel-control"
-        href="#blog-carousel"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next carousel-control"
-        href="#blog-carousel"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a> -->
     </div>
   </div>
 
@@ -654,82 +715,62 @@ endblock%} {% block head %}
     <!-- talks image row  -->
     <div class="row image-row d-none d-md-flex">
       <div class="col-md-3 d-flex flex-column align-items-center">
-        <a class="img-wrapper" href="#"
-          ><img
+        <a class="img-wrapper" href="https://www.youtube.com/watch?v=LZ7TNQjG74g">
+          <img
             src="/static/core/img/img-portfolio-010.png"
-            alt="Archiving the internet before it rots away"
-        /></a>
-        <span class="image-description"
-          >Archiving the internet before it rots away</span
-        >
+            alt="The cover of a talk titled 'Archiving the internet before it rots away' by Nick Sweeting, given at PyCon Columbia, 2020"
+          />
+        </a>
+        <span class="image-description">Archiving the internet before it rots away</span>
       </div>
 
       <div class="col-md-3 d-flex flex-column align-items-center">
-        <a class="img-wrapper" href="#"
-          ><img
+        <a class="img-wrapper" href="https://www.youtube.com/watch?v=VJSznZMvA1M">
+          <img
             src="/static/core/img/img-portfolio-011.png"
-            alt="How I learned to stop worrying and love Atomic()"
-        /></a>
+            alt="The cover of a talk titled 'How I learned to stop worrying and love Atomic() - Database Integrity Fundamentals in Django' by Nick Sweeting"
+          />
+        </a>
         <span class="image-description">Concurrent banking systems</span>
       </div>
 
       <div class="col-md-3 d-flex flex-column align-items-center">
-        <a class="img-wrapper" href="#"
-          ><img
+        <a class="img-wrapper" href="https://monadical.com/posts/drone-web-platform.html">
+          <img
             src="/static/core/img/img-portfolio-012.png"
-            alt="The road so far in building a web platform for drones"
-        /></a>
-        <span class="image-description"
-          >Building a web platform for drones</span
-        >
+            alt="A blog post titled 'The road so far in building a web platform for drones (Inglés)' by Jose Benitez"
+          />
+        </a>
+        <span class="image-description">Building a web platform for drones</span>
       </div>
 
       <div class="col-md-3 d-flex flex-column align-items-center">
-        <a class="img-wrapper" href="#"
-          ><img
+        <a class="img-wrapper" href="https://docs.sweeting.me/s/blog#Public-Speaking">
+          <img
             src="/static/core/img/img-portfolio-013.png"
-            alt="Public speaking"
-        /></a>
+            alt="Screenshot of a list of conference talks by co-founder Nick Sweeting"
+          />
+        </a>
         <span class="image-description">And many more by our employees</span>
       </div>
     </div>
 
     <!-- talks carousel (mobile screens) -->
-    <div
-      id="talks-carousel"
-      class="carousel slide d-md-none"
-      data-ride="carousel"
-    >
+    <div id="talks-carousel" class="carousel slide d-md-none" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li
-          data-target="#talks-carousel"
-          data-slide-to="0"
-          class="rounded-circle active"
-        ></li>
-        <li
-          data-target="#talks-carousel"
-          data-slide-to="1"
-          class="rounded-circle"
-        ></li>
-        <li
-          data-target="#talks-carousel"
-          data-slide-to="2"
-          class="rounded-circle"
-        ></li>
-        <li
-          data-target="#talks-carousel"
-          data-slide-to="3"
-          class="rounded-circle"
-        ></li>
+        <li data-target="#talks-carousel" data-slide-to="0" class="rounded-circle active"></li>
+        <li data-target="#talks-carousel" data-slide-to="1" class="rounded-circle"></li>
+        <li data-target="#talks-carousel" data-slide-to="2" class="rounded-circle"></li>
+        <li data-target="#talks-carousel" data-slide-to="3" class="rounded-circle"></li>
       </ol>
 
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="#">
+          <a href="https://www.youtube.com/watch?v=LZ7TNQjG74g">
             <img
               class="d-block w-100"
               src="/static/core/img/img-portfolio-010.png"
-              alt="Archiving the internet before it rots away"
+              alt="The cover of a talk titled 'Archiving the internet before it rots away' by Nick Sweeting, given at PyCon Columbia, 2020"
             />
           </a>
           <div class="slide-description">
@@ -737,21 +778,21 @@ endblock%} {% block head %}
           </div>
         </div>
         <div class="carousel-item">
-          <a href="#">
+          <a href="https://www.youtube.com/watch?v=VJSznZMvA1M">
             <img
               class="d-block w-100"
               src="/static/core/img/img-portfolio-011.png"
-              alt="How I learned to stop worrying and love Atomic()"
+              alt="The cover of a talk titled 'How I learned to stop worrying and love Atomic() - Database Integrity Fundamentals in Django' by Nick Sweeting"
             />
           </a>
           <div class="slide-description">Concurrent banking systems</div>
         </div>
         <div class="carousel-item">
-          <a href="#">
+          <a href="https://monadical.com/posts/drone-web-platform.html">
             <img
               class="d-block w-100"
               src="/static/core/img/img-portfolio-012.png"
-              alt="The road so far in building a web platform for drones"
+              alt="A blog post titled 'The road so far in building a web platform for drones (Inglés)' by Jose Benitez"
             />
           </a>
           <div class="slide-description">
@@ -759,32 +800,15 @@ endblock%} {% block head %}
           </div>
         </div>
         <div class="carousel-item">
-          <a href="#"
-            ><img
+          <a href="https://docs.sweeting.me/s/blog#Public-Speaking">
+            <img
               class="d-block w-100 p-4"
               src="/static/core/img/img-portfolio-013.png"
-              alt="Public speaking"
-          /></a>
+              alt="Screenshot of a list of conference talks by co-founder Nick Sweeting."
+            />
+          </a>
           <div class="slide-description">And many more by our employees</div>
         </div>
-        <!-- <a
-          class="carousel-control-prev carousel-control"
-          href="#blog-carousel"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next carousel-control"
-          href="#blog-carousel"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
       </div>
     </div>
 
@@ -798,15 +822,16 @@ endblock%} {% block head %}
       <div class="col-12 col-md-4 text-center">
         <div class="card">
           <div class="w-100 mt-3">
-            <a href="https://monadical.com/blog.html"
-              >https://monadical.com/blog.html</a
-            >
+            <a href="https://monadical.com/blog.html">https://monadical.com/blog.html</a>
             <hr />
           </div>
-          <img src="/static/core/img/img-portfolio-014.png" alt="" />
+          <img
+            src="/static/core/img/img-portfolio-014.png"
+            alt="Screenshot of the Monadical blog header."
+          />
           <div class="card-title my-3">Monadical Blog</div>
         </div>
-        <a href="#">
+        <a href="https://monadical.com/blog.html">
           <button class="btn btn-info-inverse">READ MORE</button>
         </a>
       </div>
@@ -814,13 +839,16 @@ endblock%} {% block head %}
       <div class="col-12 col-md-4 text-center">
         <div class="card">
           <div class="w-100 mt-3">
-            <a href="#">http://link.org/</a>
+            <a href="https://docs.sweeting.me/s/blog">https://docs.sweeting.me/s/blog</a>
             <hr />
           </div>
-          <img src="/static/core/img/img-portfolio-015.png" alt="" />
+          <img
+            src="/static/core/img/img-portfolio-015.png"
+            alt="Screenshot of co-founder Nick Sweeting's blog"
+          />
           <div class="card-title my-3">Nick’s Blog (Co-Founder)</div>
         </div>
-        <a href="#">
+        <a href="https://docs.sweeting.me/s/blog">
           <button class="btn btn-info-inverse">READ MORE</button>
         </a>
       </div>
@@ -828,13 +856,16 @@ endblock%} {% block head %}
       <div class="col-12 col-md-4 text-center">
         <div class="card">
           <div class="w-100 mt-3">
-            <a href="#">http://link.org/</a>
+            <a href="http://cowpig.github.io/about/">http://cowpig.github.io/about/</a>
             <hr />
           </div>
-          <img src="/static/core/img/img-portfolio-016.png" alt="" />
+          <img
+            src="/static/core/img/img-portfolio-016.png"
+            alt="Screenshot of co-founder Max McCrea's blog"
+          />
           <div class="card-title my-3">Max’s Blog (Co-Founder)</div>
         </div>
-        <a href="#">
+        <a href="http://cowpig.github.io/about/">
           <button class="btn btn-info-inverse">READ MORE</button>
         </a>
       </div>
@@ -852,20 +883,12 @@ endblock%} {% block head %}
       <!-- list -->
       <div class="col-12 col-md-9 offset-md-4">
         <div class="subtitle">
-          <a href="#">See our "Why Hire Monadical?" one-page</a>
+          <a href="https://monadical.com/services.html">See our "Why Hire Monadical?" one-page</a>
         </div>
         <ul>
-          <li>
-            We bring extensive strategic and technical architecture expertise.
-          </li>
-          <li>
-            We’re a full-stack team with batteries included: ops, hosting, email
-            servers, you name it.
-          </li>
-          <li>
-            We care about the details, we build solid products both inside and
-            out.
-          </li>
+          <li>We bring extensive strategic and technical architecture expertise.</li>
+          <li>We’re a full-stack team with batteries included: ops, hosting, email servers, you name it.</li>
+          <li>We care about the details, we build solid products both inside and out.</li>
           <li>We can scale your team on a moments notice.</li>
         </ul>
         <a href="https://monadical.com/contact-us.html">
@@ -888,7 +911,7 @@ endblock%} {% block head %}
         <div class="specialty-title">Product Management</div>
         <img
           src="/static/core/img/img-portfolio-020.png"
-          alt="Product management octopus"
+          alt="Stylized tentacles of Monadical's octopus mascot wrapped around a Gantt chart"
         />
         <div class="image-description">
           <p>
@@ -907,7 +930,7 @@ endblock%} {% block head %}
         <div class="specialty-title">Full-Stack Web Development</div>
         <img
           src="/static/core/img/img-portfolio-019.png"
-          alt="Web development octopus"
+          alt="Monadical's octopus mascot happily typing away on a laptop."
         />
         <div class="image-description">
           <p>
@@ -926,7 +949,7 @@ endblock%} {% block head %}
         <div class="specialty-title">Ops, Data Science, Security</div>
         <img
           src="/static/core/img/img-portfolio-021.png"
-          alt="Product management octopus"
+          alt="Monadical's octopus mascot doing cable management on some servers."
         />
         <div class="image-description">
           We go beyond app-building and provide full solutions, including ops
@@ -965,7 +988,7 @@ endblock%} {% block head %}
           <div class="specialty-title">Product Management</div>
           <img
             src="/static/core/img/img-portfolio-020.png"
-            alt="Product management octopus"
+            alt="Stylized tentacles of Monadical's octopus mascot wrapped around a Gantt chart."
           />
           <div class="image-description">
             <p>
@@ -983,7 +1006,7 @@ endblock%} {% block head %}
           <div class="specialty-title">Full-Stack Web Development</div>
           <img
             src="/static/core/img/img-portfolio-019.png"
-            alt="Web development octopus"
+            alt="Monadical's octopus mascot happily typing away on a laptop."
           />
           <div class="image-description">
             <p>
@@ -1001,7 +1024,7 @@ endblock%} {% block head %}
           <div class="specialty-title">Ops, Data Science, Security</div>
           <img
             src="/static/core/img/img-portfolio-021.png"
-            alt="Product management octopus"
+            alt="Monadical's octopus mascot doing cable management on some servers."
           />
           <div class="image-description">
             <p>
@@ -1011,24 +1034,6 @@ endblock%} {% block head %}
             </p>
           </div>
         </div>
-        <!-- <a
-            class="carousel-control-prev carousel-control"
-            href="#blog-carousel"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next carousel-control"
-            href="#blog-carousel"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a> -->
       </div>
     </div>
 
@@ -1045,13 +1050,13 @@ endblock%} {% block head %}
   <div class="portfolio-container questions w-100">
     <div class="questions-content text-center">
       <div class="section-title">Have any questions?</div>
-      <a href="#">
+      <a href="https://monadical.com/contact-us.html">
         <button class="btn btn-info-inverse">CHAT WITH US</button>
       </a>
       <span class="social">
         <i class="fa fa-twitter"></i>
         You can also find us on Twitter
-        <a href="#">@MonadicalSAS</a>
+        <a href="https://twitter.com/MonadicalSAS">@MonadicalSAS</a>
       </span>
     </div>
   </div>

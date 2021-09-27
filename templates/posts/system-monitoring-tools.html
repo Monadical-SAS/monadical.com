@@ -54,9 +54,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun Jan 24 2021 17:30:13 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Sep 25 2021 19:07:22 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">16679 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">16776 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -314,6 +314,19 @@ mpstat -P ALL 1
 
 - https://manpages.ubuntu.com/manpages/focal/man1/mpstat.1.html
 - https://www.linuxnix.com/7-mpstat-command-examples-in-linux/
+
+### `btop++` ⭐️ 🌈
+
+```bash
+# install btop from github
+
+btop
+```
+
+![](https://docs.monadical.com/uploads/upload_32d152f61395c99470005ffc72d2d848.png)
+
+
+https://github.com/aristocratos/btop
 
 
 ### `pidstat`
@@ -1319,7 +1332,7 @@ virt-top
 Monitor performance statistics of virtual machines on an ESXi host.
 
 ```bash
-ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8dfee2e0e8f8fee8ffcde8fef5e4a0e5e2fef9">[email&#160;protected]</a> esxtop
+ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deadb1b3bbabadbbac9ebbada6b7f3b6b1adaa">[email&#160;protected]</a> esxtop
 ```
 
 - https://kb.vmware.com/s/article/1008205
@@ -1337,7 +1350,7 @@ Show PostgreSQL performance information.
 ```bash
 apt install pgtop
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f1f001c1b081d0a1c2f03000c0e0307001c1b">[email&#160;protected]</a>:5432/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b2b34282f3c293e281b3734383a373334282f">[email&#160;protected]</a>:5432/example and show perf stats w/ color
 pg_top --color-mode -h localhost -p 5432 -d example -U postgres
 ```
 
@@ -1353,7 +1366,7 @@ Show MySQL performance information.
 ```bash
 apt install mytop myps
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="24495d57554864484b4745484c4b5750">[email&#160;protected]</a>:3306/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5934202a28351935363a383531362a2d">[email&#160;protected]</a>:3306/example and show perf stats w/ color
 mytop -color -h localhost -P 3306 -u mysql -d example
 ```
 
@@ -1614,7 +1627,7 @@ Backup and file syncing tools.
 apt install rclone rsync rsnapshotd
 
 # sync some local files to a remote server over ssh/rsyncd
-rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c090f190e3c14130f08">[email&#160;protected]</a>:/some/remote/path
+rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cebbbdabbc8ea6a1bdba">[email&#160;protected]</a>:/some/remote/path
 
 # sync some local files to a remote directory on a cloud storage provider
 rclone sync source:path dest:path [flags]
@@ -1626,7 +1639,7 @@ rclone mount remote:path/to/files /path/to/local/mount
 rsnapshot
 
 # or take a zfs snapshot of a given pool/dataset
-zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7b3b6a3b6a4b2a397a4b9b6a7a4bfb8a3b9b6bab2">[email&#160;protected]</a>
+zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f6b6e7b6e7c6a7b4f7c616e7f7c67607b616e626a">[email&#160;protected]</a>
 ```
 
 ### `watchdog`/`auditd`/`acct`

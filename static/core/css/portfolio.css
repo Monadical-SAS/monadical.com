@@ -13,13 +13,14 @@
     url(/static/core/img/img-portfolio-swirly-right.png),
     url(/static/core/img/img-portfolio-cube-left.png);
 
-  background-position: 100% 10%, 0 25%, 100% 40%, 0 60%, 100% 75%, 100% 73%, 0 90%;
+  background-position: 100% 15%, 0 25%, 100% 40%, 0 60%, 100% 75%, 100% 73%, 0 90%;
   background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
   .portfolio-full {
-    background-size: 30%;
+    background-position: 100% 13.5%, 0 30%, 100% 40%, 0 64%, 100% 73%, 100% 73%, 0 90%;
+    background-size: 20%;
   }
 }
 
@@ -116,7 +117,7 @@
 #table-of-contents {
   margin-top: 6rem;
   background: url(/static/core/img/img-portfolio-001.png) no-repeat;
-  background-size: 40%;
+  background-size: 45%;
   background-position: top right;
 }
 

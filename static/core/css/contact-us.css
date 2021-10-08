@@ -27,10 +27,9 @@
 }
 
 .subtitle {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 36px;
-  padding-top: 2.5rem;
 }
 
 .content-row {
@@ -47,6 +46,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 4px 50px -5px rgba(97, 97, 97, 0.5);
+  padding: 2.5rem 1rem;
 }
 
 .calendar iframe {
@@ -58,16 +58,17 @@
 
 @media (max-width: 768px) {
   .container-full {
-    background-image: url(/static/core/img/img-home-011.png);
-    background-position: top left;
-    background-size: 25%;
+    background-image: url(/static/core/img/img-portfolio-tentacle-left.png),
+      url(/static/core/img/img-home-010.png);
+    background-position: top left, bottom right;
+    background-size: 15%;
   }
 
   .title {
     background-image: none;
     font-size: 30px;
-    line-height: 48px;
-    padding: 3rem 0;
+    line-height: 40px;
+    padding: 2.5rem 0;
   }
 
   .section-title {
@@ -82,5 +83,14 @@
 
   .content-row {
     font-size: 18px;
+    margin: 0 0.5rem;
+  }
+
+  .calendar {
+    box-shadow: 0px 4px 21px -5px #6161613c;
+  }
+
+  .calendar iframe {
+    height: 400px;
   }
 }

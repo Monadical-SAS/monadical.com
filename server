@@ -21,6 +21,7 @@ CONFIG_FILE = 'content.json'
 TEAM_FILE = 'team.json'
 STACK_FILE = 'stacks.json'
 OPEN_POSITIONS = 'open-positions.json'
+PORTFOLIO = 'portfolio.json'
 HOST = 'http://127.0.0.1:5000'
 
 
@@ -88,6 +89,13 @@ def render_page(path):
 
     elif page['title'] == "Services":
         page['stacks'] = load_config(STACK_FILE)
+
+    elif page['title'] == "Portfolio":
+        portfolio = load_config(PORTFOLIO)
+        page['projects'] = portfolio['projects']
+        page['oss'] = portfolio['oss']
+        page['crypto'] = portfolio['crypto']
+        page['public'] = portfolio['public']
 
     elif page['title'] == "Principles":
         return render_post('principles-handbook.html')

@@ -1,0 +1,206 @@
+{
+  "projects": [
+    {
+      "id": "zohuddle",
+      "outline": "Rank-matching conference application",
+      "title": "ZoHuddle",
+      "subtitle": "Rank-matching conference application",
+      "description": "A video conferencing application, where participants create profiles and rank one another based on mutual interests. Implemented with Django in the backend, integrating the Twilio video conferencing API, and a React frontend. Websocket communication via django channels.",
+      "stack": "Full-stack web development, react, django, webrtc, websockets, devops",
+      "image_path": "/static/core/img/zohuddle-example.png",
+      "alt": "An example of ZoHuddle's video-conferencing feature, showcasing a man in business-casual attire giving a presentation to four attendees.",
+      "website": "https://zohuddle.com/app/"
+    },
+    {
+      "id": "solana",
+      "title": "Solana",
+      "outline": "High performance decentralized blockchain",
+      "subtitle": "The fastest blockchain in the world and the fastest growing ecosystem in crypto.",
+      "description": "Solana is a fast, secure, and censorship resistant blockchain providing the open infrastructure required for global adoption. Work includes frontend for Swap protocol, lending protocol, Wormhole bridge, and NFT marketplace (Metaplex)",
+      "stack": " ",
+      "image_path": "/static/core/img/solana-example.png",
+      "alt": "A screenshot Solana’s Wormhole UI — a token bridge between Ethereum and Solana.",
+      "website": "https://solana.com/"
+    },
+    {
+      "id": "currents-fm",
+      "title": "Currents.fm",
+      "outline": "Music streaming and royalty distribution platform",
+      "subtitle": "Music streaming and federated royalty distribution platform",
+      "description": "A novel music distribution platform placing the emphasis on playlist curation, seeking to disrupt the music industry with a federating monetization model in which users sponsor curators, who distribute funds among artists they choose.",
+      "stack": "NodeJS backend, React MobX (javascript) frontend, social media, payments, audio streaming",
+      "image_path": "/static/core/img/currents.png",
+      "alt": "A partial screenshot from currents.fm homepage focused on the title and subtitle, which read ‘Currents is a playlist platform that directly supports the music community. Get a personal space to publish music lists to fans and subscribers via web and email. Keep it free or accept tips from subscribers to directly support your work.’",
+      "website": "https://a.currents.fm/"
+    },
+    {
+      "id": "syncroplicity",
+      "title": "Syncroplicity",
+      "outline": "Medical data sync and BI platform",
+      "subtitle": "Medical data sync and BI platform",
+      "description": "An API-agnostic medical record syncing platform, designed to eliminate double entry by linking EHRs, doctors, authorization departments, insurance companies, etc.",
+      "stack": "Data engineering, data hygiene, Django (python) backend, React Redux(javascript) frontend, API integration, HIPAA compliant, security",
+      "image_path": "/static/core/img/img-cases-001.png",
+      "alt": "A screenshot showing a patient profile filled with test data being updated in Syncroplicity.",
+      "website": "https://syncroplicity.com/"
+    },
+    {
+      "id": "neurocaas",
+      "title": "NeuroCAAS",
+      "outline": "Data analysis platform for neuroscience",
+      "subtitle": "Drag-and-drop data analysis platform for neuroscience",
+      "description": "An open-source scientific tool that uses cloud resources to run powerful modern data analyses. NeuroCAAS packages these analyses into portable blueprints, which can then be deployed to analyze data on demand and automatically. Analyzing data with NeuroCAAS does not require any hardware purchases, installation, or dependency management.",
+      "stack": "Django, python, bash, devops",
+      "image_path": "/static/core/img/neuroCAAS-example.png",
+      "alt": "A diagram that outlines the user and NeuroCAAS workflows, and their interactions with one another. Having logged into the NeuroCAAS website, a user can select an algorithm, review or modify parameters, and choose or upload datasets. NeuroCAAS then loads the blueprints, allowing for on-demand deployment. NeuroCASS analyses the user-provided data sets in an immutable environment and allows for instant infrastructure scaling. The user is provided with live job status logging and automatic result delivery.",
+      "website": "http://neurocaas.com/"
+    },
+    {
+      "id": "oddslingers-poker",
+      "title": "OddSlingers Poker",
+      "outline": "Modern, performant in-browser online poker platform",
+      "subtitle": "Modern, performant in-browser online poker platform",
+      "description": "A modern take on the aging online poker platform, OddSlingers Poker offers new game variants and ad-free online games for desktop and mobile. OddSlingers leverages bleeding edge technology including a custom library that handles functional reactive front-end animations, an in-house system for time travel debugging and introspection, and MOVE-like architecture",
+      "stack": "MOVE architecture, event-stream architecture, time-travel debugging, pure-functional code, functional reactive animations, Django (python), backend, React (javascript) frontend, mobile, security",
+      "image_path": "/static/core/img/img-cases-002.png",
+      "alt": "A hand of poker being played on OddSlingers. There are 3 players, Nanonapoleon, Rom Jeremy, and DLL cool J. The flop shows king of diamonds, jack of hearts, three of spades. There is $24 in the pot. The dealer button is on Nanonapoleon. Rom Jeremy just checked, DLL cool J is next to act.",
+      "website": "https://oddslingers.com"
+    },
+    {
+      "id": "resero-analytics",
+      "title": "Resero Analytics",
+      "outline": "Toxicology study analysis and reporting platform",
+      "subtitle": "Toxicology study analysis and reporting platform",
+      "description": "A statistical colletion, analysis, and reporting toolkit for large-scale toxicology studies.",
+      "stack": "Data science, data engineering, Pandas, data hygiene, Django (python) backend",
+      "image_path": "/static/core/img/resero-example.png",
+      "alt": "A screenshot of the Resero Analytics homepage. The featured text reads ‘Resero increases the quality and speed of toxicology data interpretation and reporting. Unlock your data. Resero Analytics — data, analytics, reporting.’ The text is followed by a prominent Contact Us button",
+      "website": "https://reseroanalytics.com/"
+    },
+    {
+      "id": "nwb",
+      "title": "Neurodata Without Borders",
+      "outline": "Data standard for neurophysiology",
+      "subtitle": "Data standard for neurophysiology",
+      "description": "NWB provides neuroscientists with a common standard to share, archive, use, and build analysis tools for neurophysiology data. This project involved extending the Alyx database for primate-based neuroscience research.",
+      "stack": "Python, Jupyter Notebook, Apache Superset",
+      "image_path": "/static/core/img/buffalo_screenshot.png",
+      "alt": "A 3D visualization of the paths of an array of electrodes moving through the subject's brain towards the hippocampus",
+      "website": "https://www.nwb.org/"
+    }
+  ],
+  "oss": [
+    {
+      "id": "state-sync",
+      "outline": "Real-time state syncronization and animations",
+      "subtitle": "Real-time state syncronization and animations",
+      "examples": {
+        "redux-time": "https://github.com/Monadical-SAS/redux-time",
+        "inferno-redux-time": "https://github.com/Monadical-SAS/inferno-redux-time",
+        "warped-time": "https://github.com/Monadical-SAS/warped-time",
+        "netviz": "https://github.com/Monadical-SAS/netviz"
+      },
+      "image_path": "/static/core/img/redux-time-example2.png",
+      "alt": "A screenshot of a snippet of Redux Time’s documentation. The image representing the project shows the stages of a jump animation using a posed stick person on a height-over-time graph."
+    },
+    {
+      "id": "python-django",
+      "outline": "Django and Python packages",
+      "subtitle": "Django and Python packages released on PyPI",
+      "examples": {
+        "django-http2-middleware": "https://github.com/Monadical-SAS/django-http2-middleware",
+        "django-channels-router": "https://github.com/Monadical-SAS/django-channels-router",
+        "mesh-networking": "https://github.com/Monadical-SAS/mesh-networking",
+        "gzint": "https://github.com/Monadical-SAS/gzint"
+      },
+      "image_path": "/static/core/img/packages-example.png",
+      "alt": "The Python Package Index page for mesh-networking 0.06. The project description reads ‘This library helps you test large networks of nodes across physical and simulated links."
+    },
+    {
+      "id": "archiving",
+      "outline": "Archiving and digital preservation",
+      "subtitle": "Archiving and digital preservation",
+      "examples": {
+        "ArchiveBox": "https://archivebox.io/",
+        "wikipedia-mirror": "https://github.com/pirate/wikipedia-mirror"
+      },
+      "image_path": "/static/core/img/archive-box-example2.png",
+      "alt": "A screenshot of the ArchiveBox homepage. The featured text reads ‘ARCHIVEBOX — Open source, self-hosted web archiving. Takes URLs, browser history, bookmarks, Pocket, Pinboard, etc., saves HTML, JS, PDFs, media, and more.’"
+    },
+    {
+      "id": "mesh-networking",
+      "outline": "Mesh networking and security",
+      "subtitle": "Mesh networking and security",
+      "examples": {
+        "solana-dns": "https://monadical-sas.github.io/solana-dns/",
+        "wireguard-docs": "https://github.com/pirate/wireguard-docs",
+        "mesh-networking": "https://github.com/Monadical-SAS/mesh-networking",
+        "security-growler": "https://github.com/Monadical-SAS/security-growler"
+      },
+      "image_path": "/static/core/img/wire-guard-example.png",
+      "alt": "Screenshot of the unofficial WireGuard documentation header, which credits the contributors to the WireGuard project and introduces the document as an ‘unofficial attempt at providing more comprehensive documentation, API references, and examples’"
+    },
+    {
+      "id": "devops",
+      "outline": "Devops deployment templates and utilities",
+      "subtitle": "Devops deployment templates and utilities",
+      "examples": {
+        "zervice.elk": "https://github.com/Monadical-SAS/zervice.elk",
+        "fish-functions": "https://github.com/pirate/fish-utils",
+        "bash-utils": "https://github.com/pirate/bash-utils"
+      },
+      "image_path": "/static/core/img/zervice-example.png",
+      "alt": "Screenshot of the project documentation that highlights the ability to visualize and explore data, or manage and administer the elastic stack."
+    }
+  ],
+  "crypto": [
+    {
+      "title": "storycoin",
+      "image_path": "/static/core/img/img-portfolio-003.svg",
+      "link": "https://github.com/Monadical-SAS/storycoin"
+    },
+    {
+      "title": "crypto-trader",
+      "image_path": "/static/core/img/img-portfolio-004.svg",
+      "link": "https://github.com/Monadical-SAS/crypto-trader"
+    },
+    {
+      "title": "eth-sandbox",
+      "image_path": "/static/core/img/img-portfolio-005.svg",
+      "link": "https://github.com/cowpig/eth"
+    }
+  ],
+  "public": {
+    "talks": [
+      {
+        "title": "Archiving the internet before it rots away",
+        "link": "https://www.youtube.com/watch?v=LZ7TNQjG74g",
+        "image_path": "/static/core/img/img-portfolio-010.png",
+        "alt": "The cover of a talk titled 'Archiving the internet before it rots away' by Nick Sweeting, given at PyCon Columbia, 2020"
+      },
+      {
+        "title": "Concurrent banking systems",
+        "link": "https://www.youtube.com/watch?v=VJSznZMvA1M",
+        "image_path": "/static/core/img/img-portfolio-011.png",
+        "alt": "The cover of a talk titled 'How I learned to stop worrying and love Atomic() - Database Integrity Fundamentals in Django' by Nick Sweeting"
+      },
+      {
+        "title": "PyCon.CO 2020 coding challenge",
+        "link": "https://docs.monadical.com/s/pycon-puzzle",
+        "image_path": "/static/core/img/img-portfolio-009.png",
+        "alt": "A screenshot from Monadical's 2020 PyCon.co coding challenge. Problem 1 involves sending vehicles and passengers from Bogotá to Medellin in the most efficient way possible. Problem 2 involves decoding secret messages."
+      }
+    ],
+    "posts": {
+      "Drone Web Platform": "https://monadical.com/posts/drone-web-platform.html",
+      "The Myth of Trustlessness": "https://monadical.com/posts/Trustless-is-A-Myth.html",
+      "Feedback Game Theory": "https://monadical.com/posts/Downswings-and-the-Information-Game.html",
+      "Our Breach Response Guidelines": "https://monadical.com/posts/security-breach-response-guidelines.html",
+      "Full-Stack Engineering Checklist": "https://monadical.com/posts/full-stack-developer-checklist.html",
+      "Our Approach to DevOps": "https://monadical.com/posts/set-up-ci-workflow.html",
+      "All Systems are Human Systems": "https://monadical.com/posts/human-systems.html",
+      "Event-Driven Architecture": "https://monadical.com/posts/event-driven-architecture-1.html",
+      "And many more by our employees": "https://monadical.com/blog.html"
+    }
+  }
+}

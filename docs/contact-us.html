@@ -26,12 +26,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
     </script>
 
     
-    
+<link rel="stylesheet" href="/static/core/css/contact-us.css" />
+
 </head>
 
 <body>
@@ -90,78 +94,84 @@
     
     <article>
         
-    <div class="container-full">
-        <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
-        <div class="container">
-            <div class="row margin-bottom-150">
-                <div class="col-12 text-center margin-top-40">
-                    <h2 class="text-size-2">Contact Us</h2>
-                </div>
-                <div class="col-md-6 col-sm-12 margin-top-60">
-                    <h5 class="text-size-2">We are currently accepting new
-                        clients.</h5>
-                    <p class="subtext-size-2 margin-top-30">
-                        Please schedule a call to get started, or email us a
-                        quick summary of the work you're looking for,
-                        including
-                        scope, timeline, and estimated budget if known.<br/>
-                        <br/>
-                        If it's something we can help with, we'll provide a
-                        project
-                        timeline and budget to review together <b
-                            style="font-size: 1em">before</b> we start
-                        billing
-                        for any work.
-                    </p>
-                    <hr/>
-                    <h4>
-                        <a href="https://harmonizely.com/monadical"
-                           target="_blank" class="blue-text">
-                            Click the calendar to schedule a call
-                            &nbsp;<i class="fa fa-angle-double-right"></i>
-                        </a>
-                    </h4>
-                    <hr/>
-                    <h4 class="text-center my-4">
-                        <small>Or send us an email:</small>
-                        <br>
-                        <a href="mailto:hello@monadical.com"
-                           class="margin-top-30 d-inline-block">
+<div class="container-full">
+    <img class="cloud-img-left" src="/static/core/img/img-team-013.png" />
+    <div class="container">
+        <div class="title text-center">Contact Us</div>
+        <div class="row content-row"> 
+            <div class="col-12 col-md-6">
+                <div class="section-title">We are currently accepting new clients.</div>
+                <p class="margin-top-30">
+                    Please schedule a call to get started, or email us a quick summary of
+                    the work you're looking for, including scope, timeline, and estimated
+                    budget if known.
+                </p>
+                <p>
+                    If it's something we can help with, we'll provide a project timeline
+                    and budget to review together <b style="font-size: 1em">before</b> we
+                    start billing for any work.
+                </p>
+                
+                <!-- Social (medium+ screens) -->
+                <div class="text-center margin-top-30 d-none d-md-block">
+                    <hr />
+                    <div class="subtitle margin-top-30"> 
+                        Send us an email:<br />
+                        <a href="mailto:hello@monadical.com">
                             hello@monadical.com
-                        </a>
-                    </h4>
-                    <hr/>
-                    <h4 class="text-center my-4">
-                        <small>Or chat with us online:<br/>
-                        </small>
-                    </h4>
-                    <div class="row margin-bottom-50">
-                        <div class="col-12 text-center">
-                            <a href="https://twitter.com/MonadicalSAS"
-                               class="btn-circle btn-info btn-circle-raised">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            &nbsp;
-                            <a href="https://facebook.com/Monadical"
-                               class="btn-circle btn-info btn-circle-raised">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            &nbsp;
-                            <a href="https://linkedin.com/company/monadical"
-                               class="btn-circle btn-info btn-circle-raised">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </div>
+                        </a> 
                     </div>
-                </div>
-                <div class="col-md-6 col-sm-12 margin-top-60"
-                     id="calendly-contact-form">
-                    
-                    <iframe src="https://harmonizely.com/monadical" style="width:100%;height:800px;border:0px;margin-top:10px"></iframe>
-                </div>
+
+                    <small>or</small><br />
+
+                    <div class="subtitle">
+                        Chat with us online:<br />
+                        <a href="https://twitter.com/MonadicalSAS" class="btn-circle btn-info btn-circle-raised mt-2">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/Monadical" class="btn-circle btn-info btn-circle-raised mt-2">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/monadical" class="btn-circle btn-info btn-circle-raised mt-2">
+                            <i class="fa fa-linkedin"></i>
+                        </a> 
+                    </div>
+                </div>    
             </div>
+
+            <!-- Calendar-->
+            <div id="calendly-contact-form" class="col-12 col-md-5 offset-md-1 calendar">
+                <div class="subtitle text-center">Schedule a call with us.</div> 
+                <iframe src="https://harmonizely.com/monadical?view=compact"></iframe>
+            </div>
+
+            <!-- Social (mobile screens, positioned at the end) -->
+            <div class="col-12 text-center margin-top-30 margin-bottom-30 d-md-none">
+                <div class="subtitle margin-top-30"> 
+                    Send us an email:<br />
+                    <a href="mailto:hello@monadical.com">
+                        hello@monadical.com
+                    </a> 
+                </div>
+
+                <small>or</small><br />
+
+                <div class="subtitle">
+                    Chat with us online:<br />
+                    <a href="https://twitter.com/MonadicalSAS" class="btn-circle btn-info btn-circle-raised mt-2">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="https://facebook.com/Monadical" class="btn-circle btn-info btn-circle-raised mt-2">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/monadical" class="btn-circle btn-info btn-circle-raised mt-2">
+                        <i class="fa fa-linkedin"></i>
+                    </a> 
+                </div>
+            </div> 
         </div>
     </div>
+</div>
 
     </article>
     

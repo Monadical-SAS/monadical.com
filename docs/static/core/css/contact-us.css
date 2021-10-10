@@ -1,0 +1,96 @@
+.container-full {
+  background-image: url(/static/core/img/img-team-013.png),
+    url(/static/core/img/img-portfolio-swirly-right.png),
+    url(/static/core/img/img-portfolio-cube-left.png);
+
+  background-position: top left, bottom right, center left;
+  background-repeat: no-repeat;
+  background-size: 12%;
+}
+
+.title {
+  background-image: url(/static/core/img/img-contact-001.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 15rem;
+  color: #2b2b2b;
+  line-height: 80px;
+  font-size: 82px;
+  font-weight: 700;
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 62px;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.content-row {
+  margin-bottom: 5rem;
+  font-size: 20px;
+}
+
+.content-row p {
+  color: #818182;
+  margin-right: 1rem;
+}
+
+.calendar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 50px -5px rgba(97, 97, 97, 0.5);
+  padding: 2.5rem 1rem;
+}
+
+.calendar iframe {
+  border: none;
+  height: 550px;
+  padding: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container-full {
+    background-image: url(/static/core/img/img-portfolio-tentacle-left.png),
+      url(/static/core/img/img-home-010.png);
+    background-position: top left, bottom right;
+    background-size: 15%;
+  }
+
+  .title {
+    background-image: none;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 2.5rem 0;
+  }
+
+  .section-title {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .content-row {
+    font-size: 18px;
+    margin: 0 0.5rem;
+  }
+
+  .calendar {
+    box-shadow: 0px 4px 21px -5px #6161613c;
+  }
+
+  .calendar iframe {
+    height: 400px;
+  }
+}

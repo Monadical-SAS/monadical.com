@@ -1,98 +1,32 @@
+/* this gets rid of the bottom dots */
 .container-full {
   border-radius: 0px;
 }
 
-/* Background Images */
-.portfolio-full .octopus {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+/* Background */
+.portfolio-full {
+  background-image: url(/static/core/img/img-portfolio-cube-right.png),
+    url(/static/core/img/img-portfolio-tentacle-left.png),
+    url(/static/core/img/img-portfolio-tentacle-right.png),
+    url(/static/core/img/img-portfolio-cube-left.png),
+    url(/static/core/img/img-portfolio-cloud-right.png),
+    url(/static/core/img/img-portfolio-swirly-right.png),
+    url(/static/core/img/img-portfolio-cube-left.png);
 
-.portfolio-full .left {
-  position: absolute;
-  left: 0;
-}
-
-.portfolio-full .right {
-  position: absolute;
-  right: 0;
-}
-
-.portfolio-full .left.cube-1 {
-  top: 5%;
-}
-
-.portfolio-full .right.tentacle-1 {
-  top: 20%;
-}
-
-.portfolio-full .left.tentacle {
-  top: 44%;
-}
-
-.portfolio-full .right.cube {
-  top: 50%;
-}
-
-.portfolio-full .right.cloud {
-  top: 64%;
-  z-index: -1;
-}
-
-.portfolio-full .right.tentacle-2 {
-  top: 66%;
-}
-
-.portfolio-full .left.cube-2 {
-  top: 78%;
+  background-position: 100% 15%, 0 25%, 100% 40%, 0 60%, 100% 75%, 100% 73%, 0 90%;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
-  .portfolio-full .octopus {
-    height: 422px;
-    right: calc(50% - 150px);
-  }
-
-  .portfolio-full .left.cube-1 {
-    height: 268px;
-    top: 7%;
-  }
-
-  .portfolio-full .right.tentacle-1 {
-    height: 143px;
-    top: 22%;
-  }
-
-  .portfolio-full .left.tentacle {
-    height: 130px;
-    top: 41%;
-  }
-
-  .portfolio-full .right.cube {
-    height: 254px;
-    top: 48%;
-  }
-
-  .portfolio-full .right.cloud {
-    height: 650px;
-    top: 63%;
-  }
-
-  .portfolio-full .right.tentacle-2 {
-    height: 114px;
-    top: 60.5%;
-  }
-
-  .portfolio-full .left.cube-2 {
-    height: 228px;
-    top: 76%;
+  .portfolio-full {
+    background-position: 100% 13.5%, 0 30%, 100% 40%, 0 64%, 100% 73%, 100% 73%, 0 90%;
+    background-size: 20%;
   }
 }
 
 /* General  */
 .portfolio-container {
-  margin-bottom: 150px;
+  margin-bottom: 10rem;
 }
 
 .portfolio-container .title {
@@ -100,7 +34,7 @@
   line-height: 80px;
   font-size: 82px;
   font-weight: 700;
-  margin-bottom: 76px;
+  margin-bottom: 4rem;
   text-align: left;
 }
 
@@ -108,7 +42,7 @@
   font-size: 48px;
   font-weight: 400;
   line-height: 62px;
-  margin-bottom: 54px;
+  margin: 3rem 0;
   text-align: center;
 }
 
@@ -116,7 +50,7 @@
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
-  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 .portfolio-container a {
@@ -125,31 +59,37 @@
   text-underline-offset: 20%;
 }
 
+.portfolio-container .btn-info-inverse {
+  line-height: 1.25rem;
+  text-transform: uppercase;
+}
+
 .portfolio-container .image-row {
   justify-content: space-between;
 }
 
 @media (max-width: 768px) {
   .portfolio-container {
-    margin-bottom: 75px;
+    margin-bottom: 4rem;
   }
 
   .portfolio-container .title {
     font-size: 30px;
     line-height: 45px;
-    margin-bottom: 315px;
+    margin-bottom: 16rem;
     text-align: center;
   }
 
   .portfolio-container .section-title {
     font-size: 22px;
     line-height: 33px;
-    margin-bottom: 30px;
+    margin: 2rem 0;
   }
 
   .portfolio-container .subtitle {
     font-size: 18px;
     line-height: 22px;
+    margin-bottom: 1rem;
   }
 
   .portfolio-container .carousel-inner {
@@ -159,72 +99,64 @@
   .portfolio-container .carousel-item img {
     border-radius: 10px;
     object-fit: cover;
-    object-position: top center;
     height: 300px;
-    box-shadow: 0px 4px 30px -5px #61616166;
-  }
-
-  .portfolio-container .carousel-indicators {
-    bottom: -40px;
   }
 
   .portfolio-container .carousel-indicators li {
     background: rgba(129, 129, 130);
-    height: 6px;
-    width: 6px;
+    height: 0.5rem;
+    width: 0.5rem;
   }
 
   .portfolio-container .carousel-indicators .active {
     background: #0086b4;
   }
-
-  .portfolio-container .carousel-control {
-    top: 50%;
-    margin: 0 11px;
-    background: #818182;
-    border-radius: 12px;
-    height: 24px;
-    width: 24px;
-  }
-
-  .portfolio-container .carousel-control-prev-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 2px;
-  }
-
-  .portfolio-container .carousel-control-next-icon {
-    width: 16px;
-    height: 16px;
-    margin-left: 2px;
-  }
 }
 
 /* Table of Contents */
 #table-of-contents {
-  margin-top: 90px;
+  margin-top: 6rem;
+  background: url(/static/core/img/img-portfolio-001.png) no-repeat;
+  background-size: 45%;
+  background-position: top right;
 }
 
 #table-of-contents li {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  list-style: square outside;
 }
 
-#table-of-contents .outer-list {
+#table-of-contents .collapse-trigger .fa-caret-down {
+  margin-left: 0.5rem;
+  transition: all 0.5s;
+  transform-origin: center;
+}
+
+#table-of-contents .collapse-trigger.active .fa-caret-down {
+  transform: rotate(180deg);
+}
+
+#table-of-contents .collapse-trigger,
+#table-of-contents a {
+  border: none;
+  color: #2b2b2b;
+  cursor: pointer;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  list-style: none;
-  margin-top: 76px;
+  padding: 0;
+  text-decoration: none;
 }
 
-#table-of-contents .outer-list li::before {
-  content: "\25AA";
+#table-of-contents .outer-list {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#table-of-contents .outer-list li::marker {
   color: #0086b4;
-  font-weight: bold;
-  display: inline-block;
-  width: 1.5rem;
-  margin-left: -1.5rem;
-  padding-bottom: 10px;
 }
 
 #table-of-contents .inner-list {
@@ -232,40 +164,51 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
-  list-style: none;
-  margin-left: -1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
-#table-of-contents .inner-list li::before {
-  content: "\25AA";
+#table-of-contents .inner-list li::marker {
   color: #818182;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0;
-  width: 1.5rem;
+  font-size: 20px;
 }
 
-#table-of-contents .octopus {
-  position: relative;
-  top: -150px;
-  width: 595px;
-  z-index: -1;
+#table-of-contents .inner-list a {
+  color: #818182;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 #table-of-contents .scroll-down {
-  margin-top: 30px;
+  padding: 8rem 0;
   text-decoration: none;
+}
+
+#table-of-contents .scroll-down span,
+#table-of-contents .scroll-down i {
+  line-height: 1.5rem;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 @media (max-width: 768px) {
   #table-of-contents {
-    margin-top: 20px;
+    background-position: top center;
+    background-size: 50%;
+    margin-top: 1.5rem;
   }
 
   #table-of-contents .outer-list {
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -5rem;
+    padding: 1rem;
+  }
+
+  #table-of-contents .outer-list li::marker,
+  #table-of-contents .collapse-trigger,
+  #table-of-contents a {
     font-size: 18px;
-    line-height: 27px;
-    margin-top: -100px;
   }
 
   #table-of-contents .inner-list {
@@ -273,556 +216,63 @@
     line-height: 24px;
   }
 
-  #table-of-contents .octopus {
-    top: -50px;
-    width: 300px;
-  }
-}
-
-/* Projects & Open Source */
-#monadical-projects .project-row {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 100px;
-}
-
-#monadical-projects .img-wrapper {
-  align-items: center;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  min-height: 645px;
-  justify-content: center;
-}
-
-#monadical-projects .project-img {
-  border-radius: 10px;
-  box-shadow: 0px 4px 50px -5px #61616166;
-  width: 100%;
-  margin: 10px 30px;
-  max-width: 585px;
-}
-
-#monadical-projects .project-text {
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-}
-
-#monadical-projects .project-title {
-  color: #0086b4;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 48px;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-#monadical-projects .subtitle {
-  margin-bottom: 20px;
-}
-
-#monadical-projects .project-stack {
-  color: #818182;
-  font-size: 16px;
-  margin-bottom: 32px;
-  text-align: left;
-}
-
-#monadical-projects p {
-  line-height: 30px;
-  margin-bottom: 16px;
-  text-align: left;
-}
-
-#monadical-projects a {
-  font-weight: 500;
-  margin-bottom: 16px;
-  text-align: left;
-}
-
-#monadical-projects .thumb-wrapper {
-  background-color: #f9f9f9;
-  border-radius: 0 20px;
-  position: relative;
-  left: -30px;
-  top: 100px;
-  z-index: 2;
-}
-
-#monadical-projects .thumb-wrapper img {
-  border-radius: 10px;
-  margin: 17px;
-  width: 266px;
-}
-
-@media (max-width: 768px) {
-  #monadical-projects .project-row {
+  #table-of-contents .inner-list li::marker {
     font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 50px;
   }
 
-  #monadical-projects .img-wrapper {
-    justify-content: center;
-    margin-bottom: 20px;
-    min-height: 345px;
+  #table-of-contents .scroll-down {
+    padding: 2.5rem 0;
   }
 
-  #monadical-projects .project-img {
-    max-width: 313px;
-    margin: 0 16px;
-  }
-
-  #monadical-projects .project-title {
-    font-size: 22px;
-    line-height: 26px;
-    margin-bottom: 20px;
-  }
-
-  #monadical-projects .subtitle {
-    margin-bottom: 16px;
-  }
-
-  #monadical-projects .project-stack {
-    font-size: 14px;
-    line-height: 21px;
-    margin-bottom: 20px;
-  }
-
-  #monadical-projects a {
-    margin-bottom: 16px;
-  }
-
-  .monadical-projects .thumb-wrapper {
-    left: 0;
-    top: -10px;
-  }
-
-  .monadical-projects .thumb-wrapper img {
-    border-radius: 10px;
-    margin: 7px;
-    width: 106px;
-  }
-}
-
-/* Crypto */
-#crypto {
-  font-size: 20px;
-}
-
-#crypto .card {
-  min-height: 215px;
-  background-color: #0086b4;
-  box-shadow: 0px 4px 21px -5px #6161613c;
-}
-
-#crypto .image-row {
-  margin-bottom: 60px;
-}
-
-#crypto .card-img-top {
-  background: url("/static/core/img/img-portfolio-002.png") no-repeat;
-  background-color: #2b2b2b;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-#crypto .card-img-top img {
-  height: 80px;
-  margin: 46px 0;
-}
-
-#crypto .card-link {
-  text-align: center;
-  margin: 10px 0;
-}
-
-#crypto .card-link a {
-  color: white;
-  font-size: 18px;
-}
-
-#crypto .more {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#crypto .amp {
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 30px;
-  margin: 20px 40px;
-  text-align: center;
-}
-
-#crypto .logo-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#crypto .logo-wrapper .github-logo {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-}
-
-#crypto .logo-wrapper .monadical-logo {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  background-color: white;
-}
-
-#crypto .logo-wrapper .monadical-logo img {
-  height: 30px;
-  width: 30px;
-  margin: 15px;
-}
-
-#crypto .logo-wrapper a {
-  margin: 10px 0;
-}
-
-@media (max-width: 768px) {
-  #crypto {
-    font-size: 18px;
-  }
-
-  #crypto .card {
-    min-height: 154px;
-  }
-
-  #crypto .image-row {
-    margin-bottom: 30px;
-  }
-
-  #crypto .card-img-top img {
-    height: 56px;
-    margin: 30px 0;
-  }
-
-  #crypto .card-link a {
-    font-size: 14px;
-  }
-
-  #crypto .more {
-    margin-bottom: 18px;
-  }
-
-  #crypto .amp {
-    font-size: 24px;
-    margin: 15px 35px;
-  }
-
-  #crypto .logo-wrapper .github-logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-  }
-
-  #crypto .logo-wrapper .monadical-logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: white;
-  }
-
-  #crypto .logo-wrapper .monadical-logo img {
-    height: 25px;
-    width: 25px;
-    margin: 12.5px;
-  }
-}
-
-/* Team Principles */
-#team-principles {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-  text-align: left;
-}
-
-#team-principles .subtitle {
-  margin-bottom: 20px;
-}
-
-#team-principles .content-row li {
-  font-weight: 500;
-  list-style: none;
-  padding-bottom: 16px;
-}
-
-#team-principles li::before {
-  content: "\25AA";
-  color: #0086b4;
-  font-weight: bold;
-  display: inline-block;
-  width: 1.5rem;
-  margin-left: -2.5rem;
-}
-
-#team-principles .content-row,
-#team-principles .link-row {
-  margin-bottom: 54px;
-}
-
-#team-principles .link-row .subtitle {
-  margin-bottom: 30px;
-}
-
-#team-principles .blog-capsule {
-  margin-bottom: 32px;
-}
-
-#team-principles .blog-capsule a {
-  background: #fdfdfd;
-  box-shadow: 0px 4px 21px -5px rgba(97, 97, 97, 0.233752);
-  border-radius: 100px;
-  display: inline-block;
-  padding: 12px 24px;
-  text-align: center;
-}
-
-#team-principles .image-row img {
-  border-radius: 10px;
-  box-shadow: 0px 4px 50px -5px rgba(97, 97, 97, 0.5);
-  height: 261px;
-  object-fit: cover;
-  object-position: top center;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  #team-principles {
+  #table-of-contents .scroll-down span,
+  #table-of-contents .scroll-down i {
+    line-height: 0.75rem;
     font-size: 16px;
-    line-height: 24px;
-  }
-
-  #team-principles .content-row,
-  #team-principles .link-row {
-    margin-bottom: 30px;
-  }
-
-  #team-principles .subtitle {
-    margin: 20px 0 16px;
-  }
-
-  #team-principles .content-row li {
-    padding-bottom: 10px;
-  }
-
-  #team-principles .content-row {
-    margin-bottom: 30px;
-  }
-
-  #team-principles .link-row #team-principles .link-row .subtitle {
-    margin-bottom: 20px;
-  }
-
-  #team-principles .blog-capsule {
-    margin-bottom: 20px;
-  }
-
-  #team-principles .blog-capsule a {
-    display: flex;
-    justify-content: center;
-    padding: 12px 0;
-    width: 100%;
-  }
-}
-
-/* Writing & Talks */
-#writing-and-talks {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-}
-
-#writing-and-talks .subtitle {
-  margin-bottom: 30px;
-}
-
-#writing-and-talks .img-wrapper {
-  border-radius: 20px 5px;
-  box-shadow: 0px 4px 20px 0px #61616133;
-  display: flex;
-  flex-direction: column;
-  height: 165px;
-  justify-content: center;
-  align-items: center;
-}
-
-#writing-and-talks .img-wrapper img {
-  border-radius: 10px;
-  width: 80%;
-}
-
-#writing-and-talks .image-row {
-  margin-bottom: 80px;
-}
-
-#writing-and-talks .image-description {
-  color: #0086b4;
-  margin-top: 10px;
-  max-width: 200px;
-  overflow: hidden;
-  text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-#writing-and-talks .card {
-  align-items: center;
-  background-image: url(/static/core/img/img-sales-002.png);
-  background-position: top right;
-  border: none;
-  box-shadow: 0px 4px 21px -5px #6161613c;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 370px;
-  margin-bottom: 20px;
-}
-
-#writing-and-talks .card a {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 15px;
-  margin-top: 21px;
-  text-decoration: none;
-}
-
-#writing-and-talks .card hr {
-  border: 0;
-  clear: both;
-  display: block;
-  width: 100%;
-  background-color: white;
-  height: 1px;
-}
-
-#writing-and-talks .card img {
-  width: 80%;
-}
-
-#writing-and-talks .card-title {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 19px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  #writing-and-talks {
-    line-height: 19px;
-  }
-
-  #writing-and-talks .subtitle {
-    margin-bottom: 20px;
-  }
-
-  #writing-and-talks .slide-description {
-    color: #0086b4;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-    max-width: none;
-  }
-
-  #writing-and-talks #talks-carousel {
-    margin-bottom: 80px;
-  }
-
-  #writing-and-talks .card {
-    height: fit-content;
-    margin-bottom: 15px;
-  }
-
-  #writing-and-talks .card hr {
-    border: 0;
-    clear: both;
-    display: block;
-    width: 100%;
-    background-color: white;
-    height: 1px;
-  }
-
-  #writing-and-talks .card img {
-    width: 80%;
-  }
-
-  #writing-and-talks .card-title {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19px;
-    text-align: center;
-  }
-
-  #writing-and-talks button {
-    margin-bottom: 40px;
   }
 }
 
 /* Why Hire Us */
-#why-hire-us {
+#why-hire-monadical {
   background: url(/static/core/img/img-portfolio-multitask-left.png) no-repeat;
+  background-size: 25%;
+  background-position: top left;
 }
 
-#why-hire-us .section-title {
-  margin-bottom: 112px;
+#why-hire-monadical .contrast-wrapper {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 1rem;
 }
 
-#why-hire-us .subtitle {
-  margin-bottom: 20px;
-}
-
-#why-hire-us .subtitle a {
+#why-hire-monadical .subtitle a {
   text-decoration: none;
 }
 
-#why-hire-us li {
+#why-hire-monadical li {
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
-  list-style: none;
+  list-style: square outside;
   padding-bottom: 20px;
 }
 
-#why-hire-us li::before {
-  content: "\25AA";
-  font-weight: bold;
-  display: inline-block;
-  width: 1.5rem;
-  margin-left: -2.5rem;
+#why-hire-monadical li::marker {
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
-  #why-hire-us {
-    background-size: 352px 232px;
-    background-position-y: 30px;
-  }
-
-  #why-hire-us .content-row {
+  #why-hire-monadical .content-row {
     margin: 0 16px;
   }
 
-  #why-hire-us .section-title {
-    margin-bottom: 232px;
-  }
-
-  #why-hire-us .subtitle {
-    margin-bottom: 16px;
-  }
-
-  #why-hire-us li {
+  #why-hire-monadical li {
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 10px;
+  }
+
+  #why-hire-monadical li::marker {
+    font-size: 16px;
   }
 }
 
@@ -875,17 +325,357 @@
     height: 500px;
   }
 
+  #our-specialties .carousel-indicators {
+    bottom: unset;
+    top: 22.5rem;
+  }
+
   #our-specialties img {
-    margin: 14px 0 18px;
+    width: 100%;
+    margin: 1rem 0;
   }
 
   #our-specialties .image-description {
+    margin-top: 1.5rem;
     font-size: 14px;
   }
 
   #our-specialties .emphasis {
     color: #2b2b2b;
     font-weight: 700;
+  }
+}
+
+/* Team Principles */
+#team-principles {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+}
+
+#team-principles .content-row li {
+  font-weight: 500;
+  list-style: none;
+  padding-bottom: 16px;
+}
+
+#team-principles li::before {
+  content: "\25AA";
+  color: #0086b4;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.5rem;
+  margin-left: -2.5rem;
+}
+
+#team-principles .content-row,
+#team-principles .link-row {
+  margin-bottom: 54px;
+}
+
+#team-principles .image-row img {
+  border-radius: 10px;
+  box-shadow: 0px 4px 50px -5px rgba(97, 97, 97, 0.5);
+  height: 261px;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #team-principles {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  #team-principles .content-row,
+  #team-principles .link-row {
+    margin-bottom: 30px;
+  }
+
+  #team-principles .subtitle {
+    margin: 20px 0 16px;
+  }
+
+  #team-principles .content-row li {
+    padding-bottom: 10px;
+  }
+
+  #team-principles .content-row {
+    margin-bottom: 30px;
+  }
+
+  #team-principles .blog-capsule {
+    margin-bottom: 20px;
+  }
+
+  #team-principles .blog-capsule a {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    width: 100%;
+  }
+}
+
+/* Projects & Open Source */
+#monadical-projects .project-row {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 3rem;
+}
+
+#monadical-projects .img-wrapper {
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 645px;
+  justify-content: center;
+}
+
+#monadical-projects .project-img {
+  border-radius: 10px;
+  box-shadow: 0px 4px 50px -5px #61616166;
+  width: 100%;
+  margin: 2rem;
+  max-width: 585px;
+}
+
+#monadical-projects .project-text {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#monadical-projects .project-title {
+  color: #0086b4;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+#monadical-projects .subtitle {
+  margin: 0 0 1.5rem;
+}
+
+#monadical-projects .project-stack {
+  color: #818182;
+  font-size: 16px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+#monadical-projects p {
+  line-height: 30px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+#monadical-projects a {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+#monadical-projects li {
+  font-size: 18px;
+  line-height: 22px;
+  list-style: square outside;
+  padding-bottom: 1rem;
+}
+
+#monadical-projects li::marker {
+  color: #0086b4;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  #monadical-projects .project-row {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 2rem;
+  }
+
+  #monadical-projects .img-wrapper {
+    justify-content: center;
+    margin-bottom: 20px;
+    min-height: 345px;
+  }
+
+  #monadical-projects .project-img {
+    max-width: 313px;
+    margin: 0 16px;
+  }
+
+  #monadical-projects .project-title {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+
+  #monadical-projects .subtitle {
+    margin-bottom: 0 0 1rem;
+  }
+
+  #monadical-projects .project-stack {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 20px;
+  }
+
+  #monadical-projects a {
+    margin-bottom: 16px;
+  }
+
+  #monadical-projects li,
+  #monadical-projects li::marker {
+    font-size: 16px;
+  }
+}
+
+/* Crypto */
+#crypto {
+  font-size: 20px;
+}
+
+#crypto .card {
+  min-height: 215px;
+  background-color: #0086b4;
+  box-shadow: 0px 4px 21px -5px #6161613c;
+}
+
+#crypto .image-row {
+  margin-bottom: 60px;
+}
+
+#crypto .card-img-top {
+  background: url("/static/core/img/img-portfolio-002.png") no-repeat;
+  background-color: #2b2b2b;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+#crypto .card-img-top img {
+  height: 80px;
+  margin: 46px 0;
+}
+
+#crypto .card-link {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#crypto .card-link a {
+  color: white;
+  font-size: 18px;
+}
+
+#crypto .more {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  #crypto {
+    font-size: 18px;
+  }
+
+  #crypto .card {
+    min-height: 154px;
+  }
+
+  #crypto .image-row {
+    margin-bottom: 30px;
+  }
+
+  #crypto .card-img-top img {
+    height: 56px;
+    margin: 30px 0;
+  }
+
+  #crypto .card-link a {
+    font-size: 14px;
+  }
+
+  #crypto .more {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Writing & Talks */
+#writing-and-talks {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+#writing-and-talks .img-wrapper img {
+  border-radius: 10px;
+  width: 80%;
+}
+
+#writing-and-talks .image-row {
+  margin-bottom: 5rem;
+  align-items: center;
+}
+
+#writing-and-talks .card {
+  align-items: center;
+  border: none;
+  box-shadow: 0px 4px 21px -5px #6161613c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#writing-and-talks .card img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+#writing-and-talks .card-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#writing-and-talks .blog-capsule {
+  background: #fdfdfd;
+  box-shadow: 0px 4px 21px -5px rgba(97, 97, 97, 0.233752);
+  border-radius: 4rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #writing-and-talks {
+    line-height: 19px;
+    text-align: center;
+  }
+
+  #writing-and-talks #talks-carousel {
+    margin-bottom: 5rem;
+  }
+
+  #writing-and-talks .carousel-indicators {
+    bottom: unset;
+    top: 23rem;
+  }
+
+  #writing-and-talks .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    text-align: center;
   }
 }
 
@@ -909,12 +699,12 @@
 
 .questions .questions-content .section-title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .questions .questions-content button {
-  padding: 8px 40px;
-  margin-bottom: 70px;
+  padding: 0.5rem 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .questions .questions-content .social {
@@ -938,10 +728,10 @@
   .questions .questions-content .section-title {
     font-size: 18px;
     line-height: 27px;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 
   .questions .questions-content button {
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
   }
 }

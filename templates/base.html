@@ -56,17 +56,21 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav navbar-left">
-                        {% for link in HeaderLinks %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    <a class="beta-btn nav-link" href="{{PAGES.contact.url}}">
-                        GET A TECHNICAL ASSESSMENT
-                    </a>
+                    <div class="navbar-content-container">
+                        <ul class="navbar-nav navbar-left">
+                            {% for link in HeaderLinks %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                        <a class="beta-btn nav-link button-navbar" href="{{PAGES.contact.url}}">
+                            GET A TECHNICAL ASSESSMENT
+                        </a>
+                    </div>
                 </div>
             </nav>
         </div>

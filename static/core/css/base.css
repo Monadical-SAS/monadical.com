@@ -265,13 +265,52 @@ a:hover{
     transition: all 0.3s ease 0s;
 }
 
-.btn-circle.btn-info:hover{
+.btn-circle.btn-info:hover {
     color: #FFF;
     background: #0086b4;
     border: 1px solid #0086b4;
 }
 
 /* end button styles */
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-navbar {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 32px;
+    max-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .navbar-content-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button-navbar {
+        max-width: 100%;
+        margin: 10px 20px;
+    }
+}
+
+/* End Navbar */
 
 .second-section {
     margin-top: 200px;

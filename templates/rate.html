@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block subtitle %}Pricing{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="{{description}}"/>
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="{{title}}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://{{SITE_DOMAIN}}{{img}}"/>
+<meta property="og:url" content="https://{{SITE_DOMAIN}}{{url}}"/>
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="{{description}}"/>
+<meta property="og:site_name" content="{{SITE_TITLE}}"/>
+<meta property="og:locale" content="en_US"/>
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="https://{{SITE_DOMAIN}}{{img}}">
+{% endblock %}
+
+{% block article %}
+<style>
+    h1 {
+        font-family: 'Fjalla One', sans-serif !important;
+    }
+
+    .article-content {
+        border: 0px;
+    }
+
+    .fa-pencil {
+        opacity: 0.01;
+    }
+
+    footer .social-links {
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    footer .social-links a {
+        color: #333;
+        opacity: 0.7;
+    }
+
+    footer .social-links a:hover {
+        color: #333;
+        opacity: 0.9;
+    }
+
+    .rate-footer h4 {
+        font-size: 18px;
+    }
+
+    body > main > h1 > em {
+        opacity: 0;
+    }
+
+    #ui-toc-affix {
+        display: block;
+        position: fixed;
+        top: 175px;
+        user-select: initial;
+        max-width: 20vw;
+        margin-left: 15px;
+        transition: opacity 400ms ease;
+    }
+
+    .back-to-top-container {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<div id="rate-content">
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col">
+                {% block rate %}
+                <article class="article-content">
+                    {{ include_raw(template) }}
+                </article>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top-container">
+        <a href="#rate-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+            Back to top <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <script>
+        // hide the table of contents nav when you scroll down past the end
+        $(window).scroll(function () {
+            const pos = $(window).scrollTop()
+            const threshold = $('.back-to-top-container').position().top - 500
+            $('#ui-toc-affix').css({
+                opacity: (pos > threshold) ? 0 : 1
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+            document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#rate-footer'
+            document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+            document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#rate-content'
+
+            // GET the original article source so they get they bump the view counter
+            fetch('{{source}}', {mode: 'no-cors'})
+
+            // remove undesired css that break styles
+            setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+        })
+
+        $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+    </script>
+</div>
+{% endblock %}

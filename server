@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 
-import os
-import sys
 import json
+import os
 import subprocess
-from threading import Thread
+import sys
 from datetime import datetime
-
-from jinja2 import Markup
-from flask import Flask, render_template, redirect, make_response
 
 # Library to implement rss
 from feedgen.feed import FeedGenerator
-
+from flask import Flask, render_template, redirect, make_response
+from markupsafe import Markup
 
 ### Config
 app = Flask(__name__)
@@ -47,6 +44,7 @@ CONFIG = load_config(CONFIG_FILE)
 PAGES = {page['url']: page for page in list(CONFIG['PAGES'].values())}  # {url: {page_data}}
 POSTS = {post['url']: post for post in list(CONFIG['POSTS'].values())}  # {url: {post_data}}
 CASES = {case['url']: case for case in list(CONFIG['CASES'].values())}  # {url: {post_data}}
+RATES = {rate['url']: rate for rate in list(CONFIG['RATES'].values())}  # {url: {post_data}}
 
 
 ### Routes
@@ -104,11 +102,26 @@ def render_page(path):
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 
 
+@app.route('/pricing-model')
+def render_pricing_model():
+    rate = RATES['pricing-model']
+    download_post(rate)
+    return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
+
+
+@app.route('/pricing-model-reduced')
+def render_pricing_model_reduced():
+    rate = RATES['pricing-model-reduced']
+    download_post(rate)
+    return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
+
+
 @app.route('/posts/<path>')
 def render_post(path):
     post = POSTS[f'/posts/{path}']
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
+
 
 # Add feed rss
 @app.route("/posts/feed.xml")

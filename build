@@ -47,6 +47,11 @@ echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs/posts; wget -q $(<../posts.txt))
 
 echo ""
+echo "${blue}[+] Saving pricing pages as static HTML to output/...$normal"
+(cd docs/; wget -q http://127.0.0.1:5000/pricing-model.html)
+(cd docs/; wget -q http://127.0.0.1:5000/pricing-model-reduced.html)
+
+echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"
 (cd docs/posts/; wget -q http://127.0.0.1:5000/posts/feed.xml)
 

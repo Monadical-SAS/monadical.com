@@ -32,7 +32,6 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
-mkdir docs/rates
 
 
 cp -r static docs/static
@@ -47,7 +46,7 @@ echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; wget -q $(<pages.txt))
 (cd docs/posts; wget -q $(<../posts.txt))
-(cd docs/rates; wget -q $(<../rates.txt))
+(cd docs; wget -q $(<rates.txt))
 
 echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"

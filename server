@@ -107,20 +107,7 @@ def render_pricing_model(path):
     rate = RATES[f'/rates/{path}']
     download_post(rate)
     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
-
-# @app.route('/pricing-model.html')
-# def render_pricing_model():
-#     rate = RATES['/pricing-model.html']
-#     download_post(rate)
-#     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
-
-
-# @app.route('/pricing-model-reduced.html')
-# def render_pricing_model_reduced():
-#     rate = RATES['/pricing-model-reduced.html']
-#     download_post(rate)
-#     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
-
+    
 
 @app.route('/posts/<path>')
 def render_post(path):

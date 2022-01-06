@@ -32,6 +32,7 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
+mkdir docs/rates
 
 
 cp -r static docs/static
@@ -40,16 +41,13 @@ cp static/favicon.ico docs/favicon.ico
 cp static/robots.txt docs/robots.txt
 ./server --pages > docs/pages.txt
 ./server --posts > docs/posts.txt
+./server --rates > docs/rates.txt
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; wget -q $(<pages.txt))
 (cd docs/posts; wget -q $(<../posts.txt))
-
-echo ""
-echo "${blue}[+] Saving pricing pages as static HTML to output/...$normal"
-(cd docs/; wget -q http://127.0.0.1:5000/pricing-model.html)
-(cd docs/; wget -q http://127.0.0.1:5000/pricing-model-reduced.html)
+(cd docs/rates; wget -q $(<../rates.txt))
 
 echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"

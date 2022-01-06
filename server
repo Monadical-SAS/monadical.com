@@ -102,18 +102,24 @@ def render_page(path):
     return render_template(page['template'], now=datetime.now(), **CONFIG, **page)
 
 
-@app.route('/pricing-model.html')
-def render_pricing_model():
-    rate = RATES['/pricing-model.html']
+@app.route('/rates/<path>')
+def render_pricing_model(path):
+    rate = RATES[f'/rates/{path}']
     download_post(rate)
     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
 
+# @app.route('/pricing-model.html')
+# def render_pricing_model():
+#     rate = RATES['/pricing-model.html']
+#     download_post(rate)
+#     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
 
-@app.route('/pricing-model-reduced.html')
-def render_pricing_model_reduced():
-    rate = RATES['/pricing-model-reduced.html']
-    download_post(rate)
-    return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
+
+# @app.route('/pricing-model-reduced.html')
+# def render_pricing_model_reduced():
+#     rate = RATES['/pricing-model-reduced.html']
+#     download_post(rate)
+#     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
 
 
 @app.route('/posts/<path>')
@@ -158,6 +164,9 @@ if __name__ == '__main__':
     elif len(sys.argv) > 1 and sys.argv[1] == '--posts':
         # just print list of post urls
         print('\n'.join(HOST + url for url in POSTS.keys()))
+    elif len(sys.argv) > 1 and sys.argv[1] == '--rates':
+        # just print list of post urls
+        print('\n'.join(HOST + url for url in RATES.keys()))
     else:
         # run the flask http server
         app.run()

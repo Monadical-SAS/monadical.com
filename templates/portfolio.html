@@ -84,7 +84,7 @@
           <li>We bring extensive strategic and technical architecture expertise.</li>
           <li>We’re a full-stack team with batteries included: ops, hosting, email servers, you name it.</li>
           <li>We care about the details, we build solid products both inside and out.</li>
-          <li>We can scale your team on a moments notice.</li>
+          <li>We can scale your team on a moment's notice.</li>
         </ul>
         <div class="text-center">
           <a href="https://monadical.com/contact-us.html">
@@ -322,6 +322,7 @@
             <button class="btn btn-info-inverse">Learn more</button>
           </a>
         </div>
+        {% if project.id != 'neurocaas' %}
         <div class="img-wrapper col-12 col-md-7">
           <img
             src="{{ project.image_path }}"
@@ -329,6 +330,15 @@
             alt="{{ project.alt }}"
           />
         </div>
+        {% else %}
+        <div class="img-wrapper img-wrapper-scaled  col-12 col-md-7">
+          <img
+            src="{{ project.image_path }}"
+            class="project-img project-img-scaled"
+            alt="{{ project.alt }}"
+          />
+        </div>
+        {% endif %}
       </div>
       {% endif %}    
     {% endfor %}

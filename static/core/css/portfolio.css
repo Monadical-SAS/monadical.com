@@ -249,15 +249,15 @@
 }
 
 #why-hire-monadical li {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 32px;
   list-style: square outside;
   padding-bottom: 20px;
 }
 
 #why-hire-monadical li::marker {
-  font-size: 22px;
+  font-size: 25px;
 }
 
 @media (max-width: 768px) {
@@ -442,6 +442,14 @@
   width: 100%;
   margin: 2rem;
   max-width: 585px;
+}
+
+#monadical-projects .img-wrapper-scaled {
+  transform: scaleY(0.75)
+}
+
+#monadical-projects .project-img-scaled {
+  transform: scaleX(0.75);
 }
 
 #monadical-projects .project-text {

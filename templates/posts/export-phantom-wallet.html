@@ -3,14 +3,32 @@
 
 <head>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="The best platform to write and share markdown.">
-<meta name="keywords" content="Collaborative, Markdown, Notes">
-<link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="Whether you’re looking to backup your wallet or or deliver NFTs, importing your wallet is a great trick to have up your sleeve.">
+    
+    
+    
+    <meta property="og:title" content="How to import your Phantom or Sollet Wallet to use with the Solana CLI - HedgeDoc">
+    
+    
+    <meta property="og:description" content="Whether you’re looking to backup your wallet or or deliver NFTs, importing your wallet is a great trick to have up your sleeve.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>How to import your Phantom or Sollet Wallet to use with the Solana CLI - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
 <link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
@@ -22,255 +40,172 @@
 <meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
 <meta name="theme-color" content="#b51f08">
 
-<meta property="og:title" content="HedgeDoc - Collaborative markdown notes">
-<meta property="og:description" content="The best platform to write and share markdown.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://docs.monadical.com">
-<meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-<meta property="og:image:alt" content="HedgeDoc logo">
-<meta property="og:image:type" content="image/png">
-<base href="">
-<title>HedgeDoc - Collaborative markdown notes</title>
-<link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover-styles-pack.b648f312ee4d780e4818.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover.e6dcfddabfc3aa3af727.css" rel="stylesheet">
-
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/7a4046902e89413f142b9833b9ff6c49?s=96);" data-toggle="tooltip" data-placement="right" title="erin"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Sun Nov 21 2021 15:32:57 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 11 2022 15:39:40 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">6 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+&lt;center&gt;
+
+# How to import your Phantom or Sollet Wallet to use with the Solana CLI
+
+
+*Written by [JDC](https://twitter.com/jdcaballerov). Originally published 2022-01-11 on the [Monadical blog](https://monadical.com/blog.html).*
+
+
+&lt;/center&gt;
+
+
+## Intro
+
+For those of you who have missed it, [Solana](https://solana.com/) is a blockchain built to enable scalable, user-friendly apps. 
+
+When people first get started on Solana, they often use browser extensions such as Phantom or Sollet because they’re easy to install and create - an excellent option for beginners who want to keep it simple. However, as you become more advanced, you might want to use your wallet with the Solana command line interface (CLI) from a terminal, in order to run a command from a script to deliver tokens or NFTs  to your friends. This requires an imported Solana Wallet. 
+
+Even if you don’t want to get complicated, importing your wallet allows you to back up your wallet, and store it in multiple locations, such as a USB or external hard drive. That way, you don’t have to worry about losing your wallet if something happens to your computer. 
+
+So, if you’re wondering what steps to take to import your wallet, this quick guide is for you.
+
+
+## Step 1: Install Solana CLI tools
+
+Before you do anything, make sure you have the [latest solana cli tools](https://docs.solana.com/cli/install-solana-cli-tools) installed and configured. 
+ 
+## Step 2: Get the seed phrase in Phantom Wallet
+
+This step is only necessary for people using a Phantom Wallet. If you created your  Solana wallet using Sollet, you should already have the seed phrase written somewhere. 
+
+Those who already have their [seed phrase](https://coinmarketcap.com/alexandria/glossary/seed) can go ahead and skip this step. 
+
+If not, this is how you can access the seed phrase in Phantom Wallet by following these four steps:
+
+1. Unlock your wallet.
+
+![A screenshot of Phantom&#39;s wallet unlock page](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b610.jpeg)
+
+
+2. Once you&#39;re in, select the gear icon located at the bottom right corner.
+
+3. Scroll to the bottom of the page and select “Show Secret Recovery Phrase.”
+
+![A screenshot that shows the &#34;Reset Recovery Phrase&#34; button](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b612.png)
+
+4. Unlock and copy your seed phrase.
+
+![Phantom&#39;s &#34;show secret recovery phrase&#34; page](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b614.png)
+
+
+
+
+
+## Step 3: Verify your wallet
+This step is optional, but important: you want to make sure that everything will work, and that the correct parameters are being used.
+
+To verify your wallet, open a terminal window and input the following command to verify your public key.
+
+The public key, that we will be using as example is: 
+
+`5vdAeq93iynwZPGyj5QaSczQ9uYzvN4bRsJ4NySucZyB`
+
+```bash=
+solana-keygen verify &lt;YOUR_PUBLIC_KEY_HERE&gt;  prompt://?full-path=m/44&#39;/501&#39;/0&#39;/0&#39;
+```
+
+Input the seed phrase and hit the enter key. When the program requests you to fill in the associated passphrase, leave it blank, and hit the enter key again. Once you&#39;ve done that, you can look for the verification success state `:Success`.
+
+![A screenshot showing the verification success state](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b60d.png)
+
+
+
+## Step 4: Import your wallet
+
+ To import your wallet, input the following command:
+ 
+```bash
+solana-keygen recover prompt://?full-path=m/44&#39;/501&#39;/0&#39;/0&#39;
+```
+
+This will write your private key in `~/.config/solana/id.json` as an array to be used as keypair with the CLI.  Make sure to backup any former wallet or define a new output path with -o. It should look like this:
+
+```bash
+solana-keygen recover prompt://?full-path=m/44&#39;/501&#39;/0&#39;/0&#39; -o my_imported_key.json
+```
+
+![A screenshot of what your wallet should now look like](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b60e.png)
+
+ 
+## Multiple Wallets
+ 
+If you created multiple wallets with the same phantom installation you might need to tweak the derivation path&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, depending on the wallet.
+ 
+The first wallet the derivation path is:
+ 
+`m/44&#39;/501&#39;/0&#39;/0&#39;`  
+ 
+The second derivation path changes slightly, with the value of the number following `/501&#39;/` rising by one. So, the second derivation path would be  `/44&#39;/501&#39;/1&#39;/0&#39;,` the third `m/44&#39;/501&#39;/3&#39;/0&#39;` and so on. 
+ 
+Use the verification step to be sure the derivation path corresponds with the wallet you want to import.
+
+&lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;/a&gt;[1] A [derivation path](https://learnmeabitcoin.com/technical/derivation-paths) is a piece of data that tells a Hierarchical Deterministic (HD) wallet how to derive a specific key within a tree of keys. Derivation paths are used as a Bitcoin standard and were introduced with HD wallets as a part of BIP 32..
+ 
+## Conclusion 
+ 
+That’s it! Now your wallet is imported in a format that can be used with the Solana CLI, opening up many new ways to use Solana.  
+
+Make sure to keep this file extremely safe by saving it on a separate USB key in encrypted format. 
+
+
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
     
-    <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <div class="cover-container">
-
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand"></h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="ui-home active"><a href="export-phantom-wallet.html#">Intro</a>
-                            </li>
-                            <li class="ui-history"><a href="export-phantom-wallet.html#">History</a>
-                            </li>
-                            <div class="ui-signin" style="float: right; margin-top: 8px;">
-                                
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New guest note</a>
-                                
-                                
-                                <button class="btn btn-sm btn-success ui-signin" data-toggle="modal" data-target=".signin-modal">Sign In</button>
-                                
-                            </div>
-                            <div class="ui-signout" style="float: right; margin-top: 8px; display: none;">
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New note</a>
-                                <span class="ui-profile dropdown pull-right">
-                                    <button id="profileLabel" class="btn btn-sm btn-link ui-profile-label" style="padding-right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="ui-avatar" width="20" height="20"><span class="hidden-xs hidden-sm">&ensp;<span class="ui-name"></span></span>&ensp;<i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="profileLabel">
-                                        <li><a href="https://docs.monadical.com/features"><i class="fa fa-dot-circle-o fa-fw"></i> Features</a></li>
-                                        <li><a href="https://docs.monadical.com/me/export"><i class="fa fa-cloud-download fa-fw"></i> Export user data</a></li>
-                                        <li><a class="ui-delete-user" data-toggle="modal" data-target=".delete-user-modal"><i class="fa fa-trash fa-fw"></i> Delete user</a></li>
-                                        <li><a href="https://docs.monadical.com/logout"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
-                                    </ul>
-                                </span>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div id="home" class="section">
-                <div class="inner cover">
-                    <h1 class="cover-heading"><img src="https://docs.monadical.com/banner/banner_vertical_color.svg" width="400" alt="HedgeDoc logo"></h1>
-                    <p class="lead">
-                        The best platform to write and share markdown.
-                    </p>
-                    <span class="alert alert-info" style="display: inline-block;">
-                        CodiMD was renamed to HedgeDoc. <a href="https://hedgedoc.org/history/" rel="noopener noreferrer" target="_blank" class="text-danger">Read more</a>
-                    </span>
-                    
-                    
-                    <div class="alert alert-danger" style="max-width: 400px; margin: 0 auto;">You are not allowed to access this page. Maybe try logging in?</div>
-                    
-                    
-                    <span class="ui-signin">
-                        <br>
-                        <a type="button" class="btn btn-lg btn-success ui-signin" data-toggle="modal" data-target=".signin-modal" style="min-width: 200px;">Sign In</a>
-                    </span>
-                    <span class="ui-or">or</span>
-                    
-                    <span class="ui-signin">
-                        <a type="button" href="https://docs.monadical.com/features" class="btn btn-lg btn-primary" style="min-width: 200px;">Explore all features</a>
-                        <br>
-                        <br>
-                        <img src="https://docs.monadical.com/screenshot.png" class="screenshot ui-signin">
-                    </span>
-                    <div class="lead row" style="width: 90%; margin: 0 auto;">
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Share-Notes">
-                                <i class="fa fa-bolt fa-3x"></i>
-                                <h4>Real time collaboration</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#MathJax">
-                                <i class="fa fa-bar-chart fa-3x"></i>
-                                <h4>Works with charts and MathJax</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Slide-Mode">
-                                <i class="fa fa-tv fa-3x"></i>
-                                <h4>Supports slide mode</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="history" class="section" style="display:none;">
-                <div class="ui-signin">
-                    <p>Below is history from this browser</p>
-                </div>
-                <br>
-                <form class="form-inline">
-                    <div class="form-group" style="vertical-align: bottom;">
-                        <input class="form-control ui-use-tags" placeholder="Select tags…" />
-                    </div>
-                    <div class="form-group">
-                        <input class="search form-control" placeholder="Search keyword…" />
-                    </div>
-                    <a href="export-phantom-wallet.html#" class="sort btn btn-default" data-sort="text" title="Sort by title">
-                    Title
-                    </a>
-                    <a href="export-phantom-wallet.html#" class="sort btn btn-default" data-sort="timestamp" title="Sort by time">
-                    Time
-                    </a>
-                    <span class="hidden-xs hidden-sm">
-                        <a href="export-phantom-wallet.html#" class="btn btn-default ui-save-history" title="Export history"><i class="fa fa-save"></i></a>
-                        <span class="btn btn-default btn-file ui-open-history" title="Import history">
-                            <i class="fa fa-folder-open-o"></i><input type="file" />
-                        </span>
-                    <a href="export-phantom-wallet.html#" class="btn btn-default ui-clear-history" title="Clear history" data-toggle="modal" data-target=".delete-history-modal"><i class="fa fa-trash-o"></i></a>
-                    </span>
-                    <a href="export-phantom-wallet.html#" class="btn btn-default ui-refresh-history" title="Refresh history"><i class="fa fa-refresh"></i></a>
-                </form>
-                <h4 class="ui-nohistory" style="display:none;">
-                    No history
-                </h4>
-                <a href="export-phantom-wallet.html#" class="btn btn-primary ui-import-from-browser" style="display:none;">Import from browser</a>
-                <ul id="history-list" class="list">
-                </ul>
-                <ul class="pagination"></ul>
-            </div>
-
-            <div class="mastfoot">
-                <div class="inner">
-                    <select class="ui-locale"></select>
-                    <p>
-                        Powered by <a href="https://hedgedoc.org">HedgeDoc</a> | <a href="https://docs.monadical.com/s/release-notes" target="_blank" rel="noopener">Releases</a> | <a href="https://github.com/hedgedoc/hedgedoc/tree/0d8b2516623f85da7ce6eb3c34417a78dc499cbf" target="_blank" rel="noopener">Source Code</a>
-                    </p>
-                    <h6 class="social-foot">
-                        Follow us on <a href="https://github.com/hedgedoc/hedgedoc" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>, <a href="https://community.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-users" aria-hidden="true"></i> Discourse</a>, <a href="https://chat.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-comments"></i> Matrix</a>, <a href="https://social.hedgedoc.org/mastodon" target="_blank" rel="noopener"><i class="fa fa-mastodon"></i> Mastodon</a>, and <a href="https://translate.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-globe"></i> POEditor</a>.
-                    </h6>
-                </div>
-            </div>
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
         </div>
     </div>
-</div>
-<!-- delete history modal -->
-<div class="modal fade delete-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-history-modal-msg"></h5>
-                <strong class="ui-delete-history-modal-item"></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger ui-delete-history-modal-confirm">Yes, do it!</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- delete user modal -->
-<div class="modal fade delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-user-modal-msg">Do you really want to delete your user account?</h5>
-                <strong class="ui-delete-user-modal-item">This will delete your account, all notes that are owned by you and remove all references to your account from other notes.</strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default ui-delete-user-modal-cancel" data-dismiss="modal">Cancel</button>
-                <a type="button" class="btn btn-danger" href="https://docs.monadical.com/me/delete/">Yes, do it!</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- signin modal -->
-<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mySmallModalLabel">Choose method</h4>
-            </div>
-            <div class="modal-body" style="text-align: center;">
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <h4>Sign in via E-Mail</h4>
-                <form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary" formaction="https://docs.monadical.com/login">Sign In</button>
-                            <button type="submit" class="btn btn-default" formaction="https://docs.monadical.com/register">Register</button>
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.5e1034cb4e0fcfb8b567.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.1c773fb6375f6e4c11cf.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack.e5798975b79bb2448f60.js" defer="defer"></script><script src="https://docs.monadical.com/build/cover-pack.6949e7060a7c04a76325.js" defer="defer"></script>
-
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
 </body>
 
 </html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.5e1034cb4e0fcfb8b567.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.1c773fb6375f6e4c11cf.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.2209cda3054f9512951d.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.866aaf89d1295ab8be7f.js" defer="defer"></script>
+
+

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="This blog post will serve as an introduction to logging in Python. I want to share what I’ve learned about logging in python by telling you about its central ideas, and demonstrating how I use logging with some simple examples.">
+    
+    
+    
+    <meta property="og:title" content="The Ins and Outs of Logging in Python, Part 1 - HedgeDoc">
+    
+    
+    <meta property="og:description" content="This blog post will serve as an introduction to logging in Python. I want to share what I’ve learned about logging in python by telling you about its central ideas, and demonstrating how I use logging with some simple examples.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>The Ins and Outs of Logging in Python, Part 1 - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Jan 21 2022 18:51:34 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jan 21 2022 19:50:09 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">10 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+&lt;center&gt;
+
+# The Ins and Outs of Logging in Python, Part 1
+
+
+&lt;big&gt;
+
+&lt;/big&gt;
+  
+*Written by Cesar Uribe. Originally published 2022-01-21 on the [Monadical blog](https://monadical.com/blog.html).*
+
+*Everything You Always Wanted to Know About Logging -- But Were Afraid to Ask*
+
+&lt;/center&gt;
+
+
+Using logging modules in Python has become essential to my work as a developer. It’s a great example of working smarter, not harder, because it takes so many tasks off my plate. This blog post will serve as an introduction to logging in Python. I want to share what I’ve learned about logging in python by telling you about its central ideas, and demonstrating how I use logging with some simple examples. In Part Two, I will apply this module to a real case.
+
+First off, let me tell you why logging modules are worth learning about:
+
+ 
+ 1. **History Log**: Logging’s event-based structure[^one] essentially leaves behind a trail of breadcrumbs as you work, so if a problem arises, you can easily trace it back to its source and determine how the error came to be. This is helpful for analyzing how the program is being used, and makes it easier to document code so that other programmers (and your future self!) can get some clarity on your work.
+ 2. **Failure checks**: Logging helps detect scenarios where code could fail, before it fails. It is difficult for developers to imagine every possible scenario in which this might happen, so logging can catch blindspots that they might otherwise miss. 
+ 3. **Output Channels**: Logging uses different output channels, allowing users to send different messages to different destinations. You can filter messages by category or level and send them to the appropriate file or output. This is very useful, since you probably want INFO messages to be displayed in the system and ERROR or CRITICAL messages to trigger a notification email.
+ 4. **Structured measuring**:  Logging can be configured (the behavior, structure, and output channel of logs) according to execution context, either with configuration files or directly within the code. This not only creates a more organized system for displaying messages, but prepares your app to use a monitoring system or log catcher. 
+ 
+    &lt;center&gt;
+        &lt;img src=&#34;https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b61b.png&#34;&gt;
+        &lt;figcaption&gt; 
+            &lt;small&gt; Taken from 
+                &lt;a href=&#34;https://www.datadoghq.com/product/log-management/&#34;&gt;
+                    https://www.datadoghq.com/product/log-management/
+                &lt;/a&gt;  
+            &lt;/small&gt;
+        &lt;/figcaption&gt;
+    &lt;/center&gt;
+
+
+
+
+[^one]: If you want to learn more about how we built a poker platform using event-driven architecture, check out https://monadical.com/posts/event-driven-architecture-1.html.
+
+
+## How the logging module works
+To use the [logging module](https://docs.python.org/3/library/logging.html) in Python, it’s important to understand some key concepts. The logging module has five main components:
+
+ * **Logger**: The object a user interacts with.
+ * **Handler**: Manages the outputs depending on the configuration.
+ * **Filter**: Allows for a finer-grained selection of the logs.
+ * **Formatter**: Makes it possible to assign a format to the message and change LogRecord instance to string representation.
+ * **Log records**: Creates objects every time a logger is invoked. Log records are a package with all the required info to pass through the components
+
+
+You can configure each of these components to suit your needs, making the logger quite versatile. It’s not necessary to use them all, but the ones that are used must communicate with each other because they are components triggered by events, and need to be aware of events occurring across the board. If you don’t use one of them, the logging system resorts to its default behavior.
+
+The following figure illustrates what happens when a log is issued. Notice the roles played by the five main components. 
+
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b61e.png&#34;&gt;
+&lt;/center&gt;
+&lt;br&gt;
+
+When a call to logging is made, the logger checks if the log level is allowed, according to its configuration. If it is allowed, it creates a LogRecord instance. If a filter exists, the LogRecord passes through this instance to check if it complies with the filter. Once this is done, the LogRecord is passed to the handler, which validates the log level again. Then it applies either the format set in the configuration or the default one, and sends the log messages to their respective outputs. You can see in the diagram above that the logger verifies if there are propagations (i.e., it validates if there is a parent logger). If verified, it changes from the actual logger (child) to the parent logger. This is useful for logging modular applications in Python where you can have several loggers, like a hierarchical tree.
+
+
+
+### Logger and logging levels
+The logging level allows users to set the type of message displayed on the screen, so that they can customize what essential information is available at a glance. Displayed messages will indicate the type of information that we want to show[^two]. There are several logging levels:
+
+
+[^two]: The [loguru library](https://github.com/Delgan/loguru), which is built on top of the logging module, implements additional levels (TRACE and SUCCESS) to the standard ones. 
+
+| Name level     | Code        | Purpose                                                           |
+|----------------|-------------|-------------------------------------------------------------------|
+| CRITICAL       | 50          | Highlights critical problems that need immediate attention.       |
+| ERROR          | 40          | Shows errors and problems.                                        |
+| WARNING        | 30          | Warns that something is not working well.                         |
+| INFO           | 20          | Provides an overview of general information.                      |
+| DEBUG          | 10          | For debugging purposes.                                           |
+| NONSET         | 0           | There is not a specified level. The messages are propagated to the logger parents until an explicit level is found, or the root logger is reached. Root logger has WARNING as the default level |
+
+These levels are hierarchically ordered. If one of them is set off (for example, WARNING), the levels below it (INFO, DEBUG, etc.) will not be displayed, though they will be written in the code. It is possible to create a custom log level, but these levels cover the most typical scenarios.
+
+To use logging, you first need to import the logging module, and begin displaying messages with your chosen logging level:
+
+
+```python
+# code
+import logging
+
+logging.info(&#34; -&gt; Info message&#34;)
+logging.warning(&#34; -&gt; Warning message&#34;)
+logging.error(&#34; -&gt; Error message&#34;)
+
+
+# output
+# WARNING:root: -&gt; Warning message
+# ERROR:root: -&gt; Error message
+```
+
+From these  few lines of code and their respective output, you can see that: 
+
+ * The logging module allows you to choose the type of message or level name that you want to show: **logging.\&lt;name-level\&gt;(message)**. 
+ * The output shows your message and other relevant info:  **the level name, parent logger, and message: `%(levelname)s:%(name)s:%(message)s`**.
+ * The INFO log is  not shown. This is because the logger parent (known as `the root`) has a WARNING level by default.
+
+This last point requires understanding of the concept of logger. Logger is an object that provides a communication layer, offering a set of methods that allow the program or application to generate a log. For example:
+
+```python
+#  CODE
+import  logging
+
+# Check the logger
+print(logging.getLogger())
+
+# Check the logger class
+print(logging.getLoggerClass())
+
+# Check parents of RootLogger
+print(logging.RootLogger.__bases__)
+
+# OUTPUT
+# &lt;RootLogger root (WARNING)&gt;
+# &lt;class &#39;logging.Logger&#39;&gt;
+# (logging.Logger,)
+
+```
+    
+If you review the output, you can see that the logging module instantiates a logger of type RootLogger by default, which has the WARNING level assigned.
+
+
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b620.png&#34; width=&#34;40%&#34;&gt;
+&lt;/center&gt;
+&lt;br/&gt;
+
+ If you want to create a logger instance, you can do it in the following way:
+
+```python
+## CODE
+import logging
+
+# To create a basic configuration
+logging.basicConfig()
+
+
+# The RootLogger is no longer used to display messages. 
+# The logger ‘mylogger’ is used instead.
+mylogger = logging.getLogger(&#39;my-logger-instance&#39;)
+
+# The level changed to INFO
+mylogger.setLevel(logging.INFO)
+
+
+# Messages are displayed starting from the INFO level. 
+# Logs with DEBUG levels will be not displayed because 
+# they don’t comply with the level set for the logger.
+mylogger.debug(&#39;Debug message&#39;)
+mylogger.info(&#34;Info message&#34;)
+mylogger.warning(&#34;Warning message&#34;)
+mylogger.error(&#34;Error message&#34;)
+mylogger.critical(&#34;Critical message&#34;)
+
+# To show info about logger
+print(mylogger)
+
+
+# OUTPUT
+# INFO:my-logger-instance:Info message
+# WARNING:my-logger-instance:Warning message
+# ERROR:my-logger-instance:Error message
+# CRITICAL:my-logger-instance:Critical message
+# &lt;Logger my-logger-instance (INFO)&gt;
+```
+
+The logger filters messages by levels, emits the event to process and shows the log. Once the event is emitted, the logger is internally in charge of creating the LogRecord object, which contains the event information.
+
+
+```python
+logging.LogRecord(
+    name, # name of the logger
+    level, # The level of the logging event
+    pathname, # path of the source file where the event was emitted
+    lineno, # The line number in the file where the event was emitted
+    msg, # The message description
+    args, # data to merge into the msg
+    Exc_info, # to show exception
+    func=None, # The function name where event was emitted
+    sinfo=None, # stack info
+    **kwargs,
+)
+```
+
+### Configuring logging
+
+The logging module has a default parent logger called  `Root` but  you can configure the logger according to your needs. 
+
+Creating your own logger instance results in a more verbose log system. Here’s how to  set a logger name:
+
+
+```python
+# CODE
+import logging
+
+
+# To create a basic configuration
+logging.basicConfig()
+
+# get logger instance
+api_log = logging.getLogger(&#39;api&#39;)
+database_log = logging.getLogger(&#39;database&#39;)
+
+# set level
+database_log.setLevel(logging.DEBUG)
+api_log.setLevel(logging.ERROR)
+
+api_log.debug(&#34; -&gt; Debug message&#34;)
+api_log.info(&#34; -&gt; Info message&#34;)
+api_log.warning(&#34; -&gt; Warning message&#34;)
+api_log.error(&#34; -&gt; Error message&#34;)
+api_log.critical(&#34; -&gt; Critical message&#34;)
+
+print(&#34;-&#34; * 30, flush=True)
+
+database_log.debug(&#34; -&gt; Debug message&#34;)
+dattabase_log.info(&#34; -&gt; Info message&#34;)
+database_log.warning(&#34; -&gt; Warning message&#34;)
+database_log.error(&#34; -&gt; Error message&#34;)
+database_log.critical(&#34; -&gt; Critical message&#34;)
+
+#  OUTPUT
+# ERROR:api: -&gt; Error message
+# CRITICAL:api: -&gt; Critical message
+# ------------------------------
+# DEBUG:database: -&gt; Debug message
+# INFO:database: -&gt; Info message
+# WARNING:database: -&gt; Warning message
+# ERROR:database: -&gt; Error message
+# CRITICAL:database: -&gt; Critical message
+```
+
+In the code above, loggers were created using the method getLogger. You can use this method to assign names or tags to the logger’s messages (for example, `api`, `database`). The messages displayed from these loggers will be shown with their respective tag. 
+
+Notice that:
+
+ * I  used the `api_log` and `database_log` loggers instead of the default logger Root.
+ * You can create several loggers to use in the program. In this case, two loggers were created with their own name:  logger `api_log` named `api`. The other logger, `database_log` has the name `database.` If you create two loggers with the same name, the library creates only one logger. The second logger is treated just like the first logger, since it is a variable that points to the same location in the memory.
+ * The level was set with the setLevel method. You can set a level for each logger, as  in the output. Logger `api_log` only shows CRITICAL and ERROR messages while `database_log` shows all messages.
+ * Every logger displays its name (next to the level) in the message printed on the terminal. This shows which logger is communicating the message.
+
+
+### Formatter: setting a format for the message
+If you want log messages to show additional information related with the context of the message, like where, when, why, etc., you can set a format for them. Standardizing logs also makes debugging code much easier! The logging module offers several options for formatting messages and capturing context information where the logger was executed (see [official doc - log record attributes](https://docs.python.org/3/library/logging.html#logrecord-attributes)) and also you can use the method `basicConfig`[^three] to configure several items at a time
+
+
+```python
+# CODE
+import logging
+
+
+# set the message display format:
+# show the line number, the time, the level
+# the message and the module name where the logger was invoked
+logging.basicConfig(
+    level = logging.DEBUG,
+    format = &#34;[ %(asctime)s ] - [%(name)s-%(lineno)d] - [%(levelname)s] %(message)s&#34;
+)
+
+log = logging.getLogger(&#34;mainapp.module&#34;)
+
+log.debug(&#34; Debug message&#34;)
+log.info(&#34; Info message&#34;)
+log.warning(&#34; Warning message&#34;)
+log.error(&#34; Error message&#34;)
+log.critical(&#34; Critical message&#34;)
+log.log(logging.INFO,&#34;General function to log&#34;)
+
+# OUTPUT
+# [ 2021-05-30 21:26:06,010 ] - [mainapp.module-12] - [DEBUG]  Debug message
+# [ 2021-05-30 21:26:06,012 ] - [mainapp.module-13] - [INFO]  Info message
+# [ 2021-05-30 21:26:06,014 ] - [mainapp.module-14] - [WARNING]  Warning message
+# [ 2021-05-30 21:26:06,015 ] - [mainapp.module-15] - [ERROR]  Error message
+# [ 2021-05-30 21:26:06,017 ] - [mainapp.module-16] - [CRITICAL]  Critical message
+# [ 2021-05-30 21:26:06,019 ] - [mainapp.module-17] - [INFO] General function to log
+
+
+```
+
+[^three]:  If you want to see the DictConfig documentation in more detail, you can run the following command: `print(logging.basicConfig.__doc__)`, or have a look at: https://docs.python.org/3/library/logging.html#logging.basicConfig.
+
+
+Note that the name assigned to a logger has a `dot` structure to indicate the parent and child (`mainapp.module`). This is useful when code has a modular structure, meaning there is a hierarchy among the loggers.
+
+Logging can be used in a modular app where every submodule has its logger. This allows us to trace the origin of a log message, improving traceability and providing more detailed outputs.
+
+
+### Handler: setting the handler
+You can manage different outputs according to their level by using the handler. The handler receives a LogRecord and, depending on its configuration, sends it to the corresponding output. For example, you can configure handlers to show the info logs on screen and send the error logs to a file. The logging module offers a number of handlers (see [official doc - logging handlers](https://docs.python.org/3/library/logging.handlers.html), but the most commonly used ones are **StreamHandler** and **FileHandler**.
+
+
+As an example, I will set the info logs to be printed to the terminal , and set the error logs to be automatically stored in a file. For now, let’s implement two ways to set the configuration.
+
+#### 1. Use logger’s functions
+I have configured logging with basic config, but this is only used when working with a small script. If you need to implement an intermediate-advanced or more robust configuration, you can use the instance loggers’ methods. For example:
+
+```python
+# CODE
+import logging
+
+# Set custom logger
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
+
+# Set handlers
+log_handler = logging.StreamHandler()
+error_handler = logging.FileHandler(&#34;errors.log&#34;)
+
+# Set level for every handlers
+log_handler.setLevel(logging.DEBUG)
+error_handler.setLevel(logging.ERROR)
+
+# Establish the desired string format
+log_format = logging.Formatter(&#39;[ %(asctime)s ][ %(levelname)s ] - %(message)s&#39;)
+error_format = logging.Formatter(&#39;[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s&#39;)
+
+# Set the format to each handler
+log_handler.setFormatter(log_format)
+error_handler.setFormatter(error_format)
+
+# Add every handler to the logger
+log.addHandler(log_handler)
+log.addHandler(error_handler)
+
+
+log.debug(&#34; Debug message&#34;)
+log.info(&#34; Info message&#34;)
+log.warning(&#34; Warning message&#34;)
+log.error(&#34; Error message&#34;)
+log.critical(&#34; Critical message&#34;)
+
+# OUTPUT
+# [ 2021-05-30 23:15:04,800 ][ INFO ] -  Info message
+# [ 2021-05-30 23:15:04,805 ][ WARNING ] -  Warning message
+# [ 2021-05-30 23:15:04,810 ][ ERROR ] -  Error message
+# [ 2021-05-30 23:15:04,814 ][ CRITICAL ] -  Critical message
+
+
+# FILE&#39;S CONTENT - errors.log
+# [ 2021-05-30 23:15:04,810 ][ __main__-31 ][ ERROR ]  Error message
+# [ 2021-05-30 23:15:04,814 ][ __main__-32 ][ CRITICAL ]  Critical message
+```
+
+As you can see, only one logger was defined, but two handlers were assigned. For each handler, you can assign a format. Assigning a format is a good option when you want a standard format for info messages, but more detailed error messages. The messages handled by StreamHandler are shown on screen with one format, while those handled by FileHandler are written in a file with another format. 
+
+All messages with a level above INFO are shown on screen, even though they should go to a file. However, the error and critical messages are also stored in the file. Also note that the level set for StreamHandler is DEBUG, but no debug logs are shown. This occurs because before the logger sends the LogRecord to the handle, it checks the level. Because the level for the logger is set as INFO, it does not let them pass to the handlers.
+
+#### 2. Using dictConfig
+
+This method for configuring the logging system is similar to using a configuration file, except that you can set configuration parameters using a Python dictionary. For example:
+
+```python
+#CODE
+import logging
+import logging.config
+
+config = {
+    &#39;disable_existing_loggers&#39;: False,
+    &#39;version&#39;: 1,
+    &#39;formatters&#39;: {
+        &#39;console_logs_fmt&#39;: {
+            &#39;format&#39;: &#39;[ %(asctime)s ][ %(name)s ][ %(levelname)s ] - %(message)s&#39;
+        },
+        &#39;error_logs_fmt&#39;:{
+            &#39;format&#39;: &#39;[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s&#39;
+        }
+
+    },
+    &#39;handlers&#39;:{
+        &#39;console&#39;:{
+            &#39;level&#39;: &#39;INFO&#39;,
+            &#39;formatter&#39;: &#39;console_logs_fmt&#39;,
+            &#39;class&#39;: &#39;logging.StreamHandler&#39;
+        },
+        &#39;errors&#39;:{
+            &#39;level&#39;: &#39;ERROR&#39;,
+            &#39;formatter&#39;: &#39;error_logs_fmt&#39;,
+            &#39;class&#39;: &#39;logging.FileHandler&#39;,
+            &#39;filename&#39;: &#39;./errors-3.log&#39;
+        },
+        &#39;other&#39;:{
+            &#39;level&#39;:&#39;DEBUG&#39;,
+            &#39;formatter&#39;:&#39;console_logs_fmt&#39;,
+            &#39;class&#39;: &#39;logging.StreamHandler&#39;
+        }
+
+    },
+    &#39;loggers&#39;:{
+        &#39;&#39;:{
+            &#39;handlers&#39;: [&#39;errors&#39;],
+            &#39;level&#39;: &#39;INFO&#39;
+        },
+        &#39;other&#39;:{
+            &#39;handlers&#39;: [&#39;other&#39;],
+            &#39;level&#39;: &#39;DEBUG&#39;
+        }
+
+    }
+}
+
+logging.config.dictConfig(config)
+logger = logging.getLogger(__name__)
+
+logger.debug(&#34; Debug message&#34;)
+logger.info(&#34; Info message&#34;)
+logger.warning(&#34; Warning message&#34;)
+logger.error(&#34; Error message&#34;)
+logger.critical(&#34; Critical message&#34;)
+
+other_logger = logging.getLogger(&#39;other&#39;)
+other_logger.debug(&#34; Debug message&#34;)
+other_logger.info(&#34; Info message&#34;)
+other_logger.warning(&#34; Warning message&#34;)
+other_logger.error(&#34; Error message&#34;)
+other_logger.critical(&#34; Critical message&#34;)
+
+
+# OUTPUT
+# [ 2021-05-31 02:37:47,752 ][ other ][ DEBUG ] -  Debug message
+# [ 2021-05-31 02:37:47,753 ][ other ][ INFO ] -  Info message
+# [ 2021-05-31 02:37:47,757 ][ other ][ WARNING ] -  Warning message
+# [ 2021-05-31 02:37:47,760 ][ other ][ ERROR ] -  Error message
+# [ 2021-05-31 02:37:47,764 ][ other ][ CRITICAL ] -  Critical message
+
+# FILE&#39;S  CONTENT
+# [ 2021-05-31 02:37:47,752 ][ __main__-55 ][ ERROR ]  Error message
+# [ 2021-05-31 02:37:47,752 ][ __main__-56 ][ CRITICAL ]  Critical message
+# [ 2021-05-31 02:37:47,760 ][ other-62 ][ ERROR ]  Error message
+# [ 2021-05-31 02:37:47,764 ][ other-63 ][ CRITICAL ]  Critical message
+```
+
+Notice that I have used a new option: `disable_existing_loggers`. This option is used when you don’t want to disable parent loggers, which could happen when wrapping an app with another application or system that uses a logging system.
+
+Here, I created two loggers and three handlers to illustrate the versatility of creating a more complex configuration using this structure.  
+
+Every logging component in the config dictionary is separated, which allows for more clarity in the configuration. This way, the configuration still requires setting the configuration written in the code. Think of this method as an intermediate stage when using a configuration file, where this dictionary is created by reading the file.
+
+#### 3.  Using a configuration file
+
+There are several ways to set a configuration using a file. You can use a JSON, YAML, or INI file.  If you use JSON or YAML, the only thing you need to do is read the file using the libraries JSON or Pyyaml, which converts the content using a Python dictionary. Once you have done that, you can use the function `dictConfig` (used above) to load the configuration. For that reason, we’ll look at this method using INI files.
+
+**`config.ini`**
+```ini
+
+[loggers]
+keys=root
+
+[handlers]
+keys=console,error
+
+[formatters]
+keys=error_fmt,console_fmt
+
+[logger_root]
+level=INFO
+handlers=console,error
+
+[handler_console]
+class=StreamHandler
+formatter=console_fmt
+level=INFO
+args=(sys.stdout,)
+
+[handler_error]
+class=FileHandler
+level=ERROR
+formatter=error_fmt
+args=(&#39;./errors-1.log&#39;,)
+
+[formatter_console_fmt]
+format=[ %(asctime)s ][ %(name)s ][ %(levelname)s ] - %(message)s
+
+[formatter_error_fmt]
+format=[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s
+```
+
+**`example.py`**
+```python
+#CODE
+import logging
+import logging.config
+
+logging.config.fileConfig(
+    fname=&#39;./config.cfg&#39;,
+    disable_existing_loggers=False
+)
+
+logger = logging.getLogger(__name__)
+logger.debug(&#34; Debug message&#34;)
+logger.info(&#34; Info message&#34;)
+logger.warning(&#34; Warning message&#34;)
+logger.error(&#34; Error message&#34;)
+logger.critical(&#34; Critical message&#34;)
+
+
+# OUTPUT
+# [ 2021-05-31 12:17:53,281 ][ __main__ ][ INFO ] -  Info message
+# [ 2021-05-31 12:17:53,285 ][ __main__ ][ WARNING ] -  Warning message
+# [ 2021-05-31 12:17:53,287 ][ __main__ ][ ERROR ] -  Error message
+# [ 2021-05-31 12:17:53,290 ][ __main__ ][ CRITICAL ] -  Critical message
+
+# FILE&#39;S CONTENT
+# [ 2021-05-31 12:17:53,287 ][ __main__-14 ][ ERROR ]  Error message
+# [ 2021-05-31 12:17:53,290 ][ __main__-15 ][ CRITICAL ]  Critical message
+```
+
+When using a configuration file, there is no need to change the code when you want to modify the logging configuration. You only need to change the configuration file.
+
+### Filter - setting a fine-grained output
+In the first example shown in the previous section, use logger’s functions, the error and critical logs, along with the info and warning messages, were displayed in the terminal and also written to a file. But how can you configure the log if you only want to display the info and warning logs in the terminal and have the rest written to a file? Maybe you are thinking that you can do this by just setting the level to INFO, but remember that with this, all logs with level above INFO will be printed in the terminal, including errors and critical. To solve that, you can use filters like this one:
+
+```python
+# CODE
+import logging
+import sys
+
+# Define my filter
+class FilterOnScreen(logging.Filter):
+    def filter(self, record):
+        return ( record.levelno == logging.INFO or 
+                 record.levelno == logging.WARNING )
+
+
+# Set custom logger
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
+
+# Set handlers
+log_handler = logging.StreamHandler()
+error_handler = logging.FileHandler(&#34;errors-2.log&#34;)
+
+# Set level for every handlers
+log_handler.setLevel(logging.DEBUG)
+error_handler.setLevel(logging.ERROR)
+
+# Establish the desired string format
+log_format = logging.Formatter(
+      &#39;[ %(asctime)s ][ %(levelname)s ] - %(message)s&#39;
+)
+error_format = logging.Formatter(
+     &#39;[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s&#39;
+)
+
+# Set the format to each handler
+log_handler.setFormatter(log_format)
+error_handler.setFormatter(error_format)
+
+# Add filter to StreamHandler
+log_handler.addFilter(FilterOnScreen())
+
+# Add every handler to the logger
+log.addHandler(log_handler)
+log.addHandler(error_handler)
+
+log.debug(&#34; Debug message&#34;)
+log.info(&#34; Info message&#34;)
+log.warning(&#34; Warning message&#34;)
+log.error(&#34; Error message&#34;)
+log.critical(&#34; Critical message&#34;)
+
+# OUTPUT
+# [ 2021-05-31 01:47:37,350 ][ INFO ] -  Info message
+# [ 2021-05-31 01:47:37,351 ][ WARNING ] -  Warning message
+
+# FILE&#39;S CONTENT
+# [ 2021-05-31 01:47:37,351 ][ __main__-41 ][ ERROR ]  Error message
+# [ 2021-05-31 01:47:37,354 ][ __main__-42 ][ CRITICAL ]  Critical message
+```
+
+Here, I created a class that inherits from the logging filter class, containing a method that receives the LogRecord and returns True if the level is INFO or WARNING. As expected, only the info and warning logs are shown on the screen. This was a simple example just for illustrating the use of filter  but note that  you could be able to make some additional operations or transformation over the messages before they are returned to be showed.
+
+
+## Concluding remarks
+Logging offers a much more detailed follow-up of what is happening in your code, while maintaining a clearer structure of the events that may occur in your app. Overall, the implementation of a good logging system will help you better manage your applications, resulting in more productivity, better communication, and less stress. 
+
+ 
+## Resources
+* https://docs.python.org/3/library/logging.html
+* https://docs.python.org/3/library/logging.config.html?#module-logging.config
+* https://docs.python.org/3/howto/logging.html
+* https://realpython.com/python-logging/
+* https://realpython.com/python-logging-source-code/
+* https://docs.python-guide.org/writing/logging/#logging-in-a-library
+* https://monadical.com/posts/event-driven-architecture-1.html
+* https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+
+
+---
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.5e1034cb4e0fcfb8b567.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.1c773fb6375f6e4c11cf.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.2209cda3054f9512951d.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.866aaf89d1295ab8be7f.js" defer="defer"></script>
+
+

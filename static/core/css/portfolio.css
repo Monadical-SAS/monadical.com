@@ -252,13 +252,14 @@
   font-size: 25px;
   font-weight: 400;
   line-height: 32px;
-  list-style: square outside;
+  list-style: none;
   padding-bottom: 20px;
 }
 
 #why-hire-monadical li::marker {
   font-size: 25px;
 }
+
 
 @media (max-width: 768px) {
   #why-hire-monadical .content-row {

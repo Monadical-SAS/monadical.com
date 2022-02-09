@@ -181,14 +181,32 @@
 
 <head>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="The best platform to write and share markdown.">
-<meta name="keywords" content="Collaborative, Markdown, Notes">
-<link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="In this tutorial, you&#39;ll learn how to create a “mint and wait for reveal” Candy Machine. Doing so will allow Candy Machine users to mint “closed” NFTs and wait for them to be “revealed” at a later date, bringing elements of anticipation and excitement to their experience.">
+    
+    
+    
+    <meta property="og:title" content="How to mint and reveal NFTs with Candy Machine V2 - HedgeDoc">
+    
+    
+    <meta property="og:description" content="In this tutorial, you&#39;ll learn how to create a “mint and wait for reveal” Candy Machine. Doing so will allow Candy Machine users to mint “closed” NFTs and wait for them to be “revealed” at a later date, bringing elements of anticipation and excitement to their experience.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>How to mint and reveal NFTs with Candy Machine V2 - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
 <link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
@@ -200,258 +218,411 @@
 <meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
 <meta name="theme-color" content="#b51f08">
 
-<meta property="og:title" content="HedgeDoc - Collaborative markdown notes">
-<meta property="og:description" content="The best platform to write and share markdown.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://docs.monadical.com">
-<meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-<meta property="og:image:alt" content="HedgeDoc logo">
-<meta property="og:image:type" content="image/png">
-<base href="">
-<title>HedgeDoc - Collaborative markdown notes</title>
-<link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover-styles-pack.b648f312ee4d780e4818.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover.e6dcfddabfc3aa3af727.css" rel="stylesheet">
-
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/7a4046902e89413f142b9833b9ff6c49?s=96);" data-toggle="tooltip" data-placement="right" title="erin"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 18 2022 14:35:15 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 09 2022 17:33:11 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">38 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/7b1b393fd1466bc89ae2b42561b90176?s=96);" data-toggle="tooltip" data-placement="right" title="kevin"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+&lt;center&gt;
+
+# How to mint and reveal NFTs with Candy Machine V2
+
+&lt;big&gt;
+
+&lt;/big&gt;
+
+*Written by Kevin Guevara and Juan Diego García. Originally published 2022-02-09 on the [Monadical blog](https://monadical.com/blog.html).*
+
+
+&lt;/center&gt;
+
+
+Metaplex’s first version of Candy Machine had a few too many problems, such as restricting users and reusing the same NFT images. To help users solve these issues, another version of the program has recently been released: Candy Machine v2. This updated version is equipped with a new tool suite that users can use to resolve limitations they’ve encountered in the program. This is great news, but it also means that we’re going to have to learn how to use v2’s new tools. So, we might as well start right now!
+
+In this tutorial, I’m going to explain how to create a “mint and wait for reveal” Candy Machine. This will allow users to mint “closed” NFTs and wait for them to be “revealed” at a later date. Delaying the reveal adds an element of luck and excitement to the minting experience, making it a great way to gamify your Candy Machine.
+
+In order to do this, you’ll need to drop a Candy Machine v2 with two of the new settings configurations: [whitelistMintSettings](https://github.com/metaplex-foundation/docs/blob/main/docs/candy-machine-v2/02-configuration.md#whitelist-settings) and [hiddenSettings](https://github.com/metaplex-foundation/docs/blob/main/docs/candy-machine-v2/02-configuration.md#hidden-settings).
+ With these configurations, you will be able to deploy a Candy Machine that can only be minted by specific users, uses one asset in the creation, and can be minted as often as needed. Once deployed, these features will allow you to simulate a wait for a reveal feature and mint blank NFTs.
+
+
+## Create your Candy Machine.
+
+### 1. Creating your development environment
+Before you do anything, you need to install [SOLANA CLI](https://docs.solana.com/es/cli/install-solana-cli-tools), [SPL-TOKEN](https://spl.solana.com/token) and [CANDY MACHINE V2](https://github.com/metaplex-foundation/docs/blob/main/docs/candy-machine-v2/01-getting-started.md). All of the provided links contain installation instructions.
+
+### 2. Prepare your folder structure. 
+
+Next, folders and files need to be created. For now, you can just create an “assets” folder with this structure:
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b626.png)
+
+The assets folder is where you will save the metadata used in the Candy Machine. Usually, you would allocate all the images that you are going to mint here. Today, you’ll be taking a different approach. 
+
+**config.json** is the file that you’ll use to define your Candy Machine configuration. For now, populate it with this blank configuration:
+
+```
+{
+    &#34;price&#34;: 1.0,
+    &#34;number&#34;: 10,
+    &#34;gatekeeper&#34;: null,
+    &#34;solTreasuryAccount&#34;: &#34;&lt;YOUR WALLET ADDRESS&gt;&#34;,
+    &#34;splTokenAccount&#34;: null,
+    &#34;splToken&#34;: null,
+    &#34;goLiveDate&#34;: &#34;25 Dec 2021 00:00:00 GMT&#34;,
+    &#34;endSettings&#34;: null,
+    &#34;whitelistMintSettings&#34;: null,
+    &#34;hiddenSettings&#34;: null,
+    &#34;storage&#34;: &#34;arweave-sol&#34;,
+    &#34;ipfsInfuraProjectId&#34;: null,
+    &#34;ipfsInfuraSecret&#34;: null,
+    &#34;awsS3Bucket&#34;: null,
+    &#34;noRetainAuthority&#34;: false,
+    &#34;noMutable&#34;: false
+}
+```
+
+### 3. Define your custom token. 
+*Note: If you are using an existing SPL-TOKEN, you can use that instead and skip this step.* 
+
+*Note 2: This token would only be used to whitelist wallets that have this token. User will still need to pay the Minting price in SOL.*
+
+If you are going to create a whitelist, you need to find a way to differentiate the allowed users from the blocked users. In this version of Candy Machine, you can do this by using the [SPL-TOKEN ](https://spl.solana.com/token). This token behaves like a whitelist ticket, permitting token owners to mint the Candy Machine, while denying access to those who don’t own tokens.
+
+```
+# CREATE THE TOKEN
+$ spl-token create-token — decimals 0 &gt; token-output.txt
+
+# CREATE THE ACCOUNT THAT ARE GOING TO USE THAT TOKEN.
+$ spl-token create-account &lt;TOKEN&gt; &gt; account-treasury.txt
+
+# MINT AN AMOUNT OF TOKENS TO THAT ACCOUNT
+$ spl-token mint &lt;TOKEN&gt; 1000 &lt;ACCOUNT&gt;
+```
+The spl-token uses solana-cli&#39;s configuration file default. If you want to use Mainnet, you will need to use **-u mainnet-beta** or update your config file. 
+
+Save this file. You are going to need it later!
+
+
+
+### 4. Create your master edition.
+
+Before you do anything, make sure that you are executing Metaplex in the correct network (either mainnet, testnet or devnet). 
+
+If you only need to use one asset in the creation, upload the asset to arweave by creating a master edition NFT and extracting the aerwave uri.
+
+To do this, I am going to use the Metaplex interface, with this image as the master token:
+
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b62a.png)
+&gt; For security and standards purposes, you must use the same wallet that you will use to create your Candy Machine with. If you need a tutorial on how to export your Phantom wallet to your Solana-cli, take a look at [this one](https://monadical.com/posts/export-phantom-wallet.html). 
+1. Create your asset as an NFT.
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b62c.png)
+&lt;br/&gt;
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b62e.png)
+
+2. With your master token in your wallet, go to Phantom and open your NFT in Solscan.&lt;br/&gt; 
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b630.png)
+
+In the metadata, extract the Arweave URI. &lt;br/&gt;
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b65d.png)
+
+
+### 5. Prepare your assets. 
+As the documentation says, 
+&gt; Your assets consist of a collection of images (e.g., .png) and metadata (.json) files organized in a 1:1 mapping - i.e., each image has a corresponding metadata file.
+
+In this example I’m using only one asset, so I’m going to have an assets folder like this:
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b633.png)
+
+In 0.json I need to specify my NFT metadata, pointing to my 0.png file.
+```
+{
+    &#34;name&#34;: &#34;CANDY TOKEN&#34;,
+    &#34;symbol&#34;: &#34;&#34;,
+    &#34;description&#34;: &#34;&#34;,
+    &#34;seller_fee_basis_points&#34;: 500,
+    &#34;image&#34;: &#34;0.png&#34;,
+    &#34;attributes&#34;: [
+        {&#34;trait_type&#34;: &#34;Layer-1&#34;, &#34;value&#34;: &#34;0&#34;},
+        {&#34;trait_type&#34;: &#34;Layer-2&#34;, &#34;value&#34;: &#34;0&#34;}, 
+        {&#34;trait_type&#34;: &#34;Layer-3&#34;, &#34;value&#34;: &#34;0&#34;},
+        {&#34;trait_type&#34;: &#34;Layer-4&#34;, &#34;value&#34;: &#34;1&#34;}
+    ],
+    &#34;properties&#34;: {
+        &#34;creators&#34;: [{&#34;address&#34;: &#34;&lt;YOUR WALLET ADDRESS&gt;&#34;, &#34;share&#34;: 100}],
+        &#34;files&#34;: [{&#34;uri&#34;: &#34;0.png&#34;, &#34;type&#34;: &#34;image/png&#34;}]
+    },
+    &#34;collection&#34;: {&#34;name&#34;: &#34;numbers&#34;, &#34;family&#34;: &#34;numbers&#34;}
+}
+```
+
+Be sure that the creator address is the same address that you used to create your master edition NFT, because we will be using that data for the Candy Machine. 
+
+### 6. Edit your config.json file. 
+
+I’m now going to create a Candy Machine with the following features:
+
+- Contains 50 NFTS that are the same file, at a price of 0.0001. 
+- Uses a white list that burns the token every time you use it.
+- Has a “go live” date of Jan 15, 2022. 
+
+If you want to work on more complex scenarios, check out the [official documentation](https://github.com/metaplex-foundation/docs/blob/main/docs/candy-machine-v2/02-configuration.md). 
+
+At this point, your config.json file should look like this:
+
+```
+{
+    &#34;price&#34;: 0.0001,
+    &#34;number&#34;: 50,
+    &#34;gatekeeper&#34;: null,
+    &#34;solTreasuryAccount&#34;: &#34;&lt;YOUR WALLET ADDRESS&gt;&#34;,
+    &#34;splTokenAccount&#34;: null,
+    &#34;splToken&#34;: null,
+    &#34;goLiveDate&#34;: &#34;15 Jan 2022 00:00:00 GMT&#34;,
+    &#34;endSettings&#34;: null,
+    &#34;whitelistMintSettings&#34;: {
+        &#34;mode&#34; : { &#34;burnEveryTime&#34;: true },
+        &#34;mint&#34; : &#34;&lt;YOUR TOKEN ADDRESS&gt;&#34;,
+        &#34;presale&#34; : false,
+        &#34;discountPrice&#34; : null
+    },
+    &#34;hiddenSettings&#34;: {
+        &#34;name&#34;: &#34;&lt;YOUR NFT NAME&gt; &#34;,
+        &#34;uri&#34;: &#34;&lt;THE ARWAVE URI&gt;&#34;,
+        &#34;hash&#34;: &#34;&lt;ALEATORY 32 CHARACTERS STRING&gt;&#34;
+    },
+    &#34;storage&#34;: &#34;arweave&#34;,
+    &#34;ipfsInfuraProjectId&#34;: null,
+    &#34;ipfsInfuraSecret&#34;: null,
+    &#34;awsS3Bucket&#34;: null,
+    &#34;noRetainAuthority&#34;: false,
+    &#34;noMutable&#34;: false
+}
+```
+
+As you can see, I’m using [whitelistMintSettings](https://github.com/metaplex-foundation/docs/blob/main/docs/candy-machine-v2/02-configuration.md#whitelist-settings) and [hiddenSettings](https://github.com/metaplex-foundation/docs/blob/main/docs/candy-machine-v2/02-configuration.md#hidden-settings). Refer to the official document if you wish to make some changes to the configuration.
+
+
+This is what my config.json file looks like after completing the steps so far: &lt;br/&gt;
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b65e.png)
+
+In this configuration, each user that mints is going to receive an NFT with this name:&lt;YOUR NFT NAME&gt; #&lt;EDITION NUMBER&gt;
+You can add a white or blank space at the end of your NFT name to make it prettier.
+
+### 7. Upload your Candy Machine. 
     
-    <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <div class="cover-container">
+&gt; Remember, all of these commands should be executed using the correct RPC. (Mainet, DevNet or your custom RPC). You can verify this by running ```solana config get```. This will also use the wallet you imported for CLI. 
 
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand"></h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="ui-home active"><a href="candy-machine-mint-and-reveal.html#">Intro</a>
-                            </li>
-                            <li class="ui-history"><a href="candy-machine-mint-and-reveal.html#">History</a>
-                            </li>
-                            <div class="ui-signin" style="float: right; margin-top: 8px;">
-                                
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New guest note</a>
-                                
-                                
-                                <button class="btn btn-sm btn-success ui-signin" data-toggle="modal" data-target=".signin-modal">Sign In</button>
-                                
-                            </div>
-                            <div class="ui-signout" style="float: right; margin-top: 8px; display: none;">
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New note</a>
-                                <span class="ui-profile dropdown pull-right">
-                                    <button id="profileLabel" class="btn btn-sm btn-link ui-profile-label" style="padding-right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="ui-avatar" width="20" height="20"><span class="hidden-xs hidden-sm">&ensp;<span class="ui-name"></span></span>&ensp;<i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="profileLabel">
-                                        <li><a href="https://docs.monadical.com/features"><i class="fa fa-dot-circle-o fa-fw"></i> Features</a></li>
-                                        <li><a href="https://docs.monadical.com/me/export"><i class="fa fa-cloud-download fa-fw"></i> Export user data</a></li>
-                                        <li><a class="ui-delete-user" data-toggle="modal" data-target=".delete-user-modal"><i class="fa fa-trash fa-fw"></i> Delete user</a></li>
-                                        <li><a href="https://docs.monadical.com/logout"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
-                                    </ul>
-                                </span>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+Open a console in your Candy Machine folder and write this command:
+    
+```ts-node &lt;YOUR METAPLEX FOLDER&gt;/js/packages/cli/src/candy-machine-v2-cli.ts upload -e devnet -k &lt;PATH_TO_KEYPAIR&gt; -cp config.json -c &lt;YOUR CANDY MACHINE NAME&gt; ./assets```
 
-            <div id="home" class="section">
-                <div class="inner cover">
-                    <h1 class="cover-heading"><img src="https://docs.monadical.com/banner/banner_vertical_color.svg" width="400" alt="HedgeDoc logo"></h1>
-                    <p class="lead">
-                        The best platform to write and share markdown.
-                    </p>
-                    <span class="alert alert-info" style="display: inline-block;">
-                        CodiMD was renamed to HedgeDoc. <a href="https://hedgedoc.org/history/" rel="noopener noreferrer" target="_blank" class="text-danger">Read more</a>
-                    </span>
-                    
-                    
-                    <div class="alert alert-danger" style="max-width: 400px; margin: 0 auto;">You are not allowed to access this page. Maybe try logging in?</div>
-                    
-                    
-                    <span class="ui-signin">
-                        <br>
-                        <a type="button" class="btn btn-lg btn-success ui-signin" data-toggle="modal" data-target=".signin-modal" style="min-width: 200px;">Sign In</a>
-                    </span>
-                    <span class="ui-or">or</span>
-                    
-                    <span class="ui-signin">
-                        <a type="button" href="https://docs.monadical.com/features" class="btn btn-lg btn-primary" style="min-width: 200px;">Explore all features</a>
-                        <br>
-                        <br>
-                        <img src="https://docs.monadical.com/screenshot.png" class="screenshot ui-signin">
-                    </span>
-                    <div class="lead row" style="width: 90%; margin: 0 auto;">
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Share-Notes">
-                                <i class="fa fa-bolt fa-3x"></i>
-                                <h4>Real time collaboration</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#MathJax">
-                                <i class="fa fa-bar-chart fa-3x"></i>
-                                <h4>Works with charts and MathJax</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Slide-Mode">
-                                <i class="fa fa-tv fa-3x"></i>
-                                <h4>Supports slide mode</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+If you receive a message like: 
 
-            <div id="history" class="section" style="display:none;">
-                <div class="ui-signin">
-                    <p>Below is history from this browser</p>
-                </div>
-                <br>
-                <form class="form-inline">
-                    <div class="form-group" style="vertical-align: bottom;">
-                        <input class="form-control ui-use-tags" placeholder="Select tags…" />
-                    </div>
-                    <div class="form-group">
-                        <input class="search form-control" placeholder="Search keyword…" />
-                    </div>
-                    <a href="candy-machine-mint-and-reveal.html#" class="sort btn btn-default" data-sort="text" title="Sort by title">
-                    Title
-                    </a>
-                    <a href="candy-machine-mint-and-reveal.html#" class="sort btn btn-default" data-sort="timestamp" title="Sort by time">
-                    Time
-                    </a>
-                    <span class="hidden-xs hidden-sm">
-                        <a href="candy-machine-mint-and-reveal.html#" class="btn btn-default ui-save-history" title="Export history"><i class="fa fa-save"></i></a>
-                        <span class="btn btn-default btn-file ui-open-history" title="Import history">
-                            <i class="fa fa-folder-open-o"></i><input type="file" />
-                        </span>
-                    <a href="candy-machine-mint-and-reveal.html#" class="btn btn-default ui-clear-history" title="Clear history" data-toggle="modal" data-target=".delete-history-modal"><i class="fa fa-trash-o"></i></a>
-                    </span>
-                    <a href="candy-machine-mint-and-reveal.html#" class="btn btn-default ui-refresh-history" title="Refresh history"><i class="fa fa-refresh"></i></a>
-                </form>
-                <h4 class="ui-nohistory" style="display:none;">
-                    No history
-                </h4>
-                <a href="candy-machine-mint-and-reveal.html#" class="btn btn-primary ui-import-from-browser" style="display:none;">Import from browser</a>
-                <ul id="history-list" class="list">
-                </ul>
-                <ul class="pagination"></ul>
-            </div>
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b65f.png)
 
-            <div class="mastfoot">
-                <div class="inner">
-                    <select class="ui-locale"></select>
-                    <p>
-                        Powered by <a href="https://hedgedoc.org">HedgeDoc</a> | <a href="https://docs.monadical.com/s/release-notes" target="_blank" rel="noopener">Releases</a> | <a href="https://github.com/hedgedoc/hedgedoc/tree/0d8b2516623f85da7ce6eb3c34417a78dc499cbf" target="_blank" rel="noopener">Source Code</a>
-                    </p>
-                    <h6 class="social-foot">
-                        Follow us on <a href="https://github.com/hedgedoc/hedgedoc" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>, <a href="https://community.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-users" aria-hidden="true"></i> Discourse</a>, <a href="https://chat.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-comments"></i> Matrix</a>, <a href="https://social.hedgedoc.org/mastodon" target="_blank" rel="noopener"><i class="fa fa-mastodon"></i> Mastodon</a>, and <a href="https://translate.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-globe"></i> POEditor</a>.
-                    </h6>
-                </div>
-            </div>
+Congrats, your candy machine should be live! You can access the Candy machine address using  
+```ts-node &lt;YOUR METAPLEX FOLDER&gt;/js/packages/cli/src/candy-machine-v2-cli.ts show -e devnet -k &lt;PATH_TO_KEYPAIR&gt; -cp config.json -c &lt;YOUR CANDY MACHINE NAME&gt;```
+And should recieve something like this:
+
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b660.png)
+
+    
+If you don’t receive this, take a look at the error. For example, your console might be showing this error:
+
+&#39;(node:107) UnhandledPromiseRejectionWarning:Error: Invalid public key input&#39;
+    
+If you’re having trouble with an error, review the pubkeys of your config.json when you try to upload your Candy Machine. There, you will find a .cache folder that contains all the Candy Machine info. Delete this folder and retry uploading. 
+    
+### 8. Test your Candy Machine. 
+    
+If you are working on DevNet, use Metaplex to test your Candy Machine.
+    
+For this, Metaplex provides a basic UI. It works pretty well for testing purposes.
+ 
+
+
+```
+#GO TO THIS FOLDER
+&lt;YOUR METAPLEX FOLDER&gt;/js/packages/candy-machine-ui 
+#UPDATE THE .ENV FILE 
+nano .env
+    
+REACT_APP_CANDY_MACHINE_ID=&lt;YOUR CANDY MACHINE ID&gt;
+REACT_APP_SOLANA_NETWORK=&lt;NETWORK devnet OR mainnet&gt;
+REACT_APP_SOLANA_RPC_HOST=&lt;YOUR SOLANA RPC&gt;
+    
+#INSTALL AND RUN THE PROJECT
+yarn install 
+yarn start
+
+```
+Go to localhost:3000 and connect your wallet. Once you’ve done that, you should be able to see a UI like this:
+    ![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b639.png)
+
+You should now be able to mint NFTs. Remember, users can only mint an NFT if they have a token.
+
+Without token ![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b637.png)
+
+With token ![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b638.png)
+
+
+## Reveal your NFTS. 
+    
+The Candy Machine I created has two problems. Firstly, the creator needs to verify every NFT created with the Candy Machine. This is a laborious and time-consuming task. Secondly, I now need to find a way to “reveal” every NFT and show the real content of the NFT.
+    
+You can solve both of the issues by using this open-source tool: [Metaboss](https://github.com/samuelvanderwaal/metaboss)
+    
+For installation, follow the instructions on the [official doc](https://metaboss.rs/overview.html)
+
+### 1. Indentify your Candy Machine NFTS. 
+If you want to update the metadata or sign a specific NFT, you’ll need mints. Mints are unique keys that allow you to identify an NFT.
+    
+To get mints, run this command in Metaboss with your Candy Machine ID and your network:To get mints, run this command in Metaboss with your Candy Machine ID and your network:
+
+```
+metaboss -r &lt;SOLANA_RPC&gt; snapshot mints --candy-machine-id &lt;CANDY_MACHINE_ID&gt; --v2 --output &lt;OUTPUT_DIR&gt;
+```
+
+Open the output file. There you should see an array of public keys. Those are the mint keys of your Candy Machine. 
+    
+If the results are empty, check the command parameters and try again.
+
+### 2. Generate new metadata.
+    
+You need to generate the metadata from the revealed NFTs. To do that, generate a JSON file with the configuration for each NFT that you wish to update.
+
+    
+```
+{
+    &#34;mint_account&#34;: &#34;MINT_ADDRESS&#34;,
+    &#34;nft_data&#34;:
+    {
+        &#34;name&#34;: NFT_NAME,
+        &#34;symbol&#34;: &#34;&#34;,
+        &#34;uri&#34;: ARWEAVE_REVEALED_METADATA_LINK,
+        &#34;seller_fee_basis_points&#34;: SELLER_FEE_BASIS_POINTS,
+        &#34;creators&#34;: [
+            {
+                &#34;address&#34;: &#34;&lt;YOUR_CANDY_MACHINE_CREATOR_ADDRESS&gt;&#34;,
+                &#34;verified&#34;: true,
+                &#34;share&#34;: 0
+            },
+            {
+                &#34;address&#34;: &#34;&lt;CREATOR_ADDRESS&gt;&#34;,
+                &#34;verified&#34;: true,
+                &#34;share&#34;: 100
+            },
+        ]
+    }
+}
+```
+For ARWEAVE_REVEALED_METADATA_LINK you can replicate [step 4](https://docs.monadical.com/uu8SYKPyTMOsN_xxDKQrrA?both#4-Create-your-master-edition). The MINT_ADDRESS is the identification found in the [previous step](https://docs.monadical.com/uu8SYKPyTMOsN_xxDKQrrA?both#4-Create-your-master-edition).
+    
+### 2.1 Generate new metadata and using different assets. 
+    
+If you’d like to reveal different NFTs in different stages, let’s say 20% one day and 80% the next day, you will need one metadata link for each image that you use in your NFTS. You can use the repo presented below to achieve that.
+
+Clone [this repo](https://github.com/Monadical-SAS/CandyMachineCommonScripts) and take a look at *config.json*. In this file, specify how many divisions you want, and the parameters for each one.
+
+| Attribute | Description |
+| ------ | ------ |
+| Name |  The name of the token. |
+|Seller_fee_basis_points| The value for the seller fee. |
+|Quantity| Property that refers to the amount of tokens that are going to be selected. |
+|Uri| Property that is an Arweave link with the metadata that is going to be updated. |
+|Creators| A list of values for each creator: address, verify and share. |
+    
+Remember that your first creator should always be the Candy Machine creator address, with the second being your wallet address. 
+
+Create a *data.json file* with all the mints that you want to update, and run the script.
+    
+The data.json file is the one generated in the previous step.
+
+Note that the summation of **quantity** cannot be greater than the Candy Machine number. 
+
+Open a console in the repository folder, and run this command:
+
+```python generate_files.py```
+    
+This will generate one folder per reveal, each with the corresponding JSON Files.
+    
+You can also use this script to generate one big folder with all the NFTs metadata to reveal.
+    
+### 3. Update the NFT assets.
+    
+This is the reveal part. To do this, you need to update the metadata of the minted NFTs.
+    
+To update the metadata of several NFTs, run the following command:
+    
+```
+metaboss update data-all --keypair &lt;PATH_TO_KEYPAIR&gt; --data-dir &lt;PATH_TO_DATA_DIR&gt;
+```
+
+You can get more information about this command [here](https://metaboss.rs/update.html). You must use the same format as step 2. Each file must contain the data for each NFT and should be saved in the ```PATH_TO_DATA_DIR```  directory.
+
+
+### 4. Sign all the NFTS.
+ 
+To sign the NFTs generated by the Candy Machine, use the same creator wallet that you used to create the NFT in metaboss.
+Once you’ve completed that step, you can run this command:
+
+```
+metaboss -r &lt;SOLANA_RPC&gt;  sign all --keypair &lt;YOUR_KEYPAIR_FILE&gt; --candy-machine-id &lt;CANDY_MACHINE_ID&gt; --v2
+```
+
+After running the command, you should see the following message:
+
+![](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b63b.png)
+
+Go to chain and verify that the assets were signed (you can use the mint address for that). If it is not working, be sure that you are using the correct RPC and the correct Candy Machine id.
+    
+Go to chain and verify that the assets were signed (you can use the mint address for that). If it is not working, be sure that you are using the correct RPC and the correct Candy Machine id.
+
+That’s it! Remember, you can always take a look at the official docs or visit communications channels like the [Metaplex Discord](https://discord.com/invite/metaplex) or their [Twitter](https://twitter.com/metaplex) if you have any questions. 
+
+Wanting more? Check out [Monadical’s blog](https://monadical.com/blog.html) for other programming tutorials, and [Metaplex’s blog](https://www.metaplex.com/blog) for Metaplex updates and tutorials. 
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
         </div>
     </div>
-</div>
-<!-- delete history modal -->
-<div class="modal fade delete-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-history-modal-msg"></h5>
-                <strong class="ui-delete-history-modal-item"></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger ui-delete-history-modal-confirm">Yes, do it!</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- delete user modal -->
-<div class="modal fade delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-user-modal-msg">Do you really want to delete your user account?</h5>
-                <strong class="ui-delete-user-modal-item">This will delete your account, all notes that are owned by you and remove all references to your account from other notes.</strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default ui-delete-user-modal-cancel" data-dismiss="modal">Cancel</button>
-                <a type="button" class="btn btn-danger" href="https://docs.monadical.com/me/delete/">Yes, do it!</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- signin modal -->
-<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mySmallModalLabel">Choose method</h4>
-            </div>
-            <div class="modal-body" style="text-align: center;">
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <h4>Sign in via E-Mail</h4>
-                <form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary" formaction="https://docs.monadical.com/login">Sign In</button>
-                            <button type="submit" class="btn btn-default" formaction="https://docs.monadical.com/register">Register</button>
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.5e1034cb4e0fcfb8b567.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.1c773fb6375f6e4c11cf.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack.e5798975b79bb2448f60.js" defer="defer"></script><script src="https://docs.monadical.com/build/cover-pack.6949e7060a7c04a76325.js" defer="defer"></script>
-
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
 </body>
 
 </html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.5e1034cb4e0fcfb8b567.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.1c773fb6375f6e4c11cf.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3d360016c6ae606e8f1f.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.2209cda3054f9512951d.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.866aaf89d1295ab8be7f.js" defer="defer"></script>
+
+
 
                         </article>
                     

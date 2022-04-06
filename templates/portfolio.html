@@ -11,10 +11,18 @@
   <div id="table-of-contents" class="container portfolio-container">
     <div class="row">
       <!-- title -->
-      <div class="title col-12 col-md-8">Monadical Portfolio</div>
+      <div class="title col-12 col-md-12">Monadical Portfolio</div>
+      <!-- slogan -->
+      <div class="slogan col-12 col-md-12">We build software that outlasts us</div>
+      <div class="slogan col-12 col-md-12">
+        <a href="https://monadical.com/contact-us.html">
+          <button class="btn btn-info-inverse">BOOK A TECHNICAL ASSESSMENT</button>
+        </a>
+      </div>
+
     </div>
     <!-- list -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-10 offset-1 col-md-8 offset-md-0">
         <ul class="outer-list">
           <li>
@@ -60,7 +68,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <!-- scroll down -->
     <div class="scroll-down text-center">
       <a href="#why-hire-monadical" class="scroll-down">
@@ -116,12 +124,9 @@
             product, or we can integrate into an existing team to assist with
             management, engineering, & operations.
           </p>
-          <p>
-            <span class="emphasis">Our standard tech stack:</span> Django/Flask
-            (Python3 w/ MyPy), React+Redux (ES7+ TypeScript)
-          </p>
         </div>
       </div>
+      
 
       <div class="col-md-3 d-flex flex-column align-items-center">
         <div class="specialty-title">Full-Stack Web Development</div>
@@ -134,10 +139,6 @@
             With years of development and operations experience from building
             our own startups, we’re comfortable assembling, scaling, and
             managing remote teams and complex software.
-          </p>
-          <p>
-            <span class="emphasis">Our team ratio:</span>
-            1:1 Senior to Junior
           </p>
         </div>
       </div>
@@ -152,6 +153,13 @@
           We go beyond app-building and provide full solutions, including ops
           setup, data science, and lifecycle duties like refactoring, security
           review, and documentation.
+        </div>
+      </div>
+
+      <div class="col-md-12 d-flex flex-column align-items-center mt-5">
+        <div class="image-description">
+          <span class="emphasis">Our standard tech stack:</span> Django/Flask
+          (Python3 w/ MyPy), React+Redux (ECMA Script + TypeScript)
         </div>
       </div>
     </div>
@@ -277,81 +285,35 @@
   </div>
 
   <!------------ A Selection of Monadical Projects ------------>
-  <div id="monadical-projects" class="container portfolio-container">
-    <div class="row">
-      <!-- title -->
-      <div class="section-title col-12">A Selection of Monadical Projects</div>
-    </div>
+  <div class="monadical-projects-wrapper">
 
-    {% for project in projects %}
-      {% if loop.index is even %}
-      <div id="{{ project.id }}-project" class="row project-row">
-        <div class="img-wrapper col-12 col-md-7">
+    <div id="monadical-projects" class="container-fluid portfolio-container">
+      <div class="row flex-column">
+        <!-- title -->
+        <div class="section-title col-12">Selected Monadical Projects</div>
+        <div class="row main-image-wrapper-1 col-12 col-md-12">
           <img
-            src="{{ project.image_path }}"
-            class="project-img"
-            alt="{{ project.alt }}"
+            src="/static/core/img/img-portfolio-octopus-with-figures.png"
+            class="main-image-1"
+            alt="Monadical's octopus mascot with figures."
           />
         </div>
-        <div class="project-text col-12 col-md-5 pl-md-5">
-          <div class="project-title">{{ project.title }}</div>
-          <div class="subtitle">{{ project.subtitle }}</div>
-          <p>
-            {{ project.description }}
-          </p>
-          <div class="project-stack">
-            {{ project.stack }}
-          </div>
-          <a class="align-self-center align-self-md-start" href="{{ project.website }}" target="_blank">
-            <button class="btn btn-info-inverse">Learn more</button>
-          </a>
-        </div>
+        <img
+          src="/static/core/img/img-portfolio-cube-right-full.png"
+          class="main-image-3"
+          alt="Monadical's octopus mascot with figures."
+        />
+        <img
+          src="/static/core/img/img-portfolio-cloud-3.png"
+          class="main-image-4"
+          alt="Monadical's octopus mascot with figures."
+        />
       </div>
-      {% else %}
-      <div id="{{ project.id }}-project" class="row project-row flex-column-reverse flex-md-row">
-        <div class="project-text col-12 col-md-5 pr-md-5">
-          <div class="project-title">{{ project.title }}</div>
-          <div class="subtitle">{{ project.subtitle }}</div>
-          <p>
-            {{ project.description }}
-          </p>
-          <div class="project-stack">
-            {{ project.stack }}
-          </div>
-          <a class="align-self-center align-self-md-start" href="{{ project.website }}" target="_blank">
-            <button class="btn btn-info-inverse">Learn more</button>
-          </a>
-        </div>
-        {% if project.id != 'neurocaas' %}
-        <div class="img-wrapper col-12 col-md-7">
-          <img
-            src="{{ project.image_path }}"
-            class="project-img"
-            alt="{{ project.alt }}"
-          />
-        </div>
-        {% else %}
-        <div class="img-wrapper img-wrapper-scaled  col-12 col-md-7">
-          <img
-            src="{{ project.image_path }}"
-            class="project-img project-img-scaled"
-            alt="{{ project.alt }}"
-          />
-        </div>
-        {% endif %}
-      </div>
-      {% endif %}    
-    {% endfor %}
-
-    <!------------ Open Source Work ------------>
-    <div class="row">
-      <!-- title -->
-      <div class="section-title col-12">Open Source Work</div>
     </div>
-
-    {% for project in oss %}
-      {% if loop.index is even %}
-        <div id="{{ project.id }}-oss" class="row project-row">
+    <div id="monadical-projects" class="container portfolio-container">
+      {% for project in projects %}
+        {% if loop.index is odd %}
+        <div id="{{ project.id }}-project" class="row project-row">
           <div class="img-wrapper col-12 col-md-7">
             <img
               src="{{ project.image_path }}"
@@ -360,28 +322,35 @@
             />
           </div>
           <div class="project-text col-12 col-md-5 pl-md-5">
+            <div class="project-title">{{ project.title }}</div>
             <div class="subtitle">{{ project.subtitle }}</div>
-            <ul>
-              {% for name, website in project['examples'].items() %}
-                <li>
-                  <a class="col-6 col-md-12" href="{{ website }}">{{ name }}</a>
-                </li>  
-              {% endfor %}
-            </ul>
+            <p>
+              {{ project.description }}
+            </p>
+            <div class="project-stack">
+              {{ project.stack }}
+            </div>
+            <a class="align-self-center align-self-md-start" href="{{ project.website }}" target="_blank">
+              <button class="btn btn-info-inverse">Learn more</button>
+            </a>
           </div>
         </div>
-      {% else %}
-        <div id="{{ project.id }}-oss" class="row project-row flex-column-reverse flex-md-row">
+        {% else %}
+        <div id="{{ project.id }}-project" class="row project-row flex-column-reverse flex-md-row">
           <div class="project-text col-12 col-md-5 pr-md-5">
+            <div class="project-title">{{ project.title }}</div>
             <div class="subtitle">{{ project.subtitle }}</div>
-            <ul>
-              {% for name, website in project['examples'].items() %}
-                <li>
-                  <a class="col-6 col-md-12" href="{{ website }}">{{ name }}</a>
-                </li>  
-              {% endfor %}
-            </ul>
+            <p>
+              {{ project.description }}
+            </p>
+            <div class="project-stack">
+              {{ project.stack }}
+            </div>
+            <a class="align-self-center align-self-md-start" href="{{ project.website }}" target="_blank">
+              <button class="btn btn-info-inverse">Learn more</button>
+            </a>
           </div>
+          {% if project.id != 'neurocaas' %}
           <div class="img-wrapper col-12 col-md-7">
             <img
               src="{{ project.image_path }}"
@@ -389,41 +358,115 @@
               alt="{{ project.alt }}"
             />
           </div>
+          {% else %}
+          <div class="img-wrapper img-wrapper-scaled  col-12 col-md-7">
+            <img
+              src="{{ project.image_path }}"
+              class="project-img project-img-scaled"
+              alt="{{ project.alt }}"
+            />
+          </div>
+          {% endif %}
         </div>
-      {% endif %}    
-    {% endfor %}
-
-    <!------------ Crypto ------------>
-    <div id="crypto">
-      <div class="row">
-        <div class="col-12 text-center subtitle">Crypto</div> 
+        {% endif %}    
+      {% endfor %}
+  
+      <!------------ Open Source Work ------------>
+      <div class="row flex-column bg-transparent">
+        <!-- title -->
+        <div class="section-title col-12">Open Source Work</div>
+        <div class="main-image-wrapper-2">
+          <img
+            src="/static/core/img/img-portfolio-octopus-laptop.png"
+            class="main-image-2"
+            alt="Monadical's octopus mascot typing in a laptop."
+          />
+        </div>
       </div>
-      <!-- crypto cards -->
-      <div class="row">
-        {% for project in crypto %}
-        <div class="col-md-4 col-12 my-2">
-          <div class="card">
-            <div class="card-img-top">
+  
+      {% for project in oss %}
+        {% if loop.index is odd %}
+          <div id="{{ project.id }}-oss" class="row project-row">
+            <div class="img-wrapper col-12 col-md-7">
               <img
                 src="{{ project.image_path }}"
-                aria-hidden="true"
+                class="project-img"
+                alt="{{ project.alt }}"
               />
             </div>
-            <div class="card-link">
-              <a href="{{ project.link }}">{{ project.title }}</a>
+            <div class="project-text col-12 col-md-5 pl-md-5">
+              <div class="subtitle">{{ project.subtitle }}</div>
+              <ul>
+                {% for name, website in project['examples'].items() %}
+                  <li>
+                    <a class="col-6 col-md-12" href="{{ website }}">{{ name }}</a>
+                  </li>  
+                {% endfor %}
+              </ul>
             </div>
           </div>
+        {% else %}
+          <div id="{{ project.id }}-oss" class="row project-row flex-column-reverse flex-md-row">
+            <div class="project-text col-12 col-md-5 pr-md-5">
+              <div class="subtitle">{{ project.subtitle }}</div>
+              <ul>
+                {% for name, website in project['examples'].items() %}
+                  <li>
+                    <a class="col-6 col-md-12" href="{{ website }}">{{ name }}</a>
+                  </li>  
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="img-wrapper col-12 col-md-7">
+              <img
+                src="{{ project.image_path }}"
+                class="project-img"
+                alt="{{ project.alt }}"
+              />
+            </div>
+          </div>
+        {% endif %}    
+      {% endfor %}
+  
+      <!------------ Crypto ------------>
+      <!-- <div id="crypto">
+        <div class="row">
+          <div class="col-12 text-center subtitle">Crypto</div> 
+        </div> -->
+        <!-- crypto cards -->
+        <!-- <div class="row">
+          {% for project in crypto %}
+          <div class="col-md-4 col-12 my-2">
+            <div class="card">
+              <div class="card-img-top">
+                <img
+                  src="{{ project.image_path }}"
+                  aria-hidden="true"
+                />
+              </div>
+              <div class="card-link">
+                <a href="{{ project.link }}">{{ project.title }}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
+      </div> -->
     </div>
   </div>
 
   <!------------ Writing & Talks ------------>
   <div id="writing-and-talks" class="container portfolio-container">
     <!-- title -->
-    <div class="row">
+    <div class="row flex-column">
       <div class="section-title col-12">Some of Our Writing & Talks</div>
+      <div class="main-image-talks-wrapper">
+        <img
+          src="/static/core/img/img-portfolio-tentacles-with-pens.png"
+          class="main-image-talks-1"
+          alt="Monadical's octopus mascot using pens."
+        />
+      </div>
       <div class="col-12 text-center subtitle">Conference Talks</div>
     </div>
 

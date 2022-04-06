@@ -1,26 +1,71 @@
 /* this gets rid of the bottom dots */
 .container-full {
+  width: 100%;
+  max-width: 1600px;
   border-radius: 0px;
 }
 
 /* Background */
-.portfolio-full {
-  background-image: url(/static/core/img/img-portfolio-cube-right.png),
-    url(/static/core/img/img-portfolio-tentacle-left.png),
-    url(/static/core/img/img-portfolio-tentacle-right.png),
-    url(/static/core/img/img-portfolio-cube-left.png),
-    url(/static/core/img/img-portfolio-cloud-right.png),
-    url(/static/core/img/img-portfolio-swirly-right.png),
-    url(/static/core/img/img-portfolio-cube-left.png);
+@media (min-width: 768px) and (max-width: 2560px) {
 
-  background-position: 100% 15%, 0 25%, 100% 40%, 0 60%, 100% 75%, 100% 73%, 0 90%;
-  background-repeat: no-repeat;
+  .portfolio-full {
+    background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
+      url(/static/core/img/img-portfolio-tentacle-left.png),
+      url(/static/core/img/img-portfolio-cube-right.png),
+      url(/static/core/img/img-portfolio-curl-left.png),
+      url(/static/core/img/img-portfolio-cloud.png),
+      url(/static/core/img/img-portfolio-cube-left-full.png),
+      url(/static/core/img/img-portfolio-cloud-right-2.png),
+      url(/static/core/img/img-portfolio-cloud-2.png),
+      url(/static/core/img/img-portfolio-cube-center.png),
+      url(/static/core/img/img-portfolio-cloud-left.png),
+      url(/static/core/img/img-portfolio-001.png);
+    background-position: 100% 36%,
+      0% 72.5%,
+      100% 76%,
+      0% 81%,
+      0% -2%,
+      0% 64%,
+      85% 61.5%,
+      0% 93%,
+      100% 91%,
+      0% 3%,
+      105% -0.5%;
+    background-repeat: no-repeat;
+  }
 }
+
 
 @media (max-width: 768px) {
   .portfolio-full {
-    background-position: 100% 13.5%, 0 30%, 100% 40%, 0 64%, 100% 73%, 100% 73%, 0 90%;
-    background-size: 20%;
+    background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
+      url(/static/core/img/img-portfolio-tentacle-right.png),
+      url(/static/core/img/img-portfolio-cube-left.png),
+      url(/static/core/img/img-portfolio-swirly-right.png),
+      url(/static/core/img/img-portfolio-cloud.png),
+      url(/static/core/img/img-portfolio-cube-left-full.png),
+      url(/static/core/img/img-portfolio-cloud-right-2.png),
+      url(/static/core/img/img-portfolio-cloud-2.png),
+      url(/static/core/img/img-portfolio-cube-center.png);
+    background-position: 100% 35%,
+      100% 72.5%,
+      0% 77%,
+      100% 80.5%,
+      0% -1%,
+      0% 64%,
+      85% 61.5%,
+      0% 90%,
+      100% 88.1%;
+    background-repeat: no-repeat;
+    background-size: 20%,
+      20%,
+      30%,
+      30%,
+      100%,
+      50%,
+      100%,
+      100%,
+      70%;
   }
 }
 
@@ -34,14 +79,35 @@
   line-height: 80px;
   font-size: 82px;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.portfolio-container .title::first-letter {
+  font-size: 129px;
+  background-image: url("/static/core/img/monadical-blue-grey-logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: transparent;
+  margin-left: 10px;
+}
+
+.portfolio-container .slogan {
+  color: #333333;
+  line-height: 36px;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 3rem;
   text-align: left;
 }
 
 .portfolio-container .section-title {
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 62px;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 80px;
   margin: 3rem 0;
   text-align: center;
 }
@@ -77,6 +143,26 @@
     font-size: 30px;
     line-height: 45px;
     margin-bottom: 16rem;
+    text-align: center;
+  }
+
+  .portfolio-container .title::first-letter {
+    font-size: 50px;
+    line-height: 45px;
+    background-image: url("/static/core/img/monadical-blue-grey-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center left;
+    color: transparent;
+  }
+
+  .portfolio-container .slogan {
+    color: #333333;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 2rem;
     text-align: center;
   }
 
@@ -116,9 +202,6 @@
 /* Table of Contents */
 #table-of-contents {
   margin-top: 6rem;
-  background: url(/static/core/img/img-portfolio-001.png) no-repeat;
-  background-size: 45%;
-  background-position: top right;
 }
 
 #table-of-contents li {
@@ -194,14 +277,14 @@
 
 @media (max-width: 768px) {
   #table-of-contents {
-    background-position: top center;
+    background: url(/static/core/img/img-portfolio-001.png) no-repeat;
+    background-position: 50% 5%;
     background-size: 50%;
     margin-top: 1.5rem;
   }
 
   #table-of-contents .outer-list {
     background: rgba(255, 255, 255, 0.5);
-    margin-top: -5rem;
     padding: 1rem;
   }
 
@@ -233,13 +316,13 @@
 
 /* Why Hire Us */
 #why-hire-monadical {
-  background: url(/static/core/img/img-portfolio-multitask-left.png) no-repeat;
-  background-size: 25%;
-  background-position: top left;
+  background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
+  background-size: 30%;
+  background-position: 100% 0%;
 }
 
 #why-hire-monadical .contrast-wrapper {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -260,8 +343,15 @@
   font-size: 25px;
 }
 
-
 @media (max-width: 768px) {
+  #why-hire-monadical {
+    background-image: url(/static/core/img/img-portfolio-cube-right-full.png),
+      url(/static/core/img/img-portfolio-cloud-left.png);
+    background-repeat: no-repeat;
+    background-size: 30%,80%;
+    background-position: right center, left center;
+  }
+
   #why-hire-monadical .content-row {
     margin: 0 16px;
   }
@@ -424,7 +514,62 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid #2b2b2b;
+  padding-bottom: 5rem;
+}
+
+#monadical-projects .main-image-wrapper-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 0 0rem 0;
+  background-image: url(/static/core/img/img-portfolio-curl-left.png);
+  background-size: 17rem 16rem;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  margin: 0%;
+}
+
+#monadical-projects .main-image-wrapper-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#monadical-projects .main-image-1 {
+  border-radius: 10px;
+  width: 100%;
+  margin: 2rem;
+  max-width: 585px;
+}
+
+.monadical-projects-wrapper {
+  position: relative;
+}
+
+#monadical-projects .main-image-2 {
+  border-radius: 10px;
+  width: 100%;
+  margin-top: -17rem;
+  margin-bottom: -10rem;
+  max-width: 700px;
+}
+
+#monadical-projects .main-image-3 {
+  position: absolute;
+  right:0;
+  top:5.5%;
+  border-radius: 10px;
+  width: 25rem;
+  max-width: 700px;
+}
+
+#monadical-projects .main-image-4 {
+  position: absolute;
+  width: fill;
 }
 
 #monadical-projects .img-wrapper {
@@ -446,7 +591,7 @@
 }
 
 #monadical-projects .img-wrapper-scaled {
-  transform: scaleY(0.75)
+  transform: scaleY(0.75);
 }
 
 #monadical-projects .project-img-scaled {
@@ -503,11 +648,59 @@
   font-size: 18px;
 }
 
+
+@media (max-width: 1080px) {
+  #monadical-projects .main-image-3 {
+    top: 4.5%
+  }
+}
+
 @media (max-width: 768px) {
   #monadical-projects .project-row {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 2rem;
+  }
+
+  #monadical-projects .main-image-wrapper-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 0 4rem 0;
+    background-image: url(/static/core/img/img-portfolio-curl-left.png),
+      url(/static/core/img/img-portfolio-cube-right-full-small.png);
+    background-size: 20%, 20%;
+    background-position: 0% 0%, 100% 110%;
+    background-repeat: no-repeat;
+    margin: 0%;
+  }
+
+  #monadical-projects .main-image-wrapper-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #monadical-projects .main-image-1 {
+    width: 50%;
+  }
+
+  #monadical-projects .main-image-2 {
+    border-radius: 10px;
+    width: 100%;
+    margin-top: -17rem;
+    margin-bottom: -10rem;
+    max-width: 700px;
+  }
+
+  #monadical-projects .main-image-3 {
+    display: none;
+  }
+
+  #monadical-projects .main-image-4 {
+    width: 100%;
   }
 
   #monadical-projects .img-wrapper {
@@ -624,6 +817,13 @@
   line-height: 24px;
 }
 
+#writing-and-talks .subtitle {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62.4px;
+  text-align: center;
+}
+
 #writing-and-talks .img-wrapper img {
   border-radius: 10px;
   width: 80%;
@@ -632,6 +832,24 @@
 #writing-and-talks .image-row {
   margin-bottom: 5rem;
   align-items: center;
+  padding-bottom: 7rem;
+  border-bottom: 1px solid #2b2b2b;
+
+}
+
+#writing-and-talks .main-image-talks-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* min-height: 645px; */
+}
+
+#writing-and-talks .main-image-talks-1 {
+  border-radius: 10px;
+  width: 100%;
+  margin: 0rem;
+  max-width: 585px;
 }
 
 #writing-and-talks .card {

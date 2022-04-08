@@ -1,12 +1,12 @@
 /* this gets rid of the bottom dots */
 .container-full {
   width: 100%;
-  max-width: 1600px;
+  /* max-width: 1600px; */
   border-radius: 0px;
 }
 
 /* Background */
-@media (min-width: 768px) and (max-width: 2560px) {
+@media (min-width: 768px) {
 
   .portfolio-full {
     background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
@@ -71,17 +71,17 @@
 
 /* General  */
 .portfolio-container {
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
 }
 
 .portfolio-container .title {
   color: #2b2b2b;
-  line-height: 80px;
+  line-height: 90px;
   font-size: 82px;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: left;
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
 
 .portfolio-container .title::first-letter {
@@ -142,6 +142,7 @@
   .portfolio-container .title {
     font-size: 30px;
     line-height: 45px;
+    margin-top: 1rem;
     margin-bottom: 16rem;
     text-align: center;
   }
@@ -264,7 +265,7 @@
 }
 
 #table-of-contents .scroll-down {
-  padding: 8rem 0;
+  padding: 5rem 0;
   text-decoration: none;
 }
 
@@ -317,12 +318,12 @@
 /* Why Hire Us */
 #why-hire-monadical {
   background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
-  background-size: 30%;
-  background-position: 100% 0%;
+  background-size: 25rem; 
+  background-position: 100% 10%;
 }
 
 #why-hire-monadical .contrast-wrapper {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -348,7 +349,7 @@
     background-image: url(/static/core/img/img-portfolio-cube-right-full.png),
       url(/static/core/img/img-portfolio-cloud-left.png);
     background-repeat: no-repeat;
-    background-size: 30%,80%;
+    background-size: 12rem,80%;
     background-position: right center, left center;
   }
 

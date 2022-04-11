@@ -14,21 +14,13 @@
       url(/static/core/img/img-portfolio-cube-right.png),
       url(/static/core/img/img-portfolio-curl-left.png),
       url(/static/core/img/img-portfolio-cloud.png),
-      url(/static/core/img/img-portfolio-cube-left-full.png),
-      url(/static/core/img/img-portfolio-cloud-right-2.png),
-      url(/static/core/img/img-portfolio-cloud-2.png),
-      url(/static/core/img/img-portfolio-cube-center.png),
       url(/static/core/img/img-portfolio-cloud-left.png),
       url(/static/core/img/img-portfolio-001.png);
-    background-position: 100% 36%,
-      0% 72.5%,
-      100% 76%,
-      0% 81%,
+    background-position: 100% 32%,
+      0% 67%,
+      100% 70%,
+      0% 74.5%,
       0% -2%,
-      0% 64%,
-      85% 61.5%,
-      0% 93%,
-      100% 91%,
       0% 3%,
       105% -0.5%;
     background-repeat: no-repeat;
@@ -42,36 +34,25 @@
       url(/static/core/img/img-portfolio-tentacle-right.png),
       url(/static/core/img/img-portfolio-cube-left.png),
       url(/static/core/img/img-portfolio-swirly-right.png),
-      url(/static/core/img/img-portfolio-cloud.png),
-      url(/static/core/img/img-portfolio-cube-left-full.png),
-      url(/static/core/img/img-portfolio-cloud-right-2.png),
-      url(/static/core/img/img-portfolio-cloud-2.png),
-      url(/static/core/img/img-portfolio-cube-center.png);
+      url(/static/core/img/img-portfolio-cloud.png);
     background-position: 100% 35%,
-      100% 72.5%,
-      0% 77%,
-      100% 80.5%,
-      0% -1%,
-      0% 64%,
-      85% 61.5%,
-      0% 90%,
-      100% 88.1%;
+      100% 65.5%,
+      0% 69.5%,
+      100% 73%,
+      0% -1%;
     background-repeat: no-repeat;
     background-size: 20%,
       20%,
       30%,
       30%,
       100%,
-      50%,
-      100%,
-      100%,
-      70%;
+      50%;
   }
 }
 
 /* General  */
 .portfolio-container {
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 
 .portfolio-container .title {
@@ -140,7 +121,7 @@
   }
 
   .portfolio-container .title {
-    font-size: 30px;
+    font-size: 40px;
     line-height: 45px;
     margin-top: 1rem;
     margin-bottom: 16rem;
@@ -168,8 +149,8 @@
   }
 
   .portfolio-container .section-title {
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 30px;
+    line-height: 44px;
     margin: 2rem 0;
   }
 
@@ -534,10 +515,13 @@
 }
 
 #monadical-projects .main-image-wrapper-2 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 5rem;
+  z-index: -1;
 }
 
 #monadical-projects .main-image-1 {
@@ -553,16 +537,17 @@
 
 #monadical-projects .main-image-2 {
   border-radius: 10px;
-  width: 100%;
-  margin-top: -17rem;
-  margin-bottom: -10rem;
-  max-width: 700px;
+  width: 80%;
+  margin-top: -25rem;
+  margin-bottom: -15rem;
+  margin-left: 5rem;
+  max-width: 1000px;
 }
 
 #monadical-projects .main-image-3 {
   position: absolute;
   right:0;
-  top:5.5%;
+  top:4.5%;
   border-radius: 10px;
   width: 25rem;
   max-width: 700px;
@@ -573,6 +558,31 @@
   width: fill;
 }
 
+#monadical-projects .main-image-5 {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 38%;
+  width: fill;
+  z-index:-2;
+}
+
+#monadical-projects .main-image-6 {
+  position: absolute;
+  right: -10%;
+  transform: rotate(-90deg) scaleX(-1);
+  bottom: 36%;
+  width: cover;
+}
+  
+#monadical-projects .main-image-7 {
+  position: absolute;
+  left: 0%;
+  bottom: 38%;
+  width: cover;
+  width: 60%;
+}
+  
 #monadical-projects .img-wrapper {
   align-items: center;
   background-color: #f9f9f9;
@@ -652,7 +662,7 @@
 
 @media (max-width: 1080px) {
   #monadical-projects .main-image-3 {
-    top: 4.5%
+    top: 4%
   }
 }
 
@@ -687,11 +697,11 @@
   #monadical-projects .main-image-1 {
     width: 50%;
   }
-
+ 
   #monadical-projects .main-image-2 {
     border-radius: 10px;
-    width: 100%;
-    margin-top: -17rem;
+    width: 80%;
+    margin-top: -10rem;
     margin-bottom: -10rem;
     max-width: 700px;
   }
@@ -744,12 +754,67 @@
 /* Crypto */
 #crypto {
   font-size: 20px;
+  margin-bottom: 3rem;
+}
+
+#crypto .subtitle {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62.4px;
+  text-align: center;
 }
 
 #crypto .card {
   min-height: 215px;
   background-color: #0086b4;
-  box-shadow: 0px 4px 21px -5px #6161613c;
+  box-shadow: 0px 4px 11px 2.5px #6161613c;
+  border: none;
+}
+
+#crypto .main-image-crypto-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* min-height: 645px; */
+}
+
+#crypto .main-image-crypto-1 {
+  border-radius: 10px;
+  width: 100%;
+  margin-left: 25rem;
+  max-width: 585px;
+}
+
+#crypto .main-image-crypto-2 {
+  position: absolute;
+  /* background-color: magenta; */
+  right: 0;
+  bottom: 4%;
+  width: cover;
+}
+
+#crypto .main-image-crypto-3 {
+  position: absolute;
+  /* background-color: magenta; */
+  left: 0;
+  bottom: 4%;
+  width: cover;
+}
+
+#crypto .main-image-crypto-4 {
+  position: absolute;
+  /* background-color: magenta; */
+  left: 0;
+  bottom: 4%;
+  width: cover;
+}
+
+#crypto .main-image-crypto-5 {
+  position: absolute;
+  right: 0;
+  bottom: 7%;
+  width: cover;
 }
 
 #crypto .image-row {
@@ -757,16 +822,17 @@
 }
 
 #crypto .card-img-top {
-  background: url("/static/core/img/img-portfolio-002.png") no-repeat;
-  background-color: #2b2b2b;
+  background: url("/static/core/img/img-portfolio-crypto-background-cards.png") no-repeat;
+  background-color: #ffffff;
   background-size: cover;
   display: flex;
   justify-content: center;
+  /* height: 248px; */
 }
 
 #crypto .card-img-top img {
   height: 80px;
-  margin: 46px 0;
+  margin: 46px 0px;
 }
 
 #crypto .card-link {
@@ -787,6 +853,50 @@
 @media (max-width: 768px) {
   #crypto {
     font-size: 18px;
+  }
+
+  #crypto .subtitle {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  #crypto .main-image-crypto-1 {
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 10rem;
+    max-width: 585px;
+  }
+
+  #crypto .main-image-crypto-2 {
+    position: absolute;
+    /* background-color: magenta; */
+    right: 0;
+    bottom: 8%;
+    width: 100%;
+  }
+
+  #crypto .main-image-crypto-3 {
+    position: absolute;
+    /* background-color: magenta; */
+    left: 0;
+    bottom: 8%;
+    width: 100%;
+  }
+
+  #crypto .main-image-crypto-4 {
+    position: absolute;
+    width: 40%;
+    left: 0;
+    bottom: 8%;
+    width: cover;
+  }
+
+  #crypto .main-image-crypto-5 {
+    position: absolute;
+    width: 12%;
+    right: 0;
+    bottom: 10.5%;
+    width: cover;
   }
 
   #crypto .card {
@@ -843,6 +953,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
   /* min-height: 645px; */
 }
 
@@ -851,6 +962,19 @@
   width: 100%;
   margin: 0rem;
   max-width: 585px;
+}
+
+#writing-and-talks .main-image-talks-2 {
+  position: absolute;
+  border-radius: 10px;
+  right: -10%;
+  width: 60%;
+}
+
+#writing-and-talks .main-image-talks-3 {
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
 }
 
 #writing-and-talks .card {
@@ -888,6 +1012,34 @@
   #writing-and-talks {
     line-height: 19px;
     text-align: center;
+  }
+
+  #writing-and-talks .subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  #writing-and-talks .main-image-talks-1 {
+    border-radius: 10px;
+    width: 50%;
+    margin: 0rem;
+    max-width: 585px;
+  }
+  
+  #writing-and-talks .main-image-talks-2 {
+    position: absolute;
+    border-radius: 10px;
+    right: -10%;
+    width: 50%;
+  }
+
+  #writing-and-talks .main-image-talks-3 {
+    position: absolute;
+    border-radius: 10px;
+    left: 0;
   }
 
   #writing-and-talks #talks-carousel {

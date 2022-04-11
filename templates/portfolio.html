@@ -331,6 +331,21 @@
             alt="Monadical's octopus mascot typing in a laptop."
           />
         </div>
+        <img
+          src="/static/core/img/img-portfolio-cloud-right-2.png"
+          class="main-image-5"
+          alt="Monadical's octopus mascot typing in a laptop."
+        />
+        <img
+          src="/static/core/img/img-portfolio-cloud-right-2.png"
+          class="main-image-6"
+          alt="Monadical's octopus mascot typing in a laptop."
+        />
+        <img
+          src="/static/core/img/img-portfolio-cube-left-full.png"
+          class="main-image-7"
+          alt="Background cube left"
+        />
       </div>
   
       {% for project in oss %}
@@ -378,14 +393,44 @@
       {% endfor %}
   
       <!------------ Crypto ------------>
-      <!-- <div id="crypto">
+      <div id="crypto" class="container-fluid portfolio-container" >
         <div class="row">
-          <div class="col-12 text-center subtitle">Crypto</div> 
-        </div> -->
+          <!--title-->
+          <div class="col-12 text-center section-title">NFT  launches</div> 
+          <div class="main-image-crypto-wrapper col-12 col-md-12">
+            <img
+              src="/static/core/img/img-portfolio-tentacles-with-calendar.png"
+              class="main-image-crypto-1"
+              alt="Monadical's octopus mascot with a calendar."
+            />
+          </div>
+          <img
+            src="/static/core/img/img-portfolio-crypto-background-sky-1.png"
+            class="main-image-crypto-2"
+            alt="Background cloud image on the right."
+          />
+          <img
+            src="/static/core/img/img-portfolio-crypto-background-sky-2.png"
+            class="main-image-crypto-3"
+            alt="Background cloud image on the left."
+          />
+          <img
+            src="/static/core/img/img-portfolio-tentacles-with-pens-left.png"
+            class="main-image-crypto-4"
+            alt="Background cloud image on the left."
+          />
+          <img
+            src="/static/core/img/img-portfolio-tentacle-right-inverted.png"
+            class="main-image-crypto-5"
+            alt="Background cloud image on the left."
+          />
+        </div>
+        <!--subtitle-->
+        <div class="col-12 text-center subtitle">We work in such projects:</div>
         <!-- crypto cards -->
-        <!-- <div class="row">
+        <div class="row d-flex justify-content-center">
           {% for project in crypto %}
-          <div class="col-md-4 col-12 my-2">
+          <div class="col-md-4 col-12 my-3">
             <div class="card">
               <div class="card-img-top">
                 <img
@@ -400,12 +445,12 @@
           </div>
           {% endfor %}
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 
   <!------------ Writing & Talks ------------>
-  <div id="writing-and-talks" class="container portfolio-container">
+  <div id="writing-and-talks" class="container-fluid portfolio-container">
     <!-- title -->
     <div class="row flex-column">
       <div class="section-title col-12">Some of Our Writing & Talks</div>
@@ -415,75 +460,78 @@
           class="main-image-talks-1"
           alt="Monadical's octopus mascot using pens."
         />
+        <img
+          src="/static/core/img/img-portfolio-cube-center.png"
+          class="main-image-talks-2"
+          alt="Monadical's octopus mascot using pens."
+        />
+        <img
+          src="/static/core/img/img-portfolio-cloud-2.png"
+          class="main-image-talks-3"
+          alt="Monadical's cloud left."
+        />
       </div>
       <div class="col-12 text-center subtitle">Conference Talks</div>
     </div>
 
-    <!-- conference talks (md+) -->
-    <div class="row image-row d-none d-md-flex">
-      {% for talk in public['talks'] %}
-      <div class="col-12 col-md-4">
-        <div class="text-center card">
-          <img
-            src="{{ talk.image_path }}"
-            alt="{{ talk.alt }}"
-          />
-          <a href="{{ talk.link }}" class="card-title my-3">{{ talk.title }}</a>
+    <div id="writing-and-talks" class="container portfolio-container">
+      <!-- conference talks (md+) -->
+      <div class="row image-row d-none d-md-flex">
+        {% for talk in public['talks'] %}
+        <div class="col-12 col-md-4">
+          <div class="text-center card">
+            <img
+              src="{{ talk.image_path }}"
+              alt="{{ talk.alt }}"
+            />
+            <a href="{{ talk.link }}" class="card-title my-3">{{ talk.title }}</a>
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-
-    <!-- conference talks (mobile) -->
-    <div id="talks-carousel" class="carousel slide d-md-none" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#talks-carousel" data-slide-to="0" class="rounded-circle active"></li>
-        <li data-target="#talks-carousel" data-slide-to="1" class="rounded-circle"></li>
-        <li data-target="#talks-carousel" data-slide-to="2" class="rounded-circle"></li>
-      </ol>
-      <div class=carousel-inner>
-        <div class="carousel-item active">
-          <div class="text-center card">
-          <img
-            src="{{ public.talks[0].image_path }}"
-            alt="{{ public.talks[0].alt }}"
-          />
-          <a href="{{ public.talks[0].link }}" class="card-title my-3">{{ public.talks[0].title }}</a>
+  
+      <!-- conference talks (mobile) -->
+      <div id="talks-carousel" class="carousel slide d-md-none" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#talks-carousel" data-slide-to="0" class="rounded-circle active"></li>
+          <li data-target="#talks-carousel" data-slide-to="1" class="rounded-circle"></li>
+          <li data-target="#talks-carousel" data-slide-to="2" class="rounded-circle"></li>
+        </ol>
+        <div class=carousel-inner>
+          <div class="carousel-item active">
+            <div class="text-center card">
+              <img src="{{ public.talks[0].image_path }}" alt="{{ public.talks[0].alt }}" />
+              <a href="{{ public.talks[0].link }}" class="card-title my-3">{{ public.talks[0].title }}</a>
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <div class="text-center card">
-          <img
-            src="{{ public.talks[1].image_path }}"
-            alt="{{ public.talks[1].alt }}"
-          />
-          <a href="{{ public.talks[1].link }}" class="card-title my-3">{{ public.talks[1].title }}</a>
+          <div class="carousel-item">
+            <div class="text-center card">
+              <img src="{{ public.talks[1].image_path }}" alt="{{ public.talks[1].alt }}" />
+              <a href="{{ public.talks[1].link }}" class="card-title my-3">{{ public.talks[1].title }}</a>
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <div class="text-center card">
-          <img
-            src="{{ public.talks[2].image_path }}"
-            alt="{{ public.talks[2].alt }}"
-          />
-          <a href="{{ public.talks[2].link }}" class="card-title my-3">{{ public.talks[2].title }}</a>
+          <div class="carousel-item">
+            <div class="text-center card">
+              <img src="{{ public.talks[2].image_path }}" alt="{{ public.talks[2].alt }}" />
+              <a href="{{ public.talks[2].link }}" class="card-title my-3">{{ public.talks[2].title }}</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- blog posts -->
-    <div class="row">
-      <div class="col-12 text-center subtitle">Technical & Non-Technical Blog Posts</div>
-    </div>
-    <div class="row justify-content-center">
-      {% for name, link in public['posts'].items() %}
-      <div class="col-12 col-md-4">
-        <div class="blog-capsule">
-          <a href="{{ link }}">{{ name }}</a>
-        </div>
+      
+      <!-- blog posts -->
+      <div class="row">
+        <div class="col-12 text-center subtitle">Technical & Non-Technical Blog Posts</div>
       </div>
-      {% endfor%}
+      <div class="row justify-content-center">
+        {% for name, link in public['posts'].items() %}
+        <div class="col-12 col-md-4">
+          <div class="blog-capsule">
+            <a href="{{ link }}">{{ name }}</a>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
     </div>
   </div>
 

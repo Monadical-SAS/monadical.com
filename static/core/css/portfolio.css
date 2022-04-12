@@ -16,10 +16,10 @@
       url(/static/core/img/img-portfolio-cloud.png),
       url(/static/core/img/img-portfolio-cloud-left.png),
       url(/static/core/img/img-portfolio-001.png);
-    background-position: 100% 32%,
-      0% 67%,
-      100% 70%,
-      0% 74.5%,
+    background-position: 100% 35%,
+      0% 68.5%,
+      100% 71.5%,
+      0% 76%,
       0% -2%,
       0% 3%,
       105% -0.5%;
@@ -578,7 +578,7 @@
 #monadical-projects .main-image-7 {
   position: absolute;
   left: 0%;
-  bottom: 38%;
+  bottom: 35%;
   width: cover;
   width: 60%;
 }
@@ -713,7 +713,10 @@
   #monadical-projects .main-image-4 {
     width: 100%;
   }
-
+  
+  #monadical-projects .main-image-7 {
+    bottom: 36%;
+  }
   #monadical-projects .img-wrapper {
     justify-content: center;
     margin-bottom: 20px;

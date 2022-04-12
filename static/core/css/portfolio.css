@@ -774,6 +774,13 @@
   border: none;
 }
 
+#crypto .card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 #crypto .main-image-crypto-wrapper {
   display: flex;
   justify-content: center;

@@ -431,17 +431,19 @@
         <div class="row d-flex justify-content-center">
           {% for project in crypto %}
           <div class="col-md-4 col-12 my-3">
-            <div class="card">
-              <div class="card-img-top">
-                <img
-                  src="{{ project.image_path }}"
-                  aria-hidden="true"
-                />
+            <a href="{{ project.link }}" target="_blank">
+              <div class="card">
+                <div class="card-img-top">
+                  <img
+                    src="{{ project.image_path }}"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="card-link">
+                  <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                </div>
               </div>
-              <div class="card-link">
-                <a href="{{ project.link }}" target="_blankcd">{{ project.title }}</a>
-              </div>
-            </div>
+            </a>
           </div>
           {% endfor %}
         </div>

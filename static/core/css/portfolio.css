@@ -538,9 +538,9 @@
 #monadical-projects .main-image-2 {
   border-radius: 10px;
   width: 80%;
-  margin-top: -25rem;
+  margin-top: -13rem;
   margin-bottom: -15rem;
-  margin-left: 5rem;
+  margin-left: -2rem;
   max-width: 1000px;
 }
 
@@ -562,7 +562,7 @@
   position: absolute;
   align-items: center;
   justify-content: center;
-  bottom: 38%;
+  bottom: 36%;
   width: fill;
   z-index:-2;
 }
@@ -571,7 +571,7 @@
   position: absolute;
   right: -10%;
   transform: rotate(-90deg) scaleX(-1);
-  bottom: 36%;
+  bottom: 34%;
   width: cover;
 }
   
@@ -581,6 +581,7 @@
   bottom: 35%;
   width: cover;
   width: 60%;
+  max-width: 740px;
 }
   
 #monadical-projects .img-wrapper {
@@ -979,6 +980,7 @@
   border-radius: 10px;
   right: -10%;
   width: 60%;
+  max-width: 740px;
 }
 
 #writing-and-talks .main-image-talks-3 {
@@ -1050,6 +1052,7 @@
     position: absolute;
     border-radius: 10px;
     left: 0;
+    width: 100%;
   }
 
   #writing-and-talks #talks-carousel {

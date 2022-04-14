@@ -1,0 +1,52 @@
+/***** WHY HIRE US ******/
+#why-hire-monadical {
+  background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
+  background-size: 25rem;
+  background-position: 100% 10%;
+
+  .contrast-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .subtitle {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  li {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    list-style: none;
+    padding-bottom: 20px;
+
+    &::marker {
+      font-size: 25px;
+
+      @include phone {
+        font-size: 16px;
+      }
+    }
+
+    @include phone {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 10px;
+    }
+  }
+
+  @include phone {
+    background-image: url(/static/core/img/img-portfolio-cube-right-full.png),
+      url(/static/core/img/img-portfolio-cloud-left.png);
+    background-repeat: no-repeat;
+    background-size: 12rem, 80%;
+    background-position: right center, left center;
+
+    .content-row {
+      margin: 0 16px;
+    }
+  }
+}

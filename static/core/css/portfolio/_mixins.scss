@@ -1,0 +1,48 @@
+@use "sass:list";
+@import "./variables";
+
+@mixin background-images($imgs,$sizes) {
+    $urls-imgs: ();
+    $separator: ",";
+    @each $img in $imgs{
+        $urls-imgs: list.append($urls-imgs, url($img), $separator: comma);
+    }
+    background-image: $urls-imgs;
+    background-position: $sizes;
+    background-repeat: no-repeat;
+}
+
+//-----------------------------
+// Media queries
+//-----------------------------
+
+@mixin xsmall {
+    @media #{$media-query-xsmall} {
+      @content;
+    }
+}
+
+@mixin small {
+    @media #{$media-query-small} {
+      @content;
+    }
+}
+
+@mixin medium {
+    @media #{$media-query-medium} {
+      @content;
+    }
+}
+
+// ----------------------------------------------------------
+// devices
+// ----------------------------------------------------------
+@mixin phone {
+    @include xsmall {
+      @content;
+    }
+  
+    @include small {
+      @content;
+    }
+  }

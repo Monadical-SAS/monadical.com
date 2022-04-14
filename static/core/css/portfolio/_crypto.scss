@@ -1,0 +1,171 @@
+/******* Crypto ********/
+#crypto {
+    font-size: 20px;
+    margin-bottom: 3rem;
+
+    @include phone {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 52px;
+        font-weight: 400;
+        line-height: 62.4px;
+        text-align: center;
+
+        @include phone {
+            font-size: 20px;
+            line-height: 22px;
+        }
+    }
+
+    .card {
+        min-height: 215px;
+        background-color: #0086b4;
+        box-shadow: 0px 4px 11px 2.5px #6161613c;
+        border: none;
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        @include phone {
+            min-height: 154px;
+        }
+    }
+
+    .main-image-crypto-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* min-height: 645px; */
+    }
+
+    .main-image-crypto-1 {
+        border-radius: 10px;
+        width: 100%;
+        margin-left: 25rem;
+        max-width: 585px;
+
+        @include phone {
+            border-radius: 10px;
+            width: 90%;
+            margin-left: 10rem;
+            max-width: 585px;
+        }
+    }
+
+    .main-image-crypto-2 {
+        position: absolute;
+        right: 0;
+        bottom: 4%;
+        width: cover;
+
+        @include phone {
+            position: absolute;
+            right: 0;
+            bottom: 8%;
+            width: 100%;
+        }
+    }
+
+    .main-image-crypto-3 {
+        position: absolute;
+        left: 0;
+        bottom: 4%;
+        width: cover;
+
+        @include phone {
+            position: absolute;
+            left: 0;
+            bottom: 8%;
+            width: 100%;
+        }
+    }
+
+    .main-image-crypto-4 {
+        position: absolute;
+        left: 0;
+        bottom: 4%;
+        width: cover;
+
+        @include phone {
+            position: absolute;
+            width: 40%;
+            left: 0;
+            bottom: 8%;
+            width: cover;
+        }
+    }
+
+    .main-image-crypto-5 {
+        position: absolute;
+        right: 0;
+        bottom: 7%;
+        width: cover;
+
+        @include phone {
+            position: absolute;
+            width: 12%;
+            right: 0;
+            bottom: 10.5%;
+            width: cover;
+        }
+    }
+
+    .image-row {
+        margin-bottom: 60px;
+
+        @include phone {
+            margin-bottom: 30px;
+        }
+    }
+
+    .card-img-top {
+        background: url("/static/core/img/img-portfolio-crypto-background-cards.png") no-repeat;
+        background-color: #ffffff;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        /* height: 248px; */
+
+        img {
+            height: 80px;
+            margin: 46px 0px;
+
+            @include phone {
+                height: 56px;
+                margin: 30px 0;
+            }
+        }
+    }
+
+    .card-link {
+        text-align: center;
+        margin: 10px 0;
+
+        a {
+            color: white;
+            font-size: 18px;
+
+            @include phone {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .more {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        @include phone {
+            margin-bottom: 1rem;
+        }
+    }
+
+
+}

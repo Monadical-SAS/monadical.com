@@ -1,0 +1,64 @@
+/****** Our Specialties ******/
+#our-specialties {
+    text-align: center;
+
+    @include phone {
+        .carousel {
+            margin-bottom: 50px;
+        }
+
+        .carousel-inner {
+            height: 500px;
+        }
+
+        .carousel-indicators {
+            bottom: unset;
+            top: 22.5rem;
+        }
+    }
+
+    .specialty-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: center;
+        white-space: nowrap;
+
+        @include phone {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .image-row {
+        margin-bottom: 40px;
+    }
+
+    img {
+        border-radius: 10px;
+        box-shadow: 0px 4px 21px 0px #6161613c;
+        margin: 16px 0 25px;
+
+        @include phone {
+            width: 100%;
+            margin: 1rem 0;
+        }
+    }
+
+    .image-description {
+        color: #818182;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+
+        @include phone {
+            margin-top: 1.5rem;
+            font-size: 14px;
+        }
+    }
+
+    .emphasis {
+        color: #2b2b2b;
+        font-weight: 700;
+    }
+}

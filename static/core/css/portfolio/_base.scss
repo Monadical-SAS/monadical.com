@@ -1,0 +1,40 @@
+.container-full {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.portfolio-full {
+
+    @include phone {
+        @include background-images(($tentacle-right,
+                $tentacle-right,
+                $curl-left,
+                $swirly-right,
+                $cloud-full),
+            (100% 35%,
+                100% 65.5%,
+                0% 69.5%,
+                100% 73%,
+                0% -1%));
+        background-size: 20%, 20%, 30%, 30%, 100%, 50%;
+    }
+
+    @include medium {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud,
+                $cloud-left,
+                $main-octopus),
+            (100% 35%,
+                0% 68.5%,
+                100% 71.5%,
+                0% 76%,
+                0% -2%,
+                0% 3%,
+                105% -0.5%,
+            ))
+    }
+
+}

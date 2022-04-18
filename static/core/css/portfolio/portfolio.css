@@ -6,25 +6,47 @@
 
 @media (max-width: 576px) {
   .portfolio-full {
-    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 35%, 100% 65.5%, 0% 69.5%, 100% 73%, 0% -1%;
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
+    background-position: 100% 35%, 0% 75%, 100% 81.5%, 0% 85%, 0% -2%;
     background-repeat: no-repeat;
-    background-size: 20%, 20%, 30%, 30%, 100%, 50%;
+    background-size: auto;
+    background-size: 20%, 20%, 25%, 25%, 200%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .portfolio-full {
-    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 35%, 100% 65.5%, 0% 69.5%, 100% 73%, 0% -1%;
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
+    background-position: 100% 35%, 0% 75%, 100% 81.5%, 0% 85%, 0% -2%;
     background-repeat: no-repeat;
-    background-size: 20%, 20%, 30%, 30%, 100%, 50%;
+    background-size: auto;
+    background-size: 20%, 20%, 25%, 25%, 200%;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 35%, 0% 68.5%, 100% 71.5%, 0% 76%, 0% -2%, 0% 3%, 105% -0.5%;
+    background-position: 100% 40.5%, 0% 78.5%, 100% 83%, 0% 87%, 0% -2%, 0% 3%, 120% -0.1%;
     background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 15%, 15%, 25%, 30%, auto, auto, 27.890625rem 39.46875rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .portfolio-full {
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
+    background-position: 100% 35.8%, 0% 76.5%, 100% 79%, 0% 83.8%, 0% -2%, 0% 3%, 120% -0.1%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 15%, 15%, 25%, 30%, auto, auto, 27.890625rem 39.46875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .portfolio-full {
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
+    background-position: 100% 35%, 0% 75%, 100% 79%, 0% 83.5%, 0% -2%, 0% 3%, 107% -0.3%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: auto, auto, auto, auto, auto, auto, 35.328125rem 49.99375rem;
   }
 }
 
@@ -245,7 +267,7 @@
 @media (max-width: 576px) {
   #header {
     background: url(/static/core/img/img-portfolio-001.png) no-repeat;
-    background-position: 50% 5%;
+    background-position: 50% 20%;
     background-size: 50%;
     margin-top: 1.5rem;
   }
@@ -264,7 +286,7 @@
 @media (min-width: 576px) and (max-width: 767px) {
   #header {
     background: url(/static/core/img/img-portfolio-001.png) no-repeat;
-    background-position: 50% 5%;
+    background-position: 50% 20%;
     background-size: 50%;
     margin-top: 1.5rem;
   }
@@ -283,9 +305,9 @@
 
 /***** WHY HIRE US ******/
 #why-hire-monadical {
-  background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
-  background-size: 25rem;
-  background-position: 100% 10%;
+  background: url(/static/core/img/img-portfolio-cube-right-full-small.png) no-repeat;
+  background-size: 14rem;
+  background-position: 100% 50%;
 }
 #why-hire-monadical .contrast-wrapper {
   background: rgba(255, 255, 255, 0.2);
@@ -331,9 +353,9 @@
 }
 @media (max-width: 576px) {
   #why-hire-monadical {
-    background-image: url(/static/core/img/img-portfolio-cube-right-full.png), url(/static/core/img/img-portfolio-cloud-left.png);
+    background-image: url(/static/core/img/img-portfolio-cube-right-full-small.png), url(/static/core/img/img-portfolio-cloud-left.png);
     background-repeat: no-repeat;
-    background-size: 12rem, 80%;
+    background-size: 8rem, 80%;
     background-position: right center, left center;
   }
   #why-hire-monadical .content-row {
@@ -342,9 +364,9 @@
 }
 @media (min-width: 576px) and (max-width: 767px) {
   #why-hire-monadical {
-    background-image: url(/static/core/img/img-portfolio-cube-right-full.png), url(/static/core/img/img-portfolio-cloud-left.png);
+    background-image: url(/static/core/img/img-portfolio-cube-right-full-small.png), url(/static/core/img/img-portfolio-cloud-left.png);
     background-repeat: no-repeat;
-    background-size: 12rem, 80%;
+    background-size: 8rem, 80%;
     background-position: right center, left center;
   }
   #why-hire-monadical .content-row {
@@ -399,6 +421,11 @@
     line-height: 24px;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  #our-specialties .specialty-title {
+    margin-top: 3rem;
+  }
+}
 #our-specialties .image-row {
   margin-bottom: 40px;
 }
@@ -417,6 +444,11 @@
   #our-specialties img {
     width: 100%;
     margin: 1rem 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #our-specialties img {
+    transform: scale(0.85);
   }
 }
 #our-specialties .image-description {
@@ -586,10 +618,6 @@
 }
 @media (max-width: 576px) {
   #monadical-projects .main-image-wrapper-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
     padding: 0 0 4rem 0;
     background-image: url(/static/core/img/img-portfolio-curl-left.png), url(/static/core/img/img-portfolio-cube-right-full-small.png);
     background-size: 20%, 20%;
@@ -600,13 +628,19 @@
 }
 @media (min-width: 576px) and (max-width: 767px) {
   #monadical-projects .main-image-wrapper-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
     padding: 0 0 4rem 0;
     background-image: url(/static/core/img/img-portfolio-curl-left.png), url(/static/core/img/img-portfolio-cube-right-full-small.png);
     background-size: 20%, 20%;
+    background-position: 0% 0%, 100% 110%;
+    background-repeat: no-repeat;
+    margin: 0%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .main-image-wrapper-1 {
+    padding: 0 0 4rem 0;
+    background-image: url(/static/core/img/img-portfolio-curl-left.png), url(/static/core/img/img-portfolio-cube-right-full-small.png);
+    background-size: 25%, 25%;
     background-position: 0% 0%, 100% 110%;
     background-repeat: no-repeat;
     margin: 0%;
@@ -697,6 +731,11 @@
     display: none;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .main-image-3 {
+    display: none;
+  }
+}
 #monadical-projects .main-image-4 {
   position: absolute;
   width: -webkit-fill-available;
@@ -717,35 +756,72 @@
   position: absolute;
   align-items: center;
   justify-content: center;
-  bottom: 36%;
+  bottom: 26%;
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill;
   z-index: -2;
 }
+@media (max-width: 576px) {
+  #monadical-projects .main-image-5 {
+    bottom: 23%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #monadical-projects .main-image-5 {
+    bottom: 23%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .main-image-5 {
+    bottom: 20%;
+  }
+}
 #monadical-projects .main-image-6 {
   position: absolute;
   right: -10%;
   transform: rotate(-90deg) scaleX(-1);
-  bottom: 34%;
+  bottom: 24%;
   width: cover;
+}
+@media (max-width: 576px) {
+  #monadical-projects .main-image-6 {
+    bottom: 23%;
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #monadical-projects .main-image-6 {
+    bottom: 23%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .main-image-6 {
+    bottom: 20%;
+  }
 }
 #monadical-projects .main-image-7 {
   position: absolute;
   left: 0%;
-  bottom: 35%;
+  bottom: 24.5%;
   width: cover;
   width: 60%;
   max-width: 740px;
 }
 @media (max-width: 576px) {
   #monadical-projects .main-image-7 {
-    bottom: 36%;
+    top: 73%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   #monadical-projects .main-image-7 {
-    bottom: 36%;
+    top: 73%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .main-image-7 {
+    top: 76%;
   }
 }
 #monadical-projects .img-wrapper {
@@ -790,9 +866,41 @@
     margin: 0 16px;
   }
 }
-#monadical-projects .img-wrapper-scaled,
+#monadical-projects .img-wrapper-scaled {
+  transform: scaleY(0.7);
+}
+@media (max-width: 576px) {
+  #monadical-projects .img-wrapper-scaled {
+    transform: scaleY(1);
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #monadical-projects .img-wrapper-scaled {
+    transform: scaleY(1);
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .img-wrapper-scaled {
+    transform: scaleY(1);
+  }
+}
 #monadical-projects .project-img-scaled {
-  transform: scaleY(0.75);
+  transform: scaleX(0.7);
+}
+@media (max-width: 576px) {
+  #monadical-projects .project-img-scaled {
+    transform: scaleX(1);
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #monadical-projects .project-img-scaled {
+    transform: scaleX(1);
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .project-img-scaled {
+    transform: scaleX(1);
+  }
 }
 #monadical-projects .project-text {
   align-self: center;
@@ -819,6 +927,11 @@
     font-size: 22px;
     line-height: 26px;
     margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #monadical-projects .project-title {
+    margin-top: 1rem;
   }
 }
 #monadical-projects .subtitle {
@@ -899,6 +1012,8 @@
 #crypto {
   font-size: 20px;
   margin-bottom: 3rem;
+  border-bottom: 1px solid #2b2b2b;
+  padding-bottom: 5rem;
 }
 @media (max-width: 576px) {
   #crypto {
@@ -979,17 +1094,22 @@
     max-width: 585px;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  #crypto .main-image-crypto-1 {
+    margin-left: 15rem;
+  }
+}
 #crypto .main-image-crypto-2 {
   position: absolute;
   right: 0;
-  bottom: 4%;
+  bottom: 38.5%;
   width: cover;
 }
 @media (max-width: 576px) {
   #crypto .main-image-crypto-2 {
     position: absolute;
     right: 0;
-    bottom: 8%;
+    bottom: 37.5%;
     width: 100%;
   }
 }
@@ -997,21 +1117,29 @@
   #crypto .main-image-crypto-2 {
     position: absolute;
     right: 0;
-    bottom: 8%;
+    bottom: 37.5%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #crypto .main-image-crypto-2 {
+    position: absolute;
+    right: 0;
+    bottom: 29.5%;
     width: 100%;
   }
 }
 #crypto .main-image-crypto-3 {
   position: absolute;
   left: 0;
-  bottom: 4%;
+  bottom: 40%;
   width: cover;
 }
 @media (max-width: 576px) {
   #crypto .main-image-crypto-3 {
     position: absolute;
     left: 0;
-    bottom: 8%;
+    bottom: 38%;
     width: 100%;
   }
 }
@@ -1019,14 +1147,22 @@
   #crypto .main-image-crypto-3 {
     position: absolute;
     left: 0;
-    bottom: 8%;
+    bottom: 38%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #crypto .main-image-crypto-3 {
+    position: absolute;
+    left: 0;
+    bottom: 29%;
     width: 100%;
   }
 }
 #crypto .main-image-crypto-4 {
   position: absolute;
   left: 0;
-  bottom: 4%;
+  bottom: 38.5%;
   width: cover;
 }
 @media (max-width: 576px) {
@@ -1034,7 +1170,7 @@
     position: absolute;
     width: 40%;
     left: 0;
-    bottom: 8%;
+    bottom: 37.5%;
     width: cover;
   }
 }
@@ -1043,14 +1179,23 @@
     position: absolute;
     width: 40%;
     left: 0;
-    bottom: 8%;
+    bottom: 37.5%;
+    width: cover;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #crypto .main-image-crypto-4 {
+    position: absolute;
+    width: 40%;
+    left: 0;
+    bottom: 29.5%;
     width: cover;
   }
 }
 #crypto .main-image-crypto-5 {
   position: absolute;
   right: 0;
-  bottom: 7%;
+  bottom: 41%;
   width: cover;
 }
 @media (max-width: 576px) {
@@ -1058,7 +1203,7 @@
     position: absolute;
     width: 12%;
     right: 0;
-    bottom: 10.5%;
+    bottom: 40%;
     width: cover;
   }
 }
@@ -1067,7 +1212,16 @@
     position: absolute;
     width: 12%;
     right: 0;
-    bottom: 10.5%;
+    bottom: 40%;
+    width: cover;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #crypto .main-image-crypto-5 {
+    position: absolute;
+    width: 12%;
+    right: 0;
+    bottom: 32.5%;
     width: cover;
   }
 }
@@ -1090,7 +1244,6 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  /* height: 248px; */
 }
 #crypto .card-img-top img {
   height: 80px;
@@ -1103,6 +1256,12 @@
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+  #crypto .card-img-top img {
+    height: 56px;
+    margin: 30px 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
   #crypto .card-img-top img {
     height: 56px;
     margin: 30px 0;
@@ -1199,6 +1358,11 @@
     margin: 2rem 0;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  #writing-and-talks .subtitle {
+    margin-top: 5rem;
+  }
+}
 #writing-and-talks .img-wrapper img {
   border-radius: 10px;
   width: 80%;
@@ -1239,6 +1403,12 @@
     max-width: 585px;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  #writing-and-talks .main-image-talks-1 {
+    width: 50%;
+    margin-bottom: 5rem;
+  }
+}
 #writing-and-talks .main-image-talks-2 {
   position: absolute;
   border-radius: 10px;
@@ -1259,6 +1429,11 @@
     position: absolute;
     border-radius: 10px;
     right: -10%;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #writing-and-talks .main-image-talks-2 {
     width: 50%;
   }
 }

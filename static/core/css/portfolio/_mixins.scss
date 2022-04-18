@@ -1,15 +1,18 @@
 @use "sass:list";
 @import "./variables";
 
-@mixin background-images($imgs,$sizes) {
-    $urls-imgs: ();
-    $separator: ",";
-    @each $img in $imgs{
-        $urls-imgs: list.append($urls-imgs, url($img), $separator: comma);
-    }
-    background-image: $urls-imgs;
-    background-position: $sizes;
-    background-repeat: no-repeat;
+@mixin background-images($imgs, $positions, $sizes: auto) {
+  $urls-imgs: ();
+  $separator: ",";
+
+  @each $img in $imgs {
+    $urls-imgs: list.append($urls-imgs, url($img), $separator: comma);
+  }
+
+  background-image: $urls-imgs;
+  background-position: $positions;
+  background-repeat: no-repeat;
+  background-size: $sizes
 }
 
 //-----------------------------
@@ -17,32 +20,79 @@
 //-----------------------------
 
 @mixin xsmall {
-    @media #{$media-query-xsmall} {
-      @content;
-    }
+  @media #{$media-query-xsmall} {
+    @content;
+  }
 }
 
 @mixin small {
-    @media #{$media-query-small} {
-      @content;
-    }
+  @media #{$media-query-small} {
+    @content;
+  }
 }
 
 @mixin medium {
-    @media #{$media-query-medium} {
-      @content;
-    }
+  @media #{$media-query-medium} {
+    @content;
+  }
+}
+
+@mixin large {
+  @media #{$media-query-large} {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media #{$media-query-xlarge} {
+    @content;
+  }
 }
 
 // ----------------------------------------------------------
 // devices
 // ----------------------------------------------------------
-@mixin phone {
-    @include xsmall {
-      @content;
-    }
-  
-    @include small {
-      @content;
-    }
+
+@mixin smallPhone {
+  @include xsmall {
+    @content;
   }
+}
+
+@mixin phone {
+  @include xsmall {
+    @content;
+  }
+
+  @include small {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include medium {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @include large {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include xlarge {
+    @content;
+  }
+}
+
+@mixin fullDesktop {
+  @include large {
+    @content;
+  }
+
+  @include xlarge {
+    @content;
+  }
+}

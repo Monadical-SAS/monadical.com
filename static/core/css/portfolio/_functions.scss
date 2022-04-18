@@ -1,0 +1,8 @@
+@use "sass:math";
+
+@function resizeImage($width, $height, $fraction) {
+    $widthRem: calc($width/$rem);
+    $heightRem: calc($height/$rem);
+    @debug ($widthRem $width $widthRem*$fraction);
+    @return (#{$widthRem*$fraction}rem #{$heightRem*$fraction}rem);
+}

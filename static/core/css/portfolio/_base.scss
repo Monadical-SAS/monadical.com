@@ -7,19 +7,57 @@
 
     @include phone {
         @include background-images(($tentacle-right,
-                $tentacle-right,
-                $curl-left,
+                $tentacle-left,
                 $swirly-right,
+                $curl-left,
                 $cloud-full),
             (100% 35%,
-                100% 65.5%,
-                0% 69.5%,
-                100% 73%,
-                0% -1%));
-        background-size: 20%, 20%, 30%, 30%, 100%, 50%;
+                0% 75%,
+                100% 81.5%,
+                0% 85%,
+                0% -2%));
+        background-size: 20%, 20%, 25%, 25%, 200%;
     }
 
-    @include medium {
+    @include tablet {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud,
+                $cloud-left,
+                $main-octopus),
+            (100% 40.5%,
+                0% 78.5%,
+                100% 83%,
+                0% 87%,
+                0% -2%,
+                0% 3%,
+                120% -0.1%,
+            ));
+        background-size: 15%, 15%, 25%, 30%, auto, auto, resizeImage(595px, 842px, 0.75);
+    }
+
+    @include smallDesktop {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud,
+                $cloud-left,
+                $main-octopus),
+            (100% 35.8%,
+                0% 76.5%,
+                100% 79%,
+                0% 83.8%,
+                0% -2%,
+                0% 3%,
+                120% -0.1%,
+            ));
+        background-size: 15%, 15%, 25%, 30%, auto, auto, resizeImage(595px, 842px, 0.75);
+    }
+
+    @include desktop {
         @include background-images(($tentacle-right,
                 $tentacle-left,
                 $cube-right,
@@ -28,13 +66,14 @@
                 $cloud-left,
                 $main-octopus),
             (100% 35%,
-                0% 68.5%,
-                100% 71.5%,
-                0% 76%,
+                0% 75%,
+                100% 79%,
+                0% 83.5%,
                 0% -2%,
                 0% 3%,
-                105% -0.5%,
-            ))
+                107% -0.3%,
+            ));
+        background-size: auto, auto, auto, auto, auto, auto, resizeImage(595px, 842px, 0.95);
     }
 
 }

@@ -1,4 +1,9 @@
 // -----------------------------------------------------
+// Font
+// -----------------------------------------------------
+$rem: 16px;
+
+// -----------------------------------------------------
 // Background images
 // -----------------------------------------------------
 $tentacle-right: "/static/core/img/img-portfolio-tentacle-right.png";
@@ -18,6 +23,6 @@ $cloud-full: "/static/core/img/img-portfolio-cloud.png";
 // -----------------------------------------------------
 $media-query-xsmall: "(max-width: 576px)";
 $media-query-small: "(min-width: 576px) and (max-width: 767px)";
-$media-query-medium: "(min-width: 768px)";
-$media-query-large: "(min-width: 1026px) and (max-width: 1280px)";
-$media-query-xlarge: "(min-width: 1400px)";
+$media-query-medium: "(min-width: 768px) and (max-width: 991px)";
+$media-query-large: "(min-width: 992px) and (max-width: 1200px)";
+$media-query-xlarge: "(min-width: 1200px)";

@@ -32,10 +32,6 @@
         margin: 0%;
 
         @include phone {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
             padding: 0 0 4rem 0;
             background-image: url(/static/core/img/img-portfolio-curl-left.png),
                 url(/static/core/img/img-portfolio-cube-right-full-small.png);
@@ -44,6 +40,18 @@
             background-repeat: no-repeat;
             margin: 0%;
         }
+
+        @include tablet {
+            padding: 0 0 4rem 0;
+            background-image: url(/static/core/img/img-portfolio-curl-left.png),
+                url(/static/core/img/img-portfolio-cube-right-full-small.png);
+            background-size: 25%, 25%;
+            background-position: 0% 0%, 100% 110%;
+            background-repeat: no-repeat;
+            margin: 0%;
+        }
+
+
 
     }
 
@@ -103,6 +111,11 @@
         @include phone {
             display: none;
         }
+
+        @include tablet {
+            display: none;
+        }
+
     }
 
     .main-image-4 {
@@ -118,29 +131,50 @@
         position: absolute;
         align-items: center;
         justify-content: center;
-        bottom: 36%;
+        bottom: 26%;
         width: fill;
         z-index: -2;
+
+        @include phone {
+            bottom: 23%;
+        }
+
+        @include tablet {
+            bottom: 20%;
+        }
     }
 
     .main-image-6 {
         position: absolute;
         right: -10%;
         transform: rotate(-90deg) scaleX(-1);
-        bottom: 34%;
+        bottom: 24%;
         width: cover;
+
+        @include phone {
+            bottom: 23%;
+            width: 100%;
+        }
+
+        @include tablet {
+            bottom: 20%;
+        }
     }
 
     .main-image-7 {
         position: absolute;
         left: 0%;
-        bottom: 35%;
+        bottom: 24.5%;
         width: cover;
         width: 60%;
         max-width: 740px;
 
         @include phone {
-            bottom: 36%;
+            top: 73%;
+        }
+
+        @include tablet {
+            top: 76%;
         }
     }
 
@@ -173,9 +207,28 @@
         }
     }
 
-    .img-wrapper-scaled,
+    .img-wrapper-scaled {
+        transform: scaleY(0.7);
+
+        @include phone {
+            transform: scaleY(1);
+        }
+
+        @include tablet {
+            transform: scaleY(1);
+        }
+    }
+
     .project-img-scaled {
-        transform: scaleY(0.75);
+        transform: scaleX(0.7);
+
+        @include phone {
+            transform: scaleX(1);
+        }
+
+        @include tablet {
+            transform: scaleX(1);
+        }
     }
 
     .project-text {
@@ -196,6 +249,10 @@
             font-size: 22px;
             line-height: 26px;
             margin-bottom: 20px;
+        }
+
+        @include tablet {
+            margin-top: 1rem;
         }
     }
 

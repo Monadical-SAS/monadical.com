@@ -2,6 +2,8 @@
 #crypto {
     font-size: 20px;
     margin-bottom: 3rem;
+    border-bottom: 1px solid #2b2b2b;
+    padding-bottom: 5rem;
 
     @include phone {
         font-size: 18px;
@@ -57,18 +59,29 @@
             margin-left: 10rem;
             max-width: 585px;
         }
+
+        @include tablet {
+            margin-left: 15rem;
+        }
     }
 
     .main-image-crypto-2 {
         position: absolute;
         right: 0;
-        bottom: 4%;
+        bottom: 38.5%;
         width: cover;
 
         @include phone {
             position: absolute;
             right: 0;
-            bottom: 8%;
+            bottom: 37.5%;
+            width: 100%;
+        }
+
+        @include tablet {
+            position: absolute;
+            right: 0;
+            bottom: 29.5%;
             width: 100%;
         }
     }
@@ -76,13 +89,20 @@
     .main-image-crypto-3 {
         position: absolute;
         left: 0;
-        bottom: 4%;
+        bottom: 40%;
         width: cover;
 
         @include phone {
             position: absolute;
             left: 0;
-            bottom: 8%;
+            bottom: 38%;
+            width: 100%;
+        }
+
+        @include tablet {
+            position: absolute;
+            left: 0;
+            bottom: 29%;
             width: 100%;
         }
     }
@@ -90,14 +110,22 @@
     .main-image-crypto-4 {
         position: absolute;
         left: 0;
-        bottom: 4%;
+        bottom: 38.5%;
         width: cover;
 
         @include phone {
             position: absolute;
             width: 40%;
             left: 0;
-            bottom: 8%;
+            bottom: 37.5%;
+            width: cover;
+        }
+
+        @include tablet {
+            position: absolute;
+            width: 40%;
+            left: 0;
+            bottom: 29.5%;
             width: cover;
         }
     }
@@ -105,14 +133,22 @@
     .main-image-crypto-5 {
         position: absolute;
         right: 0;
-        bottom: 7%;
+        bottom: 41%;
         width: cover;
 
         @include phone {
             position: absolute;
             width: 12%;
             right: 0;
-            bottom: 10.5%;
+            bottom: 40%;
+            width: cover;
+        }
+
+        @include tablet {
+            position: absolute;
+            width: 12%;
+            right: 0;
+            bottom: 32.5%;
             width: cover;
         }
     }
@@ -131,13 +167,17 @@
         background-size: cover;
         display: flex;
         justify-content: center;
-        /* height: 248px; */
 
         img {
             height: 80px;
             margin: 46px 0px;
 
             @include phone {
+                height: 56px;
+                margin: 30px 0;
+            }
+
+            @include tablet {
                 height: 56px;
                 margin: 30px 0;
             }

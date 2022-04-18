@@ -1,8 +1,8 @@
 /***** WHY HIRE US ******/
 #why-hire-monadical {
-  background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
-  background-size: 25rem;
-  background-position: 100% 10%;
+  background: url(/static/core/img/img-portfolio-cube-right-full-small.png) no-repeat;
+  background-size: 14rem;
+  background-position: 100% 50%;
 
   .contrast-wrapper {
     background: rgba(255, 255, 255, 0.2);
@@ -39,10 +39,10 @@
   }
 
   @include phone {
-    background-image: url(/static/core/img/img-portfolio-cube-right-full.png),
+    background-image: url(/static/core/img/img-portfolio-cube-right-full-small.png),
       url(/static/core/img/img-portfolio-cloud-left.png);
     background-repeat: no-repeat;
-    background-size: 12rem, 80%;
+    background-size: 8rem, 80%;
     background-position: right center, left center;
 
     .content-row {

@@ -64,13 +64,13 @@
 
     <!-- specialties image row  -->
     <div class="row image-row d-none d-md-flex">
-      <div class="col-md-3 d-flex flex-column align-items-center">
+      <div class="col-lg-3 d-flex flex-column align-items-center">
         <div class="specialty-title">Product Management</div>
         <img
           src="/static/core/img/img-portfolio-020.png"
           alt="Stylized tentacles of Monadical's octopus mascot wrapped around a Gantt chart"
         />
-        <div class="image-description">
+        <div class="image-description col-md-6 col-lg-12">
           <p>
             Monadical can work as a self-directed unit to deliver a full
             product, or we can integrate into an existing team to assist with
@@ -80,13 +80,13 @@
       </div>
       
 
-      <div class="col-md-3 d-flex flex-column align-items-center">
+      <div class="col-lg-3 d-flex flex-column align-items-center">
         <div class="specialty-title">Full-Stack Web Development</div>
         <img
           src="/static/core/img/img-portfolio-019.png"
           alt="Monadical's octopus mascot happily typing away on a laptop."
         />
-        <div class="image-description">
+        <div class="image-description col-md-6 col-lg-12">
           <p>
             With years of development and operations experience from building
             our own startups, we’re comfortable assembling, scaling, and
@@ -95,13 +95,13 @@
         </div>
       </div>
 
-      <div class="col-md-3 d-flex flex-column align-items-center">
+      <div class="col-lg-3 d-flex flex-column align-items-center">
         <div class="specialty-title">Ops, Data Science, Security</div>
         <img
           src="/static/core/img/img-portfolio-021.png"
           alt="Monadical's octopus mascot doing cable management on some servers."
         />
-        <div class="image-description">
+        <div class="image-description col-md-6 col-lg-12">
           We go beyond app-building and provide full solutions, including ops
           setup, data science, and lifecycle duties like refactoring, security
           review, and documentation.
@@ -263,14 +263,14 @@
       {% for project in projects %}
         {% if loop.index is odd %}
         <div id="{{ project.id }}-project" class="row project-row">
-          <div class="img-wrapper col-12 col-md-7">
+          <div class="img-wrapper col-12 col-lg-7">
             <img
               src="{{ project.image_path }}"
               class="project-img"
               alt="{{ project.alt }}"
             />
           </div>
-          <div class="project-text col-12 col-md-5 pl-md-5">
+          <div class="project-text col-12 col-lg-5 pl-lg-5">
             <div class="project-title">{{ project.title }}</div>
             <div class="subtitle">{{ project.subtitle }}</div>
             <p>
@@ -279,14 +279,14 @@
             <div class="project-stack">
               {{ project.stack }}
             </div>
-            <a class="align-self-center align-self-md-start" href="{{ project.website }}" target="_blank">
+            <a class="align-self-center align-self-lg-start" href="{{ project.website }}" target="_blank">
               <button class="btn btn-info-inverse">Learn more</button>
             </a>
           </div>
         </div>
         {% else %}
-        <div id="{{ project.id }}-project" class="row project-row flex-column-reverse flex-md-row">
-          <div class="project-text col-12 col-md-5 pr-md-5">
+        <div id="{{ project.id }}-project" class="row project-row flex-column-reverse flex-lg-row">
+          <div class="project-text col-12 col-lg-5 pr-lg-5">
             <div class="project-title">{{ project.title }}</div>
             <div class="subtitle">{{ project.subtitle }}</div>
             <p>
@@ -295,12 +295,12 @@
             <div class="project-stack">
               {{ project.stack }}
             </div>
-            <a class="align-self-center align-self-md-start" href="{{ project.website }}" target="_blank">
+            <a class="align-self-center align-self-lg-start" href="{{ project.website }}" target="_blank">
               <button class="btn btn-info-inverse">Learn more</button>
             </a>
           </div>
           {% if project.id != 'neurocaas' %}
-          <div class="img-wrapper col-12 col-md-7">
+          <div class="img-wrapper col-12 col-lg-7">
             <img
               src="{{ project.image_path }}"
               class="project-img"
@@ -308,7 +308,7 @@
             />
           </div>
           {% else %}
-          <div class="img-wrapper img-wrapper-scaled  col-12 col-md-7">
+          <div class="img-wrapper img-wrapper-scaled  col-12 col-lg-7">
             <img
               src="{{ project.image_path }}"
               class="project-img project-img-scaled"
@@ -320,6 +320,63 @@
         {% endif %}    
       {% endfor %}
   
+      <!------------ Crypto ------------>
+      <div id="crypto" class="container-fluid portfolio-container" >
+        <div class="row">
+          <!--title-->
+          <div class="col-12 text-center section-title">Crypto works</div> 
+          <div class="main-image-crypto-wrapper col-12 col-md-12">
+            <img
+              src="/static/core/img/img-portfolio-tentacles-with-calendar.png"
+              class="main-image-crypto-1"
+              alt="Monadical's octopus mascot with a calendar."
+            />
+          </div>
+          <img
+            src="/static/core/img/img-portfolio-crypto-background-sky-1.png"
+            class="main-image-crypto-2"
+            alt="Background cloud image on the right."
+          />
+          <img
+            src="/static/core/img/img-portfolio-crypto-background-sky-2.png"
+            class="main-image-crypto-3"
+            alt="Background cloud image on the left."
+          />
+          <img
+            src="/static/core/img/img-portfolio-tentacles-with-pens-left.png"
+            class="main-image-crypto-4"
+            alt="Background cloud image on the left."
+          />
+          <img
+            src="/static/core/img/img-portfolio-tentacle-right-inverted.png"
+            class="main-image-crypto-5"
+            alt="Background cloud image on the left."
+          />
+        </div>
+        <!--subtitle-->
+        <div class="col-12 text-center subtitle">NFT  launches:</div>
+        <!-- crypto cards -->
+        <div class="row d-flex justify-content-center">
+          {% for project in crypto %}
+          <div class="col-md-4 col-12 my-3">
+            <a href="{{ project.link }}" target="_blank">
+              <div class="card">
+                <div class="card-img-top">
+                  <img
+                    src="{{ project.image_path }}"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="card-link">
+                  <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
       <!------------ Open Source Work ------------>
       <div class="row flex-column bg-transparent">
         <!-- title -->
@@ -392,62 +449,6 @@
         {% endif %}    
       {% endfor %}
   
-      <!------------ Crypto ------------>
-      <div id="crypto" class="container-fluid portfolio-container" >
-        <div class="row">
-          <!--title-->
-          <div class="col-12 text-center section-title">Crypto works</div> 
-          <div class="main-image-crypto-wrapper col-12 col-md-12">
-            <img
-              src="/static/core/img/img-portfolio-tentacles-with-calendar.png"
-              class="main-image-crypto-1"
-              alt="Monadical's octopus mascot with a calendar."
-            />
-          </div>
-          <img
-            src="/static/core/img/img-portfolio-crypto-background-sky-1.png"
-            class="main-image-crypto-2"
-            alt="Background cloud image on the right."
-          />
-          <img
-            src="/static/core/img/img-portfolio-crypto-background-sky-2.png"
-            class="main-image-crypto-3"
-            alt="Background cloud image on the left."
-          />
-          <img
-            src="/static/core/img/img-portfolio-tentacles-with-pens-left.png"
-            class="main-image-crypto-4"
-            alt="Background cloud image on the left."
-          />
-          <img
-            src="/static/core/img/img-portfolio-tentacle-right-inverted.png"
-            class="main-image-crypto-5"
-            alt="Background cloud image on the left."
-          />
-        </div>
-        <!--subtitle-->
-        <div class="col-12 text-center subtitle">NFT  launches:</div>
-        <!-- crypto cards -->
-        <div class="row d-flex justify-content-center">
-          {% for project in crypto %}
-          <div class="col-md-4 col-12 my-3">
-            <a href="{{ project.link }}" target="_blank">
-              <div class="card">
-                <div class="card-img-top">
-                  <img
-                    src="{{ project.image_path }}"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div class="card-link">
-                  <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
-                </div>
-              </div>
-            </a>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
     </div>
   </div>
 

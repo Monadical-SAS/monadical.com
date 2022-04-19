@@ -5,7 +5,7 @@
     line-height: 30px;
     text-align: left;
 
-    @include phone {
+    @include media(smallPhone, phone) {
         font-size: 16px;
         line-height: 24px;
 
@@ -31,14 +31,14 @@
             list-style: none;
             padding-bottom: 16px;
 
-            @include phone {
+            @include media(smallPhone, phone) {
                 padding-bottom: 10px;
             }
         }
 
         margin-bottom: 54px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             margin-bottom: 30px;
         }
     }
@@ -57,7 +57,7 @@
     .link-row {
         margin-bottom: 54px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             margin-bottom: 30px;
         }
     }

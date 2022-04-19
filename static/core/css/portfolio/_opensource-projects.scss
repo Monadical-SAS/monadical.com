@@ -1,0 +1,216 @@
+#opensource-projects-header {
+    position: relative;
+
+    .main-image-wrapper-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 5rem;
+        z-index: -1;
+
+        @include media(smallPhone, phone) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    .main-image-2 {
+        border-radius: 10px;
+        width: 60%;
+        margin-top: -13rem;
+        margin-bottom: -25rem;
+        margin-left: -2rem;
+        // max-width: 1000px;
+
+        @include media(smallPhone, phone, tablet) {
+            border-radius: 10px;
+            width: 80%;
+            margin-top: -15rem;
+            margin-bottom: -20rem;
+            max-width: 700px;
+        }
+
+        @include smallPhone {
+            margin-bottom: -15rem;
+            margin-top: -10rem;
+            width: 85%;
+        }
+    }
+
+    .main-image-5 {
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        top: -40%;
+        object-fit: cover;
+        z-index: -2;
+
+        @include media(smallPhone, phone) {
+            top: -40%;
+            width: 100%;
+        }
+
+        @include tablet {
+            bottom: 22%;
+        }
+    }
+
+    .main-image-6 {
+        position: absolute;
+        right: -10%;
+        transform: rotate(-90deg) scaleX(-1);
+        bottom: -60%;
+        width: cover;
+
+        @include media(smallPhone, phone) {
+            bottom: -30%;
+            width: 100%;
+        }
+
+        @include tablet {
+            bottom: -60%;
+        }
+
+        @include smallPhone {
+            bottom: -25%;
+        }
+    }
+
+    .main-image-7 {
+        position: absolute;
+        left: 0%;
+        bottom: -40%;
+        width: cover;
+        width: 50%;
+        max-width: 740px;
+
+        @include media(smallPhone, phone) {
+            bottom: -20%;
+        }
+
+        @include tablet {
+            bottom: -30%;
+        }
+    }
+
+}
+
+#opensource-projects {
+    .project-row {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 5rem;
+        border-bottom: 1px solid #2b2b2b;
+        padding-bottom: 5rem;
+
+        @include media(smallPhone, phone) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 2rem;
+        }
+    }
+
+
+    .img-wrapper {
+        align-items: center;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        min-height: 645px;
+        justify-content: center;
+
+        @include media(smallPhone, phone) {
+            justify-content: center;
+            margin-bottom: 20px;
+            min-height: 345px;
+        }
+    }
+
+    .project-img {
+        border-radius: 10px;
+        box-shadow: 0px 4px 50px -5px #61616166;
+        width: 100%;
+        margin: 2rem;
+        max-width: 585px;
+
+        @include media(smallPhone, phone) {
+            max-width: 313px;
+            margin: 0 16px;
+        }
+    }
+
+    .project-text {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-title {
+        color: #0086b4;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 48px;
+        margin-bottom: 30px;
+        text-align: left;
+
+        @include media(smallPhone, phone) {
+            font-size: 22px;
+            line-height: 26px;
+            margin-bottom: 20px;
+        }
+
+        @include tablet {
+            margin-top: 1rem;
+        }
+    }
+
+    .subtitle {
+        margin: 0 0 1.5rem;
+
+        @include media(smallPhone, phone) {
+            margin-bottom: 0 0 1rem;
+        }
+    }
+
+    p {
+        line-height: 30px;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    a {
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-align: left;
+
+        @include media(smallPhone, phone) {
+            margin-bottom: 16px;
+        }
+    }
+
+    li {
+        font-size: 18px;
+        line-height: 22px;
+        list-style: square outside;
+        padding-bottom: 1rem;
+
+        &::marker {
+            color: #0086b4;
+            font-size: 18px;
+        }
+
+        @include media(smallPhone, phone) {
+
+            &,
+            &::marker {
+                font-size: 16px;
+            }
+        }
+    }
+}

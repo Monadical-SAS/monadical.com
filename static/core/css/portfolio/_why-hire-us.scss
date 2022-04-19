@@ -26,15 +26,38 @@
     &::marker {
       font-size: 25px;
 
+      @include smallPhone {
+        font-size: 16px;
+      }
+
       @include phone {
         font-size: 16px;
       }
+    }
+
+    @include smallPhone {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 10px;
     }
 
     @include phone {
       font-size: 16px;
       line-height: 24px;
       padding-bottom: 10px;
+    }
+  }
+
+
+  @include smallPhone {
+    background-image: url(/static/core/img/img-portfolio-cube-right-full-small.png),
+      url(/static/core/img/img-portfolio-cloud-left.png);
+    background-repeat: no-repeat;
+    background-size: 6rem, cover;
+    background-position: right center, left center;
+
+    .content-row {
+      margin: 0 1rem 0 -1rem;
     }
   }
 

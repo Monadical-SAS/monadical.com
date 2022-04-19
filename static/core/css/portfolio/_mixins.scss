@@ -15,9 +15,23 @@
   background-size: $sizes
 }
 
+@mixin on-hover {
+  @media not all and (hover: none) {
+    &:hover {
+      @content
+    }
+  }
+}
+
 //-----------------------------
 // Media queries
 //-----------------------------
+
+@mixin xxsmall {
+  @media #{$media-query-xxsmall} {
+    @content;
+  }
+}
 
 @mixin xsmall {
   @media #{$media-query-xsmall} {
@@ -54,7 +68,7 @@
 // ----------------------------------------------------------
 
 @mixin smallPhone {
-  @include xsmall {
+  @include xxsmall {
     @content;
   }
 }
@@ -94,5 +108,45 @@
 
   @include xlarge {
     @content;
+  }
+}
+
+@mixin media($names...) {
+  @each $name in $names {
+    @if ($name==smallPhone) {
+      @include smallPhone {
+        @content;
+      }
+    }
+
+    @else if ($name==phone) {
+      @include phone {
+        @content;
+      }
+    }
+
+    @else if ($name==tablet) {
+      @include tablet {
+        @content;
+      }
+    }
+
+    @else if ($name==smallDesktop) {
+      @include smallDesktop {
+        @content;
+      }
+    }
+
+    @else if ($name==desktop) {
+      @include desktop {
+        @content;
+      }
+    }
+
+    @else if ($name==fullDesktop) {
+      @include fullDesktop {
+        @content;
+      }
+    }
   }
 }

@@ -12,7 +12,7 @@
         border-bottom: 1px solid #2b2b2b;
         padding-bottom: 5rem;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 2rem;
@@ -31,12 +31,22 @@
         background-repeat: no-repeat;
         margin: 0%;
 
+        @include smallPhone {
+            padding: 0 0 4rem 0;
+            background-image: url(/static/core/img/img-portfolio-curl-left.png),
+                url(/static/core/img/img-portfolio-cube-right-full-small.png);
+            background-size: 30%, 30%;
+            background-position: 0% 0%, 100% 105%;
+            background-repeat: no-repeat;
+            margin: 0%;
+        }
+
         @include phone {
             padding: 0 0 4rem 0;
             background-image: url(/static/core/img/img-portfolio-curl-left.png),
                 url(/static/core/img/img-portfolio-cube-right-full-small.png);
-            background-size: 20%, 20%;
-            background-position: 0% 0%, 100% 110%;
+            background-size: 30%, 30%;
+            background-position: 0% 0%, 100% 105%;
             background-repeat: no-repeat;
             margin: 0%;
         }
@@ -55,22 +65,7 @@
 
     }
 
-    .main-image-wrapper-2 {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        margin-bottom: 5rem;
-        z-index: -1;
 
-        @include phone {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-        }
-    }
 
     .main-image-1 {
         border-radius: 10px;
@@ -78,27 +73,12 @@
         margin: 2rem;
         max-width: 585px;
 
-        @include phone {
-            width: 50%;
+        @include media(smallPhone, phone) {
+            width: 70%;
         }
     }
 
-    .main-image-2 {
-        border-radius: 10px;
-        width: 80%;
-        margin-top: -13rem;
-        margin-bottom: -15rem;
-        margin-left: -2rem;
-        max-width: 1000px;
 
-        @include phone {
-            border-radius: 10px;
-            width: 80%;
-            margin-top: -10rem;
-            margin-bottom: -10rem;
-            max-width: 700px;
-        }
-    }
 
     .main-image-3 {
         position: absolute;
@@ -108,7 +88,7 @@
         width: 25rem;
         max-width: 700px;
 
-        @include phone {
+        @include media(smallPhone, phone, tablet) {
             display: none;
         }
 
@@ -122,61 +102,12 @@
         position: absolute;
         width: fill;
 
-        @include phone {
-            width: 100%;
+        @include media(smallPhone, phone) {
+            width: 200%;
         }
     }
 
-    .main-image-5 {
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-        bottom: 26%;
-        width: fill;
-        z-index: -2;
 
-        @include phone {
-            bottom: 23%;
-        }
-
-        @include tablet {
-            bottom: 20%;
-        }
-    }
-
-    .main-image-6 {
-        position: absolute;
-        right: -10%;
-        transform: rotate(-90deg) scaleX(-1);
-        bottom: 24%;
-        width: cover;
-
-        @include phone {
-            bottom: 23%;
-            width: 100%;
-        }
-
-        @include tablet {
-            bottom: 20%;
-        }
-    }
-
-    .main-image-7 {
-        position: absolute;
-        left: 0%;
-        bottom: 24.5%;
-        width: cover;
-        width: 60%;
-        max-width: 740px;
-
-        @include phone {
-            top: 73%;
-        }
-
-        @include tablet {
-            top: 76%;
-        }
-    }
 
     .img-wrapper {
         align-items: center;
@@ -187,7 +118,7 @@
         min-height: 645px;
         justify-content: center;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             justify-content: center;
             margin-bottom: 20px;
             min-height: 345px;
@@ -201,7 +132,7 @@
         margin: 2rem;
         max-width: 585px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             max-width: 313px;
             margin: 0 16px;
         }
@@ -210,7 +141,7 @@
     .img-wrapper-scaled {
         transform: scaleY(0.7);
 
-        @include phone {
+        @include media(smallPhone, phone) {
             transform: scaleY(1);
         }
 
@@ -222,7 +153,7 @@
     .project-img-scaled {
         transform: scaleX(0.7);
 
-        @include phone {
+        @include media(smallPhone, phone) {
             transform: scaleX(1);
         }
 
@@ -245,7 +176,7 @@
         margin-bottom: 30px;
         text-align: left;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             font-size: 22px;
             line-height: 26px;
             margin-bottom: 20px;
@@ -259,7 +190,7 @@
     .subtitle {
         margin: 0 0 1.5rem;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             margin-bottom: 0 0 1rem;
         }
     }
@@ -270,7 +201,7 @@
         margin-bottom: 2rem;
         text-align: left;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             font-size: 14px;
             line-height: 21px;
             margin-bottom: 20px;
@@ -288,7 +219,7 @@
         margin-bottom: 1rem;
         text-align: left;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             margin-bottom: 16px;
         }
     }
@@ -304,7 +235,7 @@
             font-size: 18px;
         }
 
-        @include phone {
+        @include media(smallPhone, phone) {
 
             &,
             &::marker {

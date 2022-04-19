@@ -319,52 +319,54 @@
         </div>
         {% endif %}    
       {% endfor %}
-  
-      <!------------ Crypto ------------>
-      <div id="crypto" class="container-fluid portfolio-container" >
+    </div>    
+    <!------------ Crypto ------------>
+    <div id="crypto-header" class="container-fluid portfolio-container" >
         <div class="row">
           <!--title-->
-          <div class="col-12 text-center section-title">Crypto works</div> 
+          <!-- <div class="col-12 text-center section-title">Crypto works</div>  -->
           <div class="main-image-crypto-wrapper col-12 col-md-12">
             <img
-              src="/static/core/img/img-portfolio-tentacles-with-calendar.png"
-              class="main-image-crypto-1"
-              alt="Monadical's octopus mascot with a calendar."
+            src="/static/core/img/img-portfolio-tentacles-with-calendar.png"
+            class="main-image-crypto-1"
+            alt="Monadical's octopus mascot with a calendar."
             />
-          </div>
-          <img
+            <img
             src="/static/core/img/img-portfolio-crypto-background-sky-1.png"
             class="main-image-crypto-2"
             alt="Background cloud image on the right."
-          />
-          <img
+            />
+            <img
             src="/static/core/img/img-portfolio-crypto-background-sky-2.png"
             class="main-image-crypto-3"
             alt="Background cloud image on the left."
-          />
-          <img
+            />
+            <img
             src="/static/core/img/img-portfolio-tentacles-with-pens-left.png"
             class="main-image-crypto-4"
             alt="Background cloud image on the left."
-          />
-          <img
+            />
+            <img
             src="/static/core/img/img-portfolio-tentacle-right-inverted.png"
             class="main-image-crypto-5"
             alt="Background cloud image on the left."
-          />
+            />
+          </div>
         </div>
         <!--subtitle-->
-        <div class="col-12 text-center subtitle">NFT  launches:</div>
+        <div class="col-12 text-center project-title">NFT  launches</div>
+    </div>
+    <div id="crypto" class="container portfolio-container" >
         <!-- crypto cards -->
         <div class="row d-flex justify-content-center">
           {% for project in crypto %}
-          <div class="col-md-4 col-12 my-3">
+          <div class="col-md-4 col-10 my-3">
             <a href="{{ project.link }}" target="_blank">
               <div class="card">
                 <div class="card-img-top">
                   <img
-                    src="{{ project.image_path }}"
-                    aria-hidden="true"
+                  src="{{ project.image_path }}"
+                  aria-hidden="true"
                   />
                 </div>
                 <div class="card-link">
@@ -375,36 +377,39 @@
           </div>
           {% endfor %}
         </div>
-      </div>
+    </div>
+      
       
       <!------------ Open Source Work ------------>
+    <div id="opensource-projects-header" class="container-fluid portfolio-container">
       <div class="row flex-column bg-transparent">
         <!-- title -->
         <div class="section-title col-12">Open Source Work</div>
         <div class="main-image-wrapper-2">
           <img
-            src="/static/core/img/img-portfolio-octopus-laptop.png"
-            class="main-image-2"
-            alt="Monadical's octopus mascot typing in a laptop."
+          src="/static/core/img/img-portfolio-octopus-laptop.png"
+          class="main-image-2"
+          alt="Monadical's octopus mascot typing in a laptop."
           />
-        </div>
-        <img
+          <img
           src="/static/core/img/img-portfolio-cloud-right-2.png"
           class="main-image-5"
           alt="Monadical cloud"
+          />
+        </div>
+        <img
+        src="/static/core/img/img-portfolio-cloud-right-2.png"
+        class="main-image-6"
+        alt="Monadical cloud"
         />
         <img
-          src="/static/core/img/img-portfolio-cloud-right-2.png"
-          class="main-image-6"
-          alt="Monadical cloud"
-        />
-        <img
-          src="/static/core/img/img-portfolio-cube-left-full.png"
-          class="main-image-7"
-          alt="Background cube left"
+        src="/static/core/img/img-portfolio-cube-left-full.png"
+        class="main-image-7"
+        alt="Background cube left"
         />
       </div>
-  
+    </div>  
+    <div id="opensource-projects" class="container portfolio-container">
       {% for project in oss %}
         {% if loop.index is odd %}
           <div id="{{ project.id }}-oss" class="row project-row">

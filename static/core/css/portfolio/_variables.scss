@@ -21,7 +21,8 @@ $cloud-full: "/static/core/img/img-portfolio-cloud.png";
 // -----------------------------------------------------
 // Media query
 // -----------------------------------------------------
-$media-query-xsmall: "(max-width: 576px)";
+$media-query-xxsmall: "(min-width: 320px) and (max-width: 480px)";
+$media-query-xsmall: " (min-width: 481px) and (max-width: 576px)";
 $media-query-small: "(min-width: 576px) and (max-width: 767px)";
 $media-query-medium: "(min-width: 768px) and (max-width: 991px)";
 $media-query-large: "(min-width: 992px) and (max-width: 1200px)";

@@ -2,7 +2,7 @@
 .portfolio-container {
   margin-bottom: 8rem;
 
-  @include phone {
+  @include media(smallPhone, phone) {
     margin-bottom: 4rem;
 
     .carousel-inner {
@@ -50,7 +50,7 @@
       color: transparent;
       margin-left: 10px;
 
-      @include phone {
+      @include media(smallPhone, phone) {
         font-size: 50px;
         line-height: 45px;
         background-image: url("/static/core/img/monadical-blue-grey-logo.png");
@@ -61,7 +61,7 @@
       }
     }
 
-    @include phone {
+    @include media(smallPhone, phone) {
       font-size: 40px;
       line-height: 45px;
       margin-top: 1rem;
@@ -79,7 +79,7 @@
     margin-bottom: 3rem;
     text-align: left;
 
-    @include phone {
+    @include media(smallPhone, phone) {
       color: #333333;
       line-height: 20px;
       font-size: 18px;
@@ -97,7 +97,7 @@
     margin: 3rem 0;
     text-align: center;
 
-    @include phone {
+    @include media(smallPhone, phone) {
       font-size: 30px;
       line-height: 44px;
       margin: 2rem 0;
@@ -110,7 +110,7 @@
     line-height: 36px;
     margin-bottom: 1.5rem;
 
-    @include phone {
+    @include media(smallPhone, phone) {
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 1rem;

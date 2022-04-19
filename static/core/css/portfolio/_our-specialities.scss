@@ -2,7 +2,7 @@
 #our-specialties {
     text-align: center;
 
-    @include phone {
+    @include media(smallPhone, phone) {
         .carousel {
             margin-bottom: 50px;
         }
@@ -24,7 +24,7 @@
         text-align: center;
         white-space: nowrap;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             font-size: 16px;
             line-height: 24px;
         }
@@ -43,7 +43,7 @@
         box-shadow: 0px 4px 21px 0px #6161613c;
         margin: 16px 0 25px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             width: 100%;
             margin: 1rem 0;
         }
@@ -59,7 +59,7 @@
         font-weight: 400;
         line-height: 24px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             margin-top: 1.5rem;
             font-size: 14px;
         }

@@ -4,7 +4,7 @@
     font-weight: 700;
     line-height: 24px;
 
-    @include phone {
+    @include media(smallPhone, phone) {
         line-height: 19px;
         text-align: center;
         margin-bottom: 5rem;
@@ -25,7 +25,7 @@
         line-height: 62.4px;
         text-align: center;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             font-size: 22px;
             font-weight: 400;
             line-height: 24px;
@@ -67,7 +67,7 @@
         margin: 0rem;
         max-width: 585px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             border-radius: 10px;
             width: 50%;
             margin: 0rem;
@@ -87,7 +87,7 @@
         width: 60%;
         max-width: 740px;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             position: absolute;
             border-radius: 10px;
             right: -10%;
@@ -104,7 +104,7 @@
         border-radius: 10px;
         left: 0;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             position: absolute;
             border-radius: 10px;
             left: 0;
@@ -133,7 +133,7 @@
         text-align: center;
         text-decoration: none;
 
-        @include phone {
+        @include media(smallPhone, phone) {
             font-size: 16px;
             font-weight: 700;
             line-height: 19px;

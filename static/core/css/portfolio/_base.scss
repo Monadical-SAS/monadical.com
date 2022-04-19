@@ -5,6 +5,20 @@
 
 .portfolio-full {
 
+    @include smallPhone {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $swirly-right,
+                $curl-left,
+                $cloud-full),
+            (100% 35%,
+                0% 75%,
+                100% 81.5%,
+                0% 85%,
+                0% -0.5%));
+        background-size: 20%, 20%, 25%, 25%, 200%;
+    }
+
     @include phone {
         @include background-images(($tentacle-right,
                 $tentacle-left,

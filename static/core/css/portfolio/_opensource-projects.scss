@@ -25,7 +25,7 @@
         margin-left: -2rem;
         // max-width: 1000px;
 
-        @include media(smallPhone, phone, tablet) {
+        @include media(smallPhone, phone, tablet, fullDesktop) {
             border-radius: 10px;
             width: 80%;
             margin-top: -15rem;
@@ -38,6 +38,7 @@
             margin-top: -10rem;
             width: 85%;
         }
+
     }
 
     .main-image-5 {

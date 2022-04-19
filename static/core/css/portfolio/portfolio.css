@@ -7,34 +7,34 @@
 @media (min-width: 320px) and (max-width: 480px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 35%, 0% 75%, 100% 81.5%, 0% 85%, 0% -0.5%;
+    background-position: 100% 36%, 0% 75%, 100% 81.5%, 0% 85.5%, 0% -0.5%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 25%, 200%;
+    background-size: 16%, 16%, 16%, 25%, 200%;
   }
 }
 @media (min-width: 481px) and (max-width: 576px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 35%, 0% 75%, 100% 81.5%, 0% 85%, 0% -2%;
+    background-position: 100% 35.5%, 0% 74.3%, 100% 81.2%, 0% 85%, 0% -2%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 25%, 200%;
+    background-size: 16%, 16%, 22%, 22%, 200%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 35%, 0% 75%, 100% 81.5%, 0% 85%, 0% -2%;
+    background-position: 100% 35.5%, 0% 74.3%, 100% 81.2%, 0% 85%, 0% -2%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 25%, 200%;
+    background-size: 16%, 16%, 22%, 22%, 200%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 40.5%, 0% 78.5%, 100% 83%, 0% 87%, 0% -2%, 0% 3%, 120% -0.1%;
+    background-position: 100% 40.5%, 0% 78.4%, 100% 83%, 0% 87%, 0% -2%, 0% 3%, 120% -0.1%;
     background-repeat: no-repeat;
     background-size: auto;
     background-size: 15%, 15%, 25%, 30%, auto, auto, 27.890625rem 39.46875rem;
@@ -43,19 +43,19 @@
 @media (min-width: 992px) and (max-width: 1200px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 35.8%, 0% 76.5%, 100% 79%, 0% 83.8%, 0% -2%, 0% 3%, 120% -0.1%;
+    background-position: 100% 36.5%, 0% 76%, 100% 78.5%, 0% 83%, 0% -2%, 0% 3%, 120% -0.1%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 15%, 15%, 25%, 30%, auto, auto, 27.890625rem 39.46875rem;
+    background-size: 12%, 12%, 20%, 20%, auto, auto, 27.890625rem 39.46875rem;
   }
 }
 @media (min-width: 1200px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 35%, 0% 75%, 100% 79%, 0% 83.5%, 0% -2%, 0% 3%, 107% -0.3%;
+    background-position: 100% 35%, 0% 75%, 100% 78%, 0% 83%, 0% -2%, 0% 3%, 107% -0.3%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: auto, auto, auto, auto, auto, auto, 35.328125rem 49.99375rem;
+    background-size: 8%, 8%, 15%, 10%, auto, auto, 35.328125rem 49.99375rem;
   }
 }
 
@@ -1225,6 +1225,24 @@
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  #opensource-projects-header .main-image-2 {
+    border-radius: 10px;
+    width: 80%;
+    margin-top: -15rem;
+    margin-bottom: -20rem;
+    max-width: 700px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #opensource-projects-header .main-image-2 {
+    border-radius: 10px;
+    width: 80%;
+    margin-top: -15rem;
+    margin-bottom: -20rem;
+    max-width: 700px;
+  }
+}
+@media (min-width: 1200px) {
   #opensource-projects-header .main-image-2 {
     border-radius: 10px;
     width: 80%;

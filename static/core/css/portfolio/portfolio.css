@@ -900,9 +900,8 @@
 }
 #monadical-projects .main-image-4 {
   position: absolute;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   #monadical-projects .main-image-4 {
@@ -917,6 +916,18 @@
 @media (min-width: 576px) and (max-width: 767px) {
   #monadical-projects .main-image-4 {
     width: 200%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #monadical-projects .main-image-4 {
+    top: -1%;
+    width: 90%;
+  }
+}
+@media (min-width: 1200px) {
+  #monadical-projects .main-image-4 {
+    top: -1.5%;
+    width: 90%;
   }
 }
 #monadical-projects .img-wrapper {

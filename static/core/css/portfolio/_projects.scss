@@ -100,10 +100,20 @@
 
     .main-image-4 {
         position: absolute;
-        width: fill;
+        object-fit: cover;
 
         @include media(smallPhone, phone) {
             width: 200%;
+        }
+
+        @include smallDesktop {
+            top: -1%;
+            width: 90%;
+        }
+
+        @include desktop {
+            top: -1.5%;
+            width: 90%;
         }
     }
 

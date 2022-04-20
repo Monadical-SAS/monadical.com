@@ -11,12 +11,12 @@
                 $swirly-right,
                 $curl-left,
                 $cloud-full),
-            (100% 36%,
-                0% 75%,
-                100% 81.5%,
-                0% 85.5%,
+            (100% 33%,
+                0% 74%,
+                100% 81%,
+                0% 85%,
                 0% -0.5%));
-        background-size: 16%, 16%, 16%, 25%, 200%;
+        background-size: 20%, 20%, 25%, 25%, 200%;
     }
 
     @include phone {
@@ -25,12 +25,12 @@
                 $swirly-right,
                 $curl-left,
                 $cloud-full),
-            (100% 35.5%,
-                0% 74.3%,
-                100% 81.2%,
+            (100% 32.5%,
+                0% 73.8%,
+                100% 81%,
                 0% 85%,
                 0% -2%));
-        background-size: 16%, 16%, 22%, 22%, 200%;
+        background-size: 20%, 20%, 25%, 25%, 200%;
     }
 
     @include tablet {
@@ -41,15 +41,15 @@
                 $cloud,
                 $cloud-left,
                 $main-octopus),
-            (100% 40.5%,
-                0% 78.4%,
-                100% 83%,
-                0% 87%,
+            (100% 37%,
+                0% 77.5%,
+                100% 82.5%,
+                0% 86.5%,
                 0% -2%,
                 0% 3%,
                 120% -0.1%,
             ));
-        background-size: 15%, 15%, 25%, 30%, auto, auto, resizeImage(595px, 842px, 0.75);
+        background-size: 20%, 20%, 25%, 30%, auto, auto, resizeImage(595px, 842px, 0.75);
     }
 
     @include smallDesktop {
@@ -60,15 +60,15 @@
                 $cloud,
                 $cloud-left,
                 $main-octopus),
-            (100% 36.5%,
-                0% 76%,
-                100% 78.5%,
-                0% 83%,
+            (100% 33.5%,
+                0% 71%,
+                100% 77.5%,
+                0% 82.5%,
                 0% -2%,
                 0% 3%,
                 120% -0.1%,
             ));
-        background-size: 12%, 12%, 20%, 20%, auto, auto, resizeImage(595px, 842px, 0.75);
+        background-size: 15%, 15%, 25%, 25%, auto, auto, resizeImage(595px, 842px, 0.75);
     }
 
     @include desktop {
@@ -79,15 +79,15 @@
                 $cloud,
                 $cloud-left,
                 $main-octopus),
-            (100% 35%,
-                0% 75%,
-                100% 78%,
-                0% 83%,
+            (100% 32.5%,
+                0% 74.5%,
+                100% 77.5%,
+                0% 82.5%,
                 0% -2%,
                 0% 3%,
                 107% -0.3%,
             ));
-        background-size: 8%, 8%, 15%, 10%, auto, auto, resizeImage(595px, 842px, 0.95);
+        background-size: 10%, 10%, 20%, 15%, auto, auto, resizeImage(595px, 842px, 0.95);
     }
 
 }

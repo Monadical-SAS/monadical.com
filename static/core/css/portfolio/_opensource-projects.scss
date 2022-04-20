@@ -119,7 +119,6 @@
 
     .img-wrapper {
         align-items: center;
-        background-color: #f9f9f9;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -173,9 +172,16 @@
 
     .subtitle {
         margin: 0 0 1.5rem;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: left;
+
 
         @include media(smallPhone, phone) {
             margin-bottom: 0 0 1rem;
+            font-size: 18px;
+            line-height: 22px;
         }
     }
 

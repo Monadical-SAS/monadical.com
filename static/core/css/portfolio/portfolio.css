@@ -313,6 +313,10 @@
   line-height: 1.25rem;
   text-transform: uppercase;
 }
+.portfolio-container .btn-info {
+  line-height: 1.25rem;
+  text-transform: uppercase;
+}
 .portfolio-container .image-row {
   justify-content: space-between;
 }
@@ -412,12 +416,75 @@
 #why-hire-monadical .subtitle a {
   text-decoration: none;
 }
+#why-hire-monadical .section-buttons a {
+  margin: 3rem 1rem 0 1rem;
+}
+#why-hire-monadical .section-buttons .btn-info-inverse {
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  width: 14.4rem;
+  font-size: 1rem;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  #why-hire-monadical .section-buttons .btn-info-inverse {
+    margin-left: 2.5rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 576px) {
+  #why-hire-monadical .section-buttons .btn-info-inverse {
+    margin-left: 2.5rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #why-hire-monadical .section-buttons .btn-info-inverse {
+    margin-left: 2.5rem;
+  }
+}
+#why-hire-monadical .section-buttons .btn-info {
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  width: 14.4rem;
+  font-size: 1rem;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  #why-hire-monadical .section-buttons .btn-info {
+    margin-left: 2.5rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 576px) {
+  #why-hire-monadical .section-buttons .btn-info {
+    margin-left: 2.5rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #why-hire-monadical .section-buttons .btn-info {
+    margin-left: 2.5rem;
+  }
+}
+#why-hire-monadical ul {
+  list-style-image: url("/static/core/img/img-checklist.png");
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  #why-hire-monadical ul {
+    list-style-image: url("/static/core/img/img-checklist-0.75x.png");
+  }
+}
+@media (min-width: 481px) and (max-width: 576px) {
+  #why-hire-monadical ul {
+    list-style-image: url("/static/core/img/img-checklist-0.75x.png");
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #why-hire-monadical ul {
+    list-style-image: url("/static/core/img/img-checklist-0.75x.png");
+  }
+}
 #why-hire-monadical li {
   font-size: 25px;
   font-weight: 400;
   line-height: 32px;
-  list-style: none;
   padding-bottom: 20px;
+  padding-left: 1.3rem;
 }
 #why-hire-monadical li::marker {
   font-size: 25px;
@@ -442,6 +509,7 @@
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 10px;
+    padding-left: 0.8rem;
   }
 }
 @media (min-width: 481px) and (max-width: 576px) {
@@ -449,6 +517,7 @@
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 10px;
+    padding-left: 0.8rem;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -456,6 +525,7 @@
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 10px;
+    padding-left: 0.8rem;
   }
 }
 @media (min-width: 320px) and (max-width: 480px) {

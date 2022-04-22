@@ -16,12 +16,49 @@
     }
   }
 
+  .section-buttons {
+    a {
+      margin: 3rem 1rem 0 1rem;
+    }
+
+    .btn-info-inverse {
+      line-height: 1.25rem;
+      text-transform: uppercase;
+      width: 14.4rem;
+      font-size: 1rem;
+
+      @include media(smallPhone, phone) {
+        margin-left: 2.5rem;
+      }
+    }
+
+    .btn-info {
+      line-height: 1.25rem;
+      text-transform: uppercase;
+      width: 14.4rem;
+      font-size: 1rem;
+
+      @include media(smallPhone, phone) {
+        margin-left: 2.5rem;
+      }
+    }
+  }
+
+  ul {
+    list-style-image: url('/static/core/img/img-checklist.png');
+
+    @include media(smallPhone, phone) {
+      list-style-image: url('/static/core/img/img-checklist-0.75x.png');
+    }
+  }
+
   li {
     font-size: 25px;
     font-weight: 400;
     line-height: 32px;
-    list-style: none;
+    // list-style: none;
     padding-bottom: 20px;
+    padding-left: 1.3rem;
 
     &::marker {
       font-size: 25px;
@@ -39,12 +76,14 @@
       font-size: 16px;
       line-height: 24px;
       padding-bottom: 10px;
+      padding-left: 0.8rem;
     }
 
     @include phone {
       font-size: 16px;
       line-height: 24px;
       padding-bottom: 10px;
+      padding-left: 0.8rem;
     }
   }
 

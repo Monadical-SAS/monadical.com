@@ -48,7 +48,6 @@
       background-repeat: no-repeat;
       background-position: center left;
       color: transparent;
-      margin-left: 10px;
 
       @include media(smallPhone, phone) {
         font-size: 50px;

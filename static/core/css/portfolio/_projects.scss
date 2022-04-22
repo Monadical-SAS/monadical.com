@@ -83,7 +83,7 @@
     .main-image-3 {
         position: absolute;
         right: 0;
-        top: 4.5%;
+        top: 4.0%;
         border-radius: 10px;
         width: 25rem;
         max-width: 700px;
@@ -112,8 +112,8 @@
         }
 
         @include desktop {
-            top: -1.5%;
-            width: 90%;
+            top: -1%;
+            width: 100%;
         }
     }
 

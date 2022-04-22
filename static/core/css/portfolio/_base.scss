@@ -8,29 +8,37 @@
     @include smallPhone {
         @include background-images(($tentacle-right,
                 $tentacle-left,
-                $swirly-right,
+                $cube-right,
                 $curl-left,
                 $cloud-full),
-            (100% 33%,
-                0% 74%,
-                100% 81%,
-                0% 85%,
+            (100% 28.5%,
+                0% 73%,
+                100% 80.3%,
+                0% 84.3%,
                 0% -0.5%));
-        background-size: 20%, 20%, 25%, 25%, 200%;
+        background-size: resizeImage(197px, 471px, 0.35),
+            resizeImage(197px, 471px, 0.36),
+            resizeImage(402px, 945px, 0.3),
+            resizeImage(342px, 323px, 0.35),
+            200%;
     }
 
     @include phone {
         @include background-images(($tentacle-right,
                 $tentacle-left,
-                $swirly-right,
+                $cube-right,
                 $curl-left,
                 $cloud-full),
-            (100% 32.5%,
-                0% 73.8%,
-                100% 81%,
-                0% 85%,
+            (100% 27%,
+                0% 72%,
+                100% 79.5%,
+                0% 87.5%,
                 0% -2%));
-        background-size: 20%, 20%, 25%, 25%, 200%;
+        background-size: resizeImage(197px, 471px, 0.6),
+            resizeImage(197px, 471px, 0.6),
+            resizeImage(402px, 945px, 0.4),
+            resizeImage(342px, 323px, 0.4),
+            200%;
     }
 
     @include tablet {
@@ -41,15 +49,21 @@
                 $cloud,
                 $cloud-left,
                 $main-octopus),
-            (100% 37%,
-                0% 77.5%,
-                100% 82.5%,
-                0% 86.5%,
+            (100% 29%,
+                0% 74.5%,
+                100% 80.5%,
+                0% 85%,
                 0% -2%,
                 0% 3%,
                 120% -0.1%,
             ));
-        background-size: 20%, 20%, 25%, 30%, auto, auto, resizeImage(595px, 842px, 0.75);
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.5),
+            resizeImage(342px, 323px, 0.6),
+            auto,
+            auto,
+            resizeImage(595px, 842px, 0.80);
     }
 
     @include smallDesktop {
@@ -60,15 +74,21 @@
                 $cloud,
                 $cloud-left,
                 $main-octopus),
-            (100% 33.5%,
-                0% 71%,
-                100% 77.5%,
-                0% 82.5%,
+            (100% 27.5%,
+                0% 68.5%,
+                100% 75.5%,
+                0% 81.1%,
                 0% -2%,
                 0% 3%,
                 120% -0.1%,
             ));
-        background-size: 15%, 15%, 25%, 25%, auto, auto, resizeImage(595px, 842px, 0.75);
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.6),
+            resizeImage(342px, 323px, 0.6),
+            auto,
+            auto,
+            resizeImage(595px, 842px, 0.95);
     }
 
     @include desktop {
@@ -79,15 +99,21 @@
                 $cloud,
                 $cloud-left,
                 $main-octopus),
-            (100% 32.5%,
-                0% 74.5%,
-                100% 77.5%,
-                0% 82.5%,
+            (100% 27%,
+                0% 68%,
+                100% 75.5%,
+                0% 80.8%,
                 0% -2%,
                 0% 3%,
                 107% -0.3%,
             ));
-        background-size: 10%, 10%, 20%, 15%, auto, auto, resizeImage(595px, 842px, 0.95);
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.6),
+            resizeImage(342px, 323px, 0.6),
+            auto,
+            auto,
+            resizeImage(595px, 842px, 1.1);
     }
 
 }

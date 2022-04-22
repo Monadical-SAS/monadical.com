@@ -6,56 +6,56 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
   .portfolio-full {
-    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 33%, 0% 74%, 100% 81%, 0% 85%, 0% -0.5%;
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
+    background-position: 100% 28.5%, 0% 73%, 100% 80.3%, 0% 84.3%, 0% -0.5%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 25%, 200%;
+    background-size: 4.309375rem 10.303125rem, 4.4325rem 10.5975rem, 7.5375rem 17.71875rem, 7.48125rem 7.065625rem, 200%;
   }
 }
 @media (min-width: 481px) and (max-width: 576px) {
   .portfolio-full {
-    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 32.5%, 0% 73.8%, 100% 81%, 0% 85%, 0% -2%;
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
+    background-position: 100% 27%, 0% 72%, 100% 79.5%, 0% 87.5%, 0% -2%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 25%, 200%;
+    background-size: 7.3875rem 17.6625rem, 7.3875rem 17.6625rem, 10.05rem 23.625rem, 8.55rem 8.075rem, 200%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .portfolio-full {
-    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-swirly-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
-    background-position: 100% 32.5%, 0% 73.8%, 100% 81%, 0% 85%, 0% -2%;
+    background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png");
+    background-position: 100% 27%, 0% 72%, 100% 79.5%, 0% 87.5%, 0% -2%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 25%, 200%;
+    background-size: 7.3875rem 17.6625rem, 7.3875rem 17.6625rem, 10.05rem 23.625rem, 8.55rem 8.075rem, 200%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 37%, 0% 77.5%, 100% 82.5%, 0% 86.5%, 0% -2%, 0% 3%, 120% -0.1%;
+    background-position: 100% 29%, 0% 74.5%, 100% 80.5%, 0% 85%, 0% -2%, 0% 3%, 120% -0.1%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 20%, 20%, 25%, 30%, auto, auto, 27.890625rem 39.46875rem;
+    background-size: 9.85rem 23.55rem, 9.85rem 23.55rem, 12.5625rem 29.53125rem, 12.825rem 12.1125rem, auto, auto, 29.75rem 42.1rem;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 33.5%, 0% 71%, 100% 77.5%, 0% 82.5%, 0% -2%, 0% 3%, 120% -0.1%;
+    background-position: 100% 27.5%, 0% 68.5%, 100% 75.5%, 0% 81.1%, 0% -2%, 0% 3%, 120% -0.1%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 15%, 15%, 25%, 25%, auto, auto, 27.890625rem 39.46875rem;
+    background-size: 9.85rem 23.55rem, 9.85rem 23.55rem, 15.075rem 35.4375rem, 12.825rem 12.1125rem, auto, auto, 35.328125rem 49.99375rem;
   }
 }
 @media (min-width: 1200px) {
   .portfolio-full {
     background-image: url("/static/core/img/img-portfolio-tentacle-right.png"), url("/static/core/img/img-portfolio-tentacle-left.png"), url("/static/core/img/img-portfolio-cube-right.png"), url("/static/core/img/img-portfolio-curl-left.png"), url("/static/core/img/img-portfolio-cloud.png"), url("/static/core/img/img-portfolio-cloud-left.png"), url("/static/core/img/img-portfolio-001.png");
-    background-position: 100% 32.5%, 0% 74.5%, 100% 77.5%, 0% 82.5%, 0% -2%, 0% 3%, 107% -0.3%;
+    background-position: 100% 27%, 0% 68%, 100% 75.5%, 0% 80.8%, 0% -2%, 0% 3%, 107% -0.3%;
     background-repeat: no-repeat;
     background-size: auto;
-    background-size: 10%, 10%, 20%, 15%, auto, auto, 35.328125rem 49.99375rem;
+    background-size: 9.85rem 23.55rem, 9.85rem 23.55rem, 15.075rem 35.4375rem, 12.825rem 12.1125rem, auto, auto, 40.90625rem 57.8875rem;
   }
 }
 
@@ -938,7 +938,7 @@
 #monadical-projects .main-image-3 {
   position: absolute;
   right: 0;
-  top: 4.5%;
+  top: 4%;
   border-radius: 10px;
   width: 25rem;
   max-width: 700px;
@@ -996,8 +996,8 @@
 }
 @media (min-width: 1200px) {
   #monadical-projects .main-image-4 {
-    top: -1.5%;
-    width: 90%;
+    top: -1%;
+    width: 100%;
   }
 }
 #monadical-projects .img-wrapper {

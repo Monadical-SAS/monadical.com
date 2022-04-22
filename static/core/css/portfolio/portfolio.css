@@ -972,6 +972,7 @@
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: -4;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   #monadical-projects .main-image-4 {

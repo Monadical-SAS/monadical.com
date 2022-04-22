@@ -101,6 +101,7 @@
     .main-image-4 {
         position: absolute;
         object-fit: cover;
+        z-index: -4;
 
         @include media(smallPhone, phone) {
             width: 200%;

@@ -1,0 +1,75 @@
+/****** Team Principles ******/
+#team-principles {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+
+    @include media(smallPhone, phone) {
+        font-size: 16px;
+        line-height: 24px;
+
+        .subtitle {
+            margin: 20px 0 16px;
+        }
+
+        .blog-capsule {
+            margin-bottom: 20px;
+
+            a {
+                display: flex;
+                justify-content: center;
+                padding: 12px 0;
+                width: 100%;
+            }
+        }
+    }
+
+    .content-row {
+        li {
+            font-weight: 500;
+            list-style: none;
+            padding-bottom: 16px;
+
+            @include media(smallPhone, phone) {
+                padding-bottom: 10px;
+            }
+        }
+
+        margin-bottom: 54px;
+
+        @include media(smallPhone, phone) {
+            margin-bottom: 30px;
+        }
+    }
+
+    li {
+        &::before {
+            content: "\25AA";
+            color: #0086b4;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5rem;
+            margin-left: -2.5rem;
+        }
+    }
+
+    .link-row {
+        margin-bottom: 54px;
+
+        @include media(smallPhone, phone) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .image-row {
+        img {
+            border-radius: 10px;
+            box-shadow: 0px 4px 50px -5px rgba(97, 97, 97, 0.5);
+            height: 261px;
+            object-fit: cover;
+            object-position: top center;
+            width: 100%;
+        }
+    }
+}

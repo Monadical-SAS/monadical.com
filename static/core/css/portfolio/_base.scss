@@ -1,0 +1,119 @@
+.container-full {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.portfolio-full {
+
+    @include smallPhone {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud-full),
+            (100% 28.5%,
+                0% 73%,
+                100% 80.3%,
+                0% 84.3%,
+                0% -0.5%));
+        background-size: resizeImage(197px, 471px, 0.35),
+            resizeImage(197px, 471px, 0.36),
+            resizeImage(402px, 945px, 0.3),
+            resizeImage(342px, 323px, 0.35),
+            200%;
+    }
+
+    @include phone {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud-full),
+            (100% 27%,
+                0% 72%,
+                100% 79.5%,
+                0% 87.5%,
+                0% -2%));
+        background-size: resizeImage(197px, 471px, 0.6),
+            resizeImage(197px, 471px, 0.6),
+            resizeImage(402px, 945px, 0.4),
+            resizeImage(342px, 323px, 0.4),
+            200%;
+    }
+
+    @include tablet {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud,
+                $cloud-left,
+                $main-octopus),
+            (100% 29%,
+                0% 74.5%,
+                100% 80.5%,
+                0% 85%,
+                0% -2%,
+                0% 3%,
+                120% -0.1%,
+            ));
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.5),
+            resizeImage(342px, 323px, 0.6),
+            auto,
+            auto,
+            resizeImage(595px, 842px, 0.80);
+    }
+
+    @include smallDesktop {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud,
+                $cloud-left,
+                $main-octopus),
+            (100% 27.5%,
+                0% 68.5%,
+                100% 75.5%,
+                0% 81.1%,
+                0% -2%,
+                0% 3%,
+                120% -0.1%,
+            ));
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.6),
+            resizeImage(342px, 323px, 0.6),
+            auto,
+            auto,
+            resizeImage(595px, 842px, 0.95);
+    }
+
+    @include desktop {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $curl-left,
+                $cloud,
+                $cloud-left,
+                $main-octopus),
+            (100% 27%,
+                0% 68%,
+                100% 75.5%,
+                0% 80.8%,
+                0% -2%,
+                0% 3%,
+                107% -0.3%,
+            ));
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.6),
+            resizeImage(342px, 323px, 0.6),
+            auto,
+            auto,
+            resizeImage(595px, 842px, 1.1);
+    }
+
+}

@@ -1,0 +1,114 @@
+/***** WHY HIRE US ******/
+#why-hire-monadical {
+  background: url(/static/core/img/img-portfolio-cube-right-full-small.png) no-repeat;
+  background-size: 14rem;
+  background-position: 100% 50%;
+
+  .contrast-wrapper {
+    background: rgba(255, 255, 255, 0.0);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .subtitle {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .section-buttons {
+    a {
+      margin: 3rem 1rem 0 1rem;
+    }
+
+    .btn-info-inverse {
+      line-height: 1.25rem;
+      text-transform: uppercase;
+      width: 14.4rem;
+      font-size: 1rem;
+
+      @include media(smallPhone, phone) {
+        margin-left: 2.5rem;
+      }
+    }
+
+    .btn-info {
+      line-height: 1.25rem;
+      text-transform: uppercase;
+      width: 14.4rem;
+      font-size: 1rem;
+
+      @include media(smallPhone, phone) {
+        margin-left: 2.5rem;
+      }
+    }
+  }
+
+  ul {
+    list-style-image: url('/static/core/img/img-checklist.png');
+
+    @include media(smallPhone, phone) {
+      list-style-image: url('/static/core/img/img-checklist-0.75x.png');
+    }
+  }
+
+  li {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    // list-style: none;
+    padding-bottom: 20px;
+    padding-left: 1.3rem;
+
+    &::marker {
+      font-size: 25px;
+
+      @include smallPhone {
+        font-size: 16px;
+      }
+
+      @include phone {
+        font-size: 16px;
+      }
+    }
+
+    @include smallPhone {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 10px;
+      padding-left: 0.8rem;
+    }
+
+    @include phone {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 10px;
+      padding-left: 0.8rem;
+    }
+  }
+
+
+  @include smallPhone {
+    background-image: url(/static/core/img/img-portfolio-cube-right-full-small.png),
+      url(/static/core/img/img-portfolio-cloud-left.png);
+    background-repeat: no-repeat;
+    background-size: 6rem, cover;
+    background-position: right center, left center;
+
+    .content-row {
+      margin: 0 1rem 0 -1rem;
+    }
+  }
+
+  @include phone {
+    background-image: url(/static/core/img/img-portfolio-cube-right-full-small.png),
+      url(/static/core/img/img-portfolio-cloud-left.png);
+    background-repeat: no-repeat;
+    background-size: 8rem, 80%;
+    background-position: right center, left center;
+
+    .content-row {
+      margin: 0 16px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// -----------------------------------------------------
+// Font
+// -----------------------------------------------------
+$rem: 16px;
+
+// -----------------------------------------------------
+// Background images
+// -----------------------------------------------------
+$tentacle-right: "/static/core/img/img-portfolio-tentacle-right.png";
+$tentacle-left: "/static/core/img/img-portfolio-tentacle-left.png";
+$cube-right: "/static/core/img/img-portfolio-cube-right.png";
+$curl-left: "/static/core/img/img-portfolio-curl-left.png";
+$cloud: "/static/core/img/img-portfolio-cloud.png";
+$cloud-left: "/static/core/img/img-portfolio-cloud-left.png";
+$main-octopus: "/static/core/img/img-portfolio-001.png";
+$swirly-right: "/static/core/img/img-portfolio-swirly-right.png";
+$cloud-full: "/static/core/img/img-portfolio-cloud.png";
+
+
+
+// -----------------------------------------------------
+// Media query
+// -----------------------------------------------------
+$media-query-xxsmall: "(min-width: 320px) and (max-width: 480px)";
+$media-query-xsmall: " (min-width: 481px) and (max-width: 576px)";
+$media-query-small: "(min-width: 576px) and (max-width: 767px)";
+$media-query-medium: "(min-width: 768px) and (max-width: 991px)";
+$media-query-large: "(min-width: 992px) and (max-width: 1200px)";
+$media-query-xlarge: "(min-width: 1200px)";

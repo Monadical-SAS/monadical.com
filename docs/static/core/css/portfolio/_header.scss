@@ -1,0 +1,51 @@
+@import "./variables";
+
+#header {
+    margin-top: 6rem;
+
+    a {
+        border: none;
+        color: #2b2b2b;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    .scroll-down {
+        padding: 5rem 0;
+        text-decoration: none;
+
+        span,
+        i {
+            line-height: 1.5rem;
+            font-size: 18px;
+            font-weight: normal;
+        }
+    }
+
+    @include media(smallPhone, phone) {
+        background: url(/static/core/img/img-portfolio-001.png) no-repeat;
+        background-position: 50% 20%;
+        background-size: 50%;
+        margin-top: 1.5rem;
+
+        a {
+            font-size: 18px;
+        }
+
+        .scroll-down {
+            padding: 2.5rem 0;
+
+            span,
+            i {
+                line-height: 0.75rem;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+}

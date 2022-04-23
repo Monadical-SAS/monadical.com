@@ -1,47 +1,94 @@
 /* this gets rid of the bottom dots */
 .container-full {
+  width: 100%;
+  /* max-width: 1600px; */
   border-radius: 0px;
 }
 
 /* Background */
-.portfolio-full {
-  background-image: url(/static/core/img/img-portfolio-cube-right.png),
-    url(/static/core/img/img-portfolio-tentacle-left.png),
-    url(/static/core/img/img-portfolio-tentacle-right.png),
-    url(/static/core/img/img-portfolio-cube-left.png),
-    url(/static/core/img/img-portfolio-cloud-right.png),
-    url(/static/core/img/img-portfolio-swirly-right.png),
-    url(/static/core/img/img-portfolio-cube-left.png);
+@media (min-width: 768px) {
 
-  background-position: 100% 15%, 0 25%, 100% 40%, 0 60%, 100% 75%, 100% 73%, 0 90%;
-  background-repeat: no-repeat;
+  .portfolio-full {
+    background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
+      url(/static/core/img/img-portfolio-tentacle-left.png),
+      url(/static/core/img/img-portfolio-cube-right.png),
+      url(/static/core/img/img-portfolio-curl-left.png),
+      url(/static/core/img/img-portfolio-cloud.png),
+      url(/static/core/img/img-portfolio-cloud-left.png),
+      url(/static/core/img/img-portfolio-001.png);
+    background-position: 100% 35%,
+      0% 68.5%,
+      100% 71.5%,
+      0% 76%,
+      0% -2%,
+      0% 3%,
+      105% -0.5%;
+    background-repeat: no-repeat;
+  }
 }
+
 
 @media (max-width: 768px) {
   .portfolio-full {
-    background-position: 100% 13.5%, 0 30%, 100% 40%, 0 64%, 100% 73%, 100% 73%, 0 90%;
-    background-size: 20%;
+    background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
+      url(/static/core/img/img-portfolio-tentacle-right.png),
+      url(/static/core/img/img-portfolio-cube-left.png),
+      url(/static/core/img/img-portfolio-swirly-right.png),
+      url(/static/core/img/img-portfolio-cloud.png);
+    background-position: 100% 35%,
+      100% 65.5%,
+      0% 69.5%,
+      100% 73%,
+      0% -1%;
+    background-repeat: no-repeat;
+    background-size: 20%,
+      20%,
+      30%,
+      30%,
+      100%,
+      50%;
   }
 }
 
 /* General  */
 .portfolio-container {
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
 }
 
 .portfolio-container .title {
   color: #2b2b2b;
-  line-height: 80px;
+  line-height: 90px;
   font-size: 82px;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  margin-top: 5rem;
+}
+
+.portfolio-container .title::first-letter {
+  font-size: 129px;
+  background-image: url("/static/core/img/monadical-blue-grey-logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: transparent;
+  margin-left: 10px;
+}
+
+.portfolio-container .slogan {
+  color: #333333;
+  line-height: 36px;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 3rem;
   text-align: left;
 }
 
 .portfolio-container .section-title {
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 62px;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 80px;
   margin: 3rem 0;
   text-align: center;
 }
@@ -74,15 +121,36 @@
   }
 
   .portfolio-container .title {
-    font-size: 30px;
+    font-size: 40px;
     line-height: 45px;
+    margin-top: 1rem;
     margin-bottom: 16rem;
     text-align: center;
   }
 
+  .portfolio-container .title::first-letter {
+    font-size: 50px;
+    line-height: 45px;
+    background-image: url("/static/core/img/monadical-blue-grey-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center left;
+    color: transparent;
+  }
+
+  .portfolio-container .slogan {
+    color: #333333;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
   .portfolio-container .section-title {
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 30px;
+    line-height: 44px;
     margin: 2rem 0;
   }
 
@@ -116,9 +184,6 @@
 /* Table of Contents */
 #table-of-contents {
   margin-top: 6rem;
-  background: url(/static/core/img/img-portfolio-001.png) no-repeat;
-  background-size: 45%;
-  background-position: top right;
 }
 
 #table-of-contents li {
@@ -181,7 +246,7 @@
 }
 
 #table-of-contents .scroll-down {
-  padding: 8rem 0;
+  padding: 5rem 0;
   text-decoration: none;
 }
 
@@ -194,14 +259,14 @@
 
 @media (max-width: 768px) {
   #table-of-contents {
-    background-position: top center;
+    background: url(/static/core/img/img-portfolio-001.png) no-repeat;
+    background-position: 50% 5%;
     background-size: 50%;
     margin-top: 1.5rem;
   }
 
   #table-of-contents .outer-list {
     background: rgba(255, 255, 255, 0.5);
-    margin-top: -5rem;
     padding: 1rem;
   }
 
@@ -233,13 +298,13 @@
 
 /* Why Hire Us */
 #why-hire-monadical {
-  background: url(/static/core/img/img-portfolio-multitask-left.png) no-repeat;
-  background-size: 25%;
-  background-position: top left;
+  background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
+  background-size: 25rem; 
+  background-position: 100% 10%;
 }
 
 #why-hire-monadical .contrast-wrapper {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -249,18 +314,26 @@
 }
 
 #why-hire-monadical li {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 400;
-  line-height: 22px;
-  list-style: square outside;
+  line-height: 32px;
+  list-style: none;
   padding-bottom: 20px;
 }
 
 #why-hire-monadical li::marker {
-  font-size: 18px;
+  font-size: 25px;
 }
 
 @media (max-width: 768px) {
+  #why-hire-monadical {
+    background-image: url(/static/core/img/img-portfolio-cube-right-full.png),
+      url(/static/core/img/img-portfolio-cloud-left.png);
+    background-repeat: no-repeat;
+    background-size: 12rem,80%;
+    background-position: right center, left center;
+  }
+
   #why-hire-monadical .content-row {
     margin: 0 16px;
   }
@@ -423,9 +496,94 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid #2b2b2b;
+  padding-bottom: 5rem;
 }
 
+#monadical-projects .main-image-wrapper-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 0 0rem 0;
+  background-image: url(/static/core/img/img-portfolio-curl-left.png);
+  background-size: 17rem 16rem;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  margin: 0%;
+}
+
+#monadical-projects .main-image-wrapper-2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 5rem;
+  z-index: -1;
+}
+
+#monadical-projects .main-image-1 {
+  border-radius: 10px;
+  width: 100%;
+  margin: 2rem;
+  max-width: 585px;
+}
+
+.monadical-projects-wrapper {
+  position: relative;
+}
+
+#monadical-projects .main-image-2 {
+  border-radius: 10px;
+  width: 80%;
+  margin-top: -13rem;
+  margin-bottom: -15rem;
+  margin-left: -2rem;
+  max-width: 1000px;
+}
+
+#monadical-projects .main-image-3 {
+  position: absolute;
+  right:0;
+  top:4.5%;
+  border-radius: 10px;
+  width: 25rem;
+  max-width: 700px;
+}
+
+#monadical-projects .main-image-4 {
+  position: absolute;
+  width: fill;
+}
+
+#monadical-projects .main-image-5 {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 36%;
+  width: fill;
+  z-index:-2;
+}
+
+#monadical-projects .main-image-6 {
+  position: absolute;
+  right: -10%;
+  transform: rotate(-90deg) scaleX(-1);
+  bottom: 34%;
+  width: cover;
+}
+  
+#monadical-projects .main-image-7 {
+  position: absolute;
+  left: 0%;
+  bottom: 35%;
+  width: cover;
+  width: 60%;
+  max-width: 740px;
+}
+  
 #monadical-projects .img-wrapper {
   align-items: center;
   background-color: #f9f9f9;
@@ -442,6 +600,14 @@
   width: 100%;
   margin: 2rem;
   max-width: 585px;
+}
+
+#monadical-projects .img-wrapper-scaled {
+  transform: scaleY(0.75);
+}
+
+#monadical-projects .project-img-scaled {
+  transform: scaleX(0.75);
 }
 
 #monadical-projects .project-text {
@@ -494,6 +660,13 @@
   font-size: 18px;
 }
 
+
+@media (max-width: 1080px) {
+  #monadical-projects .main-image-3 {
+    top: 4%
+  }
+}
+
 @media (max-width: 768px) {
   #monadical-projects .project-row {
     font-size: 16px;
@@ -501,6 +674,50 @@
     margin-bottom: 2rem;
   }
 
+  #monadical-projects .main-image-wrapper-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 0 4rem 0;
+    background-image: url(/static/core/img/img-portfolio-curl-left.png),
+      url(/static/core/img/img-portfolio-cube-right-full-small.png);
+    background-size: 20%, 20%;
+    background-position: 0% 0%, 100% 110%;
+    background-repeat: no-repeat;
+    margin: 0%;
+  }
+
+  #monadical-projects .main-image-wrapper-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #monadical-projects .main-image-1 {
+    width: 50%;
+  }
+ 
+  #monadical-projects .main-image-2 {
+    border-radius: 10px;
+    width: 80%;
+    margin-top: -10rem;
+    margin-bottom: -10rem;
+    max-width: 700px;
+  }
+
+  #monadical-projects .main-image-3 {
+    display: none;
+  }
+
+  #monadical-projects .main-image-4 {
+    width: 100%;
+  }
+  
+  #monadical-projects .main-image-7 {
+    bottom: 36%;
+  }
   #monadical-projects .img-wrapper {
     justify-content: center;
     margin-bottom: 20px;
@@ -541,12 +758,74 @@
 /* Crypto */
 #crypto {
   font-size: 20px;
+  margin-bottom: 3rem;
+}
+
+#crypto .subtitle {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62.4px;
+  text-align: center;
 }
 
 #crypto .card {
   min-height: 215px;
   background-color: #0086b4;
-  box-shadow: 0px 4px 21px -5px #6161613c;
+  box-shadow: 0px 4px 11px 2.5px #6161613c;
+  border: none;
+}
+
+#crypto .card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#crypto .main-image-crypto-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* min-height: 645px; */
+}
+
+#crypto .main-image-crypto-1 {
+  border-radius: 10px;
+  width: 100%;
+  margin-left: 25rem;
+  max-width: 585px;
+}
+
+#crypto .main-image-crypto-2 {
+  position: absolute;
+  /* background-color: magenta; */
+  right: 0;
+  bottom: 4%;
+  width: cover;
+}
+
+#crypto .main-image-crypto-3 {
+  position: absolute;
+  /* background-color: magenta; */
+  left: 0;
+  bottom: 4%;
+  width: cover;
+}
+
+#crypto .main-image-crypto-4 {
+  position: absolute;
+  /* background-color: magenta; */
+  left: 0;
+  bottom: 4%;
+  width: cover;
+}
+
+#crypto .main-image-crypto-5 {
+  position: absolute;
+  right: 0;
+  bottom: 7%;
+  width: cover;
 }
 
 #crypto .image-row {
@@ -554,16 +833,17 @@
 }
 
 #crypto .card-img-top {
-  background: url("/static/core/img/img-portfolio-002.png") no-repeat;
-  background-color: #2b2b2b;
+  background: url("/static/core/img/img-portfolio-crypto-background-cards.png") no-repeat;
+  background-color: #ffffff;
   background-size: cover;
   display: flex;
   justify-content: center;
+  /* height: 248px; */
 }
 
 #crypto .card-img-top img {
   height: 80px;
-  margin: 46px 0;
+  margin: 46px 0px;
 }
 
 #crypto .card-link {
@@ -584,6 +864,50 @@
 @media (max-width: 768px) {
   #crypto {
     font-size: 18px;
+  }
+
+  #crypto .subtitle {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  #crypto .main-image-crypto-1 {
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 10rem;
+    max-width: 585px;
+  }
+
+  #crypto .main-image-crypto-2 {
+    position: absolute;
+    /* background-color: magenta; */
+    right: 0;
+    bottom: 8%;
+    width: 100%;
+  }
+
+  #crypto .main-image-crypto-3 {
+    position: absolute;
+    /* background-color: magenta; */
+    left: 0;
+    bottom: 8%;
+    width: 100%;
+  }
+
+  #crypto .main-image-crypto-4 {
+    position: absolute;
+    width: 40%;
+    left: 0;
+    bottom: 8%;
+    width: cover;
+  }
+
+  #crypto .main-image-crypto-5 {
+    position: absolute;
+    width: 12%;
+    right: 0;
+    bottom: 10.5%;
+    width: cover;
   }
 
   #crypto .card {
@@ -615,6 +939,13 @@
   line-height: 24px;
 }
 
+#writing-and-talks .subtitle {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62.4px;
+  text-align: center;
+}
+
 #writing-and-talks .img-wrapper img {
   border-radius: 10px;
   width: 80%;
@@ -623,6 +954,39 @@
 #writing-and-talks .image-row {
   margin-bottom: 5rem;
   align-items: center;
+  padding-bottom: 7rem;
+  border-bottom: 1px solid #2b2b2b;
+
+}
+
+#writing-and-talks .main-image-talks-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  /* min-height: 645px; */
+}
+
+#writing-and-talks .main-image-talks-1 {
+  border-radius: 10px;
+  width: 100%;
+  margin: 0rem;
+  max-width: 585px;
+}
+
+#writing-and-talks .main-image-talks-2 {
+  position: absolute;
+  border-radius: 10px;
+  right: -10%;
+  width: 60%;
+  max-width: 740px;
+}
+
+#writing-and-talks .main-image-talks-3 {
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
 }
 
 #writing-and-talks .card {
@@ -660,6 +1024,35 @@
   #writing-and-talks {
     line-height: 19px;
     text-align: center;
+  }
+
+  #writing-and-talks .subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  #writing-and-talks .main-image-talks-1 {
+    border-radius: 10px;
+    width: 50%;
+    margin: 0rem;
+    max-width: 585px;
+  }
+  
+  #writing-and-talks .main-image-talks-2 {
+    position: absolute;
+    border-radius: 10px;
+    right: -10%;
+    width: 50%;
+  }
+
+  #writing-and-talks .main-image-talks-3 {
+    position: absolute;
+    border-radius: 10px;
+    left: 0;
+    width: 100%;
   }
 
   #writing-and-talks #talks-carousel {

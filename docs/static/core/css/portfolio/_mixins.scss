@@ -1,0 +1,152 @@
+@use "sass:list";
+@import "./variables";
+
+@mixin background-images($imgs, $positions, $sizes: auto) {
+  $urls-imgs: ();
+  $separator: ",";
+
+  @each $img in $imgs {
+    $urls-imgs: list.append($urls-imgs, url($img), $separator: comma);
+  }
+
+  background-image: $urls-imgs;
+  background-position: $positions;
+  background-repeat: no-repeat;
+  background-size: $sizes
+}
+
+@mixin on-hover {
+  @media not all and (hover: none) {
+    &:hover {
+      @content
+    }
+  }
+}
+
+//-----------------------------
+// Media queries
+//-----------------------------
+
+@mixin xxsmall {
+  @media #{$media-query-xxsmall} {
+    @content;
+  }
+}
+
+@mixin xsmall {
+  @media #{$media-query-xsmall} {
+    @content;
+  }
+}
+
+@mixin small {
+  @media #{$media-query-small} {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media #{$media-query-medium} {
+    @content;
+  }
+}
+
+@mixin large {
+  @media #{$media-query-large} {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media #{$media-query-xlarge} {
+    @content;
+  }
+}
+
+// ----------------------------------------------------------
+// devices
+// ----------------------------------------------------------
+
+@mixin smallPhone {
+  @include xxsmall {
+    @content;
+  }
+}
+
+@mixin phone {
+  @include xsmall {
+    @content;
+  }
+
+  @include small {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include medium {
+    @content;
+  }
+}
+
+@mixin smallDesktop {
+  @include large {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include xlarge {
+    @content;
+  }
+}
+
+@mixin fullDesktop {
+  @include large {
+    @content;
+  }
+
+  @include xlarge {
+    @content;
+  }
+}
+
+@mixin media($names...) {
+  @each $name in $names {
+    @if ($name==smallPhone) {
+      @include smallPhone {
+        @content;
+      }
+    }
+
+    @else if ($name==phone) {
+      @include phone {
+        @content;
+      }
+    }
+
+    @else if ($name==tablet) {
+      @include tablet {
+        @content;
+      }
+    }
+
+    @else if ($name==smallDesktop) {
+      @include smallDesktop {
+        @content;
+      }
+    }
+
+    @else if ($name==desktop) {
+      @include desktop {
+        @content;
+      }
+    }
+
+    @else if ($name==fullDesktop) {
+      @include fullDesktop {
+        @content;
+      }
+    }
+  }
+}

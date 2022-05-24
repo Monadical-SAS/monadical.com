@@ -1,0 +1,24 @@
+/* Background */
+@media (min-width: 768px) {
+    .research-full {
+        background-image:
+            url(/static/core/img/img-portfolio-curl-left.png),
+            url(/static/core/img/img-portfolio-cube-right.png),
+            url(/static/core/img/img-portfolio-cube-left.png),
+            url(/static/core/img/img-portfolio-001.png),
+            url(/static/core/img/img-portfolio-multitask-left.png),
+            url(/static/core/img/img-portfolio-tentacle-left.png),
+            url(/static/core/img/img-portfolio-cloud-left.png),
+            url(/static/core/img/img-home-001.png);
+        background-position:
+            -3% 90%,
+            100% 100%,
+            -5% 71.5%,
+            110% 58.5%,
+            0% 50%,
+            0% 25%,
+            0% -0.5%,
+            115% -1.0%;
+        background-repeat: no-repeat;
+    }
+}

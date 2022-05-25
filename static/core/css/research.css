@@ -2,23 +2,52 @@
 @media (min-width: 768px) {
     .research-full {
         background-image:
+            url(/static/core/img/img-portfolio-cloud-right.png),
             url(/static/core/img/img-portfolio-curl-left.png),
             url(/static/core/img/img-portfolio-cube-right.png),
             url(/static/core/img/img-portfolio-cube-left.png),
+            url(/static/core/img/img-portfolio-cloud-2.png),
             url(/static/core/img/img-portfolio-001.png),
             url(/static/core/img/img-portfolio-multitask-left.png),
+            url(/static/core/img/img-portfolio-cloud-right.png),
             url(/static/core/img/img-portfolio-tentacle-left.png),
             url(/static/core/img/img-portfolio-cloud-left.png),
-            url(/static/core/img/img-home-001.png);
+            url(/static/core/img/img-portfolio-octopus-with-figures.png);
         background-position:
+            100% 130%,
             -3% 90%,
-            100% 100%,
-            -5% 71.5%,
+            100% 85%,
+            -5% 57.5%,
+            -25% 87.5%,
             110% 58.5%,
-            0% 50%,
+            0% 40%,
+            100% 25%,
             0% 25%,
-            0% -0.5%,
+            1% -10%,
             115% -1.0%;
         background-repeat: no-repeat;
     }
+}
+
+.info-text {
+    font-size: 24px;
+    text-align: justify;
+}
+
+.section-header {
+    font-size: 50px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.98;
+    letter-spacing: normal;
+    color: #2b2b2b;
+    margin: 40px;
+}
+
+.disabled-link {
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+    color: grey;
 }

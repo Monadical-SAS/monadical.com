@@ -70,21 +70,27 @@
                         </ul>
 
                         {% if title == "Rapid-fire Research" %}
-                        <a href="{{PAGES['research-en'].url}}">Eng<a> | <a href="{{ PAGES['research-fr'].url }}">Fr</a>
-                                <a class="beta-btn nav-link button-navbar" href="#">
-                                    APPLY
-                                </a>
-                                {% elif title == "" %}
-                                <a href="{{PAGES['research-en'].url}}">Eng<a> | <a
-                                            href="{{ PAGES['research-fr'].url }}">Fr</a>
-                                        <a class="beta-btn nav-link button-navbar" href="#">
-                                            APPLY
-                                        </a>
-                                        {% else %}
-                                        <a class="beta-btn nav-link button-navbar" href="{{PAGES.contact.url}}">
-                                            GET A TECHNICAL ASSESSMENT
-                                        </a>
-                                        {% endif %}
+                        <span>
+                            <a class="disabled-link" style="margin: 5px;" href="{{PAGES['research-en'].url}}">Eng<a> |
+                                    <a style="margin: 5px;" href="{{ PAGES['research-fr'].url }}">Fr</a>
+                        </span>
+                        <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc">
+                            APPLY
+                        </a>
+                        {% elif title == "" %}
+                        <span>
+                            <a style="margin: 5px;" href="{{PAGES['research-en'].url}}">Eng<a> |
+                                    <a class="disabled-link" style="margin: 5px;"
+                                        href="{{ PAGES['research-fr'].url }}">Fr</a>
+                        </span>
+                        <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc">
+                            APPLY
+                        </a>
+                        {% else %}
+                        <a class="beta-btn nav-link button-navbar" href="{{PAGES.contact.url}}">
+                            GET A TECHNICAL ASSESSMENT
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </nav>

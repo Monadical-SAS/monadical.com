@@ -24,13 +24,13 @@
             100% 25%,
             0% 25%,
             1% -10%,
-            115% -1.0%;
+            130% -1.0%;
         background-repeat: no-repeat;
     }
 }
 
 .info-text {
-    font-size: 24px;
+    font-size: 20px;
     text-align: justify;
 }
 
@@ -50,4 +50,18 @@
     pointer-events: none;
     text-decoration: none;
     color: grey;
+}
+
+.subtext-size-2 {
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #818182;
+}
+
+.margin-bottom-100 {
+    margin-bottom: 100px;
 }

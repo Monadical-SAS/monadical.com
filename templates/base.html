@@ -63,25 +63,27 @@
                     <div class="navbar-content-container">
                         <ul class="navbar-nav navbar-left">
                             {% for link in HeaderLinks %}
+                            {% if link != "jasette" %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
                             </li>
+                            {% endif %}
                             {% endfor %}
                         </ul>
 
-                        {% if title == "Rapid-fire Research" %}
+                        {% if title == "Lightning Yak" %}
                         <span>
-                            <a class="disabled-link" style="margin: 5px;" href="{{PAGES['research-en'].url}}">Eng<a> |
-                                    <a style="margin: 5px;" href="{{ PAGES['research-fr'].url }}">Fr</a>
+                            <a class="disabled-link" style="margin: 5px;" href="{{PAGES['yak'].url}}">Eng<a> |
+                                    <a style="margin: 5px;" href="{{ PAGES['jasette'].url }}">Fr</a>
                         </span>
                         <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc">
                             APPLY
                         </a>
-                        {% elif title == "" %}
+                        {% elif title == "Jasette Éclair" %}
                         <span>
-                            <a style="margin: 5px;" href="{{PAGES['research-en'].url}}">Eng<a> |
+                            <a style="margin: 5px;" href="{{PAGES['yak'].url}}">Eng<a> |
                                     <a class="disabled-link" style="margin: 5px;"
-                                        href="{{ PAGES['research-fr'].url }}">Fr</a>
+                                        href="{{ PAGES['jasette'].url }}">Fr</a>
                         </span>
                         <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc">
                             APPLY

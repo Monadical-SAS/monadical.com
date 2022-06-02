@@ -12,37 +12,117 @@
             url(/static/core/img/img-portfolio-cloud-right.png),
             url(/static/core/img/img-portfolio-tentacle-left.png),
             url(/static/core/img/img-portfolio-cloud-left.png),
-            url(/static/core/img/img-portfolio-octopus-with-figures.png);
+            url(/static/core/img/img-home-001.png);
         background-position:
             100% 130%,
-            -3% 90%,
-            100% 85%,
+            -3% 93%,
+            100% 90%,
             -5% 57.5%,
             -25% 87.5%,
-            110% 58.5%,
-            0% 40%,
+            120% 65.5%,
+            0% 44%,
             100% 25%,
-            0% 25%,
+            0% 22.5%,
             1% -10%,
-            130% -1.0%;
+            100% 2.0%;
         background-repeat: no-repeat;
     }
 }
 
-.info-text {
-    font-size: 20px;
+.title {
+    font-size: 80px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 96px;
+    letter-spacing: 0.01em;
+    color: #2b2b2b;
+    margin: 20px;
+}
+
+.subtitle {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: right;
+    color: #212B36;
+}
+
+.welcome {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #0086B4;
+}
+
+.intro-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 32px;
     text-align: justify;
+    color: #333333;
 }
 
 .section-header {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 64px;
+    font-weight: 700;
     font-stretch: normal;
     font-style: normal;
-    line-height: 0.98;
+    line-height: 77px;
     letter-spacing: normal;
     color: #2b2b2b;
-    margin: 40px;
+    margin: 20px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+.section-subheader {
+    font-style: normal;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.list-subjects {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: justify;
+    color: #333333;
+}
+
+.other {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: justify;
+    color: #0086B4;
+}
+
+.paragraph {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #2B2B2B;
+}
+
+.margin-30 {
+    margin: 30px;
 }
 
 .disabled-link {
@@ -52,14 +132,34 @@
     color: grey;
 }
 
-.subtext-size-2 {
-    font-size: 24px;
-    font-weight: normal;
-    font-stretch: normal;
+.action {
     font-style: normal;
-    line-height: 1.75;
-    letter-spacing: normal;
-    color: #818182;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: justify;
+    color: #979797;
+}
+
+.unsure {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    color: #0086B4;
+}
+
+.no-pressure {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: justify;
+    color: #0086B4;
+}
+
+.margin-top-50 {
+    margin-top: 50;
 }
 
 .margin-bottom-100 {

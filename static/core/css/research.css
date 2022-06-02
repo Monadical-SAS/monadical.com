@@ -165,3 +165,36 @@
 .margin-bottom-100 {
     margin-bottom: 100px;
 }
+
+@media (max-width:641px)  {
+    .title {
+        font-size: 3rem;
+        line-height: inherit;
+        text-align: right;
+        margin-top: 0;
+    }
+    .subtitle{
+        font-size: 1.5rem;
+    }
+    p,.paragraph,.list-subjects{
+        font-size: 1.2rem !important;
+    }
+    .list-subjects{
+      text-align: inherit;
+        line-height: inherit;
+    }
+
+    .paragraph{
+        margin: 0;
+    }
+    .section-header{
+        font-size:36px;
+        line-height: inherit;
+    }
+    .action{
+        font-size: 1.2rem;
+    }
+    .action > a {
+        font-size: 1.2rem;
+    }
+}

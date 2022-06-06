@@ -1,6 +1,6 @@
 /* Background */
 @media (min-width: 768px) {
-    .research-full {
+    .research-full-2 {
         background-image:
             url(/static/core/img/img-portfolio-cloud-right.png),
             url(/static/core/img/img-portfolio-curl-left.png),
@@ -28,7 +28,117 @@
         background-repeat: no-repeat;
     }
 }
+.welcome-background{
+    background-image: url("/static/core/img/img-home-001.png");
+}
+.mobile-image-container{
+    display: none;
+}
+.images-container{
+    position: relative;
+    min-height: 80px;
+}
+.section-one-background{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 500px;
+}
+.section-one-sky{
+    position: absolute;
+    top: 400px;
+    left: 0;
+    width: 500px;
+}
+.section-two-background{
+    position: absolute;
+    top: 350px;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+.section-two-sky{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    height: auto;
+    width: max-content;
+}
+.section-three-background{
+    position: absolute;
+    top: 250px;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+.section-three-sky{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: max-content;
+}
+.section-four-background{
+    position: absolute;
+    top: 200px;
+    right: 0;
+    height: auto;
+    width: max-content;
+}
+.section-four-adorment{
+    position: absolute;
+    top: 120px;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+.section-four-sky{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+.section-five-background{
+    position: absolute;
+    top: 0px;
+    right: 0;
+    height: auto;
+    width: max-content;
+}
+.section-five-sky{
+    position: absolute;
+    bottom: -600px;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+.section-six-adorment{
+    position: absolute;
+    top: -150px;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+.section-six-background-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: max-content;
+}
 
+.section-six-background-left{
+    position: absolute;
+    bottom: -400px;
+    left: 0;
+    height: auto;
+    width: max-content;
+}
+
+.research-full > .container {
+    position: relative;
+}
 .title {
     font-size: 80px;
     font-weight: 800;
@@ -165,14 +275,36 @@
 .margin-bottom-100 {
     margin-bottom: 100px;
 }
+@media (max-width: 1000px) {
+    .mobile-image-container{
+        display: block;
+    }
+    .images-container{
+        display: none;
+    }
+}
 
 @media (max-width:641px)  {
+    .title-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         line-height: inherit;
         text-align: right;
         margin-top: 0;
+        display: flex;
+        justify-content: center;
     }
+    .list-subjects{
+        margin: 15px;
+    }
+    .title > span{
+        margin-left: 10px;
+    }
+
     .subtitle{
         font-size: 1.5rem;
     }
@@ -196,5 +328,54 @@
     }
     .action > a {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width:1400px) and (min-width: 1000px)  {
+    .section-one-background {
+        position: absolute;
+        top: 200px;
+        right: -180px;
+        width: 500px;
+    }
+    .section-one-sky {
+        position: absolute;
+        top: 600px;
+        left: -300px;
+        width: 500px;
+    }
+    .section-two-sky {
+        position: absolute;
+        top: 100px;
+        right: -500px;
+        height: auto;
+        width: max-content;
+    }
+    .section-three-background {
+        position: absolute;
+        top: 250px;
+        left: -250px;
+        height: auto;
+        width: max-content;
+    }
+    .section-four-background {
+        position: absolute;
+        top: 200px;
+        right: -200px;
+        height: auto;
+        width: max-content;
+    }
+    .section-five-background {
+        position: absolute;
+        top: 200px;
+        right: 0;
+        height: auto;
+        width: max-content;
+    }
+}
+
+@media (max-width: 1000px){
+    .beta-btn{
+        min-width: auto;
     }
 }

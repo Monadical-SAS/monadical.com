@@ -275,14 +275,7 @@
 .margin-bottom-100 {
     margin-bottom: 100px;
 }
-@media (max-width: 1000px) {
-    .mobile-image-container{
-        display: block;
-    }
-    .images-container{
-        display: none;
-    }
-}
+
 
 @media (max-width:641px)  {
     .title-container{
@@ -377,5 +370,14 @@
 @media (max-width: 1000px){
     .beta-btn{
         min-width: auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    .mobile-image-container{
+        display: block;
+    }
+    .images-container{
+        display: none;
     }
 }

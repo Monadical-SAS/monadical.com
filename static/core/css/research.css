@@ -1,33 +1,4 @@
-/* Background */
-@media (min-width: 768px) {
-    .research-full-2 {
-        background-image:
-            url(/static/core/img/img-portfolio-cloud-right.png),
-            url(/static/core/img/img-portfolio-curl-left.png),
-            url(/static/core/img/img-portfolio-cube-right.png),
-            url(/static/core/img/img-portfolio-cube-left.png),
-            url(/static/core/img/img-portfolio-cloud-2.png),
-            url(/static/core/img/img-portfolio-001.png),
-            url(/static/core/img/img-portfolio-multitask-left.png),
-            url(/static/core/img/img-portfolio-cloud-right.png),
-            url(/static/core/img/img-portfolio-tentacle-left.png),
-            url(/static/core/img/img-portfolio-cloud-left.png),
-            url(/static/core/img/img-home-001.png);
-        background-position:
-            100% 130%,
-            -3% 93%,
-            100% 90%,
-            -5% 57.5%,
-            -25% 87.5%,
-            120% 65.5%,
-            0% 44%,
-            100% 25%,
-            0% 22.5%,
-            1% -10%,
-            100% 2.0%;
-        background-repeat: no-repeat;
-    }
-}
+
 .welcome-background{
     background-image: url("/static/core/img/img-home-001.png");
 }

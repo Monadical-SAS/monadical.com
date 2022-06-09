@@ -118,7 +118,7 @@
     letter-spacing: 0.01em;
     color: #2b2b2b;
     margin: 20px;
-    text-align: right;
+    text-align: left;
 }
 
 .subtitle {
@@ -141,7 +141,7 @@
 .intro-text {
     font-style: normal;
     font-weight: 400;
-    font-size: 27px;
+    font-size: 24px;
     line-height: 32px;
     text-align: justify;
     color: #333333;
@@ -172,14 +172,14 @@
 
 .section-subheader {
     font-style: normal;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 38px;
 }
 
 .list-subjects {
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 38px;
     color: #333333;
 }
@@ -187,7 +187,7 @@
 .other {
     font-style: italic;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 36px;
     text-align: justify;
     color: #0086B4;
@@ -197,13 +197,13 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 36px;
     color: #2B2B2B;
 }
 .form-title{
     font-weight: 500;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 36px;
     color: #979797;
 }
@@ -239,7 +239,7 @@
 .no-pressure {
     font-style: italic;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 36px;
     text-align: justify;
     color: #0086B4;
@@ -300,6 +300,12 @@
     }
     .action > a {
         font-size: 1.2rem;
+    }
+}
+@media (max-width:1200px) and (min-width: 640px)  {
+    .title{
+        font-size: 55px;
+        text-align: right;
     }
 }
 

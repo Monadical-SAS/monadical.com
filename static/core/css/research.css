@@ -171,6 +171,7 @@
 }
 
 .section-subheader {
+    text-align: center !important;
     font-style: normal;
     font-size: 18px;
     line-height: 38px;
@@ -221,13 +222,15 @@
     text-decoration: none;
     color: grey;
 }
-
+.good-luck{
+    font-size: 1.5rem;
+}
 .action {
+    text-align: center;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 43px;
-    text-align: justify;
     color: #979797;
 }
 
@@ -238,7 +241,9 @@
     line-height: 43px;
     color: #0086B4;
 }
-
+.hiw{
+    margin-top: 150px;
+}
 .no-pressure {
     font-style: italic;
     font-weight: 500;
@@ -258,6 +263,9 @@
 
 
 @media (max-width:641px)  {
+    .hiw{
+        margin-top: 0;
+    }
     .title-container{
         display: flex;
         align-items: center;

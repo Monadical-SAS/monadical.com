@@ -172,7 +172,7 @@
 
 .section-subheader {
     font-style: normal;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 38px;
 }
 
@@ -201,6 +201,9 @@
     line-height: 36px;
     color: #2B2B2B;
 }
+.paragraph > a{
+    font-size: 1.1em;
+}
 .form-title{
     font-weight: 500;
     font-size: 16px;
@@ -209,7 +212,7 @@
 }
 
 .margin-30 {
-    margin: 30px;
+    margin-left: 30px;
 }
 
 .disabled-link {
@@ -222,7 +225,7 @@
 .action {
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 18px;
     line-height: 43px;
     text-align: justify;
     color: #979797;
@@ -231,7 +234,7 @@
 .unsure {
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 18px;
     line-height: 43px;
     color: #0086B4;
 }

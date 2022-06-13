@@ -73,10 +73,10 @@
 }
 .section-five-background{
     position: absolute;
-    top: 150px;
+    top: 250px;
     right: 0;
     width: auto;
-    max-height: 1100%;
+    max-height: 900%;
 }
 .section-five-sky{
     position: absolute;
@@ -263,7 +263,7 @@
 }
 
 
-@media (max-width:641px)  {
+@media (max-width:640px)  {
     .hiw{
         margin-top: 0;
     }
@@ -314,7 +314,33 @@
         font-size: 1.2rem;
     }
 }
-@media (max-width:1200px) and (min-width: 640px)  {
+@media (max-width:768px) and (min-width: 640px)  {
+   .title-container{
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+    .title {
+        font-size: 2.5rem;
+        line-height: inherit;
+        text-align: right;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
+        max-width: 250px;
+    }
+
+    .title > span{
+        display: contents;
+    }
+
+    .subtitle{
+        font-size: 1.5rem;
+    }
+
+}
+@media (max-width:1200px) and (min-width: 768px)  {
     .title{
         font-size: 55px;
         text-align: right;
@@ -348,6 +374,9 @@
         height: auto;
         width: max-content;
     }
+    #img-section-five-tentacles {
+        top: 250px;
+    }
 }
 
 @media (max-width: 1000px){
@@ -371,5 +400,28 @@
     }
     .images-container{
         display: none;
+    }
+}
+
+@media (max-width:380px) {
+    #tilte-container img{
+        margin-left: -50px;
+    }
+
+    #tilte-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #tilte-container p.subtitle {
+        text-align: center;
+    }
+    #tilte-container .title-container {
+        justify-content: center;
+    }
+    #tilte-container h1.title {
+        font-size: 2.5rem;
+        text-align: center;
     }
 }

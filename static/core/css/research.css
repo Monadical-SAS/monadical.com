@@ -23,10 +23,11 @@
 }
 .section-two-background{
     position: absolute;
-    top: 350px;
+    top: 230px;
     left: 0;
-    height: auto;
-    width: max-content;
+    width: auto; 
+    max-height: 500%;
+
 }
 .section-two-sky{
     position: absolute;
@@ -37,10 +38,10 @@
 }
 .section-three-background{
     position: absolute;
-    top: 250px;
+    top: 100px;
     left: 0;
-    height: auto;
-    width: max-content;
+    width: auto;
+    max-height: 600%;
 }
 .section-three-sky{
     position: absolute;
@@ -51,10 +52,10 @@
 }
 .section-four-background{
     position: absolute;
-    top: 200px;
+    top: 300px;
     right: 0;
-    height: auto;
-    width: max-content;
+    width: auto;
+    max-height: 700%;
 }
 .section-four-adorment{
     position: absolute;
@@ -72,10 +73,10 @@
 }
 .section-five-background{
     position: absolute;
-    top: 0px;
+    top: 150px;
     right: 0;
-    height: auto;
-    width: max-content;
+    width: auto;
+    max-height: 1100%;
 }
 .section-five-sky{
     position: absolute;
@@ -86,10 +87,10 @@
 }
 .section-six-adorment{
     position: absolute;
-    top: -150px;
+    top: -250px;
     left: 0;
-    height: auto;
-    width: max-content;
+    width: auto;
+    max-height: 250%;
 }
 .section-six-background-right{
     position: absolute;
@@ -340,23 +341,9 @@
         height: auto;
         width: max-content;
     }
-    .section-three-background {
-        position: absolute;
-        top: 250px;
-        left: -250px;
-        height: auto;
-        width: max-content;
-    }
-    .section-four-background {
-        position: absolute;
-        top: 200px;
-        right: -200px;
-        height: auto;
-        width: max-content;
-    }
     .section-five-background {
         position: absolute;
-        top: 200px;
+        top: 150px;
         right: 0;
         height: auto;
         width: max-content;
@@ -367,11 +354,20 @@
     .beta-btn{
         min-width: auto;
     }
+    .section-four-background{
+        position: absolute;
+        top: 300px;
+        right: 0;
+        width: auto;
+        max-height: 400%;
+    }
 }
 
 @media (max-width: 1000px) {
     .mobile-image-container{
         display: block;
+        width: 10%;
+
     }
     .images-container{
         display: none;

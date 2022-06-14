@@ -299,7 +299,7 @@
 /* Why Hire Us */
 #why-hire-monadical {
   background: url(/static/core/img/img-portfolio-cube-right-full.png) no-repeat;
-  background-size: 25rem; 
+  background-size: 25rem;
   background-position: 100% 10%;
 }
 
@@ -330,7 +330,7 @@
     background-image: url(/static/core/img/img-portfolio-cube-right-full.png),
       url(/static/core/img/img-portfolio-cloud-left.png);
     background-repeat: no-repeat;
-    background-size: 12rem,80%;
+    background-size: 12rem, 80%;
     background-position: right center, left center;
   }
 
@@ -546,8 +546,8 @@
 
 #monadical-projects .main-image-3 {
   position: absolute;
-  right:0;
-  top:4.5%;
+  right: 0;
+  top: 4.5%;
   border-radius: 10px;
   width: 25rem;
   max-width: 700px;
@@ -564,7 +564,7 @@
   justify-content: center;
   bottom: 36%;
   width: fill;
-  z-index:-2;
+  z-index: -2;
 }
 
 #monadical-projects .main-image-6 {
@@ -574,7 +574,7 @@
   bottom: 34%;
   width: cover;
 }
-  
+
 #monadical-projects .main-image-7 {
   position: absolute;
   left: 0%;
@@ -583,7 +583,7 @@
   width: 60%;
   max-width: 740px;
 }
-  
+
 #monadical-projects .img-wrapper {
   align-items: center;
   background-color: #f9f9f9;
@@ -698,7 +698,7 @@
   #monadical-projects .main-image-1 {
     width: 50%;
   }
- 
+
   #monadical-projects .main-image-2 {
     border-radius: 10px;
     width: 80%;
@@ -714,10 +714,11 @@
   #monadical-projects .main-image-4 {
     width: 100%;
   }
-  
+
   #monadical-projects .main-image-7 {
     bottom: 36%;
   }
+
   #monadical-projects .img-wrapper {
     justify-content: center;
     margin-bottom: 20px;
@@ -1033,14 +1034,14 @@
     text-align: center;
     margin: 2rem 0;
   }
-  
+
   #writing-and-talks .main-image-talks-1 {
     border-radius: 10px;
     width: 50%;
     margin: 0rem;
     max-width: 585px;
   }
-  
+
   #writing-and-talks .main-image-talks-2 {
     position: absolute;
     border-radius: 10px;

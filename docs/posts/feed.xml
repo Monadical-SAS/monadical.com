@@ -6,7 +6,7 @@
     <description>Here you can find our publications</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Tue, 21 Jun 2022 17:21:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jun 2022 17:30:38 +0000</lastBuildDate>
     <item>
       <title>Downswings and the Information Game</title>
       <link>https://monadical.com/posts/Downswings-and-the-Information-Game.html</link>
@@ -412,6 +412,13 @@
       <description>Yes, we want more diverse workplaces but there are things on the computing side companies and developers can do to make AIs fairer.</description>
       <guid isPermaLink="false">/posts/algorithm-bias.html</guid>
       <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to setup a Wasm API for a CHIP-8 emulator</title>
+      <link>https://monadical.com/posts/wasm-chip8.html</link>
+      <description>In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!</description>
+      <guid isPermaLink="false">/posts/wasm-chip8.html</guid>
+      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

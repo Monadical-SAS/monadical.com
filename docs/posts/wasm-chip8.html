@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starting and Running Your First Program on a Mainframe | Monadical Consulting</title>
+    <title>How to setup a Wasm API for a CHIP-8 emulator | Monadical Consulting</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
     <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
 
-    <link rel="canonical" href="https://monadical.com/posts/how-to-run-programs-on-a-mainframe.html" />
+    <link rel="canonical" href="https://monadical.com/posts/wasm-chip8.html" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -37,24 +37,24 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="How to run your first program on a mainframe using open source software. " />
+<meta name="description" content="In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!" />
 
 <!-- Required Open Graph data -->
-<meta property="og:title" content="Starting and Running Your First Program on a Mainframe" />
+<meta property="og:title" content="How to setup a Wasm API for a CHIP-8 emulator" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/how-to-run-programs-on-a-mainframe.png" />
-<meta property="og:url" content="https://monadical.com/posts/how-to-run-programs-on-a-mainframe.html" />
+<meta property="og:image" content="https://monadical.com/static/wasm-chip8.png" />
+<meta property="og:url" content="https://monadical.com/posts/wasm-chip8.html" />
 <!-- Optional Open Graph data -->
-<meta property="og:description" content="How to run your first program on a mainframe using open source software. " />
+<meta property="og:description" content="In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!" />
 <meta property="og:site_name" content="Monadical Consulting" />
 <meta property="og:locale" content="en_US" />
 <!-- Find additional markup on https://ogp.me -->
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@MonadicalSAS">
-<meta name="twitter:title" content="Starting and Running Your First Program on a Mainframe">
-<meta name="twitter:description" content="How to run your first program on a mainframe using open source software. ">
-<meta name="twitter:image" content="https://monadical.com/static/how-to-run-programs-on-a-mainframe.png">
+<meta name="twitter:title" content="How to setup a Wasm API for a CHIP-8 emulator">
+<meta name="twitter:description" content="In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!">
+<meta name="twitter:image" content="https://monadical.com/static/wasm-chip8.png">
 
 </head>
 
@@ -210,12 +210,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  Starting and Running Your First Program on a Mainframe ===  *Written by [JDC](https://twit">
+    <meta name="description" content="In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!">
     
     
     
-    <meta property="og:title" content="Starting and Running Your First Program on a Mainframe - HedgeDoc">
+    <meta property="og:title" content="How to setup a Wasm API for a CHIP-8 emulator - HedgeDoc">
     
+    
+    <meta property="og:description" content="In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!">
     
     
     <meta property="og:type" content="website">
@@ -225,7 +227,7 @@
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>Starting and Running Your First Program on a Mainframe - HedgeDoc</title>
+    <title>How to setup a Wasm API for a CHIP-8 emulator - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
@@ -247,152 +249,305 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 01 2021 14:34:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 01 2021 14:35:37 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 21 2022 14:06:20 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 21 2022 17:19:23 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2251 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">22 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
-
-Starting and Running Your First Program on a Mainframe
-===
-
-*Written by [JDC](https://twitter.com/jdcaballerov). Published 2021-06-01 on the [Monadical blog](https://monadical.com/blog.html).*
-
-&lt;/center&gt;
-
-
-In a [previous article](https://monadical.com/posts/cobol.html), I presented a collection of resources for learning COBOL and running COBOL programs on Linux. However, most COBOL programs actually run on mainframes, so to work with COBOL properly, you need to be able to operate a mainframe. 
-
-Mainframes are infamous for being really expensive and inaccessible. On a budget, a  mainframe will typically set you back several thousand [dollars](https://www.quora.com/How-much-does-an-IBM-mainframe-cost). And even if you buy one at auction [like this guy did](https://www.youtube.com/watch?v=45X4VP8CGtk), you’ll need a lot of room to host it. Enter Hercules Hyperion: an open source software implementation of the mainframe System/370 and ESA/390 architectures, in addition to the latest 64-bit z/Architecture. Hercules is a free emulator that runs on Linux, Windows, Solaris, FreeBSD, and Mac OS X. 
-
-In this tutorial, I’ll walk you through installing Hercules and MVS 3.8j Tur(n)key 4- (&#34;TK4-&#34;), a ready-to-use OS/VS2 MVS 3.8j system built specifically to run under the Hercules System/370. Hercules will allow you to learn how to operate a mainframe and run programs. Let’s get started!
-
-
-![mainframes](https://docs.monadical.com/uploads/upload_8b6e81569ccb5a93c4a4d1ce57a2dc49.png)
-
-## Installing Hercules
-
-The Hercules project is hosted on [github](https://github.com/sdl-hercules-390/hyperion) and you can find its documentation and installation instructions [here](https://sdl-hercules-390.github.io/html/). You can follow the instructions according to your operating system to compile Hercules, or install it from your Linux distribution package manager.
-
-In this tutorial, I’ll be using Ubuntu 20.04. Here’s how to install Hercules on Ubuntu:
-
-```bash
-sudo apt-get update -y
-sudo apt-get install -y hercules
-```
-
-## Getting and installing MVS on the operating system
-
-Hercules is an emulator, so you need to have a mainframe operating system that runs on Hercules. Fortunately, for this there&#39;s [TK4](http://wotho.ethz.ch/tk4-/). TK4 can be downloaded and is a Hercules-compatible version of the [MVS](https://en.wikipedia.org/wiki/MVS) operating system.
-
-Go to the site and download the file `tk4-_v1.00_current.zip` (this is the latest distribution at the time of this writing). Once you get the file, create a directory you can easily locate and unzip the file inside it.
-
-## Installing a 3270 terminal emulator
-The communication with the mainframe occurs via a terminal, so you need to install an [IBM 3270 terminal emulator](https://en.wikipedia.org/wiki/IBM_3270).
-
-In Ubuntu, this can be installed as follows:
-
-```bash
-sudo apt-get update -y
-sudo apt-get install -y x3270
-```
-
-## Logging in into the mainframe
-Once the file `tk4-v_1.00.current.zip` is unzipped, it’s best to move the whole directory to `tk4` for easier access:
-
-```bash
-mv tk4-_v1.00_current/ tk4/
-cd tk4/
-```
-
-It’s recommended to set console mode to get feedback in the terminal:
-
-```bash
-cd unattended/
-./set_console_mode
-```
-Now you can start MVS:
-
-```bash
-cd tk4/
-./mvs
-```
-After this command, the mainframe will boot.
-
-![mainframe boot](https://docs.monadical.com/uploads/upload_820dd24c104ebbf2f39bb2c0192bd133.png)
-
-You can change the emulator view by pressing `ESC`.
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_96d66dcd1c0983e54947a786d3d3ff80.png)
-
-At this point, you need to start your x3270 emulator and connect it to localhost port 3270.
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_21b4414e1f59a5e7001cfd0bb3307bbd.png)
-
-Allow some time to boot with that image and hit the `ENTER` key. You will see this screen:
-
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_448a2e99dee90a310dc9e6c57416fd44.png)
-
-
-After this, input your username `herc01`. (There are other default users, but this guide will be using `herc01`, which has access privileges--for other users, check the manual http://wotho.ethz.ch/tk4-/MVS_TK4-_v1.00_Users_Manual.pdf.) You will be prompted to enter a password. 
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_3ec126719ca34878f3de9142925401ef.png)
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_1e216aefd5ad4f5bc58540f9cd9f0fa7.png)
-
-
-For this user, `herc01`, the current password is `CUL8TR`. Enter the password and hit `ENTER`.
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_1fedeb416f7ceabbfe4af85e8c28e306.png)
-
-Hit `ENTER` again.
-
-![mainframe emulator](https://docs.monadical.com/uploads/upload_6bc9aeef375e5d8015f9cbcddc05b8d5.png)
-
-And after one final `ENTER`, you will be logged in to the mainframe emulator running MVS!
-
-![mainframe emulator Hercules](https://docs.monadical.com/uploads/upload_54f01a53c13ecad14115f810a921db1f.png)
-
-If you get lost, try this video from moshix (one of the [recommended resources](https://monadical.com/posts/cobol.html#Resources) from my last article).
+    <div id="doc" class="container markdown-body" >
 
 &lt;center&gt;
-    
-  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/UOL0HtlXVKM&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+# How to setup a Wasm API for a CHIP-8 emulator
+
+&lt;/big&gt;
+
+*Written by Igor Loskutov. Originally published 2020-06-21 on the [Monadical blog](https://monadical.com/blog.html). Cover image titled “Crab &amp; Rusty Gears”, generated with [Kandinsky 12b + shonenkovAI](https://t.me/shonenkovAI)*
+
+*In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!*
 
 &lt;/center&gt;
 
-## Exploring MVS
-Once logged in, you can start moving on the mainframe. Input number four `4` and press `ENTER` to see the process QUEUE. Now go ahead and explore on your own. To go back, use the function key 3 `F3`.
+&lt;br&gt;
+
+Whether small or large, libraries are a familiar part of a developer’s toolkit. But have you ever found yourself struggling with a library interface that doesn’t meet your standards? For example, it’s not always possible to have these user-friendly interfaces for Wasm libraries because of their complexity and the current state of the technology. 
+ 
+Well, struggle no more!
+
+:::info
+What is Wasm? Wasm stands for ‘WebAssembly’,  a portable binary code format that is designed to run on the web.
+:::
 
 
-![mainframe](https://docs.monadical.com/uploads/upload_4106c911ac1cfd93d7109970ba051b65.png)
+In this post, I’ll show you a way to improve your Wasm library API, given certain parameters that I’ll outline in this post. I’ll do this using the example of building the interface of a Wasm library API specifically for simulations like CHIP-8[^first].
+
+In short, you can build a user-friendly interface, but your library must meet certain requirements and conform to certain restrictions. We’ll take a more detailed look at these conditions and restrictions later, but let’s first see what benefits we can get from a Rust Wasm API.
+
+:::warning
+Quick disclaimer: Wasm is a fairly new tool that is rapidly developing. As a result, this post may become obsolete as this technology advances. I’ll try to write updated versions in the future if there are major changes, so stay tuned! 
+ 
+Also, Wasm technology has to be used with JavaScript, so you’ll need a solid understanding of JS to fully understand this post.
+:::
+
+[^first]:CHIP-8 is an interpreted programming language, developed to write programs that are run on a CHIP-8 virtual machine. For a CHIP-8 guide, I recommend [this](https://blog.scottlogic.com/2017/12/13/chip8-emulator-webassembly-rust.html) priceless article  which also uses Rust/Wasm for implementation. It focuses specifically on CHIP-8 implementation. 
+
+## The benefits of making a non-blocking Rust Wasm API
+
+I’ll be showing you how to build a user-friendly interface for a Wasm library by making a non-blocking Rust Wasm API for a simulation or a state machine. 
+
+Now, your first thought might be: Why not just use Web Workers? Yes, this API does also work in Web Workers, but the reason I’m not using it here is because our library has a requirement to be able to mutate DOM elements. You could use Web Workers though, if you don’t have this specific restriction.
+
+We’re going to improve the client code from something like this:
+
+```javascript=
+const runloop = () =&gt; {
+    for (var i = 0; i &lt; 10; i++) {
+      run_cycle();
+    }
+  }
+  decrement_timers();
+  updateUI();
+  window.requestAnimationFrame(runloop);
+};
+window.requestAnimationFrame(runloop);
+```
+![crying gif](https://docs.monadical.com/uploads/38f58b29-7cb5-46f1-b19b-9ccdb47600c6.gif)
+
+To something like this:
+
+```javascript=
+cpu.run()
+```
+![joy gif](https://docs.monadical.com/uploads/88a70cfd-c8d1-4650-b96e-e72608ae36a8.gif)
+
+From a simulation API, in this case CHIP-8, we usually expect the following:
+- Control over the lifecycle. i.e. “start()” and “stop()” that doesn’t block the main browser thread.
+- Signals/commands. That is, accepting, for example, keyboard events.
+- Callbacks, or a way to subscribe to events in the running simulation.
+
+You’ll see that we’ll be able to do all this, while still maintaining functionality and keeping the asynchronous style.
 
 
-You can see your terminal session listed. Again, to go back, use `F3`.
+## Restrictions to our method
 
-## Stopping the mainframe
-Once you’ve finished exploring, you’ll need to stop the mainframe. To stop the mainframe, go back to your terminal running `./mvs` and hit `ESC` to get back to the registers and devices view (if you&#39;re not already there).
+Before we get into the technical aspects of how to build this API, it’s important to note the restrictions that accompany this method: 
 
-![mainframe](https://docs.monadical.com/uploads/upload_15d81759fe56414d9c178c100a207c4c.png)
+1. You’ll probably only need to use this method if you’re running a continuous asynchronous computation. As we’ll see, there are some limitations to the method I’ll describe, which might not be worth it if your tasks are synchronous. Synchronous code runs quite well using more standard techniques.
+
+2. The method is more applicable (although still viable without it) if you want your computation in the main thread. Our CHIP-8 handles a passed Canvas DOM element internally and mutates it. As I mentioned before, we can’t do this kind of a mutation in Web Worker yet[^second].
+
+3. We want the library not to be very CPU-heavy and for it to yield thread control quite often. That is, CHIP-8 waits for a while between its computational loops.
+
+4. We also want our library usable, without having to make serious adjustments when we run it on other, non-Wasm, platforms. You’ll see that the library from this article works with both Wasm rendering itself on a canvas and also on a console, printing the screen into `stdout` when run as a binary (a benefit! Woohoo!).
+
+5. We need to use three third-party libraries. (Ok so not quite a restriction but worth noting anyway).
+
+6. When the computation is running and not waiting for a delay period, we still have to lock the main thread. (Again, a technical point worth noting).
+
+This method is rather niche because of the restrictions mentioned; nonetheless, let’s look at how we could achieve all the above.
+
+[^second]:  Hopefully this will be possible later, if the Rust+Wasm ecosystem [implements it](https://developer.chrome.com/blog/offscreen-canvas). 
+
+## A possible fix?
+
+First, we want to run the computation in the main thread but still keep it asynchronous. As it turns out, there are no commonly accepted methods for this. 
+
+But, what’s the deal with the main thread? Can’t we just run our computation there? For example: 
+
+```javascript=
+pub fn run() {
+   loop {
+       do_the_thing();
+   }
+}
+Import { run } from “./my-wasm-lib”
+run()
+```
+Turns out, it would block the user’s browser!
+
+![Crab WASM flowchart](https://docs.monadical.com/uploads/f86b8c8c-0c6f-4bd3-9353-177b1cc27262.png)
+
+As you can see, the one and only browser thread gets overtaken and is never returned back. After calling run() we can’t do anything, nor stop it.
+
+A library user expects that the library doesn’t break the page:
+
+```javascript=
+// expected behavior
+cpu.run()
+setTimeout(() =&gt; cpu.stop(), 10000)
+// the library’s computation runs for 10 secs then stops browser thread is usable while UI isn’t frozen
+```
+
+So let’s look at a better way.
+
+## A real fix
+
+### Step one: Gather your libraries
+
+These are the crates that you’ll need:
+
+- [wasm_mutex](https://lib.rs/crates/wasm_mutex): A mutex structure implementation that works in the browser main thread.
+- [wasm_timer](https://docs.rs/wasm-timer/latest/wasm_timer/): A Delay implementation that frees the main thread and lets Javascript code take control when chip8 is between loops. Note: I use the `fluvio-wasm-timer = &#34;0.2.5&#34;` branch at the moment of writing this; it’s more up-to-date. 
+- [wasm_bindgen_futures](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen_futures/fn.spawn_local.html)): This gives us spawn_local to run our Rust async code in the main thread.
 
 
-Hit the letter `P` to stop. CPP00 will change to CPP00 STOPPED. Then hit `W` for PWR and confirm with `Y` yes. That’s it! You just started a mainframe, ran a monitoring program, and stopped and powered off the mainframe.
+### Step two: Write your source code 
 
-It’s recommended to correctly power off the mainframe to prevent any issues the next time you use it.
+The entry point to the Rust program would take a Canvas instance and a ROM (the instructions for CHIP-8 to run[^third]).
 
 
-In my next article, I’ll explain how to run a COBOL script on the mainframe. Stay tuned.
+```javascript=
+#[wasm_bindgen]
+pub fn init_program(program: &amp;[u8], canvas: JsValue) -&gt; Result&lt;WasmProgram, JsValue&gt; {
+   match canvas.dyn_into::&lt;web_sys::CanvasRenderingContext2d&gt;() {
+       Ok(canvas) =&gt; {
+           // in the code, screen is interchangeable; CPU constructor accepts also a ConsoleScreen!
+           let mut cpu = CPU::new(Box::new(WasmCanvasScreen::new(canvas)));
+           cpu.load_program(program.to_vec());
+           Ok(WasmProgram { cpu: Arc::new(wasm_mutex::Mutex::new(cpu)) })
+       }
+       Err(_) =&gt; Err(JsValue::from_str(&#34;canvas argument not a HtmlCanvas&#34;)),
+   }
+}
+```
+
+The first thing we’ll be calling in our JS is to initialize an instance of a processor.
+
+The crucial method in the CPU trait is, as expected, run(). 
+
+```javascript=
+pub async fn run(this: Arc&lt;wasm_mutex::Mutex&lt;CPU&gt;&gt;) {
+   let arc = this.clone();
+   loop {
+       Delay::new(Duration::new(1 / SPEED, 0)).await;
+       let mut guard = arc.lock().await;
+       let guard: &amp;mut CPU = guard.deref_mut(); // for compiler to understand splitting borrow later
+       // is_done() will return true after we call cpu.stop()
+       if guard.is_done() {
+           break;
+       }
+       // we also call requestAnimationFrame https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame from inside the lib!
+       guard.screen.request_animation_frame().await;
+       // whereas CPU::cycle is chip8 specific method and doesn’t contain nothing we should focus on
+       match CPU::cycle(&amp;mut guard.state, &amp;mut *guard.screen) {
+           Ok(()) =&gt; (),
+           Err(e) =&gt; {
+               println!(&#34;Error during cycle, {}. STOPPING&#34;, e);
+               guard.stop();
+           }
+       }
+   }
+}
+```
+
+[^third]: More about ROMs [here](https://cgmathprog.home.blog/2021/05/20/chip-8-and-emulator-overview/).
+
+Note that instead of “self” it takes `Arc&lt;wasm_mutex::Mutext&lt;CPU&gt;&gt;`. Wasm-bindgen doesn’t understand it so we have to additionally wrap the CPU into a Wasm-bindgen compatible trait:
+
+```javascript=
+#[wasm_bindgen]
+pub struct WasmProgram {
+   // we want wasm_bindgen to skip this field as it’s not compatible with wasm_bindgen, i.e. our chip8 has some incompatibility with wasm_bindgen structures (notably, it contains a reference to Canvas). You could have better luck with your simulation!
+   cpu: Arc&lt;Mutex&lt;CPU&gt;&gt;,
+}
+
+#[wasm_bindgen]
+impl WasmProgram {
+   pub fn run(&amp;self) {
+       let clone = self.cpu.clone();
+       spawn_local(async move {
+           CPU::run(clone).await;
+       })
+   }
+   pub fn stop(&amp;mut self) {
+       let clone = self.cpu.clone();
+       spawn_local(async move {
+           let mut guard = clone.lock().await;
+           guard.stop();
+       })
+   }
+}
+```
+
+Keyboard listeners can be added in a similar way:
+
+```javascript=
+impl WasmProgram {
+…
+// which is a bit boilerplaytey but could likely be fixed with macros
+pub fn key_down(&amp;mut self, k: usize) {
+   let clone = self.cpu.clone();
+   spawn_local(async move {
+       let mut guard = clone.lock().await;
+       guard.key_down(k);
+   })
+}
+
+pub fn key_up(&amp;mut self, k: usize) {
+   let clone = self.cpu.clone();
+   spawn_local(async move {
+       let mut guard = clone.lock().await;
+       guard.key_up(k);
+   })
+}
+…
+}
+```
+
+### Step 3: Marvel at your API
+
+By building this library, we have an interface that looks like this:
+
+```javascript=
+import initWasm, { WasmProgram, init_program as initChip8 } from &#39;@firfi/rust-wasm-chip8&#39;;
+
+const init = async () =&gt; {
+
+    await initWasm();
+    
+    const romData = await loadRom();
+    const canvas = document.getElementById(&#34;canvas&#34;);
+    
+    const cpu = initChip8(romData, canvas);
+    cpu.run(); // will run asynchronously
+    initKeyboardListeners(cpu); // wire up controls, listen to kb events etc
+
+    // and at any point you call cpu.stop() which will clean up its resources  
+}
+```
+Moreover, you can run several simulations at the same time. They’ll still be taking the same thread, so probably don’t run hundreds of them though!
+
+```javascript=
+const cpu1 = initChip8(romData1, canvas1);
+const cpu2 = initChip8(romData2, canvas2);
+const cpu3 = initChip8(romData3, canvas3);
+cpu1.run();
+cpu2.run();
+cpu3.run();
+```
+
+## Final words 
+
+So there are indeed ways to code convenient interfaces for Wasm libraries, although there are many nuisances to it. Wasm is still a fairly green tool and there’s a lot that can be improved or added.
+
+One day, the approach I’ve described here will become obsolete. We had to use three third-party libraries to achieve our goal, and we still locked the main thread, neither of which is ideal. 
+
+Nevertheless, this method is a nice improvement in API usability over the methods I&#39;ve seen so far, specifically for the CHIP-8 emulator. Plus, this approach can be used more generally for different simulations provided that they aren’t too computation-heavy. 
+
+
+#### References
+
+The full source code can be found [here](https://github.com/Firfi/chip8-rust-wasm). 
+And the resulting NPM package [here](https://www.npmjs.com/package/@firfi/rust-wasm-chip8).
+
 
 
 ---
-
 
 &lt;center&gt;
  
@@ -432,16 +587,16 @@ Monadical.com | Full-Stack Consultancy
         <div id="post-footer" class="container post-footer">
             <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
                 <div style="padding-top: 10px">
-                    JDC
+                    Igor Loskutov
                     <h4>
-                        PM / Dev
+                        Full-Stack Dev
                         
-                        <a href="https://twitter.com/jdcaballerov" target="_blank" rel="noopener">
-                            @jdcaballerov
+                        <a href="https://github.com/Firfi" target="_blank" rel="noopener">
+                            @Firfi
                         </a>
                     </h4>
-                    <h5>Published on <a href="#permalink">2021-06-01</a></h5>
-                    <img src="/static/jdc.jpg" width="100px"/>
+                    <h5>Published on <a href="#permalink">2022-06-21</a></h5>
+                    <img src="/static/core/img/img-team-037.png" width="100px"/>
                 </div>
                 
                 <center>
@@ -631,7 +786,7 @@ Monadical.com | Full-Stack Consultancy
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/how-to-run-programs-on-a-mainframe', {mode: 'no-cors'})
+                fetch('https://docs.monadical.com/s/spWqlOEp9', {mode: 'no-cors'})
 
                 // remove undesired css that break styles
                 setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)

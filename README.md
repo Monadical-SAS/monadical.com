@@ -202,3 +202,7 @@ You can use 3rd party tools to verify that our pages look good to humans and sea
 
 - Test accessibility, e.g.
   - https://wave.webaim.org/report#/https://monadical.com/posts/how-to-make-remote-work-part-two-zulip.html
+
+Monadical Inc. © 2022  
+All rights reserved.  
+v1.0.0

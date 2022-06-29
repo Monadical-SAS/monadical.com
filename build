@@ -58,7 +58,7 @@ rsync -avh stevie-king/ docs/publishing/
 
 echo ""
 echo "${blue}[+] Delete '=' in fenced codes with line numbers...$normal"
-grep -lrE "\`\`\`\w*=" ./docs/posts | xargs sed -i '' -r "s/(\`\`\`[a-zA-Z0-9]+)=/\1/g"
+grep -lrE "\`\`\`\w*=" ./docs/posts | xargs sed -i -r "s/(\`\`\`[a-zA-Z0-9]+)=/\1/g"
 
 kill %1 > /dev/null
 echo ""

@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A how-to guide for OOP in Golang (for Python users) | Monadical Consulting</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
+
+    <link rel="canonical" href="https://monadical.com/posts/oop-golang.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+<meta name="description" content="I&#39;ll use an example scenario to demonstrate the features of the OOP model, show you how to implement the OPP model/principles in Python, and compare that to the implementation in Golang." />
+
+<!-- Required Open Graph data -->
+<meta property="og:title" content="A how-to guide for OOP in Golang (for Python users)" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://monadical.com/static/oop-golang.jpeg" />
+<meta property="og:url" content="https://monadical.com/posts/oop-golang.html" />
+<!-- Optional Open Graph data -->
+<meta property="og:description" content="I&#39;ll use an example scenario to demonstrate the features of the OOP model, show you how to implement the OPP model/principles in Python, and compare that to the implementation in Golang." />
+<meta property="og:site_name" content="Monadical Consulting" />
+<meta property="og:locale" content="en_US" />
+<!-- Find additional markup on https://ogp.me -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@MonadicalSAS">
+<meta name="twitter:title" content="A how-to guide for OOP in Golang (for Python users)">
+<meta name="twitter:description" content="I&#39;ll use an example scenario to demonstrate the features of the OOP model, show you how to implement the OPP model/principles in Python, and compare that to the implementation in Golang.">
+<meta name="twitter:image" content="https://monadical.com/static/oop-golang.jpeg">
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-white">
+                
+                <a class="navbar-brand" href="/index.html">
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-content-container">
+                        <ul class="navbar-nav navbar-left">
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/services.html">Services</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/principles.html">Principles</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/portfolio.html">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/team.html">Team</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/blog.html">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/yak.html">Lightning Yak</a>
+                            </li>
+                            
+                            
+                            
+                            
+                        </ul>
+
+                        
+                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
+                            GET A TECHNICAL ASSESSMENT
+                        </a>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }
+        .authorbox {
+            font-size: 20px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+        @media (max-width: 400px) {
+            .authorbox {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            .newsletterbox{
+                margin-left: 50px;
+            }
+        }
+    </style>
+    <div id="post-content">
+        <div class="container mb-5">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="In this post, I’ll first setup an example scenario that I’ll use to demonstrate the features of the OOP model. Next, I’ll show you how the OPP model/principles can be implemented in Python, since most of us are familiar with this language. Finally, I’ll compare the implementation in Python to that in Golang.">
+    
+    
+    
+    <meta property="og:title" content="OOP in golang - HedgeDoc">
+    
+    
+    <meta property="og:description" content="In this post, I’ll first setup an example scenario that I’ll use to demonstrate the features of the OOP model. Next, I’ll show you how the OPP model/principles can be implemented in Python, since most of us are familiar with this language. Finally, I’ll compare the implementation in Python to that in Golang.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>OOP in golang - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 28 2022 18:49:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Jun 29 2022 15:28:42 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">13 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+&lt;center&gt;
+
+# A how-to guide for OOP in Golang (for Python users)
+
+
+&lt;big&gt;
+
+**OOP in Golang might be peculiar, but that doesn’t mean it’s not possible! Let me show you how.**
+
+&lt;/big&gt;
+
+*Written by Cesar Uribe. Originally published 2022-06-29 on the [Monadical blog](https://monadical.com/blog.html). Image credit: @jjfarquitectos*
+
+&lt;/center&gt;
+
+Golang is a compiled language that has become very popular because it has the power of a compiled language like C, but with the versatility and transparency of a high-level language like Python.
+
+Golang has features such as static variable typing, pointer handling, compilation, concurrency, garbage collector, and the ease of a high-level dynamically typed language.
+
+If you use Python, and you want to learn how to program in Golang, you may want to know how to implement the Object-Oriented Programming (OOP) paradigm.  
+
+Now, as you start learning how to implement OOP, you’ll probably come across a discussion in the programming community about whether or not Golang allows OOP[^first]. This is because Golang doesn’t have a class statement as seen in conventional languages like C++, Java, or Python. Nevertheless, OOP is possible in Golang, just in an unconventional way.
+
+[^first]: &lt;small&gt; I don’t want to debate the subtleties of this topic, but I would like to explain how Golang allows us to implement this paradigm that is widely used in the programming world.&lt;/small&gt;
+
+In this post, I’ll first setup an example scenario that I’ll use to demonstrate the features of the OOP model. Next, I’ll show you how you can implement the OPP model/principles in Python, since most of us are familiar with this language. Finally, I’ll compare the implementation in Python to that in Golang.
+
+## OOP example - A school system
+
+Here&#39;s a simple example to show some key OOP concepts such as abstraction, inheritance, polymorphism, and composition. 
+
+Let’s imagine that you have a platform to manage courses, either online or in-person, and you want to structure your system using OOP. One thing that OOP allows us to do is to build complex systems from simple elements that can be related to each other. 
+
+To build our example of an educational center or an online course platform, we assume it will be formed by schools or academic departments, which have courses, teachers, and associated students. In addition, each course will have a group of students, one or several teachers, a code, a timetable, a status, etc. Teachers and students will have some differentiating attributes, but others will be common regardless of their role.
+
+With this in mind, our example will implement four classes: Person, Student, Teacher, Teacher, Courses, and Academy which are conformed by:
+
+
+&lt;table &gt;
+    &lt;col width=&#34;80&#34;&gt;
+    &lt;col width=&#34;150&#34;&gt;
+    &lt;col width=&#34;200&#34;&gt;
+    &lt;col width=&#34;200&#34;&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Notes&lt;/th&gt;
+        &lt;th&gt;Attributes&lt;/th&gt;
+        &lt;th&gt;Methods&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Person&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Firstname&lt;/li&gt; 
+                &lt;li&gt;Lastname&lt;/li&gt;
+                &lt;li&gt;Age&lt;/li&gt;
+                &lt;li&gt;ID number&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;greet&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Student&lt;/td&gt;
+        &lt;td&gt;
+            Inherit from Person.
+            They have four categories: 
+            SCHOOL, UNDERGRADUATE, POSTGRADUATE, ONLINE 
+        &lt;/td&gt;
+        &lt;td&gt;
+            All person attributes
+            &lt;ul&gt;
+                &lt;li&gt;category&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;greet&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Teacher&lt;/td&gt;
+        &lt;td&gt;
+            Inherit from Person. Area corresponds to the subject the teacher teaches. 
+            Specialty is the specific topic that teachers know more about.
+        &lt;/td&gt;
+        &lt;td&gt;
+            All person attributes
+            &lt;ul&gt;
+                &lt;li&gt;Area&lt;/li&gt;
+                &lt;li&gt;Specialty&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Add specialty&lt;/li&gt;
+                &lt;li&gt;Remove specialty&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Course&lt;/td&gt;
+        &lt;td&gt;
+            Code is an ID that identifies the course.
+            &lt;code&gt;isActive&lt;/code&gt; establishes the course status: &lt;em&gt;active, inactive.&lt;/em&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Name&lt;/li&gt;
+                &lt;li&gt;Code&lt;/li&gt;
+                &lt;li&gt;Teacher&lt;/li&gt;
+                &lt;li&gt;Students&lt;/li&gt;
+                &lt;li&gt;isActive&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Add teacher&lt;/li&gt;
+                &lt;li&gt;Add student&lt;/li&gt;
+                &lt;li&gt;Add students&lt;/li&gt;
+                &lt;li&gt;Remove student&lt;/li&gt;
+                &lt;li&gt;Remove or upgrade teacher&lt;/li&gt;
+                &lt;li&gt;Set Status&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Academy&lt;/td&gt;
+        &lt;td&gt;Composition of student, 
+            teacher and courses
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Courses&lt;/li&gt;
+                &lt;li&gt;Students&lt;/li&gt;
+                &lt;li&gt;Teacher&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt; 
+&lt;/table&gt;
+
+&lt;br/&gt;
+
+## Let’s code our model in Python 🧑‍💻
+
+Let&#39;s start by defining the class Person, which will serve as the basis for creating Teachers and Students:
+
+```python
+class Person:
+   def __init__(self, firstName, lastName, age, idnumber):
+       self.firstName = firstName
+       self.lastName = lastName
+       self.age = age
+       self.idnumber = idnumber
+
+   def __str__(self):
+       return f&#34;fullname: {self.firstName} {self.lastName}, age: {self.age}, id:{self.idnumber}&#34;
+
+   def __repr__(self):
+       return f&#34;&lt;{self.__class__.__name__} ({self.firstName} {self.lastName},{self.idnumber})&gt;&#34;
+
+   def greet(self):
+       print(&#34;Say hello from Person&#34;)
+```
+In this case, `__str__` and `__repr__` are not our model&#39;s own methods, but are special Python methods. `__str__` allows us to customize the string representation of the object, that is, it allows us to return a string that is readable by people. In the case of `__repr__`, it also allows us to customize the representation of the object but the difference here is that it can be executed, ie, it’s machine readable. When the `__str__` function is not implemented, it’s `__repr__` that returns the default object representation:  
+
+```python
+person1 = PersonWithoutSTR(
+   firstname= &#34;Jhon&#34;,
+   lastname =  &#34;Mclane&#34;,
+   age= 25,
+   idnumber= 12345,
+)
+
+person2 =  Person(
+   firstname= &#34;John&#34;,
+   lastname =  &#34;Doe&#34;,
+   age= 25,
+   idnumber= 12345,
+)
+
+# Without str
+print(person1)
+print(person1.__repr__())
+
+# With str
+print(person2)
+print(person2.__repr__())
+
+
+### OUTPUT
+# &lt;__main__.PersonWithoutSTR object at 0x104787e80&gt;
+# &lt;__main__.PersonWithoutSTR object at 0x104787e80&gt;
+# fullname: John Doe, age: 25, id:12345
+# &lt;Person (John Doe,12345)&gt;
+
+```
+
+
+Now we’re going to create the Student class, which is inherited by the Person class:
+
+```python
+class Student(Person):
+    SCHOOL = 0
+    UNDERGRADUATE = 1
+    POSTGRADUATE = 2
+    ONLINE = 3
+
+    def __init__(self, category, firstname, lastname, age, idnumber):
+        self.category: int = category
+        super().__init__(firstname, lastname, age, idnumber)
+
+
+    def __repr__(self):
+        return f&#34;&lt;{self.__class__.__name__} [{self.firstname}]&gt;&#34;
+
+    def greet(self):
+        print(&#34;Say hello from &#34;, self.__class__)
+
+```
+
+We continue with the Teacher class, which is also inherited from the Person class:
+
+```python
+class Teacher(Person):
+   def __init__(
+       self, firstname, lastname, age, idnumber, area: str = &#34;&#34;, speciality: list = []
+   ):
+       self.area: str = area
+       self.speciality: list = speciality
+       super().__init__(
+           firstname=firstname, lastname=lastname, age=age, idnumber=idnumber
+       )
+
+   def add_speciality(self, speciality):
+       self.speciality.append(speciality)
+  
+   def remove_speciality(self, speciality):
+       self.speciality.remove(speciality)
+
+   def __repr__(self):
+       return f&#34;&lt;{self.__class__.__name__} [{self.firstname} ({self.area})]&gt;&#34;
+```
+
+
+Now let&#39;s create the Course class:
+
+```python
+class Course:
+   def __init__(self, name, code):
+       self.name: str = name
+       self.code: str = code
+       self.teacher: Teacher = None
+       self.students: list = []
+       self.is_active: bool = False
+
+   def add_teacher(self, teacher: Teacher):
+       self.teacher = teacher
+
+   def add_student(self, student: Student):
+       self.students.append(student)
+
+   def add_students(self, student: list):
+       self.students.extend(student)
+
+   def remove_student(self, student: Student):
+       self.students.remove(student)
+
+   def remove_or_update_teacher(self, teacher):
+       self.teacher = teacher
+
+   def set_status(self, is_active: bool):
+       self.is_active = is_active
+
+   def __repr__(self):
+       return f&#34;&lt;{self.__class__.__name__} [{self.name} - ({self.code})]&gt;&#34;
+```
+
+Finally, we have the Academy class which is going to be a very simple class that can be thought of as the faculty or school of a specific area. You can add more complexity but, at this moment, we’ll use it as the entity that contains the others.
+
+We already have the templates that will allow us to build a school/academy with courses and students. We are now going to create an academy. This process will be done manually, but if we think of this as a much more robust application, it would involve having a frontend or dashboard that allows us to create each of these entities and save the information in a database.
+
+We’ll start by creating a list of students, teachers and courses.
+
+```python
+students_info = [
+   {
+       &#34;firstname&#34;: &#34;Jhon&#34;,
+       &#34;lastname&#34; :  &#34;Mclane&#34;,
+       &#34;age&#34;: 25,
+       &#34;idnumber&#34;: 12345,
+       &#34;category&#34;: Student.ONLINE
+   },
+   {
+       &#34;firstname&#34;: &#34;Siena&#34;,
+       &#34;lastname&#34; :  &#34;Brooks&#34;,
+       &#34;age&#34;: 22,
+       &#34;idnumber&#34;: 102938,
+       &#34;category&#34;: Student.ONLINE
+   },
+   {
+       &#34;firstname&#34;: &#34;Walter&#34;,
+       &#34;lastname&#34; :  &#34;Savic&#34;,
+       &#34;age&#34;: 22,
+       &#34;idnumber&#34;: 1675849,
+       &#34;category&#34;: Student.UNDERGRADUATE
+   },
+]
+
+
+teachers_info = [
+   {
+       &#34;firstname&#34;: &#34;Robert&#34;,
+       &#34;lastname&#34; :  &#34;Langdon&#34;,
+       &#34;age&#34;: 33,
+       &#34;idnumber&#34;: 1183567,
+       &#34;area&#34;: &#34;History&#34;,
+       &#34;speciality&#34;: [&#34;Symbols&#34;]
+   },
+   {
+       &#34;firstname&#34;: &#34;Marie&#34;,
+       &#34;lastname&#34; :  &#34;Curie&#34;,
+       &#34;age&#34;: 33,
+       &#34;idnumber&#34;: 1183567,
+       &#34;area&#34;: &#34;Physics&#34;,
+       &#34;speciality&#34;: [&#34;Radiology&#34;]
+   }
+]
+
+
+courses_info = [
+   {
+       &#34;name&#34;: &#34;Meaning of symbols&#34;,
+       &#34;code&#34;: &#34;H354&#34;
+   },
+   {
+       &#34;name&#34;: &#34;Principles of radiation&#34;,
+       &#34;code&#34;: &#34;CNR125&#34;
+   }
+]
+```
+
+Now we’ll create the school:
+
+
+```python
+school = Academy()
+school.students = [Student(**data) for data in students_info ]
+school.teachers = [Teacher(**data) for data in teachers_info]
+school.courses = [Course(**data) for data in courses_info]
+```
+
+We’ll make use of one of the methods of the course class. This operation would be equivalent to the course teacher assignment and student enrollment:
+
+```python
+school.courses[0].add_students(school.students[:2])
+school.courses[1].add_student(school.students[-1])
+school.courses[0].add_teacher(school.teachers[0])
+school.courses[1].add_teacher(school.teachers[1])
+school.courses[0].set_status(is_active=True)
+```
+
+Showing the information contained in the school
+
+```python
+print(&#34;Students: &#34;, school.students)
+print(&#34;Courses: &#34;,school.courses)
+print(&#34;Teachers: &#34;,school.teachers)
+
+# OUTPUT
+# Students:  [&lt;Student [Jhon]&gt;, &lt;Student [Siena]&gt;, &lt;Student [Walter]&gt;]
+# Courses:  [&lt;Course [Meaning of symbols - (H354)]&gt;, &lt;Course [Principles of radiation - (CNR125)]&gt;]
+# Teachers:  [&lt;Teacher [Robert (History)]&gt;, &lt;Teacher [Marie (Physics)]&gt;]
+```
+
+So that’s how OOP is implemented in Python. It’s useful when you want to structure complex problems starting from simpler elements. If you want to see the full code, go to the [Google Colab&#39;s notebook](https://colab.research.google.com/drive/1dSEp_0ncXWS__Va4WaLiLfxlgOr_Ye9f?usp=sharing).
+
+Now, let’s get to the interesting part. Let’s learn how to implement the OOP paradigm in Golang. 
+
+
+## Let’s code our model in Golang 	🎉
+
+The first thing to note is that Golang does not naturally implement OOP, so there is no class statement to implement classes. However, Golang allows us to implement this paradigm using structs and receiver functions. Unlike Python, which contains the entire class definition inside the same struct, these two components are implemented separately in Golang. Let&#39;s take a look:
+
+
+### Step one: Importing libraries 
+As in Python and other languages, you need to import the required libraries at the beginning of the file or code:
+
+```go
+package main
+
+import (
+   &#34;encoding/json&#34;
+   &#34;fmt&#34;
+   &#34;log&#34;
+   &#34;sort&#34;
+)
+```
+
+### Step Two: Defining structures
+If you’re a programmer used to Python, then this type of variable may not be familiar to you. In contrast, if you come from using C/C++, it’ll probably come naturally to you. 
+
+A structure in Golang can be understood as a variable composed of another set of variables. These can be basic types or structures (nested structures). You may ask, what do structures have to do with OOP? Well, think of a Golang struct as a class that only has attributes. 
+
+Let&#39;s define the structures for our example entities:
+
+#### Person
+We&#39;ll define the same attributes used in the Python example. You’ll notice how each property is accompanied by its variable type.
+
+```go
+type Person struct {
+   Firstname string
+   Lastname  string
+   Age       int8
+   Idnumber  int
+}
+```
+
+Remember, if the variable name starts with a lowercase letter in Golang, then it can only be used within the file. However, if the variable name starts with a capitalized letter, then the variable can be used within another file within the same module, or by an external module. In our case, we will define our variables as public since we will use the JSON package later.
+
+
+#### Student
+For this entity we’ll implement a few things in addition to just the structure:
+
+```go
+type Mode int8
+
+const (
+   SCHOOL Mode = iota
+   UNDERGRADUATE
+   POSTGRADUATE
+   ONLINE
+)
+```
+
+We’ve defined a set of constants that will define the modality of the student. In Python these constants were defined as global attributes of the class; however, here we’ve defined them as *enumerated global constants*. In this case, **[iota](https://golangbyexample.com/iota-in-golang/) works as an enum in Python.**
+
+One thing you can do with Golang is that we can define our own variable type. In this case, we have defined our own variable type called Mode, which is just an int8 with a different name, using the statement type So, we can say that to define a custom variable you need  this follow the pattern `type &lt;custom name&gt; &lt;variable type&gt;`. If you note, we could say that  structures work like  custom variables that you can assign a specific name to, because follow the same pattern: `type &lt;custom name&gt; struct`
+
+Now, we’ll define the student’s structure that will contain only the entities’ attributes:
+
+```go
+type Student struct {
+	Person
+	Category Mode
+}
+
+// Without anonymous composition
+/*
+type Student struct {
+	Individual Person
+	Category Mode
+}
+*/
+```
+
+The implementation of this structure is interesting because it allows us to discuss an important peculiarity of OOP implementation in Golang – composition over inheritance. What this means is that you can’t implement class inheritance but you can implement composition. This means that some attributes of the class are instances, or from the type of another class. 
+
+For this reason, the first variable is anonymous, only the type is defined. This allows us to use the attributes of Person at the same level as Category as would happen with inheritance. In other words, `Student` will have its own attributes of `Person`. Think of this as dictionary destructuring in Python.
+
+If the composition was defined without anonymous variables, it would be necessary to define a variable of type `Person`, which we call `Individual` in our case. This implies that the attributes of `Person` would be contained inside `Individual` and would not be at the same level as `Category`. This would be equivalent to the composition of classes in python.
+
+
+#### Teacher
+In the same way as the Student structure, the Teacher structure makes use of the composition with anonymous variables to make use of the attributes of Person.
+
+```go
+type Teacher struct {
+   Person
+   Area       string
+   Speciality []string
+}
+```
+
+#### Course
+Unlike the previous structures, Course doesn’t implement composition with anonymous variables but instead defines two of its own attributes. Those attributes’ type is one of the previously defined structures and list of structures.
+
+```go
+type Course struct {
+   Name     string
+   Code     string
+   Teacher  Teacher
+   Students []Student
+   IsActive bool
+}
+```
+
+#### Academy
+Finally, we define the last structure which will encompass the rest:
+
+```go
+type Academy struct {
+   Courses  []Course
+   Students []Student
+   Teachers []Teacher
+}
+```
+
+
+### Step Three: Defining the methods
+Since Golang doesn’t have a way to define a class directly, it’s necessary to use another resource: *the receiver functions*. 
+
+These functions allow us to add functionality to the data types. They aren’t traditional functions but are defined as receivers, which can be value receivers or pointer receivers. By using structures and receivers, we can implement OOP in Golang. 
+
+In the next example, I’ll define the methods for each structure. 
+
+:::info
+Note: For readability purposes, and to make the comparison with Python easier, I’ll show the structs again.
+:::
+
+#### Person
+In the Python example, the Person class had four methods defined: `__init__` which corresponds to the constructor, `__str__`, `__repr__`, printMessage. In the case of Golang, it looks like this:
+
+```go
+type Person struct {
+   Firstname string
+   Lastname  string
+   Age       int8
+   Idnumber  int
+}
+
+// Constructor
+// return a pointer to struct
+func NewPerson(
+   firstname string, lastname string, age int8, idnumber int,
+) *Person {
+   return &amp;Person{
+       Firstname: firstname,
+       Lastname:  lastname,
+       Age:       age,
+       Idnumber:  idnumber,
+   }
+}
+
+// Like __str__ method in python
+func (person Person) String() string {
+   return fmt.Sprintf(&#34;firstname: %s lastname: %s, age: %d, id: %d &#34;,
+       person.Firstname, person.Lastname, person.Age, person.Idnumber,
+   )
+}
+
+func (person Person) Greet() {
+	fmt.Println(&#34;Say hello from Person&#34;)
+}
+```
+
+Compared to Python, it’s worth noting a few things: 
+
+1. The constructor method is a standard function, not a receiver function. This function creates the structure and initializes the values.
+
+2. The constructor method doesn’t return a variable. Instead, it returns a pointer aka the reference to the variable. There are discussions about whether it is best to return the value, copy, or reference to the variable. This decision can be related to whether you want to change the content or have proper memory management among others[^second]. 
+
+[^second]: &lt;small&gt;If you want to review this topic, you can consult the references. In our case, we’re going to implement the standard recommendation which is to return a pointer to the variable.&lt;/small&gt;
+
+3. The receiver functions define which structure you’re adding to. We’ll see an example of this between the word func and the function name.
+
+4. The defined stringer method (`String`) fulfills the same functionality as `__str__` in Python, that is giving a representation of the structure and making it  readable in English.
+https://go.dev/play/p/JckEcmyBgoV
+
+    ```go
+    . . .
+    func main() {
+
+        person := NewPerson(&#34;john&#34;, &#34;doe&#34;, 25, 12345)
+        fmt.Println(person)
+
+    }
+
+    //==== OUTPUT ====
+
+    // Without stringer method
+    // &amp;{john doe 25 12345}
+
+    // With stringer method
+    // firstname: john lastname: doe, age: 25, id: 12345
+
+    ```
+    
+5. Inside the receiver function we can make use of the structure’s attributes in the same way that a class&#39; method does.  The only difference is the syntax.
+
+6. The use of value receivers means that a copy of the structure was made and passed to the receiver function. Only use this method when you’re going to use the values without modifying them! In this case, both the String and Greet functions only use the values stored in the structure but do not alter them.
+
+#### Utilities
+In the Python version, we could see inside each class and define the class’ attributes that were used to define the students’ roles. Here, we use a similar technique but these types of variables are external to the structures that represent the class. I had already mentioned some of them in a previous section ([Student](#Student)), however I will group them in this section as utilities.
+
+```go
+type Mode int8
+
+const (
+   SCHOOL Mode = iota
+   UNDERGRADUATE
+   POSTGRADUATE
+   ONLINE
+)
+// Stringer method allows to return
+// a name instead of a int value
+func (m Mode) String() string {
+   return [...]string{&#34;School&#34;, &#34;Undergraduate&#34;, &#34;Postgraduate&#34;, &#34;Online&#34;}[m]
+}
+
+func (m Mode) EnumIndex() int {
+   return int(m)
+}
+
+type Status struct {
+   ACTIVE   bool
+   INACTIVE bool
+}
+
+var status Status = Status{true, false}
+```
+
+The `iota` statement allows us to define an enumerated set of variables, like enum in Python. We also use the stringer method to return a string instead of an integer. The `EnumIndex` method does the opposite operation to the stringer: it returns the corresponding integer value. 
+
+It’s worth clarifying that these constants are actually integers, so you can do operations directly. The `EnumIndex` function is for those cases where we need to return an integer value instead of a string. Let’s see how this works:
+
+```go
+. . .
+func main() {
+	fmt.Println(SCHOOL, UNDERGRADUATE, POSTGRADUATE, ONLINE)
+	fmt.Println(UNDERGRADUATE.EnumIndex(), POSTGRADUATE.EnumIndex())
+	fmt.Println(UNDERGRADUATE * 2)
+	fmt.Printf(&#34;%d\n&#34;, POSTGRADUATE)
+}
+
+// ==== Output =====
+// School Undergraduate Postgraduate Online
+// 1 2
+// Postgraduate
+// 2
+```
+https://go.dev/play/p/OTXazb-xt5x
+
+#### Student
+The constructor method is defined for the Student class. Note that Student uses an anonymous composition of the Person class.
+
+```go
+type Student struct {
+   Person
+   Category Mode
+}
+
+// Constructor
+func NewStudent(
+   firstname string, lastname string, age int8, idnumber int, category Mode,
+) *Student {
+   return &amp;Student{
+       Person:   *(NewPerson(firstname, lastname, age, idnumber)),
+       Category: category,
+   }
+}
+```
+
+#### Teacher
+The constructor method and the methods of the Teacher class are defined:
+
+```go
+type Teacher struct {
+   Person
+   Area       string
+   Speciality []string
+}
+
+// constructor
+func NewTeacher(
+   firstname, lastname string, age int8, idnumber int, area string, speciality int,
+) *Teacher {
+   return &amp;Teacher{
+       Person:     *(NewPerson(firstname, lastname, age, idnumber)),
+       Area:       area,
+       Speciality: []string{},
+   }
+
+}
+
+// Method to add speciality
+func (t *Teacher) addSpeciality(speciality string) {
+   t.Speciality = append(t.Speciality, speciality)
+}
+
+// Method to remove speciality
+func (t *Teacher) removeSpeciality(speciality string) {
+   // get the id position
+   // Search return n [length of the slice] if it not found the element
+   idx := sort.Search(len(t.Speciality), func(i int) bool {
+       return t.Speciality[i] == speciality
+   })
+   if idx &lt; len(t.Speciality) {
+       t.Speciality = append(t.Speciality[:idx], t.Speciality[idx+1:]...)
+   }
+   fmt.Println(idx, t.Speciality)
+}
+```
+
+In this class, you’ll see that the receiver functions implemented are pointer receivers. We do this here because we want to change the structure’s content. If they were value receivers, we would have passed a copy of the function. This is because if you change one of its values, the initial structure will not change. On the other hand, when we use pointer receivers, we will pass the reference onto the structure, aka change the structure’s values.
+
+#### Course
+The Course class methods are created using the concepts mentioned above:  
+
+```go
+type Course struct {
+   Name     string
+   Code     string
+   Teacher  Teacher
+   Students []Student
+   IsActive bool
+}
+
+// Constructor
+func NewCourse(
+   name string, code string,
+) *Course {
+   isActive := false
+   return &amp;Course{
+       Name:     name,
+       Code:     code,
+       IsActive: isActive,
+   }
+}
+
+// Methods for Course struct
+func (c *Course) addTeacher(teacher Teacher) {
+   c.Teacher = teacher
+}
+
+func (c *Course) addStudent(student Student) {
+   c.Students = append(c.Students, student)
+}
+
+func (c *Course) addStudents(students []Student) {
+   c.Students = append(c.Students, students...)
+}
+
+func (c *Course) removeStudent(student Student) {
+   idx := sort.Search(len(c.Students), func(i int) bool {
+       return c.Students[i] == student
+   })
+
+   if idx &lt; len(c.Students) {
+       c.Students = append(c.Students[:idx], c.Students[idx+1:]...)
+   }
+}
+
+func (c *Course) removeOrUpdateTeacher(teacher Teacher) {
+   c.Teacher = teacher
+}
+
+func (c *Course) setStatus(isActive bool) {
+   c.IsActive = isActive
+}
+```
+
+### Step Four: Defining the main function
+
+We’re now going to implement the Golang syntax with the same process done in Python.
+
+First I’ll define the objects that I’ll be using. In this case, they’ll be strung with JSON format:
+
+```go
+studentsInfoJSON := fmt.Sprintf(`
+   [
+       {
+           &#34;firstname&#34;: &#34;Jhon&#34;,
+           &#34;lastname&#34; :  &#34;Mclane&#34;,
+           &#34;age&#34;: 25,
+           &#34;idnumber&#34;: 12345,
+           &#34;category&#34;: %d
+       },
+       {
+           &#34;firstname&#34;: &#34;Siena&#34;,
+           &#34;lastname&#34; :  &#34;Brooks&#34;,
+           &#34;age&#34;: 22,
+           &#34;idnumber&#34;: 102938,
+           &#34;category&#34;: %d
+       },
+       {
+           &#34;firstname&#34;: &#34;Walter&#34;,
+           &#34;lastname&#34; :  &#34;Savic&#34;,
+           &#34;age&#34;: 22,
+           &#34;idnumber&#34;: 1675849,
+           &#34;category&#34;: %d
+       }
+   ]
+   `, ONLINE, ONLINE, UNDERGRADUATE)
+
+
+teachersInfoJSON := `[
+       {
+           &#34;firstname&#34;: &#34;Robert&#34;,
+           &#34;lastname&#34; :  &#34;Langdon&#34;,
+           &#34;age&#34;: 33,
+           &#34;idnumber&#34;: 1183567,
+           &#34;area&#34;: &#34;History&#34;,
+           &#34;speciality&#34;: [&#34;Symbols&#34;]
+       },
+       {
+           &#34;firstname&#34;: &#34;Marie&#34;,
+           &#34;lastname&#34; :  &#34;Curie&#34;,
+           &#34;age&#34;: 33,
+           &#34;idnumber&#34;: 1183567,
+           &#34;area&#34;: &#34;Physics&#34;,
+           &#34;speciality&#34;: [&#34;Radiology&#34;]
+       }
+   ]`
+
+
+coursesInfoJSON := `[
+       {
+           &#34;name&#34;: &#34;Meaning of symbols&#34;,
+           &#34;code&#34;: &#34;H354&#34;
+       },
+       {
+           &#34;name&#34;: &#34;Principles of radiation&#34;,
+           &#34;code&#34;: &#34;CNR125&#34;
+       }
+   ]`
+
+```
+
+I’ll create the objects from the structures defined above.
+
+
+```go
+json.Unmarshal([]byte(studentsInfoJSON), &amp;school.Students)
+fmt.Println(&#34;Students: &#34;, school.Students)
+   
+json.Unmarshal([]byte(teachersInfoJSON), &amp;school.Teachers)
+fmt.Println(&#34;Teachers: &#34;, school.Teachers)
+   
+json.Unmarshal([]byte(coursesInfoJSON), &amp;school.Courses)
+fmt.Println(&#34;Courses: &#34;, school.Courses)
+```
+
+In this case, we’re making use of the JSON library to process the information. Note that the Unmarshal function allows us to map the string in the JSON format to a list of structures that must implement the same fields as the JSON.
+
+Then I’ll make the assignment process:
+```go
+school.Courses[0].addStudents(school.Students[:2])
+school.Courses[1].addStudent(school.Students[len(school.Students)-1])
+school.Courses[0].addTeacher(school.Teachers[0])
+school.Courses[1].addTeacher(school.Teachers[1])
+school.Courses[0].setStatus(status.ACTIVE)
+```
+
+And display the information contained in the object school:
+
+```go
+schoolJSON, err := json.MarshalIndent(school, &#34;&#34;, &#34;   &#34;)
+if err != nil {
+    log.Fatalf(err.Error())
+}
+fmt.Printf(&#34;After updates:\n%s\n&#34;, string(schoolJSON))
+school.Students[0].PrintMessage()
+```
+
+The output we get looks like this:
+
+```
+Students:  [firstname: Jhon lastname: Mclane, age: 25, id: 12345  firstname: Siena lastname: Brooks, age: 22, id: 102938  firstname: Walter lastname: Savic, age: 22, id: 1675849 ]
+Teachers:  [firstname: Robert lastname: Langdon, age: 33, id: 1183567  firstname: Marie lastname: Curie, age: 33, id: 1183567 ]
+Courses:  [{Meaning of symbols H354 firstname:  lastname: , age: 0, id: 0  [] false} {Principles of radiation CNR125 firstname:  lastname: , age: 0, id: 0  [] false}]
+After updates:
+{
+   &#34;Courses&#34;: [
+      {
+         &#34;Name&#34;: &#34;Meaning of symbols&#34;,
+         &#34;Code&#34;: &#34;H354&#34;,
+         &#34;Teacher&#34;: {
+            &#34;Firstname&#34;: &#34;Robert&#34;,
+            &#34;Lastname&#34;: &#34;Langdon&#34;,
+            &#34;Age&#34;: 33,
+            &#34;Idnumber&#34;: 1183567,
+            &#34;Area&#34;: &#34;History&#34;,
+            &#34;Speciality&#34;: [
+               &#34;Symbols&#34;
+            ]
+         },
+         &#34;Students&#34;: [
+            {
+               &#34;Firstname&#34;: &#34;Jhon&#34;,
+               &#34;Lastname&#34;: &#34;Mclane&#34;,
+               &#34;Age&#34;: 25,
+               &#34;Idnumber&#34;: 12345,
+               &#34;Category&#34;: 3
+            },
+            {
+               &#34;Firstname&#34;: &#34;Siena&#34;,
+               &#34;Lastname&#34;: &#34;Brooks&#34;,
+               &#34;Age&#34;: 22,
+               &#34;Idnumber&#34;: 102938,
+               &#34;Category&#34;: 3
+            }
+         ],
+         &#34;IsActive&#34;: true
+      },
+      {
+         &#34;Name&#34;: &#34;Principles of radiation&#34;,
+         &#34;Code&#34;: &#34;CNR125&#34;,
+         &#34;Teacher&#34;: {
+            &#34;Firstname&#34;: &#34;Marie&#34;,
+            &#34;Lastname&#34;: &#34;Curie&#34;,
+            &#34;Age&#34;: 33,
+            &#34;Idnumber&#34;: 1183567,
+            &#34;Area&#34;: &#34;Physics&#34;,
+            &#34;Speciality&#34;: [
+               &#34;Radiology&#34;
+            ]
+         },
+         &#34;Students&#34;: [
+            {
+               &#34;Firstname&#34;: &#34;Walter&#34;,
+               &#34;Lastname&#34;: &#34;Savic&#34;,
+               &#34;Age&#34;: 22,
+               &#34;Idnumber&#34;: 1675849,
+               &#34;Category&#34;: 1
+            }
+         ],
+         &#34;IsActive&#34;: false
+      }
+   ],
+   &#34;Students&#34;: [
+      {
+         &#34;Firstname&#34;: &#34;Jhon&#34;,
+         &#34;Lastname&#34;: &#34;Mclane&#34;,
+         &#34;Age&#34;: 25,
+         &#34;Idnumber&#34;: 12345,
+         &#34;Category&#34;: 3
+      },
+      {
+         &#34;Firstname&#34;: &#34;Siena&#34;,
+         &#34;Lastname&#34;: &#34;Brooks&#34;,
+         &#34;Age&#34;: 22,
+         &#34;Idnumber&#34;: 102938,
+         &#34;Category&#34;: 3
+      },
+      {
+         &#34;Firstname&#34;: &#34;Walter&#34;,
+         &#34;Lastname&#34;: &#34;Savic&#34;,
+         &#34;Age&#34;: 22,
+         &#34;Idnumber&#34;: 1675849,
+         &#34;Category&#34;: 1
+      }
+   ],
+   &#34;Teachers&#34;: [
+      {
+         &#34;Firstname&#34;: &#34;Robert&#34;,
+         &#34;Lastname&#34;: &#34;Langdon&#34;,
+         &#34;Age&#34;: 33,
+         &#34;Idnumber&#34;: 1183567,
+         &#34;Area&#34;: &#34;History&#34;,
+         &#34;Speciality&#34;: [
+            &#34;Symbols&#34;
+         ]
+      },
+      {
+         &#34;Firstname&#34;: &#34;Marie&#34;,
+         &#34;Lastname&#34;: &#34;Curie&#34;,
+         &#34;Age&#34;: 33,
+         &#34;Idnumber&#34;: 1183567,
+         &#34;Area&#34;: &#34;Physics&#34;,
+         &#34;Speciality&#34;: [
+            &#34;Radiology&#34;
+         ]
+      }
+   ]
+}
+Say hello from Person
+```
+
+If you’re interested in running the full code, you can find it [here](https://go.dev/play/p/m5dcPdDmji3).
+
+## Conclusion
+
+Although Golang doesn’t conventionally implement OOP like other languages, it offers an alternative way to implement this paradigm. We’ve seen that, Beyond the discussion of whether or not Golang is OOP, it is possible to develop an application using OOP in Golang.  
+
+By learning to use OOP in Golang you’ll be able to tap into the power of Golang as a compiled, typed and concurrency-native language to optimize your applications. This power, along with the ease of coding in Golang, allows you to deploy most applications effectively.
+ 
+
+## References
+
+  - https://www.reddit.com/r/golang/comments/kfd5rr/when_should_i_return_a_pointer_vs_value_when/
+ - https://stackoverflow.com/questions/32208363/returning-value-vs-pointer-in-go-constructor
+ - https://simondrake.dev/2021-05-27-value-receivers-vs-pointer-receivers/
+ - https://go.dev/tour/methods/8
+ - https://golangbyexample.com/iota-in-golang/
+ - https://www.educative.io/edpresso/what-is-an-enum-in-golang
+ - https://pkg.go.dev/golang.org/x/tools/cmd/stringer
+ - https://medium.com/gophersland/gopher-vs-object-oriented-golang-4fa62b88c701
+ - https://golangbot.com/methods/
+
+
+
+
+
+
+
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.9f564b46f420cdda1117.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.04e0fea40de4509528e6.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.193d3c6702f23213ab74.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.4b618d4509e3f267eadc.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.a20af8953d27ed2de725.js" defer="defer"></script>
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
+                <div style="padding-top: 10px">
+                    Cesar Uribe
+                    <h4>
+                        Full-stack developer
+                        
+                        <a href="https://github.com/curibe" target="_blank" rel="noopener">
+                            @curibe
+                        </a>
+                    </h4>
+                    <h5>Published on <a href="#permalink">2022-06-29</a></h5>
+                    <img src="/static/core/img/img-team-020.png" width="100px"/>
+                </div>
+                
+                <center>
+                    <div class="newsletterbox"style="padding-top: 10px;">
+                        <a href="/team.html#careers" style="font-weight: bold;">
+                            We are hiring!
+                        </a>
+                        <br/><br/>
+                        <a href="https://tinyletter.com/Monadical">
+                            Subscribe to our newsletter
+                        </a>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <center>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Recent posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/oop-golang.html">A how-to guide for OOP in Golang (for Python users)</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/wasm-chip8.html">How to setup a Wasm API for a CHIP-8 emulator</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/algorithm-bias.html">Technical solutions to tackle AI bias</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/candy-machine-mint-and-reveal.html">How to mint and reveal NFTs with Candy Machine V2</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/cSUAB9Pkq', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <br/><br/>
+    </div>
+  
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="NYC, USA">New York</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                        <li><b title="Cali, Colombia">Cali</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
+                        <li><a href="/team.html#careers">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalSAS" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>
+                            
+                            Monadical Inc. © 2022<br />
+                            <small>All rights reserved.</small>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
+                                        title="ignore this">example.com</span>m</span>onadical.com
+                            </span>
+                            <br />
+                            <small>✉️&nbsp; Email us with your project idea.</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
+
+    <script src="/static/squares.js"></script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function smoothScroll(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Scrolling to', this.getAttribute('href'))
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+
+</html>

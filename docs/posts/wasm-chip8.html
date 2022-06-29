@@ -255,7 +255,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 21 2022 14:06:20 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 28 2022 22:21:45 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">105 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">182 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -309,7 +309,7 @@ Now, your first thought might be: Why not just use Web Workers? Yes, this API do
 
 We’re going to improve the client code from something like this:
 
-```javascript=
+```javascript
 const runloop = () =&gt; {
     for (var i = 0; i &lt; 10; i++) {
       run_cycle();
@@ -325,7 +325,7 @@ window.requestAnimationFrame(runloop);
 
 To something like this:
 
-```javascript=
+```javascript
 cpu.run()
 ```
 ![joy gif](https://docs.monadical.com/uploads/88a70cfd-c8d1-4650-b96e-e72608ae36a8.gif)
@@ -364,7 +364,7 @@ First, we want to run the computation in the main thread but still keep it async
 
 But, what’s the deal with the main thread? Can’t we just run our computation there? For example: 
 
-```javascript=
+```javascript
 pub fn run() {
    loop {
        do_the_thing();
@@ -381,7 +381,7 @@ As you can see, the one and only browser thread gets overtaken and is never retu
 
 A library user expects that the library doesn’t break the page:
 
-```javascript=
+```javascript
 // expected behavior
 cpu.run()
 setTimeout(() =&gt; cpu.stop(), 10000)
@@ -406,7 +406,7 @@ These are the crates that you’ll need:
 The entry point to the Rust program would take a Canvas instance and a ROM (the instructions for CHIP-8 to run[^third]).
 
 
-```javascript=
+```javascript
 #[wasm_bindgen]
 pub fn init_program(program: &amp;[u8], canvas: JsValue) -&gt; Result&lt;WasmProgram, JsValue&gt; {
    match canvas.dyn_into::&lt;web_sys::CanvasRenderingContext2d&gt;() {
@@ -425,7 +425,7 @@ The first thing we’ll be calling in our JS is to initialize an instance of a p
 
 The crucial method in the CPU trait is, as expected, run(). 
 
-```javascript=
+```javascript
 pub async fn run(this: Arc&lt;wasm_mutex::Mutex&lt;CPU&gt;&gt;) {
    let arc = this.clone();
    loop {
@@ -454,7 +454,7 @@ pub async fn run(this: Arc&lt;wasm_mutex::Mutex&lt;CPU&gt;&gt;) {
 
 Note that instead of “self” it takes `Arc&lt;wasm_mutex::Mutext&lt;CPU&gt;&gt;`. Wasm-bindgen doesn’t understand it so we have to additionally wrap the CPU into a Wasm-bindgen compatible trait:
 
-```javascript=
+```javascript
 #[wasm_bindgen]
 pub struct WasmProgram {
    // we want wasm_bindgen to skip this field as it’s not compatible with wasm_bindgen, i.e. our chip8 has some incompatibility with wasm_bindgen structures (notably, it contains a reference to Canvas). You could have better luck with your simulation!
@@ -481,7 +481,7 @@ impl WasmProgram {
 
 Keyboard listeners can be added in a similar way:
 
-```javascript=
+```javascript
 impl WasmProgram {
 …
 // which is a bit boilerplaytey but could likely be fixed with macros
@@ -508,7 +508,7 @@ pub fn key_up(&amp;mut self, k: usize) {
 
 By building this library, we have an interface that looks like this:
 
-```javascript=
+```javascript
 import initWasm, { WasmProgram, init_program as initChip8 } from &#39;@firfi/rust-wasm-chip8&#39;;
 
 const init = async () =&gt; {
@@ -527,7 +527,7 @@ const init = async () =&gt; {
 ```
 Moreover, you can run several simulations at the same time. They’ll still be taking the same thread, so probably don’t run hundreds of them though!
 
-```javascript=
+```javascript
 const cpu1 = initChip8(romData1, canvas1);
 const cpu2 = initChip8(romData2, canvas2);
 const cpu3 = initChip8(romData3, canvas3);

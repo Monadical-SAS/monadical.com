@@ -126,7 +126,8 @@
                             {% if position.active %}
                                 {% if position.description %}
                                     <li>
-                                        <a href="{{position.description}}" target="_blank">{{position.role}}</a>
+                                        <a href="{{position.description}}" target="_blank"
+                                        onclick="_paq.push(['trackEvent', 'Open Position','{{position.role}}', 'Clicked']);">{{position.role}}</a>
                                     </li>
                                 {% else %}
                                     <li>{{position.role}}</li>

@@ -738,10 +738,12 @@
         _paq.push(["setCookieDomain", "*.monadical.com"]);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
         (function () {
-            var u = "//analytics.zervice.io/";
+            var u = "https://monadical.matomo.cloud/";
             _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '12']);
+            _paq.push(['setSiteId', '1']);
             var d = document,
                 g = d.createElement('script'),
                 s = d.getElementsByTagName('script')[0];

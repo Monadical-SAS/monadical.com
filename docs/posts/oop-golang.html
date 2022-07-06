@@ -255,7 +255,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 28 2022 18:49:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Jun 29 2022 15:28:42 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">65 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">69 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -1667,10 +1667,12 @@ By learning to use OOP in Golang you’ll be able to tap into the power of Golan
         _paq.push(["setCookieDomain", "*.monadical.com"]);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
         (function () {
-            var u = "//analytics.zervice.io/";
+            var u = "https://monadical.matomo.cloud/";
             _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '12']);
+            _paq.push(['setSiteId', '1']);
             var d = document,
                 g = d.createElement('script'),
                 s = d.getElementsByTagName('script')[0];

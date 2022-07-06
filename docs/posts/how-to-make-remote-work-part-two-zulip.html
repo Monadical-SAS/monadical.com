@@ -255,7 +255,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Jul 08 2020 16:48:49 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Jul 27 2020 18:35:06 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3035 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3043 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -754,10 +754,12 @@ Monadical.com | Full-Stack Consultancy
         _paq.push(["setCookieDomain", "*.monadical.com"]);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
         (function () {
-            var u = "//analytics.zervice.io/";
+            var u = "https://monadical.matomo.cloud/";
             _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '12']);
+            _paq.push(['setSiteId', '1']);
             var d = document,
                 g = d.createElement('script'),
                 s = d.getElementsByTagName('script')[0];

@@ -253,7 +253,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:31:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:23:25 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1556 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1558 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -828,10 +828,12 @@ P.S. Sorry about the ads and lack of syntax highlighting on my blog!  I&#39;ll 
         _paq.push(["setCookieDomain", "*.monadical.com"]);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
         (function () {
-            var u = "//analytics.zervice.io/";
+            var u = "https://monadical.matomo.cloud/";
             _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '12']);
+            _paq.push(['setSiteId', '1']);
             var d = document,
                 g = d.createElement('script'),
                 s = d.getElementsByTagName('script')[0];

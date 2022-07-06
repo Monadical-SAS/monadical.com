@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapid-fire Research | Monadical Consulting</title>
+    <title>Jasette Éclair | Monadical Consulting</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
@@ -248,7 +248,8 @@
         </div>
         <div class="col-md-8 offset-md-1 ">
             <p class="paragraph margin-30">Vous soumettrez un <strong><a
-                    href="https://nick764452.typeform.com/to/N57mNTlc">formulaire de candidature</a></strong> avec un vidéo de 30
+                    href="https://nick764452.typeform.com/to/N57mNTlc"
+                    onclick="_paq.push(['trackEvent', 'Jasette Éclair Form', 'Clicked']);">formulaire de candidature</a></strong> avec un vidéo de 30
                 à 45 secondes expliquant votre recherche et pourquoi vous la faites. À partir de là, nous
                 sélectionnerons un groupe d'étudiant·e·s, et chacun·e travaillera avec nous pour écrire un scénario de
                 quatre minutes sur leur travail.</p>
@@ -487,10 +488,12 @@
         _paq.push(["setCookieDomain", "*.monadical.com"]);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
         (function () {
-            var u = "//analytics.zervice.io/";
+            var u = "https://monadical.matomo.cloud/";
             _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '12']);
+            _paq.push(['setSiteId', '1']);
             var d = document,
                 g = d.createElement('script'),
                 s = d.getElementsByTagName('script')[0];

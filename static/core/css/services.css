@@ -11,7 +11,7 @@
 }
 
 .circle-img-left{
-    top: 1671px;
+    top: 36%;
 }
 
 .cube-img-right{
@@ -21,4 +21,33 @@
 .stack-grid{
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+@media  (max-width: 1200px){
+    .cube-img-left {    
+        top: 10rem;
+        max-width: 30%;
+        height: auto;
+    }
+
+    .tentacle-img-right{
+        top: 15%;
+        max-width: 25%;
+        height: auto;
+    }
+
+    .circle-img-left{
+        top: 36%;
+    }
+
+    .cube-img-right{
+        top: 52%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        object-fit: cover;
+        
+    }
 }

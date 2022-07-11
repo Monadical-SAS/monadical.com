@@ -303,12 +303,26 @@ a:hover{
         flex-direction: column;
         align-items: flex-start;
     }
-
+    
     .button-navbar {
         max-width: 100%;
         margin: 10px 20px;
     }
 }
+
+@media (max-width: 600px){
+    header .container .nav-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .container .nav-item:last-child {
+        max-width: calc(121px*0.8);
+    }
+}
+
 
 /* End Navbar */
 

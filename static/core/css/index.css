@@ -1,5 +1,5 @@
 .cube-img-left {
-    top: 599px;
+    top: 630px;
 }
 
 .cube-img-right {
@@ -7,9 +7,29 @@
 }
 
 .tentacle-img-left {
-    top: 2749px;
+    top: 2720px;
 }
 
 .tentacle-img-right {
-    top: 1722px;
+    top: 1607px;
+}
+
+@media (max-width: 992px) {
+    .cube-img-left {
+        top: 900px;
+        max-width: 40%;
+        height: auto;
+    }
+
+    .tentacle-img-left {
+        top: 3950px;
+        max-width: 100%;
+        width: 40%;
+        height: auto;
+    }
+
+    .tentacle-img-right {
+        top: 2090px;
+
+    }
 }

@@ -310,14 +310,7 @@ a:hover{
     }
 }
 
-@media (max-width: 600px){
-    header .container .nav-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
+@media (min-width: 576px) and (max-width: 600px){
     header .container .nav-item:last-child {
         max-width: calc(121px*0.8);
     }

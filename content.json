@@ -64,6 +64,29 @@
     }
   },
   "POSTS": {
+    "math-matching": {
+      "title": "How math makes matches meaningful",
+      "description": "In this blog, we show you how finding the right algorithm can make the difference when it comes to creating meaningful, professional connections virtually.",
+      "date": "2022-07-18",
+      "img": "/static/math-matching.png",
+      "tags": [
+        "algorithm",
+        "gale-shapley matching",
+        "rank matching",
+        "networking"
+      ],
+      "length": "10 min read",
+      "source": "https://docs.monadical.com/s/mathmatching",
+      "url": "/posts/math-matching.html",
+      "template": "posts/math-matching.html",
+      "author": {
+        "name": "Ben Dichter",
+        "title": "CatalystNeuro",
+        "handle": "@bendichter",
+        "url": "https://github.com/bendichter",
+        "image": "/static/core/img/ben.png"
+      }
+    },
     "oop-golang": {
       "title": "A how-to guide for OOP in Golang (for Python users)",
       "description": "I'll use an example scenario to demonstrate the features of the OOP model, show you how to implement the OPP model/principles in Python, and compare that to the implementation in Golang.",

@@ -164,6 +164,11 @@
         }
         .authorbox {
             font-size: 20px;
+            display: grid;  
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .authorbox__content {
+            padding-top: 10px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -180,12 +185,20 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 572px) {
             .authorbox {
-                grid-template-columns: repeat(2, 2fr);
+                grid-template-columns: repeat(1, 2fr);
+                justify-content: center;
+                gap: 4rem;
+            }
+            .authorbox > div {
+                justify-self: center;
+            }
+            .authorbox__content {
+                text-align: center;
             }
             .newsletterbox{
-                margin-left: 50px;
+                margin-left: 0px;
             }
         }
     </style>
@@ -253,7 +266,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Feb 19 2019 18:46:00 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Feb 02 2021 17:18:54 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1956 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1961 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -520,19 +533,23 @@ Did I forget your blog? Sorry! Ping me on [Twitter](https://twitter.com/theSquas
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
-                <div style="padding-top: 10px">
-                    Nick Sweeting
-                    <h4>
-                        Monadical Co-Founder
-                        
-                        <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
-                            @theSquashSH
-                        </a>
-                    </h4>
-                    <h5>Published on <a href="#permalink">2019-02-18</a></h5>
-                    <img src="/static/nick.jpg" width="100px"/>
-                </div>
+            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
+            <div class="authorbox">
+                <div class="authorbox__content">
+                    
+                        Nick Sweeting
+                        <h4>
+                            Monadical Co-Founder
+                            
+                            <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
+                                @theSquashSH
+                            </a>
+                        </h4>
+                        <h5>Published on <a href="#permalink">2019-02-18</a></h5>
+                        <img src="/static/nick.jpg" width="100px"/>
+                    
+                 </div>
+                    
                 
                 <center>
                     <div class="newsletterbox"style="padding-top: 10px;">

@@ -164,6 +164,11 @@
         }
         .authorbox {
             font-size: 20px;
+            display: grid;  
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .authorbox__content {
+            padding-top: 10px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -180,12 +185,20 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 572px) {
             .authorbox {
-                grid-template-columns: repeat(2, 2fr);
+                grid-template-columns: repeat(1, 2fr);
+                justify-content: center;
+                gap: 4rem;
+            }
+            .authorbox > div {
+                justify-self: center;
+            }
+            .authorbox__content {
+                text-align: center;
             }
             .newsletterbox{
-                margin-left: 50px;
+                margin-left: 0px;
             }
         }
     </style>
@@ -255,7 +268,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 21 2022 14:06:20 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 28 2022 22:21:45 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">228 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">271 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -590,19 +603,23 @@ Monadical.com | Full-Stack Consultancy
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
-                <div style="padding-top: 10px">
-                    Igor Loskutov
-                    <h4>
-                        Full-Stack Dev
-                        
-                        <a href="https://github.com/Firfi" target="_blank" rel="noopener">
-                            @Firfi
-                        </a>
-                    </h4>
-                    <h5>Published on <a href="#permalink">2022-06-21</a></h5>
-                    <img src="/static/core/img/img-team-037.png" width="100px"/>
-                </div>
+            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
+            <div class="authorbox">
+                <div class="authorbox__content">
+                    
+                        Igor Loskutov
+                        <h4>
+                            Full-Stack Dev
+                            
+                            <a href="https://github.com/Firfi" target="_blank" rel="noopener">
+                                @Firfi
+                            </a>
+                        </h4>
+                        <h5>Published on <a href="#permalink">2022-06-21</a></h5>
+                        <img src="/static/core/img/img-team-037.png" width="100px"/>
+                    
+                 </div>
+                    
                 
                 <center>
                     <div class="newsletterbox"style="padding-top: 10px;">

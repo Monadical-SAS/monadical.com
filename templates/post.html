@@ -52,6 +52,11 @@
         }
         .authorbox {
             font-size: 20px;
+            display: grid;  
+            grid-template-columns: repeat(3, 2fr);
+        }
+        .authorbox__content {
+            padding-top: 10px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -68,12 +73,20 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 572px) {
             .authorbox {
-                grid-template-columns: repeat(2, 2fr);
+                grid-template-columns: repeat(1, 2fr);
+                justify-content: center;
+                gap: 4rem;
+            }
+            .authorbox > div {
+                justify-self: center;
+            }
+            .authorbox__content {
+                text-align: center;
             }
             .newsletterbox{
-                margin-left: 50px;
+                margin-left: 0px;
             }
         }
     </style>
@@ -94,19 +107,39 @@
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);">
-                <div style="padding-top: 10px">
-                    {{author.name}}
-                    <h4>
-                        {{author.title}}
-                        
-                        <a href="{{author.url}}" target="_blank" rel="noopener">
-                            {{author.handle}}
-                        </a>
-                    </h4>
-                    <h5>Published on <a href="#permalink">{{date}}</a></h5>
-                    <img src="{{author.image}}" width="100px"/>
-                </div>
+            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
+            <div class="authorbox">
+                <div class="authorbox__content">
+                    {% if author is mapping %}
+                        {{author.name}}
+                        <h4>
+                            {{author.title}}
+                            
+                            <a href="{{author.url}}" target="_blank" rel="noopener">
+                                {{author.handle}}
+                            </a>
+                        </h4>
+                        <h5>Published on <a href="#permalink">{{date}}</a></h5>
+                        <img src="{{author.image}}" width="100px"/>
+                    {% else %}
+                        {% for person in author%}
+                            <br>
+                            {{person.name}}
+                            <h5>
+                                {{person.title}}
+                                
+                                <a href="{{person.url}}" target="_blank" rel="noopener">
+                                    {{person.handle}}
+                                </a>
+                            </h5>
+                            <img src="{{person.image}}" width="100px"/>
+                            <br/>
+                        {%endfor%}
+                        <br/>
+                        <h5>Published on <a href="#permalink">{{date}}</a></h5>
+                    {% endif %}
+                 </div>
+                    
                 
                 <center>
                     <div class="newsletterbox"style="padding-top: 10px;">

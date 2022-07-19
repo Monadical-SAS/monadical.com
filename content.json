@@ -79,13 +79,22 @@
       "source": "https://docs.monadical.com/s/mathmatching",
       "url": "/posts/math-matching.html",
       "template": "posts/math-matching.html",
-      "author": {
-        "name": "Ben Dichter",
-        "title": "CatalystNeuro",
-        "handle": "@bendichter",
-        "url": "https://github.com/bendichter",
-        "image": "/static/core/img/ben.png"
-      }
+      "author": [
+        {
+          "name": "Ben Dichter",
+          "title": "CatalystNeuro",
+          "handle": "@bendichter",
+          "url": "https://github.com/bendichter",
+          "image": "/static/core/img/ben.png"
+        },
+        {
+          "name": "Mirjam Guesgen",
+          "title": "Content Creator",
+          "handle": "@MirjamJG",
+          "url": "https://twitter.com/MirjamJG",
+          "image": "/static/core/img/img-team-039.png"
+        }
+      ]
     },
     "oop-golang": {
       "title": "A how-to guide for OOP in Golang (for Python users)",

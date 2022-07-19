@@ -1430,7 +1430,9 @@ button.read-more {
     .blog-card .blog-img {
         height: 240px;
     }
+}
 
+@media screen and (max-width: 768px){
     .first-section {
         text-align: center;
     }

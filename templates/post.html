@@ -200,6 +200,9 @@
                 $('#ui-toc-affix').css({
                     opacity: (pos > threshold) ? 0 : 1
                 });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
             });
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
@@ -235,6 +238,43 @@
 
             $(document).ready(setOpacity);
             $(window).resize(setOpacity);
+        </script>
+        <script>
+            function smoothHashScroll () {
+                const hashElements = $("a[href^='#']:not([smoothhashscroll])").toArray()
+
+                for (const element of hashElements) {
+                    const $element = $(element)
+                    const hash = element.hash
+                    if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        const hash = decodeURIComponent(this.hash)
+                        // escape special characters in jquery selector
+                        const $hash = $(hash.replace(/(:|\.|\[|\]|,)/g, '\\$1'))
+                        // return if no element been selected
+                        if ($hash.length <= 0) return
+                        // prevent default anchor click behavior
+                        e.preventDefault()
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                        scrollTop: $hash.offset().top
+                        }, 100, 'linear', () => {
+                        // when done, add hash to url
+                        // (default click behaviour)
+                        window.location.hash = hash
+                        })
+                    })
+                    try {
+                        $element.attr('smoothhashscroll', '')
+                    } catch (error) {
+                        console.error(error)
+                    }
+                    
+                    }
+                }
+            }
+            document.addEventListener('DOMContentLoaded',smoothHashScroll)
         </script>
         <br/><br/>
     </div>

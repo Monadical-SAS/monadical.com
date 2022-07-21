@@ -238,11 +238,18 @@
 
     <!-- Smooth Scroll to Anchor Links Animation -->
     <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
         function smoothScroll(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            var reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)){
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
         }

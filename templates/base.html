@@ -245,7 +245,7 @@
             e.preventDefault();
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
-            var reference = this.getAttribute('href')
+            let reference = this.getAttribute('href')
             if (reference.match(/^#[0-9]+/)){
                 reference = getUnicodeHash(reference)
             }

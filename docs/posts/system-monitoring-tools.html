@@ -68,7 +68,7 @@
         <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
                                  /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
                 </a>
@@ -85,37 +85,37 @@
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/services.html">Services</a>
+                                <a class="nav-link text-truncate" href="/services.html">Services</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/principles.html">Principles</a>
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/portfolio.html">Portfolio</a>
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/team.html">Team</a>
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog.html">Blog</a>
+                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/yak.html">Lightning Yak</a>
+                                <a class="nav-link text-truncate" href="/yak.html">Lightning Yak</a>
                             </li>
                             
                             
@@ -201,12 +201,15 @@
                 margin-left: 0px;
             }
         }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
     </style>
     <div id="post-content">
         <div class="container mb-5">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
-            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
-            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
             <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
@@ -268,7 +271,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Sep 25 2021 19:07:22 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">20536 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">20540 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -1544,7 +1547,7 @@ virt-top
 Monitor performance statistics of virtual machines on an ESXi host.
 
 ```bash
-ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa8995979f8f899f88ba9f898293d79295898e">[email&#160;protected]</a> esxtop
+ssh <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b1804060e1e180e192b0e181302460304181f">[email&#160;protected]</a> esxtop
 ```
 
 - https://kb.vmware.com/s/article/1008205
@@ -1562,7 +1565,7 @@ Show PostgreSQL performance information.
 ```bash
 apt install pgtop
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31415e424556435442715d5e52505d595e4245">[email&#160;protected]</a>:5432/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="24544b57504356415764484b4745484c4b5750">[email&#160;protected]</a>:5432/example and show perf stats w/ color
 pg_top --color-mode -h localhost -p 5432 -d example -U postgres
 ```
 
@@ -1578,7 +1581,7 @@ Show MySQL performance information.
 ```bash
 apt install mytop myps
 
-# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="25485c56544965494a4644494d4a5651">[email&#160;protected]</a>:3306/example and show perf stats w/ color
+# connect to <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3d50444e4c517d51525e5c5155524e49">[email&#160;protected]</a>:3306/example and show perf stats w/ color
 mytop -color -h localhost -P 3306 -u mysql -d example
 ```
 
@@ -1839,7 +1842,7 @@ Backup and file syncing tools.
 apt install rclone rsync rsnapshotd
 
 # sync some local files to a remote server over ssh/rsyncd
-rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8efbfdebfccee6e1fdfa">[email&#160;protected]</a>:/some/remote/path
+rsync --archive --info=progress2 /some/local/path <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5b0b6a0b785adaab6b1">[email&#160;protected]</a>:/some/remote/path
 
 # sync some local files to a remote directory on a cloud storage provider
 rclone sync source:path dest:path [flags]
@@ -1851,7 +1854,7 @@ rclone mount remote:path/to/files /path/to/local/mount
 rsnapshot
 
 # or take a zfs snapshot of a given pool/dataset
-zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1a1f0a1f0d1b0a3e0d101f0e0d16110a101f131b">[email&#160;protected]</a>
+zfs snapshot -r poolname/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c585d485d4f59487c4f525d4c4f545348525d5159">[email&#160;protected]</a>
 ```
 
 ### `watchdog`/`auditd`/`acct`
@@ -1920,7 +1923,6 @@ Filesystems.
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
             <div class="authorbox">
                 <div class="authorbox__content">
                     
@@ -2121,12 +2123,20 @@ Filesystems.
                 $('#ui-toc-affix').css({
                     opacity: (pos > threshold) ? 0 : 1
                 });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
             });
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/system-monitoring-tools', {mode: 'no-cors'})
@@ -2136,6 +2146,21 @@ Filesystems.
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
         </script>
         <br/><br/>
     </div>
@@ -2269,11 +2294,18 @@ Filesystems.
 
     <!-- Smooth Scroll to Anchor Links Animation -->
     <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
         function smoothScroll(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)){
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
         }

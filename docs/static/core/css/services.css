@@ -23,9 +23,34 @@
     margin-bottom: 30px;
 }
 
+@media (max-width: 992px) {
+    .tentacle-img-left{
+        top: 5624px;
+        max-width: 100%;
+        width: 20%;
+        height: auto;
+    }
+
+    .circle-img-left{
+        top: 37%;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    .tentacle-img-left{
+        top: 4123px;
+        max-width: 100%;
+        width: 20%;
+        height: auto;
+    }
+
+    .circle-img-left{
+        top: 35.5%;
+    }
+}
+
 @media  (max-width: 1200px){
     .cube-img-left {    
-        top: 10rem;
+        top: 12rem;
         max-width: 30%;
         height: auto;
     }
@@ -36,14 +61,12 @@
         height: auto;
     }
 
-    .circle-img-left{
-        top: 36%;
-    }
-
     .cube-img-right{
         top: 52%;
     }
 }
+
+
 
 @media (max-width: 768px) {
     .card-img-top {

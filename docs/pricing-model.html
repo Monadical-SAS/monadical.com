@@ -68,7 +68,7 @@
         <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
                                  /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
                 </a>
@@ -85,37 +85,37 @@
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/services.html">Services</a>
+                                <a class="nav-link text-truncate" href="/services.html">Services</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/principles.html">Principles</a>
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/portfolio.html">Portfolio</a>
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/team.html">Team</a>
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog.html">Blog</a>
+                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/yak.html">Lightning Yak</a>
+                                <a class="nav-link text-truncate" href="/yak.html">Lightning Yak</a>
                             </li>
                             
                             
@@ -252,7 +252,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 03 2020 20:39:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Dec 22 2021 16:09:04 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">871 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">872 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -574,11 +574,18 @@ We&#39;re willing to work with clients in the not-for-profit, open-source, or ac
 
     <!-- Smooth Scroll to Anchor Links Animation -->
     <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
         function smoothScroll(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)){
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
         }

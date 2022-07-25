@@ -68,7 +68,7 @@
         <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
                                  /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
                 </a>
@@ -85,37 +85,37 @@
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/services.html">Services</a>
+                                <a class="nav-link text-truncate" href="/services.html">Services</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/principles.html">Principles</a>
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/portfolio.html">Portfolio</a>
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/team.html">Team</a>
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog.html">Blog</a>
+                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/yak.html">Lightning Yak</a>
+                                <a class="nav-link text-truncate" href="/yak.html">Lightning Yak</a>
                             </li>
                             
                             
@@ -201,12 +201,15 @@
                 margin-left: 0px;
             }
         }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
     </style>
     <div id="post-content">
         <div class="container mb-5">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
-            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
-            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
             <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
@@ -266,7 +269,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:48:03 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 05 2018 05:45:38 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1399 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1400 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -566,7 +569,6 @@ No working product has been released yet.
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
             <div class="authorbox">
                 <div class="authorbox__content">
                     
@@ -767,12 +769,20 @@ No working product has been released yet.
                 $('#ui-toc-affix').css({
                     opacity: (pos > threshold) ? 0 : 1
                 });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
             });
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/r1sAiBvAz', {mode: 'no-cors'})
@@ -782,6 +792,21 @@ No working product has been released yet.
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
         </script>
         <br/><br/>
     </div>
@@ -915,11 +940,18 @@ No working product has been released yet.
 
     <!-- Smooth Scroll to Anchor Links Animation -->
     <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
         function smoothScroll(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)){
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
         }

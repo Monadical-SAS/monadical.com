@@ -68,7 +68,7 @@
         <div id="header-container" class="container">
             <nav class="navbar navbar-expand-sm navbar-dark bg-white">
                 
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
                                  /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
                 </a>
@@ -85,37 +85,37 @@
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/services.html">Services</a>
+                                <a class="nav-link text-truncate" href="/services.html">Services</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/principles.html">Principles</a>
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/portfolio.html">Portfolio</a>
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/team.html">Team</a>
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog.html">Blog</a>
+                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
                             </li>
                             
                             
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/yak.html">Lightning Yak</a>
+                                <a class="nav-link text-truncate" href="/yak.html">Lightning Yak</a>
                             </li>
                             
                             
@@ -201,12 +201,15 @@
                 margin-left: 0px;
             }
         }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
     </style>
     <div id="post-content">
         <div class="container mb-5">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
-            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
-            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
             <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
@@ -266,7 +269,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Nov 03 2020 13:31:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2674 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2675 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -559,7 +562,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe9d91909897998b8c9bd39f898dd39d8c9b9a9b908a979f928dbe88cf">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4a2925242c232d3f382f672b3d396729382f2e2f243e232b26390a3c7b">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -567,7 +570,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="32535f53485d5c1f5751401f5e5d555b5c724403">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbbab6baa1b4b5f6beb8a9f6b7b4bcb2b59badea">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -594,10 +597,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcdfd4d9dfd7d3c9c8fcca8e">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="66050e03050d091312261054">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcdfd3d2dad5dbc9ced991ddcbcf91dfced9d8d9d2c8d5ddd0cffcca8d">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63000c0d050a041611064e0214104e00110607060d170a020f10231552">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -605,7 +608,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f3e323e253031723a3c2d7233303836311f296e">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d3dfd3c8dddc9fd7d1c09fdeddd5dbdcf2c483">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:
@@ -757,7 +760,6 @@ Monadical.com | Full-Stack Consultancy
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
             <div class="authorbox">
                 <div class="authorbox__content">
                     
@@ -958,12 +960,20 @@ Monadical.com | Full-Stack Consultancy
                 $('#ui-toc-affix').css({
                     opacity: (pos > threshold) ? 0 : 1
                 });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
             });
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/HJCjllSEw', {mode: 'no-cors'})
@@ -973,6 +983,21 @@ Monadical.com | Full-Stack Consultancy
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
         </script>
         <br/><br/>
     </div>
@@ -1106,11 +1131,18 @@ Monadical.com | Full-Stack Consultancy
 
     <!-- Smooth Scroll to Anchor Links Animation -->
     <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
         function smoothScroll(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)){
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
         }

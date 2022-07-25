@@ -89,12 +89,15 @@
                 margin-left: 0px;
             }
         }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
     </style>
     <div id="post-content">
         <div class="container mb-5">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
-            <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
-            <img class="cube-img-left" src="/static/core/img/img-home-002.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
             <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
             <div class="row">
                 <div class="col">
@@ -107,7 +110,6 @@
             </div>
         </div>
         <div id="post-footer" class="container post-footer">
-            <!-- <div class="authorbox" style="display: grid;  grid-template-columns: repeat(3, 2fr);"> -->
             <div class="authorbox">
                 <div class="authorbox__content">
                     {% if author is mapping %}
@@ -198,12 +200,20 @@
                 $('#ui-toc-affix').css({
                     opacity: (pos > threshold) ? 0 : 1
                 });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
             });
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
                 fetch('{{source}}', {mode: 'no-cors'})
@@ -213,6 +223,21 @@
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
         </script>
         <br/><br/>
     </div>

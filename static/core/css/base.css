@@ -22,6 +22,10 @@ header .collapse {
 header .navbar {
     border-bottom: 1px solid #2b2b2b;
     padding-bottom: 12px;
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 0;
 }
 
 header .container .nav-item .nav-link {
@@ -288,6 +292,41 @@ a:hover{
     align-items: center;
 }
 
+header .container::before {
+    display: none;
+    content: "";
+}
+
+header .container::after {
+    display: none;
+    content: "";
+} 
+
+header .navbar::before{
+    display: none;
+    content: "";
+}
+
+header .navbar::after{
+    display: none;
+    content: "";
+}
+
+header .navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#monadical-brand {
+    display: inline-block;
+    padding: 0.3125rem 0 0.3125rem 0;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    height: auto;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
 .button-navbar {
     min-width: 300px;
     max-width: 300px;
@@ -303,12 +342,19 @@ a:hover{
         flex-direction: column;
         align-items: flex-start;
     }
-
+    
     .button-navbar {
         max-width: 100%;
-        margin: 10px 20px;
+        margin: 10px 20px 10px 0;
     }
 }
+
+@media (min-width: 576px) and (max-width: 600px){
+    header .container .nav-item:last-child {
+        max-width: calc(121px*0.8);
+    }
+}
+
 
 /* End Navbar */
 
@@ -852,6 +898,7 @@ div.card-reference div.card-body {
     width: 100%;
     min-height: 250px;
     padding: 20px;
+    background-size: cover;
 }
 
 .card-second-way-work {
@@ -859,6 +906,7 @@ div.card-reference div.card-body {
     width: 100%;
     min-height: 250px;
     padding: 20px;
+    background-size: cover;
 }
 
 .card-blue-title {
@@ -1382,7 +1430,9 @@ button.read-more {
     .blog-card .blog-img {
         height: 240px;
     }
+}
 
+@media screen and (max-width: 768px){
     .first-section {
         text-align: center;
     }

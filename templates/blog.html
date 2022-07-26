@@ -57,7 +57,9 @@
                             </div>
                             <div class="card-footer">
                                 <div class="author small">
-                                    {{ post.author.name }}
+                                    {% for author in post.authors %}
+                                    {{ author.name }}{% if loop.index != loop.length %}, {% endif %}
+                                    {%endfor%}
                                     - {{ post.date }}<br/><br/>
                                     <a href="{{ post.url }}">
                                         <button class="btn btn-primary">

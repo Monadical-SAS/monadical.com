@@ -571,6 +571,7 @@ header .navbar-toggler-icon {
     .cloud-img-left {
         position: absolute;
         left: 0;
+        max-width: 100vw;
     }
 
     .cloud-img-right {

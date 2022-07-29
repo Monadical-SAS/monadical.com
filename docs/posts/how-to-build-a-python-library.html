@@ -164,11 +164,50 @@
         }
         .authorbox {
             font-size: 20px;
-            display: grid;  
-            grid-template-columns: repeat(3, 2fr);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
         }
         .authorbox__content {
-            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -185,28 +224,12 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 572px) {
-            .authorbox {
-                grid-template-columns: repeat(1, 2fr);
-                justify-content: center;
-                gap: 4rem;
-            }
-            .authorbox > div {
-                justify-self: center;
-            }
-            .authorbox__content {
-                text-align: center;
-            }
-            .newsletterbox{
-                margin-left: 0px;
-            }
-        }
         .dropup .dropdown-menu {
             bottom: auto !important;
         }
     </style>
     <div id="post-content">
-        <div class="container mb-5">
+        <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
             <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
             <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
@@ -269,7 +292,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Jan 18 2021 18:24:38 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Feb 19 2021 18:58:29 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">992 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">996 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -343,10 +366,10 @@ Python libraries are a collection of modules and packages. Packages are a collec
       lint:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e2e9e4e2eaeef4f5c1f7b3">[email&#160;protected]</a>
+          - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="01626964626a6e7475417733">[email&#160;protected]</a>
     
           - name: Set up Python ${{ matrix.python }}
-            uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0774627372772a777e736f6869477136">[email&#160;protected]</a>
+            uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d7e6879787d207d74796562634d7b3c">[email&#160;protected]</a>
             with:
               python-version: 3.6
               architecture: x64
@@ -364,10 +387,10 @@ Python libraries are a collection of modules and packages. Packages are a collec
             python: [3.6, 3.7, 3.8]
 
         steps:
-          - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="385b505d5b53574d4c784e0a">[email&#160;protected]</a>
+          - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1e15181e161208093d0b4f">[email&#160;protected]</a>
 
           - name: Set up Python ${{ matrix.python }}
-            uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91e2f4e5e4e1bce1e8e5f9feffd1e7a0">[email&#160;protected]</a>
+            uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e3d2b3a3b3e633e373a2621200e387f">[email&#160;protected]</a>
             with:
               python-version: ${{ matrix.python }}
               architecture: x64
@@ -419,7 +442,7 @@ setup(
     long_description_content_type=&#34;text/markdown&#34;,
     url=&#34;https://github.com/afreydev/python-printer&#34;,
     author=&#34;Your Name&#34;,
-    author_email=&#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f06100a0d521a121e16133f18121e1613511c1012">[email&#160;protected]</a>&#34;,
+    author_email=&#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31485e44431c545c50585d71565c50585d1f525e5c">[email&#160;protected]</a>&#34;,
     license=&#34;MIT&#34;,
     packages=[&#34;python_printer&#34;],
     include_package_data=True,
@@ -571,33 +594,28 @@ Monadical.com | Full-Stack Consultancy
         </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
-                <div class="authorbox__content">
-                    
-                        Angel Rey
-                        <h4>
+                
+                    <div class="authorbox__content">
+                        <h3>Angel Rey</h3>
+                        <h5>
                             Devops, Technology and Innovation
-                            
                             <a href="https://twitter.com/afreydev" target="_blank" rel="noopener">
                                 @afreydev
                             </a>
-                        </h4>
-                        <h5>Published on <a href="#permalink">2021-01-19</a></h5>
-                        <img src="/static/angel.png" width="100px"/>
-                    
-                 </div>
-                    
-                
-                <center>
-                    <div class="newsletterbox"style="padding-top: 10px;">
-                        <a href="/team.html#careers" style="font-weight: bold;">
-                            We are hiring!
-                        </a>
-                        <br/><br/>
-                        <a href="https://tinyletter.com/Monadical">
-                            Subscribe to our newsletter
-                        </a>
+                        </h5>
+                        
+                        <img src="/static/angel.png" width="120px" height="120px" alt="Angel Rey"/>
                     </div>
-                </center>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2021-01-19</a></h5>
+            <div class="newsletterbox">
+                <a href="/team.html#careers" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
             </div>
         </div>
         <center>

@@ -164,11 +164,50 @@
         }
         .authorbox {
             font-size: 20px;
-            display: grid;  
-            grid-template-columns: repeat(3, 2fr);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
         }
         .authorbox__content {
-            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -185,28 +224,12 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 572px) {
-            .authorbox {
-                grid-template-columns: repeat(1, 2fr);
-                justify-content: center;
-                gap: 4rem;
-            }
-            .authorbox > div {
-                justify-self: center;
-            }
-            .authorbox__content {
-                text-align: center;
-            }
-            .newsletterbox{
-                margin-left: 0px;
-            }
-        }
         .dropup .dropdown-menu {
             bottom: auto !important;
         }
     </style>
     <div id="post-content">
-        <div class="container mb-5">
+        <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
             <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
             <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
@@ -269,7 +292,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:32:01 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Jul 11 2022 19:55:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5090 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5115 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -542,7 +565,7 @@ the pairing task is to add the words for the first person to draw, and build a s
 https://docs.monadical.com/s/an-intro-to-the-opt-directory
 
 **When finished:** enable access to the server using SSH with the following key:
-`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdwUnQvH0opeOLJi3HTBIHKMgOIAwBNfWdZUa7gWZWD <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b181a1e0a18032b181c0e0e1f02050c45060e">[email&#160;protected]</a>`, and send us the public IP.  During the interview call afterwards, we will SSH in and inspect the setup and you&#39;ll walk us through your setup over the call, explaining any decisions made and answering any questions we might have.  We&#39;ll ask you to run the scripts in `bin/` on the call as well to confirm they work.
+`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdwUnQvH0opeOLJi3HTBIHKMgOIAwBNfWdZUa7gWZWD <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcafada9bdafb49cafabb9b9a8b5b2bbf2b1b9">[email&#160;protected]</a>`, and send us the public IP.  During the interview call afterwards, we will SSH in and inspect the setup and you&#39;ll walk us through your setup over the call, explaining any decisions made and answering any questions we might have.  We&#39;ll ask you to run the scripts in `bin/` on the call as well to confirm they work.
 
 Don&#39;t hesitate to ask if you have questions about this task, the interview process, or Monadical in general! Just send me an email here:
 &lt;img src=&#34;https://i.imgur.com/4w0TJur.png&#34; height=&#34;30px&#34;&gt;
@@ -689,33 +712,28 @@ Interested in joining Monadical? &amp;nbsp;Check out our [team page](https://mon
         </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
-                <div class="authorbox__content">
-                    
-                        Nick Sweeting
-                        <h4>
+                
+                    <div class="authorbox__content">
+                        <h3>Nick Sweeting</h3>
+                        <h5>
                             Monadical Co-Founder
-                            
                             <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
                                 @theSquashSH
                             </a>
-                        </h4>
-                        <h5>Published on <a href="#permalink">2019-02-13</a></h5>
-                        <img src="/static/nick.jpg" width="100px"/>
-                    
-                 </div>
-                    
-                
-                <center>
-                    <div class="newsletterbox"style="padding-top: 10px;">
-                        <a href="/team.html#careers" style="font-weight: bold;">
-                            We are hiring!
-                        </a>
-                        <br/><br/>
-                        <a href="https://tinyletter.com/Monadical">
-                            Subscribe to our newsletter
-                        </a>
+                        </h5>
+                        
+                        <img src="/static/nick.jpg" width="120px" height="120px" alt="Nick Sweeting"/>
                     </div>
-                </center>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2019-02-13</a></h5>
+            <div class="newsletterbox">
+                <a href="/team.html#careers" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
             </div>
         </div>
         <center>

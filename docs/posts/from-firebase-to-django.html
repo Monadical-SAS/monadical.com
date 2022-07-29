@@ -164,11 +164,50 @@
         }
         .authorbox {
             font-size: 20px;
-            display: grid;  
-            grid-template-columns: repeat(3, 2fr);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
         }
         .authorbox__content {
-            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -185,28 +224,12 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 572px) {
-            .authorbox {
-                grid-template-columns: repeat(1, 2fr);
-                justify-content: center;
-                gap: 4rem;
-            }
-            .authorbox > div {
-                justify-self: center;
-            }
-            .authorbox__content {
-                text-align: center;
-            }
-            .newsletterbox{
-                margin-left: 0px;
-            }
-        }
         .dropup .dropdown-menu {
             bottom: auto !important;
         }
     </style>
     <div id="post-content">
-        <div class="container mb-5">
+        <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
             <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
             <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
@@ -271,7 +294,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 29 2020 14:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 09 2021 15:32:50 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2072 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2083 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -520,33 +543,28 @@ Monadical.com | Full-Stack Consultancy
         </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
-                <div class="authorbox__content">
-                    
-                        Karim
-                        <h4>
+                
+                    <div class="authorbox__content">
+                        <h3>Karim</h3>
+                        <h5>
                             Software Developer
-                            
                             <a href="" target="_blank" rel="noopener">
                                 @apkallum
                             </a>
-                        </h4>
-                        <h5>Published on <a href="#permalink">2020-09-29</a></h5>
-                        <img src="/static/karim.jpg" width="100px"/>
-                    
-                 </div>
-                    
-                
-                <center>
-                    <div class="newsletterbox"style="padding-top: 10px;">
-                        <a href="/team.html#careers" style="font-weight: bold;">
-                            We are hiring!
-                        </a>
-                        <br/><br/>
-                        <a href="https://tinyletter.com/Monadical">
-                            Subscribe to our newsletter
-                        </a>
+                        </h5>
+                        
+                        <img src="/static/karim.jpg" width="120px" height="120px" alt="Karim"/>
                     </div>
-                </center>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2020-09-29</a></h5>
+            <div class="newsletterbox">
+                <a href="/team.html#careers" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
             </div>
         </div>
         <center>

@@ -164,11 +164,50 @@
         }
         .authorbox {
             font-size: 20px;
-            display: grid;  
-            grid-template-columns: repeat(3, 2fr);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
         }
         .authorbox__content {
-            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
         }
         .post-footer h4 {
             font-size: 18px;
@@ -185,28 +224,12 @@
             margin-left: 15px;
             transition: opacity 400ms ease;
         }
-        @media (max-width: 572px) {
-            .authorbox {
-                grid-template-columns: repeat(1, 2fr);
-                justify-content: center;
-                gap: 4rem;
-            }
-            .authorbox > div {
-                justify-self: center;
-            }
-            .authorbox__content {
-                text-align: center;
-            }
-            .newsletterbox{
-                margin-left: 0px;
-            }
-        }
         .dropup .dropdown-menu {
             bottom: auto !important;
         }
     </style>
     <div id="post-content">
-        <div class="container mb-5">
+        <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
             <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
             <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
@@ -269,7 +292,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 15 2020 19:17:12 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 15 2020 21:37:16 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1196 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1210 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -313,9 +336,9 @@ jobs:
     name: Run the tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20434845434b4f5554605612">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82e1eae7e1e9edf7f6c2f4b0">[email&#160;protected]</a>
       - name: Install Python 3
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e09385949590cd909994888f8ea096d1">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7003150405005d000904181f1e300641">[email&#160;protected]</a>
         with:
           python-version: 3.6
       - name: Install dependencies
@@ -342,9 +365,9 @@ lint:
     name: Run linter for dockerfile (Hadolint)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f3909b9690989c8687b385c1">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="17747f72747c786263576125">[email&#160;protected]</a>
       - name: Hadolint linting
-        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5830393c373431362c75393b2c3137361835392b2c3d2a">[email&#160;protected]</a>
+        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3bbb2b7bcbfbabda7feb2b0a7babcbd93beb2a0a7b6a1">[email&#160;protected]</a>
 
 ```
 
@@ -371,9 +394,9 @@ jobs:
     name: Run the tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef8c878a8c84809a9baf99dd">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="67040f02040c081213271155">[email&#160;protected]</a>
       - name: Install Python 3
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b687e6f6e6b366b626f7374755b6d2a">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff8c9a8b8a8fd28f868b979091bf89ce">[email&#160;protected]</a>
         with:
           python-version: 3.6
       - name: Install dependencies
@@ -387,9 +410,9 @@ jobs:
     name: Run linter for dockerfile(Hadolint)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9cac1cccac2c6dcdde9df9b">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="482b202d2b23273d3c083e7a">[email&#160;protected]</a>
       - name: Hadolint linting
-        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157d74717a797c7b61387476617c7a7b55787466617067">[email&#160;protected]</a>
+        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ee868f8a818287809ac38f8d9a878180ae838f9d9a8b9c">[email&#160;protected]</a>
 
   build-push:
     name: Build and push
@@ -397,10 +420,10 @@ jobs:
     needs: [test, lint]
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbb8b3beb8b0b4aeaf9bade9">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ffcf7fafcf4f0eaebdfe9ad">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="57343839313e302225327a3620247a342532333239233e363b24172166">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3b0bcbdb5bab4a6a1b6feb2a4a0feb0a1b6b7b6bda7bab2bfa093a5e2">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -408,7 +431,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="08696569726766256d6b7a2564676f6166487e39">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbaaa6aab1a4a5e6aea8b9e6a7a4aca2a58bbdfa">[email&#160;protected]</a>
 
       - name: Extract tag
         shell: bash
@@ -501,33 +524,28 @@ Monadical.com | Full-Stack Consultancy
         </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
-                <div class="authorbox__content">
-                    
-                        Cristian Vargas
-                        <h4>
+                
+                    <div class="authorbox__content">
+                        <h3>Cristian Vargas</h3>
+                        <h5>
                             Software Engineer
-                            
                             <a href="" target="_blank" rel="noopener">
                                 @cdvv7788
                             </a>
-                        </h4>
-                        <h5>Published on <a href="#permalink">2020-12-15</a></h5>
-                        <img src="/static/cristian.png" width="100px"/>
-                    
-                 </div>
-                    
-                
-                <center>
-                    <div class="newsletterbox"style="padding-top: 10px;">
-                        <a href="/team.html#careers" style="font-weight: bold;">
-                            We are hiring!
-                        </a>
-                        <br/><br/>
-                        <a href="https://tinyletter.com/Monadical">
-                            Subscribe to our newsletter
-                        </a>
+                        </h5>
+                        
+                        <img src="/static/cristian.png" width="120px" height="120px" alt="Cristian Vargas"/>
                     </div>
-                </center>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2020-12-15</a></h5>
+            <div class="newsletterbox">
+                <a href="/team.html#careers" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
             </div>
         </div>
         <center>

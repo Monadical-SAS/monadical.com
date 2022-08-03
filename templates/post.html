@@ -49,7 +49,7 @@
         footer .social-links a:hover {
             color: #333;
             opacity: 0.9;
-        }
+        }       
         .authorbox {
             font-size: 20px;
             display: flex;
@@ -114,6 +114,25 @@
         }
         .dropup .dropdown-menu {
             bottom: auto !important;
+        }
+        @media (min-width: 768px) and (max-width: 991px){
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+            header .navbar-nav>li>a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+
+            header .navbar-nav .nav-link {
+                padding-left: 15px;
+            }
+
         }
     </style>
     <div id="post-content">
@@ -243,5 +262,16 @@
         </script>
         <br/><br/>
     </div>
-  
+    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
+    <style>
+        @media (max-width: 991px) {
+            .show {
+                display: block !important;
+            }
+            .collapse:not(.show) {
+                display: none !important;
+            }
+        }
+    </style>
+
 {% endblock %}

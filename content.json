@@ -64,6 +64,31 @@
     }
   },
   "POSTS": {
+    "fastapi-for-functions": {
+      "title": "Building a FastAPI Server to Evaluate Mathematical Functions",
+      "description": "We make an already-powerful program for plotting mathematical functions even better using three steps.",
+      "date": "2022-08-04",
+      "img": "/static/fastapi-for-functions.jpg",
+      "tags": [
+        "fastapi",
+        "python",
+        "OOP",
+        "graphs"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/wqw5tNyjz",
+      "url": "/posts/fastapi-for-functions.html",
+      "template": "posts/fastapi-for-functions.html",
+      "authors": [
+        {
+          "name": "Juan David Arias",
+          "title": "Full-stack developer",
+          "handle": "@juanArias8",
+          "url": "https://github.com/juanArias8",
+          "image": "/static/core/img/img-team-022.png"
+        }
+      ]
+    },
     "math-matching": {
       "title": "How math makes matches meaningful",
       "description": "In this blog, we show you how finding the right algorithm can make the difference when it comes to creating meaningful, professional connections virtually.",
@@ -110,13 +135,15 @@
       "source": "https://docs.monadical.com/s/cSUAB9Pkq",
       "url": "/posts/oop-golang.html",
       "template": "posts/oop-golang.html",
-      "authors": [{
-        "name": "Cesar Uribe",
-        "title": "Full-stack developer",
-        "handle": "@curibe",
-        "url": "https://github.com/curibe",
-        "image": "/static/core/img/img-team-020.png"
-      }]
+      "authors": [
+        {
+          "name": "Cesar Uribe",
+          "title": "Full-stack developer",
+          "handle": "@curibe",
+          "url": "https://github.com/curibe",
+          "image": "/static/core/img/img-team-020.png"
+        }
+      ]
     },
     "wasm-chip8": {
       "title": "How to setup a Wasm API for a CHIP-8 emulator",
@@ -135,13 +162,15 @@
       "source": "https://docs.monadical.com/s/spWqlOEp9",
       "url": "/posts/wasm-chip8.html",
       "template": "posts/wasm-chip8.html",
-      "authors": [{
-        "name": "Igor Loskutov",
-        "title": "Full-Stack Dev",
-        "handle": "@Firfi",
-        "url": "https://github.com/Firfi",
-        "image": "/static/core/img/img-team-037.png"
-      }]
+      "authors": [
+        {
+          "name": "Igor Loskutov",
+          "title": "Full-Stack Dev",
+          "handle": "@Firfi",
+          "url": "https://github.com/Firfi",
+          "image": "/static/core/img/img-team-037.png"
+        }
+      ]
     },
     "algorithm-bias": {
       "title": "Technical solutions to tackle AI bias",
@@ -159,13 +188,15 @@
       "source": "https://docs.monadical.com/s/F9gMI1uLY",
       "url": "/posts/algorithm-bias.html",
       "template": "posts/algorithm-bias.html",
-      "authors": [{
-        "name": "Mirjam Guesgen",
-        "title": "Content Creator",
-        "handle": "@MirjamJG",
-        "url": "https://twitter.com/MirjamJG",
-        "image": "/static/core/img/img-team-039.png"
-      }]
+      "authors": [
+        {
+          "name": "Mirjam Guesgen",
+          "title": "Content Creator",
+          "handle": "@MirjamJG",
+          "url": "https://twitter.com/MirjamJG",
+          "image": "/static/core/img/img-team-039.png"
+        }
+      ]
     },
     "candy-machine-mint-and-reveal": {
       "title": "How to mint and reveal NFTs with Candy Machine V2",
@@ -183,20 +214,22 @@
       "source": "https://docs.monadical.com/s/D36RMPq_j",
       "url": "/posts/candy-machine-mint-and-reveal.html",
       "template": "posts/candy-machine-mint-and-reveal.html",
-      "authors": [{
-        "name": "Kevin Guevara",
-        "title": "Monadical",
-        "handle": "@kevdevg",
-        "url": "https://github.com/kevdevg. ",
-        "image": "/static/core/img/img-team-027.png"
-      },
-      {
-        "name": "Juan Diego García",
-        "title": "Monadical",
-        "handle": "@juangoc",
-        "url": "https://twitter.com/juandgoc.   ",
-        "image": "/static/core/img/img-team-004.png"
-      }]
+      "authors": [
+        {
+          "name": "Kevin Guevara",
+          "title": "Monadical",
+          "handle": "@kevdevg",
+          "url": "https://github.com/kevdevg. ",
+          "image": "/static/core/img/img-team-027.png"
+        },
+        {
+          "name": "Juan Diego García",
+          "title": "Monadical",
+          "handle": "@juangoc",
+          "url": "https://twitter.com/juandgoc.   ",
+          "image": "/static/core/img/img-team-004.png"
+        }
+      ]
     },
     "ins-and-outs-of-logging-in-python-part-one": {
       "title": "The Ins and Outs of Logging in Python, Part 1",
@@ -213,13 +246,15 @@
       "source": "https://docs.monadical.com/s/ins-outs-logging-python-part-one",
       "url": "/posts/ins-and-outs-of-logging-in-python-part-one.html",
       "template": "posts/ins-and-outs-of-logging-in-python-part-one.html",
-      "authors": [{
-        "name": "Cesar Alfredo Uribe Leon",
-        "title": "Monadical",
-        "handle": "@uribeleon",
-        "url": "https://www.linkedin.com/in/uribeleon",
-        "image": "/static/core/img/img-team-020.png"
-      }]
+      "authors": [
+        {
+          "name": "Cesar Alfredo Uribe Leon",
+          "title": "Monadical",
+          "handle": "@uribeleon",
+          "url": "https://www.linkedin.com/in/uribeleon",
+          "image": "/static/core/img/img-team-020.png"
+        }
+      ]
     },
     "export-phantom-wallet": {
       "title": "How to import your wallet to Solana CLI",
@@ -238,13 +273,15 @@
       "source": "https://docs.monadical.com/s/export-phantom-wallet",
       "url": "/posts/export-phantom-wallet.html",
       "template": "posts/export-phantom-wallet.html",
-      "authors": [{
-        "name": "JDC",
-        "title": "",
-        "handle": "@jdcaballerov",
-        "url": "https://www.twitter.com/jdcaballerov",
-        "image": "/static/jdc.jpg"
-      }]
+      "authors": [
+        {
+          "name": "JDC",
+          "title": "",
+          "handle": "@jdcaballerov",
+          "url": "https://www.twitter.com/jdcaballerov",
+          "image": "/static/jdc.jpg"
+        }
+      ]
     },
     "why-systems-software-why-rust": {
       "title": "The Rust Journey, Part 0: Why Systems Software and Why Rust?",
@@ -261,13 +298,15 @@
       "source": "https://docs.monadical.com/s/why-systems-software-why-rust",
       "url": "/posts/why-systems-software-why-rust.html",
       "template": "posts/why-systems-software-why-rust.html",
-      "authors": [{
-        "name": "Thomas Lisankie",
-        "title": "Full stack dev",
-        "handle": "@TomLisankie",
-        "url": "https://twitter.com/TomLisankie",
-        "image": "/static/thomas.png"
-      }]
+      "authors": [
+        {
+          "name": "Thomas Lisankie",
+          "title": "Full stack dev",
+          "handle": "@TomLisankie",
+          "url": "https://twitter.com/TomLisankie",
+          "image": "/static/thomas.png"
+        }
+      ]
     },
     "operator-overloading-in-python": {
       "title": "Operator Overloading in Python",
@@ -284,13 +323,15 @@
       "source": "https://docs.monadical.com/s/operator-overloading-in-python",
       "url": "/posts/operator-overloading-in-python.html",
       "template": "posts/operator-overloading-in-python.html",
-      "authors": [{
-        "name": "Alejandro",
-        "title": "Full-Stack Dev",
-        "handle": "@asanchezyali",
-        "url": "https://twitter.com/asanchezyali",
-        "image": "/static/alejandro.png"
-      }]
+      "authors": [
+        {
+          "name": "Alejandro",
+          "title": "Full-Stack Dev",
+          "handle": "@asanchezyali",
+          "url": "https://twitter.com/asanchezyali",
+          "image": "/static/alejandro.png"
+        }
+      ]
     },
     "plot-mathematical-functions-in-python": {
       "title": "How to Plot Mathematical Functions in 10 Lines of Python",
@@ -310,13 +351,15 @@
       "source": "https://docs.monadical.com/s/plot-mathematical-functions-in-python",
       "url": "/posts/plot-mathematical-functions-in-python.html",
       "template": "posts/plot-mathematical-functions-in-python.html",
-      "authors": [{
-        "name": "Juan David Arias",
-        "title": "Full-Stack Dev",
-        "handle": "@juanArias8",
-        "url": "https://github.com/juanArias8",
-        "image": "/static/juan-david.png"
-      }]
+      "authors": [
+        {
+          "name": "Juan David Arias",
+          "title": "Full-Stack Dev",
+          "handle": "@juanArias8",
+          "url": "https://github.com/juanArias8",
+          "image": "/static/juan-david.png"
+        }
+      ]
     },
     "how-to-run-programs-on-a-mainframe": {
       "title": "Starting and Running Your First Program on a Mainframe",
@@ -334,13 +377,15 @@
       "source": "https://docs.monadical.com/s/how-to-run-programs-on-a-mainframe",
       "url": "/posts/how-to-run-programs-on-a-mainframe.html",
       "template": "posts/how-to-run-programs-on-a-mainframe.html",
-      "authors": [{
-        "name": "JDC",
-        "title": "PM / Dev",
-        "handle": "@jdcaballerov",
-        "url": "https://twitter.com/jdcaballerov",
-        "image": "/static/jdc.jpg"
-      }]
+      "authors": [
+        {
+          "name": "JDC",
+          "title": "PM / Dev",
+          "handle": "@jdcaballerov",
+          "url": "https://twitter.com/jdcaballerov",
+          "image": "/static/jdc.jpg"
+        }
+      ]
     },
     "human-systems": {
       "title": "All Systems are Human Systems",
@@ -357,13 +402,15 @@
       "source": "https://docs.monadical.com/s/human-systems",
       "url": "/posts/human-systems.html",
       "template": "posts/human-systems.html",
-      "authors": [{
-        "name": "Monadical",
-        "title": "-",
-        "handle": "@MonadicalSAS",
-        "url": "https://monadical.com/team.html",
-        "image": "/static/logo-blue.png"
-      }]
+      "authors": [
+        {
+          "name": "Monadical",
+          "title": "-",
+          "handle": "@MonadicalSAS",
+          "url": "https://monadical.com/team.html",
+          "image": "/static/logo-blue.png"
+        }
+      ]
     },
     "how-to-package-python-for-apt-deb": {
       "title": "Python Packaging Guide for APT/Debian",
@@ -380,13 +427,15 @@
       "source": "https://docs.monadical.com/s/python-packaging",
       "url": "/posts/how-to-package-python-for-apt-deb.html",
       "template": "posts/how-to-package-python-for-apt-deb.html",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "cobol": {
       "title": "Learning COBOL: A Journey For The Modern Programmer",
@@ -404,13 +453,15 @@
       "source": "https://docs.monadical.com/s/cobol",
       "url": "/posts/cobol.html",
       "template": "posts/cobol.html",
-      "authors": [{
-        "name": "JDC",
-        "title": "PM / Dev",
-        "handle": "@jdcaballerov",
-        "url": "",
-        "image": "/static/jdc.jpg"
-      }]
+      "authors": [
+        {
+          "name": "JDC",
+          "title": "PM / Dev",
+          "handle": "@jdcaballerov",
+          "url": "",
+          "image": "/static/jdc.jpg"
+        }
+      ]
     },
     "wireguard": {
       "title": "Some Unofficial WireGuard Documentation",
@@ -429,13 +480,15 @@
       "source": "https://docs.monadical.com/s/wireguard",
       "url": "/posts/wireguard.html",
       "template": "posts/wireguard.html",
-      "authors": [{
-        "name": "Open Source",
-        "title": "",
-        "handle": "@Github",
-        "url": "https://github.com/pirate/wireguard-docs",
-        "image": "/static/github.png"
-      }]
+      "authors": [
+        {
+          "name": "Open Source",
+          "title": "",
+          "handle": "@Github",
+          "url": "https://github.com/pirate/wireguard-docs",
+          "image": "/static/github.png"
+        }
+      ]
     },
     "5-paquetes-django": {
       "title": "Cinco Paquetes de Django Que Amamos en Monadical",
@@ -451,13 +504,15 @@
       "source": "https://docs.monadical.com/s/5-paquetes-django",
       "url": "/posts/5-paquetes-django.html",
       "template": "posts/5-paquetes-django.html",
-      "authors": [{
-        "name": "Karim",
-        "title": "Software Developer",
-        "handle": "@apkallum",
-        "url": "https://twitter.com/apkallum",
-        "image": "/static/karim.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Karim",
+          "title": "Software Developer",
+          "handle": "@apkallum",
+          "url": "https://twitter.com/apkallum",
+          "image": "/static/karim.jpg"
+        }
+      ]
     },
     "django-packages": {
       "title": "Five Django Packages We Love at Monadical",
@@ -473,13 +528,15 @@
       "source": "https://docs.monadical.com/s/django-packages",
       "url": "/posts/django-packages.html",
       "template": "posts/django-packages.html",
-      "authors": [{
-        "name": "Karim",
-        "title": "Software Developer",
-        "handle": "@apkallum",
-        "url": "https://twitter.com/apkallum",
-        "image": "/static/karim.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Karim",
+          "title": "Software Developer",
+          "handle": "@apkallum",
+          "url": "https://twitter.com/apkallum",
+          "image": "/static/karim.jpg"
+        }
+      ]
     },
     "drone-web-platform": {
       "title": "Drone Web Platform ",
@@ -491,13 +548,15 @@
       "source": "https://docs.monadical.com/s/drone-web-platform",
       "url": "/posts/drone-web-platform.html",
       "template": "posts/drone-web-platform.html",
-      "authors": [{
-        "name": "Jose Benitez",
-        "title": "Drone enthusiast & Web developer",
-        "handle": "@yojosebenitez",
-        "url": "https://twitter.com/yojosebenitez",
-        "image": "/static/jose.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Jose Benitez",
+          "title": "Drone enthusiast & Web developer",
+          "handle": "@yojosebenitez",
+          "url": "https://twitter.com/yojosebenitez",
+          "image": "/static/jose.jpg"
+        }
+      ]
     },
     "virtual-classes-in-cython": {
       "title": "Implementing C++ Virtual Functions in Cython",
@@ -515,13 +574,15 @@
       "source": "https://docs.monadical.com/s/virtual-classes-in-cython",
       "url": "/posts/virtual-classes-in-cython.html",
       "template": "posts/virtual-classes-in-cython.html",
-      "authors": [{
-        "name": "JDC",
-        "title": "PM / Dev",
-        "handle": "@jdcaballerov",
-        "url": "https://twitter.com/jdcaballerov",
-        "image": "/static/jdc.jpg"
-      }]
+      "authors": [
+        {
+          "name": "JDC",
+          "title": "PM / Dev",
+          "handle": "@jdcaballerov",
+          "url": "https://twitter.com/jdcaballerov",
+          "image": "/static/jdc.jpg"
+        }
+      ]
     },
     "a-many-linux-web-building-platform": {
       "title": "How to Make Library Distribution Easier",
@@ -539,13 +600,15 @@
       "source": "https://docs.monadical.com/s/a-many-linux-web-building-platform",
       "url": "/posts/a-many-linux-web-building-platform.html",
       "template": "posts/a-many-linux-web-building-platform.html",
-      "authors": [{
-        "name": "Angel Rey",
-        "title": "Devops, Technology and Innovation",
-        "handle": "@afreydev",
-        "url": "https://twitter.com/afreydev",
-        "image": "/static/angel.png"
-      }]
+      "authors": [
+        {
+          "name": "Angel Rey",
+          "title": "Devops, Technology and Innovation",
+          "handle": "@afreydev",
+          "url": "https://twitter.com/afreydev",
+          "image": "/static/angel.png"
+        }
+      ]
     },
     "how-to-build-a-python-library": {
       "title": "How to Build a Python Library",
@@ -563,13 +626,15 @@
       "source": "https://docs.monadical.com/s/how-to-build-a-python-library",
       "url": "/posts/how-to-build-a-python-library.html",
       "template": "posts/how-to-build-a-python-library.html",
-      "authors": [{
-        "name": "Angel Rey",
-        "title": "Devops, Technology and Innovation",
-        "handle": "@afreydev",
-        "url": "https://twitter.com/afreydev",
-        "image": "/static/angel.png"
-      }]
+      "authors": [
+        {
+          "name": "Angel Rey",
+          "title": "Devops, Technology and Innovation",
+          "handle": "@afreydev",
+          "url": "https://twitter.com/afreydev",
+          "image": "/static/angel.png"
+        }
+      ]
     },
     "oddslingers-open-source": {
       "title": "Oddslingers Open Source Announcement",
@@ -581,13 +646,15 @@
       "source": "https://docs.monadical.com/s/oddslingers-open-source",
       "url": "/posts/oddslingers-open-source.html",
       "template": "posts/oddslingers-open-source.html",
-      "authors": [{
-        "name": "Monadical",
-        "title": "-",
-        "handle": "@MonadicalSAS",
-        "url": "https://monadical.com/team.html",
-        "image": "/static/logo-black.png"
-      }]
+      "authors": [
+        {
+          "name": "Monadical",
+          "title": "-",
+          "handle": "@MonadicalSAS",
+          "url": "https://monadical.com/team.html",
+          "image": "/static/logo-black.png"
+        }
+      ]
     },
     "event-driven-architecture-1": {
       "title": "Event Diven Architecture part 1",
@@ -606,13 +673,15 @@
       "source": "https://docs.monadical.com/s/event-driven-architecture-1",
       "url": "/posts/event-driven-architecture-1.html",
       "template": "posts/event-driven-architecture-1.html",
-      "authors": [{
-        "name": "Monadical",
-        "title": "-",
-        "handle": "@MonadicalSAS",
-        "url": "https://monadical.com/team.html",
-        "image": "/static/logo-black.png"
-      }]
+      "authors": [
+        {
+          "name": "Monadical",
+          "title": "-",
+          "handle": "@MonadicalSAS",
+          "url": "https://monadical.com/team.html",
+          "image": "/static/logo-black.png"
+        }
+      ]
     },
     "set-up-ci-workflow-part-three": {
       "title": "How to Set Up a CI/CD Workflow, Part 3",
@@ -624,13 +693,15 @@
       "source": "https://docs.monadical.com/s/set-up-ci-workflow-part-three",
       "url": "/posts/set-up-ci-workflow-part-three.html",
       "template": "posts/set-up-ci-workflow-part-three.html",
-      "authors": [{
-        "name": "Cristian Vargas",
-        "title": "Software Engineer",
-        "handle": "@cdvv7788",
-        "url": "",
-        "image": "/static/cristian.png"
-      }]
+      "authors": [
+        {
+          "name": "Cristian Vargas",
+          "title": "Software Engineer",
+          "handle": "@cdvv7788",
+          "url": "",
+          "image": "/static/cristian.png"
+        }
+      ]
     },
     "why-use-orm": {
       "title": "Why should you use an ORM (Object Relational Mapper)?",
@@ -642,13 +713,15 @@
       "source": "https://docs.monadical.com/s/why-use-orm",
       "url": "/posts/why-use-orm.html",
       "template": "posts/why-use-orm.html",
-      "authors": [{
-        "name": "Karim",
-        "title": "Software Developer",
-        "handle": "@apkallum",
-        "url": "https://twitter.com/apkallum",
-        "image": "/static/karim.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Karim",
+          "title": "Software Developer",
+          "handle": "@apkallum",
+          "url": "https://twitter.com/apkallum",
+          "image": "/static/karim.jpg"
+        }
+      ]
     },
     "set-up-ci-workflow-part-two": {
       "title": "How to Set Up a CI/CD Workflow, Part Two",
@@ -660,13 +733,15 @@
       "source": "https://docs.monadical.com/s/deploying-docker-images-in-aws-using-ecs",
       "url": "/posts/set-up-ci-workflow-part-two.html",
       "template": "posts/set-up-ci-workflow-part-two.html",
-      "authors": [{
-        "name": "Cristian Vargas",
-        "title": "Backend Developer",
-        "handle": "@cdvv7788",
-        "url": "https://twitter.com/cdvv7788",
-        "image": "/static/cristian.png"
-      }]
+      "authors": [
+        {
+          "name": "Cristian Vargas",
+          "title": "Backend Developer",
+          "handle": "@cdvv7788",
+          "url": "https://twitter.com/cdvv7788",
+          "image": "/static/cristian.png"
+        }
+      ]
     },
     "jwt-login-firebase": {
       "title": "A Cheat Sheet for Using your JWT Authentication with Django ",
@@ -685,13 +760,15 @@
       "source": "https://docs.monadical.com/s/JWT-Login-Firebase",
       "url": "/posts/jwt-login-firebase.html",
       "template": "posts/jwt-login-firebase.html",
-      "authors": [{
-        "name": "JDC",
-        "title": "Dev/PM",
-        "handle": "@jdcaballerov",
-        "url": "https://twitter.com/jdcaballerov",
-        "image": "/static/jdc.jpg"
-      }]
+      "authors": [
+        {
+          "name": "JDC",
+          "title": "Dev/PM",
+          "handle": "@jdcaballerov",
+          "url": "https://twitter.com/jdcaballerov",
+          "image": "/static/jdc.jpg"
+        }
+      ]
     },
     "covid-affects-outsourcing": {
       "title": "How COVID-19 will affect Outsourcing Trends",
@@ -708,13 +785,15 @@
       "source": "https://docs.monadical.com/s/HyiE7zHUw",
       "url": "/posts/covid-affects-outsourcing.html",
       "template": "posts/covid-affects-outsourcing.html",
-      "authors": [{
-        "name": "Luka Knezic",
-        "title": "Head of Growth",
-        "handle": "@lukaknezic",
-        "url": "https://www.linkedin.com/in/lukaknezic/",
-        "image": "/static/luka.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Luka Knezic",
+          "title": "Head of Growth",
+          "handle": "@lukaknezic",
+          "url": "https://www.linkedin.com/in/lukaknezic/",
+          "image": "/static/luka.jpg"
+        }
+      ]
     },
     "from-firebase-to-django": {
       "title": "How to Migrate from Firebase to Django",
@@ -726,13 +805,15 @@
       "source": "https://docs.monadical.com/s/from-firebase-to-django",
       "url": "/posts/from-firebase-to-django.html",
       "template": "posts/from-firebase-to-django.html",
-      "authors": [{
-        "name": "Karim",
-        "title": "Software Developer",
-        "handle": "@apkallum",
-        "url": "",
-        "image": "/static/karim.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Karim",
+          "title": "Software Developer",
+          "handle": "@apkallum",
+          "url": "",
+          "image": "/static/karim.jpg"
+        }
+      ]
     },
     "drone-mapping": {
       "title": "Drone Mapping: How to Create Your Own Terrain Surface Model",
@@ -750,13 +831,15 @@
       "source": "https://docs.monadical.com/s/drone-mapping",
       "url": "/posts/drone-mapping.html",
       "template": "posts/drone-mapping.html",
-      "authors": [{
-        "name": "Jose Benitez",
-        "title": "Drone enthusiast & Web developer",
-        "handle": "@yojosebenitez",
-        "url": "https://twitter.com/yojosebenitez",
-        "image": "/static/jose.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Jose Benitez",
+          "title": "Drone enthusiast & Web developer",
+          "handle": "@yojosebenitez",
+          "url": "https://twitter.com/yojosebenitez",
+          "image": "/static/jose.jpg"
+        }
+      ]
     },
     "everyone-should-know-about-docker": {
       "title": "Why Everyone Should Know About Docker",
@@ -772,13 +855,15 @@
       "source": "https://docs.monadical.com/s/everyone-should-know-about-docker",
       "url": "/posts/everyone-should-know-about-docker.html",
       "template": "posts/everyone-should-know-about-docker.html",
-      "authors": [{
-        "name": "Angel Rey",
-        "title": "Devops, Technology and Innovation",
-        "handle": "@afreydev",
-        "url": "https://twitter.com/afreydev",
-        "image": "/static/angel.png"
-      }]
+      "authors": [
+        {
+          "name": "Angel Rey",
+          "title": "Devops, Technology and Innovation",
+          "handle": "@afreydev",
+          "url": "https://twitter.com/afreydev",
+          "image": "/static/angel.png"
+        }
+      ]
     },
     "set-up-ci-workflow": {
       "title": "How to set up a CI workflow",
@@ -795,13 +880,15 @@
       "source": "https://docs.monadical.com/s/HJCjllSEw",
       "url": "/posts/set-up-ci-workflow.html",
       "template": "posts/set-up-ci-workflow.html",
-      "authors": [{
-        "name": "Cristian Vargas",
-        "title": "Devops and automation",
-        "handle": "@cdvv",
-        "url": "https://www.linkedin.com/in/cdvv/",
-        "image": "/static/cristian.png"
-      }]
+      "authors": [
+        {
+          "name": "Cristian Vargas",
+          "title": "Devops and automation",
+          "handle": "@cdvv",
+          "url": "https://www.linkedin.com/in/cdvv/",
+          "image": "/static/cristian.png"
+        }
+      ]
     },
     "system-monitoring-tools": {
       "title": "Unix System Monitoring and Diagnostic CLI Tools",
@@ -819,13 +906,15 @@
       "source": "https://docs.monadical.com/s/system-monitoring-tools",
       "url": "/posts/system-monitoring-tools.html",
       "template": "posts/system-monitoring-tools.html",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "moving-to-linux-desktop": {
       "title": "The Year of the Linux Desktop",
@@ -846,13 +935,15 @@
       "source": "https://docs.monadical.com/s/SJagdPZ7w",
       "url": "/posts/moving-to-linux-desktop.html",
       "template": "posts/moving-to-linux-desktop.html",
-      "authors": [{
-        "name": "JDC",
-        "title": "Engineering",
-        "handle": "@jdcaballerov",
-        "url": "https://twitter.com/jdcaballerov",
-        "image": "/static/jdc.jpg"
-      }]
+      "authors": [
+        {
+          "name": "JDC",
+          "title": "Engineering",
+          "handle": "@jdcaballerov",
+          "url": "https://twitter.com/jdcaballerov",
+          "image": "/static/jdc.jpg"
+        }
+      ]
     },
     "open-source-innovation-technology": {
       "title": "Why Open Source Projects Are Key to Innovation & Technology",
@@ -868,13 +959,15 @@
       "source": "https://docs.monadical.com/s/B14vSYYzP",
       "url": "/posts/open-source-innovation-technology.html",
       "template": "posts/open-source-innovation-technology.html",
-      "authors": [{
-        "name": "Angel Rey",
-        "title": "Devops, Technology and Innovation",
-        "handle": "@afreydev",
-        "url": "https://twitter.com/afreydev",
-        "image": "/static/angel.png"
-      }]
+      "authors": [
+        {
+          "name": "Angel Rey",
+          "title": "Devops, Technology and Innovation",
+          "handle": "@afreydev",
+          "url": "https://twitter.com/afreydev",
+          "image": "/static/angel.png"
+        }
+      ]
     },
     "knowledge-in-box": {
       "title": "How to Fit All Human Knowledge in a Box",
@@ -900,13 +993,15 @@
       "source": "https://docs.monadical.com/s/SyI1vwxMw",
       "url": "/posts/knowledge-in-box.html",
       "template": "posts/knowledge-in-box.html",
-      "authors": [{
-        "name": "Tess McCrea and Juan Diego Caballero",
-        "title": "Monadical COO",
-        "handle": "@tessipedia",
-        "url": "https://twitter.com/tessipedia ",
-        "image": "/static/tess.png"
-      }]
+      "authors": [
+        {
+          "name": "Tess McCrea and Juan Diego Caballero",
+          "title": "Monadical COO",
+          "handle": "@tessipedia",
+          "url": "https://twitter.com/tessipedia ",
+          "image": "/static/tess.png"
+        }
+      ]
     },
     "principles-handbook": {
       "date": "2017-01-01",
@@ -926,12 +1021,14 @@
       "url": "/posts/principles-handbook.html",
       "template": "posts/principles-handbook.html",
       "description": "Our goal with this document is to share some of our knowledge and expertise around the process of working together as a team, in order to achieve a more efficient, happy and healthy working environment.",
-      "authors": [{
-        "name": "Max",
-        "title": "Monadical Co-Founder",
-        "url": "/team.html",
-        "image": "/static/max.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Max",
+          "title": "Monadical Co-Founder",
+          "url": "/team.html",
+          "image": "/static/max.jpg"
+        }
+      ]
     },
     "how-to-make-remote-work-part-two-zulip": {
       "date": "2020-07-08",
@@ -951,12 +1048,14 @@
       "url": "/posts/how-to-make-remote-work-part-two-zulip.html",
       "template": "posts/how-to-make-remote-work-part-two-zulip.html",
       "description": "How I've learned to be productive working from home. I'll write a second guide about how I think about remote work as a manager and the processes Monadical have put into place to make things work for us.",
-      "authors": [{
-        "name": "Max",
-        "title": "Monadical Co-Founder",
-        "url": "/team.html",
-        "image": "/static/max.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Max",
+          "title": "Monadical Co-Founder",
+          "url": "/team.html",
+          "image": "/static/max.jpg"
+        }
+      ]
     },
     "how-to-make-remote-work-part-one": {
       "date": "2020-03-18",
@@ -973,12 +1072,14 @@
       "url": "/posts/how-to-make-remote-work-part-one.html",
       "template": "posts/how-to-make-remote-work-part-one.html",
       "description": "How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.",
-      "authors": [{
-        "name": "Max McCrea",
-        "title": "Monadical Co-Founder",
-        "url": "/team.html",
-        "image": "/static/max.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Max McCrea",
+          "title": "Monadical Co-Founder",
+          "url": "/team.html",
+          "image": "/static/max.jpg"
+        }
+      ]
     },
     "using-multiple-smtpd-sender-login-maps-in-postfix": {
       "date": "2020-02-28",
@@ -996,13 +1097,15 @@
       "url": "/posts/using-multiple-smtpd-sender-login-maps-in-postfix.html",
       "template": "posts/using-multiple-smtpd-sender-login-maps-in-postfix.html",
       "description": "How we tracked down and fixed a bug caused by Postfix’s type:table using the new unionmap feature.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "python-performance-profiling": {
       "date": "2019-12-05",
@@ -1019,13 +1122,15 @@
       "url": "/posts/python-performance-profiling.html",
       "template": "posts/python-performance-profiling.html",
       "description": "Modern techniques for performance profiling & optimization of Python applications.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "anatomy-of-html-css-js": {
       "date": "2019-02-19",
@@ -1042,13 +1147,15 @@
       "url": "/posts/anatomy-of-html-css-js.html",
       "template": "posts/anatomy-of-html-css-js.html",
       "description": "A basic introduction and glossary for people learning HTML, CSS, and Javascript. Intended for people just getting started with frontend development.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "favorite-blogs": {
       "date": "2019-02-18",
@@ -1064,13 +1171,15 @@
       "url": "/posts/our-favorite-technical-blogs.html",
       "template": "posts/our-favorite-technical-blogs.html",
       "description": "A list of our favorite technical blogs by friends, prominent programmers, and other companies we follow.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "monadical-study-guide": {
       "date": "2019-02-13",
@@ -1087,13 +1196,15 @@
       "url": "/posts/monadical-study-guide.html",
       "template": "posts/monadical-study-guide.html",
       "description": "A list of documentation, resources, and example projects for potential applicants who are thinking about joining Monadical.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "avoiding-dry-for-easier-refactoring": {
       "date": "2019-01-25",
@@ -1109,13 +1220,15 @@
       "url": "/posts/avoiding-dry-for-easier-refactoring.html",
       "template": "posts/avoiding-dry-for-easier-refactoring.html",
       "description": "A short post about a particularly nice pattern for future refactorers that breaks the Don't-Repeat-Yourself principle commonly taught to beginners.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "breach-response": {
       "date": "2018-12-06",
@@ -1131,13 +1244,15 @@
       "url": "/posts/security-breach-response-guidelines.html",
       "template": "posts/security-breach-response-guidelines.html",
       "description": "What should you do if your company gets hacked? What are the things to avoid and what are the procedures to follow? We explore the whole process in this post.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "declarative-animations": {
       "date": "2018-10-31",
@@ -1153,13 +1268,15 @@
       "url": "/posts/functional-declarative-animations.html",
       "template": "posts/functional-declarative-animations.html",
       "description": "As systems get more complex, they trend towards expressing more of their complexity as data. Animations can be defined in data too.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "intro-to-opt-directory": {
       "date": "2018-09-10",
@@ -1176,13 +1293,15 @@
       "url": "/posts/intro-to-opt-directory.html",
       "template": "posts/intro-to-opt-directory.html",
       "description": "An overview of how we provision and organize code and data on servers using the UNIX /opt directory.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "django-operation-queue": {
       "date": "2018-09-05",
@@ -1198,13 +1317,15 @@
       "url": "/posts/Linearizing-database-operations-django.html",
       "template": "posts/Linearizing-database-operations-django.html",
       "description": "Everyone wants their writes strictly ordered, if we can represent a list of write operations as a data structure, that gets easier.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "company-not-ico": {
       "date": "2018-06-21",
@@ -1220,13 +1341,15 @@
       "url": "/posts/Building-a-Company-Not-an-ICO.html",
       "template": "posts/Building-a-Company-Not-an-ICO.html",
       "description": "A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical' vision goes far beyond short-term fundraising.",
-      "authors": [{
-        "name": "Jerry Feng",
-        "title": "Monadical CMO",
-        "handle": "@jerryxfeng",
-        "url": "https://twitter.com/jerryxfeng",
-        "image": "/static/jerry.png"
-      }]
+      "authors": [
+        {
+          "name": "Jerry Feng",
+          "title": "Monadical CMO",
+          "handle": "@jerryxfeng",
+          "url": "https://twitter.com/jerryxfeng",
+          "image": "/static/jerry.png"
+        }
+      ]
     },
     "poker-networks": {
       "date": "2018-06-05",
@@ -1242,13 +1365,15 @@
       "url": "/posts/Review-of-Online-Poker-Networks.html",
       "template": "posts/Review-of-Online-Poker-Networks.html",
       "description": "An overview of the all the current online Poker networks as of 2018, with pros and cons for each and a summary of features.",
-      "authors": [{
-        "name": "Jerry Feng",
-        "title": "Monadical CMO",
-        "handle": "@jerryxfeng",
-        "url": "https://twitter.com/jerryxfeng",
-        "image": "/static/jerry.png"
-      }]
+      "authors": [
+        {
+          "name": "Jerry Feng",
+          "title": "Monadical CMO",
+          "handle": "@jerryxfeng",
+          "url": "https://twitter.com/jerryxfeng",
+          "image": "/static/jerry.png"
+        }
+      ]
     },
     "atomic": {
       "date": "2018-04-20",
@@ -1264,13 +1389,15 @@
       "url": "/posts/Designing-A-Banking-System.html",
       "template": "posts/Designing-A-Banking-System.html",
       "description": "Design strategies and common pitfalls that come into play when designing a banking service to handle concurrent transactions in a distributed environment.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "trustless": {
       "date": "2018-01-29",
@@ -1286,13 +1413,15 @@
       "template": "posts/Trustless-is-A-Myth.html",
       "source": "https://docs.monadical.com/s/SyBidc_hG",
       "description": "The word “trustless” implies that trust has been removed from the system altogether. But in reality, systems like Bitcoin require plenty of trust, it's just less obvious.",
-      "authors": [{
-        "name": "Max",
-        "title": "Monadical Co-Founder",
-        "handle": "@MonadicalSAS",
-        "url": "https://twitter.com/@MonadicalSAS",
-        "image": "/static/logo-black.png"
-      }]
+      "authors": [
+        {
+          "name": "Max",
+          "title": "Monadical Co-Founder",
+          "handle": "@MonadicalSAS",
+          "url": "https://twitter.com/@MonadicalSAS",
+          "image": "/static/logo-black.png"
+        }
+      ]
     },
     "full-stack-dev-checklist": {
       "date": "2017-08-25",
@@ -1307,13 +1436,15 @@
       "url": "/posts/full-stack-developer-checklist.html",
       "template": "posts/full-stack-developer-checklist.html",
       "description": "A checklist of things for full-stack developers to strive to learn, spanning everything front frontend, to backend, to native development and devops.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "redux": {
       "date": "2017-07-27",
@@ -1330,13 +1461,15 @@
       "url": "/posts/Using-Redux-As-A-Database.html",
       "template": "posts/Using-Redux-As-A-Database.html",
       "description": "Storing data in a normalized form allows us to calculate fast indexes for lookups.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "segwit": {
       "date": "2017-06-24",
@@ -1351,13 +1484,15 @@
       "url": "/posts/Segwit-and-the-Lightning-Network.html",
       "template": "posts/Segwit-and-the-Lightning-Network.html",
       "description": "Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.",
-      "authors": [{
-        "name": "Max",
-        "title": "Monadical Co-Founder",
-        "handle": "@MonadicalSAS",
-        "url": "https://twitter.com/@MonadicalSAS",
-        "image": "/static/logo-black.png"
-      }]
+      "authors": [
+        {
+          "name": "Max",
+          "title": "Monadical Co-Founder",
+          "handle": "@MonadicalSAS",
+          "url": "https://twitter.com/@MonadicalSAS",
+          "image": "/static/logo-black.png"
+        }
+      ]
     },
     "reconciling": {
       "date": "2017-03-02",
@@ -1374,13 +1509,15 @@
       "url": "/posts/Reconciling-Templates-With-Components.html",
       "template": "posts/Reconciling-Templates-With-Components.html",
       "description": "The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "concurrent": {
       "date": "2016-08-03",
@@ -1397,13 +1534,15 @@
       "url": "/posts/Django-Concurrent-Write-Safety.html",
       "template": "posts/Django-Concurrent-Write-Safety.html",
       "description": "When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "reduxsharing": {
       "date": "2016-02-18",
@@ -1420,13 +1559,15 @@
       "url": "/posts/Sharing-State-Between-Redux-Reducers.html",
       "template": "posts/Sharing-State-Between-Redux-Reducers.html",
       "description": "When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "map-of-cs": {
       "date": "2016-05-26",
@@ -1441,13 +1582,15 @@
       "url": "/posts/map-of-cs-subfields.html",
       "template": "posts/map-of-cs-subfields.html",
       "description": "A map of all the subfields encompassed by computer science, with job titles commonly used to hire people in those areas.",
-      "authors": [{
-        "name": "Nick Sweeting",
-        "title": "Monadical Co-Founder",
-        "handle": "@theSquashSH",
-        "url": "https://twitter.com/theSquashSH",
-        "image": "/static/nick.jpg"
-      }]
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Monadical Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
     },
     "downswings": {
       "date": "2009-02-23",
@@ -1462,13 +1605,15 @@
       "url": "/posts/Downswings-and-the-Information-Game.html",
       "template": "posts/Downswings-and-the-Information-Game.html",
       "description": "I often hear players say, “I hate that site. It’s completely rigged. I can never win there.” Perhaps those players simply ran bad at first on that site...",
-      "authors": [{
-        "name": "cowpig",
-        "title": "barnyard abomination",
-        "handle": "@cowpig",
-        "url": "https://oddslingers.com",
-        "image": "/static/oddslingers-open-source.png"
-      }]
+      "authors": [
+        {
+          "name": "cowpig",
+          "title": "barnyard abomination",
+          "handle": "@cowpig",
+          "url": "https://oddslingers.com",
+          "image": "/static/oddslingers-open-source.png"
+        }
+      ]
     }
   },
   "SOCIAL": {

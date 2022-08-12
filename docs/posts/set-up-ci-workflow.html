@@ -2,9 +2,25 @@
 <html lang="en">
 
 <head>
+
+    <title>How to set up a CI workflow | Monadical Consulting</title>
+
+    <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to set up a CI workflow | Monadical Consulting</title>
+    <meta property="og:title" content="How to set up a CI workflow | Monadical Consulting">
+    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
+    <meta property="og:description"
+        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta property="og:type" content="website">
+
+    <meta property="twitter:title" content="How to set up a CI workflow | Monadical Consulting">
+    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+    <meta property="twitter:description"
+        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta name="twitter:site" content="@MonadicalHQ">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Meta Tags End -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
@@ -22,7 +38,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
     <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+
+
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -312,7 +331,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Nov 03 2020 13:31:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2697 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2707 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -605,7 +624,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="21424e4f4748465453440c4056520c42534445444f5548404d52615710">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="27444849414e405255420a4650540a445542434249534e464b54675116">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -613,7 +632,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5d4d8d4cfdadb98d0d6c798d9dad2dcdbf5c384">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52333f33283d3c7f3731207f3e3d353b3c122463">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -640,10 +659,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d2d9d4d2dadec4c5f1c783">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0d3d8d5d3dbdfc5c4f0c682">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a2aeafa7a8a6b4b3a4eca0b6b2eca2b3a4a5a4afb5a8a0adb281b7f0">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b7d4d8d9d1ded0c2c5d29ad6c0c49ad4c5d2d3d2d9c3ded6dbc4f7c186">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -651,7 +670,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="accdc1cdd6c3c281c9cfde81c0c3cbc5c2ecda9d">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afcec2ced5c0c182caccdd82c3c0c8c6c1efd99e">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:
@@ -1190,7 +1209,7 @@ Monadical.com | Full-Stack Consultancy
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
             let reference = this.getAttribute('href')
-            if (reference.match(/^#[0-9]+/)){
+            if (reference.match(/^#[0-9]+/)) {
                 reference = getUnicodeHash(reference)
             }
             document.querySelector(reference).scrollIntoView({
@@ -1231,11 +1250,11 @@ Monadical.com | Full-Stack Consultancy
         })();
     </script>
     <!-- End Matomo Code -->
-    
+
     <!-- Highlight Code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
-    <!-- End Highlight Code -->  
+    <!-- End Highlight Code -->
 </body>
 
 </html>

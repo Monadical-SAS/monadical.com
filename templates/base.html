@@ -2,9 +2,25 @@
 <html lang="en">
 
 <head>
+
+    <title>{% block title %}Home{% endblock %} | {{SITE_TITLE}}</title>
+
+    <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Home{% endblock %} | {{SITE_TITLE}}</title>
+    <meta property="og:title" content="{{ self.title() }} | {{SITE_TITLE}}">
+    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
+    <meta property="og:description"
+        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta property="og:type" content="website">
+
+    <meta property="twitter:title" content="{{ self.title() }} | {{SITE_TITLE}}">
+    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+    <meta property="twitter:description"
+        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta name="twitter:site" content="@MonadicalHQ">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Meta Tags End -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
@@ -22,7 +38,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
     <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+
+
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -77,9 +96,8 @@
                             <a class="disabled-link" style="margin: 5px;" href="{{PAGES['yak'].url}}">Eng<a> |
                                     <a style="margin: 5px;" href="{{ PAGES['jasette'].url }}">Fr</a>
                         </span>
-                        <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc" 
-                            onclick="_paq.push(['trackEvent', 'Lightning Yark Form', 'Clicked']);"
-                        >
+                        <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc"
+                            onclick="_paq.push(['trackEvent', 'Lightning Yark Form', 'Clicked']);">
                             APPLY
                         </a>
                         {% elif title == "Jasette Éclair" %}
@@ -89,8 +107,7 @@
                                         href="{{ PAGES['jasette'].url }}">Fr</a>
                         </span>
                         <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc"
-                            onclick="_paq.push(['trackEvent', 'Jasette Éclair Form', 'Clicked']);"
-                        >
+                            onclick="_paq.push(['trackEvent', 'Jasette Éclair Form', 'Clicked']);">
                             APPLY
                         </a>
                         {% else %}
@@ -246,7 +263,7 @@
             e.stopPropagation();
             console.log('Scrolling to', this.getAttribute('href'))
             let reference = this.getAttribute('href')
-            if (reference.match(/^#[0-9]+/)){
+            if (reference.match(/^#[0-9]+/)) {
                 reference = getUnicodeHash(reference)
             }
             document.querySelector(reference).scrollIntoView({
@@ -287,11 +304,11 @@
         })();
     </script>
     <!-- End Matomo Code -->
-    
+
     <!-- Highlight Code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
-    <!-- End Highlight Code -->  
+    <!-- End Highlight Code -->
 </body>
 
 </html>

@@ -338,9 +338,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="joyce"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:39:10 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:52:02 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">29 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">39 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -369,7 +369,7 @@ _Written by [Joyce Obi](https://github.com/Joyce-O). Originally published 2022-0
 - _Flask_ 2
 
 
-### The problem
+## The problem
 
 Let’s start off with the problem that led to this. I was tasked with implementing a module that handles logging with Elasticsearch. One main requirement of this module is that it should work asynchronously, that is, in a non-blocking way that allows other functions to run as well.
 
@@ -439,7 +439,7 @@ Part of the confusion with async/await in these different languages, and somethi
 
 Let’s look more closely at how those keywords are used in each language.
 
-**Async/await keywords in Python**
+## Async/await keywords in Python
 
 Async/await keywords were added in Python 3.5 and `coroutines` are at the heart of them. To put it simply, a `coroutine` is a specialized version of a Python generator function, and can pause and resume its own execution.
 
@@ -473,7 +473,7 @@ Note that in this example we use asyncio ==sleep()== to mimic an I/O call.
 It is also worth noting that when the `async` keyword is used to define a function in Python, the resulting coroutine is referred to as a native coroutine. This is because there is also another type of coroutine called the generator-based coroutine. The generator-based coroutine is beyond the scope of this article, so we won’t cover it here; If you want extra information on this, check out this [article](https://www.integralist.co.uk/posts/python-generators/), I think it provides a good comparison of the two. 
 
 
-**Async/await keywords in JavaScript**
+## Async/await keywords in JavaScript
 
 Now let’s contrast this to the keywords in JavaScript. Here the async/await keywords enable asynchronous, promise-based behavior.
 
@@ -508,7 +508,7 @@ async function read_data(db) {
     …
 }
 ```
-**Similarities and differences between JS and Python**
+## Similarities and differences between JS and Python
 
 
 I’ve shown you how the keywords are used in each language, now let’s dive a little deeper into the similarities and differences in how to implement async/await.
@@ -536,7 +536,7 @@ In JavaScript you can almost think of the asynchronous execution of the code whe
 + To execute an `async` function in Python, you need a runner function, which is a special synchronous function that executes an asynchronous function, in asyncio it is asyncio run()
 + In contrast, in JavaScript we make use of the `then` keyword to grab the result because async functions always return a promise.
 
-**Wait, what happened to my RuntimeError?**
+## Wait, what happened to my RuntimeError?
 
 I actually ended up not resolving the RuntimeError that drew me in to explore async/await concept in Python due to array of reasons, some of which include: 
 - Flask – the Python framework used in the application is not ASGI compatible by default, which is what Elasticsearch Async is based on (this [article](https://sethmlarson.dev/blog/flask-async-views-and-async-globals))

@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="joyce"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 04:46:36 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 05:02:13 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">15 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -84,7 +84,7 @@ Let’s start off with the problem that led to this. I was tasked with implement
 
 Using Elasticsearch asynchronously in Python is as basic as following this example in their documentation, assuming you’ve already sent some data to Elasticsearch.
 
-```python-repl=
+```python=
     import asyncio
     from elasticsearch import AsyncElasticsearch
     
@@ -124,7 +124,7 @@ But why is that line included in the first place? And where else in the applicat
 #### How does it look in JavaScript?
 
 For comparison, if we move over to JavaScript, to accomplish a similar task as above, also using the example from Elasticsearch documentation, we have this:
-```python-repl=
+```python=
 
     const client = require(&#39;elasticsearch&#39;).Client()
     
@@ -155,7 +155,7 @@ Async/await keywords were added in Python 3.5 and `coroutines` are at the heart 
 
 Here’s an example `coroutine` function:
 
-```python-repl=
+```python=
 import asyncio
 
 async def make_api_call(name, time_out):

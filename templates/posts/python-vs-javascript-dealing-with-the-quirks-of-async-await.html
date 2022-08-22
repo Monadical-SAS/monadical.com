@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.">
+    
+    
+    
+    <meta property="og:title" content="Python vs Javascript Dealing with the quirks of async await - HedgeDoc">
+    
+    
+    <meta property="og:description" content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Python vs Javascript Dealing with the quirks of async await - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="joyce"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 04:46:36 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+# Python vs Javascript: Dealing with the quirks of async/await
+    
+_Written by [Joyce Obi](https://github.com/Joyce-O). Originally published 2022-08-22 on the [Monadical blog](https://monadical.com/blog.html)_.
+
+&lt;big&gt;
+
+**As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.**
+---
+&lt;/big&gt;
+
+![Coding and programming app in laptop for web vector image](https://docs.monadical.com/uploads/e05804fe-c9ca-4ec2-bb9f-e2e58f77330f.png) [Credit: ZinetroN](https://www.vectorstock.com/royalty-free-vectors/vectors-by_ZinetroN)
+
+***Tech stack:***
+- _Python 3.6_
+- _Flask_ 2
+
+
+### The problem
+
+Let’s start off with the problem that led to this. I was tasked with implementing a module that handles logging with Elasticsearch. One main requirement of this module is that it should work asynchronously, that is, in a non-blocking way that allows other functions to run as well.
+
+Using Elasticsearch asynchronously in Python is as basic as following this example in their documentation, assuming you’ve already sent some data to Elasticsearch.
+
+```python-repl=
+    import asyncio
+    from elasticsearch import AsyncElasticsearch
+    
+    es = AsynchElasticsearch
+    
+    async def main():
+        resp = await es.search(
+            index=&#34;documents&#34;,
+            body={&#34;query&#34;: {&#34;match_all&#34;: {}}},
+            size=20,
+            )
+        print(resp)
+        
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+```
+##### This example has three main steps:
++ Import the AsyncElasticsearch class
++ Create an asynchronous main function that calls the Elasticsearch search method
++ The event loop part:
+    - Get a running event_loop
+    - Call asyncio run_until_complete method to execute the asynchronous function
+
+
+Aside from the last step being quite different from the way you would run a typical `async` function in JavaScript, I was hit by a _RuntimeError_ once I tried to run the above code:
+
+`RuntimeError: This event loop is already running`
+
+
+Wait what? Oh yes! This must be because of this line 
+
+`loop = asyncio.get_event_loop()`
+
+
+But why is that line included in the first place? And where else in the application is that method being called?
+
+#### How does it look in JavaScript?
+
+For comparison, if we move over to JavaScript, to accomplish a similar task as above, also using the example from Elasticsearch documentation, we have this:
+```python-repl=
+
+    const client = require(&#39;elasticsearch&#39;).Client()
+    
+    async function run(){
+    ...
+        const result = await client.search({
+        index: &#39;game-of-thrones&#39;,
+        query: {
+         match: {
+         quote: &#39;winter&#39;
+         }
+        }
+        })
+        console.log(result.hits.hits)
+    }
+    
+    run().catch(console.log)
+ ```
+Similar steps, but without the call to an event_loop (🤔), and definitely without the error.
+
+Part of the confusion with async/await in these different languages, and something to be aware of, is that they use the same keywords/syntax in a slightly different way to accomplish the same thing. 
+
+Let’s look more closely at how those keywords are used in each language.
+
+**Async/await keywords in Python**
+
+Async/await keywords were added in Python 3.5 and `coroutines` are at the heart of them. To put it simply, a `coroutine` is a specialized version of a Python generator function, and can pause and resume its own execution.
+
+Here’s an example `coroutine` function:
+
+```python-repl=
+import asyncio
+
+async def make_api_call(name, time_out):
+  print(f&#34;API {name} has started... &#34;)
+  await asyncio.sleep(time_out)
+  print(f&#34;API {name} is done!&#34;)
+
+async def main():
+  await asyncio.gather(make_api_call(&#34;A&#34;, 5), make_api_call(&#34;B&#34;, 3))
+
+asyncio.run(main())
+```
+Expected output:
+```
+API A has started… 
+API B has started… 
+API B is done!
+API A is done!
+```
+
+From the example above, we can see that ==API A== starts and continues in the background while ==API B== starts. By the way, ==asyncio.run()== performs the same function as the ==run_until_complete(main())== method we saw earlier.
+
+Note that in this example we use asyncio ==sleep()== to mimic an I/O call.
+
+It is also worth noting that when the `async` keyword is used to define a function in Python, the resulting coroutine is referred to as a native coroutine. This is because there is also another type of coroutine called the generator-based coroutine. The generator-based coroutine is beyond the scope of this article, so we won’t cover it here; If you want extra information on this, check out this [article](https://www.integralist.co.uk/posts/python-generators/), I think it provides a good comparison of the two. 
+
+
+**Async/await keywords in JavaScript**
+
+Now let’s contrast this to the keywords in JavaScript. Here the async/await keywords enable asynchronous, promise-based behavior.
+
+A `promise` in JavaScript is simply a proxy for a value not yet known at the time of function execution. Similar to the `future` (This represents an eventual result of an asynchronous operation) concept in Python, it allows functions to return values like synchronous functions. 
+A typical way to create a `promise`:
+```javascript=101
+const itsRaining = true;
+
+const whatSaysTheWeather = new Promise((resolve, reject) =&gt; {
+if(itsRaining) {
+   resolve(&#34;Get the umbrella out&#34;);
+ } else {
+  reject(&#34;We have less items to worry about&#34;)
+}
+})
+
+console.log(whatSaysTheWeather);
+```
+Expected output:
+```
+Promise { &#39;Get the umbrella out&#39; }
+```
+
+As the above example shows, we have a `resolve` state and a `reject` state, plus a third one called the `pending` state where the result of the function call is not yet rejected or resolved. Until the function is rejected or resolved, you can continue executing other parts of your code with the hope that you would get feedback once this function is done.
+
+Async/await functions use `promise` behind the scenes, with the added benefit of having a more readable syntax.
+
+This is the basic syntax of a function created using the `async/await` keyword in JavaScript:
+```javascript=101
+async function read_data(db){
+    const data = await db.fetch(&#39;SELECT ...&#39;)
+    …
+}
+```
+**Similarities and differences between JS and Python**
+
+
+I’ve shown you how the keywords are used in each language, now let’s dive a little deeper into the similarities and differences in how to implement async/await.
+
+#### Similarities include:
++ You cannot use the `await` keyword outside an `async` function.
++ They both operate within the concept of promises or futures as it is known in the Python world. These functions can be paused or suspended and resumed when you want. 
+
+However, the `event loop` – a design pattern that waits for and dispatches events in a program – is handled differently in both languages. For starters, JavaScript has an event loop built in natively, Python does not, this subsequently informs how the asynchronous functions are executed.
+
+In JavaScript (NodeJs), the event loop starts when the application is executed and continuously checks the call stack to see if there’s any function that needs to run.
+
+In contrast, in Python, applications with `async/await` functions cannot execute without an event loop that is &#34;running&#34;. Hence why this part 
+`loop = asyncio.get_event_loop()`
+`loop.run_until_complete(main())`
+
+was necessary. This is the part that executes the `async` function and returns the value returned by the function you passed to it. 
+
+The tricky thing with event loop in Python is that most Python libraries were not written for this paradigm. That is, functions in libraries do not await I/O bound tasks, that means they don&#39;t yield control and therefore block the event loop. That’s what makes it so easy to end up blocking the event loop.
+In JavaScript you can almost think of the asynchronous execution of the code where awaits are like &#34;stop here to continue sequentially later when result is available&#34; while in Python it is like &#34;you are yielding control of the event loop until result is available&#34;.
+
+
+#### Other differences you may or may not have spotted:
++ To use the `async` keyword in Python, you have to import asyncio – a built-in Python module used to write concurrent, asynchronous code.
++ To execute an `async` function in Python, you need a runner function, which is a special synchronous function that executes an asynchronous function, in asyncio it is asyncio run()
++ In contrast, in JavaScript we make use of the `then` keyword to grab the result because async functions always return a promise.
+
+**Wait, what happened to my RuntimeError?**
+
+I actually ended up not resolving the RuntimeError that drew me in to explore async/await concept in Python due to array of reasons, some of which include: 
+- Flask – the Python framework used in the application is not ASGI compatible by default, which is what Elasticsearch Async is based on (this [article](https://sethmlarson.dev/blog/flask-async-views-and-async-globals))
+- The application runs on Python 3.6 which in itself meant we couldn&#39;t access some of the newer asyncio methods. 
+
+After a long deliberation with our team we decided to go with the normal Elasticsearch client and use Threading to achieve the intended behavior. If you want to know the difference between using async/await and threading, I recommend this [article](https://itnext.io/practical-guide-to-async-threading-multiprocessing-958e57d7bbb8).
+
+An alternative solution would be to use one of the many ASGI frameworks, assuming you’re starting from scratch, like [Sanic](https://sanic.readthedocs.io/en/stable/). Sanic is ASGI compliant and makes it easy to deal with Async in Python.
+
+**Conclusion**
+---
+
+JavaScript async/await is more straightforward and doesn’t expect you to explicitly manage the event loop. On the other hand, asyncio, the module that implements `async/await` keywords, requires you to have a running event loop in order to execute an `async` function.
+
+As I mentioned, I didn’t end up using the AsyncElasticsearch class but, nonetheless, figuring out how async/await works in Python was an interesting experiment. I hope you learned something too!
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.9f564b46f420cdda1117.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.04e0fea40de4509528e6.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.193d3c6702f23213ab74.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.4b618d4509e3f267eadc.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.a20af8953d27ed2de725.js" defer="defer"></script>
+
+

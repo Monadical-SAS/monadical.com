@@ -338,26 +338,31 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="joyce"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 05:02:13 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:39:10 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">15 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">29 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 
-# Python vs Javascript: Dealing with the quirks of async/await
+&lt;center&gt;
     
-_Written by [Joyce Obi](https://github.com/Joyce-O). Originally published 2022-08-22 on the [Monadical blog](https://monadical.com/blog.html)_.
+# Python vs Javascript: Dealing with the quirks of   async/await
 
 &lt;big&gt;
-
+    
 **As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.**
----
+
 &lt;/big&gt;
+    
+        
+_Written by [Joyce Obi](https://github.com/Joyce-O). Originally published 2022-08-22 on the [Monadical blog](https://monadical.com/blog.html)_.
 
 ![Coding and programming app in laptop for web vector image](https://docs.monadical.com/uploads/e05804fe-c9ca-4ec2-bb9f-e2e58f77330f.png) [Credit: ZinetroN](https://www.vectorstock.com/royalty-free-vectors/vectors-by_ZinetroN)
+    
+&lt;/center&gt;
 
 ***Tech stack:***
 - _Python 3.6_
@@ -371,19 +376,19 @@ Let’s start off with the problem that led to this. I was tasked with implement
 Using Elasticsearch asynchronously in Python is as basic as following this example in their documentation, assuming you’ve already sent some data to Elasticsearch.
 
 ```python
-    import asyncio
-    from elasticsearch import AsyncElasticsearch
-    
-    es = AsynchElasticsearch
-    
-    async def main():
-        resp = await es.search(
-            index=&#34;documents&#34;,
-            body={&#34;query&#34;: {&#34;match_all&#34;: {}}},
-            size=20,
-            )
-        print(resp)
-        
+import asyncio
+from elasticsearch import AsyncElasticsearch
+
+es = AsynchElasticsearch
+
+async def main():
+    resp = await es.search(
+        index=&#34;documents&#34;,
+        body={&#34;query&#34;: {&#34;match_all&#34;: {}}},
+        size=20,
+    )
+    print(resp)
+
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
 ```
@@ -411,23 +416,22 @@ But why is that line included in the first place? And where else in the applicat
 
 For comparison, if we move over to JavaScript, to accomplish a similar task as above, also using the example from Elasticsearch documentation, we have this:
 ```python
+const client = require(&#39;elasticsearch&#39;).Client()
 
-    const client = require(&#39;elasticsearch&#39;).Client()
-    
-    async function run(){
+async function run() {
     ...
-        const result = await client.search({
+    const result = await client.search({
         index: &#39;game-of-thrones&#39;,
         query: {
-         match: {
-         quote: &#39;winter&#39;
-         }
+            match: {
+                quote: &#39;winter&#39;
+            }
         }
-        })
-        console.log(result.hits.hits)
-    }
-    
-    run().catch(console.log)
+    })
+    console.log(result.hits.hits)
+}
+
+run().catch(console.log)
  ```
 Similar steps, but without the call to an event_loop (🤔), and definitely without the error.
 
@@ -445,12 +449,12 @@ Here’s an example `coroutine` function:
 import asyncio
 
 async def make_api_call(name, time_out):
-  print(f&#34;API {name} has started... &#34;)
-  await asyncio.sleep(time_out)
-  print(f&#34;API {name} is done!&#34;)
+    print(f&#34;API {name} has started... &#34;)
+    await asyncio.sleep(time_out)
+    print(f&#34;API {name} is done!&#34;)
 
 async def main():
-  await asyncio.gather(make_api_call(&#34;A&#34;, 5), make_api_call(&#34;B&#34;, 3))
+    await asyncio.gather(make_api_call(&#34;A&#34;, 5), make_api_call(&#34;B&#34;, 3))
 
 asyncio.run(main())
 ```
@@ -476,17 +480,17 @@ Now let’s contrast this to the keywords in JavaScript. Here the async/await ke
 A `promise` in JavaScript is simply a proxy for a value not yet known at the time of function execution. Similar to the `future` (This represents an eventual result of an asynchronous operation) concept in Python, it allows functions to return values like synchronous functions. 
 A typical way to create a `promise`:
 ```javascript101
-const itsRaining = true;
+const itsRaining = true
 
 const whatSaysTheWeather = new Promise((resolve, reject) =&gt; {
-if(itsRaining) {
-   resolve(&#34;Get the umbrella out&#34;);
- } else {
-  reject(&#34;We have less items to worry about&#34;)
-}
+    if (itsRaining) {
+        resolve(&#34;Get the umbrella out&#34;);
+    } else {
+        reject(&#34;We have less items to worry about&#34;)
+    }
 })
 
-console.log(whatSaysTheWeather);
+console.log(whatSaysTheWeather)
 ```
 Expected output:
 ```
@@ -499,7 +503,7 @@ Async/await functions use `promise` behind the scenes, with the added benefit of
 
 This is the basic syntax of a function created using the `async/await` keyword in JavaScript:
 ```javascript101
-async function read_data(db){
+async function read_data(db) {
     const data = await db.fetch(&#39;SELECT ...&#39;)
     …
 }

@@ -3,28 +3,29 @@
 
 <head>
 
-    <title>{% block title %}Home{% endblock %} | {{SITE_TITLE}}</title>
+    <title>{% block title %}Title{% endblock %}</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="{{ self.title() }} | {{SITE_TITLE}}">
+    <meta name="title" content="{{ self.title() }}">
     <meta name="description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+        content="{% block description %}{{description}}{{SITE_DESCRIPTION}}{% endblock %}">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
-    <meta property="og:title" content="{{ self.title() }} | {{SITE_TITLE}}">
-    <meta property="og:type" content="website">
+        content="{{ self.description() or SITE_DESCRIPTION }}">
+    <meta property="og:image" name="image" content="{% block img %}{{img}}{{SITE_IMG}}{% endblock %}">
+    <meta property="og:title" content="{{ self.title() }}">
+    <meta property="og:type" content="{% block type %}{{type}}{{SITE_TYPE}}{% endblock %}">
     <meta property="og:url" content=https://{{SITE_DOMAIN}}{{request.path}} />
+    <meta property="og:site_name" content="{{SITE_TITLE}}" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+        content="{{ self.description() or SITE_DESCRIPTION }}">
+    <meta property="twitter:image" content="{{ self.img() or SITE_IMG }}">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="{{ self.title() }} | {{SITE_TITLE}}">
+    <meta property="twitter:title" content="{{ self.title() }}">
     <meta property="twitter:url" content=https://{{SITE_DOMAIN}}{{request.path}} />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">

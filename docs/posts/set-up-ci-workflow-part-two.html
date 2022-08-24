@@ -3,28 +3,29 @@
 
 <head>
 
-    <title>How to Set Up a CI/CD Workflow, Part Two | Monadical Consulting</title>
+    <title>How to Set Up a CI/CD Workflow, Part Two</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="How to Set Up a CI/CD Workflow, Part Two | Monadical Consulting">
+    <meta name="title" content="How to Set Up a CI/CD Workflow, Part Two">
     <meta name="description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+        content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
-    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two | Monadical Consulting">
-    <meta property="og:type" content="website">
+        content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/set-up-ci-workflow-part-two.png?v=2">
+    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two">
+    <meta property="og:type" content="article">
     <meta property="og:url" content=https://monadical.com/posts/set-up-ci-workflow-part-two.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+        content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.">
+    <meta property="twitter:image" content="https://monadical.com/static/set-up-ci-workflow-part-two.png?v=2">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="How to Set Up a CI/CD Workflow, Part Two | Monadical Consulting">
+    <meta property="twitter:title" content="How to Set Up a CI/CD Workflow, Part Two">
     <meta property="twitter:url" content=https://monadical.com/posts/set-up-ci-workflow-part-two.html />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -64,24 +65,8 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline." />
 
-<!-- Required Open Graph data -->
-<meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/set-up-ci-workflow-part-two.png?v=2" />
-<meta property="og:url" content="https://monadical.com/posts/set-up-ci-workflow-part-two.html" />
-<!-- Optional Open Graph data -->
-<meta property="og:description" content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline." />
-<meta property="og:site_name" content="Monadical Consulting" />
-<meta property="og:locale" content="en_US" />
-<!-- Find additional markup on https://ogp.me -->
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@MonadicalHQ">
-<meta name="twitter:title" content="How to Set Up a CI/CD Workflow, Part Two">
-<meta name="twitter:description" content="In a previous article, I explained how to set up a pipeline to send images from GitHub to AWS ECR. In this article, I will focus on implementing the missing steps required for a fully functional CD pipeline.">
-<meta name="twitter:image" content="https://monadical.com/static/set-up-ci-workflow-part-two.png?v=2">
+
 
 </head>
 
@@ -338,7 +323,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Oct 30 2020 13:48:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Dec 16 2020 21:57:10 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1619 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1620 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>

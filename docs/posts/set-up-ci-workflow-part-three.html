@@ -3,28 +3,29 @@
 
 <head>
 
-    <title>How to Set Up a CI/CD Workflow, Part 3 | Monadical Consulting</title>
+    <title>How to Set Up a CI/CD Workflow, Part 3</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="How to Set Up a CI/CD Workflow, Part 3 | Monadical Consulting">
+    <meta name="title" content="How to Set Up a CI/CD Workflow, Part 3">
     <meta name="description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+        content="CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
-    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part 3 | Monadical Consulting">
-    <meta property="og:type" content="website">
+        content="CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS">
+    <meta property="og:image" name="image" content="https://monadical.com/static/set-up-ci-workflow-part-three.png?v=2">
+    <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part 3">
+    <meta property="og:type" content="article">
     <meta property="og:url" content=https://monadical.com/posts/set-up-ci-workflow-part-three.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+        content="CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS">
+    <meta property="twitter:image" content="https://monadical.com/static/set-up-ci-workflow-part-three.png?v=2">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="How to Set Up a CI/CD Workflow, Part 3 | Monadical Consulting">
+    <meta property="twitter:title" content="How to Set Up a CI/CD Workflow, Part 3">
     <meta property="twitter:url" content=https://monadical.com/posts/set-up-ci-workflow-part-three.html />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -64,24 +65,8 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS" />
 
-<!-- Required Open Graph data -->
-<meta property="og:title" content="How to Set Up a CI/CD Workflow, Part 3" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/set-up-ci-workflow-part-three.png?v=2" />
-<meta property="og:url" content="https://monadical.com/posts/set-up-ci-workflow-part-three.html" />
-<!-- Optional Open Graph data -->
-<meta property="og:description" content="CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS" />
-<meta property="og:site_name" content="Monadical Consulting" />
-<meta property="og:locale" content="en_US" />
-<!-- Find additional markup on https://ogp.me -->
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@MonadicalHQ">
-<meta name="twitter:title" content="How to Set Up a CI/CD Workflow, Part 3">
-<meta name="twitter:description" content="CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS">
-<meta name="twitter:image" content="https://monadical.com/static/set-up-ci-workflow-part-three.png?v=2">
+
 
 </head>
 
@@ -338,7 +323,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 15 2020 19:17:12 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 15 2020 21:37:16 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1253 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1254 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -382,9 +367,9 @@ jobs:
     name: Run the tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8bbb0bdbbb3b7adac98aeea">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="57343f32343c382223172165">[email&#160;protected]</a>
       - name: Install Python 3
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5320362726237e232a273b3c3d132562">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4635233233366b363f322e2928063077">[email&#160;protected]</a>
         with:
           python-version: 3.6
       - name: Install dependencies
@@ -411,9 +396,9 @@ lint:
     name: Run linter for dockerfile (Hadolint)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="10737875737b7f6564506622">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="34575c51575f5b4140744206">[email&#160;protected]</a>
       - name: Hadolint linting
-        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2840494c474441465c05494b5c4147466845495b5c4d5a">[email&#160;protected]</a>
+        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5ddd4d1dad9dcdbc198d4d6c1dcdadbf5d8d4c6c1d0c7">[email&#160;protected]</a>
 
 ```
 
@@ -440,9 +425,9 @@ jobs:
     name: Run the tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="583b303d3b33372d2c182e6a">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92f1faf7f1f9fde7e6d2e4a0">[email&#160;protected]</a>
       - name: Install Python 3
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e09385949590cd909994888f8ea096d1">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbc8decfcecb96cbc2cfd3d4d5fbcd8a">[email&#160;protected]</a>
         with:
           python-version: 3.6
       - name: Install dependencies
@@ -456,9 +441,9 @@ jobs:
     name: Run linter for dockerfile(Hadolint)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1e15181e161208093d0b4f">[email&#160;protected]</a>
+      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be8e3eee8e0e4feffcbfdb9">[email&#160;protected]</a>
       - name: Hadolint linting
-        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5bdb4b1bab9bcbba1f8b4b6a1bcbabb95b8b4a6a1b0a7">[email&#160;protected]</a>
+        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f8f1f4fffcf9fee4bdf1f3e4f9fffed0fdf1e3e4f5e2">[email&#160;protected]</a>
 
   build-push:
     name: Build and push
@@ -466,10 +451,10 @@ jobs:
     needs: [test, lint]
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80e3e8e5e3ebeff5f4c0f6b2">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd9e95989e96928889bd8bcf">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f0c00010906081a1d0a420e181c420c1d0a0b0a011b060e031c2f195e">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8dbd7d6ded1dfcdcadd95d9cfcb95dbcadddcddd6ccd1d9d4cbf8ce89">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -477,7 +462,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="23424e42594c4d0e4640510e4f4c444a4d635512">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c2d212d36232261292f3e6120232b25220c3a7d">[email&#160;protected]</a>
 
       - name: Extract tag
         shell: bash

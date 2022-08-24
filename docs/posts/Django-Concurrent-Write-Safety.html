@@ -3,28 +3,29 @@
 
 <head>
 
-    <title>Two Approaches to Concurrent Write-Safety in Django | Monadical Consulting</title>
+    <title>Two Approaches to Concurrent Write-Safety in Django</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Two Approaches to Concurrent Write-Safety in Django | Monadical Consulting">
+    <meta name="title" content="Two Approaches to Concurrent Write-Safety in Django">
     <meta name="description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+        content="When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
-    <meta property="og:title" content="Two Approaches to Concurrent Write-Safety in Django | Monadical Consulting">
-    <meta property="og:type" content="website">
+        content="When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/concurrent.jpg">
+    <meta property="og:title" content="Two Approaches to Concurrent Write-Safety in Django">
+    <meta property="og:type" content="article">
     <meta property="og:url" content=https://monadical.com/posts/Django-Concurrent-Write-Safety.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+        content="When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.">
+    <meta property="twitter:image" content="https://monadical.com/static/concurrent.jpg">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="Two Approaches to Concurrent Write-Safety in Django | Monadical Consulting">
+    <meta property="twitter:title" content="Two Approaches to Concurrent Write-Safety in Django">
     <meta property="twitter:url" content=https://monadical.com/posts/Django-Concurrent-Write-Safety.html />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -64,24 +65,8 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time." />
 
-<!-- Required Open Graph data -->
-<meta property="og:title" content="Two Approaches to Concurrent Write-Safety in Django" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/concurrent.jpg" />
-<meta property="og:url" content="https://monadical.com/posts/Django-Concurrent-Write-Safety.html" />
-<!-- Optional Open Graph data -->
-<meta property="og:description" content="When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time." />
-<meta property="og:site_name" content="Monadical Consulting" />
-<meta property="og:locale" content="en_US" />
-<!-- Find additional markup on https://ogp.me -->
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@MonadicalHQ">
-<meta name="twitter:title" content="Two Approaches to Concurrent Write-Safety in Django">
-<meta name="twitter:description" content="When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.">
-<meta name="twitter:image" content="https://monadical.com/static/concurrent.jpg">
+
 
 </head>
 
@@ -338,7 +323,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:31:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:23:25 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1671 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1673 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>

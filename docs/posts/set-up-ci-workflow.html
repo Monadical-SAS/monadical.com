@@ -3,28 +3,29 @@
 
 <head>
 
-    <title>How to set up a CI workflow | Monadical Consulting</title>
+    <title>How to set up a CI workflow</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="How to set up a CI workflow | Monadical Consulting">
+    <meta name="title" content="How to set up a CI workflow">
     <meta name="description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+        content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="og:image" content="https://monadical.com/static/core/img/og.jpg">
-    <meta property="og:title" content="How to set up a CI workflow | Monadical Consulting">
-    <meta property="og:type" content="website">
+        content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/set-up-ci-workflow.jpg">
+    <meta property="og:title" content="How to set up a CI workflow">
+    <meta property="og:type" content="article">
     <meta property="og:url" content=https://monadical.com/posts/set-up-ci-workflow.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
-    <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
+        content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.">
+    <meta property="twitter:image" content="https://monadical.com/static/set-up-ci-workflow.jpg">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="How to set up a CI workflow | Monadical Consulting">
+    <meta property="twitter:title" content="How to set up a CI workflow">
     <meta property="twitter:url" content=https://monadical.com/posts/set-up-ci-workflow.html />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -64,24 +65,8 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-<meta name="description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden." />
 
-<!-- Required Open Graph data -->
-<meta property="og:title" content="How to set up a CI workflow" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="https://monadical.com/static/set-up-ci-workflow.jpg" />
-<meta property="og:url" content="https://monadical.com/posts/set-up-ci-workflow.html" />
-<!-- Optional Open Graph data -->
-<meta property="og:description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden." />
-<meta property="og:site_name" content="Monadical Consulting" />
-<meta property="og:locale" content="en_US" />
-<!-- Find additional markup on https://ogp.me -->
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@MonadicalHQ">
-<meta name="twitter:title" content="How to set up a CI workflow">
-<meta name="twitter:description" content="How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.">
-<meta name="twitter:image" content="https://monadical.com/static/set-up-ci-workflow.jpg">
+
 
 </head>
 
@@ -338,7 +323,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Nov 03 2020 13:31:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2735 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2736 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -631,7 +616,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 ```yaml
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a6965646c636d7f786f276b7d792769786f6e6f647e636b66794a7c3b">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="06656968606f617374632b6771752b657463626368726f676a75467037">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -639,7 +624,7 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="39585458435657145c5a4b1455565e5057794f08">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9d8d4d8c3d6d794dcdacb94d5d6ded0d7f9cf88">[email&#160;protected]</a>
 ```
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
@@ -666,10 +651,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcbfb4b9bfb7b3a9a89caaee">[email&#160;protected]</a>
+        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="27444f42444c485253675115">[email&#160;protected]</a>
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="05666a6b636c62707760286472762866776061606b716c646976457334">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92f1fdfcf4fbf5e7e0f7bff3e5e1bff1e0f7f6f7fce6fbf3fee1d2e4a3">[email&#160;protected]</a>
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -677,7 +662,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d4c404c57424300484e5f0041424a44436d5b1c">[email&#160;protected]</a>
+        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="36575b574c59581b5355441b5a59515f58764007">[email&#160;protected]</a>
 
       - name: Build, tag, and push image to amazon ECR
         env:

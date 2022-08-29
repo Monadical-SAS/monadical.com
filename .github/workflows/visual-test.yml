@@ -1,0 +1,61 @@
+name: Visual testing with Browserstack/Percy
+on: 
+  push:
+    branches: ["master"]
+  
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  skiptest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Check if commit message contain keywords as scope to do visual test
+        id: check_commit
+        run: |
+          message=$(git log -1 --pretty=format:'%s')
+          re="\[(percy|vrt|visual[-_ ]?test|visual)\]"
+          if [[ $message =~ $re ]]; then
+            echo "::set-output name=match::true"
+            echo "$message -> Match is true"
+          fi
+    outputs:
+      match: ${{ steps.check_commit.outputs.match }}
+
+  build:
+    runs-on: ubuntu-latest
+    needs: skiptest
+    
+    if: ${{ needs.skiptest.outputs.match == 'true' }}
+    steps:
+    
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: v1/${{ runner.os }}/pip/${{ hashFiles('**/{requirements,development}.txt') }}
+          restore-keys: v1/${{ runner.os }}/pip/
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: v1/${{ runner.os }}/node-16/${{ hashFiles('**/package-lock.lock') }}
+          restore-keys: v1/${{ runner.os }}/node-16/
+      - name: Build local static files 
+        run: |
+          pip3 install -r requirements.txt
+          ./build
+      - name: Run tests
+        run: make test
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+

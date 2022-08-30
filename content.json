@@ -1,8 +1,8 @@
 {
   "SITE_TITLE": "Monadical Consulting",
-  "SITE_DESCRIPTION":"Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.",
-  "SITE_IMG":"https://monadical.com/static/core/img/og.jpg",
-  "SITE_TYPE":"website",
+  "SITE_DESCRIPTION": "Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.",
+  "SITE_IMG": "https://monadical.com/static/core/img/og.jpg",
+  "SITE_TYPE": "website",
   "SITE_DOMAIN": "monadical.com",
   "PAGES": {
     "index": {
@@ -67,6 +67,30 @@
     }
   },
   "POSTS": {
+    "blog-ideas-for-developers": {
+      "title": "How to get blog ideas as a developer",
+      "description": "Whenever I hit writer’s block, I explore these four areas. They’ve never failed to help me find ideas for my next article.",
+      "date": "2022-08-31",
+      "img": "/static/blog-ideas-for-developers.jpg",
+      "tags": [
+        "blog",
+        "ideas",
+        "dev"
+      ],
+      "length": "7 min read",
+      "source": "https://docs.monadical.com/s/blog-ideas-for-developers",
+      "url": "/posts/blog-ideas-for-developers.html",
+      "template": "posts/blog-ideas-for-developers.html",
+      "authors": [
+        {
+          "name": "Gourav Goyal",
+          "title": "Monadical",
+          "handle": "@gorvgoyl",
+          "url": "https://gourav.io",
+          "image": "/static/core/img/gourav_goyal.png"
+        }
+      ]
+    },
     "python-vs-javascript-dealing-with-the-quirks-of-async-await": {
       "title": "Python vs Javascript: Dealing with the quirks of async/await",
       "description": "As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.",

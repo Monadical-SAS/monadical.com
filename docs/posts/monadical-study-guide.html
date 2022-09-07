@@ -323,7 +323,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:32:01 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Jul 11 2022 19:55:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5342 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5349 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
             <span class="ui-owner">
@@ -596,7 +596,7 @@ the pairing task is to add the words for the first person to draw, and build a s
 https://docs.monadical.com/s/an-intro-to-the-opt-directory
 
 **When finished:** enable access to the server using SSH with the following key:
-`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdwUnQvH0opeOLJi3HTBIHKMgOIAwBNfWdZUa7gWZWD <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e7d7f7b6f7d664e7d796b6b7a67606920636b">[email&#160;protected]</a>`, and send us the public IP.  During the interview call afterwards, we will SSH in and inspect the setup and you&#39;ll walk us through your setup over the call, explaining any decisions made and answering any questions we might have.  We&#39;ll ask you to run the scripts in `bin/` on the call as well to confirm they work.
+`ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdwUnQvH0opeOLJi3HTBIHKMgOIAwBNfWdZUa7gWZWD <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2457555145574c6457534141504d4a430a4941">[email&#160;protected]</a>`, and send us the public IP.  During the interview call afterwards, we will SSH in and inspect the setup and you&#39;ll walk us through your setup over the call, explaining any decisions made and answering any questions we might have.  We&#39;ll ask you to run the scripts in `bin/` on the call as well to confirm they work.
 
 Don&#39;t hesitate to ask if you have questions about this task, the interview process, or Monadical in general! Just send me an email here:
 &lt;img src=&#34;https://i.imgur.com/4w0TJur.png&#34; height=&#34;30px&#34;&gt;
@@ -1131,8 +1131,10 @@ Interested in joining Monadical? &amp;nbsp;Check out our [team page](https://mon
             return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
         }
         function smoothScroll(e) {
-            e.preventDefault();
-            e.stopPropagation();
+            const hash = decodeURIComponent(this.hash)
+            e.preventDefault()
+            e.stopPropagation()
+
             console.log('Scrolling to', this.getAttribute('href'))
             let reference = this.getAttribute('href')
             if (reference.match(/^#[0-9]+/)) {
@@ -1141,9 +1143,18 @@ Interested in joining Monadical? &amp;nbsp;Check out our [team page](https://mon
             document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
+            setTimeout(() => {
+                window.location.hash = hash
+            }, 500/*arbitrary value, not standartized*/);
         }
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                /*
+                   this code drops all the event listeners that were attached so far;
+                   we need to do it here because the event listeners themselves are not under control of this repo
+                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
+                   this is a very hacky hack, we shall negate it "as soon as we can"
+                */
                 elem.parentNode.outerHTML = elem.parentNode.outerHTML
             })
             document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {

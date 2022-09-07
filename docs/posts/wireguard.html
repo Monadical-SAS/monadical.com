@@ -323,7 +323,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue May 28 2019 07:19:00 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 23 2021 17:16:13 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">53319 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">53354 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -2065,8 +2065,10 @@ Suggest changes: https://github.com/pirate/wireguard-docs/issues
             return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
         }
         function smoothScroll(e) {
-            e.preventDefault();
-            e.stopPropagation();
+            const hash = decodeURIComponent(this.hash)
+            e.preventDefault()
+            e.stopPropagation()
+
             console.log('Scrolling to', this.getAttribute('href'))
             let reference = this.getAttribute('href')
             if (reference.match(/^#[0-9]+/)) {
@@ -2075,9 +2077,18 @@ Suggest changes: https://github.com/pirate/wireguard-docs/issues
             document.querySelector(reference).scrollIntoView({
                 behavior: 'smooth'
             });
+            setTimeout(() => {
+                window.location.hash = hash
+            }, 500/*arbitrary value, not standartized*/);
         }
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                /*
+                   this code drops all the event listeners that were attached so far;
+                   we need to do it here because the event listeners themselves are not under control of this repo
+                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
+                   this is a very hacky hack, we shall negate it "as soon as we can"
+                */
                 elem.parentNode.outerHTML = elem.parentNode.outerHTML
             })
             document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {

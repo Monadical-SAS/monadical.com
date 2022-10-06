@@ -49,18 +49,13 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/50b480368c2e107c3f2d73626dd7e554?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="asanchezyali"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 04 2022 18:43:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Oct 05 2022 13:31:13 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 04 2022 18:43:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Oct 05 2022 16:27:18 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">7 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">106 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
-            <span class="ui-owner">
-                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/50b480368c2e107c3f2d73626dd7e554?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="asanchezyali"></i>
-                &nbsp;<span class="text-uppercase">owned this note</span>
-            </span>
             
         </small>
     </div>
@@ -217,7 +212,7 @@ There are many other things in our lives that repeat or cycle after a certain am
 
 For example, since a clock cycles every $12$ hours, we refer to it as modulo $12$. In a circle where one full revolution is $360$ degrees, it’s modulo $360$. Since a week has $7$ days, we refer to it as modulo $7$.
 
-In general, for a modulo n, all the remainders can be listed as the elements of the set: 
+In general, for a modulo $n$, all the remainders can be listed as the elements of the set: 
 $$\mathbb{Z}/n\mathbb{Z}  =\{0\;(mod\;12), 1\;(mod\;12), 2\;(mod\;12), ..., n-1\;(mod\;n)\}$$
 
 For the Lights Out Game, each bulb will be modeled as a light that switches between a finite list of colors in a cyclic sequence. Therefore, we can use modular arithmetic $\mathbb{Z}/n\mathbb{Z}$ to tell the computer what state each of the bulbs is in.
@@ -239,7 +234,7 @@ Similarly, we can also do subtraction and multiplication. In general, addition, 
 1. $a\;(mod\;n) \pm b\;(mod\;n) \cong (a\pm b)\;(mod\;n)$
 2. $a\;(mod\;n) \times b\;(mod\;n) \cong (a\times b)\;(mod\;n)$
 
-Moreover, if n is prime, in the set $\mathbb{Z}/n\mathbb{Z}$, we can calculate the divisions using the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm).
+Moreover, if $n$ is prime, in the set $\mathbb{Z}/n\mathbb{Z}$, we can calculate the divisions using the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm).
 
 With this introduction to modular arithmetic, I hope that you have a better understanding of how it works. 
 
@@ -271,7 +266,7 @@ class Zmodn:
         return f&#39;{self.representative} (mod {self.module})&#39;
 ```
 
-Note that Zmodn receives only the variable `module`, which allows defining the set of equivalence classes $\mathbb{Z}/n\mathbb{Z}$ according to the value of the module. To generate the elements of $\mathbb{Z}/n\mathbb{Z}$, we redefine the `__call__` method, which allows us to call our class as a function to build different instances of `Zmodn` by `congruence_class = self.__class__(self.module)`, and calculate the representative (`self.representative`) of the class as the remainder when dividing `integer` by `self.module`. Finally, we redefine the method `__repr__` to be represented by the console `Zmodn` class as a `(mod n)`.
+Note that Zmodn receives only the variable `module`, which allows defining the set of equivalence classes $\mathbb{Z}/n\mathbb{Z}$ according to the value of the module. To generate the elements of $\mathbb{Z}/n\mathbb{Z}$, we redefine the `__call__` method, which allows us to call our class as a function to build different instances of `Zmodn` by `congruence_class = self.__class__(self.module)`, and calculate the representative (`self.representative`) of the class as the remainder when dividing `integer` by `self.module`. Finally, we redefine the method `__repr__` to be represented by the console `Zmodn` class as `a (mod n)`.
 
 To see how this works, let’s generate the elements of  $\mathbb{Z}/n\mathbb{Z} =\{0\; (mod\; 2), 1\; (mod\; 2)\}$. To do this, we first write:
 

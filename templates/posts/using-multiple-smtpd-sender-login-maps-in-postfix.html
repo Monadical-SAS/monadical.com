@@ -52,7 +52,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sat Feb 29 2020 04:30:36 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Feb 29 2020 07:24:42 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2542 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2596 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -106,7 +106,7 @@ Our config allowing the admin user to masquerade as anyone was working fine, but
 
 :::danger
 
-`postfix/smtpd[16645]: NOQUEUE: reject: RCPT from mailu_webmail_1.mailu_default[192.168.203.11]: 553 5.7.1 &lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="becadbcdcafec4dfd2dfda90d7d1">[email&#160;protected]</a>&gt;: Sender address rejected: not owned by user <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc88998f88bc869d909d98d29593">[email&#160;protected]</a>; from=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e99d8c9a9da9938885888dc78086">[email&#160;protected]</a>&gt; to=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff8d9a9b9e9c8b9a9bbf9a879e928f939ad19c9092">[email&#160;protected]</a>&gt; proto=ESMTP helo=&lt;mail.zervice.io&gt;
+`postfix/smtpd[16645]: NOQUEUE: reject: RCPT from mailu_webmail_1.mailu_default[192.168.203.11]: 553 5.7.1 &lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2a6b7a1a692a8b3beb3b6fcbbbd">[email&#160;protected]</a>&gt;: Sender address rejected: not owned by user <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cebaabbdba8eb4afa2afaae0a7a1">[email&#160;protected]</a>; from=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9cddccacdf9c3d8d5d8dd97d0d6">[email&#160;protected]</a>&gt; to=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a687f7e7b796e7f7e5a7f627b776a767f34797577">[email&#160;protected]</a>&gt; proto=ESMTP helo=&lt;mail.zervice.io&gt;
 `
 
 :::
@@ -131,9 +131,9 @@ The root cause ended up being a surprisingly simple Postfix config assumption th
 Imagine a simplified setup where we have Postfix and MySQL running on a mailserver.
 There are 3 users stored in the MySQL DB who can authenticate via SMTP with Postfix:
 
-- `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e6ebeee4e2c7e2ffe6eaf7ebe2a9e4e8ea">[email&#160;protected]</a>`: can only send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a8c9c4c1cbcde8cdd0c9c5d8c4cd86cbc7c5">[email&#160;protected]</a>`,`<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3554595c56501b46585c415d75504d54584559501b565a58">[email&#160;protected]</a>`
-- `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7b5b8b597b2afb6baa7bbb2f9b4b8ba">[email&#160;protected]</a>`: can only send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3a1aca183a6bba2aeb3afa6eda0acae">[email&#160;protected]</a>`,`<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e5e8e5a9ede8e9e2f4c7e2ffe6eaf7ebe2a9e4e8ea">[email&#160;protected]</a>`
-- `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f091949d999eb09588919d809c95de939f9d">[email&#160;protected]</a>`: should be able to send from *any* `.*@example.com` address
+- `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5435383d373114312c35392438317a373b39">[email&#160;protected]</a>`: can only send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e88984818b8da88d90898598848dc68b8785">[email&#160;protected]</a>`,`<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b1bcb9b3b5fea3bdb9a4b890b5a8b1bda0bcb5feb3bfbd">[email&#160;protected]</a>`
+- `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7a5a8a587a2bfa6aab7aba2e9a4a8aa">[email&#160;protected]</a>`: can only send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8defe2efcde8f5ece0fde1e8a3eee2e0">[email&#160;protected]</a>`,`<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a181518541015141f093a1f021b170a161f54191517">[email&#160;protected]</a>`
+- `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8beaefe6e2e5cbeef3eae6fbe7eea5e8e4e6">[email&#160;protected]</a>`: should be able to send from *any* `.*@example.com` address
 
 Regular users can only send from their main address and their aliases, but we want to allow the admin to be able to masquerade as *any* sender without restrictions. 
 
@@ -176,13 +176,13 @@ It&#39;s a powerful feature to restrict the addresses a client impersonate based
 As  you can imagine, being able to granularly filter allowed senders has many use cases:
 
 - **Prevent a user from logging in and sending a message as someone else**  
-    *&gt; Bob can send as `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eece1ecceebf6efe3fee2eba0ede1e3">[email&#160;protected]</a>`, but can&#39;t send as `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea8b8683898faa8f928b879a868fc4898587">[email&#160;protected]</a>`*
+    *&gt; Bob can send as `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="60020f02200518010d100c054e030f0d">[email&#160;protected]</a>`, but can&#39;t send as `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7514191c161035100d14180519105b161a18">[email&#160;protected]</a>`*
 
 - **Allow multiple users to send from a single shared address neither of them own**  
-    *&gt; Bob and Alice can both send as `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f626e7d646a7b6661684f6a776e627f636a216c6062">[email&#160;protected]</a>`*
+    *&gt; Bob and Alice can both send as `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="533e32213836273a3d3413362b323e233f367d303c3e">[email&#160;protected]</a>`*
 
 - **Allow a single user to send from multiple addresses they own**  
-    *&gt; Alice can send as both `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9d8d5d0dadcf9dcc1d8d4c9d5dc97dad6d4">[email&#160;protected]</a>` and `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="781914111b1d560b15110c10381d00191508141d561b1715">[email&#160;protected]</a>`*
+    *&gt; Alice can send as both `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0564696c666045607d64687569602b666a68">[email&#160;protected]</a>` and `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63020f0a00064d100e0a170b23061b020e130f064d000c0e">[email&#160;protected]</a>`*
 
 - **Allow an admin to send messages from many addresses (even owned by others)**  
     *&gt; Tracy, the IT admin can send as anyone `.*@example.com`*
@@ -218,10 +218,10 @@ Each lookup table used by `smtpd_sender_login_maps` is a mapping of:
 
 &gt; `msg FROM addr -&gt; SMTP users allowed to send as that address`
 
-For `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff9e93969c9abf9a879e928f939ad19c9092">[email&#160;protected]</a>` to be able to log in and send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1f12171d1b500d13170a163e1b061f130e121b501d1113">[email&#160;protected]</a>`, 
-one of the lookups must return `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="12737e7b717752776a737f627e773c717d7f">[email&#160;protected]</a>` in the allowed SMTP user list:
+For `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80e1ece9e3e5c0e5f8e1edf0ece5aee3efed">[email&#160;protected]</a>` to be able to log in and send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="17767b7e747239647a7e637f57726f767a677b723974787a">[email&#160;protected]</a>`, 
+one of the lookups must return `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41202d282224012439202c312d246f222e2c">[email&#160;protected]</a>` in the allowed SMTP user list:
 
-&gt; `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="791815101a1c570a14100d11391c01181409151c571a1614">[email&#160;protected]</a> -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9a8a5a0aaac89acb1a8a4b9a5ace7aaa6a4">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbbabfb6b2b59bbea3bab6abb7bef5b8b4b6">[email&#160;protected]</a>`
+&gt; `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cfdf0f5fff9b2eff1f5e8f4dcf9e4fdf1ecf0f9b2fff3f1">[email&#160;protected]</a> -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="66070a0f050326031e070b160a034805090b">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28494c454146684d50494558444d064b4745">[email&#160;protected]</a>`
 
 ### Main Postfix Config
 
@@ -256,8 +256,8 @@ query = SELECT email FROM users WHERE email=&#39;%s&#39;
 
 This query checks the DB and returns the allowed SMTP users for a given FROM addr.
  
-&gt;   `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e4f42474d4b6e4b564f435e424b004d4143">[email&#160;protected]</a>     -----&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7514191c161035100d14180519105b161a18">[email&#160;protected]</a>`  
-&gt;   `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5c515c105451505b4d7e5b465f534e525b105d5153">[email&#160;protected]</a>     -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="187a777a587d60797568747d367b7775">[email&#160;protected]</a>`  
+&gt;   `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6c7cacfc5c3e6c3dec7cbd6cac388c5c9cb">[email&#160;protected]</a>     -----&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4524292c262005203d24283529206b262a28">[email&#160;protected]</a>`  
+&gt;   `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b595459155154555e487b5e435a564b575e15585456">[email&#160;protected]</a>     -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8bab7ba98bda0b9b5a8b4bdf6bbb7b5">[email&#160;protected]</a>`  
 
 :::
 
@@ -265,12 +265,12 @@ This query checks the DB and returns the allowed SMTP users for a given FROM add
 
 #### `/etc/postfix/sender_overrides.cf` &lt;small style=&#34;float:right&#34;&gt;[`type:pcre_table`](http://www.postfix.org/pcre_table.5.html)&lt;/small&gt;:
 ```ini
-/.*@example.com/     <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2243464f4b4c62475a434f524e470c414d4f">[email&#160;protected]</a>
+/.*@example.com/     <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e081848d898ea08598818d908c85ce838f8d">[email&#160;protected]</a>
 ```
 
 This regex matches *all* `@example.com` FROM addrs and returns the admin SMTP user.
 
-&gt;   `.*@example.com ---------&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28494c454146684d50494558444d064b4745">[email&#160;protected]</a>`  
+&gt;   `.*@example.com ---------&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f697929b9f98b6938e979b869a93d895999b">[email&#160;protected]</a>`  
 
 :::
 
@@ -283,26 +283,26 @@ Great, so far we&#39;ve configured our server to check two lookup tables to dete
 **Now let&#39;s take a look at two scenarios and see exactly what Postfix does in each case.**
 
 :::success
-#### Scenario 1: `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="37565b5e545277524f565a475b521954585a">[email&#160;protected]</a>` tries to send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="01606d686264416479606c716d642f626e6c">[email&#160;protected]</a>`
+#### Scenario 1: `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5d4d9dcd6d0f5d0cdd4d8c5d9d09bd6dad8">[email&#160;protected]</a>` tries to send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="42232e2b212702273a232f322e276c212d2f">[email&#160;protected]</a>`
 
-1. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3d5c51545e587d58455c504d5158135e5250">[email&#160;protected]</a>` logs in via SMTP to send a msg from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f594999c9690b5908d9498859990db969a98">[email&#160;protected]</a>`
-2. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd9c91949e98bd98859c908d9198d39e9290">[email&#160;protected]</a>` lookup in `smtpd_sender_login_maps` returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26474a4f454366435e474b564a430845494b">[email&#160;protected]</a>`
-3. Sending succeeds, `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f495989d9791b4918c9599849891da979b99">[email&#160;protected]</a>` == SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e5e8ede7e1c4e1fce5e9f4e8e1aae7ebe9">[email&#160;protected]</a>`
+1. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f89994919b9db89d80999588949dd69b9795">[email&#160;protected]</a>` logs in via SMTP to send a msg from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e6ebeee4e2c7e2ffe6eaf7ebe2a9e4e8ea">[email&#160;protected]</a>`
+2. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="10717c797375507568717d607c753e737f7d">[email&#160;protected]</a>` lookup in `smtpd_sender_login_maps` returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d3dedbd1d7f2d7cad3dfc2ded79cd1dddf">[email&#160;protected]</a>`
+3. Sending succeeds, `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2c3cecbc1c7e2c7dac3cfd2cec78cc1cdcf">[email&#160;protected]</a>` == SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6504090c060025001d04081509004b060a08">[email&#160;protected]</a>`
 
 ✅ This works fine, the email is sent because the address matches the sender as expected.
 :::
 
 :::danger
-#### Scenario 2: `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ceafaaa3a7a08eabb6afa3bea2abe0ada1a3">[email&#160;protected]</a>` tries to send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="294845404a4c694c51484459454c074a4644">[email&#160;protected]</a>`
+#### Scenario 2: `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afbfef7f3f4daffe2fbf7eaf6ffb4f9f5f7">[email&#160;protected]</a>` tries to send from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="72131e1b111732170a131f021e175c111d1f">[email&#160;protected]</a>`
 
-1. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d383135321c39243d312c3039723f3331">[email&#160;protected]</a>` logs in via SMTP to send a msg from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92f3fefbf1f7d2f7eaf3ffe2fef7bcf1fdff">[email&#160;protected]</a>`
-2. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d0ddd8d2d4f1d4c9d0dcc1ddd49fd2dedc">[email&#160;protected]</a>` lookup in `smtpd_sender_login_maps` returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c2d20252f290c29342d213c2029622f2321">[email&#160;protected]</a>`
-3. Sending fails, `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20414c494345604558414d504c450e434f4d">[email&#160;protected]</a>` != SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bfafff6f2f5dbfee3faf6ebf7feb5f8f4f6">[email&#160;protected]</a>`  
+1. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c4d484145426c49544d415c4049024f4341">[email&#160;protected]</a>` logs in via SMTP to send a msg from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="27464b4e444267425f464a574b420944484a">[email&#160;protected]</a>`
+2. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec8d80858f89ac89948d819c8089c28f8381">[email&#160;protected]</a>` lookup in `smtpd_sender_login_maps` returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8d9d4d1dbddf8ddc0d9d5c8d4dd96dbd7d5">[email&#160;protected]</a>`
+3. Sending fails, `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e6ebeee4e2c7e2ffe6eaf7ebe2a9e4e8ea">[email&#160;protected]</a>` != SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6100050c080f210419000c110d044f020e0c">[email&#160;protected]</a>`  
     ```
-    postfix/smtpd[16645]: NOQUEUE: reject: RCPT from webmail.mailserver[192.168.1.5]: 553 5.7.1 &lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d30353f391c39243d312c3039723f3331">[email&#160;protected]</a>&gt;: Sender address rejected: not owned by user <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9b8bdb4b0b799bca1b8b4a9b5bcf7bab6b4">[email&#160;protected]</a>; from=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1475787d777154716c75796478713a777b79">[email&#160;protected]</a>&gt; to=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b3934391b3e233a362b373e75383436">[email&#160;protected]</a>&gt; proto=ESMTP helo=&lt;mail.example.com&gt;
+    postfix/smtpd[16645]: NOQUEUE: reject: RCPT from webmail.mailserver[192.168.1.5]: 553 5.7.1 &lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b6a6762686e4b6e736a667b676e25686466">[email&#160;protected]</a>&gt;: Sender address rejected: not owned by user <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8cede8e1e5e2cce9f4ede1fce0e9a2efe3e1">[email&#160;protected]</a>; from=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4a5a8ada7a184a1bca5a9b4a8a1eaa7aba9">[email&#160;protected]</a>&gt; to=&lt;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ceee3eecce9f4ede1fce0e9a2efe3e1">[email&#160;protected]</a>&gt; proto=ESMTP helo=&lt;mail.example.com&gt;
     ```
 
-❌ This does not work, the email is rejected because the SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="58393c353136183d20393528343d763b3735">[email&#160;protected]</a>` doesn&#39;t match the first lookup result `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26474a4f454366435e474b564a430845494b">[email&#160;protected]</a>`.
+❌ This does not work, the email is rejected because the SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4c5c0c9cdcae4c1dcc5c9d4c8c18ac7cbc9">[email&#160;protected]</a>` doesn&#39;t match the first lookup result `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0564696c666045607d64687569602b666a68">[email&#160;protected]</a>`.
 :::
 
 :::danger
@@ -318,16 +318,16 @@ smtpd_sender_login_maps =
 
 **Flipping the order of the mappings so that the pcre file is checked before mysql won&#39;t fix the problem.**
 
- It even makes it worse because the catchall `.*@example.com` will overshadow all the real users in MySQL and prevent any user other than `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b5b0b9bdba94b1acb5b9a4b8b1fab7bbb9">[email&#160;protected]</a>` from sending email.
+ It even makes it worse because the catchall `.*@example.com` will overshadow all the real users in MySQL and prevent any user other than `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28494c454146684d50494558444d064b4745">[email&#160;protected]</a>` from sending email.
 
 &lt;br/&gt;
 
-1. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="21404d484244614459404c514d440f424e4c">[email&#160;protected]</a>` logs in via SMTP to send a msg from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="02636e6b616742677a636f726e672c616d6f">[email&#160;protected]</a>`
-2. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="02636e6b616742677a636f726e672c616d6f">[email&#160;protected]</a>` lookup in `smtpd_sender_login_maps` returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="96f7f2fbfff8d6f3eef7fbe6faf3b8f5f9fb">[email&#160;protected]</a>`
-3. Sending fails, `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4021242d292e002538212d302c256e232f2d">[email&#160;protected]</a>` != SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a7b7673797f5a7f627b776a767f34797577">[email&#160;protected]</a>`
+1. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a6b6663696f4a6f726b677a666f24696567">[email&#160;protected]</a>` logs in via SMTP to send a msg from `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d4c41444e486d48554c405d4148034e4240">[email&#160;protected]</a>`
+2. `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ceafa2a7adab8eabb6afa3bea2abe0ada1a3">[email&#160;protected]</a>` lookup in `smtpd_sender_login_maps` returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5031343d393e103528313d203c357e333f3d">[email&#160;protected]</a>`
+3. Sending fails, `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="68090c050106280d10090518040d460b0705">[email&#160;protected]</a>` != SMTP authed user `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6c7cacfc5c3e6c3dec7cbd6cac388c5c9cb">[email&#160;protected]</a>`
 
 
-When it looks up `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8d9d4d1dbddf8ddc0d9d5c8d4dd96dbd7d5">[email&#160;protected]</a>` in the pcre file, it returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="68090c050106280d10090518040d460b0705">[email&#160;protected]</a>` as the only allowed user and fails before it ever checks the mysql database.
+When it looks up `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="30515c595355705548515d405c551e535f5d">[email&#160;protected]</a>` in the pcre file, it returns `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e3f3a3337301e3b263f332e323b703d3133">[email&#160;protected]</a>` as the only allowed user and fails before it ever checks the mysql database.
 
 :::
 
@@ -376,7 +376,7 @@ The issue is that Postfix doesn&#39;t check both mappings and merge the results,
 
 If the returned SMTP user doesn&#39;t match the currently authed user, it won&#39;t proceed to lookup the address in the next database, it&#39;ll just immediately `DENY`.
 
-The same lookup conflict can happen with any two mappings that share keys, e.g. two mysql databases `mysql:...,mysql:...`, not necessarily just a `pcre` with `.*` in it. Any exact match or wildcard match like `@example.com  <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="51223e3c3424223423113429303c213d347f323e3c">[email&#160;protected]</a>` in the first mapping will take precedence and prevent the second mapping from being queried at all.
+The same lookup conflict can happen with any two mappings that share keys, e.g. two mysql databases `mysql:...,mysql:...`, not necessarily just a `pcre` with `.*` in it. Any exact match or wildcard match like `@example.com  <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b2834363e2e283e291b3e233a362b373e75383436">[email&#160;protected]</a>` in the first mapping will take precedence and prevent the second mapping from being queried at all.
 
 &lt;br/&gt;
 
@@ -423,10 +423,10 @@ Assuming all your mappings are accessible in the same MySQL database, you can co
                 FROM users
                 WHERE wildcard_sending=1
 
-In this example we would set `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9d8ddd4d0d7f9dcc1d8d4c9d5dc97dad6d4">[email&#160;protected]</a>` to have `wildcard_sending=1` in SQL, and then it would be returned with every lookup result along with the normal user and alias matches, e.g.
+In this example we would set `<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7213161f1b1c32170a131f021e175c111d1f">[email&#160;protected]</a>` to have `wildcard_sending=1` in SQL, and then it would be returned with every lookup result along with the normal user and alias matches, e.g.
 
-    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5c4c9ccc6c08bd6c8ccd1cde5c0ddc4c8d5c9c08bc6cac8">[email&#160;protected]</a>    -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="47262b2e242207223f262a372b226924282a">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6d7d2dbdfd8f6d3ced7dbc6dad398d5d9db">[email&#160;protected]</a>
-    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ccaea3ae8ca9b4ada1bca0a9e2afa3a1">[email&#160;protected]</a>            -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b5954597b5e435a564b575e15585456">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3a5b5e5753547a5f425b574a565f14595557">[email&#160;protected]</a>
+    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="57363b3e343279243a3e233f17322f363a273b327934383a">[email&#160;protected]</a>    -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e3828f8a8086a3869b828e938f86cd808c8e">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83e2e7eeeaedc3e6fbe2eef3efe6ade0ecee">[email&#160;protected]</a>
+    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="096b666b496c71686479656c276a6664">[email&#160;protected]</a>            -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85e7eae7c5e0fde4e8f5e9e0abe6eae8">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e8898c858186a88d90898598848dc68b8785">[email&#160;protected]</a>
 
 &lt;br/&gt;
 
@@ -441,8 +441,8 @@ If you&#39;re using Postfix 3.0 or above, you might be able to try using the new
 
 With this setup, the mysql results will be concatenated with the pcre lookup results, e.g.
 
-    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afbf6f3f9ffb4e9f7f3eef2daffe2fbf7eaf6ffb4f9f5f7">[email&#160;protected]</a>    -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6504090c060025001d04081509004b060a08">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="96f7f2fbfff8d6f3eef7fbe6faf3b8f5f9fb">[email&#160;protected]</a>
-    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c4e434e6c49544d415c4049024f4341">[email&#160;protected]</a>            -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1674797456736e777b667a733875797b">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e382878e8a8da3869b828e938f86cd808c8e">[email&#160;protected]</a>
+    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3c2cfcac0c68dd0cecad7cbe3c6dbc2ced3cfc68dc0ccce">[email&#160;protected]</a>    -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f7969b9e9492b7928f969a879b92d994989a">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147570797d7a54716c75796478713a777b79">[email&#160;protected]</a>
+    <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="caa8a5a88aafb2aba7baa6afe4a9a5a7">[email&#160;protected]</a>            -&gt; <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e3818c81a3869b828e938f86cd808c8e">[email&#160;protected]</a>,<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ccada8a1a5a28ca9b4ada1bca0a9e2afa3a1">[email&#160;protected]</a>
 
 See http://www.postfix.org/DATABASE_README.html#types **unionmap** for more info.
 
@@ -497,7 +497,7 @@ They all have something like this in the config parameter documentation:
 
 ## Further Reading
 
-- https://www.mail-archive.com/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c3c233f382a25346128293a29200c3c233f382a253462233e2b">[email&#160;protected]</a>/msg00677.html  
+- https://www.mail-archive.com/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52223d2126343b2a7f363724373e12223d2126343b2a7c3d2035">[email&#160;protected]</a>/msg00677.html  
   (I highly recommend reading this entire mailing list thread for full context)
 - http://www.postfix.org/postconf.5.html#smtpd_sender_login_maps
 - http://www.postfix.org/SMTPD_ACCESS_README.html#lists

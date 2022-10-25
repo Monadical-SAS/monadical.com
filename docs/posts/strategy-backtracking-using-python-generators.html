@@ -3,30 +3,30 @@
 
 <head>
 
-    <title>Redux State-Sharing Approaches</title>
+    <title>A pattern for strategy backtracking using Python generators</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Redux State-Sharing Approaches">
+    <meta name="title" content="A pattern for strategy backtracking using Python generators">
     <meta name="description"
-        content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
+        content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python Generators and generator expressions.">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
-    <meta property="og:image" name="image" content="https://monadical.com/static/reduxsharing.jpg">
-    <meta property="og:title" content="Redux State-Sharing Approaches">
+        content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python Generators and generator expressions.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/strategy-backtracking-using-python-generators.jpg">
+    <meta property="og:title" content="A pattern for strategy backtracking using Python generators">
     <meta property="og:type" content="article">
-    <meta property="og:url" content=https://monadical.com/posts/Sharing-State-Between-Redux-Reducers.html />
+    <meta property="og:url" content=https://monadical.com/posts/strategy-backtracking-using-python-generators.html />
     <meta property="og:site_name" content="Monadical Consulting" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
-    <meta property="twitter:image" content="https://monadical.com/static/reduxsharing.jpg">
+        content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python Generators and generator expressions.">
+    <meta property="twitter:image" content="https://monadical.com/static/strategy-backtracking-using-python-generators.jpg">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="Redux State-Sharing Approaches">
-    <meta property="twitter:url" content=https://monadical.com/posts/Sharing-State-Between-Redux-Reducers.html />
+    <meta property="twitter:title" content="A pattern for strategy backtracking using Python generators">
+    <meta property="twitter:url" content=https://monadical.com/posts/strategy-backtracking-using-python-generators.html />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="robots" content="follow, index" />
@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
     <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
 
-    <link rel="canonical" href="https://monadical.com/posts/Sharing-State-Between-Redux-Reducers.html" />
+    <link rel="canonical" href="https://monadical.com/posts/strategy-backtracking-using-python-generators.html" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -273,12 +273,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  # Sharing State Between Redux Reducers  *Originally published 2016-02-18 on [labs.OddSling">
+    <meta name="description" content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python generators and generator expressions.">
     
     
     
-    <meta property="og:title" content="Sharing State Between Redux Reducers - HedgeDoc">
+    <meta property="og:title" content="A pattern for strategy backtracking using Python generators - HedgeDoc">
     
+    
+    <meta property="og:description" content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python generators and generator expressions.">
     
     
     <meta property="og:type" content="website">
@@ -288,7 +290,7 @@
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>Sharing State Between Redux Reducers - HedgeDoc</title>
+    <title>A pattern for strategy backtracking using Python generators - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
@@ -310,59 +312,112 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:38:02 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:06:03 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 25 2022 13:28:53 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 25 2022 18:02:29 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1506 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">11 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+    <div id="doc" class="container markdown-body" >
 
-# Sharing State Between Redux Reducers
+&lt;center&gt;
 
-*Originally published 2016-02-18 on [labs.OddSlingers.com](https://labs.oddslingers.com/posts/Sharing-State-Between-Redux-Reducers.html).*
+# A pattern for strategy backtracking using Python generators
+
+&lt;big&gt;
+
+**How fixing a bug led us to a cool, clean, simple pattern for strategy backtracking using Python generators and generator expressions.**
+
+&lt;/big&gt;
+
+*Written by [Juan Diego Caballero](https://github.com/jdcaballerov). Originally published 2022-10-25 on the [Monadical blog](https://monadical.com/blog.html).*
+
 
 &lt;/center&gt;
 
-When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.
 
-Don’t worry, you aren’t the first to have this problem, here are some resources to help you out.
 
-## Your options:
+A while back, we were tasked with fixing a bug that was affecting an [ETL pipeline](https://en.wikipedia.org/wiki/Extract,_transform,_load). The pipeline ingested events and generated a name string for an asset during one of the steps. The name string would be generated using one of several strategies and in order of preference. We noticed that the catch-all final strategy was being selected more often than was expected, and several asset names were empty. 
 
- - don’t use `combineReducers` (write your own that shares state/selector between two components)
- - use the `redux-thunk` middleware
- - pass pre-bound selectors to the store down through your components or `mapDispatchToProps` (as recommended by `reselect`)
- - use a global store like `window.store` and call `window.store.getState().myreducer.myvalue` to directly access state
+Doing the bug fix, we found a very cool, clean, and simple pattern for strategy backtracking using Python Generators and generator expressions. Here’s how we did it!
 
-## On Managing state hierarchy in general:
+## The original implementation
+Here’s our code as it appeared in a simplified version of the original implementation::
 
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/34299460/how-to-handle-global-state-data-into-deeply-nested-components-in-redux&#34;&gt;How to hand global state data into deeply nested components in redux?&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33852704/should-i-put-all-components-state-in-the-store&#34;&gt;Should I put all component state into the redux store? &lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33953739/how-to-reduce-nested-data-in-redux?rq=1&#34;&gt;How to reduce nested data in redux?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;strong&gt;Specifically on sharing state between reducers:&lt;/strong&gt;
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/34333979/accessing-other-parts-of-the-state-when-using-combined-reducers?rq=1&#34;&gt;Accessing other parts of the state when using combined reducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/35375810/how-do-i-share-readonly-state-between-two-or-more-reducers&#34;&gt;How do I share readonly state between several reducers?&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/34711512/sharing-data-between-two-redux-reducers-states&#34;&gt;Sharing state between two redux reducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/35430389/redux-where-to-prepare-data&#34;&gt;Redux: where to prepare shared data&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33962774/how-to-compose-redux-reducers-with-dependent-state?lq=1&#34;&gt;How to compose redux reducers with dependent state&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/35300419/redux-do-i-have-to-import-store-in-all-my-containers-if-i-want-to-have-access-t&#34;&gt;Redux: do I have to import store in all my containers to access shared state?&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33408151/redux-reducer-state-shape-design-for-dependent-state-slices?rq=1&#34;&gt;Redux reducer state shape design for dependent state slices?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-Related Documentation:
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href=&#34;http://redux.js.org/docs/basics/Reducers.html&#34;&gt;Redux Docs: Reducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://redux.js.org/docs/api/combineReducers.html&#34;&gt;Redux Docs: combineReducers&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;https://github.com/acdlite/reduce-reducers&#34;&gt;github: reduce-reducers&lt;/a&gt; (combineReducers wo/ forced namespacing)&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;https://egghead.io/lessons/javascript-redux-implementing-store-from-scratch?series=getting-started-with-redux&#34;&gt;egghead.io lesson: implementing a redux store from scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</div>
+A function returned a candidate asset name string using different strategies as follows:
+
+```python
+ def get_candidate_asset_name(*args, **kwargs) -&gt; str:
+        if conditions_A(*args, **kwargs):
+            return name_with_strategy_A(*args, **kwargs)
+
+        if conditions_B(*args, **kwargs):
+            return name_with_strategy_B(*args, **kwargs)
+	 
+        if conditions_C(*args, **kwargs):
+            return name_with_strategy_C(*args, **kwargs)	 
+
+        
+        return name_with_catch_all_strategy(*args, **kwargs)
+``` 
+And then, was used as follows:
+```python
+asset_name = get_candidate_asset_name(*args, **kwargs )
+….
+….
+asset_name = sanitize_asset_name(asset_name)
+If not asset_name:
+    asset_name = sanitize_asset_name(name_with_catch_all_strategy(*args, **kwargs))
+```
+
+## Problems with our first approach
+Readers with sharp eyes may have noticed several problems with the former implementation – it doesn’t look good.
+
+Some of the problems include:
+
+- The calling function is not clean and is not following the [Single Responsibility Principle](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design). It gets the name but also implements the policy to default to the catch-all.
+- The implementation is not trying the different strategies in order of preference as required. It selects a strategy and, if sanitization rejects it by returning empty, then it defaults awkwardly to the sanitized name from.`name_with_catch_all_strategy`
+- The name generated by the `name_with_catch_all_strategy` could also return empty after sanitization and continue unnoticed.
+
+## How we fixed them
+We considered some implementations using the `while` loop to test different strategies. For example, we considered a simple DAG and a mini state machine; however, none of them looked cleaner or more decoupled, and none produced a simpler diff change than our final solution using Generators and generator expressions.
+
+
+To get the final version of our code, we modified the `name candidates` function to yield instead of return.
+
+Here’s what that looks like:
+```python
+def get_candidate_asset_name(*args, **kwargs) -&gt; Generator[str, None, str]:
+        if conditions_A(*args, **kwargs):
+            yield name_with_strategy_A(*args, **kwargs)
+
+        if conditions_B(*args, **kwargs):
+            yield name_with_strategy_B(*args, **kwargs)
+	 
+        if conditions_C(*args, **kwargs):
+            yield name_with_strategy_C(*args, **kwargs)	 
+
+        yield name_with_catch_all_strategy(*args, **kwargs)  
+```
+And we used it as follows:
+```python
+  asset_name = next(
+            (
+                sanitize_asset_name(name)
+                for name in get_candidate_asset_name(*args, **kwargs)
+                if sanitize_asset_name(name)
+            ),
+            &#34;NAME NOT FOUND&#34;,
+        )
+```
+So, what is the code actually doing? First, a generator expression is created from the non-empty sanitized `name candidates` and advanced to the first yield using `next`. Then, it gets the first non-empty sanitized name. In case none of the strategies, which are tried in order of preference sequentially, produce a non-empty sanitized name the default value “NAME NOT FOUND” is returned by the `next` function when `StopIteration` is reached.
+
+Cool, huh? Let us know if you can find other clever uses for this pattern! 
+</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
@@ -394,19 +449,19 @@ Related Documentation:
             <div class="authorbox">
                 
                     <div class="authorbox__content">
-                        <h3>Nick Sweeting</h3>
+                        <h3>Juan Diego Caballero</h3>
                         <h5>
-                            Monadical Co-Founder
-                            <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
-                                @theSquashSH
+                            Full-stack dev/PM
+                            <a href="https://github.com/jdcaballerov" target="_blank" rel="noopener">
+                                @jdcaballerov
                             </a>
                         </h5>
                         
-                        <img src="/static/nick.jpg" width="120px" height="120px" alt="Nick Sweeting"/>
+                        <img src="/static/core/img/img-team-012.jpg" width="120px" height="120px" alt="Juan Diego Caballero"/>
                     </div>
                 
             </div>
-            <h5>Published on <a href="#permalink">2016-02-18</a></h5>
+            <h5>Published on <a href="#permalink">2022-10-25</a></h5>
             <div class="newsletterbox">
                 <a href="/team.html#careers" style="font-weight: bold;">
                     We are hiring!
@@ -616,7 +671,7 @@ Related Documentation:
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/SyztFSDAM', {mode: 'no-cors'})
+                fetch('https://docs.monadical.com/s/F9szicbHq', {mode: 'no-cors'})
 
                 // remove undesired css that break styles
                 setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)

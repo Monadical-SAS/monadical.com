@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python generators and generator expressions.">
+    
+    
+    
+    <meta property="og:title" content="A pattern for strategy backtracking using Python generators - HedgeDoc">
+    
+    
+    <meta property="og:description" content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python generators and generator expressions.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>A pattern for strategy backtracking using Python generators - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 25 2022 13:28:53 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 25 2022 18:02:29 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">11 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+&lt;center&gt;
+
+# A pattern for strategy backtracking using Python generators
+
+&lt;big&gt;
+
+**How fixing a bug led us to a cool, clean, simple pattern for strategy backtracking using Python generators and generator expressions.**
+
+&lt;/big&gt;
+
+*Written by [Juan Diego Caballero](https://github.com/jdcaballerov). Originally published 2022-10-25 on the [Monadical blog](https://monadical.com/blog.html).*
+
+
+&lt;/center&gt;
+
+
+
+A while back, we were tasked with fixing a bug that was affecting an [ETL pipeline](https://en.wikipedia.org/wiki/Extract,_transform,_load). The pipeline ingested events and generated a name string for an asset during one of the steps. The name string would be generated using one of several strategies and in order of preference. We noticed that the catch-all final strategy was being selected more often than was expected, and several asset names were empty. 
+
+Doing the bug fix, we found a very cool, clean, and simple pattern for strategy backtracking using Python Generators and generator expressions. Here’s how we did it!
+
+## The original implementation
+Here’s our code as it appeared in a simplified version of the original implementation::
+
+A function returned a candidate asset name string using different strategies as follows:
+
+```python
+ def get_candidate_asset_name(*args, **kwargs) -&gt; str:
+        if conditions_A(*args, **kwargs):
+            return name_with_strategy_A(*args, **kwargs)
+
+        if conditions_B(*args, **kwargs):
+            return name_with_strategy_B(*args, **kwargs)
+	 
+        if conditions_C(*args, **kwargs):
+            return name_with_strategy_C(*args, **kwargs)	 
+
+        
+        return name_with_catch_all_strategy(*args, **kwargs)
+``` 
+And then, was used as follows:
+```python
+asset_name = get_candidate_asset_name(*args, **kwargs )
+….
+….
+asset_name = sanitize_asset_name(asset_name)
+If not asset_name:
+    asset_name = sanitize_asset_name(name_with_catch_all_strategy(*args, **kwargs))
+```
+
+## Problems with our first approach
+Readers with sharp eyes may have noticed several problems with the former implementation – it doesn’t look good.
+
+Some of the problems include:
+
+- The calling function is not clean and is not following the [Single Responsibility Principle](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design). It gets the name but also implements the policy to default to the catch-all.
+- The implementation is not trying the different strategies in order of preference as required. It selects a strategy and, if sanitization rejects it by returning empty, then it defaults awkwardly to the sanitized name from.`name_with_catch_all_strategy`
+- The name generated by the `name_with_catch_all_strategy` could also return empty after sanitization and continue unnoticed.
+
+## How we fixed them
+We considered some implementations using the `while` loop to test different strategies. For example, we considered a simple DAG and a mini state machine; however, none of them looked cleaner or more decoupled, and none produced a simpler diff change than our final solution using Generators and generator expressions.
+
+
+To get the final version of our code, we modified the `name candidates` function to yield instead of return.
+
+Here’s what that looks like:
+```python
+def get_candidate_asset_name(*args, **kwargs) -&gt; Generator[str, None, str]:
+        if conditions_A(*args, **kwargs):
+            yield name_with_strategy_A(*args, **kwargs)
+
+        if conditions_B(*args, **kwargs):
+            yield name_with_strategy_B(*args, **kwargs)
+	 
+        if conditions_C(*args, **kwargs):
+            yield name_with_strategy_C(*args, **kwargs)	 
+
+        yield name_with_catch_all_strategy(*args, **kwargs)  
+```
+And we used it as follows:
+```python
+  asset_name = next(
+            (
+                sanitize_asset_name(name)
+                for name in get_candidate_asset_name(*args, **kwargs)
+                if sanitize_asset_name(name)
+            ),
+            &#34;NAME NOT FOUND&#34;,
+        )
+```
+So, what is the code actually doing? First, a generator expression is created from the non-empty sanitized `name candidates` and advanced to the first yield using `next`. Then, it gets the first non-empty sanitized name. In case none of the strategies, which are tried in order of preference sequentially, produce a non-empty sanitized name the default value “NAME NOT FOUND” is returned by the `next` function when `StopIteration` is reached.
+
+Cool, huh? Let us know if you can find other clever uses for this pattern! 
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.9f564b46f420cdda1117.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.04e0fea40de4509528e6.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.193d3c6702f23213ab74.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.4b618d4509e3f267eadc.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.a20af8953d27ed2de725.js" defer="defer"></script>
+
+

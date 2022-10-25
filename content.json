@@ -67,6 +67,32 @@
     }
   },
   "POSTS": {
+    "strategy-backtracking-using-python-generators": {
+      "title": "A pattern for strategy backtracking using Python generators",
+      "description": "While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python Generators and generator expressions.",
+      "date": "2022-10-25",
+      "img": "/static/strategy-backtracking-using-python-generators.jpg",
+      "tags": [
+        "python",
+        "backtracking",
+        "ETL pipeline",
+        "generators",
+        "generator expressions"
+      ],
+      "length": "5 min read",
+      "source": "https://docs.monadical.com/s/F9szicbHq",
+      "url": "/posts/strategy-backtracking-using-python-generators.html",
+      "template": "posts/strategy-backtracking-using-python-generators.html",
+      "authors": [
+        {
+          "name": "Juan Diego Caballero",
+          "title": "Full-stack dev/PM",
+          "handle": "@jdcaballerov",
+          "url": "https://github.com/jdcaballerov",
+          "image": "/static/core/img/img-team-012.jpg"
+        }
+      ]
+    },
     "minting-nft-solana-mobile": {
       "title": "How to mint NFTs using Solana’s mobile wallet adapter",
       "description": "React Native is a powerful tool for developing mobile apps that make use of Solana’s mobile wallet adapter. Here’s how to use the tech to mint an NFT.",

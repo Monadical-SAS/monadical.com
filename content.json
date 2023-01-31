@@ -67,6 +67,38 @@
     }
   },
   "POSTS": {
+    "zulip-ia-bot-1": {
+      "title": "Integrating AI models into Zulip bots using FastAPI: Part 1",
+      "description": "Artificial intelligence is a powerful tool for automating tasks and improving the efficiency of your business. In this series, we'll explore how to integrate AI models into Zulip bots using FastAPI.",
+      "date": "2023-01-31",
+      "img": "/static/zulip-ia-bot-1.jpeg",
+      "tags": [
+        "RPA",
+        "Bots",
+        "Zulip",
+        "FastAPI"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/vlbu-RcwA",
+      "url": "/posts/zulip-ia-bot-1.html",
+      "template": "posts/zulip-ia-bot-1.html",
+      "authors": [
+        {
+          "name": "Juan David Arias",
+          "title": "Full-stack dev/PM",
+          "handle": "@juanArias8",
+          "url": "https://github.com/juanArias8",
+          "image": "/static/core/img/img-team-22.png"
+        },
+        {
+          "name": "Cesar Uribe",
+          "title": "Full-stack developer",
+          "handle": "@curibe",
+          "url": "https://github.com/curibe",
+          "image": "/static/core/img/img-team-20.png"
+        }
+      ]
+    },
     "strategy-backtracking-using-python-generators": {
       "title": "A pattern for strategy backtracking using Python generators",
       "description": "While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python Generators and generator expressions.",

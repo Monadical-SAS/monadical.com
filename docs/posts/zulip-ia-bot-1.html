@@ -315,9 +315,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 31 2023 08:42:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 01 2023 01:15:04 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 31 2023 08:42:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 01 2023 04:29:37 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">50 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">58 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -375,7 +375,7 @@ Feel free to play around with a  generic type bot, but be aware that  for the ex
 
 6. After creating the bot, download the `zuliprc`file by clicking the download icon under the bot card. This file contains the information about the bot and an API key that will be used as the authentication token between the Zulip client and the bot server.
 
-7. Clone the [bot’s examples repository](https://github.com/zulip/python-zulip-api/tree/main/zulip_bots/zulip_bots/bots).  From a terminal, run the command `git clone <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="31565845715658455944531f525e5c">[email&#160;protected]</a>:zulip/python-zulip-api.git`.This will create a new directory `python-zulip-api` with a list of example bots that you can refer to, and use as samples to build your own.
+7. Clone the [bot’s examples repository](https://github.com/zulip/python-zulip-api/tree/main/zulip_bots/zulip_bots/bots).  From a terminal, run the command `git clone <a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4a3adb084a3adb0acb1a6eaa7aba9">[email&#160;protected]</a>:zulip/python-zulip-api.git`.This will create a new directory `python-zulip-api` with a list of example bots that you can refer to, and use as samples to build your own.
 
 8. Move the `zuliprc` file you downloaded in step 5 to the `python-zulip-api` directory with the command `mv /path/to/zuliprc python-zulip-api`. Now let’s move to the `python-zulip-api` folder with `cd python-zulip-api`.
 
@@ -435,11 +435,11 @@ To run the bot in a self-hosted server or in any cloud provider, execute the com
 
 With the `zulip-botserver`, you can run more than one bot at the same time using only the  `botserverrc` file. This is important to know in case you need multiple bots running on the same server. If that‘s the case, then you can deploy as many bots as you want on your own server by just using a good architecture in your system.
 
-If you’re interested, you can find more information on that [here](https://zulip.com/api/deploying-bots#running-multiple-bots-using-the-zulip-bot server).  This  `zulip-botserver`is the same Zulip file that you downloaded in the beginning. You just need to specify the bot’s name or the bot’s file’s custom path that you want to run, for example, `[helloworld]` or `[/your/bot/file/location/bot-file.py]`:
+If you’re interested, you can find more information on that [here](https://zulip.com/api/deploying-bots#running-multiple-bots-using-the-zulip-bot-server).  This  `zulip-botserver`is the same Zulip file that you downloaded in the beginning. You just need to specify the bot’s name or the bot’s file’s custom path that you want to run, for example, `[helloworld]` or `[/your/bot/file/location/bot-file.py]`:
 
 ```bash
 [helloworld] # or the custom path of your external bot: ~/Documents/my_bot.py
-<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7c2cac6cecb9ac3c2cbd7cfc8d48ac5c8d3e7ddd2cbced789c3c8cac6cec989c4c8ca">[email&#160;protected]</a>
+<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="caafa7aba3a6f7aeafa6baa2a5b9e7a8a5be8ab0bfa6a3bae4aea5a7aba3a4e4a9a5a7">[email&#160;protected]</a>
 key=xxxxxkeyxxxxx
 site=https://zulip.domain.com
 token=xxxxxtokenxxxxx
@@ -455,16 +455,16 @@ So far, we&#39;ve used the initial Zulip example bot repository and executed one
 This structure, while useful, is overly complex if what we want is to integrate a simple bot. So, we’ll only maintain some key concepts and redefine the structure in the new project we’re going to create. 
 
 In the next section, you’ll learn how to write your own Zulip bot server in FastAPI by migrating some Flask files to be FastAPI compatible. 
-The bot we’re going to create is named Delphos, this in reference to the city that housed [the Delphi Oracle] (https://blogs.unimelb.edu.au/sciencecommunication/2021/08/15/the-delphi-oracle-a-stoned-woman-or-apollos-voice/) in Greek mythology, because our goal is for Delphos to be the source of all knowledge within our company.
+The bot we’re going to create is named Delphos, this in reference to the city that housed [The Delphi Oracle](https://blogs.unimelb.edu.au/sciencecommunication/2021/08/15/the-delphi-or/) in Greek mythology, because our goal is for Delphos to be the source of all knowledge within our company.
 
 ## Migrating from Flask to FastAPI
 While it&#39;s possible to implement the project from scratch, for ease, we&#39;re going to reuse some files from the Flask project and rewrite a couple of functions to be FastAPI compliant.
 
 The `zulip-botserver` tool  has two essential files that we’re going to use:
 
-* `[input_parameters.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/input_parameters.py)` is an implementation of [argparse](https://docs.python.org/3/library/argparse.html) which allows the server to receive configuration arguments when running the application. `argparse` is a Python module that is compatible with both Flask and FastAPI, so it’s not necessary to make changes to this file. 
+* [input_parameters.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/input_parameters.py) is an implementation of [argparse](https://docs.python.org/3/library/argparse.html) which allows the server to receive configuration arguments when running the application. `argparse` is a Python module that is compatible with both Flask and FastAPI, so it’s not necessary to make changes to this file. 
 
-* `[server.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/server.py)` is the entrypoint for the bot application. This file contains the code that creates the application, defines the POST endpoint, runs the application, and loads the system configurations. The file was initially written to run on Flask, but we’re going to change it to be  FastAPI compatible. To do that, follow the next steps.
+* [server.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/server.py) is the entrypoint for the bot application. This file contains the code that creates the application, defines the POST endpoint, runs the application, and loads the system configurations. The file was initially written to run on Flask, but we’re going to change it to be  FastAPI compatible. To do that, follow the next steps.
 
 ### Step 1: Init the server
 To start with the FastAPI project, create a new directory and a Python file that will be the entry point to the server. From a terminal, run the following command:
@@ -589,7 +589,7 @@ bots_lib_modules: {
 }
 bot_handlers: {
     &#34;delphos&#34;: ExternalBotHandler = client: (
-            email=&#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9bdbcb5a9b1b6aa99bcb4b8b0b5f7bab6b4">[email&#160;protected]</a>&#34;,
+            email=&#34;<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de9e8e1fde5e2fecde8e0ece4e1a3eee2e0">[email&#160;protected]</a>&#34;,
             api_key=&#34;delphos_api_key&#34;,
             site=&#34;https://zulip.site.com&#34;,
     )
@@ -661,7 +661,7 @@ Up to this point, you’ve managed to migrate the `zulip-botserver` from Flask t
 
 ### Step 11: Add your bot functionality
 To run your own functionalities, you need to add commands to the bot. The following is an example of the process, with a command to get a city’s weather specified as a parameter. For example, `@delphos weather Medellin`. 
-To achieve this, we’ll make use of the public API ‘www.weatherapi.com’. First, register on its page to obtain an API KEY. Once you have the API KEY, you can make requests to its endpoint. Attach the API KEY and specify the name of the city as a parameter. Something like `http://api.weatherapi.com/v1/current.json?key=API_KEY&amp;q=Medellin`. Let&#39;s see the complete example. 
+To achieve this, we’ll make use of the public API **www.weatherapi.com**. First, register on its page to obtain an API KEY. Once you have the API KEY, you can make requests to its endpoint. Attach the API KEY and specify the name of the city as a parameter. Something like `http://api.weatherapi.com/v1/current.json?key=API_KEY&amp;q=Medellin`. Let&#39;s see the complete example. 
 
 Create a new file file `src/bots/delphos/delphos.py` and add the following content:
 
@@ -719,7 +719,7 @@ Download the `zuliprc` file as `zuliprc-delphos` again, and put it inside the `d
 
 ```bash
 [./src/bots/delphos/delphos.py]
-<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f2979f939b9ecf96979e829a9d81df909d86b288879e9b82dc969d9f939b9cdc919d9f">[email&#160;protected]</a>
+<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3b6beb2babfeeb7b6bfa3bbbca0feb1bca793a9a6bfbaa3fdb7bcbeb2babdfdb0bcbe">[email&#160;protected]</a>
 key=xxxxxkeyxxxxx
 site=https://zulip.domain.com
 token=xxxxxtokenxxxxx

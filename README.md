@@ -205,4 +205,4 @@ You can use 3rd party tools to verify that our pages look good to humans and sea
 
 Monadical Inc. © 2022  
 All rights reserved.  
-v1.0.0
+v1.0.1

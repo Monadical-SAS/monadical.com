@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="In this tutorial, you will learn how to implement your version of &#34;[skip ci]&#34; of GitHub Actions to control when executing a workflow or jobs">
+    
+    
+    
+    <meta property="og:title" content="filters with Github Actions - HedgeDoc">
+    
+    
+    <meta property="og:description" content="In this tutorial, you will learn how to implement your version of &#34;[skip ci]&#34; of GitHub Actions to control when executing a workflow or jobs">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>filters with Github Actions - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Collaborative markdown notes">
+<meta name="application-name" content="HedgeDoc - Collaborative markdown notes">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 31 2023 16:44:55 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Apr 04 2023 21:49:09 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">3 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+&lt;center&gt;
+
+# How to write your own custom `[skip ci]` on GitHub Actions and simplify your life
+
+&lt;big&gt;
+
+&lt;/big&gt;
+
+*Written by Cesar Uribe. Originally published 2023-04-04 on the [Monadical blog](https://monadical.com/blog.html).*
+
+*Save time and simplify your life by creating custom filters to skip over [skip ci] in GitHub Actions.*
+
+&lt;/center&gt;
+
+
+Five years ago, GitHub Actions was released to simplify workflows for developers and allow them to integrate the ci/cd pipeline in the same repository without using third-party services. Subsequently, Github implemented the use of a keyword `[skip ci]` within commits to disable the execution of a workflow. 
+
+But first, what is `[skip ci]` exactly, and what does it do? Basically, if any commit message in your push or the HEAD commit of your PR contains the strings `[skip ci], [ci skip], [no ci], [skip actions]`, or `[actions skip]`, workflows triggered on the push or pull_request events will be skipped. This is very useful when, for example, you have a workflow that runs tests, which can take minutes, but you only made changes to the README. 
+
+As simple as it sounds, this can be simplified even further by creating your own filter that may even be better than `[skip ci]`. This customization allows you to apply the filter to both personalized keywords and the job as well, in the cases where you do not want to omit the execution of the complete workflow but only of certain jobs. These additional functions are not available with the default `[skip ci]` found on GitHub Actions. So if you’re interested in saving time in your execution pipeline and freeing up those credits on GitHub Actions when you run a workflow or job, keep reading! 📖 
+
+
+There are 2 main steps, outlined below:  
+
+1. Testing the operation of the default `[skip ci]` on GitHub Actions. 
+This step will allow you to compare the default `[skip ci]` to the custom `[skip ci]` that you’ll build later. Feel free to skip this part if you’re already familiar with the default `[skip ci]`.
+ 
+2. Learning how to create your own custom `[skip ci]` using two different methods:
+    i) Using filters over paths or files
+    ii) Implementing conditional jobs
+
+
+
+Let’s begin!
+
+
+## Test the operation of `[skip ci]` from GitHub Actions 🧑‍💻
+
+First, create a [test repository](https://github.com/curibe/ghaction-customize-workflow): 
+
+![figure1](https://docs.monadical.com/uploads/2f4b3593-7523-41fc-bed0-dccf612dfc4c.png)
+
+Once you’ve created it, clone it on your local machine.
+
+Then create your first workflow and execute some simple instructions. But remember, this workflow can contain all the jobs that you want to install in your CI/CD pipeline. In the `.github/workflows/`main branch, create the file seen below. Then add it to the stage, commit, and push it to the remote repo:
+
+```yaml
+name: Basic info
+on: 
+  push:
+    branches: [&#34;main&#34;]
+  
+  pull_request:
+    branches: [&#34;main&#34;]
+
+jobs:
+  showinfo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show message 
+        run: echo &#34;Hello everyone!&#34;
+
+```
+
+This workflow will be activated when two events occur:
+ * When a push is made to the main branch
+ * When a pull request is created and pushed
+
+It will also contain a single job that will be in charge of displaying the message in the GitHub Actions display console.
+
+Once the `.yml` file is uploaded, the workflow is immediately activated by the push event:
+
+![figure2](https://docs.monadical.com/uploads/393d2f9f-aebc-4c9a-b383-da8c93936a00.png)
+
+
+Next, create a `file1.txt` file, and push it to the remote repo in the main branch. This time,  in the commit message, add the statement `[skip ci]` at the beginning of the commit:
+
+```bash
+touch file1.txt 
+echo &#34;first line&#34; &gt;&gt; file1.txt
+git add file1.txt
+git commit -m &#34;[skip ci] add first txt file&#34;
+git push origin main
+```
+
+Notice that the file was pushed to the repo, but the workflow was not executed:
+
+![figure3](https://docs.monadical.com/uploads/b6dd79a0-6ad6-4b85-9ba2-e8c1e8aeb5c6.png)
+
+![figure4](https://docs.monadical.com/uploads/8a320638-b589-4ebd-abe4-e165cd7302c0.png)
+
+With this, you can see that adding `[skip ci]` in the commit prevents the workflow from running.
+
+This has been tested by pushing the `file1.txt` to the main branch. But what happens when GitHub Flow is implemented, and the event is pushed to a branch related to a Pull Request? Take a look at how that works by doing the following:
+
+1. Create a branch called `pr1` in the local repo:
+```bash
+git checkout -b pr1
+```
+
+2. reate a new file `file2.txt`, and add it to the git stage:
+```bash
+touch file2.txt
+git add file2.txt
+```
+
+3. Create a commit with the new file, but add the string `[skip ci]` in the message:
+```bash
+git commit -m &#34;[skip ci] add file2.txt&#34;
+```
+
+4. Push to the remote repository:
+```bash
+git push origin pr1
+```
+
+5. Create the pull request on GitHub:
+![figure5](https://docs.monadical.com/uploads/6bf92532-8ef7-4162-b40d-7129420f8778.png)
+
+![figure6](https://docs.monadical.com/uploads/c23a0714-c98a-4a64-ae81-104090668dfb.png)
+
+Once again, you can see the operation of `[skip ci]`. Now, add a line to the `file2.txt` file and do the same process without adding `[skip ci]` to the commit:
+
+```bash
+echo &#34;first line in file 2&#34; &gt;&gt; file2.txt
+git add file2.txt
+git commit -m &#34;add a new line in file2&#34;
+git push origin pr1
+```
+
+![figure7](https://docs.monadical.com/uploads/b1d9af0c-8b7c-46a4-83b5-3d8d24849788.png)
+
+![figure8](https://docs.monadical.com/uploads/265bfbf0-f2c3-45da-b602-df7c976a5c21.png)
+
+In this case, the workflow was executed without problems. If you merge the PR, you&#39;ll notice that the workflow was executed again. This is because the event was pushed to the main branch:
+
+![figure9](https://docs.monadical.com/uploads/dd21d5c3-0feb-4e23-bfc8-e138cd15928a.png)
+
+
+
+## Create your own `[skip ci]` 🤔
+
+There are several ways to prevent a pipeline from running,  depending on what you need. For example:
+
+1. If you want to prevent the entire workflow from running, you can either use `[skip ci]` or use filters on certain paths or files.
+2. If you want to prevent specific jobs of the entire workflow from running, you can implement conditional jobs, which are executed if a certain condition is met.
+
+Let’s look at these two options below in more detail. 
+
+### Option 1: Using filters on paths and files 😲
+
+This option allows you to control the execution of the workflow. You can control the execution even if the changes are from a specific path or file related to the commit, but you can&#39;t control the `[skip ci]` at the commit level using keywords. For example, the `[skip ci]` occurs at the file and path level. Let’s take a look at how this works:
+
+1. In the main branch, create a folder called content and create the content1.txt inside the folder.
+
+2. Create a file `workflow2.yml` with the following:
+    ```yaml
+    name: testing filters in gitgub actions
+
+    on: 
+      push:
+        branches:
+          - main
+        paths-ignore: 
+          - &#34;content/**&#34;
+          - &#34;file1.txt&#34;
+
+      pull_request:
+        branches: [&#34;main&#34;]
+        paths-ignore: 
+          - &#34;content/**&#34;
+          - &#34;file1.txt&#34;
+
+    jobs:
+      Build:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          -name: Show info
+            run: echo &#34;Hello World&#34;
+    ```
+    This workflow makes use of the filter [paths-ignore] (https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore) to indicate that said workflow should not be executed when there are changes in `file1.txt`, or if the files are contained in the folder  `content`.
+
+3. Add the changes (content file and workflow file) to Git’s stage and commit.  Then push it to the main branch of the remote repository.
+
+4. Modify the file `file1.txt`, save changes, and push back to the main branch:
+    ```bash
+    echo &#34;line 2 in file 1&#34; &gt;&gt; file1.txt
+    git add file1.txt
+    git commit -m &#34;add line2 in file1.txt&#34;
+    git push origin main
+    ```
+
+5. Review the actions executed on GitHub and notice the following:
+![](https://docs.monadical.com/uploads/794c1306-1989-4d2f-98f2-dca8db20c7d4.png)
+When the first commit is sent, both workflows are executed( red box 1). But when the `file1.txt` file is modified in the second commit, you’ll see that only `workflow1` is executed (red box 2).
+
+**Try it by yourself:**
+
+6. Modify the file `content1.txt` and repeat the normal git process (stage, commit,  push) to check what happens in this case.
+
+7. Modify the file `file2.txt`, save changes, and push again to the main branch. In this case,  both workflows are executed:
+![figure11](https://docs.monadical.com/uploads/f686e749-d9b0-483d-b9ab-2af632abfd6c.png)
+
+There is another drawback in addition to not controlling the `[skip ci]` at the commit level. If you&#39;re working on a branch associated with a PR and you modify a file that is not excluded, `workflow2`will remain active. This means it will continue to execute, regardless of subsequent commits that are related to an excluded file. For example, if you create a new PR, `pr2` and modify `file1.txt`, only `workflow1` is executed. If you modify `file2.txt`, both workflows are executed. But if you then modify `file1.txt` again, both workflows are subsequently executed:
+
+![figure12](https://docs.monadical.com/uploads/f2705684-1538-4686-a6a1-0327af99cf93.png)
+![figure13](https://docs.monadical.com/uploads/c2ea065c-2d0e-40c7-8741-45e7175a6ac3.png)
+![figure14](https://docs.monadical.com/uploads/3ea72f48-21c5-4d30-88fd-2111eae2dedf.png)
+
+In this case, it would be necessary to mix these filters together with `[skip ci]` to avoid the execution of the workflow.
+
+### Option 2: Implementing Conditional Jobs 😎
+
+This second option does not prevent you from running the workflow, but it does allow you to skip some jobs.
+
+Imagine a project with a backend and a frontend in the same repo, and one of the workflow jobs is to run the tests. As a result, you only need to update documentation, or README, which does not affect the tests. So, when you upload the changes, the workflow executes the tests despite there being no changes in the code. Consequently, you spent the execution time running the action pipeline unnecessarily. You also reduced your GitHub Actions account credits. If your project is complex, these tests could take many lengthy minutes to complete. 
+
+In the example above, it would be useful to skip these jobs. You could do this by using your own trigger keywords when you make a push to the remote repository. Let’s learn how to do that by implementing the main branch and PR.
+
+#### Case 1: Main branch
+
+Following the same flow as option 1, complete the next steps:
+
+1. Create the file `workflow3.yml` with the following content:
+    ```yaml
+    name: filter by jobs
+    on: 
+      push:
+        branches: [&#34;main&#34;]
+
+      pull_request:
+        branches: [&#34;main&#34;]
+
+    jobs:
+
+      showinfo:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Show message 
+            run: echo &#34;Hello everybody!&#34;
+          - name: show commit message
+            run: echo &#34;commit - ${{github.event.head_commit.message}}&#34;
+
+      test:
+        if: &#34;!contains(github.event.head_commit.message, &#39;[doc]&#39;)&#34;
+        name: Test
+        runs-on: ubuntu-latest
+        steps:
+          - name: test stuff 
+            run: echo &#34;Simulating tests&#34;
+    ```
+    In this particular workflow, two jobs have been implemented:`showinfo` displays general information (for example, it can represent a build), and `test` simulates a testing pipeline. 
+
+    In `showinfo`, a new step has been implemented that allows you to show the last commit of the branch. For that, the GitHub [context](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context)  has been used `github.event.head_commit.message`.
+
+    In `test`, [conditionals](https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution) have been used in order to evaluate whether or not the last commit contains the string `[doc]` to run that job. If the commit contains the string, the job is not executed.
+
+
+2. The file is added to the repo and uploaded to GitHub. All workflows are automatically executed, including the new one:
+
+    ![figure15](https://docs.monadical.com/uploads/2f131bde-3802-484d-b9ef-683802f1ed99.png)
+
+    
+   If you review the job `showinfo` in `workflow3`, you’ll see that the used GitHub context returns you the last commit:
+
+    ![figure16](https://docs.monadical.com/uploads/de53021d-d4de-4bb9-83ec-237409dcd247.png)
+    
+    In this case, the commit does not contain the string `[doc]`, so the job test is executed.
+
+3. Modify the file `file1.txt` again and upload the changes to GitHub, but add the string `[doc]` in the commit:
+
+
+    ![figure17](https://docs.monadical.com/uploads/fcd16721-980e-4cc7-953a-39b576be633c.png)
+
+    ![figure18](https://docs.monadical.com/uploads/b5ba7ffc-c789-4446-8aab-84396ec272cc.png)
+    
+    When the `[doc]` string appears in the commit, the job testing is not executed. What does this mean? Well, sometimes you don&#39;t need to execute certain jobs, like creation or documentation updates, in your workflows. In this case, implement these filters with your own scopes or trigger keywords. You could even create another job with the function of building the documentation, running it only if you&#39;ve updated the documentation.
+
+#### Case 2: Pull request
+
+Follow this procedure to test how `workflow3` works in a PR: 
+
+1. Create a branch called `pr3` in the local repo.
+2. Modify the `file1.txt` file by creating a standard commit and uploading changes.
+3. Create the PR in GitHub.
+4. Modify the `file1.txt` again. Create a commit by adding the string `[doc ]` and upload the change to GitHub.
+
+By following these steps, you get the following:
+
+![figure19](https://docs.monadical.com/uploads/91b00ef7-f617-4f4e-aa6e-31f20f08ab9f.png)
+
+Wait, something happened 😱!  The filter didn&#39;t work 😭. If we check the `showinfo`, you&#39;ll see the reason: 
+
+![figure20](https://docs.monadical.com/uploads/205221e7-78bc-46ce-8196-f260996219cc.png)
+
+The GitHub context does not return the commit when working on a PR, so the conditional finds nothing as it receives an empty string. This also executes the `testing` job.
+
+According to the [documentation](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context), `github.event` is described as:
+
+
+&gt;The full event webhook payload . You can access individual properties of the event using this context. This object is identical to the webhook payload of the event that triggered the &gt;workflow run, and is different for each event. The webhooks for each GitHub Actions event is linked in &#34;[Events that trigger workflows.](https://docs.github.com/en/articles/events-that-trigger-workflows)&#34; For example, for a workflow run triggered by the [push event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push), this object contains the contents of the [push webhook payload](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push)
+
+And in this case, the event that triggers the workflow is [pull_request](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request), which does not contain the `head_commit` key in its webhook payload.
+
+To fix this, you need to apply [another strategy]((https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html#git-commit-within-a-pull-request):) to create the filter 
+
+* Set the ref parameter of action/checkout to the head of the pull_request to checkout that branch because the ref parameter is different in the push and pull_request event:
+
+    &gt; When you use pull_request, `@actions/checkout` will perform a git checkout to the github.ref environment variable. Note that git checkout is not applied to the commit, as it would have been the case when using push.
+    &gt;
+    &gt; This difference means that a pull_request workflow ref would look like `refs/remotes/pull/##/merge` whereas a push workflow would be `refs/heads/branch_name`. This explains why the SHA of a push workflow matches the commit that triggered the workflow, whereas the SHA of a pull_request workflow does not; instead the SHA of the pull_request is the resulting commit that was created from merging the base to the head.
+    &gt;
+    &gt; &lt;small&gt;  Taken from https://frontside.com/blog/2020-05-26-github-actions-pull_request/#how-does-pull_request-affect-actionscheckout &lt;/small&gt;
+
+* Use `git log` to pull the latest commit from the branch.
+* Use regex to filter messages.
+* Share data between jobs. To do this, make use of the statements [set_output](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter) and [needs](https://docs.github.com/en/actions/learn-github-actions/contexts#needs-context) to control the order of execution. This is because you need the result stored in a variable from one job to be used in other jobs, which is a necessary step for GitHub performance reasons. For example, GitHub a-priori configures jobs to be executed in parallel as if they were executed on different machines. 
+
+Taking the above into account, create the `workflow4.yml` file with the following content:
+
+```yaml
+name: filter by jobs in PR&#39;s
+on: 
+  push:
+    branches: [&#34;main&#34;]
+  
+  pull_request:
+    branches: [&#34;main&#34;]
+
+jobs:
+
+  check_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      -name: check if message contain keywords ace scopeid
+        id: check_commit
+        run: |
+          message=$(git log -1 --pretty=format:&#39;%s&#39;)
+          re=&#34;\[(doc|skip-tests)\]&#34;
+          if [[ $message =~ $re ]]; then
+            echo &#34;::set-output name=match::true&#34;
+            echo &#34;$message -&gt; Match is true&#34;
+          else
+            echo &#34;$message -&gt; Match is false&#34;
+          fi
+    outputs:
+      match: ${{ steps.check_commit.outputs.match }}
+
+  test:
+    needs: check_commit
+    if: ${{ needs.check_commit.outputs.match != &#39;true&#39; }}
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: test stuffs 
+        run: echo &#34;Simulating tests&#34;
+```
+
+Notice that in the first step of the `check_commit` job, the ref parameter is set. In the next step, several commands are executed in the shell:
+
+* The commit is extracted with the command `git log -1 --pretty=format:&#39;%s&#39;`. 
+* Regex is used to validate if the string `[doc]` or `[skip- tests]` is in the commit. With this, you can use more than one scope as a filter in the commit.
+* A variable is created with the command `echo &#34;::set-output name=match::true&#34;`, which will be shared between jobs. For this, the key outputs enable the variable to be shared.
+* In the job test, the key-value pair `needs: check_commit` indicates that this job depends on check_commit.
+* The conditional `if` validates whether the commit has the string `[doc]`, which validates if the match variable is true or not.
+
+Now, push the file `workflow4.yml`  to GitHub and modify the file`file1.txt` again. Also, add the string `[doc]` in the commit before pushing it to the GitHub repository. By completing these two operations, the following is obtained:
+
+![figure21](https://docs.monadical.com/uploads/ae199c9a-cf88-47de-8a09-ab2362e90bb0.png)
+
+![figure22](https://docs.monadical.com/uploads/2144645b-14f9-464c-b76a-b32fdc94d311.png)
+
+![figure23](https://docs.monadical.com/uploads/a13f51f4-252c-45b3-9ef9-b52fb8e401ee.png)
+
+The filter has worked using the new workflow 🥳! You can see that the job `testing` is not executed when the string `[doc]` is in the commit. In other words, you’ve implemented your own filter, which allows you to skip the execution of a workflow at the job level. 
+
+## Conclusions
+
+You’ve made it this far and now, nothing is stopping you from creating your own custom filters to skip a workflow or to prevent a job from running by using a set of strings like `[skip ci]`  on GitHub Actions. 
+
+I hope you found these custom filters worthwhile. They should allow you to control and avoid many lengthy and unnecessary executions; this is especially useful when a certain job or workflow takes a while to execute, and forces you to use more credits on GitHub Actions or rely on third-party services. 
+
+
+Let me know in the comments if this approach worked for you. If you found errors or had trouble, please share your concerns below, and I’ll try to help you out! 
+
+## References
+
+- https://redactedtech.com/running-conditional-github-jobs-in-sequence/
+- https://dev.to/epassaro/use-skip-ci-in-github-actions-1mnf
+- https://stackoverflow.com/questions/41565716/how-to-automate-addition-of-skip-ci-to-commit-messages-on-some-bra
+- https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
+- https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
+- https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+- https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow
+- https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions
+- https://blog.mergify.com/running-github-actions-only-on-certain-pull-requests/
+- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html
+- https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+- https://frontside.com/blog/2020-05-26-github-actions-pull_request/#how-does-pull_request-affect-actionscheckout 
+- https://www.edwardthomson.com/blog/github_actions_15_sharing_data_between_steps.html
+- https://www.macstadium.com/blog/sharing-variables-between-jobs-in-github-actions
+- https://github.blog/2021-11-18-7-advanced-workflow-automation-features-with-github-actions/
+- https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
+- https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+- https://blog.mergify.com/running-github-actions-only-on-certain-pull-requests/
+- https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions
+
+
+
+&lt;center&gt;
+ 
+&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+    
+Monadical.com | Full-Stack Consultancy
+*We build software that outlasts us*
+    
+&lt;/center&gt;</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.deda981c1c31221a91d9.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.6da413651c225dd97e7a.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.897edf415109c21e7fb2.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.624da9bb49753eaa85e1.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.f314462a1d0ebb3b5365.js" defer="defer"></script>
+
+

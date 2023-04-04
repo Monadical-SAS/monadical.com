@@ -52,7 +52,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 15 2020 19:17:12 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 15 2020 21:37:16 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1559 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1572 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -96,9 +96,9 @@ jobs:
     name: Run the tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f3f8f5f3fbffe5e4d0e6a2">[email&#160;protected]</a>
+      - uses: actions/checkout@v2
       - name: Install Python 3
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="691a0c1d1c194419101d010607291f58">[email&#160;protected]</a>
+        uses: actions/setup-python@v1
         with:
           python-version: 3.6
       - name: Install dependencies
@@ -125,9 +125,9 @@ lint:
     name: Run linter for dockerfile (Hadolint)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a2a9a4a2aaaeb4b581b7f3">[email&#160;protected]</a>
+      - uses: actions/checkout@v2
       - name: Hadolint linting
-        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0860696c676461667c25696b7c6167664865697b7c6d7a">[email&#160;protected]</a>
+        uses: brpaz/hadolint-action@master
 
 ```
 
@@ -154,9 +154,9 @@ jobs:
     name: Run the tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92f1faf7f1f9fde7e6d2e4a0">[email&#160;protected]</a>
+      - uses: actions/checkout@v2
       - name: Install Python 3
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2c1d7c6c7c29fc2cbc6dadddcf2c483">[email&#160;protected]</a>
+        uses: actions/setup-python@v1
         with:
           python-version: 3.6
       - name: Install dependencies
@@ -170,9 +170,9 @@ jobs:
     name: Run linter for dockerfile(Hadolint)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="46252e23252d293332063074">[email&#160;protected]</a>
+      - uses: actions/checkout@v2
       - name: Hadolint linting
-        uses: brpaz/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="365e5752595a5f58421b5755425f5958765b5745425344">[email&#160;protected]</a>
+        uses: brpaz/hadolint-action@master
 
   build-push:
     name: Build and push
@@ -180,10 +180,10 @@ jobs:
     needs: [test, lint]
     steps:
       - name: Checkout
-        uses: actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d0e05080e060218192d1b5f">[email&#160;protected]</a>
+        uses: actions/checkout@v2
 
       - name: Configure AWS credentials
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="36555958505f514344531b5741451b554453525358425f575a45764007">[email&#160;protected]</a>
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -191,7 +191,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/<a href="https://docs.monadical.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d4c404c57424300484e5f0041424a44436d5b1c">[email&#160;protected]</a>
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Extract tag
         shell: bash
@@ -266,7 +266,7 @@ Monadical.com | Full-Stack Consultancy
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
     
-<script data-cfasync="false" src="https://docs.monadical.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>

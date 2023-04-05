@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 31 2023 16:44:55 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Apr 04 2023 21:49:09 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 31 2023 16:44:55 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Apr 05 2023 15:27:27 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">25 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -99,13 +99,13 @@ Let’s begin!
 
 ## Test the operation of `[skip ci]` from GitHub Actions 🧑‍💻
 
-First, create a [test repository](https://github.com/curibe/ghaction-customize-workflow): 
+First, create a [test repository](https://github.com/curibe/gha-custom-filter): 
 
 ![figure1](https://docs.monadical.com/uploads/2f4b3593-7523-41fc-bed0-dccf612dfc4c.png)
 
 Once you’ve created it, clone it on your local machine.
 
-Then create your first workflow and execute some simple instructions. But remember, this workflow can contain all the jobs that you want to install in your CI/CD pipeline. In the `.github/workflows/`main branch, create the file seen below. Then add it to the stage, commit, and push it to the remote repo:
+Then create your first workflow and execute some simple instructions. But remember, this workflow can contain all the jobs that you want to install in your CI/CD pipeline. In the `.github/workflows/`main branch, create the file `workflow1.yml` seen below. Then add it to the stage, commit, and push it to the remote repo:
 
 ```yaml
 name: Basic info
@@ -277,7 +277,7 @@ In this case, it would be necessary to mix these filters together with `[skip ci
 
 This second option does not prevent you from running the workflow, but it does allow you to skip some jobs.
 
-Imagine a project with a backend and a frontend in the same repo, and one of the workflow jobs is to run the tests. As a result, you only need to update documentation, or README, which does not affect the tests. So, when you upload the changes, the workflow executes the tests despite there being no changes in the code. Consequently, you spent the execution time running the action pipeline unnecessarily. You also reduced your GitHub Actions account credits. If your project is complex, these tests could take many lengthy minutes to complete. 
+Consider a project that has both backend and frontend components within the same repository, and one of the workflow jobs involves running the backend tests. When updating documentation or the README, which doesn&#39;t impact the tests, the workflow still executes the tests after pushing the changes, even though the tests code remains unchanged. As a result, you waste execution time running the action pipeline and consume your GitHub Actions account credits. For complex projects, these tests may take a considerable amount of time to finish, making the unnecessary execution even more costly. 
 
 In the example above, it would be useful to skip these jobs. You could do this by using your own trigger keywords when you make a push to the remote repository. Let’s learn how to do that by implementing the main branch and PR.
 
@@ -313,7 +313,7 @@ Following the same flow as option 1, complete the next steps:
           - name: test stuff 
             run: echo &#34;Simulating tests&#34;
     ```
-    In this particular workflow, two jobs have been implemented:`showinfo` displays general information (for example, it can represent a build), and `test` simulates a testing pipeline. 
+    In this particular workflow, two jobs have been implemented: `showinfo` displays general information (for example, it can represent a build), and `test` simulates a testing pipeline. 
 
     In `showinfo`, a new step has been implemented that allows you to show the last commit of the branch. For that, the GitHub [context](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context)  has been used `github.event.head_commit.message`.
 
@@ -347,7 +347,7 @@ Follow this procedure to test how `workflow3` works in a PR:
 1. Create a branch called `pr3` in the local repo.
 2. Modify the `file1.txt` file by creating a standard commit and uploading changes.
 3. Create the PR in GitHub.
-4. Modify the `file1.txt` again. Create a commit by adding the string `[doc ]` and upload the change to GitHub.
+4. Modify the `file1.txt` again. Create a commit by adding the string `[doc]` and upload the change to GitHub.
 
 By following these steps, you get the following:
 

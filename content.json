@@ -67,6 +67,41 @@
     }
   },
   "POSTS": {
+    "shades-of-rust-gui-library-list": {
+      "title": "50 Shades of Rust, or emerging Rust GUIs in a WASM world",
+      "description": "An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.",
+      "date": "2023-04-26",
+      "img": "/static/shades-of-rust-gui-library-list.jpg",
+      "tags": [
+        "rust",
+        "gui",
+        "ui",
+        "wasm",
+        "wgpu",
+        "WebGPU",
+        "tauri",
+        "dioxus",
+        "xilem",
+        "elm",
+        "react",
+        "sycamore",
+        "yew",
+        "leptos"
+      ],
+      "length": "11 min read",
+      "source": "https://docs.monadical.com/s/shades-of-rust-gui-library-list",
+      "url": "/posts/shades-of-rust-gui-library-list.html",
+      "template": "posts/shades-of-rust-gui-library-list.html",
+      "authors": [
+        {
+          "name": "Igor Loskutov",
+          "title": "Crabber",
+          "handle": "@Firfi",
+          "url": "https://github.com/Firfi",
+          "image": "/static/core/img/img-team-037.png"
+        }
+      ]
+    },
     "filters-github-actions": {
       "title": "Filters with Github Actions",
       "description": "In this tutorial, you will learn how to implement your version of [skip ci] of GitHub Actions to control when executing a workflow or jobs.",

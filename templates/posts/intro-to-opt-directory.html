@@ -50,9 +50,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 00:27:53 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Apr 15 2020 07:32:28 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Feb 14 2019 00:27:53 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Apr 20 2023 15:50:59 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">7278 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">7475 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -83,13 +83,16 @@ The core things to keep track of in each project are:
  - data
  - executables
 
+
 Consistency across your environments will help you provision and debug setups efficiently, no matter which machine you&#39;re on.  The most effective way to have consistency is to write down your process, and stick to it.  With a written process you now have a declarative description of the setup process that you can follow every time you set up a new machine.  It also serves as documentation if you ever need to remember how something was set up.
 
 Try to reduce turing-completeness in your setup wherever possible.  i.e. prefer yaml/json/ansible/docker configs describing the desired outcome to Puppet/Chef/bash scripts that imperatively run steps to get there.
 
 The documentation of your process can be broken down into &#34;standards&#34;, think of them like RFCs describing a particular aspect of your sysadmin duties, except the standards committe only has one member: you!
 
-Whith that in mind as you read ahead, I encourage you to draft out your own &#34;folder locations standard&#34; that suits your needs, and use it when you create new projects to deploy to your servers.
+&gt; *For a similar approach, see: [The Twelve-Factor App Methodology](https://12factor.net)*
+
+With that in mind as you read ahead, I encourage you to draft out your own &#34;folder locations standard&#34; that suits your needs, and use it when you create new projects to deploy to your servers.
 
 ## Start Simple: Where should we put our project root?
 
@@ -176,18 +179,18 @@ In my projects I like to create 5 standard executables for the most common admin
     myblog.com/
         ...
         bin/
-            setup
-            start
-            stop
-            backup
-            update
+            setup.sh
+            start.sh
+            stop.sh
+            backup.sh
+            update.sh
 ```
 
-- `start`: starts the app and all its necessary services e.g. `systemctl nginx start`
-- `stops`: stops the app cleanly and ends all processes
-- `setup`: installs any necessary packages and symlinks all our `/opt/&lt;project-name&gt;` files into place on the host system
-- `backup`: dumps any running databases or message queues to static files in `data/` which are safe to copy as a snapshot-in-time backup
-- `update`: pulls a the latest version of the code and does any package updates/migrations necessary
+- `start.sh`: starts the app and all its necessary services e.g. `systemctl nginx start`
+- `stops.sh`: stops the app cleanly and ends all processes
+- `setup.sh`: installs any necessary packages and symlinks all our `/opt/&lt;project-name&gt;` files into place on the host system
+- `backup.sh`: dumps any running databases or message queues to static files in `data/` which are safe to copy as a snapshot-in-time backup
+- `update.sh`: pulls a the latest version of the code and does any package updates/migrations necessary
 
 These executables are useful in many contexts, you can call them from cron jobs, use them in deploy scripts, or just call them manually when SSH&#39;ed into the server and debugging stuff.
 
@@ -206,11 +209,11 @@ Our final folder structure looks like this:
         .gitignore
         README.md
         bin/
-            setup
-            start
-            stop
-            backup
-            update
+            setup.sh
+            start.sh
+            stop.sh
+            backup.sh
+            update.sh
         etc/
             nginx/		 ...
             mysql/		 ...

@@ -3,30 +3,30 @@
 
 <head>
 
-    <title>The Redux Store as the Frontend&#39;s Database</title>
+    <title>50 Shades of Rust, or emerging Rust GUIs in a WASM world</title>
 
     <!-- Meta Tags Start -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="The Redux Store as the Frontend&#39;s Database">
+    <meta name="title" content="50 Shades of Rust, or emerging Rust GUIs in a WASM world">
     <meta name="description"
-        content="Storing data in a normalized form allows us to calculate fast indexes for lookups.">
+        content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
     <meta property="og:locale" content="en_US" />
     <meta property="og:description"
-        content="Storing data in a normalized form allows us to calculate fast indexes for lookups.">
-    <meta property="og:image" name="image" content="https://monadical.com/static/redux.jpg">
-    <meta property="og:title" content="The Redux Store as the Frontend&#39;s Database">
+        content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/shades-of-rust-gui-library-list.jpg">
+    <meta property="og:title" content="50 Shades of Rust, or emerging Rust GUIs in a WASM world">
     <meta property="og:type" content="article">
-    <meta property="og:url" content=https://monadical.com/posts/Using-Redux-As-A-Database.html />
+    <meta property="og:url" content=https://monadical.com/posts/shades-of-rust-gui-library-list.html />
     <meta property="og:site_name" content="Monadical Consulting" />
     
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:description"
-        content="Storing data in a normalized form allows us to calculate fast indexes for lookups.">
-    <meta property="twitter:image" content="https://monadical.com/static/redux.jpg">
+        content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
+    <meta property="twitter:image" content="https://monadical.com/static/shades-of-rust-gui-library-list.jpg">
     <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="The Redux Store as the Frontend&#39;s Database">
-    <meta property="twitter:url" content=https://monadical.com/posts/Using-Redux-As-A-Database.html />
+    <meta property="twitter:title" content="50 Shades of Rust, or emerging Rust GUIs in a WASM world">
+    <meta property="twitter:url" content=https://monadical.com/posts/shades-of-rust-gui-library-list.html />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="robots" content="follow, index" />
@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
     <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
 
-    <link rel="canonical" href="https://monadical.com/posts/Using-Redux-As-A-Database.html" />
+    <link rel="canonical" href="https://monadical.com/posts/shades-of-rust-gui-library-list.html" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -266,30 +266,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Using the Redux Store Like a Database  *Originally published 2017-07-27 on [HackerNoon.c">
-    
-    
-    
-    <meta property="og:title" content="Using the Redux Store Like a Database - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Using the Redux Store Like a Database - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="The best platform to write and share markdown.">
+<meta name="keywords" content="Collaborative, Markdown, Notes">
+<link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
 <link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
@@ -301,255 +285,258 @@
 <meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
 <meta name="theme-color" content="#b51f08">
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+<meta property="og:title" content="HedgeDoc - Collaborative markdown notes">
+<meta property="og:description" content="The best platform to write and share markdown.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://docs.monadical.com">
+<meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+<meta property="og:image:alt" content="HedgeDoc logo">
+<meta property="og:image:type" content="image/png">
+<base href="">
+<title>HedgeDoc - Collaborative markdown notes</title>
+<link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover-styles-pack.b648f312ee4d780e4818.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover.e6dcfddabfc3aa3af727.css" rel="stylesheet">
+
 </head>
 
-<body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
-                
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Apr 20 2018 00:45:05 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 13 2019 23:59:18 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1025 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
-
-# Using the Redux Store Like a Database
-
-*Originally published 2017-07-27 on [HackerNoon.com](https://hackernoon.com/shape-your-redux-store-like-your-database-98faa4754fd5). Also available in [中文](http://it.uu01.me/p/ovdfze.html).*
-
-
-![Your store data can be viewed from many angles by using indexes.](https://cdn-images-1.medium.com/max/2000/1*b-Rc3m2h_oQjbplfvp9s6w.gif)
-*Your store data can be viewed from many angles by using indexes.*
-&lt;/center&gt;
-
-Recently I was browsing some of the Javascript discussions on the [RC](https://recurse.com) chat system, and I noticed a great question by [Kate Ray](https://twitter.com/kraykray):
-&gt; How should we structure the data in our redux store?
-
-This is a common question when using redux, certainly one that I’ve asked myself many times. I’ve found the answer usually depends on how I plan to interact with my data.
-
-There are a number of things to consider: am I frequently going to be iterating over the store data like a list of rows? Do I need fast O(1) access to individual items?
-
-I’ve seen a bunch of approaches in practice, usually with some tradeoffs between access time and ease of iteration.
-
-## Common approaches
-
-If you’re storing some data where each item has an id, you could shape your store as an Object or as an Array of Objects.
-
-**Array of flat objects [{values}]:
-**This is the most common one by far that I’ve seen. It makes iteration easy and you can store your data in a particular order, but you cant access a specific item by id or name without iterating and filtering.
-
-    categories: [
-      {name: &#39;abs&#39;,  id: &#39;32o8wafe&#39;, exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
-      {name: &#39;arms&#39;, id: &#39;oaiwefjo&#39;, exercises: [...]},
-      {name: &#39;legs&#39;, id: &#39;aoijwfeo&#39;, exercises: [...]},
-    ]
-
-**Object keyed on id {id: {values}}:
-**This gives you fast O(1) access to each item, but you cant easily access the id of a given item while you’re iterating using Object.values().
-
-    categories: {
-      &#39;32o8wafe&#39;: {name: &#39;abs&#39;,  exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
-      &#39;oaiwefjo&#39;: {name: &#39;arms&#39;, exercises: [...]},
-      &#39;3oij2e3c&#39;: {name: &#39;legs&#39;, exercises: [...]},
-    }
-
-    Object.values(categories).map(row =&gt; // cant access id here)
-&gt; **Food for thought:**
-Arrays and Objects are [the same thing in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Description).
-(V8 stores them using different internal representations though)
-
-## Structure it like a database of rows indexed by id
-
-On our journey implementing a large redux app at [Monadical](https://monadical.com), we stumbled upon a different approach that gives us the benefit of both easy iteration with Object.values(state.categories), and fast O(1) access to individual items:
-
-    categories: {
-      &#39;32o8wafe&#39;: {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;,  exercises: [...]},
-      &#39;oaiwefjo&#39;: {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, exercises: [...]},
-      &#39;3oij2e3c&#39;: {id: &#39;3oij2e3c&#39;, name: &#39;legs&#39;, exercises: [...]},
-    }
-
-Notice how the id is both the key for the row, and a property in the row itself. This little bit of duplication affords us great flexibility at access time. It’s also compatible with the [normalized](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html) (*aka* flat) shape that the redux docs recommend.
-
-Now you can loop over the data, and have access to the id while iterating!
-
-Object.values(categories).map(cat =&gt; ({id: cat.id, name: cat.name}))
-
-Or access any individual item instantly by id!
-
-categories[‘32o8wafe’].name // &#39;abs&#39;
-
-We send our data to the frontend already shaped like this, so the frontend doesn’t need to do any processing to produce the mapping of id: values. It’s easy to do from the backend, since you’re likely pulling data out of a database where it already has an id field that you can use as a key.
-
-## The power of indexes
-
-The new shape we introduce above is a trivial change to make, and likely not one a team will spend much time deliberating over when designing their redux store. The real magic comes in when we access store data using different keys besides id.
-
-Notice how the shape we introduce above is just a list of rows, with a key used to uniquely identify each row. With your store shaped like this, you can produce indexes that let you do O(1) access using any other key you desire:
-
-**Index categories by name:**
-
-To make the index, we write a function that takes the store data, and returns a mapping of name -&gt; id.
-
-    const index_by_name = (categories) =&gt;
-        Object.values(categories)
-              .reduce((index, row) =&gt; {
-                          index[row.name] = row.id
-                          return index
-                      }, {})
-
-    // {abs: &#39;32o8wafe&#39;, arms: &#39;oaiwefjo&#39;, legs: &#39;3oij2e3c&#39;}
-
-![](https://cdn-images-1.medium.com/max/2572/1*y3bELbeb5YMOFNwIotJ6QQ.png)
-
-    const ids_by_name = index_by_name(categories)
-
-    categories[ids_by_name[&#39;abs&#39;]] // {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;, ...}
-
-You can build as many indexes as you want for the same data, which gives you O(1) access based on any column, just like you’d have in a database.
-
-If your data doesn’t change, your indexes just need to be computed once, otherwise they should be recomputed with memoized functions.
-&gt; **Food for thought:**
-How can you make an index for keys that are non-unique?
-
-&lt;center&gt;
-
-![Trippy photo break. Rest your eyes for a second, then read on :)](https://cdn-images-1.medium.com/max/2000/1*z-jt1KCPbEFCaPBDOpSBrQ.gif)
-*Trippy photo break. Rest your eyes for a second, then read on :)*
-&lt;/center&gt;
-
-## Sorted data
-
-What if your categories have an inherent order (like in an array), and you need to be able to get them in order whenever iterating over your data?
-
-You might think to do something like:
-
-    const category_order = [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
-    category_order.map(id =&gt; categories[id])
-
-This is a good approach, however, it requires keeping an array separately from our data to store the order, which is suboptimal. Lets do it properly with indexes.
-
-We send the data from our backend with an order (or idx) key specifying each row’s position, then we **make an index for order just like we would for any other key**:
-
-    const ids_by_order =
-          Object.values(categories)
-                .reduce((ordered_ids, category) =&gt; {
-                            ordered_ids[category.order] = category.id
-                            return ordered_ids
-                        }, [])
-
-    // [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
-
-Notice how this reduce operation produces an index Array instead of an Object. In JS, an array is actually just an object with the keys 0, 1, 2, …, so now we have both O(1) access to a specific id by order, and we can iterate using map, filter, and reduce on the ordered list:
-
-    const second_category = categories[ids_by_order[1]]
-    // {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, order: &#39;1&#39;}
-
-    const ordered_names = ids_by_order.map(id =&gt; categories[id].name)
-    // [&#39;abs&#39;, &#39;arms&#39;, &#39;legs&#39;]
-&gt; **Food for thought:**
-Why does this work even if your order numbers [have gaps](http://www.htmlgoodies.com/beyond/javascript/dont-fear-sparse-arrays-in-javascript.html)? e.g. 0, 2, 41, 399
-
-## Memoization
-
-If your data never changes, you can call ids_by_key once on startup and use the produced index as a static object every time after that. However, if you’re working with changing data that will be accessed frequently, memoization is essential to avoid recalculating the index on every access (which is O(n)).
-
-Memoized-index selectors can be accomplished with [reselect](https://github.com/reactjs/reselect), or by writing a [custom memoizer function](https://www.sitepoint.com/implementing-memoization-in-javascript/) (which is not too difficult depending on your data).
-
-Memoized indexes mean you can call the index function on every read, instead of having to store the index in redux.
-
-The flat data pattern with indexes that I describe above is also congruent with the pattern used by the library [Normalizr](https://github.com/paularmstrong/normalizr). If you’re into storing your data flat (separated by type), and like the index concept introduced in this article, give the [Redux Without Profanity docs](https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html) on Normalizr a read.
-&gt; **Food for thought:**
-Memoizing using the .hash() on immutable.js objects is [**fast](https://egghead.io/lessons/javascript-lightning-fast-immutable-js-equality-checks-with-hash-codes)**.
-
-## Higher order index functions
-
-**All indexes are pure results of our data, **so we can also make cool higher-order index functions (*aka* functions that return functions), e.g. :
-
-    const ids_by_key = (key) =&gt; (data) =&gt;  // make index(data) for key
-          Object.values(data)
-                .reduce((index, row) =&gt; {
-                            index[row[key]] = row.id
-                            return index
-                        }, {})
-
-    const ids_by_name = ids_by_key(&#39;name&#39;)  // returns an index function
-    const abs_id = ids_by_name(categories)[&#39;abs&#39;]
-    // &#39;32o8wafe&#39;
-&gt; **Food for thought:**
-Write an index maker function that makes indexes keyed on a tuple of two keys: `${row[key1]}-${row[key2]}` -&gt; id
-
-## Why does any of this matter?
-&gt; React and Flux/Redux solved […] rendering and state management. It became possible now to build truly advanced web apps, focusing on actual domain, instead of struggling with underlying implementation.
-&gt; The problem however is that systems keeps growing. We are building more UIs and loading and transforming even more data…
-
-— Roman Liutikov: [On Web Apps and Databases](https://medium.com/@roman01la/on-web-apps-and-databases-c026f77b93f4)
-
-As frontends start to approach the complexity of backends, we end up manually reimplementing things that have already existed for decades in the backend: databases, message queues, and other stereotypically server-only infrastructure. Many of the frontend patterns that are considered modern— like functional reactive programming — have been around [since Windows 3.1](https://tomjoro.github.io/2017-02-03-why-reactive-fp-sucks/).
-
-State management lessons that we’ve already learned from SQL databases in the 90’s can be applied to our frontend to help us maintain the clarity, elegance, and consistency of our data. Using indexes to avoid duplication and jump to specific parts of a a central, consistent data set is one such example, and I’m sure there are many more that I have yet to discover.
-
-## Further reading
-
-If you want more database-like features in the browser, check out: [redux-orm](https://github.com/tommikaikkonen/redux-orm), [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB) (the replacement to Web SQL), and [GraphQL](http://graphql.org/). Remember though, don’t start installing libraries until you know exactly why you need them.
-
-* [http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape](http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape)
-
-* [http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html)
-
-* [https://egghead.io/lessons/javascript-redux-normalizing-the-state-shape](https://egghead.io/lessons/javascript-redux-normalizing-the-state-shape)
-
-* [https://stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina](https://stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina)
-
-* [https://stackoverflow.com/questions/34995822/how-to-get-best-practice-react-redux-nested-array-data](https://stackoverflow.com/questions/34995822/how-to-get-best-practice-react-redux-nested-array-data?noredirect=1&amp;lq=1)
-
-* [https://codeburst.io/how-to-store-your-state-data-f17ceca37aa](https://codeburst.io/how-to-store-your-state-data-f17ceca37aa)
-
-* [https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html](https://tonyhb.gitbooks.io/redux-without-profanity/content/normalizer.html)
-
-* [https://github.com/tommikaikkonen/redux-orm](https://github.com/tommikaikkonen/redux-orm)
-
-—
-&gt; **tl;dr**
-- Store your redux data in normalized form {id: {id, attr1, attr2, attr3}}
-- Make{attr: id} indexes for fast O(1) access by other keys e.g. ids_by_name
-- Iterate sorted data using an Array index *ids_by_order.map(id =&gt; data[id])
-- *Use pure index functions and memoize them if your data changes frequently
-
-## —
-
-Hopefully you find this useful! If so, give this article a 💚, or ping me on twitter [@theSquashSH](https://twitter.com/theSquashSH).
-
-If you’re interested in working on cool Django + React/Redux projects involving Ethereum, [OddSlingers Labs](https://monadical.com/apply) is hiring remote devs.</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
+<body>
+    
+    <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand"></h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="ui-home active"><a href="shades-of-rust-gui-library-list.html#">Intro</a>
+                            </li>
+                            <li class="ui-history"><a href="shades-of-rust-gui-library-list.html#">History</a>
+                            </li>
+                            <div class="ui-signin" style="float: right; margin-top: 8px;">
+                                
+                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New guest note</a>
+                                
+                                
+                                <button class="btn btn-sm btn-success ui-signin" data-toggle="modal" data-target=".signin-modal">Sign In</button>
+                                
+                            </div>
+                            <div class="ui-signout" style="float: right; margin-top: 8px; display: none;">
+                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New note</a>
+                                <span class="ui-profile dropdown pull-right">
+                                    <button id="profileLabel" class="btn btn-sm btn-link ui-profile-label" style="padding-right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="ui-avatar" width="20" height="20"><span class="hidden-xs hidden-sm">&ensp;<span class="ui-name"></span></span>&ensp;<i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="profileLabel">
+                                        <li><a href="https://docs.monadical.com/features"><i class="fa fa-dot-circle-o fa-fw"></i> Features</a></li>
+                                        <li><a href="https://docs.monadical.com/me/export"><i class="fa fa-cloud-download fa-fw"></i> Export user data</a></li>
+                                        <li><a class="ui-delete-user" data-toggle="modal" data-target=".delete-user-modal"><i class="fa fa-trash fa-fw"></i> Delete user</a></li>
+                                        <li><a href="https://docs.monadical.com/logout"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="home" class="section">
+                <div class="inner cover">
+                    <h1 class="cover-heading"><img src="https://docs.monadical.com/banner/banner_vertical_color.svg" width="400" alt="HedgeDoc logo"></h1>
+                    <p class="lead">
+                        The best platform to write and share markdown.
+                    </p>
+                    <span class="alert alert-info" style="display: inline-block;">
+                        CodiMD was renamed to HedgeDoc. <a href="https://hedgedoc.org/history/" rel="noopener noreferrer" target="_blank" class="text-danger">Read more</a>
+                    </span>
+                    
+                    
+                    <div class="alert alert-danger" style="max-width: 400px; margin: 0 auto;">You are not allowed to access this page. Maybe try logging in?</div>
+                    
+                    
+                    <span class="ui-signin">
+                        <br>
+                        <a type="button" class="btn btn-lg btn-success ui-signin" data-toggle="modal" data-target=".signin-modal" style="min-width: 200px;">Sign In</a>
+                    </span>
+                    <span class="ui-or">or</span>
+                    
+                    <span class="ui-signin">
+                        <a type="button" href="https://docs.monadical.com/features" class="btn btn-lg btn-primary" style="min-width: 200px;">Explore all features</a>
+                        <br>
+                        <br>
+                        <img src="https://docs.monadical.com/screenshot.png" class="screenshot ui-signin">
+                    </span>
+                    <div class="lead row" style="width: 90%; margin: 0 auto;">
+                        <div class="col-md-4 inner">
+                            <a href="https://docs.monadical.com/features#Share-Notes">
+                                <i class="fa fa-bolt fa-3x"></i>
+                                <h4>Real time collaboration</h4>
+                            </a>
+                        </div>
+                        <div class="col-md-4 inner">
+                            <a href="https://docs.monadical.com/features#MathJax">
+                                <i class="fa fa-bar-chart fa-3x"></i>
+                                <h4>Works with charts and MathJax</h4>
+                            </a>
+                        </div>
+                        <div class="col-md-4 inner">
+                            <a href="https://docs.monadical.com/features#Slide-Mode">
+                                <i class="fa fa-tv fa-3x"></i>
+                                <h4>Supports slide mode</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="history" class="section" style="display:none;">
+                <div class="ui-signin">
+                    <p>Below is history from this browser</p>
+                </div>
+                <br>
+                <form class="form-inline">
+                    <div class="form-group" style="vertical-align: bottom;">
+                        <input class="form-control ui-use-tags" placeholder="Select tags…" />
+                    </div>
+                    <div class="form-group">
+                        <input class="search form-control" placeholder="Search keyword…" />
+                    </div>
+                    <a href="shades-of-rust-gui-library-list.html#" class="sort btn btn-default" data-sort="text" title="Sort by title">
+                    Title
+                    </a>
+                    <a href="shades-of-rust-gui-library-list.html#" class="sort btn btn-default" data-sort="timestamp" title="Sort by time">
+                    Time
+                    </a>
+                    <span class="hidden-xs hidden-sm">
+                        <a href="shades-of-rust-gui-library-list.html#" class="btn btn-default ui-save-history" title="Export history"><i class="fa fa-save"></i></a>
+                        <span class="btn btn-default btn-file ui-open-history" title="Import history">
+                            <i class="fa fa-folder-open-o"></i><input type="file" />
+                        </span>
+                    <a href="shades-of-rust-gui-library-list.html#" class="btn btn-default ui-clear-history" title="Clear history" data-toggle="modal" data-target=".delete-history-modal"><i class="fa fa-trash-o"></i></a>
+                    </span>
+                    <a href="shades-of-rust-gui-library-list.html#" class="btn btn-default ui-refresh-history" title="Refresh history"><i class="fa fa-refresh"></i></a>
+                </form>
+                <h4 class="ui-nohistory" style="display:none;">
+                    No history
+                </h4>
+                <a href="shades-of-rust-gui-library-list.html#" class="btn btn-primary ui-import-from-browser" style="display:none;">Import from browser</a>
+                <ul id="history-list" class="list">
+                </ul>
+                <ul class="pagination"></ul>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <select class="ui-locale"></select>
+                    <p>
+                        Powered by <a href="https://hedgedoc.org">HedgeDoc</a> | <a href="https://docs.monadical.com/s/release-notes" target="_blank" rel="noopener">Releases</a> | <a href="https://github.com/hedgedoc/hedgedoc/tree/9ad995d0f66d3cba79b5d645622cb86243389b73" target="_blank" rel="noopener">Source Code</a>
+                    </p>
+                    <h6 class="social-foot">
+                        Follow us on <a href="https://github.com/hedgedoc/hedgedoc" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>, <a href="https://community.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-users" aria-hidden="true"></i> Discourse</a>, <a href="https://chat.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-comments"></i> Matrix</a>, <a href="https://social.hedgedoc.org/mastodon" target="_blank" rel="noopener"><i class="fa fa-mastodon"></i> Mastodon</a>, and <a href="https://translate.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-globe"></i> POEditor</a>.
+                    </h6>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+</div>
+<!-- delete history modal -->
+<div class="modal fade delete-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                <h5 class="ui-delete-history-modal-msg"></h5>
+                <strong class="ui-delete-history-modal-item"></strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger ui-delete-history-modal-confirm">Yes, do it!</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- delete user modal -->
+<div class="modal fade delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                <h5 class="ui-delete-user-modal-msg">Do you really want to delete your user account?</h5>
+                <strong class="ui-delete-user-modal-item">This will delete your account, all notes that are owned by you and remove all references to your account from other notes.</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default ui-delete-user-modal-cancel" data-dismiss="modal">Cancel</button>
+                <a type="button" class="btn btn-danger" href="https://docs.monadical.com/me/delete/">Yes, do it!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- signin modal -->
+<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="mySmallModalLabel">Choose method</h4>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <h4>Sign in via E-Mail</h4>
+                <form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
+                            <span class="help-block control-label with-errors" style="display: inline;"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <span class="help-block control-label with-errors" style="display: inline;"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary" formaction="https://docs.monadical.com/login">Sign In</button>
+                            <button type="submit" class="btn btn-default" formaction="https://docs.monadical.com/register">Register</button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.deda981c1c31221a91d9.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.6da413651c225dd97e7a.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.897edf415109c21e7fb2.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack.312b317523ee19ef6adb.js" defer="defer"></script><script src="https://docs.monadical.com/build/cover-pack.9a62bed5792a368ec43c.js" defer="defer"></script>
+
 </body>
 
 </html>
-<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.deda981c1c31221a91d9.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.6da413651c225dd97e7a.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.897edf415109c21e7fb2.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.624da9bb49753eaa85e1.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.f314462a1d0ebb3b5365.js" defer="defer"></script>
-
-
 
                         </article>
                     
@@ -560,19 +547,19 @@ If you’re interested in working on cool Django + React/Redux projects involvin
             <div class="authorbox">
                 
                     <div class="authorbox__content">
-                        <h3>Nick Sweeting</h3>
+                        <h3>Igor Loskutov</h3>
                         <h5>
-                            Monadical Co-Founder
-                            <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
-                                @theSquashSH
+                            Crabber
+                            <a href="https://github.com/Firfi" target="_blank" rel="noopener">
+                                @Firfi
                             </a>
                         </h5>
                         
-                        <img src="/static/nick.jpg" width="120px" height="120px" alt="Nick Sweeting"/>
+                        <img src="/static/core/img/img-team-037.png" width="120px" height="120px" alt="Igor Loskutov"/>
                     </div>
                 
             </div>
-            <h5>Published on <a href="#permalink">2017-07-27</a></h5>
+            <h5>Published on <a href="#permalink">2023-04-26</a></h5>
             <div class="newsletterbox">
                 <a href="/team.html#careers" style="font-weight: bold;">
                     We are hiring!
@@ -788,7 +775,7 @@ If you’re interested in working on cool Django + React/Redux projects involvin
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
                 
                 // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/Skcz_hUhM', {mode: 'no-cors'})
+                fetch('https://docs.monadical.com/s/shades-of-rust-gui-library-list', {mode: 'no-cors'})
 
                 // remove undesired css that break styles
                 setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)

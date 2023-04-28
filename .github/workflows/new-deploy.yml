@@ -1,0 +1,13 @@
+name: new-deploy
+on:
+  workflow_dispatch:
+jobs:
+  new-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Push to master empty commit
+        run: |
+          DATE_BRANCH=$(date +%Y%m%d-%H%M%S)
+          git commit --allow-empty -m "Autodeployed by git hub actions"
+          git push origin master

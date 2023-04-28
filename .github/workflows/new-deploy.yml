@@ -18,3 +18,9 @@ jobs:
         with:
           github_token: ${{ secrets.AUTODEPLOY_GITHUB_TOKEN }}
           branch: ${{ env.BRANCH }}
+  ci-backend:
+    uses: ./.github/workflows/deploy.yml
+    needs: new-deploy
+    with:
+      called: true
+    secrets: inherit

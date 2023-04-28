@@ -21,6 +21,4 @@ jobs:
   ci-backend:
     uses: ./.github/workflows/deploy.yml
     needs: new-deploy
-    with:
-      called: true
     secrets: inherit

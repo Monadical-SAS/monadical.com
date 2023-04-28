@@ -8,6 +8,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Push to master empty commit
         run: |
-          DATE_BRANCH=$(date +%Y%m%d-%H%M%S)
-          git commit --allow-empty -m "Autodeployed by git hub actions"
-          git push origin master
+          git commit --allow-empty -m "Redeployed by git hub actions"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.AUTODEPLOY_GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH }}

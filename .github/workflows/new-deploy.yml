@@ -1,6 +1,8 @@
 name: new-deploy
 on:
   workflow_dispatch:
+env:
+  BRANCH: master
 jobs:
   new-deploy:
     runs-on: ubuntu-latest

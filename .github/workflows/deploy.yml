@@ -9,7 +9,6 @@ on:
     - cron: "0 */2 * * *"
   # allow manually running the build from github actions page button
   workflow_dispatch:
-  workflow_call:
 env:
   ACTIVATE_VENV: 0
   TERM: xterm

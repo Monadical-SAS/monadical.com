@@ -315,9 +315,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 25 2023 14:09:43 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun Apr 30 2023 12:50:58 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 25 2023 14:09:43 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat May 06 2023 07:36:58 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">44751 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">46959 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -3057,6 +3057,220 @@ impl App {
 Rui is an immediate mode GUI library. It’s GPU rendered, updates reactively when state changes, and has richer layout options than other immediate mode UIs. The lib uses its own rendering tool vger-rs, like Druid would use Piet or Vello. One of its main goals is to [“Encode UI in types to ensure stable identity.”](https://github.com/audulus/rui#goals). For more info on identity and id paths, read [Xilem’s creator UI architecture article](https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html).
 
 The initial purpose of Rui was that the creators wanted to move their own app (a modular music processing app) to a better platform (namely, Rust). The lib is not properly runnable on the web right now because the library’s default backend is WebGPU. However, I think it could be run on the web, albeit with some effort. 
+
+### 20. [Silkenweb](https://github.com/silkenweb/silkenweb)
+
+**Silkenweb** is a web-first library that emphasizes having no virtual DOM, no macro usage for describing DOM, and signal-based reactivity.
+
+There&#39;s their example that uses CSS and signals:
+
+&lt;iframe src=&#34;https://shades-silkenweb.apps.loskutoff.com&#34;&gt;&lt;/iframe&gt;
+
+```rust
+// main.rs
+use silkenweb::{elements::html::*, log_panics, prelude::*};
+
+silkenweb::css!(&#34;color.css&#34;);
+
+fn change_color(
+    color: &amp;Mutable&lt;&amp;&#39;static str&gt;,
+    description: &amp;str,
+    new_color: &amp;&#39;static str,
+) -&gt; Button {
+    clone!(color);
+    button()
+        .text(description)
+        .on_click(move |_, _| color.set(new_color))
+}
+
+fn main() {
+    log_panics();
+
+    let color = Mutable::new(&#34;green&#34;);
+    let app = div()
+        .style_property(var::COLOR, Sig(color.signal_cloned()))
+        .child(change_color(&amp;color, &#34;Red&#34;, &#34;red&#34;))
+        .child(change_color(&amp;color, &#34;Green&#34;, &#34;green&#34;))
+        .child(
+            div()
+                .class(class::COLOR)
+                .text(&#34;Click either the &#39;Red&#39; or &#39;Green&#39; button to set the color of this text.&#34;),
+        );
+    mount(&#34;app&#34;, app);
+}
+```
+
+```css
+.color {
+    color: var(--color);
+}
+```
+
+### 21. [Rust-dominator](https://github.com/Pauan/rust-dominator)
+
+Rust-dominator is another very fast library that uses direct DOM manipulation and leverages the Signals pattern. 
+
+It is describe as one of the fastest, and very scalable with O(1) cost of updates even in larger DOM.
+
+&lt;iframe src=&#34;https://shades-rust-dominator.apps.loskutoff.com&#34;&gt;&lt;/iframe&gt;
+
+```rust
+// lib.rs
+
+use std::sync::Arc;
+use wasm_bindgen::prelude::*;
+use gloo_timers::future::TimeoutFuture;
+use serde_derive::{Serialize, Deserialize};
+use futures_signals::signal::{Mutable, not};
+use dominator::{html, class, events, clone, with_node, Dom};
+use web_sys::HtmlInputElement;
+use once_cell::sync::Lazy;
+use util::*;
+
+mod util;
+
+
+#[derive(Debug, Serialize, Deserialize)]
+struct User {
+    login: String,
+    id: u32,
+    node_id: String,
+    avatar_url: String,
+    gravatar_id: String,
+    url: String,
+    html_url: String,
+    followers_url: String,
+    following_url: String,
+    gists_url: String,
+    starred_url: String,
+    subscriptions_url: String,
+    repos_url: String,
+    events_url: String,
+    received_events_url: String,
+    #[serde(rename = &#34;type&#34;)]
+    type_: String,
+    site_admin: bool,
+    name: Option&lt;String&gt;,
+    company: Option&lt;String&gt;,
+    blog: String,
+    location: Option&lt;String&gt;,
+    email: Option&lt;String&gt;,
+    hireable: Option&lt;bool&gt;,
+    bio: Option&lt;String&gt;,
+    public_repos: u32,
+    public_gists: u32,
+    followers: u32,
+    following: u32,
+    created_at: String,
+    updated_at: String,
+}
+
+impl User {
+    async fn fetch(user: &amp;str) -&gt; Result&lt;Self, JsValue&gt; {
+        let user = fetch_github(&amp;format!(&#34;https://api.github.com/users/{}&#34;, user)).await?;
+        Ok(serde_json::from_str::&lt;Self&gt;(&amp;user).unwrap())
+    }
+}
+
+
+struct App {
+    user: Mutable&lt;Option&lt;User&gt;&gt;,
+    input: Mutable&lt;String&gt;,
+    loader: AsyncLoader,
+}
+
+impl App {
+    fn new(name: &amp;str, user: Option&lt;User&gt;) -&gt; Arc&lt;Self&gt; {
+        Arc::new(Self {
+            user: Mutable::new(user),
+            input: Mutable::new(name.to_string()),
+            loader: AsyncLoader::new(),
+        })
+    }
+
+    fn render(app: Arc&lt;Self&gt;) -&gt; Dom {
+        static APP: Lazy&lt;String&gt; = Lazy::new(|| class! {
+            .style(&#34;white-space&#34;, &#34;pre&#34;)
+        });
+
+        html!(&#34;div&#34;, {
+            .class(&amp;*APP)
+
+            .children(&amp;mut [
+                html!(&#34;input&#34; =&gt; HtmlInputElement, {
+                    .prop_signal(&#34;value&#34;, app.input.signal_cloned())
+
+                    .with_node!(element =&gt; {
+                        .event(clone!(app =&gt; move |_: events::Input| {
+                            app.input.set(element.value());
+                        }))
+                    })
+                }),
+
+                html!(&#34;button&#34;, {
+                    .text(&#34;Lookup user&#34;)
+
+                    .event(clone!(app =&gt; move |_: events::Click| {
+                        let input = app.input.lock_ref();
+
+                        if *input == &#34;&#34; {
+                            app.user.set(None);
+
+                        } else {
+                            let input = input.to_string();
+
+                            app.loader.load(clone!(app =&gt; async move {
+                                // Simulate a slow network
+                                TimeoutFuture::new(5_000).await;
+
+                                let user = User::fetch(&amp;input).await.ok();
+                                app.user.set(user);
+                            }));
+                        }
+                    }))
+                }),
+
+                html!(&#34;button&#34;, {
+                    .text(&#34;Cancel&#34;)
+
+                    .event(clone!(app =&gt; move |_: events::Click| {
+                        app.loader.cancel();
+                    }))
+                }),
+
+                html!(&#34;div&#34;, {
+                    .visible_signal(app.loader.is_loading())
+                    .text(&#34;LOADING&#34;)
+                }),
+
+                html!(&#34;div&#34;, {
+                    .visible_signal(not(app.loader.is_loading()))
+
+                    .text_signal(app.user.signal_ref(|user| format!(&#34;{:#?}&#34;, user)))
+                }),
+            ])
+        })
+    }
+}
+
+
+#[wasm_bindgen(start)]
+pub async fn main_js() -&gt; Result&lt;(), JsValue&gt; {
+    console_error_panic_hook::set_once();
+
+    let user = User::fetch(&#34;Pauan&#34;).await.ok();
+
+    let app = App::new(&#34;Pauan&#34;, user);
+
+    dominator::append_dom(&amp;dominator::body(), App::render(app));
+
+    Ok(())
+}
+
+```
+
+
+## Six tips for building WebAssembly bundles 
 
 Now that we’ve established the contemporary toolkit, I’d like to share how I built WebAssembly bundles using these libraries.  
 

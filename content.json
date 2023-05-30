@@ -67,6 +67,42 @@
     }
   },
   "POSTS": {
+    "demystifying-databases": {
+      "title": "Demystifying Databases: Cracking the Code of Efficient Data",
+      "description": "Seeking the perfect database for your web projects? From the reliability of relational databases to the cutting-edge innovation of blockchain technology, equip yourself to conquer performance issues, tackle data migration nightmares, and make informed decisions!",
+      "date": "2023-05-30",
+      "img": "/static/demystifying-databases.jpeg",
+      "tags": [
+        "Database",
+        "DatabaseParadigms",
+        "DatabaseDesign",
+        "Relational",
+        "TimeSeries",
+        "Blockchain",
+        "Queue",
+        "Document"
+      ],
+      "length": "14 min read",
+      "source": "https://docs.monadical.com/s/demystifying-databases",
+      "url": "/posts/demystifying-databases.html",
+      "template": "posts/demystifying-databases.html",
+      "authors": [
+        {
+          "name": "Jose Benitez",
+          "title": "Web developer",
+          "handle": "@yojosebenitez",
+          "url": "https://twitter.com/yojosebenitez",
+          "image": "/static/jose.jpg"
+        },
+        {
+          "name": "Hanna Jodrey",
+          "title": "Writer",
+          "handle": "@hannashoshana",
+          "url": "https://www.linkedin.com/in/hanna-r-jodrey-956721ab/",
+          "image": "/static/core/img/hanna.png"
+        }
+      ]
+    },
     "fine-tune-or-not-llm-ai-business-transformation": {
       "title": "To Fine-Tune or Not Fine-Tune: Large Language Models for AI-Driven Business Transformation",
       "description": "Discover the transformative power of LLMs for your business in our comprehensive roadmap, from their origins to the training processes, safety considerations, and current trends. ",

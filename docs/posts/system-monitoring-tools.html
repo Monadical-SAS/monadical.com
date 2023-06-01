@@ -315,9 +315,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Dec 08 2022 01:05:40 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed May 31 2023 00:42:57 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">23187 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">23199 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -783,6 +783,34 @@ View processes actively reading/writing/locking a given directory or path.
 ```bash
 fuser -a -v -u /some/path/here
 ```
+
+### `blktrace`
+
+Prints all disk-read events happening on the system.
+
+```bash
+sudo blktrace -d /dev/nvme0n1 -a read -o - | blkparse -i -
+```
+
+- https://questdb.io/blog/investigating-linux-phantom-disk-reads/
+
+### `debugfs`
+
+Translate between block numbers, inode numbers, and file paths.
+
+```bash
+debugfs -R &#39;icheck 536514808&#39; /dev/nvme0n1
+# debugfs 1.46.5 (30-Dec-2021)
+# Block   Inode number
+# 536514808   8270377
+ 
+debugfs -R &#39;ncheck 8270377&#39; /dev/nvme0n1
+# debugfs 1.46.5 (30-Dec-2021)
+# Inode   Pathname
+# 8270377 /home/ubuntu/.questdb/db/table_name/2022-10-04/symbol_col9.d.1092
+```
+
+- https://questdb.io/blog/investigating-linux-phantom-disk-reads/
 
 ### `iostat`
 

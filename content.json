@@ -67,6 +67,32 @@
     }
   },
   "POSTS": {
+    "mincraft-skin-generation": {
+      "title": "Digging into Stable Diffusion-Generated Minecraft Skins",
+      "description": "Fine-tune a Stable Diffusion model on a Minecraft dataset and create custom Minecraft-style characters using text prompts.",
+      "date": "2023-06-27",
+      "img": "/static/mincraft-skin-generation.jpg",
+      "tags": [
+        "Minecraft",
+        "StableDiffusion",
+        "AI",
+        "CustomSkins",
+        "GenerativeModels"
+      ],
+      "length": "10 min read",
+      "source": "https://docs.monadical.com/s/minecraft-skins-part-one",
+      "url": "/posts/mincraft-skin-generation.html",
+      "template": "posts/mincraft-skin-generation.html",
+      "authors": [
+        {
+          "name": "Cory Spencer",
+          "title": "Monadical",
+          "handle": "@cspencer",
+          "url": "",
+          "image": "/static/core/img/img-home-001.png"
+        }
+      ]
+    },
     "demystifying-databases": {
       "title": "Demystifying Databases: Cracking the Code of Efficient Data Storage",
       "description": "Unlock the power of data with comprehensive insights and practical guidance on selecting the ideal database for your projects, from relational databases to cutting-edge blockchain technologies.",

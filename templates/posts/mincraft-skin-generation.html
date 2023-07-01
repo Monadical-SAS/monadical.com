@@ -3,14 +3,30 @@
 
 <head>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="The best platform to write and share markdown.">
-<meta name="keywords" content="Collaborative, Markdown, Notes">
-<link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="# Digging into Stable Diffusion-Generated Minecraft Skins  *Written by Cory Spencer. Originally publ">
+    
+    
+    
+    <meta property="og:title" content="Digging into Stable Diffusion-Generated Minecraft Skins - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Digging into Stable Diffusion-Generated Minecraft Skins - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
 <link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
@@ -22,255 +38,241 @@
 <meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
 <meta name="theme-color" content="#b51f08">
 
-<meta property="og:title" content="HedgeDoc - Collaborative markdown notes">
-<meta property="og:description" content="The best platform to write and share markdown.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://docs.monadical.com">
-<meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-<meta property="og:image:alt" content="HedgeDoc logo">
-<meta property="og:image:type" content="image/png">
-<base href="">
-<title>HedgeDoc - Collaborative markdown notes</title>
-<link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover-styles-pack.b648f312ee4d780e4818.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover.e6dcfddabfc3aa3af727.css" rel="stylesheet">
-
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.51d576c9ea0a7705d2e0.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.04010c738e6d668e6e08.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b67314821de89ccff48b.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.6437be263d7329017dfe.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="hanna"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Jun 26 2023 21:48:51 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Jun 26 2023 22:34:36 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">313 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f80d5ae419320f353be2a501f30e233e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cory"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" ># Digging into Stable Diffusion-Generated Minecraft Skins
+
+*Written by Cory Spencer. Originally published 2023-06-27 on the [Monadical blog](https://monadical.com/blog.html).*
+
+## Overview
+
+Who doesn’t love Minecraft, the ridiculously popular [sandbox video game](https://en.wikipedia.org/wiki/Sandbox_game) that has enthralled both kids and adults alike for nearly twelve years?
+
+The hallmark of the game is that it allows players to embark on endless adventures in infinite, blocky worlds, building, mining, battling mobs, and exploring a dynamically-generated world made of blocks. However, an often-overlooked side effect is that Minecraft has also been instrumental in spawning and strengthening familial relationships; for example, I can spend quality time bonding with my son over Minecraft, without the threat of pollen allergies and/or risking a potential sunburn. In fact, his interest in the game inspired me to build a Stable Diffusion-powered model to create customized character skins.
+
+In the spirit of Minecraft’s emphasis on freedom and creation, Part One of this two-part series will explore how to fine-tune a Stable Diffusion model to create Minecraft-style characters, based solely on a text prompt provided to our model. Part Two will look at integrating the Minecraft skin generation plugin as a part of an open-source project we have in the pipeline, with very few changes. 
+
+Let’s get started!
+
+## Reviewing the training dataset
+
+![](https://docs.monadical.com/uploads/11c3e794-4b1d-45b3-aa21-bdcfefc211c7.png)
+
+Source: [Monadical’s Dataset Preview](https://huggingface.co/datasets/monadical-labs/minecraft-preview/viewer/monadical-labs--minecraft-preview) on Hugging Face.
+
+The dataset we’ll be using consists of 1022 Minecraft skins, consisting of characters like Ang from Avatar, Vito Corleone from Godfather, and Colonel Sanders. Each training image consists of two renders of each skin: one rendered from the front, and the second from the rear.
+
+Below are a few of my favourites, along with their associated text descriptions:
+
+![](https://docs.monadical.com/uploads/a37c2f0d-1982-4f92-86d8-bf5ba455fc2a.png)
+
+Indiana Jones, the fictional American adventurer, professor of archaeology, and the central protagonist of the Indiana Jones franchise.
+
+![](https://docs.monadical.com/uploads/c2b823ac-eb55-4e35-aba6-48dff65d8946.png)
+
+Yoda, the incredibly powerful Jedi Master in the Star Wars universe.
+
+![](https://docs.monadical.com/uploads/b61b5799-3035-4136-a660-42316c7cf5de.png)
+
+Agent Smith, Neo’s enemy in The Matrix movie series.
+
+Now let’s see how we can turn all these images into a fine-tuned model.
+
+## Setting up the training environment
+
+Before we start the fine-tuning process, we first need to set up the training environment. To do this, we’ll use a script included with the [Hugging Face Diffusers library](https://huggingface.co/docs/diffusers/index) to fine-tune our model. 
+
+1. First, let’s check out the most recent copy of the Diffusers library, and switch into that directory:
+
+    ```bash
+    $ git clone https://github.com/huggingface/diffusers
+    $ cd diffusers
+    ```
+
+    If you’re training on a remote server, such as an instance in Google Cloud or AWS, you may wish to start the training process within a ‘screen’ session. Using ‘screen’ will ensure the process doesn’t get interrupted if, for example, the SSH connection is interrupted.
+
+
+    ```bash
+    $ screen
+    ```
+
+1. Next, create a new Python environment with pipenv:
+
+    ```bash
+    $ pipenv shell
+    ```
     
-    <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <div class="cover-container">
+1. We can install the Hugging Face Diffusers library we’ve checked out of git as follows:
 
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand"></h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="ui-home active"><a href="mincraft-skin-generation.html#">Intro</a>
-                            </li>
-                            <li class="ui-history"><a href="mincraft-skin-generation.html#">History</a>
-                            </li>
-                            <div class="ui-signin" style="float: right; margin-top: 8px;">
-                                
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New guest note</a>
-                                
-                                
-                                <button class="btn btn-sm btn-success ui-signin" data-toggle="modal" data-target=".signin-modal">Sign In</button>
-                                
-                            </div>
-                            <div class="ui-signout" style="float: right; margin-top: 8px; display: none;">
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New note</a>
-                                <span class="ui-profile dropdown pull-right">
-                                    <button id="profileLabel" class="btn btn-sm btn-link ui-profile-label" style="padding-right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="ui-avatar" width="20" height="20"><span class="hidden-xs hidden-sm">&ensp;<span class="ui-name"></span></span>&ensp;<i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="profileLabel">
-                                        <li><a href="https://docs.monadical.com/features"><i class="fa fa-dot-circle-o fa-fw"></i> Features</a></li>
-                                        <li><a href="https://docs.monadical.com/me/export"><i class="fa fa-cloud-download fa-fw"></i> Export user data</a></li>
-                                        <li><a class="ui-delete-user" data-toggle="modal" data-target=".delete-user-modal"><i class="fa fa-trash fa-fw"></i> Delete user</a></li>
-                                        <li><a href="https://docs.monadical.com/logout"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
-                                    </ul>
-                                </span>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    ```bash
+    $ pip install .
+    ```
+    
+1. Switch into the examples/text_to_image directory, and install the Python modules required by the training scripts:
 
-            <div id="home" class="section">
-                <div class="inner cover">
-                    <h1 class="cover-heading"><img src="https://docs.monadical.com/banner/banner_vertical_color.svg" width="400" alt="HedgeDoc logo"></h1>
-                    <p class="lead">
-                        The best platform to write and share markdown.
-                    </p>
-                    <span class="alert alert-info" style="display: inline-block;">
-                        CodiMD was renamed to HedgeDoc. <a href="https://hedgedoc.org/history/" rel="noopener noreferrer" target="_blank" class="text-danger">Read more</a>
-                    </span>
-                    
-                    
-                    <div class="alert alert-danger" style="max-width: 400px; margin: 0 auto;">You are not allowed to access this page. Maybe try logging in?</div>
-                    
-                    
-                    <span class="ui-signin">
-                        <br>
-                        <a type="button" class="btn btn-lg btn-success ui-signin" data-toggle="modal" data-target=".signin-modal" style="min-width: 200px;">Sign In</a>
-                    </span>
-                    <span class="ui-or">or</span>
-                    
-                    <span class="ui-signin">
-                        <a type="button" href="https://docs.monadical.com/features" class="btn btn-lg btn-primary" style="min-width: 200px;">Explore all features</a>
-                        <br>
-                        <br>
-                        <img src="https://docs.monadical.com/screenshot.png" class="screenshot ui-signin">
-                    </span>
-                    <div class="lead row" style="width: 90%; margin: 0 auto;">
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Share-Notes">
-                                <i class="fa fa-bolt fa-3x"></i>
-                                <h4>Real time collaboration</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#MathJax">
-                                <i class="fa fa-bar-chart fa-3x"></i>
-                                <h4>Works with charts and MathJax</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Slide-Mode">
-                                <i class="fa fa-tv fa-3x"></i>
-                                <h4>Supports slide mode</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    ```bash
+    $ cd examples/text_to_image
+    $ pip install -r ./requirements.txt 
+    ```
+    
+1. Next, initialize an ‘accelerate’ environment. Using ‘accelerate’ allows us to train on all GPUs available on the system, without having to write additional code:
 
-            <div id="history" class="section" style="display:none;">
-                <div class="ui-signin">
-                    <p>Below is history from this browser</p>
-                </div>
-                <br>
-                <form class="form-inline">
-                    <div class="form-group" style="vertical-align: bottom;">
-                        <input class="form-control ui-use-tags" placeholder="Select tags…" />
-                    </div>
-                    <div class="form-group">
-                        <input class="search form-control" placeholder="Search keyword…" />
-                    </div>
-                    <a href="mincraft-skin-generation.html#" class="sort btn btn-default" data-sort="text" title="Sort by title">
-                    Title
-                    </a>
-                    <a href="mincraft-skin-generation.html#" class="sort btn btn-default" data-sort="timestamp" title="Sort by time">
-                    Time
-                    </a>
-                    <span class="hidden-xs hidden-sm">
-                        <a href="mincraft-skin-generation.html#" class="btn btn-default ui-save-history" title="Export history"><i class="fa fa-save"></i></a>
-                        <span class="btn btn-default btn-file ui-open-history" title="Import history">
-                            <i class="fa fa-folder-open-o"></i><input type="file" />
-                        </span>
-                    <a href="mincraft-skin-generation.html#" class="btn btn-default ui-clear-history" title="Clear history" data-toggle="modal" data-target=".delete-history-modal"><i class="fa fa-trash-o"></i></a>
-                    </span>
-                    <a href="mincraft-skin-generation.html#" class="btn btn-default ui-refresh-history" title="Refresh history"><i class="fa fa-refresh"></i></a>
-                </form>
-                <h4 class="ui-nohistory" style="display:none;">
-                    No history
-                </h4>
-                <a href="mincraft-skin-generation.html#" class="btn btn-primary ui-import-from-browser" style="display:none;">Import from browser</a>
-                <ul id="history-list" class="list">
-                </ul>
-                <ul class="pagination"></ul>
-            </div>
+    ```bash
+    $ accelerate config
+    ```
+    
+1. Finally, the training dataset can be cloned with ‘git’ into the current directory as follows:
 
-            <div class="mastfoot">
-                <div class="inner">
-                    <select class="ui-locale"></select>
-                    <p>
-                        Powered by <a href="https://hedgedoc.org">HedgeDoc</a> | <a href="https://docs.monadical.com/s/release-notes" target="_blank" rel="noopener">Releases</a> | <a href="https://github.com/hedgedoc/hedgedoc/tree/9ad995d0f66d3cba79b5d645622cb86243389b73" target="_blank" rel="noopener">Source Code</a>
-                    </p>
-                    <h6 class="social-foot">
-                        Follow us on <a href="https://github.com/hedgedoc/hedgedoc" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>, <a href="https://community.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-users" aria-hidden="true"></i> Discourse</a>, <a href="https://chat.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-comments"></i> Matrix</a>, <a href="https://social.hedgedoc.org/mastodon" target="_blank" rel="noopener"><i class="fa fa-mastodon"></i> Mastodon</a>, and <a href="https://translate.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-globe"></i> POEditor</a>.
-                    </h6>
-                </div>
-            </div>
+    ```bash
+    $ git clone git@hf.co:datasets/monadical-labs/minecraft-preview
+    ```
+
+Now with everything installed, we can start the training process.
+
+## Fine-tuning the Stable Diffusion model
+
+Before we start fine-tuning the model, we first need to set up some environment variables as follows: 
+
+```bash
+$ export SD_MODEL_NAME=&#34;stabilityai/stable-diffusion-2&#34;
+$ export SD_MODEL_RES=768
+$ export DATASET=&#34;monadical-labs/minecraft-preview&#34;
+$ export SAVE_STEPS=1000
+$ export MAX_STEPS=18000
+$ export MODEL_DIR=&#34;minecraft-model&#34;
+```
+
+$SD_MODEL_NAME tells our training script that we want to use the Stable Diffusion 2 model, which has a higher output resolution than the original Stable Diffusion. Should, for some reason, you wish to use the original Stable Diffusion model, change $SD_MODEL_RES from 768 to 512. You will also need to scale the dataset images from 768x768 down to 512x512.
+
+$DATASET indicates that we’ll be using the Hugging Face Minecraft-preview dataset that we looked at earlier.
+
+$SAVE_STEPS tells the training script that we want to save a checkpoint of the model every 1000 training steps. Depending on the number and type of GPU you will use for training, saving checkpoints regularly will allow you to resume training without losing too much work, should the training script be interrupted by Creepers, Zombie Pigmen, or Endermen (or for any other equally plausible reason).
+
+$MAX_STEPS indicates that we will be training the model for a maximum of 18,000 steps, after which a usable model will be written out to $MODEL_DIR.
+
+With these environment variables set, we’re ready to start training at last! Launch the train_text_to_image.py script as follows: 
+
+```bash
+   $ accelerate launch --mixed_precision=&#34;fp16&#34; train_text_to_image.py \
+        --pretrained_model_name_or_path=$SD_MODEL_NAME \
+        --dataset_name=$DATASET \
+        --use_ema \
+        --resolution=$SD_MODEL_RES  \
+        --train_batch_size=1 \
+        --gradient_accumulation_steps=4 \
+        --gradient_checkpointing \
+        --checkpointing_steps=$SAVE_STEPS \
+        --max_train_steps=$MAX_STEPS \
+        --learning_rate=1e-05 \
+        --max_grad_norm=1 \
+        --lr_scheduler=&#34;constant&#34; --lr_warmup_steps=0 \
+        --output_dir=$MODEL_DIR
+```
+   
+This process will probably take a long time, so if you have young children waiting for their custom skins, make sure you have a contingency plan to keep them occupied. On an NVidia RTX A6000, for example, the training process took in excess of 18 hours (which means that your child could feasibly ask, “Is it ready yet?” over 60,000 times, assuming they are awake, which of course they will be because children don’t sleep). 
+
+As a sleep-deprived father of a young child, I digress.
+
+It should be noted that each of the checkpoint directories takes up 10-15GB of disk space, so in addition to the potentially life-saving backup plan mentioned above, you’ll also need to have several hundred gigabytes available to save all 18 checkpoints, in addition to the final model. If this isn’t an option, you can increase the $SAVE_STEPS environment variable so that fewer checkpoints are written out.
+
+## What to do if the training script crashes
+
+If your training session is interrupted, and you want to resume it, add the “–resume_from_checkpoint latest” flag to the train_text_to_image.py command. This will load the latest checkpoint saved in the $MODEL_DIR directory.
+
+If the training script crashes while saving a checkpoint folder, that checkpoint may be incomplete or corrupted. If this is the case, just delete the last checkpoint folder and use the one saved previously.
+
+## Evaluating the results of the fine-tuned model
+
+We can evaluate the model fine-tuning progress by looking at the resulting images generated by fixed text prompts at each of the saved checkpoints. For example, here are the results for five text prompts on each of the 18 checkpoints saved during our training process:
+
+![](https://docs.monadical.com/uploads/d4f0abc6-362a-4243-9a9a-38e642c81536.png)
+
+At around the 15,000th training step, we start to see a reliable generation of images in a format very similar to our input Minecraft character images.
+
+## Using the generated model
+
+```python
+import argparse
+import torch
+
+from diffusers import StableDiffusionPipeline
+
+MODEL_PATH = &#34;./minecraft-model&#34;  # Path to the fine-tuned model.                                                                
+
+parser = argparse.ArgumentParser(description=&#39;Process some inputs.&#39;)
+
+parser.add_argument(&#39;filename&#39;, type=str, help=&#39;Name of the genereated Minecraft skin file&#39;)
+parser.add_argument(&#39;prompt&#39;, type=str, help=&#39;Stable Diffusion prompt to be used to generate skin&#39;)
+
+args = parser.parse_args()
+
+filename = args.filename
+prompt = args.prompt
+
+pipe = StableDiffusionPipeline.from_pretrained(MODEL_PATH, torch_dtype=torch.float16)
+pipe.to(&#34;cuda&#34;)  # Set this to &#34;cpu&#34; if not using an NVidia graphics card.
+
+image = pipe(prompt=prompt).images[0]
+image.save(filename)
+```
+
+Save the script to &#34;minecraft-skins.py&#34;, ensure the MODEL_PATH references the save path of the model we’ve just trained, and then run it as follows:
+
+```bash
+$ minecraft-skins.py einsten.png “Albert Einstein”
+```
+
+After a short wait while the image is being generated, you should find yourself with a Minecraft-style character much like those in our training datasets:
+
+![](https://docs.monadical.com/uploads/e0070ada-8f47-4044-92c9-f5fb811f2bf2.png)
+
+
+We&#39;ve made our [fine-tuned model available on HuggingFace](https://huggingface.co/monadical-labs/minecraft-preview), so you won&#39;t need to train one yourself.
+
+## “Are we there yet?”
+
+That’s it - we’ve successfully fine-tuned a model to generate Minecraft characters! Unfortunately, these generated images are just character previews, and cannot be used in-game to customize your character...yet!  If you join us for Part Two of this series, we’ll retrain another model to turn them into usable skins. Stay tuned!
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
         </div>
     </div>
-</div>
-<!-- delete history modal -->
-<div class="modal fade delete-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-history-modal-msg"></h5>
-                <strong class="ui-delete-history-modal-item"></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger ui-delete-history-modal-confirm">Yes, do it!</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- delete user modal -->
-<div class="modal fade delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-user-modal-msg">Do you really want to delete your user account?</h5>
-                <strong class="ui-delete-user-modal-item">This will delete your account, all notes that are owned by you and remove all references to your account from other notes.</strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default ui-delete-user-modal-cancel" data-dismiss="modal">Cancel</button>
-                <a type="button" class="btn btn-danger" href="https://docs.monadical.com/me/delete/">Yes, do it!</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- signin modal -->
-<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mySmallModalLabel">Choose method</h4>
-            </div>
-            <div class="modal-body" style="text-align: center;">
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <h4>Sign in via E-Mail</h4>
-                <form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary" formaction="https://docs.monadical.com/login">Sign In</button>
-                            <button type="submit" class="btn btn-default" formaction="https://docs.monadical.com/register">Register</button>
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.deda981c1c31221a91d9.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.6da413651c225dd97e7a.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.897edf415109c21e7fb2.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack.312b317523ee19ef6adb.js" defer="defer"></script><script src="https://docs.monadical.com/build/cover-pack.9a62bed5792a368ec43c.js" defer="defer"></script>
-
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
 </body>
 
 </html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.deda981c1c31221a91d9.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.6da413651c225dd97e7a.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.897edf415109c21e7fb2.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.624da9bb49753eaa85e1.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.f314462a1d0ebb3b5365.js" defer="defer"></script>
+
+

@@ -67,6 +67,30 @@
     }
   },
   "POSTS": {
+    "minecraft-skins-part2": {
+      "title": "Digging Deeper Into Minecraft Skin Generation",
+      "description": "Learn how to generate custom Minecraft skins from text prompts using a Stable Diffusion model.",
+      "date": "2023-07-25",
+      "img": "/static/minecraft-skins-part2.png",
+      "tags": [
+        "minecraft",
+        "machine learning",
+        "stable diffusion"
+      ],
+      "length": "10 min read",
+      "source": "https://docs.monadical.com/s/minecraft-skins-part2",
+      "url": "/posts/minecraft-skins-part2.html",
+      "template": "posts/minecraft-skins-part2.html",
+      "authors": [
+        {
+          "name": "Cory Spencer",
+          "title": "",
+          "handle": "@cspencer",
+          "url": "",
+          "image": "/static/core/img/img-home-001.png"
+        }
+      ]
+    },
     "mincraft-skin-generation": {
       "title": "Digging into Stable Diffusion-Generated Minecraft Skins",
       "description": "Fine-tune a Stable Diffusion model on a Minecraft dataset and create custom Minecraft-style characters using text prompts.",

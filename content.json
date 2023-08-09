@@ -67,6 +67,39 @@
     }
   },
   "POSTS": {
+    "zulip-ai-bot-2": {
+      "title": "Integrating AI Models into Zulip Chatbots Using FastAPI: Part 2",
+      "description": "Learn how to use N-tier architecture and FastAPI to build a scalable Zulip bot that can retrieve messages, links, and images from Zulip streams and topics.",
+      "date": "2023-08-09",
+      "img": "/static/zulip-ai-bot-2.png",
+      "tags": [
+        "Zulip",
+        "OOP",
+        "Bots",
+        "FastAPI",
+        "N-tiers"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/zulip-bot-pt2",
+      "url": "/posts/zulip-ai-bot-2.html",
+      "template": "posts/zulip-ai-bot-2.html",
+      "authors": [
+        {
+          "name": "Juan David Arias",
+          "title": "Full-stack dev/PM",
+          "handle": "@juanArias8",
+          "url": "https://github.com/juanArias8",
+          "image": "/static/core/img/img-team-022.png"
+        },
+        {
+          "name": "Cesar Uribe",
+          "title": "Full-stack developer",
+          "handle": "@curibe",
+          "url": "https://github.com/curibe",
+          "image": "/static/core/img/img-team-020.png"
+        }
+      ]
+    },
     "minecraft-skins-part2": {
       "title": "Digging Deeper Into Minecraft Skin Generation",
       "description": "Learn how to generate custom Minecraft skins from text prompts using a Stable Diffusion model.",

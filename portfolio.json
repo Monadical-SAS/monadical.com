@@ -6,7 +6,7 @@
       "title": "Morpheus",
       "subtitle": "Our own open-source, self-hosted AI art generator",
       "description": "A BYOM (“Bring Your Own Model”) generative WebUI, built with Python, JavaScript, a NextJs/React frontend and a FastAPI backend. Use one of the built-in models or upload your own Stable Diffusion model to generate and modify images. PostgreSQL stores and manages data and AWS S3 holds images and models, while Ray handles the GPU, runs the models, and generates the art. AWS EKS (Kubernetes cluster) deploys everything online and scales up/down as needed. Switch between cloud providers or platforms easily.",
-      "stack": "python, javascript, generative art, AI art, stable diffusion, ray, fastapi, nextjs, react, aws, warm pool strategy",
+      "stack": "Python, FastAPI, Node.js, Next.js, TypeScript, Ray, Celery, Stable Diffusion, Transformers, Torch, PostgreSQL, Terraform, Helm, Docker, Kubernetes, AWS, S3.",
       "image_path": "/static/core/img/morpheus.png",
       "alt": "A screenshot of Morpheus page.",
       "website": "https://morpheus.monadical.io/"

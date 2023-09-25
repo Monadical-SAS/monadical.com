@@ -67,6 +67,31 @@
     }
   },
   "POSTS": {
+    "morpheus-announcement": {
+      "title": "Morpheus: A Dream Machine for AI Art Generation",
+      "description": "Giving you the power to create stunning and beautiful generative art.",
+      "date": "2023-09-26",
+      "img": "/static/morpheus.png",
+      "tags": [
+        "AIart",
+        "Generative art",
+        "Machine Learning",
+        "Stable Diffusion"
+      ],
+      "length": "8 min read",
+      "source": "https://docs.monadical.com/s/morpheus",
+      "url": "/posts/morpheus-announcement.html",
+      "template": "posts/morpheus-announcement.html",
+      "authors": [
+        {
+          "name": "Hanna Jodrey",
+          "title": "Writer",
+          "handle": "@hannashoshana",
+          "url": "https://www.linkedin.com/in/hanna-r-jodrey-956721ab/",
+          "image": "/static/core/img/hanna.png"
+        }
+      ]
+    },
     "zulip-ai-bot-2": {
       "title": "Integrating AI Models into Zulip Chatbots Using FastAPI: Part 2",
       "description": "Learn how to use N-tier architecture and FastAPI to build a scalable Zulip bot that can retrieve messages, links, and images from Zulip streams and topics.",

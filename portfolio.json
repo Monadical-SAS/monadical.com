@@ -1,6 +1,16 @@
 {
   "projects": [
     {
+      "id": "Reflector",
+      "outline": "A secure transcription and summarization pipeline",
+      "title": "Reflector",
+      "subtitle": "A secure transcription and summarization pipeline",
+      "description": "Reflector transforms your audio into knowledge on your own infrastructure - keeping your data private, secure, and organized. Two custom deployments are available: Reflector Media for instant meeting minutes and topic summaries, and Projector Reflector for live on-screen capture of key points, translations, and agenda comparison for conferences. Reflector integrates smoothly with your custom tools.",
+      "stack": "React NextJS, Tailwind CSS, OpenAPI, SQLite, Alembic, FIEF, Sentry, Prometheus, Grafana, Websockets, WebRTC, Modal, Facebook m2m100_418, vicuna-13b-v1.5, Whisper Large-V2.",
+      "image_path": "/static/core/img/reflector.png",
+      "alt": "A screenshot of Reflector main page."
+    },
+    {
       "id": "Morpheus",
       "outline": "Our own open-source, self-hosted AI art generator",
       "title": "Morpheus",

@@ -315,9 +315,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 13 2019 23:56:04 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Sep 21 2023 11:08:23 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">4735 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">4752 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -747,7 +747,7 @@ Application logic and database integrity is only one piece of the puzzle, to app
 ![](https://i.imgur.com/ZvAV3W7.png)
 
 
-Because impelmenting databases to be fast **and** correct is *hard*, designers let users chose what level of safety vs speed they want.  The [ANSI Isolation Levels](https://en.wikipedia.org/wiki/Isolation_(database_systems)) supported by SQL databases go from &#34;Read Uncommited&#34; (the lowest) to &#34;Serializable&#34; (the highest).  The highest level &#34;Serializable&#34;, means you&#39;ll never read stale data in a transaction. You&#39;ll see a snapshot of the world at the moment your transaction started, even if other transactions are modifying the same rows concurrenly.  The lowest level is the opposite, allowing partially complete, uncommited transactions to contaminate others, causing what&#39;s known as &#34;dirty reads&#34;.
+Because implementing databases to be fast **and** correct is *hard*, designers let users chose what level of safety vs speed they want.  The [ANSI Isolation Levels](https://en.wikipedia.org/wiki/Isolation_(database_systems)) supported by SQL databases go from &#34;Read Uncommited&#34; (the lowest) to &#34;Serializable&#34; (the highest).  The highest level &#34;Serializable&#34;, means you&#39;ll never read stale data in a transaction. You&#39;ll see a snapshot of the world at the moment your transaction started, even if other transactions are modifying the same rows concurrenly.  The lowest level is the opposite, allowing partially complete, uncommited transactions to contaminate others, causing what&#39;s known as &#34;dirty reads&#34;.
 
 &lt;center&gt;
 
@@ -897,6 +897,10 @@ def banking_runloop():
                 <br/><br/>
                 
                     
+                        <li><a href="/posts/morpheus-announcement.html">Morpheus: A Dream Machine for AI Art Generation</a></li>
+                    
+                
+                    
                         <li><a href="/posts/zulip-ai-bot-2.html">Integrating AI Models into Zulip Chatbots Using FastAPI: Part 2</a></li>
                     
                 
@@ -908,8 +912,6 @@ def banking_runloop():
                         <li><a href="/posts/mincraft-skin-generation.html">Digging into Stable Diffusion-Generated Minecraft Skins</a></li>
                     
                 
-                    
-                        <li><a href="/posts/demystifying-databases.html">Demystifying Databases: Cracking the Code of Efficient Data Storage</a></li>
                     
                 
                     

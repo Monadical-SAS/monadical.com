@@ -40,8 +40,61 @@ header .container .nav-item .nav-link {
     object-fit: contain;
 }
 
-header .container .nav-item a.nav-link:hover {
+header .container .nav-item .nav-link:hover {
     color: #0086b4;
+}
+
+header .container .nav-item .nav-link:focus {
+    color: #0086b4;
+    text-decoration: none;
+}
+
+header .container .nav-item .dropdown-toggle {
+    height: 100%;
+    border: none;
+}
+header .container .nav-item .dropdown-menu {
+    box-shadow: 0 7px 20px -12px rgba(144, 144, 144, 0.8);
+    border: none;
+    min-width: auto;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: 1px solid #0086b4;
+    top: calc(100% + 10px);
+}
+
+
+@media (max-width: 992px) {
+    header .container .navbar-collapse .nav-item .dropdown-menu {
+    margin-left: 10px;
+    box-shadow: none;
+    border: none;
+}
+}
+
+.navbar-dark .navbar-nav .show > .nav-link {
+    color: rgb(43, 43, 43);    
+}
+.navbar-dark .navbar-nav .show > .nav-link:hover {
+    background-color: inherit;   
+}
+.dev-link {
+    color: black;
+}
+.dev-link:hover, .dev-link:focus {
+    color:#0086b4;
+}
+.ai-link {
+    opacity: .8;
+}
+.ai-link:hover, .ai-link:focus {
+    opacity: 1;
+}
+.ai-link-text {
+    color: black;
+}
+.ai-link:hover .ai-link-text {
+    color: white;
 }
 
 a {

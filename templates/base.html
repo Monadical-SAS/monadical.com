@@ -90,10 +90,22 @@
                     <div class="navbar-content-container">
                         <ul class="navbar-nav navbar-left">
                             {% for link in HeaderLinks %}
-                            {% if link != "jasette" %}
+                            {% if link != "jasette" and not SubHeaderLinks[link] %}
                             <li class="nav-item">
                                 <a class="nav-link text-truncate" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
                             </li>
+                            {% elif SubHeaderLinks[link] %}
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button" id="dropdown{{link}}Button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{SubHeaderLinks[link].title}}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdown{{link}}Button">
+                                    {% for sublink in SubHeaderLinks[link].links %}
+                                        <a class="dropdown-item nav-link text-truncate" href="{{PAGES[sublink].url}}">{{PAGES[sublink].title}}</a>
+                                    {% endfor %}
+                                    <a class="dropdown-item nav-link text-truncate" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
+                                </div>
+                              </div>
                             {% endif %}
                             {% endfor %}
                             <li class="nav-item">

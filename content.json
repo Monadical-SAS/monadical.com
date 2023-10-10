@@ -31,12 +31,12 @@
       "template": "sales.html"
     },
     "services": {
-      "title": "Services",
+      "title": "Web Dev",
       "url": "/services.html",
       "template": "services.html"
     },
     "ai-services": {
-      "title": "AI Services",
+      "title": "AI",
       "url": "/ai-services.html",
       "template": "ai-services.html"
     },
@@ -2130,5 +2130,11 @@
     "portfolio",
     "team",
     "blog"
-  ]
+  ],
+  "SubHeaderLinks": {
+    "services": {
+      "title": "Services",
+      "links": ["ai-services"]
+    }
+  }
 }

@@ -1,9 +1,11 @@
 name: Clear cache
 on:
   workflow_dispatch:
-    custom_path:
-      description: 'Custom path'
-      required: true
+    inputs:
+      custom_path:
+        description: 'Custom path'
+        required: true
+        default: 'mypath/cat.jpg'
 jobs:
   clear-cache:
     runs-on: ubuntu-latest

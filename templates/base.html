@@ -9,20 +9,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="{{ self.title() }}">
-    <meta name="description"
-        content="{% block description %}{{description}}{{SITE_DESCRIPTION}}{% endblock %}">
+    <meta name="description" content="{% block description %}{{description}}{{SITE_DESCRIPTION}}{% endblock %}">
     <meta property="og:locale" content="en_US" />
-    <meta property="og:description"
-        content="{{ self.description() or SITE_DESCRIPTION }}">
+    <meta property="og:description" content="{{ self.description() or SITE_DESCRIPTION }}">
     <meta property="og:image" name="image" content="{% block img %}{{img}}{{SITE_IMG}}{% endblock %}">
     <meta property="og:title" content="{{ self.title() }}">
     <meta property="og:type" content="{% block type %}{{type}}{{SITE_TYPE}}{% endblock %}">
     <meta property="og:url" content=https://{{SITE_DOMAIN}}{{request.path}} />
     <meta property="og:site_name" content="{{SITE_TITLE}}" />
-    
+
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:description"
-        content="{{ self.description() or SITE_DESCRIPTION }}">
+    <meta property="twitter:description" content="{{ self.description() or SITE_DESCRIPTION }}">
     <meta property="twitter:image" content="{{ self.img() or SITE_IMG }}">
     <meta property="twitter:site" content="@MonadicalHQ">
     <meta property="twitter:title" content="{{ self.title() }}">
@@ -90,10 +87,26 @@
                     <div class="navbar-content-container">
                         <ul class="navbar-nav navbar-left">
                             {% for link in HeaderLinks %}
-                            {% if link != "jasette" %}
+                            {% if link != "jasette" and not SubHeaderLinks[link] %}
                             <li class="nav-item">
                                 <a class="nav-link text-truncate" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
                             </li>
+                            {% elif SubHeaderLinks[link] %}
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button"
+                                    id="dropdown{{link}}Button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    {{SubHeaderLinks[link].title}}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdown{{link}}Button">
+                                    {% for sublink in SubHeaderLinks[link].links %}
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="{{PAGES[sublink].url}}">{{PAGES[sublink].title}}</a>
+                                    {% endfor %}
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
+                                </div>
+                            </div>
                             {% endif %}
                             {% endfor %}
                             <li class="nav-item">

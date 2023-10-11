@@ -15,4 +15,4 @@ jobs:
           curl -X POST "https://api.cloudflare.com/client/v4/zones/${{secrets.CLOUDFLARE_ZONE_ID}}/purge_cache" \
           -H "Authorization: Bearer ${{secrets.CLOUDFLARE_API_TOKEN}}" \
           -H "Content-Type: application/json" \
-          --data '{"files":["https://www.monadical.com/${{github.event.inputs.custom_path}}]"}' || echo "Failed to clear caches"
+          --data '{"files":[{"url":"https://www.monadical.com/${{github.event.inputs.custom_path}}"}]}' || echo "Failed to clear caches"

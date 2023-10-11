@@ -87,11 +87,11 @@ header .container .nav-item .dropdown-menu {
 }
 
 .image-link-services {
-    width: 250px; 
-    height: 250px; 
+    width: 250px;
+    height: 250px;
     padding: 0;
-    gap: 10px; 
-    border-radius: 12px; 
+    gap: 10px;
+    border-radius: 12px;
     border: 6px solid #000;
     color: black;
     font-size: 75px;
@@ -99,20 +99,30 @@ header .container .nav-item .dropdown-menu {
     background-repeat: no-repeat;
     background-color: white;
     background-size: cover;
-    /* justify-content: center; 
-    align-items: center; */
+    position: relative;
 }
+
+.image-link-services .text {
+    z-index: 1;
+}
+
 .image-link-services .image {
-    opacity: .7;
+    opacity: .6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
+
 .image-link-services:hover .image,
 .image-link-services:focus .image {
     opacity: 1;
 }
 
-.image-link-services:hover .ai-link,
-.image-link-services:focus .ai-link {
-    color: white;
+.image-link-services:hover,
+.image-link-services:focus {
+    color: black;
 }
 
 a {

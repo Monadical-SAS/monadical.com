@@ -44,9 +44,9 @@ cp static/robots.txt docs/robots.txt
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
-(cd docs; [ -s pages.txt ] && wget -q $(<pages.txt))
-(cd docs/posts; [ -s ../posts.txt ] && wget -q $(<../posts.txt))
-(cd docs; [ -s rates.txt ] && wget -q $(<rates.txt))
+(cd docs; if [ -s pages.txt ]; then wget -q $(<pages.txt); fi)
+(cd docs/posts; if [ -s ../posts.txt ]; then wget -q $(<../posts.txt); fi)
+(cd docs; if [ -s rates.txt ]; then wget -q $(<rates.txt); fi)
 
 echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"

@@ -9,20 +9,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Home | Monadical Consulting">
-    <meta name="description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta name="description" content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
     <meta property="og:locale" content="en_US" />
-    <meta property="og:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta property="og:description" content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
     <meta property="og:image" name="image" content="https://monadical.com/static/core/img/og.jpg">
     <meta property="og:title" content="Home | Monadical Consulting">
     <meta property="og:type" content="website">
     <meta property="og:url" content=https://monadical.com/index.html />
     <meta property="og:site_name" content="Monadical Consulting" />
-    
+
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:description"
-        content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
+    <meta property="twitter:description" content="Monadical is a full-stack software development consultancy. We specialize in full-stack web development and custom software solutions.">
     <meta property="twitter:image" content="https://monadical.com/static/core/img/og.jpg">
     <meta property="twitter:site" content="@MonadicalHQ">
     <meta property="twitter:title" content="Home | Monadical Consulting">
@@ -92,9 +89,21 @@
                         <ul class="navbar-nav navbar-left">
                             
                             
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/services.html">Services</a>
-                            </li>
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button"
+                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Services
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/ai-services.html">AI</a>
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/services.html">Web Dev</a>
+                                </div>
+                            </div>
                             
                             
                             
@@ -184,8 +193,38 @@
                 </a>
             </div>
         </div>
+
+        <!-- Services Section -->
+        <div class="row margin-top-60">
+            <!-- First Box (AI) -->
+            <div
+                class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center margin-top-20">
+                <a href="/ai-services.html" class="image-link-services d-flex flex-column justify-content-center">
+                    <div class="text-center ai-link text">
+                        AI
+                    </div>
+                    <div class="image" style="background-image: url('/static/core/img/ai_paint_splatter.png');">
+                    </div>
+                </a>
+            </div>
+            <!-- Second Box (Web Dev) -->
+            <div
+                class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center margin-top-20">
+                <a href="/services.html" class="image-link-services d-flex flex-column justify-content-center">
+                    <div class="text-center text">
+                        Web Dev
+                    </div>
+                    <div class="image" style="background-image: url('/static/core/img/webdev_paint_splatter.png');">
+                    </div>
+                </a>
+            </div>
+            <!-- End of Services Section -->
+        </div>
+
+
         <div class="row">
-            <div id="second-section" class="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1 second-section text-center">
+            <div id="second-section"
+                class="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1 second-section text-center">
                 <div class="row">
                     <div class="col-12">
                         <h2 class="text-size-2">
@@ -246,42 +285,44 @@
                                         <div class="card-text">
                                             You will be involved and in control every step of the way -- no
                                             surprises.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 fourth-section">
-                <div class="row">
-                    <div class="col-xl-10 offset-xl-1 col-md-10 offset-md-1 col-sm-12 col-12">
-                        <h2 class="text-size-2 text-center">
-                            Monadical is a full-stack software
-                            development consultancy
-                        </h2>
-                    </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
-                        <p class="subtext-size-2 text-center">
-                            We specialize in full-stack web development and custom
-                            software solutions.
-                        </p>
-                        <p class="subtext-size-3 margin-top-30">
-                            Our team of engineers has a wide range of experience, from shipping major new products to
-                            refactoring gnarly codebases; from designing custom
-                            data pipelines to providing security reviews to building devops infrastructure, and beyond!
-                        </p>
-                    </div>
-                    <div class="col-12 margin-top-60">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="card team-card">
-                                    <img class="monad-image" src="/static/core/img/img-home-006.png">
-                                    <div class="card-body">
-                                        <p class="card-title team-card-title">
-                                            WORLD CLASS TALENT
-                                        </p>
-                                        <p class="card-text">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 fourth-section">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1 col-md-10 offset-md-1 col-sm-12 col-12">
+                            <h2 class="text-size-2 text-center">
+                                Monadical is a full-stack software
+                                development consultancy
+                            </h2>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
+                            <p class="subtext-size-2 text-center">
+                                We specialize in full-stack web development and custom
+                                software solutions.
+                            </p>
+                            <p class="subtext-size-3 margin-top-30">
+                                Our team of engineers has a wide range of experience, from shipping major new products
+                                to
+                                refactoring gnarly codebases; from designing custom
+                                data pipelines to providing security reviews to building devops infrastructure, and
+                                beyond!
+                            </p>
+                        </div>
+                        <div class="col-12 margin-top-60">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="card team-card">
+                                        <img class="monad-image" src="/static/core/img/img-home-006.png">
+                                        <div class="card-body">
+                                            <p class="card-title team-card-title">
+                                                WORLD CLASS TALENT
+                                            </p>
+                                            <p class="card-text">
                                             <ul>
                                                 <li class="team-card-text">
                                                     As a fully remote company, we
@@ -299,18 +340,18 @@
 
                                                 </li>
                                             </ul>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="card team-card">
-                                    <img class="monad-image" src="/static/core/img/img-home-007.png">
-                                    <div class="card-body">
-                                        <p class="card-title team-card-title">
-                                            FLEXIBLE SCALABILITY
-                                        </p>
-                                        <p class="card-text">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="card team-card">
+                                        <img class="monad-image" src="/static/core/img/img-home-007.png">
+                                        <div class="card-body">
+                                            <p class="card-title team-card-title">
+                                                FLEXIBLE SCALABILITY
+                                            </p>
+                                            <p class="card-text">
                                             <ul>
                                                 <li class="team-card-text">
                                                     Our awesome team = your awesome team
@@ -327,18 +368,18 @@
                                                     to end.
                                                 </li>
                                             </ul>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="card team-card">
-                                    <img class="monad-image" src="/static/core/img/img-home-008.png">
-                                    <div class="card-body">
-                                        <p class="card-title team-card-title">
-                                            FULL ACCOUNTABILITY
-                                        </p>
-                                        <p class="card-text">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="card team-card">
+                                        <img class="monad-image" src="/static/core/img/img-home-008.png">
+                                        <div class="card-body">
+                                            <p class="card-title team-card-title">
+                                                FULL ACCOUNTABILITY
+                                            </p>
+                                            <p class="card-text">
                                             <ul>
                                                 <li class="team-card-text">
                                                     Complete visibility into
@@ -356,18 +397,18 @@
                                                     from your dedicated dashboard.
                                                 </li>
                                             </ul>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="card team-card">
-                                    <img class="monad-image" src="/static/core/img/img-home-009.png">
-                                    <div class="card-body">
-                                        <p class="card-title team-card-title">
-                                            RISK-FREE CONTRACTS
-                                        </p>
-                                        <p class="card-text">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="card team-card">
+                                        <img class="monad-image" src="/static/core/img/img-home-009.png">
+                                        <div class="card-body">
+                                            <p class="card-title team-card-title">
+                                                RISK-FREE CONTRACTS
+                                            </p>
+                                            <p class="card-text">
                                             <ul>
                                                 <li class="team-card-text">
                                                     Work on a month-to-month
@@ -384,37 +425,38 @@
                                                     Keep control over your IP.
                                                 </li>
                                             </ul>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 text-center margin-top-60">
-                        <a href="/contact-us.html" class="btn btn-info-inverse">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                    </div>
-                    <div class="col-12 text-center margin-top-150">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <h2 class="text-size-2">
-                                    We love open source
-                                </h2>
-                            </div>
-                            <div class="col-12 text-center">
-                                <p class="subtext-size-2">
-                                    Check out our most successful open source projects, with active users in 100+ countries.
-                                </p>
+                        <div class="col-12 text-center margin-top-60">
+                            <a href="/contact-us.html" class="btn btn-info-inverse">
+                                GET A TECHNICAL ASSESSMENT
+                            </a>
+                        </div>
+                        <div class="col-12 text-center margin-top-150">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h2 class="text-size-2">
+                                        We love open source
+                                    </h2>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <p class="subtext-size-2">
+                                        Check out our most successful open source projects, with active users in 100+
+                                        countries.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <!-- Templates -->
-            <div class="col-12 text-center">
+            <div class="row">
+                <!-- Templates -->
+                <div class="col-12 text-center">
     <div class="row">
         <div class="col-lg-4 col-sm-6 col-12 text-center my-3">
             <div class="card card-small card-open-source">
@@ -555,8 +597,8 @@
         </div>
     </div>
 </div>
-            
-            <div class="row work-with-us margin-bottom-150">
+                
+                <div class="row work-with-us margin-bottom-150">
     <div class="col-12 text-center margin-top-150">
         <div class="row">
             <div class="col-12">
@@ -595,9 +637,10 @@
         </div>
     </div>
 </div>
-        </div>
+            </div>
 
-        
+            
+        </div>
     </div>
 </div>
 

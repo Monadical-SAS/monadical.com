@@ -9,20 +9,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Redux State-Sharing Approaches">
-    <meta name="description"
-        content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
+    <meta name="description" content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
     <meta property="og:locale" content="en_US" />
-    <meta property="og:description"
-        content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
+    <meta property="og:description" content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
     <meta property="og:image" name="image" content="https://monadical.com/static/reduxsharing.jpg">
     <meta property="og:title" content="Redux State-Sharing Approaches">
     <meta property="og:type" content="article">
     <meta property="og:url" content=https://monadical.com/posts/Sharing-State-Between-Redux-Reducers.html />
     <meta property="og:site_name" content="Monadical Consulting" />
-    
+
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:description"
-        content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
+    <meta property="twitter:description" content="When writing an app using Redux and React, you may run into the common problem of having to share state between multiple components in your app.">
     <meta property="twitter:image" content="https://monadical.com/static/reduxsharing.jpg">
     <meta property="twitter:site" content="@MonadicalHQ">
     <meta property="twitter:title" content="Redux State-Sharing Approaches">
@@ -94,9 +91,21 @@
                         <ul class="navbar-nav navbar-left">
                             
                             
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/services.html">Services</a>
-                            </li>
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button"
+                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Services
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/ai-services.html">AI</a>
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/services.html">Web Dev</a>
+                                </div>
+                            </div>
                             
                             
                             
@@ -317,7 +326,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:38:02 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:06:03 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1755 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1756 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>

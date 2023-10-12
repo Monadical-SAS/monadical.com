@@ -505,7 +505,9 @@ header .navbar-toggler-icon {
     height: 3em;
     line-height: 1.5;
     letter-spacing: normal;
-    margin-top: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 180%;
 }
 
 .team-card-text {
@@ -956,6 +958,12 @@ div.card-reference div.card-body {
     background-color: transparent;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.card-header.card-services-header img {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
 }
 
 .card-body.card-services-body {

@@ -1,5 +1,5 @@
 {
-  "projects": [
+  "ai-projects": [
     {
       "id": "Reflector",
       "outline": "A secure transcription and summarization pipeline",
@@ -20,7 +20,10 @@
       "image_path": "/static/core/img/morpheus.png",
       "alt": "A screenshot of Morpheus page.",
       "website": "https://morpheus.monadical.io/"
-    },
+    }
+  ],
+
+  "web-projects": [
     {
       "id": "zohuddle",
       "outline": "Rank-matching conference application",
@@ -121,6 +124,7 @@
       "website": "https://www.nwb.org/"
     }
   ],
+
   "oss": [
     {
       "id": "state-sync",

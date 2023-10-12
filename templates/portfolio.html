@@ -23,10 +23,21 @@
     </div>
     <!-- list -->
     <div class="scroll-down text-center">
-      <a href="#why-hire-monadical" class="scroll-down">
-        <span>Scroll Down</span><br />
-        <i class="fa fa-chevron-down"></i>
-      </a>
+      <p class="portfolio-scroll-link">
+        <a href="#why-hire-monadical" class="scroll-down">
+          <span>Why Hire Monadical</span> <i class="fa fa-chevron-down"></i>
+        </a>
+      </p>
+      <p class="portfolio-scroll-link">
+        <a href="#ai-projects" class="scroll-down">
+          <span>AI Projects</span> <i class="fa fa-chevron-down"></i>
+        </a>
+      </p>
+      <p class="portfolio-scroll-link">
+        <a href="#web-projects" class="scroll-down">
+          <span>Web Dev &amp; Blockchain Projects</span> <i class="fa fa-chevron-down"></i>
+        </a>
+      </p>
     </div>
   </div>
 
@@ -47,9 +58,6 @@
           <li><strong>Care:</strong> We're all about the details, and we're 100% committed to building reliable products, both inside and out.</li>
         </ul>
         <div class="section-buttons d-flex justify-content-center align-items-center flex-wrap">
-          <a href="https://monadical.com/services.html">
-            <button class="btn btn-info-inverse">SEE OUR SERVICES</button>
-          </a>
           <a href="https://monadical.com/contact-us.html">
             <button class="btn btn-info">SCHEDULE A CALL</button>
           </a>
@@ -58,15 +66,15 @@
     </div>
   </div>
 
-
-  <!------------ A Selection of Monadical Projects ------------>
-  <div class="monadical-projects-wrapper">
+  
+  <!------------ AI Projects ------------>
+  <div class="monadical-projects-wrapper" id="ai-projects">
 
     <!------------ Projects ------------>
     <div id="monadical-projects" class="container-fluid portfolio-container">
       <div class="row flex-column">
         <!-- title -->
-        <div class="section-title col-12">Selected Monadical Projects</div>
+        <div class="section-title col-12">AI Projects</div>
         <div class="row main-image-wrapper-1 col-12 col-md-12">
           <img
             src="/static/core/img/img-portfolio-octopus-with-figures.png"
@@ -87,7 +95,7 @@
       </div>
     </div>
     <div id="monadical-projects" class="container portfolio-container">
-      {% for project in projects %}
+      {% for project in ai_projects %}
         {% if loop.index is odd %}
         <div id="{{ project.id }}-project" class="row project-row">
           <div class="img-wrapper col-12 col-lg-7">
@@ -151,6 +159,79 @@
         {% endif %}
       {% endfor %}
     </div>
+
+  <!------------ Web Dev & Blockchain Projects ------------>
+  <div class="monadical-projects-wrapper" id="web-projects">
+  
+    <!------------ Projects ------------>
+    <div id="monadical-projects" class="container-fluid portfolio-container">
+      <div class="row flex-column">
+        <!-- title -->
+        <div class="section-title col-12">Web Dev &amp; Blockchain Projects</div>
+        <div class="row main-image-wrapper-1 col-12 col-md-12">
+          <img src="/static/core/img/img-portfolio-octopus-with-figures.png" class="main-image-1"
+            alt="Monadical's octopus mascot with figures." />
+        </div>
+        <img src="/static/core/img/img-portfolio-cube-right-full.png" class="main-image-3"
+          alt="Monadical's octopus mascot with figures." />
+        <img src="/static/core/img/img-portfolio-cloud-3.png" class="main-image-4"
+          alt="Monadical's octopus mascot with figures." />
+      </div>
+    </div>
+    <div id="monadical-projects" class="container portfolio-container">
+      {% for project in web_projects %}
+      {% if loop.index is odd %}
+      <div id="{{ project.id }}-project" class="row project-row">
+        <div class="img-wrapper col-12 col-lg-7">
+          <img src="{{ project.image_path }}" class="project-img" alt="{{ project.alt }}" />
+        </div>
+        <div class="project-text col-12 col-lg-5 pl-lg-5">
+          <div class="project-title">{{ project.title }}</div>
+          <div class="subtitle">{{ project.subtitle }}</div>
+          <p>
+            {{ project.description }}
+          </p>
+          <div class="project-stack">
+            {{ project.stack }}
+          </div>
+          {% if project.website %}
+          <a class="align-self-center align-self-lg-start" href="{{ project.website }}" target="_blank">
+            <button class="btn btn-info-inverse">Learn more</button>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% else %}
+      <div id="{{ project.id }}-project" class="row project-row flex-column-reverse flex-lg-row">
+        <div class="project-text col-12 col-lg-5 pr-lg-5">
+          <div class="project-title">{{ project.title }}</div>
+          <div class="subtitle">{{ project.subtitle }}</div>
+          <p>
+            {{ project.description }}
+          </p>
+          <div class="project-stack">
+            {{ project.stack }}
+          </div>
+          {% if project.website %}
+          <a class="align-self-center align-self-lg-start" href="{{ project.website }}" target="_blank">
+            <button class="btn btn-info-inverse">Learn more</button>
+          </a>
+          {% endif %}
+        </div>
+        {% if project.id != 'neurocaas' %}
+        <div class="img-wrapper col-12 col-lg-7">
+          <img src="{{ project.image_path }}" class="project-img" alt="{{ project.alt }}" />
+        </div>
+        {% else %}
+        <div class="img-wrapper img-wrapper-scaled  col-12 col-lg-7">
+          <img src="{{ project.image_path }}" class="project-img project-img-scaled" alt="{{ project.alt }}" />
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
     <!------------ Crypto ------------>
     <div id="crypto-header" class="container-fluid portfolio-container" >
         <div class="row">

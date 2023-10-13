@@ -508,6 +508,13 @@ header .navbar-toggler-icon {
     margin-top: 1em;
 }
 
+.ai-services-card
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 180%;
+}
+
 .team-card-text {
     color: #818182;
     font-size: 16px;
@@ -956,6 +963,12 @@ div.card-reference div.card-body {
     background-color: transparent;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.card-header.ai-services-header img {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
 }
 
 .card-body.card-services-body {

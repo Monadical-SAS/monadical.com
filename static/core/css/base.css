@@ -505,6 +505,10 @@ header .navbar-toggler-icon {
     height: 3em;
     line-height: 1.5;
     letter-spacing: normal;
+}
+
+.ai-services-card
+{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 180%;
@@ -960,7 +964,7 @@ div.card-reference div.card-body {
     padding-bottom: 0;
 }
 
-.card-header.card-services-header img {
+.card-header.ai-services-header img {
     display: block;
     max-width: 250px;
     margin: 0 auto;

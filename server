@@ -90,7 +90,8 @@ def render_page(path):
 
     elif page['title'] == "Portfolio":
         portfolio = load_config(PORTFOLIO)
-        page['projects'] = portfolio['projects']
+        page['ai_projects'] = portfolio['ai-projects']
+        page['web_projects'] = portfolio['web-projects']
         page['oss'] = portfolio['oss']
         page['crypto'] = portfolio['crypto']
         page['public'] = portfolio['public']

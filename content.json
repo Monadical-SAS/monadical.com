@@ -72,6 +72,34 @@
     }
   },
   "POSTS": {
+    "skin-generator-annoucement": {
+      "title": "Beauty Really Is Skin-Deep?",
+      "description": "Introducing the Minecraft Skins Generator.",
+      "date": "2023-10-14",
+      "img": "/static/skingenerator.png",
+      "tags": [
+        "Computer Vision",
+        "Generative AI",
+        "Machine Learning",
+        "Deep Learning",
+        "FastAPI",
+        "Minecraft",
+        "Stable Diffusion"
+      ],
+      "length": "3 min read",
+      "source": "https://docs.monadical.com/s/mc-skin-generator",
+      "url": "/posts/minecraft-skingenerator-announcement.html",
+      "template": "posts/minecraft-skingenerator-announcement.html",
+      "authors": [
+        {
+          "name": "Hanna Jodrey",
+          "title": "Writer",
+          "handle": "@hannashoshana",
+          "url": "https://www.linkedin.com/in/hanna-r-jodrey-956721ab/",
+          "image": "/static/core/img/hanna.png"
+        }
+      ]
+    },
     "morpheus-announcement": {
       "title": "Morpheus: A Dream Machine for AI Art Generation",
       "description": "Giving you the power to create stunning and beautiful generative art.",
@@ -2110,7 +2138,7 @@
       "template": "projects/oddsligers.html"
     }
   },
-  "RATES": { },
+  "RATES": {},
   "HeaderLinks": [
     "services",
     "portfolio",
@@ -2121,7 +2149,9 @@
   "SubHeaderLinks": {
     "services": {
       "title": "Services",
-      "links": ["ai-services"]
+      "links": [
+        "ai-services"
+      ]
     }
   }
 }

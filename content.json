@@ -72,6 +72,40 @@
     }
   },
   "POSTS": {
+    "from-chaos-to-cohesion": {
+      "title": "From Chaos to Cohesion: Architecting Your Own Monorepo",
+      "description": "Build a simple monorepo using GitHub Actions as a CI/CD tool.",
+      "date": "2023-10-23",
+      "img": "/static/tree.png",
+      "tags": [
+        "monorepos",
+        "GitHubActions",
+        "devops",
+        "ContinuousDevelopment",
+        "ContinuousDeployment",
+        "TrunkbasedDevelopment"
+      ],
+      "length": "15 min read",
+      "source": "https://docs.monadical.com/s/monorepo",
+      "url": "/posts/from-chaos-to-cohesion.html",
+      "template": "posts/from-chaos-to-cohesion.html",
+      "authors": [
+        {
+          "name": "Hanna Jodrey",
+          "title": "Writer",
+          "handle": "@hannashoshana",
+          "url": "https://www.linkedin.com/in/hanna-r-jodrey-956721ab/",
+          "image": "/static/core/img/hanna.png"
+        },
+        {
+          "name": "Angel Rey",
+          "title": "Devops, Technology and Innovation",
+          "handle": "@afreydev",
+          "url": "https://twitter.com/afreydev",
+          "image": "/static/angel.png"
+        }
+      ]
+    },
     "skin-generator-annoucement": {
       "title": "Beauty Really Is Skin-Deep?",
       "description": "Introducing the Minecraft Skins Generator.",

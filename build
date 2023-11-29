@@ -35,6 +35,7 @@ mkdir -p docs/posts
 
 
 cp -r static docs/static
+cp -r static/.well-known docs/.well-known
 cp CNAME docs/CNAME
 cp static/favicon.ico docs/favicon.ico
 cp static/robots.txt docs/robots.txt

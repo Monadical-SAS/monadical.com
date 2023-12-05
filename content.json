@@ -72,6 +72,44 @@
     }
   },
   "POSTS": {
+    "property-based-testing-for-temporal-graph-storage": {
+      "title": "Property-Based Testing for Temporal Graph Storage",
+      "description": "A motley of functional techniques to allow isomorphic and deterministic graph generation.",
+      "date": "2023-12-05",
+      "img": "/static/graphoctopus.png",
+      "tags": [
+        "nx",
+        "monorepo",
+        "monads",
+        "state monad",
+        "newtypes",
+        "fp",
+        "functional programing",
+        "typescript",
+        "event sourcing",
+        "metadata"
+      ],
+      "length": "40 min read",
+      "source": "https://docs.monadical.com/s/deterministic-graph-generation",
+      "url": "/posts/property-based-testing-for-temporal-graph-storage.html",
+      "template": "posts/Property-Based Testing for Temporal Graph Storage.html",
+      "authors": [
+        {
+          "name": "Igor Loskutov",
+          "title": "Crabber",
+          "handle": "@Firfi",
+          "url": "https://github.com/Firfi",
+          "image": "/static/core/img/img-team-037.png"
+        },
+        {
+          "name": "Hanna Jodrey",
+          "title": "Writer",
+          "handle": "@hannashoshana",
+          "url": "https://www.linkedin.com/in/hanna-r-jodrey-956721ab/",
+          "image": "/static/core/img/hanna.png"
+        }
+      ]
+    },
     "from-chaos-to-cohesion": {
       "title": "From Chaos to Cohesion: Architecting Your Own Monorepo",
       "description": "Build a simple monorepo using GitHub Actions as a CI/CD tool.",

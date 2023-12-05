@@ -24,6 +24,15 @@
             font-size: 18px;
             font-weight: normal;
         }
+
+        a {
+            display: inline-block;
+            margin: 1em;
+        }
+        
+        @include media(smallPhone, phone) {
+            padding: 1rem 0;
+        }
     }
 
     @include media(smallPhone, phone) {

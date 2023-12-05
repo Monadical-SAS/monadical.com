@@ -13,6 +13,7 @@ body {
     background-color: #ffffff;
     font-family: 'Lato', sans-serif;
     color: #000000;
+    overflow-x: hidden;
 }
 
 header .collapse {
@@ -1806,10 +1807,4 @@ ul.open-positions>li {
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-}
-
-.portfolio-scroll-link
-{
-    display: inline-block;
-    margin: 0 2em;
 }

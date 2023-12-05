@@ -9,20 +9,11 @@
 @media (min-width: 768px) {
 
   .portfolio-full {
-    background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
-      url(/static/core/img/img-portfolio-tentacle-left.png),
-      url(/static/core/img/img-portfolio-cube-right.png),
-      url(/static/core/img/img-portfolio-curl-left.png),
-      url(/static/core/img/img-portfolio-cloud.png),
-      url(/static/core/img/img-portfolio-cloud-left.png),
-      url(/static/core/img/img-portfolio-001.png);
-    background-position: 100% 35%,
-      0% 68.5%,
-      100% 71.5%,
-      0% 76%,
-      0% -2%,
-      0% 3%,
-      105% -0.5%;
+    background-image: url(/static/core/img/img-portfolio-tentacle-right.png);
+
+    background-position: 100% 35%;
+
+
     background-repeat: no-repeat;
   }
 }
@@ -30,23 +21,12 @@
 
 @media (max-width: 768px) {
   .portfolio-full {
-    background-image: url(/static/core/img/img-portfolio-tentacle-right.png),
-      url(/static/core/img/img-portfolio-tentacle-right.png),
-      url(/static/core/img/img-portfolio-cube-left.png),
-      url(/static/core/img/img-portfolio-swirly-right.png),
-      url(/static/core/img/img-portfolio-cloud.png);
-    background-position: 100% 35%,
-      100% 65.5%,
-      0% 69.5%,
-      100% 73%,
-      0% -1%;
+    background-image: url(/static/core/img/img-portfolio-tentacle-right.png);
+
+    background-position: 100% 35%;
+
     background-repeat: no-repeat;
-    background-size: 20%,
-      20%,
-      30%,
-      30%,
-      100%,
-      50%;
+    background-size: 20%;
   }
 }
 

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Property-Based Testing for Temporal Graph Storage</title>
+
+    <!-- Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Property-Based Testing for Temporal Graph Storage">
+    <meta name="description" content="A motley of functional techniques to allow isomorphic and deterministic graph generation.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="A motley of functional techniques to allow isomorphic and deterministic graph generation.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/graphoctopus.png">
+    <meta property="og:title" content="Property-Based Testing for Temporal Graph Storage">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content=https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:description" content="A motley of functional techniques to allow isomorphic and deterministic graph generation.">
+    <meta property="twitter:image" content="https://monadical.com/static/graphoctopus.png">
+    <meta property="twitter:site" content="@MonadicalHQ">
+    <meta property="twitter:title" content="Property-Based Testing for Temporal Graph Storage">
+    <meta property="twitter:url" content=https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Meta Tags End -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
+
+    <link rel="canonical" href="https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+
+
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+                
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-content-container">
+                        <ul class="navbar-nav navbar-left">
+                            
+                            
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button"
+                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Services
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/ai-services.html">AI</a>
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/services.html">Web Dev</a>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                            </li>
+                        </ul>
+
+                        
+                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
+                            GET A TECHNICAL ASSESSMENT
+                        </a>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }       
+        .authorbox {
+            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
+        }
+        .authorbox__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+            
+            header .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+
+            header .navbar-nav .nav-link {
+                padding-left: 15px;
+            }
+
+        }
+    </style>
+    <div id="post-content">
+        <div class="container">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Ideas grow better together">
+<meta name="keywords" content="Collaborative, Markdown, Notes">
+<link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
+<meta name="application-name" content="HedgeDoc - Ideas grow better together">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+<meta property="og:title" content="HedgeDoc - Ideas grow better together">
+<meta property="og:description" content="Ideas grow better together">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://docs.monadical.com">
+<meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+<meta property="og:image:alt" content="HedgeDoc logo">
+<meta property="og:image:type" content="image/png">
+<base href="">
+<title>HedgeDoc - Ideas grow better together</title>
+<link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover-styles-pack.2e30ac912c448bff30f6.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover.71177b93e135f9b1c51c.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand"></h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="ui-home active"><a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#">Intro</a>
+                            </li>
+                            <li class="ui-history"><a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#">History</a>
+                            </li>
+                            <div class="ui-signin" style="float: right; margin-top: 8px;">
+                                
+                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New guest note</a>
+                                
+                                
+                                <button class="btn btn-sm btn-success ui-signin" data-toggle="modal" data-target=".signin-modal">Sign In</button>
+                                
+                            </div>
+                            <div class="ui-signout" style="float: right; margin-top: 8px; display: none;">
+                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New note</a>
+                                <span class="ui-profile dropdown pull-right">
+                                    <button id="profileLabel" class="btn btn-sm btn-link ui-profile-label" style="padding-right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="ui-avatar" width="20" height="20"><span class="hidden-xs hidden-sm">&ensp;<span class="ui-name"></span></span>&ensp;<i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="profileLabel">
+                                        <li><a href="https://docs.monadical.com/features"><i class="fa fa-dot-circle-o fa-fw"></i> Features</a></li>
+                                        <li><a href="https://docs.monadical.com/me/export"><i class="fa fa-cloud-download fa-fw"></i> Export user data</a></li>
+                                        <li><a class="ui-delete-user" data-toggle="modal" data-target=".delete-user-modal"><i class="fa fa-trash fa-fw"></i> Delete user</a></li>
+                                        <li><a href="https://docs.monadical.com/logout"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="home" class="section">
+                <div class="inner cover">
+                    <h1 class="cover-heading"><img src="https://docs.monadical.com/banner/banner_vertical_color.svg" width="400" alt="HedgeDoc logo"></h1>
+                    <p class="lead">
+                        Ideas grow better together
+                    </p>
+                    
+                    
+                    <div class="alert alert-danger" style="max-width: 400px; margin: 0 auto;">You are not allowed to access this page. Maybe try logging in?</div>
+                    
+                    
+                    <span class="ui-signin">
+                        <br>
+                        <a type="button" class="btn btn-lg btn-success ui-signin" data-toggle="modal" data-target=".signin-modal" style="min-width: 200px;">Sign In</a>
+                    </span>
+                    <span class="ui-or">or</span>
+                    
+                    <span class="ui-signin">
+                        <a type="button" href="https://docs.monadical.com/features" class="btn btn-lg btn-primary" style="min-width: 200px;">Explore all features</a>
+                        <br>
+                        <br>
+                        <img src="https://docs.monadical.com/screenshot.png" class="screenshot ui-signin">
+                    </span>
+                    <div class="lead row" style="width: 90%; margin: 0 auto;">
+                        <div class="col-md-4 inner">
+                            <a href="https://docs.monadical.com/features#Share-Notes">
+                                <i class="fa fa-bolt fa-3x"></i>
+                                <h4>Real time collaboration</h4>
+                            </a>
+                        </div>
+                        <div class="col-md-4 inner">
+                            <a href="https://docs.monadical.com/features#MathJax">
+                                <i class="fa fa-bar-chart fa-3x"></i>
+                                <h4>Works with charts and MathJax</h4>
+                            </a>
+                        </div>
+                        <div class="col-md-4 inner">
+                            <a href="https://docs.monadical.com/features#Slide-Mode">
+                                <i class="fa fa-tv fa-3x"></i>
+                                <h4>Supports slide mode</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="history" class="section" style="display:none;">
+                <div class="ui-signin">
+                    <p>Below is history from this browser</p>
+                </div>
+                <br>
+                <form class="form-inline">
+                    <div class="form-group" style="vertical-align: bottom;">
+                        <input class="form-control ui-use-tags" placeholder="Select tags…" />
+                    </div>
+                    <div class="form-group">
+                        <input class="search form-control" placeholder="Search keyword…" />
+                    </div>
+                    <a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#" class="sort btn btn-default" data-sort="text" title="Sort by title">
+                    Title
+                    </a>
+                    <a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#" class="sort btn btn-default" data-sort="timestamp" title="Sort by time">
+                    Time
+                    </a>
+                    <span class="hidden-xs hidden-sm">
+                        <a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#" class="btn btn-default ui-save-history" title="Export history"><i class="fa fa-save"></i></a>
+                        <span class="btn btn-default btn-file ui-open-history" title="Import history">
+                            <i class="fa fa-folder-open-o"></i><input type="file" />
+                        </span>
+                    <a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#" class="btn btn-default ui-clear-history" title="Clear history" data-toggle="modal" data-target=".delete-history-modal"><i class="fa fa-trash-o"></i></a>
+                    </span>
+                    <a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#" class="btn btn-default ui-refresh-history" title="Refresh history"><i class="fa fa-refresh"></i></a>
+                </form>
+                <h4 class="ui-nohistory" style="display:none;">
+                    No history
+                </h4>
+                <a href="Property-Based&#32;Testing&#32;for&#32;Temporal&#32;Graph&#32;Storage.html#" class="btn btn-primary ui-import-from-browser" style="display:none;">Import from browser</a>
+                <ul id="history-list" class="list">
+                </ul>
+                <ul class="pagination"></ul>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <select class="ui-locale"></select>
+                    <p>
+                        Powered by <a href="https://hedgedoc.org">HedgeDoc</a> | <a href="https://docs.monadical.com/s/release-notes" target="_blank" rel="noopener">Releases</a> | <a href="https://github.com/hedgedoc/hedgedoc/tree/f52475dc4f3e3e27927a073754ff86fe6ff1e01a" target="_blank" rel="noopener">Source Code</a>
+                    </p>
+                    <h6 class="social-foot">
+                        Follow us on <a href="https://github.com/hedgedoc/hedgedoc" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>, <a href="https://community.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-users" aria-hidden="true"></i> Discourse</a>, <a href="https://chat.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-comments"></i> Matrix</a>, <a href="https://social.hedgedoc.org/mastodon" target="_blank" rel="noopener"><i class="fa fa-mastodon"></i> Mastodon</a>, and <a href="https://translate.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-globe"></i> POEditor</a>.
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- delete history modal -->
+<div class="modal fade delete-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                <h5 class="ui-delete-history-modal-msg"></h5>
+                <strong class="ui-delete-history-modal-item"></strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger ui-delete-history-modal-confirm">Yes, do it!</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- delete user modal -->
+<div class="modal fade delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                <h5 class="ui-delete-user-modal-msg">Do you really want to delete your user account?</h5>
+                <strong class="ui-delete-user-modal-item">This will delete your account, all notes that are owned by you and remove all references to your account from other notes.</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default ui-delete-user-modal-cancel" data-dismiss="modal">Cancel</button>
+                <a type="button" class="btn btn-danger" href="https://docs.monadical.com/me/delete/">Yes, do it!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- signin modal -->
+<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="mySmallModalLabel">Choose method</h4>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <h4>Sign in via E-Mail</h4>
+                <form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
+                            <span class="help-block control-label with-errors" style="display: inline;"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <span class="help-block control-label with-errors" style="display: inline;"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary" formaction="https://docs.monadical.com/login">Sign In</button>
+                            <button type="submit" class="btn btn-default" formaction="https://docs.monadical.com/register">Register</button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack.a9ae4e911e54fc5e1a7e.js" defer="defer"></script><script src="https://docs.monadical.com/build/cover-pack.ce5c88aadec38a5ad489.js" defer="defer"></script>
+
+</body>
+
+</html>
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                
+                    <div class="authorbox__content">
+                        <h3>Igor Loskutov</h3>
+                        <h5>
+                            Crabber
+                            <a href="https://github.com/Firfi" target="_blank" rel="noopener">
+                                @Firfi
+                            </a>
+                        </h5>
+                        
+                        <img src="/static/core/img/img-team-037.png" width="120px" height="120px" alt="Igor Loskutov"/>
+                    </div>
+                
+                    <div class="authorbox__content">
+                        <h3>Hanna Jodrey</h3>
+                        <h5>
+                            Writer
+                            <a href="https://www.linkedin.com/in/hanna-r-jodrey-956721ab/" target="_blank" rel="noopener">
+                                @hannashoshana
+                            </a>
+                        </h5>
+                        
+                        <img src="/static/core/img/hanna.png" width="120px" height="120px" alt="Hanna Jodrey"/>
+                    </div>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2023-12-05</a></h5>
+            <div class="newsletterbox">
+                <a href="https://careers.monadical.com/" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
+            </div>
+        </div>
+        <center>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Recent posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/property-based-testing-for-temporal-graph-storage.html">Property-Based Testing for Temporal Graph Storage</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/from-chaos-to-cohesion.html">From Chaos to Cohesion: Architecting Your Own Monorepo</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/minecraft-skingenerator-announcement.html">Beauty Really Is Skin-Deep?</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/morpheus-announcement.html">Morpheus: A Dream Machine for AI Art Generation</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/deterministic-graph-generation', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
+        </script>
+        <br/><br/>
+    </div>
+    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
+    <style>
+        @media (max-width: 991px) {
+            .show {
+                display: block !important;
+            }
+            .collapse:not(.show) {
+                display: none !important;
+            }
+        }
+    </style>
+
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="Vancouver, Canada">Vancouver</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                        <li><b title="Cali, Colombia">Cali</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
+                        <li><a href="https://careers.monadical.com/">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalHQ" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>
+                            
+                            Monadical Inc. © 2023<br />
+                            <small>All rights reserved.</small>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
+                                        title="ignore this">example.com</span>m</span>onadical.com
+                            </span>
+                            <br />
+                            <small>✉️&nbsp; Email us with your project idea.</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
+
+    <script src="/static/squares.js"></script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
+        function smoothScroll(e) {
+            const hash = decodeURIComponent(this.hash)
+            e.preventDefault()
+            e.stopPropagation()
+
+            console.log('Scrolling to', this.getAttribute('href'))
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)) {
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
+                behavior: 'smooth'
+            });
+            setTimeout(() => {
+                window.location.hash = hash
+            }, 500/*arbitrary value, not standartized*/);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                /*
+                   this code drops all the event listeners that were attached so far;
+                   we need to do it here because the event listeners themselves are not under control of this repo
+                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
+                   this is a very hacky hack, we shall negate it "as soon as we can"
+                */
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <!-- Highlight Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- End Highlight Code -->
+</body>
+
+</html>

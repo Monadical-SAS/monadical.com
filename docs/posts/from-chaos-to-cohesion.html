@@ -277,14 +277,30 @@
 
 <head>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Ideas grow better together">
-<meta name="keywords" content="Collaborative, Markdown, Notes">
-<link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="   &lt;center&gt;      #  From Chaos to Cohesion: Architecting Your Own Monorepo        &lt;big&gt;      **Build">
+    
+    
+    
+    <meta property="og:title" content="From Chaos to Cohesion: Architecting Your Own Monorepo - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>From Chaos to Cohesion: Architecting Your Own Monorepo - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
 <link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
@@ -296,255 +312,346 @@
 <meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
 <meta name="theme-color" content="#b51f08">
 
-<meta property="og:title" content="HedgeDoc - Ideas grow better together">
-<meta property="og:description" content="Ideas grow better together">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://docs.monadical.com">
-<meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-<meta property="og:image:alt" content="HedgeDoc logo">
-<meta property="og:image:type" content="image/png">
-<base href="">
-<title>HedgeDoc - Ideas grow better together</title>
-<link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover-styles-pack.2e30ac912c448bff30f6.css" rel="stylesheet"><link href="https://docs.monadical.com/build/cover.71177b93e135f9b1c51c.css" rel="stylesheet">
-
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.67a0a5daa4bc987211b4.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.0d5fbbf27dee52197955.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.c696cbbf0654f912e3b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.03c68f0397eb54366b06.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Oct 13 2023 18:41:21 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Oct 19 2023 23:40:17 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">7958 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+
+
+&lt;center&gt;
     
-    <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-        <div class="cover-container">
+#  From Chaos to Cohesion: Architecting Your Own Monorepo 
 
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand"></h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="ui-home active"><a href="from-chaos-to-cohesion.html#">Intro</a>
-                            </li>
-                            <li class="ui-history"><a href="from-chaos-to-cohesion.html#">History</a>
-                            </li>
-                            <div class="ui-signin" style="float: right; margin-top: 8px;">
-                                
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New guest note</a>
-                                
-                                
-                                <button class="btn btn-sm btn-success ui-signin" data-toggle="modal" data-target=".signin-modal">Sign In</button>
-                                
-                            </div>
-                            <div class="ui-signout" style="float: right; margin-top: 8px; display: none;">
-                                <a type="button" href="https://docs.monadical.com/new" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New note</a>
-                                <span class="ui-profile dropdown pull-right">
-                                    <button id="profileLabel" class="btn btn-sm btn-link ui-profile-label" style="padding-right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="ui-avatar" width="20" height="20"><span class="hidden-xs hidden-sm">&ensp;<span class="ui-name"></span></span>&ensp;<i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="profileLabel">
-                                        <li><a href="https://docs.monadical.com/features"><i class="fa fa-dot-circle-o fa-fw"></i> Features</a></li>
-                                        <li><a href="https://docs.monadical.com/me/export"><i class="fa fa-cloud-download fa-fw"></i> Export user data</a></li>
-                                        <li><a class="ui-delete-user" data-toggle="modal" data-target=".delete-user-modal"><i class="fa fa-trash fa-fw"></i> Delete user</a></li>
-                                        <li><a href="https://docs.monadical.com/logout"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
-                                    </ul>
-                                </span>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    
+&lt;big&gt;
+    
+**Build a simple monorepo using GitHub Actions as a CI/CD tool.**
+    
+&lt;/big&gt;
+    
+*Written by Angel Rey and Hanna Jodrey. Originally published 2023-10-24 on the [Monadical blog](https://monadical.com/blog.html).*
+    
 
-            <div id="home" class="section">
-                <div class="inner cover">
-                    <h1 class="cover-heading"><img src="https://docs.monadical.com/banner/banner_vertical_color.svg" width="400" alt="HedgeDoc logo"></h1>
-                    <p class="lead">
-                        Ideas grow better together
-                    </p>
-                    
-                    
-                    <div class="alert alert-danger" style="max-width: 400px; margin: 0 auto;">You are not allowed to access this page. Maybe try logging in?</div>
-                    
-                    
-                    <span class="ui-signin">
-                        <br>
-                        <a type="button" class="btn btn-lg btn-success ui-signin" data-toggle="modal" data-target=".signin-modal" style="min-width: 200px;">Sign In</a>
-                    </span>
-                    <span class="ui-or">or</span>
-                    
-                    <span class="ui-signin">
-                        <a type="button" href="https://docs.monadical.com/features" class="btn btn-lg btn-primary" style="min-width: 200px;">Explore all features</a>
-                        <br>
-                        <br>
-                        <img src="https://docs.monadical.com/screenshot.png" class="screenshot ui-signin">
-                    </span>
-                    <div class="lead row" style="width: 90%; margin: 0 auto;">
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Share-Notes">
-                                <i class="fa fa-bolt fa-3x"></i>
-                                <h4>Real time collaboration</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#MathJax">
-                                <i class="fa fa-bar-chart fa-3x"></i>
-                                <h4>Works with charts and MathJax</h4>
-                            </a>
-                        </div>
-                        <div class="col-md-4 inner">
-                            <a href="https://docs.monadical.com/features#Slide-Mode">
-                                <i class="fa fa-tv fa-3x"></i>
-                                <h4>Supports slide mode</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+&lt;/center&gt;
+    
+Managing a massive codebase is not an easy task, yet the most influential and successful tech companies in the world seem to handle it with ease. Take Google, for instance: [back in 2015](https://qeunit.com/blog/how-google-does-monorepo), when Google was still significantly smaller than today (with a mere 2 billion lines of code), it made a bold and significant move to faciliate its code management: it migrated to a monorepo,  a single repository that contains multiple projects (often with different languages and technologies). This strategy enabled its developers to share code, tools, and resources across teams and products.
 
-            <div id="history" class="section" style="display:none;">
-                <div class="ui-signin">
-                    <p>Below is history from this browser</p>
-                </div>
-                <br>
-                <form class="form-inline">
-                    <div class="form-group" style="vertical-align: bottom;">
-                        <input class="form-control ui-use-tags" placeholder="Select tags…" />
-                    </div>
-                    <div class="form-group">
-                        <input class="search form-control" placeholder="Search keyword…" />
-                    </div>
-                    <a href="from-chaos-to-cohesion.html#" class="sort btn btn-default" data-sort="text" title="Sort by title">
-                    Title
-                    </a>
-                    <a href="from-chaos-to-cohesion.html#" class="sort btn btn-default" data-sort="timestamp" title="Sort by time">
-                    Time
-                    </a>
-                    <span class="hidden-xs hidden-sm">
-                        <a href="from-chaos-to-cohesion.html#" class="btn btn-default ui-save-history" title="Export history"><i class="fa fa-save"></i></a>
-                        <span class="btn btn-default btn-file ui-open-history" title="Import history">
-                            <i class="fa fa-folder-open-o"></i><input type="file" />
-                        </span>
-                    <a href="from-chaos-to-cohesion.html#" class="btn btn-default ui-clear-history" title="Clear history" data-toggle="modal" data-target=".delete-history-modal"><i class="fa fa-trash-o"></i></a>
-                    </span>
-                    <a href="from-chaos-to-cohesion.html#" class="btn btn-default ui-refresh-history" title="Refresh history"><i class="fa fa-refresh"></i></a>
-                </form>
-                <h4 class="ui-nohistory" style="display:none;">
-                    No history
-                </h4>
-                <a href="from-chaos-to-cohesion.html#" class="btn btn-primary ui-import-from-browser" style="display:none;">Import from browser</a>
-                <ul id="history-list" class="list">
-                </ul>
-                <ul class="pagination"></ul>
-            </div>
+In this article, we’ll follow in Google’s footsteps. You’ll learn how to:
 
-            <div class="mastfoot">
-                <div class="inner">
-                    <select class="ui-locale"></select>
-                    <p>
-                        Powered by <a href="https://hedgedoc.org">HedgeDoc</a> | <a href="https://docs.monadical.com/s/release-notes" target="_blank" rel="noopener">Releases</a> | <a href="https://github.com/hedgedoc/hedgedoc/tree/f52475dc4f3e3e27927a073754ff86fe6ff1e01a" target="_blank" rel="noopener">Source Code</a>
-                    </p>
-                    <h6 class="social-foot">
-                        Follow us on <a href="https://github.com/hedgedoc/hedgedoc" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>, <a href="https://community.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-users" aria-hidden="true"></i> Discourse</a>, <a href="https://chat.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-comments"></i> Matrix</a>, <a href="https://social.hedgedoc.org/mastodon" target="_blank" rel="noopener"><i class="fa fa-mastodon"></i> Mastodon</a>, and <a href="https://translate.hedgedoc.org" target="_blank" rel="noopener"><i class="fa fa-globe"></i> POEditor</a>.
-                    </h6>
-                </div>
-            </div>
+- Create a simple monorepo using GitHub Actions as a CI/CD tool
+- Implement the minimal features: detecting changes in specific projects and triggering pipelines accordingly
+- Use a simple monorepo that contains a small Python application and is built using Docker
+
+## What is a monorepo?
+
+In short, [a monorepo](https://monorepo.tools/#what-is-a-monorepo) is a single repository that contains multiple related projects and simplifies dependency management For example, a monorepo can contain libraries, APIs, front-end applications, mobile applications, infrastructure as code, CI/CD pipelines, and more. When you make a change in one project, the monorepo only rebuilds and tests the affected projects, saving time and resources.
+
+So what are the main differences between this and a big repo, which is just a large repository that contains many unrelated projects? At its core, a monorepo (unlike a big repo) should have a clear structure and hierarchy that reflects the relationships and dependencies among its interconnected projects. Another notable difference is that the continuous integration and continuous deployment pipelines should be designed specifically for the monorepo.
+
+## What are the differences between a monorepo and a monolith?
+
+A common misconception is that a monorepo is the same as a [monolith](https://www.techtarget.com/whatis/definition/monolithic-architecture#:~:text=Monolithic%20applications%20are%20single%2Dtiered,cumbersome%20to%20manage%20over%20time.). However, these two terms refer to different aspects of software development. A monorepo is about code organization, while a monolith is about software architecture.
+
+A monolith is an application or software system that has most of its components [tightly coupled](https://www.baeldung.com/cs/cohesion-vs-coupling). This means that changing one part of the system can affect many other parts, making it hard to maintain and scale. A typical example of a monolith is a web application based on frameworks like Rails, Laravel, CodeIgniter, Symfony, Django, etc., that follows the Model-View-Controller pattern (or similar).
+
+A monorepo can contain a monolith, but it can also contain other types of projects that are modular and decoupled (i.e., projects that have well-defined components communicating with each other through interfaces or APIs).
+
+Taking everything into consideration, there are four possible combinations of code organization and software architecture:
+
+- **Monolith-monorepo:** a single repository that contains a single application or software system. This is the most common case for small to medium-sized projects (like when you’re working on a Django project hosted in GitHub).
+- **Modular-multirepo:** multiple repos that contain different components or modules of an application or software system that are loosely coupled. This is the typical case for open source projects. They have a core repo and additional plugins or extensions are developed in separate Git repositories.
+- **Monolith-multirepo:** multiple repos that contain independent applications or software systems; it’s also the common case for large businesses. They consist of multiple repos and different teams developing different components. These applications are usually deployed and linked through a corporate portal. Some companies use this approach because of access control, privacy, and other policies.
+- **Modular-monorepo:** a single repository that contains multiple projects that are loosely coupled. This is the case for some of the biggest companies like Google and Facebook, which use advanced tools and techniques to manage their huge codebases efficiently.
+
+## How do we architect a simple monorepo?
+
+### Organization
+
+One of the first decisions you need to make when creating a monorepo is how to organize your code. There is no one-size-fits-all solution for this, and it will depend on the nature and scope of your projects and teams. Some possible ways to group your code are:
+
+- by packages (e.g., in Java, com.co.company or in Python, sound.effects.echo)
+- by programming language
+- by layer (e.g., frontend, backend, etc.)
+- by project (e.g., a CRM developed internally in the company, or a machine learning supported e-learning platform)
+- by feature or functionality
+- by deployment type
+
+My preferred way of organizing code in a monorepo is by layer, and then by build and deployment type. This helps avoid frustration with a consistent convention that does not change frequently. For instance, you can have a frontend folder that contains subfolders for different web applications that use different tools like [Docker](https://www.docker.com), [NPM](https://www.npmjs.com), or [Yarn](https://yarnpkg.com/) to build and deploy.
+
+One of the benefits of this strategy is that you can have separate builds for different parts of the monorepo. This means that you can generate different artifacts from different parts of the monorepo that have been changed or updated.
+
+Another benefit is that this allows you to simplify the dependency management and deployment process. If you have a system that depends on different components, and these components are located in different repos, you have to clone all the repos and deploy them in a smart way, taking into account the dependencies. But with a monorepo, you only have to clone one repo and let the monorepo handle the deployment of all the required components in the right order.
+
+This means that the developer can focus on the part of the monorepo that they are working on or interested in. But if they need to change something else that is related to their project, they can do it easily in the same repo. This gives them more flexibility and control over their code.
+
+### Branching strategy: trunk-based development
+
+Another important aspect of working with a monorepo is choosing a branching strategy that suits your workflow and collaboration style. For instance, a complex and bureaucratic branching strategy with many approvals can make a monorepo a nightmare to manage. A simpler and more agile approach is to use [trunk-based development](https://trunkbaseddevelopment.com/).
+
+Essentially, trunk-based development is a source-control branching model where developers collaborate on code in a single branch called a ‘trunk’ and avoid creating other long-lived development branches. They use techniques such as feature toggles, short-lived feature branches, pull requests, and continuous integration to ensure code quality; as a result, they [“avoid merge hell, do not break the build, and live happily ever after.”](https://trunkbaseddevelopment.com/)
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/eb696ed1-3f62-46eb-8af3-e829562ea58e.png)
+
+&lt;/center&gt;
+    
+Trunk-based development is a branching strategy that has some clear benefits for a project:
+- You only have to deal with the trunk and sometimes create release branches from the current state of the monorepo. You don’t have to worry about maintaining many different long-term branches.
+- You can ensure the quality of your code by having automated tests that cover most of your code. If something goes wrong in the trunk, it will be noticed and fixed quickly. ([Read more](https://martinfowler.com/articles/practical-test-pyramid.html) [here](https://buttondown.email/hillelwayne/archive/i-have-complicated-feelings-about-tdd-8403)). While it’s true that trunk-based development requires more interactions with the main branch and more effort for test automation - since the code should be production-ready - this is not a drawback! This is a good practice and something that every project should do.
+- You can find and solve any conflicts with other projects faster, since everything is in the trunk.
+- You can improve the communication and collaboration among your team members, since they have to work on the same branch and share ideas constantly.
+- You can refactor your code more easily, since you can include the complete refactor in a single pull request.
+
+By using trunk-based development, you can increase the speed and quality of your development process. Of course, this also requires adopting some best practices such as automated testing, coding standards, design patterns, peer reviews and improving the collaboration among the different team members. 
+
+### What are the minimal requirements we’ll need?
+While admittedly there are a lot of “nice-to-haves” (like local computation caching, code sharing and code generation, etc.), none of these features are really required when building your own monorepo.
+
+To create a successful monorepo, you should consider implementing at least these features:
+
+- A way to detect changes in specific projects within the monorepo: This will allow you to trigger the appropriate actions for each project, such as testing, building, or deploying. Use some existing tools that support monorepo management, such as [Lerna](https://lerna.js.org/), [Nx](https://nx.dev/), or [Bazel](https://bazel.build/), or write your own script in Python, bash, or any other language that can access the Git history and compare the files that have changed.
+- A set of CI and CD pipelines that can handle different types of projects in the monorepo: Avoid writing custom workflows for each project, since this can be tedious and error-prone. Instead, standardize as much as possible the processes for testing, building, and deploying your projects, using common tools and configurations. 
+ 
+
+
+## How do we implement our monorepo using GitHub Actions?
+### Design
+One of the first things to do when creating a monorepo is to define a way for the monorepo logic to identify which folders are projects (or parts of projects). A simple method is to add a file that marks the root of a project. In our [demo project](https://github.com/afreydev/simple-monorepo/), I’ve used a file called project.json for this purpose. This file serves two functions: first, it signals to the monorepo logic that this folder is a project; second, it contains some useful metadata about the project, such as its name and id.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/2985c3b1-a1a2-4240-9408-2a101c18fae4.png)
+
+&lt;/center&gt;
+
+The monorepo has a file (called configuration.json) that contains some additional information about the different projects. This information can include the main path of the component and the different methods used to build and deploy it.
+
+If you need to add more projects in the monorepo, this file should include the related information. Basically, this file will be the main configuration file in the monorepo.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/5f8e8ccf-dddd-4d8b-b65e-ad822e7398b7.png)
+
+&lt;/center&gt;
+
+The flow diagram below describes the general CI/CD process that we will implement:
+
+&lt;center&gt;
+    
+![](https://docs.monadical.com/uploads/de88f8cd-ed69-419e-83ad-497e020beed9.png)
+
+    
+&lt;/center&gt;
+
+### Detecting what files have changed in a project
+
+To detect which files might have changed in a project, you’ll need to write a script that compares the current state of the code with the last commit (or a specific branch). The script will do the following:
+
+- It creates a new git repo object using the repo path as an argument.
+- It gets the differences between the current commit and the last one (or a branch).
+- It iterates over the different files that have changed, checking their status. If the status is modified, added, or deleted, it searches the project.json file. 
+- If it finds any metadata file, the script extracts the name of the project and adds it to a set (to avoid duplicated info in case a project has multiple files distributed across the monorepo codebase).
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/e7298c05-1a57-411f-a246-104034f4801f.png)
+
+&lt;/center&gt;
+
+The script uses a function that takes a file path as an argument and tries to find the configuration.json file in the same folder or any of its parent folders. The function does the following:
+
+- It checks if the file path is the root project folder. If yes, it returns None, as there is no configuration.json file above it.
+- It checks if there is a configuration.json file in the same folder as the file path. If yes, it returns the path of the configuration.json file.
+- If neither of the above conditions are met, it calls itself recursively with the parent folder of the file path as the new argument, and repeats the process until it finds a configuration.json file or reaches the root project folder.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/28726ff4-9b0c-4cee-90fd-74a310c86d88.png)
+     
+&lt;/center&gt;
+
+In this case, the Python script is designed to work with GitHub Actions as a CI/CD tool. It returns the list of projects that have changed in a format that GitHub Actions can use to iterate over them and deploy them accordingly.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/67c9a6a2-4005-4f11-944c-ea30781c84a4.png)
+
+&lt;/center&gt;
+
+You can run this script by passing a single argument, which is either the commit sha or the branch name that you want to compare with.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/28d6c100-0f4d-4990-866d-9b4f74e3b8d9.png)
+
+&lt;/center&gt;
+
+### How do we set up GitHub Actions for building and deploying different projects?
+
+This article assumes that you are familiar with how GitHub Actions work, and instead focuses on the main aspects of designing the required workflows.
+
+#### CI/CD workflow
+
+The goal of this workflow is to detect the projects that have changed and to call the other workflows CI and CD.
+
+#### CI
+
+This process is defined in the GitHub Actions workflow file: .github/workflows/cicd.yaml. 
+
+The first job (ci-projects job) uses the projects_updated.py script to obtain the list of projects that need to be updated. The result is stored in an output variable called projects. The output variable projects is then used as an input for the CI job, which is a matrix that contains the names of the projects. GitHub Actions will iterate over this matrix and call the CI workflow for each project. This workflow is specified in: .github/workflows/ci.yaml file.
+
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/36241af1-5697-4d27-bff0-b8eede857949.png)
+
+&lt;/center&gt;
+
+The first part of the CI workflow is to extract the configuration information from the cicd/configuration.json file for each project. The goal is to get the root path of the project and the build method (in this example, it is Docker).
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/0c11ea64-cd76-4066-ba7c-e118552644f1.png)
+
+&lt;/center&gt;
+
+The second part of the workflow is to execute the specific build method for each project. Notice that there is an “if” condition that checks if the build variable is Docker, after which the corresponding commands are executed.
+
+&lt;center&gt; 
+    
+![](https://docs.monadical.com/uploads/98fbed14-ee81-48f5-8658-99344c7202cc.png)
+   
+&lt;/center&gt;
+
+#### CD
+This process is defined in the GitHub Actions workflow file: .github/workflows/cicd.yaml.
+
+The first part of the CD workflow is to get the list of projects that need to be updated from the output variable projects, which was generated by the projects_updated.py script in the .github/workflows/cd.yaml file. 
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/2510fe83-5b16-434c-ab6f-019c36a6fcbd.png)
+
+
+&lt;/center&gt;
+
+The output variable “projects” actually serves as an input for the CD job. This “projects” variable represents a matrix that contains a set of the projects; consequently, GitHub Actions will start to iterate over this matrix, triggering the CD workflow. This workflow is saved in .github/workflows/cd.yaml file.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/a3a7bf58-6b44-48b4-946a-0f983b5e912a.png)
+
+
+&lt;/center&gt;
+
+The initial phase of the CD workflow primarily involves extracting configuration info from the cicd/configuration.json file. The goal is to retrieve both the project’s root path and the deployment method (here, the example case is [Helm](https://helm.sh/)).
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/1b995e88-e69f-4c91-b67b-a47314d60d1d.png)
+
+
+&lt;/center&gt;
+
+The second phase of the workflow is to run the CI workflow for each project, as a prerequisite for deploying them. This can be done by calling the ci.yaml file directly from GitHub Actions.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/b5fc2cf6-3afe-4d1f-a3ef-0b28467c05d3.png)
+
+
+
+&lt;/center&gt;
+
+The third phase of the workflow is to execute the specific deployment method for each project. You can see that there is an “if” condition that checks if the build variable is Helm, and then runs the corresponding commands. In our demo, the specific commands for deploying an application using Helm are omitted. 
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/3c83929b-d618-47f7-a7f0-6f3bb3d2eb8a.png)
+
+&lt;/center&gt;
+
+### Triggering the pipelines
+
+Whenever you push a commit to a feature branch that includes any modifications within the company&#39;s project, Github Actions will trigger the CI pipeline. You can verify that everything is running well by checking the GitHub Actions project page. Notice that it will only run the CI processes because the CD steps run only within the main branch. 
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/1de91f9b-45d2-44d5-b0bd-2d79de888f66.png)
+
+&lt;/center&gt;
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/52020347-96f8-4751-967a-2b5508740de7.png)
+
+
+&lt;/center&gt;
+
+Et voilà! Upon merging your changes into the main branch, the CD steps for your project will be triggered; these include the build steps and later, the deployment, using the specific tool defined in the configuration.yaml file.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/e3b0f10e-ef10-4349-928b-56f6df7282b3.png)
+
+&lt;/center&gt;
+
+In our demo, we are not actually deploying our application in a Kubernetes cluster; instead, a small message is displayed.
+
+&lt;center&gt;
+
+![](https://docs.monadical.com/uploads/2394a3b5-8fbd-4184-8b24-7a8d9218c2e7.png)
+
+&lt;/center&gt;
+
+
+
+## Conclusion
+Let&#39;s summarize: in this article, we’ve peeled back the layers of monorepos, unveiling their unique properties and distinguishing them from monoliths. Beyond this, we’ve grasped the essential requirements for implementing a streamlined monorepo, brought to life through the practical lens of Github Actions.
+
+Even though this example has only one minor hurdle - the demand for unified commits during merges - fear not, for the ingenious git squash stands ready to play the hero.
+
+Apart from that, the stage is set for your own journey; you’re now equipped with the potential to develop a functional, dynamic monorepo for your company’s projects or your personal passions.
+
+Now, the thrill of hands-on experience and experimentation awaits! Explore the [example codebase available here](https://github.com/afreydev/simple-monorepo/) and wield your newfound knowledge. Then drop a line in the comments and let us know how it goes!</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
         </div>
     </div>
-</div>
-<!-- delete history modal -->
-<div class="modal fade delete-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-history-modal-msg"></h5>
-                <strong class="ui-delete-history-modal-item"></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger ui-delete-history-modal-confirm">Yes, do it!</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- delete user modal -->
-<div class="modal fade delete-user-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="ui-delete-user-modal-msg">Do you really want to delete your user account?</h5>
-                <strong class="ui-delete-user-modal-item">This will delete your account, all notes that are owned by you and remove all references to your account from other notes.</strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default ui-delete-user-modal-cancel" data-dismiss="modal">Cancel</button>
-                <a type="button" class="btn btn-danger" href="https://docs.monadical.com/me/delete/">Yes, do it!</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- signin modal -->
-<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mySmallModalLabel">Choose method</h4>
-            </div>
-            <div class="modal-body" style="text-align: center;">
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <h4>Sign in via E-Mail</h4>
-                <form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="email" class="form-control" name="email" placeholder="E-Mail" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
-                            <span class="help-block control-label with-errors" style="display: inline;"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary" formaction="https://docs.monadical.com/login">Sign In</button>
-                            <button type="submit" class="btn btn-default" formaction="https://docs.monadical.com/register">Register</button>
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack.a9ae4e911e54fc5e1a7e.js" defer="defer"></script><script src="https://docs.monadical.com/build/cover-pack.ce5c88aadec38a5ad489.js" defer="defer"></script>
-
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
 </body>
 
 </html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.a2fac85c338ccd8282ca.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.8a4f868f9e7676405f31.js" defer="defer"></script>
+
+
 
                         </article>
                     

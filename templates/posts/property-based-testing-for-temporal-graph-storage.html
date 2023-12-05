@@ -1,278 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <title>Property-Based Testing for Temporal Graph Storage</title>
-
-    <!-- Meta Tags Start -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Property-Based Testing for Temporal Graph Storage">
-    <meta name="description" content="A motley of functional techniques to allow isomorphic and deterministic graph generation.">
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:description" content="A motley of functional techniques to allow isomorphic and deterministic graph generation.">
-    <meta property="og:image" name="image" content="https://monadical.com/static/graphoctopus.png">
-    <meta property="og:title" content="Property-Based Testing for Temporal Graph Storage">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content=https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html />
-    <meta property="og:site_name" content="Monadical Consulting" />
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:description" content="A motley of functional techniques to allow isomorphic and deterministic graph generation.">
-    <meta property="twitter:image" content="https://monadical.com/static/graphoctopus.png">
-    <meta property="twitter:site" content="@MonadicalHQ">
-    <meta property="twitter:title" content="Property-Based Testing for Temporal Graph Storage">
-    <meta property="twitter:url" content=https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html />
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Meta Tags End -->
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        type="text/css">
-
-    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
-    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
-
-    <link rel="canonical" href="https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html" />
-
-    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
-    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
-        </script>
-
-    
-<link rel="stylesheet" href="/static/core/css/index.css">
-
-
-
-</head>
-
-<body>
-    
-    <header>
-        
-        
-
-        <div id="header-container" class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-                
-                <a class="navbar-brand" id="monadical-brand" href="/index.html">
-                    <img srcset="/static/core/img/logo@3x.png 3x,
-                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="navbar-content-container">
-                        <ul class="navbar-nav navbar-left">
-                            
-                            
-                            <div class="nav-item dropdown">
-                                <button class="nav-link btn-link dropdown-toggle" type="button"
-                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Services
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/ai-services.html">AI</a>
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/services.html">Web Dev</a>
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/team.html">Team</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
-                            </li>
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
-                            </li>
-                        </ul>
-
-                        
-                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                        
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    
-
-
-    
-    <article>
-        
-
-    <style>
-        h1 {
-            font-family: 'Fjalla One', sans-serif !important;
-        }
-        .article-content {
-            border: 0px;
-        }
-        .fa-pencil {
-            opacity: 0.01;
-        }
-        footer .social-links {
-            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        footer .social-links a {
-            color: #333;
-            opacity: 0.7;
-        }
-        footer .social-links a:hover {
-            color: #333;
-            opacity: 0.9;
-        }       
-        .authorbox {
-            font-size: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            margin-bottom: 40px; 
-        }
-        .authorbox__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .authorbox__content img {
-            min-width: 120px;
-            max-width: 120px;
-            min-height: 120px;
-            max-height: 120px;
-            object-fit: cover;
-            border-radius: 50%
-        }
-        .authorbox__content h3 {
-            margin: 0;
-        }
-        .authorbox__content h5 {
-            margin-bottom: 20px;
-        }
-        .post-footer {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            column-gap: 24px;
-            max-width: 768px;
-            margin-top: 40px;
-        }
-        .newsletterbox {
-            font-size: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-            margin-top: 80px;
-        }
-        .post-footer h4 {
-            font-size: 18px;
-        }
-        body > main > h1 > em {
-            opacity: 0;
-        }
-        #ui-toc-affix {
-            display: block;
-            position: fixed;
-            top: 175px;
-            user-select: initial;
-            max-width: 20vw;
-            margin-left: 15px;
-            transition: opacity 400ms ease;
-        }
-        .dropup .dropdown-menu {
-            bottom: auto !important;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-            
-            header .navbar-nav > li > a {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-        }
-        @media (max-width: 768px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-
-            header .navbar-nav .nav-link {
-                padding-left: 15px;
-            }
-
-        }
-    </style>
-    <div id="post-content">
-        <div class="container">
-            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
-            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
-            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
-            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
-            <div class="row">
-                <div class="col">
-                    
-                        <article class="article-content">
-                            <!DOCTYPE html>
 <html>
 
 <head>
@@ -548,7 +274,7 @@ That’s exactly it. &lt;font color=&#34;green&#34;&gt;PRNGs&lt;/font&gt;. Deter
 
 What the sequence generation looks like, laid out imperatively, is:
 
-```typescript
+```typescript=
 
 const seed = ‘123’;
 
@@ -576,7 +302,7 @@ In the example above, Generator is an object, which encapsulates both behaviour 
 
 First of all, we can separate those:
 
-```typescript
+```typescript=
 
 const state0 = initialGeneratorState(‘seed’);
 
@@ -601,7 +327,7 @@ Instead, let’s focus on usage with &lt;font color=&#34;green&#34;&gt;PRNG&lt;/
 
 The code that invokes 16 sequential &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;pseudo&lt;/font&gt;-&lt;font color=&#34;green&#34;&gt;random&lt;/font&gt; generator calls and combines them into a UUID looks like this:
 
-```typescript
+```typescript=
 
 // rng is PRNG state passed to us and is in the scope
 
@@ -634,7 +360,7 @@ return [newId, newRng];
 
 It doesn’t look as spectacular for NLPA, where I just read State and pass the new State further, but check how the DnD bruteforce lays out:
 
-```typescript
+```typescript=
 
 pipe(
 
@@ -695,7 +421,7 @@ The number of **Nodes** is basically how many nodes the generated graph will hav
 
 In TypeScript, we can define it like this:
 
-```typescript
+```typescript=
 
 declare const heterogeneity: number;
 
@@ -707,7 +433,7 @@ declare const nodes: number;
 
 Now, we can conveniently add nodes with heterogeneity:
 
-```typescript
+```typescript=
 
 const nodes = 1000;
 
@@ -719,7 +445,7 @@ const x = nodes + heterogeneity; // 1000.5
 
 And even pass density instead of heterogeneity to our methods:
 
-```typescript
+```typescript=
 
 const doSomethingWithHeterogeneityAndDensity = (heterogeneity: number, density: number) =&gt; {}
 
@@ -752,7 +478,7 @@ And it’s time to stop using primitives where they don’t belong!
 
 Follow me.
 
-```typescript
+```typescript=
 
 export type Heterogeneity = Newtype&lt;{ readonly HETEROGENEITY: unique symbol }, Decimal01&gt;;
 
@@ -764,7 +490,7 @@ export type ListLength = Newtype&lt;{ readonly LIST_LENGTH: unique symbol }, Non
 
 And the helper types used above are:
 
-```typescript
+```typescript=
 
 export type Decimal01 = Newtype&lt;{ readonly DECIMAL01: unique symbol }, NonNegative&gt;,
 
@@ -774,7 +500,7 @@ whereas `NonNegativeInteger` and `NonNegative` are helper types from the library
 
 I define the runtime bridges between Newtypes and primitives like this:
 
-```typescript
+```typescript=
 
 const moreThanOne = (n: number) =&gt; n &gt; 1;
 
@@ -790,7 +516,7 @@ Prism is the bridge itself. It will take a primitive, ensure its bounds, and spi
 
 Sometimes, I also want to cast a primitive into a Newtype when I’m quite sure that I’m passing a correct value and ready to get an exception right in my face:
 
-```typescript
+```typescript=
 
 // where castToPrism is a helper function that does some mundane stuff
 
@@ -804,7 +530,7 @@ export const castDecimal01 = castToPrism(prismDecimal01)(
 
 Now we can have the previous examples from the start of this paragraph rewritten like this:
 
-```typescript
+```typescript=
 
 const nodes = castListLength(1000);
 
@@ -879,7 +605,7 @@ I found, though, that the [Web Worker](https://developer.mozilla.org/en-US/docs/
 
 The Web Worker code is stupidly simple:
 
-```typescript
+```typescript=
 
 /// &lt;reference lib=&#34;webworker&#34; /&gt;
 
@@ -1029,505 +755,3 @@ And we have established software foundations for continuous property-based testi
 <script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.a2fac85c338ccd8282ca.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.8a4f868f9e7676405f31.js" defer="defer"></script>
 
 
-
-                        </article>
-                    
-                </div>
-            </div>
-        </div>
-        <div id="post-footer" class="container post-footer">
-            <div class="authorbox">
-                
-                    <div class="authorbox__content">
-                        <h3>Igor Loskutov</h3>
-                        <h5>
-                            Crabber
-                            <a href="https://github.com/Firfi" target="_blank" rel="noopener">
-                                @Firfi
-                            </a>
-                        </h5>
-                        
-                        <img src="/static/core/img/img-team-037.png" width="120px" height="120px" alt="Igor Loskutov"/>
-                    </div>
-                
-                    <div class="authorbox__content">
-                        <h3>Hanna Jodrey</h3>
-                        <h5>
-                            Writer
-                            <a href="https://www.linkedin.com/in/hanna-r-jodrey-956721ab/" target="_blank" rel="noopener">
-                                @hannashoshana
-                            </a>
-                        </h5>
-                        
-                        <img src="/static/core/img/hanna.png" width="120px" height="120px" alt="Hanna Jodrey"/>
-                    </div>
-                
-            </div>
-            <h5>Published on <a href="#permalink">2023-12-05</a></h5>
-            <div class="newsletterbox">
-                <a href="https://careers.monadical.com/" style="font-weight: bold;">
-                    We are hiring!
-                </a>
-                <a href="https://tinyletter.com/Monadical">
-                    Subscribe to our newsletter
-                </a>
-            </div>
-        </div>
-        <center>
-            <br/><br/><br/>
-            <i style="font-size: 18px">Recent posts:</i>
-            <ul style="max-width: 400px; text-align: left; font-size: 16px">
-                <br/><br/>
-                
-                    
-                        <li><a href="/posts/property-based-testing-for-temporal-graph-storage.html">Property-Based Testing for Temporal Graph Storage</a></li>
-                    
-                
-                    
-                        <li><a href="/posts/from-chaos-to-cohesion.html">From Chaos to Cohesion: Architecting Your Own Monorepo</a></li>
-                    
-                
-                    
-                        <li><a href="/posts/minecraft-skingenerator-announcement.html">Beauty Really Is Skin-Deep?</a></li>
-                    
-                
-                    
-                        <li><a href="/posts/morpheus-announcement.html">Morpheus: A Dream Machine for AI Art Generation</a></li>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <li>
-                    <a href="/blog.html">
-                        View more posts...
-                    </a>
-                </li>
-            </ul>
-            <br/>
-        </center>
-        <script src="https://utteranc.es/client.js"
-                repo="Monadical-SAS/monadical.com"
-                issue-term="pathname"
-                label="blog"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
-        <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
-        </center>
-        <script type="text/javascript" id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-        </script>
-        <script>
-            // hide the table of contents nav when you scroll down past the end
-            $(window).scroll(function() {
-                const pos = $(window).scrollTop()
-                const threshold = $('.authorbox').position().top - 250
-                $('#ui-toc-affix').css({
-                    opacity: (pos > threshold) ? 0 : 1
-                });
-                $('.pull-right').css({
-                    opacity: (pos > threshold) ? 0 : 1
-                });
-            });
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
-                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
-                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
-                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
-                // Popup toc for samll screens
-                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
-                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
-                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
-                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
-                
-                // GET the original article source so they get they bump the view counter
-                fetch('https://docs.monadical.com/s/deterministic-graph-generation', {mode: 'no-cors'})
-
-                // remove undesired css that break styles
-                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
-            })
-
-            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
-        </script>
-        <script>
-            function setOpacity(){
-                const maxWidth=1140
-                const width = $(window).width();
-                $('#post-cube-left').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
-                });
-                $('#post-tentacle-right').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
-                });
-            }
-
-            $(document).ready(setOpacity);
-            $(window).resize(setOpacity);
-        </script>
-        <br/><br/>
-    </div>
-    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
-    <style>
-        @media (max-width: 991px) {
-            .show {
-                display: block !important;
-            }
-            .collapse:not(.show) {
-                display: none !important;
-            }
-        }
-    </style>
-
-
-    </article>
-    
-
-    
-    <footer>
-        
-        
-        <div class="container footer">
-            
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <ul>
-                        <li><b title="Montréal, Canada">Montréal</b></li>
-                        <li><b title="Vancouver, Canada">Vancouver</b></li>
-                        <li><b title="Medellín, Colombia">Medellín</b></li>
-                        <li><b title="Cali, Colombia">Cali</b></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-3">
-                    <ul>
-                        <li>
-                            <b>Monadical</b>
-                        </li>
-                        <a href="/blog.html">Blog</a>
-                        <li><a href="/services.html">Services</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-3">
-                    <ul>
-                        <li>
-                            <b>About Us</b>
-                        </li>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/team.html">Team</a></li>
-                        <li><a href="/principles.html">Principles</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-2">
-                    <ul>
-                        <li>
-                            <b>Contact Us</b>
-                        </li>
-                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
-                        <li><a href="https://careers.monadical.com/">Careers</a></li>
-                        <li><a href="/contact-us.html">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row social">
-                <div class="col-12">
-                    <ul>
-                        <li>
-                            <a href="https://twitter.com/MonadicalHQ" title="Monadical Twitter" target="_blank"
-                                rel="noopener">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
-                                rel="noopener">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
-                                rel="noopener">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
-                                rel="noopener">
-                                <i class="fa fa-github"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row contact-row">
-                <div class="col-12 col-lg-4 col-md-4">
-                    <ul>
-                        <li>
-                            
-                            Monadical Inc. © 2023<br />
-                            <small>All rights reserved.</small>
-                            
-                        </li>
-                    </ul>
-                </div>
-                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
-                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
-                    <ul>
-                        <li>
-                            <span style="white-space: nowrap;">
-                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
-                                        title="ignore this">example.com</span>m</span>onadical.com
-                            </span>
-                            <br />
-                            <small>✉️&nbsp; Email us with your project idea.</small>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-        </div>
-        
-        
-    </footer>
-    
-
-    <script type="text/javascript">
-        // hide all the tags containing fake contact info that are there to throw off scrapers
-        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
-        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
-            elem.style.display = 'none'
-        }
-    </script>
-
-    <script src="/static/squares.js"></script>
-
-
-    
-    
-
-    <!-- Smooth Scroll to Anchor Links Animation -->
-    <script>
-        function getUnicodeHash(reference) {
-            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
-        }
-        function smoothScroll(e) {
-            const hash = decodeURIComponent(this.hash)
-            e.preventDefault()
-            e.stopPropagation()
-
-            console.log('Scrolling to', this.getAttribute('href'))
-            let reference = this.getAttribute('href')
-            if (reference.match(/^#[0-9]+/)) {
-                reference = getUnicodeHash(reference)
-            }
-            document.querySelector(reference).scrollIntoView({
-                behavior: 'smooth'
-            });
-            setTimeout(() => {
-                window.location.hash = hash
-            }, 500/*arbitrary value, not standartized*/);
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
-                /*
-                   this code drops all the event listeners that were attached so far;
-                   we need to do it here because the event listeners themselves are not under control of this repo
-                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
-                   this is a very hacky hack, we shall negate it "as soon as we can"
-                */
-                elem.parentNode.outerHTML = elem.parentNode.outerHTML
-            })
-            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
-                anchor.addEventListener('click', smoothScroll);
-            });
-        })
-    </script>
-
-    <!-- Matomo -->
-    <script type="text/javascript">
-        var _paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(["setCookieDomain", "*.monadical.com"]);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        // accurately measure the time spent in the visit
-        _paq.push(['enableHeartBeatTimer']);
-        (function () {
-            var u = "//analytics.zervice.io/";
-            _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '12']);
-            var d = document,
-                g = d.createElement('script'),
-                s = d.getElementsByTagName('script')[0];
-            g.type = 'text/javascript';
-            g.async = true;
-            g.defer = true;
-            g.src = u + 'matomo.js';
-            s.parentNode.insertBefore(g, s);
-        })();
-    </script>
-    <!-- End Matomo Code -->
-
-    <!-- Highlight Code -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    <!-- End Highlight Code -->
-</body>
-
-</html>

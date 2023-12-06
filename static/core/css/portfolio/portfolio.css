@@ -5,7 +5,7 @@
   margin-bottom: 1rem;
 }
 
-body {
+article {
   overflow-x: hidden;
 }
 
@@ -336,7 +336,7 @@ body {
   text-decoration: none;
 }
 #header .scroll-down {
-  padding: 5rem 0;
+  padding: 6rem 0;
   text-decoration: none;
 }
 #header .scroll-down span,
@@ -362,6 +362,11 @@ body {
 @media (min-width: 576px) and (max-width: 767px) {
   #header .scroll-down {
     padding: 1rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  #header .scroll-down {
+    padding: 8rem 0;
   }
 }
 @media (min-width: 320px) and (max-width: 480px) {
@@ -948,7 +953,7 @@ body {
   border-radius: 10px;
   width: 100%;
   margin: 0;
-  max-width: 400px;
+  max-width: 300px;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .monadical-projects .main-image-1 {
@@ -971,7 +976,7 @@ body {
   top: 10%;
   border-radius: 10px;
   width: 25rem;
-  max-width: 400px;
+  max-width: 300px;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .monadical-projects .main-image-2 {
@@ -1004,7 +1009,7 @@ body {
   top: 4%;
   border-radius: 10px;
   width: 25rem;
-  max-width: 300px;
+  max-width: 250px;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .monadical-projects .main-image-3 {

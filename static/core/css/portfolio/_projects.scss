@@ -129,7 +129,7 @@
         border-radius: 10px;
         width: 100%;
         margin: 0;
-        max-width: 400px;
+        max-width: 300px;
 
         @include media(smallPhone, phone) {
             width: 70%;
@@ -144,7 +144,7 @@
         top: 10%;
         border-radius: 10px;
         width: 25rem;
-        max-width: 400px;
+        max-width: 300px;
 
         @include media(smallPhone, phone, tablet) {
             display: none;
@@ -161,7 +161,7 @@
         top: 4.0%;
         border-radius: 10px;
         width: 25rem;
-        max-width: 300px;
+        max-width: 250px;
 
         @include media(smallPhone, phone, tablet) {
             display: none;

@@ -15,7 +15,7 @@
     }
 
     .scroll-down {
-        padding: 5rem 0;
+        padding: 6rem 0;
         text-decoration: none;
 
         span,
@@ -32,6 +32,10 @@
         
         @include media(smallPhone, phone) {
             padding: 1rem 0;
+        }
+
+        @include media(desktop) {
+            padding: 8rem 0;
         }
     }
 

@@ -72,6 +72,31 @@
     }
   },
   "POSTS": {
+    "how-to-make-llms-speak-your-language": {
+      "title": "How to Make LLMs Speak Your Language",
+      "description": "A Review of the Top Tools for Generating Structured Output.",
+      "date": "2023-12-20",
+      "img": "/static/llms.png",
+      "tags": [
+        "llm",
+        "cfg",
+        "structured output",
+        "constrained generation"
+      ],
+      "length": "25 min read",
+      "source": "https://docs.monadical.com/s/structured-output-from-LLMs",
+      "url": "/posts/how-to-make-llms-speak-your-language.html",
+      "template": "posts/how-to-make-llms-speak-your-language.html",
+      "authors": [
+        {
+          "name": "Michał Flak",
+          "title": "Full-stack developer",
+          "handle": "@mflakdev",
+          "url": "https://github.com/elo-siema",
+          "image": "/static/core/img/img-team-028.png"
+        }
+      ]
+    },
     "property-based-testing-for-temporal-graph-storage": {
       "title": "Property-Based Testing for Temporal Graph Storage",
       "description": "A motley of functional techniques to allow isomorphic and deterministic graph generation.",

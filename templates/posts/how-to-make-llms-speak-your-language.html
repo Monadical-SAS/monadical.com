@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;      #  How to Make LLMs Speak Your Language       &lt;big&gt;      **A Review of the Top Tools f">
+    
+    
+    
+    <meta property="og:title" content="How to Make LLMs Speak Your Language - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>How to Make LLMs Speak Your Language - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
+<meta name="application-name" content="HedgeDoc - Ideas grow better together">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.67a0a5daa4bc987211b4.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.0d5fbbf27dee52197955.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.c696cbbf0654f912e3b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.03c68f0397eb54366b06.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                  <span class="ui-no-lastchangeuser">&thinsp;<i class="fa fa-clock-o fa-fw" style="width: 18px;"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 19 2023 15:40:04 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Dec 20 2023 00:20:08 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">21 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+            <span class="ui-owner">
+                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i>
+                &nbsp;<span class="text-uppercase">owned this note</span>
+            </span>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >&lt;center&gt;
+    
+#  How to Make LLMs Speak Your Language
+
+    
+&lt;big&gt;
+    
+**A Review of the Top Tools for Generating Structured Output**
+    
+&lt;/big&gt;
+    
+*This is an applied research report by Michał Flak and JDC for Monadical Labs, where we write about emerging technologies. Originally published on 2023-12-20 on the [Monadical blog](https://monadical.com/blog.html).*
+    
+
+&lt;/center&gt;
+
+## Introduction
+
+Businesses today rely on seamless and intuitive communication to thrive, and Large Language Models (LLMs) have emerged as powerful tools that promise to transform how we communicate. In our previous article, [“To Fine-Tune or Not Fine-Tune: Large Language Models for AI-Driven Business Transformation](https://monadical.com/posts/fine-tune-or-not-llm-ai-business-transformation.html),” we explored how LLMs can enhance various aspects of business operations. In this article, we will focus on one specific application of LLMs that holds incredible promise and is rewriting the rulebook for customer interactions, process optimization, and data handling: **generating text from an LLM that adheres to a predefined output format.** 
+
+![](https://docs.monadical.com/uploads/9da6facb-d883-4b25-83e3-2478208eb11a.png)
+
+
+When LLMs provide answers and advice, they often use words in a way that feels like a conversation. But to make LLMs work with other computer programs or systems, they need to follow certain guidelines.
+
+For instance, in the domain of computational interaction, the communicative efficacy between LLMs and external systems hinges upon their adherence to a predefined output format.
+
+Getting LLMs to adhere to a specific output format, like a JSON object or even code, presents a challenge, as autoregressive LLMs are often unpredictable and inherently [lack controllability](https://drive.google.com/file/d/1BU5bV3X5w65DwSMapKcsr0ZvrMRU_Nbi/view). How can we balance the creativity of language generation with the need for structured output, and which tools are available to help in this endeavour? In this article, we’ll review different approaches, from open-source packages to simple yet effective solutions. We will also show you how to implement a smart text interface using an LLM that can generate text in a specific output format. 
+
+But first, let’s examine how LLMs generate output in the first place. 
+
+## How do LLMs generate output? 
+
+To see how an LLM can follow a certain output structure, our focus will be on a causal transformer model, where the goal is to predict the (N + 1)th token based on a sequence of N tokens. This framework provides a basis to examine the strategies that steer LLMs toward producing structured output.
+
+Let’s start with a simplified overview of the two key components within the transformer model:
+
+* **The Tokenizer:** A tokenizer is a component that takes in text and breaks it down into smaller units called tokens. These tokens could be words or even smaller parts, like subwords. The tokenizer’s job is to prepare the text so that a computer can work with it more efficiently. This component transforms words into a one-hot encoded token vector. Available tokens form the LLM’s vocabulary.
+
+![](https://docs.monadical.com/uploads/5e9586f0-d983-4ea1-b250-04d5aaff47e6.png)
+
+* **The Transformer:** The transformer is a sophisticated system that processes text by paying special attention to the relationships between different words or tokens. It does this through self-attention, which lets it focus on different parts of the text to understand how they connect. This helps the transformer capture the meaning and context of the language more effectively, making it a powerful tool for tasks like understanding, generating, and translating text. It’s like having an incredibly smart reader that understands each word and sees how they all fit together to create a bigger picture. The crux of the model, the transformer, converts N tokens into a predictive context for the (N + 1)th token, propelling the sequential nature of the model’s output.
+
+For this report, it’s sufficient to explain the very last layers of the transformers: the logits layer, softmax function, and the resulting token probabilities.
+
+![](https://docs.monadical.com/uploads/084b1dcb-ddc4-446d-8fd6-5648f5424fe9.png)
+*Source: [LLM Basics: Embedding Spaces - Transformer Token Vectors Are Not Points in Space](https://www.lesswrong.com/posts/pHPmMGEMYefk9jLeh/llm-basics-embedding-spaces-transformer-token-vectors-are)*
+
+Token logits form the raw output of the final hidden state vector multiplied by the unembedding matrix. From this operation, we get “logits” - unnormalized log probabilities for **each possible token in the vocabulary.**
+
+This is then passed through softmax - a function whose results all sum up to 1, giving us a probability distribution over the tokens.
+
+Subsequently, we can sample the (n+1)th token from this distribution. Sampling with temperature=0 means that the token with the highest probability assigned is always chosen, making the model deterministic. Sampling with temperature=1 means that we choose according to the probability distribution - we have many possible options with varying likelihoods of being selected.
+
+## Why guide the model output?
+
+Let’s consider building a sentiment classifying model, which works by processing a piece of text to determine the emotional undertone of the message. We’d also like to use this model reliably in our application; for example, we might want to build a trading bot, which acts on analyzing thousands of tweets containing a name or ticker (stock symbol) of the company, and then trade on the X (Twitter) user’s sentiment.
+
+Our first hunch might be to ask ChatGPT for an answer.
+
+&gt;Is the emotional sentiment of the tweet:
+“XYZ to the moon! 💸💰📈”
+Positive or negative?
+
+What we get:
+
+&gt;The emotional sentiment of the tweet “XYZ to the moon! 💸💰📈” is positive. The use of phrases like “to the moon” along with positive emojis like 💸💰📈 suggests excitement and positivity about the potential increase in the value or success of XYZ.
+
+Cool! We get a well-reasoned answer to our question. But now we have another problem: how to use that output in our app? Parsing that seems near impossible. Ideally, we would like to get one of these two output strings:
+
+* Positive
+* Negative
+
+We can try prompt engineering techniques. Instead, let’s be more specific and ask the model what we want:
+
+&gt;Is the emotional sentiment of the tweet:
+“XYZ to the moon! 💸💰📈”
+Positive or negative?
+Answer only using one word, either “Positive” or “Negative”
+
+We get:
+
+&gt;Positive
+
+Great! Suppose then we want to use a smaller, open-source model. For the same prompt using `ggml-mpt-7b-instruct` we get:
+
+&gt;The user input is a positive statement about XYZ.
+
+As we can see, **we cannot rely on prompt engineering alone.** No matter how many few-shot examples we use, we nevertheless run into the risk of failure to adhere. There’s always a risk of failure purely due to the probabilistic nature of LLMs.
+
+## Logit masking
+
+Having access to the logits layer, we can manipulate it to steer the model in the direction we want.
+
+Let’s consider our example. We can look at how our allowed answers split into tokens:
+
+![](https://docs.monadical.com/uploads/e5043032-ad5f-4b87-95d2-e001b25cc27d.png)
+
+The available token set contains these words as single tokens, but with a preceding space. Let’s take advantage of this quirk and simplify the example:
+
+![](https://docs.monadical.com/uploads/5848d5c9-1f6c-43af-bd1a-d676ddb8afe2.png)
+
+These correspond to tokens with IDs ``[33733, 36183]``.
+
+Now, we can perform a trick. Let’s assign 0 to every row in the token logits vector, except for IDs ``[33733, 36183]``. **This means that only these two tokens are left as possible choices.** After going through `softmax`, only these two tokens are left with a non-zero probability - we are **guaranteed** to get one of them.
+
+We are not limited to static token filtering - sequences of tokens can be masked depending on the completion generated so far - we can, for example, mask to match a regular expression (example: a decimal number), a context-free grammar (example: JSON), or whatever we want using custom programmatic rules. This way, we are certain to get structured output for downstream use in the application.
+
+## Example: Natural language invocation of a CLI app
+
+Consider a simple Python CLI program - an image format converter. It’s going to accept three arguments:
+- Input image
+- Output image
+- Output format
+
+If argument parsing is invalid, the program will interpret the first argument as a natural language query, and generate an invocation of itself to fulfill that query.
+
+```python
+import argparse
+from lark import Lark
+import sys
+import os
+
+
+def main():
+   # Create the parser
+   parser = argparse.ArgumentParser(description=&#39;Image format converter.&#39;)
+
+
+   # Add arguments to the parser
+   parser.add_argument(&#39;-i&#39;, &#39;--input&#39;, help=&#39;Input image.&#39;, required=True)
+   parser.add_argument(&#39;-o&#39;, &#39;--output&#39;, help=&#39;Output image. If not provided, the output will have the same name as the input image.&#39;)
+   parser.add_argument(&#39;-f&#39;, &#39;--format&#39;, choices=[&#39;png&#39;, &#39;jpg&#39;, &#39;bmp&#39;], help=&#39;Output format.&#39;, required=True)
+
+
+   try:
+       args = parser.parse_args()
+       print(args)
+       return
+   except:
+       pass
+
+
+   from transformers import AutoModelForCausalLM, AutoTokenizer
+   from parserllm import complete_cf
+
+
+   model = AutoModelForCausalLM.from_pretrained(&#34;databricks/dolly-v2-3b&#34;)
+   tokenizer = AutoTokenizer.from_pretrained(&#34;databricks/dolly-v2-3b&#34;)
+
+
+   # Should be possible to generate from ArgumentParser
+   grammar = f&#34;&#34;&#34;
+   start: &#34;python &#34; SCRIPT ARGS
+
+
+   SCRIPT: &#34;{os.path.basename(__file__)} &#34;
+
+
+   ARGS: INPUT_ARG &#34; &#34; FORMAT_ARG &#34; &#34; (OUTPUT_ARG)?
+
+
+   INPUT_ARG: (&#34;-i &#34; | &#34;--input &#34;) STRING
+   OUTPUT_ARG: (&#34;-o &#34; | &#34;--output &#34;) STRING &#34;.&#34; ALLOWED_FORMATS
+   FORMAT_ARG: (&#34;-f &#34; | &#34;--format &#34;) ALLOWED_FORMATS
+
+
+   ALLOWED_FORMATS: &#34;png&#34; | &#34;jpg&#34; | &#34;bmp&#34;
+   STRING: /[a-zA-Z0-9_\.\/]+/
+   &#34;&#34;&#34;
+
+
+   larkparser = Lark(grammar=grammar, parser=&#39;lalr&#39;, regex=True)
+
+
+   prompt = f&#34;&#34;&#34;Given the following help message of a Python CLI program:
+    ```
+{parser.format_help()}
+    ```
+Invoke the program to satisfy user&#39;s request.
+Request:
+{sys.argv[1]}
+Output:
+&#34;&#34;&#34;
+   # Now generate the output using parserllm, restricting available logits to the ones
+   # allowed by our grammar
+   print(complete_cf(prompt, larkparser, &#34;&#34;,
+                   tokenizer,
+                   model,
+                   max_new_tokens=20,
+                   debug=True))
+
+
+if __name__ == &#34;__main__&#34;:
+   main()
+
+```
+
+Taking a closer look, we can see that:
+
+
+1. Arguments are defined using `argparse`.
+2. On parse success, we return successfully. On failure, we go further.
+3. Next, the grammar is defined. `parserllm` is used as the guided generation library for this simple example, and that uses the [Lark parser generator](https://github.com/lark-parser/lark) - so we define the grammar in Lark format. (Note: In principle, it’s possible to generate the grammar from the ArgumentParser).
+4. The prompt for the LLM is constructed. The `Help` message is fed into it, to give the model information about its options.
+5. The suggestion is generated using the grammar, `parserLLM` and the `dolly-v2-3b` model, and then printed.
+
+And here’s an example output:
+
+```
+➜  rag-experiments git:(master) ✗ python argparse_demo.py &#34;Convert the file cat.png to jpg and save to cats/mittens.jpg&#34;
+usage: argparse_demo.py [-h] -i INPUT [-o OUTPUT] -f {png,jpg,bmp}
+argparse_demo.py: error: the following arguments are required: -i/--input, -f/--format
+valid next token: [regex.Regex(&#39;python\\ &#39;, flags=regex.V0)]
+step=0 completion=python
+step=1 completion=python
+valid next token: [regex.Regex(&#39;argparse_demo\\.py\\ &#39;, flags=regex.V0)]
+step=0 completion=arg
+step=1 completion=argparse
+step=2 completion=argparse_
+step=3 completion=argparse_demo
+step=4 completion=argparse_demo.
+step=5 completion=argparse_demo.py
+step=6 completion=argparse_demo.py
+valid next token: [regex.Regex(&#39;(?:\\-\\-input\\ |\\-i\\ )[a-zA-Z0-9_\\.\\/]+\\ (?:\\-\\-format\\ |\\-f\\ )(?:png|jpg|bmp)\\ (?:(?:\\-\\-output\\ |\\-o\\ )[a-zA-Z0-9_\\.\\/]+\\.(?:png|jpg|bmp))?&#39;, flags=regex.V0)]
+step=0 completion=--
+step=1 completion=--input
+step=2 completion=--input cat
+step=3 completion=--input cat.
+step=4 completion=--input cat.png
+step=5 completion=--input cat.png --
+step=6 completion=--input cat.png --format
+step=7 completion=--input cat.png --format j
+step=8 completion=--input cat.png --format jpg
+step=9 completion=--input cat.png --format jpg --
+step=10 completion=--input cat.png --format jpg --output
+step=11 completion=--input cat.png --format jpg --output cats
+step=12 completion=--input cat.png --format jpg --output cats/
+step=13 completion=--input cat.png --format jpg --output cats/mitt
+step=14 completion=--input cat.png --format jpg --output cats/mittens
+step=15 completion=--input cat.png --format jpg --output cats/mittens.
+step=16 completion=--input cat.png --format jpg --output cats/mittens.jpg
+python argparse_demo.py --input cat.png --format jpg --output cats/mittens.jpg
+```
+
+As seen here, a satisfactory result can be achieved even with a very small local model.
+
+## Overview of tools for guiding LLM output 
+
+Below is a list of the tools we’ll explore, as well as a quick summary of their advantages and disadvantages. Keep reading for a deep dive into each one. 
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tool&lt;/th&gt;
+      &lt;th&gt;Advantages&lt;/th&gt;
+      &lt;th&gt;Disadvantages&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://platform.openai.com/docs/guides/function-calling&#34;&gt;OpenAI function calling&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Works with the most powerful LLMs from OpenAI&lt;br&gt;
+        - Black-box implementation
+      &lt;/td&gt;
+      &lt;td&gt;
+        - Inflexible output format&lt;br&gt;
+        - No access to raw token probabilities&lt;br&gt;
+        - No guarantee of function call accuracy&lt;br&gt;
+        - Vendor lock-in
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://github.com/guidance-ai/guidance&gt;Guidance&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Compatible with Hugging Face and OpenAI&lt;br&gt;
+        - Valid output guaranteed&lt;br&gt;
+        - Rich prompt templating language&lt;br&gt;
+        - Regex matching&lt;br&gt;
+        - Generates only requested tokens&lt;br&gt;
+        - Removes tokenization artifacts&lt;br&gt;
+        - Popular and backed by a big corporation
+      &lt;/td&gt;
+      &lt;td&gt;
+        - No token healing or pattern matching with OpenAI
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;a href=https://github.com/microsoft/TypeChat&gt;TypeChat&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - TypeScript library for non-Python users&lt;br&gt;
+        - Uses familiar TS type definitions
+      &lt;/td&gt;
+      &lt;td&gt;
+        - Output not guaranteed; can fail with errors&lt;br&gt;
+        - Limited by prompt engineering and completion API&lt;br&gt;
+        - Only generates JSON objects&lt;br&gt;
+        - Only uses OpenAI API
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://github.com/1rgs/jsonformer&gt;Jsonformer&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Works with Hugging Face Transformers&lt;br&gt;
+        - Ensures valid and schema-compliant JSON output&lt;br&gt;
+        - More efficient than generating and parsing full JSON strings
+      &lt;/td&gt;
+      &lt;td&gt;
+        - Limited in scope &lt;br&gt;
+        - Supports only a subset of JSON Schema
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://github.com/r2d4/rellm&gt;ReLLM&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Works with Hugging Face Transformers&lt;br&gt;
+        - Ensures valid output that matches regex pattern&lt;br&gt;
+        - Simple and easy-to-modify codebase
+      &lt;/td&gt;
+      &lt;td&gt;
+        - Masks logits of non-matching tokens, affecting performance&lt;br&gt;
+        - Depends on use case and regex complexity&lt;br&gt;
+        - Only works with logit-biasing LLMs
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://github.com/r2d4/parserllm&gt;parserLLM&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Works with Hugging Face Transformers&lt;br&gt;
+        - Ensures valid output that matches CFG pattern&lt;br&gt;
+        - General purpose and perfect for DSLs and niche languages&lt;br&gt;
+        - Simple codebase and leverages popular Lark parser generator
+      &lt;/td&gt;
+      &lt;td&gt;
+        - Parses whole sequence on each token, affecting speed and quality&lt;br&gt;
+        - Depends on use case and CFG complexity&lt;br&gt;
+        - Only works with logit-biasing LLMs
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://thiggle.com/&gt;Thiggle&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Easy to use - just call an API&lt;br&gt;
+        - Unique and reliable feature set among hosted options
+      &lt;/td&gt;
+      &lt;td&gt;
+        - No info about LLMs used&lt;br&gt;
+        - Model might change without notice&lt;br&gt;
+        - Paid service
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://github.com/outlines-dev/outlines&gt;Outlines&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Works with Hugging Face Transformers&lt;br&gt;
+        - Ensures valid output&lt;br&gt;
+        - Extremely efficient
+      &lt;/td&gt;
+      &lt;td&gt;
+        - Less featured than Guidance&lt;br&gt;
+        - No CFG support yet
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://lmql.ai/&gt;LMQL&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Works with Hugging Face Transformers and OpenAI&lt;br&gt;
+        - Ensures valid output with constraints&lt;br&gt;
+        - Rich feature set with Python scripting / templating 
+      &lt;/td&gt;
+      &lt;td&gt;
+        - No CFG support yet
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=https://github.com/jxnl/instructor&gt;Instructor&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;
+        - Quick and easy way to get a Pydantic object from OpenAI
+      &lt;/td&gt;
+      &lt;td&gt;
+        - OpenAI only&lt;br&gt;
+        - Function calling limitations apply&lt;br&gt;
+        - Relies on retrying on failure&lt;br&gt;
+        - Narrowly focused&lt;br&gt;
+        - Not very popular
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+### 1. [OpenAI function calling](https://openai.com/blog/function-calling-and-other-api-updates)
+
+In June 2023, OpenAI added a feature to their API, which allows you to define external APIs available to the model; this feature can also decide to call them to fetch useful information or perform an action.
+
+For example, by providing a calculator API to the model, the model will then use it to perform a calculation (something LLMs are not particularly good at).
+
+```python
+class CalculateExpressionParams(pydantic.BaseModel):
+    expression: str
+
+
+response = openai.ChatCompletion.create(
+   model=&#34;gpt-3.5-turbo-0613&#34;,
+   messages=[
+      {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;What&#39;s (2 + 3) * 5?&#34;}
+   ],
+   functions=[
+      {
+        &#34;name&#34;: &#34;calculate_expression&#34;,
+        &#34;description&#34;: &#34;Perform a calculation&#34;,
+        &#34;parameters&#34;: CalculateExpressionParams.schema()
+      }
+   ],
+   function_call={&#34;name&#34;: &#34;calculate_expression&#34;} # omit this line to make the model choose whether to call the function
+)
+
+output = json.loads(response.choices[0][&#34;message&#34;][&#34;function_call&#34;][&#34;arguments&#34;])
+
+# {&#39;expression&#39;: &#39;(2 + 3) * 5&#39;}
+```
+
+While OpenAI also offers [JSON mode](https://platform.openai.com/docs/guides/text-generation/json-mode), function calling remains the only way to precisely specify the output format from OpenAI LLMs. Due to limited API and lack of disclosing token probabilities, OpenAI’s capabilities lag behind self-hosted models in this respect.
+
+There is no available information as to how the feature is implemented under the hood and to what extent the structure of the output is guaranteed - [OpenAI’s docs](https://platform.openai.com/docs/guides/gpt/chat-completions-api) only mention fine-tuning, and that by itself is insufficient to guarantee that:
+
+&gt;The latest models (`gpt-3.5-turbo-1106` and `gpt-4-1106-preview`) have been trained to both detect when a function should to be called (depending on the input) and to respond with JSON that adheres to the function signature more closely than previous models.
+
+Based on this post, the model can also hallucinate, calling a non-existent function or messing up the arguments structure:
+
+&gt;On running this code, you might see ChatGPT sometimes generate function call for a function named “python” instead of “python_interpreter”
+[…]
+You should also notice that the model has messed up the arguments JSON as well. It gave the Python code directly as the value of the “arguments”, as opposed to giving it as a key-value pair of argument name and its value
+
+Let’s look at the pros and cons of this tool:
+
+**Pros:**
+- Available with OpenAI’s LLMs, which are the most powerful ones as of the time of writing
+
+**Cons:**
+- Implementation is a black box
+- Inflexible: you cannot completely freely define the output format
+- OpenAI doesn’t provide access to the raw token probabilities on the last layer
+- There is no guarantee that the functions will be called in the requested format; hallucinations have been reported
+- Vendor lock-in
+
+### 2. [Guidance](https://github.com/guidance-ai/guidance)
+
+Guidance is a templating language and library from Microsoft. It recently received a major overhaul, moving away from the handlebars-like DSL syntax to pure Python.
+Among the offered features is constrained generation with selects, regular expressions, and context-free grammars:
+
+```python
+Import guidance
+from guidance import select, models, one_or_more, select, zero_or_more
+llama2 = models.LlamaCpp(path)
+
+
+# a simple select between two options
+llama2 + f&#39;Do you want a joke or a poem? A &#39; + select([&#39;joke&#39;, &#39;poem&#39;])
+
+
+# regex constraint
+lm = llama2 + &#39;Question: Luke has ten balls. He gives three to his brother.\n&#39;
+lm += &#39;How many balls does he have left?\n&#39;
+lm += &#39;Answer: &#39; + gen(regex=&#39;\d+&#39;)
+# regex as stopping criterion
+lm = llama2 + &#39;19, 18,&#39; + gen(max_tokens=50, stop_regex=&#39;[^\d]7[^\d]&#39;)
+
+
+# context free grammars
+# stateless=True indicates this function does not depend on LLM generations
+@guidance(stateless=True)
+def number(lm):
+    n = one_or_more(select([&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;]))
+    # Allow for negative or positive numbers
+    return lm + select([&#39;-&#39; + n, n])
+
+
+@guidance(stateless=True)
+def operator(lm):
+    return lm + select([&#39;+&#39; , &#39;*&#39;, &#39;**&#39;, &#39;/&#39;, &#39;-&#39;])
+
+
+@guidance(stateless=True)
+def expression(lm):
+    # Either
+    # 1. A number (terminal)
+    # 2. two expressions with an operator and optional whitespace
+    # 3. An expression with parentheses around it
+    return lm + select([
+        number(),
+        expression() + zero_or_more(&#39; &#39;) +  operator() + zero_or_more(&#39; &#39;) +  expression(),
+        &#39;(&#39; + expression() + &#39;)&#39;
+    ])
+grammar = expression()
+lm = llama2 + &#39;Problem: Luke has a hundred and six balls. He then loses thirty six.\n&#39;
+lm += &#39;Equivalent arithmetic expression: &#39; + grammar + &#39;\n&#39; # output: 106 - 36
+```
+
+Guidance works with local models through LlamaCpp and Hugging Face Transformers libraries, as well as remote LLM API providers, such as Cohere, Vertex AI and OpenAI.
+
+While the library tries to offer the same feature set for both local models and remote APIs, the latter have severe limitations. With a local model, the library can directly access token probabilities and influence sampling. This is not possible with APIs, and the library tries to compensate by retrying calls repeatedly until it matches what we want on the client side.
+
+Here’s an example of constrained generation with OpenAI:
+
+```python=
+gpt = models.OpenAI(&#34;gpt-3.5-turbo&#34;)
+
+
+with system():
+   lm = gpt + &#34;You are a cat expert.&#34;
+
+
+with user():
+   lm += &#34;What is an example of a small cat breed?&#34;
+
+
+with assistant():
+   lm += &#34;A small cat breed is a &#34; + select([&#39;Maine coon&#39;, &#39;Siamese&#39;])
+
+```
+Result:
+
+```
+Exception: We have exceeded the maximum number of calls! 10
+```
+And we can indeed see that a lot of requests were made when executing the above code:
+
+![](https://docs.monadical.com/uploads/21d0b25d-cb54-4cc1-b42e-28360aa70c15.png)
+
+Overall, Guidance has an impressively comprehensive feature set, which turns it into a very powerful tool for both constructing prompts and guiding LLMs. It’s also pleasant to use, employing pure Python to specify generation logic.
+
+
+**Pros:**
+* Compatible with Hugging Face Transformers, and to a lesser extent with OpenAI
+* Guarantees valid output
+* Prompt templating language with large feature set including loops and conditionals
+* Regex matching
+* Generates only requested tokens
+* Removes tokenization artifacts (“token healing”)
+* Popular, backed by a big corporation
+
+**Cons:**
+* Token healing, pattern matching [not available with OpenAI](https://github.com/guidance-ai/guidance/blob/main/guidance/llms/_openai.py#L618)
+
+### 3. [TypeChat](https://github.com/microsoft/TypeChat)
+
+TypeScript is a library from Microsoft, which generates valid JSON output matching a schema. By specifying a TypeScript type, the library will attempt to persuade the LLM to create a valid object of the type, which can then be used immediately in an application without any additional parsing.
+
+There’s no guarantee of that ever happening though, due to a limited approach based solely on brute-force through prompt engineering and output validation.
+
+Let’s examine a sentiment analysis example from the library’s [docs:](https://microsoft.github.io/TypeChat/blog/introducing-typechat/)
+
+```typescript
+// ./src/sentimentSchema.ts
+
+// The following is a schema definition for determining the sentiment of a some user input.
+
+export type SentimentResponse = {
+    /** The sentiment of the text (as typescript string literal union). */
+    sentiment: &#34;negative&#34; | &#34;neutral&#34; | &#34;positive&#34;;
+}
+
+// ./src/main.ts
+
+import * as fs from &#34;fs&#34;;
+import * as path from &#34;path&#34;;
+import dotenv from &#34;dotenv&#34;;
+import * as typechat from &#34;typechat&#34;;
+import { SentimentResponse } from &#34;./sentimentSchema&#34;;
+
+// Load environment variables.
+dotenv.config({ path: path.join(__dirname, &#34;../.env&#34;) });
+
+// Create a language model based on the environment variables.
+const model = typechat.createLanguageModel(process.env);
+
+// Load up the contents of our &#34;Response&#34; schema.
+const schema = fs.readFileSync(path.join(__dirname, &#34;sentimentSchema.ts&#34;), &#34;utf8&#34;);
+const translator = typechat.createJsonTranslator&lt;SentimentResponse&gt;(model, schema, &#34;SentimentResponse&#34;);
+
+// Process requests interactively.
+typechat.processRequests(&#34;😀&gt; &#34;, /*inputFile*/ undefined, async (request) =&gt; {
+    const response = await translator.translate(request);
+    if (!response.success) {
+        console.log(response.message);
+        return;
+    }
+    console.log(`The sentiment is ${response.data.sentiment}`);
+});
+```
+Only OpenAI API is supported by the official repository, although it’s possible to use it with a self-hosted model by modifying the code (see [llama.cpp](https://github.com/abichinger/typechat-llama-example/tree/main), for example).
+
+However, the use of OpenAI’s own API limits the library significantly, since it relies solely on the unmodified [completion API](https://github.com/microsoft/TypeChat/blob/main/src/model.ts#L23C55-L23C55), shifting the responsibility to generate the allowed tokens on the model. Upon failure, the LLM is politely asked to generate once again, brute-forcing until a valid object is returned but providing zero guarantee this will ever happen.
+
+The limitations are clear, simply by looking at the [codebase](https://github.com/microsoft/TypeChat/blob/main/src/program.ts) - the approach is based on prompt engineering and validating the returned string as JSON:
+
+```typescript
+function createRequestPrompt(request: string) {
+    return `You are a service that translates user requests into JSON objects of type &#34;${validator.typeName}&#34; according to the following TypeScript definitions:\n` +
+        `\`\`\`\n${validator.schema}\`\`\`\n` +
+        `The following is a user request:\n` +
+        `&#34;&#34;&#34;\n${request}\n&#34;&#34;&#34;\n` +
+        `The following is the user request translated into a JSON object with 2 spaces of indentation and no properties with the value undefined:\n`;
+}
+
+function createRepairPrompt(validationError: string) {
+    return `The JSON object is invalid for the following reason:\n` +
+        `&#34;&#34;&#34;\n${validationError}\n&#34;&#34;&#34;\n` +
+        `The following is a revised JSON object:\n`;
+}
+```
+The library tries twice and gives up if valid output hasn’t been generated by the LLM:
+
+```typescript
+async function translate(request: string, promptPreamble?: string | PromptSection[]) {
+    	const preamble: PromptSection[] = typeof promptPreamble === &#34;string&#34; ? [{ role: &#34;user&#34;, content: promptPreamble }] : promptPreamble ?? [];
+    	let prompt: PromptSection[] = [...preamble, { role: &#34;user&#34;, content: typeChat.createRequestPrompt(request) }];
+    	let attemptRepair = typeChat.attemptRepair;
+    	while (true) {
+        	const response = await model.complete(prompt);
+        	if (!response.success) {
+            	return response;
+        	}
+        	const responseText = response.data;
+        	const startIndex = responseText.indexOf(&#34;{&#34;);
+        	const endIndex = responseText.lastIndexOf(&#34;}&#34;);
+        	if (!(startIndex &gt;= 0 &amp;&amp; endIndex &gt; startIndex)) {
+            	return error(`Response is not JSON:\n${responseText}`);
+        	}
+        	const jsonText = responseText.slice(startIndex, endIndex + 1);
+        	const schemaValidation = validator.validate(jsonText);
+        	const validation = schemaValidation.success ? typeChat.validateInstance(schemaValidation.data) : schemaValidation;
+        	if (validation.success) {
+            	return validation;
+        	}
+        	if (!attemptRepair) {
+            	return error(`JSON validation failed: ${validation.message}\n${jsonText}`);
+        	}
+        	prompt.push({ role: &#34;assistant&#34;, content: responseText });
+        	prompt.push({ role: &#34;user&#34;, content: typeChat.createRepairPrompt(validation.message) });
+        	attemptRepair = false;
+    	}
+}
+```
+**Pros:**
+* Features a TypeScript library - a rare non-Python entry
+* Uses a language already known among developers, TS type definitions
+
+**Cons:**
+* No guarantee of a valid output ever returned; it can throw error and fail, which misses the point of this exercise
+* Limited approach based on prompt engineering and completion API (this is a limitation of OpenAI and other proprietary models)
+* Only generates JSON objects
+* Only uses OpenAI API 
+
+### 4. [Jsonformer](https://github.com/1rgs/jsonformer)
+
+Jsonformer is a library that generates structured JSON from LLMs and guarantees the generation of valid JSON adhering to a specific schema.
+
+Jsonformer is a wrapper over Hugging Face Transformers, so it works with self-hosted models. It works by selecting only valid tokens (adhering to a schema) at each step of generation. In addition, it only generates requested value tokens, filling in the scaffolding into the prompt - so it should be efficient.
+
+This library fills the same role as TypeChat, but the approach taken is superior. The code accesses the logits directly and masks them to only allow valid ones. There’s no way this can fail to generate valid JSON adhering to the requested schema.
+
+Let’s examine at this example from [github](https://github.com/1rgs/jsonformer) more closely:
+
+```python
+from jsonformer import Jsonformer
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model = AutoModelForCausalLM.from_pretrained(&#34;databricks/dolly-v2-12b&#34;)
+tokenizer = AutoTokenizer.from_pretrained(&#34;databricks/dolly-v2-12b&#34;)
+
+json_schema = {
+    &#34;type&#34;: &#34;object&#34;,
+    &#34;properties&#34;: {
+        &#34;name&#34;: {&#34;type&#34;: &#34;string&#34;},
+        &#34;age&#34;: {&#34;type&#34;: &#34;number&#34;},
+        &#34;is_student&#34;: {&#34;type&#34;: &#34;boolean&#34;},
+        &#34;courses&#34;: {
+            &#34;type&#34;: &#34;array&#34;,
+            &#34;items&#34;: {&#34;type&#34;: &#34;string&#34;}
+        }
+    }
+}
+
+prompt = &#34;Generate a person&#39;s information based on the following schema:&#34;
+jsonformer = Jsonformer(model, tokenizer, json_schema, prompt)
+generated_data = jsonformer()
+
+print(generated_data)
+```
+
+**Pros:**
+* Compatible with Hugging Face Transformers
+* Guarantees valid output by ensuring that the generated JSON is always syntactically correct and conforms to the specified schema
+* Efficient: by generating only the content tokens and filling in the fixed tokens, Jsonformer is more efficient than generating a full JSON string and parsing it
+
+**Cons:**
+* This depends on use case: Jsonformer is limited in scope and currently supports a subset of JSON Schema
+
+### 5. [ReLLM](https://github.com/r2d4/rellm)
+
+ReLLM allows users to constrain the output of a language model by matching it with a regular expression. This is achieved by only allowing tokens that match the regex at each step of generation. ReLLMs is built on top of the Hugging Face Transformers library.
+
+Let’s take a closer look at this example from [github](https://github.com/r2d4/rellm):
+
+```python
+import regex
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+from rellm import complete_re
+
+model = AutoModelForCausalLM.from_pretrained(&#34;gpt2&#34;)
+tokenizer = AutoTokenizer.from_pretrained(&#34;gpt2&#34;)
+
+prompt = &#34;ReLLM, the best way to get structured data out of LLMs, is an acronym for &#34;
+pattern = regex.compile(r&#39;Re[a-z]+ L[a-z]+ L[a-z]+ M[a-z]+&#39;)
+output = complete_re(tokenizer=tokenizer, 
+                     model=model, 
+                     prompt=prompt,
+                     pattern=pattern,
+                     do_sample=True,
+                     max_new_tokens=80)
+print(output)
+
+# Realized Logistic Logistics Model
+
+```
+Currently, this is implemented in a naive way - by looping through the entire token vocabulary at each set, and checking for regex matches. This is not the optimal approach and can be computationally expensive (see [Outlines](https://docs.monadical.com/s/structured-output-from-LLMs#8-Outlines) for details).
+
+```python
+def filter_tokens(self, partial_completion: str, patterns: Union[regex.Pattern, List[regex.Pattern]]) -&gt; Set[int]:
+    if isinstance(patterns, regex.Pattern):
+        patterns = [patterns]
+
+    with ThreadPoolExecutor():
+        valid_token_ids = set(
+            filter(
+                lambda token_id: self.is_valid_token(token_id, partial_completion, patterns),
+                self.decoded_tokens_cache.keys()
+            )
+        )
+
+    return valid_token_ids
+```
+
+**Pros:**
+* Compatible with Hugging Face Transformers
+* Guarantees valid output that matches the specified regex pattern
+* Has a very simple codebase that is easy to understand and modify
+
+**Cons:**
+* Suboptimal performance, as it masks the logits of the tokens that do not match the regex pattern
+* Dependency on the use case and the complexity of the regex pattern
+* Limited scope, as it only works with LLMs that support logit biasing
+
+### 6. [ParserLLM](https://github.com/r2d4/parserllm)
+
+ParserLLM is a library that extends ReLLM. Both work with Hugging Face Transformers. It constrains the output of an LLM to match a [context-free grammar (CFG)](https://www.geeksforgeeks.org/what-is-context-free-grammar/) and uses [Lark parser generator](https://lark-parser.readthedocs.io/en/stable/), a tool that creates parsers from grammar rules, to determine the valid tokens for each position in the output sequence.
+
+However, it’s inefficient in the same way as ReLLM in that it parses the whole sequence for each vocabulary token (see [code](https://github.com/r2d4/parserllm/blob/main/parserllm/parserllm.py#L47)).
+
+Here’s an example from [github](https://github.com/r2d4/rellm):
+
+```python
+model = AutoModelForCausalLM.from_pretrained(&#34;databricks/dolly-v2-3b&#34;)
+tokenizer = AutoTokenizer.from_pretrained(&#34;databricks/dolly-v2-3b&#34;)
+
+json_grammar = r&#34;&#34;&#34;
+    ?start: value
+
+    ?value: object
+          | array
+          | string
+          | &#34;true&#34;             -&gt; true
+          | &#34;false&#34;            -&gt; false
+          | &#34;null&#34;             -&gt; null
+
+    array  : &#34;[&#34; [value (&#34;,&#34; value)*] &#34;]&#34;
+    object : &#34;{&#34; [pair (&#34;,&#34; pair)*] &#34;}&#34;
+    pair   : string &#34;:&#34; value
+
+    string : ESCAPED_STRING
+
+    %import common.ESCAPED_STRING
+    %import common.SIGNED_NUMBER
+    %import common.WS
+
+    %ignore WS
+&#34;&#34;&#34;
+
+
+### Create the JSON parser with Lark, using the LALR algorithm
+json_parser = Lark(json_grammar, parser=&#39;lalr&#39;,
+                # Using the basic lexer isn&#39;t required, and isn&#39;t usually recommended.
+                   # But, it&#39;s good enough for JSON, and it&#39;s slightly faster.
+                   lexer=&#39;basic&#39;,
+                   # Disabling propagate_positions and placeholders slightly improves speed
+                   propagate_positions=False,
+                   maybe_placeholders=False,
+                   regex=True)
+
+prompt = &#34;Write the first three letters of the alphabet in valid JSON format\n&#34;
+print(complete_cf(prompt, json_parser, &#34;&#34;, 
+                  tokenizer, 
+                  model,
+                  max_new_tokens=15, 
+                  debug=True))
+
+print(&#34;regular\n&#34;, &#39; &#39;.join(tokenizer.batch_decode(model.generate(tokenizer.encode(prompt, return_tensors=&#34;pt&#34;),
+                max_new_tokens=30,
+                pad_token_id=tokenizer.eos_token_id,
+))))
+
+```
+
+**Pros:**
+* Compatible with Hugging Face Transformers
+* Guarantees valid output that matches the specified context-free grammar pattern
+* General purpose, generates according to any CFG definition
+* Perfect for DSLs and niche languages
+* Very simple codebase
+* Leverages Lark - an already-popular parser generator - to create parsers from grammar rules
+
+**Cons:**
+* Suboptimal performance, as it parses the whole sequence on each token of the vocabulary (which may reduce the speed and quality of the completions)
+* Depends on the use case and the complexity of the CFG pattern, which may not be able to handle more advanced or ambiguous structures
+* Limited in scope, as it only works with LLMs that support logit biasing
+
+### 7. [Thiggle](https://thiggle.com/)
+
+Thiggle is a paid service that leverages ReLLM and parserLLM under the hood to offer a platform for using LLMs in various ways. Some of the features that Thiggle provides are:
+
+* Categorization API
+* Structured Completion APIs
+* Regex Completion API
+* Context-Free Grammar Completion API
+
+However, Thiggle does not disclose which LLMs are used for these features, and the models might change without notice, which risks affecting the performance. 
+
+**Pros:**
+* Easy to use - just call an API
+* Unique, reliable feature set among hosted options
+
+**Cons:**
+* No info about the LLMs used
+* Model might change without notice, causing a change in performance
+* Paid service
+
+### 8. [Outlines](https://github.com/normal-computing/outlines)
+
+Normal Computing created a wrapper around Hugging Face Transformers that focuses on efficient guided generation, a method explained in detail in this paper, [&#34;Efficient Guided Generation for Large Language Models&#34;](https://arxiv.org/pdf/2307.09702.pdf). 
+
+Unlike other libraries that support regex or CFG matching, which loop through the entire vocabulary (around 50k tokens) to check if a token matches, this wrapper performs a crucial optimization. It converts any regular expression to an equivalent finite state machine (FSM) and maps each state of the FSM to valid next tokens, which can be cached and reused. This avoids iterating over the whole vocabulary at each token generation.
+
+This method can also be extended to optimize context-free grammar-based constraining, [for which there is a pull request pending](https://github.com/outlines-dev/outlines/pull/391).
+
+The paper claims that this method can achieve an average **O(1) complexity**. However, it requires storing valid tokens for each FSM state, which takes up memory. In the words of the authors: 
+
+&gt;Fortunately, for non-pathological combinations of regular expressions and vocabularies, not every string in the vocabulary will be accepted by the FSM, and not every FSM state will be represented by a string in V.
+
+Regarding the memory concerns in this method, the authors say:
+
+&gt;In our tests using a slightly augmented version of the Python grammar, we find that even naively constructed indices (i.e. ones containing unused and redundant parser and FSM state configurations) are still only around 50 MB.
+
+This paper also explores how the technique performs better than Guidance, which uses a simple approach and iterates through the whole vocabulary (note that the developer of LMQL found that this result was [not reproducible](https://github.com/eth-sri/lmql/issues/179):
+
+![](https://docs.monadical.com/uploads/9c5e0532-fa7e-433d-91ce-c8956765d5e7.png)
+
+Some of its notable features include:
+
+* Notable features:
+* Prompt templating based on Jinja, similar to Guidance
+* Early stopping
+* Multiple choices
+* Type constraints
+* Regex matching
+* Valid JSON generation, based on a Pydantic schema
+* [Token healing](https://github.com/outlines-dev/outlines/issues/161)
+* [CFG-guided generation](https://github.com/outlines-dev/outlines/pull/391)
+* [Infilling DSL](https://github.com/outlines-dev/outlines/issues/182)
+
+**Pros:**
+* Compatible with Hugging Face Transformers
+* Guarantees valid output
+* Extremely efficient compared to alternatives
+
+**Cons:**
+* Not as fully featured as Guidance
+* [No CFG support as of time of writing, work is in progress](https://github.com/outlines-dev/outlines/pull/391)
+
+### 9. [LMQL](https://github.com/eth-sri/lmql)
+
+LMQL is a programming language for LLMs, based on a superset of Python. It’s a rather novel way of using LLMs in programs and goes well beyond prompt templating.
+
+Control flow, normal Python, and generation constraints can be interwoven with prompts; this is best illustrated with an example:
+
+```python
+&#34;Greet LMQL:[GREETINGS]\n&#34; where stops_at(GREETINGS, &#34;.&#34;) and not &#34;\n&#34; in GREETINGS
+
+if &#34;Hi there&#34; in GREETINGS:
+    &#34;Can you reformulate your greeting in the speech of \
+     victorian-era English: [VIC_GREETINGS]\n&#34; where stops_at(VIC_GREETINGS, &#34;.&#34;)
+
+&#34;Analyse what part of this response makes it typically victorian:\n&#34;
+
+for i in range(4):
+    &#34;-[THOUGHT]\n&#34; where stops_at(THOUGHT, &#34;.&#34;)
+
+&#34;To summarize:[SUMMARY]&#34;
+```
+Program output:
+![](https://docs.monadical.com/uploads/75c2694f-3ecd-4d72-a0fa-316bd86627c2.png)
+
+Regarding generation constraints, LMQL includes a [constraint language](https://docs.lmql.ai/en/stable/language/constraints.html) which works by logit masking. At the moment, it is not using the finite state machine logit mask caching approach (like Outlines). While the team has [investigated it](https://github.com/eth-sri/lmql/issues/179), we’ve found the result unable to be reproduced; in addition, the approach is not the best fit for the library, as the constraints can call external validators.
+
+Some of the constraint features include:
+
+* Stopping Phrases and Type Constraints
+* Choice From Set
+* Length
+* Combining Constraints
+* Regex
+* Custom Constraints
+
+Other notable features of LMQL:
+* [Advanced decoders](https://docs.lmql.ai/en/stable/language/decoders.html)
+* Optimizing runtime with speculative execution and tree-based caching
+* Multi-model support
+* [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=lmql-team.lmql)
+* Output streaming
+* Integration with LlamaIndex and Langchain
+
+LMQL works with both self-hosted models through Hugging Face Transformers and LlamaCpp, and OpenAI API (although the latter is limited due to [API constraints](https://docs.lmql.ai/en/stable/language/openai.html#openai-api-limitations).
+
+**Pros:**
+* Compatible with Hugging Face Transformers and OpenAI
+* Constraints guarantee valid output
+* Very rich feature set that goes beyond traditional templating languages
+* Python scripting / templating
+
+**Cons:**
+* No CFG support as of the time of writing
+
+### 10. [Instructor](https://jxnl.github.io/instructor/)
+
+Instructor is a Python package that leverages OpenAI’s function calling feature to generate fields of a desired ```pydantic``` schema object.
+
+All the limitations of OpenAI function calling apply, but this library makes it more ergonomic to generate objects with a desired schema.
+
+Here&#39;s an example from [github](https://jxnl.github.io/instructor/):
+
+```python
+import openai
+from pydantic import BaseModel
+from instructor import patch
+
+patch()
+
+class UserDetail(BaseModel):
+    name: str
+    age: int
+
+user: UserDetail = openai.ChatCompletion.create(
+    model=&#34;gpt-3.5-turbo&#34;,
+    response_model=UserDetail,
+    messages=[
+        {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;Extract Jason is 25 years old&#34;},
+    ]
+)
+
+assert user.name == &#34;Jason&#34;
+assert user.age == 25
+```
+
+Instructor also provides an extension to ```pydantic.BaseModel``` that allows you to add descriptions to the fields of your model. These descriptions can guide the LLM to generate more accurate and relevant values for the fields:
+
+```python
+class UserDetails(OpenAISchema):
+    name: str = Field(..., description=&#34;User&#39;s full name&#34;)
+    age: int
+```
+
+**Pros:**
+* Quick and easy way to get a Pydantic object from OpenAI
+
+**Cons:**
+* OpenAI only
+* Function calling limitations apply
+* Relies on retrying on failure
+* Narrowly focused, not as popular as others
+
+
+## Other methods of steering LLMs
+
+While beyond the scope of this article, there are indeed other, more subtle, methods of steering LLMs, like [activation vectors](https://www.alignmentforum.org/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector) (vectors that can be added to LLM’s activations, to skew it towards a desired direction in the activation space). This can affect the LLM’s output in terms of its content, style, sentiment, or other properties. 
+
+![](https://docs.monadical.com/uploads/51260597-5728-4a79-8282-960cc56f49c5.png)
+
+## Conclusion
+
+This article tackled the challenge of generating text from an LLM that follows a predefined output format, such as JSON or code, which is a valuable application of LLMs that can improve the interaction between LLMs and other systems. It explored different techniques and strategies to achieve this, from open-source packages to simple yet powerful solutions, and it also demonstrated how to implement a smart text interface using an LLM that can generate text in a specific output format, using a prompt and a token probability layer masking library to control the output.
+
+This approach shows  promise for integrating LLMs into applications and reducing their unpredictability. It’s also an area where open-source models shine compared to proprietary LLMs. We envision extending this approach to applications such as code generation and editing, using an LSP language server to ensure valid and compilable code. This would open up new horizons for the use of LLMs in software development and engineering, guaranteeing robustness of the output.
+
+We hope this article has given you some insights and inspiration on how to generate text from an LLM that adheres to a predefined output format. If you have any questions or feedback, please get in touch. We’d love to hear about your experiences.
+
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.a2fac85c338ccd8282ca.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.8a4f868f9e7676405f31.js" defer="defer"></script>
+
+

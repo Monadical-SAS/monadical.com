@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 15 2024 01:18:57 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 21 2024 08:44:19 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">28038 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">28218 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -1611,7 +1611,21 @@ tmux2html -o index.html --stream --interval 1 0
 python3 -m http.server --directory . --bind 0.0.0.0 --port 8000
 ```
 
-### `ag`/`ripgrep`
+### `nala` 🌈
+
+Prettier drop-in replacement for the `apt` package manager. Provides faster parallelized downloads, better progress bars, etc.
+
+```bash
+apt install nala
+
+# then use it just like apt:
+nala update
+nala install python3 nodejs
+```
+
+- https://github.com/volitank/nala
+
+### `ag`/`ripgrep`/`ack`
 
 `grep -r`/`git grep` replacement with much faster performance and additional features.
 
@@ -1621,20 +1635,22 @@ apt install silversearcher-ag
 ag &#39;some-regex&#39; .
 ```
 
-### `autojump`/`exa`/`eza` 🌈
+### `autojump`/`eza`/`exa` 🌈
 
 `cd` and `ls` replacements.
 ```bash
-brew install exa
+brew install eza
 
-exa --header --group-directories-first -s name \
+eza --header --group-directories-first -s name \
     --time-style=long-iso --created --modified \
     --all --long --extended --group --git --classify --icons \
     --ignore-glob=.DS_Store \
     /some/directory/path
 ```
 
-### `micro`/`bat`/`most` 🌈
+- https://github.com/eza-community/eza
+
+### `micro`/`most` 🌈
 
 `nano`, `cat`, and `less` alternatives with multi-cursor selection, syntax highlighting, mouse support, and more.
 
@@ -1649,15 +1665,30 @@ micro /path/to/some/file.js
 
 ### `bat`/`pygmentize`/`grc`/`colortail` 🌈
 
-Tools to help you generically colorize the output any command.
+Tools to help you generically colorize the output any command. Great for printing logfiles, source code, config files, tracebacks, etc. any other structured data with syntax highlighting.
 
+```bash
+anything | grc
+bat &lt; docker.log
+...
+```
 
+- https://github.com/sharkdp/bat ⭐️
+- https://github.com/garabik/grc ⭐️
+- https://github.com/owenthereal/ccat
+- https://github.com/pygments/pygments
+- https://github.com/joakim666/colortail
+- https://github.com/tanderson92/supercat
+- https://codeberg.org/mehrad/highlighter
+- https://www.gnu.org/software/src-highlite/
+- https://github.com/armandino/TxtStyle
+- [and more here...](https://stackoverflow.com/questions/7851134/syntax-highlighting-colorizing-cat)
 
 ### `jq`/`yq`/`mlr`/`confget`/`plutil`
 
 Command-line parsers and manipulators of JSON, YAML, XML, CSV, INI, and PLIST formats.
 
-### `rsync`/`rclone`/`rsnapshotd`
+### `rsync`/`rclone`/`rsnapshotd`/`sanoid`+`syncoid`
 
 Backup and file syncing tools.
 
@@ -1714,9 +1745,17 @@ Filesystems.
 
 ---
 
+### Further Reading
+
+- https://github.com/ibraheemdev/modern-unix (more cool commands)
+- https://github.com/rothgar/awesome-tuis
+- https://www.linuxlinks.com/alternatives-popular-cli-tools/
+- https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6
+- https://awesome-docker.netlify.app/
+
 &lt;center&gt;
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_b1a12c430204a4d8e76fdd8c982e5dd1.png&#34; style=&#34;height: 40px;&#34;&gt; &amp;nbsp; &lt;i style=&#34;font-size: 1.1em&#34;&gt;&lt;a href=&#34;https://monadical.com/contact-us.html&#34;&gt;Monadical does system administration, dev-ops, and web development for-hire &lt;i class=&#34;fa fa-angle-double-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/i&gt;
+
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">

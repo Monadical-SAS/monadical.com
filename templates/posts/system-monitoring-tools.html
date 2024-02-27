@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 21 2024 08:44:19 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Feb 23 2024 19:37:35 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">28221 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">28797 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -91,6 +91,8 @@
 - https://explainshell.com/ ([Github](https://github.com/idank/explainshell))
 - https://tldr.sh/
 - http://bropages.org/
+- https://github.com/chrisallenlane/cheat
+- https://regex101.com/
 
 **My own personal helper script collections for Bash &amp; Fish + reading lists &amp; resources:**
 - https://github.com/pirate/bash-utils
@@ -104,6 +106,8 @@
 - https://www.opsdash.com/blog/disk-monitoring-linux.html
 - https://www.binarytides.com/linux-commands-monitor-network/
 - https://www.cyberciti.biz/faq/network-statistics-tools-rhel-centos-debian-linux/
+
+**[And More...](#Further-Reading)**
 
 Below is a collection of CLI tools that I&#39;ve personally used while doing Linux/BSD systems administration over the past 10+ years. Some of them I use daily, others I only use once a year or less... but when I need them, boy am I glad they exist!
 
@@ -186,6 +190,18 @@ atop -y
 - https://linux.die.net/man/1/atop
 - https://haydenjames.io/use-atop-linux-server-performance-analysis/
 
+### `tiptop`/`mactop` 🌈
+
+tiptop is a command-line system monitoring tool in the spirit of top. It displays various interesting system stats and graphs them. Works on all operating systems.
+
+```bash
+pip install tiptop
+tiptop
+```
+
+- https://github.com/nschloe/tiptop
+- https://github.com/laixintao/mactop
+
 ### `osquery` ⭐️
 
 
@@ -244,9 +260,23 @@ Ubuntu&#39;s builtin system status summary tool that displays whenever you SSH i
 landscape-sysinfo
 ```
 
+### `webmin`/`cockpit` ⭐️ 🌈
+
+Web GUI system control panels.
+
+```bash
+curl -fsSL &#39;http://www.webmin.com/jcameron-key.asc&#39; | apt-key add -
+echo &#34;deb http://download.webmin.com/download/repository/ sarge contrib&#34; \
+     &#34;deb http://webmin.mirror.somersettechsolutions.co.uk/repository/ sarge contrib&#34; | tee /etc/apt/sources.list.d/webmin.list
+apt install webmin
+apt update
+```
+
+- https://webmin.com/
+
 ---
 
-## CPU/Memory
+## CPU / Memory
 
 ### `lscpu`
 
@@ -384,6 +414,17 @@ vmstat -d
 - https://linux.die.net/man/8/vmstat
 - https://www.linode.com/docs/uptime/monitoring/use-vmstat-to-monitor-system-performance/
 - https://www.tecmint.com/linux-performance-monitoring-with-vmstat-and-iostat-commands/
+
+### `tsubame` 🌈
+
+- https://github.com/DoranekoSystems/Tsubame
+
+### `memray` 🌈
+
+Fancy memory profiling TUI for python. It can track memory allocations in Python code, in native extension modules, and in the Python interpreter itself.
+
+- https://github.com/bloomberg/memray
+- https://github.com/laixintao/flameshow (flamegraph viewer)
 
 ---
 
@@ -649,6 +690,36 @@ echo 3 &gt; /proc/sys/vm/drop_caches
 dd if=/mnt/disktotest/testfile of=/dev/null bs=1M count=1024 status=progress
 ```
 
+
+### `rsync`/`rclone`/`rsnapshotd`/`sanoid`+`syncoid`
+
+Backup and file syncing tools.
+
+```bash
+apt install rclone rsync rsnapshotd
+
+# sync some local files to a remote server over ssh/rsyncd
+rsync --archive --info=progress2 /some/local/path user@host:/some/remote/path
+
+# sync some local files to a remote directory on a cloud storage provider
+rclone sync source:path dest:path [flags]
+
+# mount remote dir as a local FUSE filesystem
+rclone mount remote:path/to/files /path/to/local/mount
+
+# take an rsync+hardlink snapshot of all the sources set in /etc/rsnapshot.conf
+rsnapshot
+
+# or take a zfs snapshot of a given pool/dataset
+zfs snapshot -r poolname/dataset@snapshotname
+```
+
+
+### `gddrescue`/`dd_rescue`/`ddrescue-gui`/`recoverdisk`/`safecopy`/`recoverypy`
+
+- https://askubuntu.com/questions/211578/whats-the-difference-between-ddrescue-gddrescue-and-dd-rescue
+- https://github.com/PabloLec/RecoverPy 🌈
+
 ### `df`
 
 Show the space available on a given filesystem.
@@ -726,6 +797,10 @@ $ lsscsi -s  -P -p -g -i -D
 # list detailed information about disk device models, sector alignment and sizes, partition maps, partition types, block sizes
 fdisk -l
 ```
+
+### `zfs`/`nfs`/`samba`/`glusterfs`
+
+Alternative filesystems / fileshares besides ext4.
 
 ---
 
@@ -1013,9 +1088,9 @@ speedtest-cli
 - https://github.com/sivel/speedtest-cli
 - https://www.speedtest.net/apps/cli
 
-### `dig`
+### `dig`/`dug`/dog`/`host`/`nslookup` 🌈
 
-You can test DNS resolution time using dig.
+You can test DNS record resolution, trace, and speed stats using `dig` or `dog`.
 
 ```bash
 apt install dnsutils
@@ -1028,7 +1103,17 @@ dig -4 +dnssec +multi +trace @1.1.1.1 example.com
 
 # get your public IP address using the opendns reflector resolver
 dig -4 +short myip.opendns.com @resolver1.opendns.com
+
+# get pretty colorized output optimized for human-readability
+dog example.com A @1.1.1.1
+
+host -t A example.com
+nslookup example.com
+curl -s ipinfo.io
 ```
+- https://github.com/unfrl/dug
+- https://github.com/ogham/dog
+- https://github.com/TheRook/subbrute
 
 ### `mtr` ⭐️
 
@@ -1099,6 +1184,18 @@ wireshark -r test.pcap
 ```bash
 ssldump -k cert.key -i eth0 -dn host 123.123.123.123 and port 443
 ```
+
+### `wsrepl` 🌈
+
+Interactive REPL for websocket exploration.
+
+- https://github.com/doyensec/wsrepl
+
+### `iptables`/`iptables-tui`
+
+Interactive TUI to explore iptables.
+
+- https://github.com/davidmoreno/iptables-tui
 
 ---
 
@@ -1319,7 +1416,7 @@ last -x -w -F | tac
 
 ---
 
-## Virtual Machines / Containers
+## VM / Docker
 
 ### `ctop` ⭐️🌈
 
@@ -1341,6 +1438,8 @@ ctop -a
 The docker equivalent of `top`. Uncolored output, one row per container.
 ```bash
 docker stats
+
+docker compose stats
 ```
 
 - https://docs.docker.com/engine/reference/commandline/stats/
@@ -1373,7 +1472,7 @@ ssh someuser@esxi-host esxtop
 
 ---
 
-## Services
+## DB / Webserver
 
 ### `pg_top` ⭐️
 
@@ -1482,10 +1581,60 @@ uwsgitop /tmp/stats.socket
 - https://github.com/xrmx/uwsgitop
 - https://www.engagespark.com/blog/deploying-monitoring-python-web-apps-uwsgi/
 
----
+## OS / System
 
-## Other
+### `nala` 🌈
 
+Prettier drop-in replacement for the `apt` package manager. Provides faster parallelized downloads, better progress bars, etc.
+
+```bash
+apt install nala
+
+# then use it just like apt:
+nala update
+nala install python3 nodejs
+```
+
+- https://github.com/volitank/nala
+
+### `uname`
+
+Get active kernel and architecture information.
+```bash
+uname --all
+
+# or to only get architecture
+arch
+```
+
+### `lsmod`
+
+Get active kernel module list.
+
+```bash
+lsmod
+```
+
+### `lsb_release`
+
+Get Ubuntu version info.
+
+```bash
+lsb_release --all
+```
+
+
+### `watchdog`/`auditd`/`acct`
+
+System event monitoring, audit logging, alerting tools, etc.
+```bash
+apt install watchdog auditd acct
+
+# read documentation for more info
+man watchdog
+man auditd
+man acct
+```
 
 ### `systemd-analyze`
 
@@ -1501,6 +1650,37 @@ systemd-analyze plot &gt; boot-trace.svg
 # see what security permissions the docker service has enabled
 systemd-analyze security docker
 ```
+
+### `dpkg`/`apt list`/`apt-file`/`apt-mark`
+
+Other useful apt-related package management commands.
+
+```bash
+apt list --installed
+apt-mark showmanual
+
+apt show &lt;packagename&gt;
+dpkg -L &lt;packagename&gt;
+apt-file search &lt;filename&gt;
+```
+
+
+## Profiling / Debugging
+
+### `pv`/`progress` ⭐️
+
+Show progress of `cp`, `mv`, etc. file transfer operations, pipe operations, etc.
+```bash
+apt install pv progress
+
+cat some_large_file.txt | pv | gzip -9 &gt; compressed_file.txt.gz
+
+cp compressed_file.txt.gz /some/other/location
+progress
+```
+
+- https://github.com/Xfennec/progress
+
 
 ### `strace`/`dtrace` ⭐️
 
@@ -1536,9 +1716,9 @@ ltrace -t -T -l /lib/libselinux.so.1 docker ps
 - https://gitlab.com/cespedes/ltrace
 - https://manpages.ubuntu.com/manpages/cosmic/man1/ltrace.1.html
 
-### `binwalk`
+### `binwalk`/`strings`/`hexyl`/`hexabyte`/`dissy` 🌈
 
-Decompiler utility normally used to inspect firmware binaries, but is usefule alon with `strings` to see what a binary contains before you run it.
+Decompiler utility normally used to inspect firmware binaries, but is useful along with `strings` to see what a binary contains before you run it.
 
 ```python3
 pip3 install &#39;git+https://github.com/ReFirmLabs/binwalk.git&#39;
@@ -1551,81 +1731,111 @@ binwalk --opcodes some_executable.bin
 
 # show all strings found inside a binary blob
 strings some_binary_blob.exe
+
+# show hex dump explorer with pretty color highlighting
+hexyl /bin/some_binary.exe
 ```
 
 - https://github.com/ReFirmLabs/binwalk/blob/master/INSTALL.md
 - https://github.com/ReFirmLabs/binwalk/wiki/quick-start-guide
+- https://github.com/sharkdp/hexyl 🌈
+- https://github.com/thetacom/hexabyte ⭐️🌈
+- https://github.com/tonybaloney/dissy ⭐️🌈
 
-### `watch`
-
-Watch the output of any command for changes and highlight the diff, useful in conjuction with other tools below.
-
-```bash
-# show changes in the output of `ip -s link show eno1` highlighting network IO
-watch -n1 -d ip -s link show eno1
-
-# show changes in the output of `lsof +D /mnt/somedrive` highlighting accesses
-watch -n1 -d lsof +D /media/kenza
-```
-
-### `uname`
-
-Get active kernel and architecture information.
-```bash
-uname --all
-
-# or to only get architecture
-arch
-```
-
-### `lsmod`
-
-Get active kernel module list.
-
-```bash
-lsmod
-```
-
-### `lsb_release`
-
-Get Ubuntu version info.
-
-```bash
-lsb_release --all
-```
 
 ---
 
-## Bonus tools
+## Shell Utilities
 
-These tools are not related to system monitoring and introspection, but nevertheless I use them enough that I figure they might be useful to people reading this article.
 
-### `fish`/`tmux`/`tmux2html`/`atuin`/`nohup`/`shellcheck`
+### `bat`/`pygmentize`/`grc`/`colortail`/`rich`/`imgcat`/`timg` ⭐️🌈
 
-Shells / screen / script running utils.
+Tools to help you generically colorize the output any command. Great for printing logfiles, source code, config files, tracebacks, etc. any other structured data with syntax highlighting.
 
 ```bash
+bat &lt; docker.log
+docker compose logs | grc
+pygmentize -g &lt; somecode.py
+...
+```
+
+- https://github.com/sharkdp/bat ⭐️
+- https://github.com/garabik/grc ⭐️
+- https://github.com/pygments/pygments ⭐️
+- https://github.com/sharkdp/hexyl ⭐️
+- https://github.com/textualize/rich-cli ⭐️
+- https://github.com/eddieantonio/imgcat ⭐️
+- https://github.com/owenthereal/ccat
+- https://github.com/joakim666/colortail
+- https://github.com/tanderson92/supercat
+- https://codeberg.org/mehrad/highlighter
+- https://www.gnu.org/software/src-highlite/
+- https://github.com/armandino/TxtStyle
+- https://github.com/PatrickF1/colored_man_pages.fish / https://github.com/decors/fish-colored-man
+- https://github.com/Kikobeats/awesome-cli#output
+- https://github.com/victante/trish
+- 
+- [and more here...](https://stackoverflow.com/questions/7851134/syntax-highlighting-colorizing-cat)
+
+
+### `iTerm2`/`fig` ⭐️ 🌈
+
+Alternative Terminal Emulator applicaitons with tons of extra features.
+- https://iterm2.com/
+- https://github.com/withfig/fig
+
+### `fish`/`fisher`/`fifc` ⭐️ 🌈
+
+```bash
+apt install fish
+fish
+curl -fsSL &#39;https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish&#39; | source
+fisher install jorgebucaran/fisher
+fisher install gazorby/fifc
+```
+
+Alternative to traditional `bash` shell with better autocomplete, image viewing support, user-installable plugins, and other features.
+
+- ⭐️ https://github.com/pirate/fish-utils (fish functions I wrote myself + many useful links)
+- https://github.com/jorgebucaran/fisher (fish plugin manager)
+- https://github.com/topics/fish-plugin (list of fish plugins on github)
+- ⭐️🌈 https://github.com/gazorby/fifc (awesome fzf style autocomplete for cli args, git, etc.)
+
+### `tmux`/`tmux2html`
+
+```bash
+apt install tmux
+
 # stream your tmux window as a live-updating HTML UI on http://0.0.0.0:8000
 pip install tmux2html
 tmux2html -o index.html --stream --interval 1 0
 python3 -m http.server --directory . --bind 0.0.0.0 --port 8000
 ```
 
-### `nala` 🌈
+### `atuin` ⭐️🌈
 
-Prettier drop-in replacement for the `apt` package manager. Provides faster parallelized downloads, better progress bars, etc.
+Improved shell history manager that can also sync history between machines (encrypted).
 
 ```bash
-apt install nala
-
-# then use it just like apt:
-nala update
-nala install python3 nodejs
+bash &lt;(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
+atuin status
+atuin help
 ```
 
-- https://github.com/volitank/nala
+- https://github.com/atuinsh/atuin
 
-### `ag`/`ripgrep`/`ack`
+### `shellcheck` ⭐️
+
+```bash
+apt install shellcheck
+shellcheck /some/bash/script.sh
+```
+
+Best linter available for bash scripts with hundreds of checks for common mistakes.
+
+- https://github.com/koalaman/shellcheck
+
+### `ag`/`ripgrep`/`ack`/`ugrep` ⭐️
 
 `grep -r`/`git grep` replacement with much faster performance and additional features.
 
@@ -1635,7 +1845,18 @@ apt install silversearcher-ag
 ag &#39;some-regex&#39; .
 ```
 
-### `autojump`/`eza`/`exa` 🌈
+- https://github.com/Genivia/ugrep 🌈
+
+### `autojump`/`z`/`zoxide`/`aj`/`pj`/`fasd`/`j` ⭐️
+
+Cd into recently used directories quickly (fuzzy-matched).
+
+- https://github.com/jethrokuan/z ⭐️
+- https://github.com/joelthelion/autojump ⭐️
+- https://github.com/kidonng/zoxide.fish
+- https://github.com/oh-my-fish/plugin-pj
+
+### `eza`/`exa`/`lsd`/`lsp`/`broot`/`fzf`/`browsr` 🌈
 
 `cd` and `ls` replacements.
 ```bash
@@ -1648,110 +1869,102 @@ eza --header --group-directories-first -s name \
     /some/directory/path
 ```
 
-- https://github.com/eza-community/eza
+- https://github.com/eza-community/eza ⭐️
+- https://github.com/juftin/browsr ⭐️
+- https://github.com/junegunn/fzf ⭐️
+- https://github.com/Donaldttt/fuzzyy
+- https://github.com/Canop/broot
+- https://github.com/lsd-rs/lsd
+- https://github.com/dborzov/lsp
 
-### `micro`/`most` 🌈
+### `micro`/`most`/`toolong`/`logmerger` 🌈
 
 `nano`, `cat`, and `less` alternatives with multi-cursor selection, syntax highlighting, mouse support, and more.
 
 ```bash
+pipx install toolong
 apt install bat most
 brew install micro
+
+tl /path/to/some/file.js
+tl access.log* --merge
 
 most /path/to/some/file.js
 bat /path/to/some/file.js
 micro /path/to/some/file.js
 ```
 
-### `bat`/`pygmentize`/`grc`/`colortail` 🌈
+- https://github.com/textualize/toolong
+- https://github.com/ptmcg/logmerger
 
-Tools to help you generically colorize the output any command. Great for printing logfiles, source code, config files, tracebacks, etc. any other structured data with syntax highlighting.
-
-```bash
-anything | grc
-bat &lt; docker.log
-...
-```
-
-- https://github.com/sharkdp/bat ⭐️
-- https://github.com/garabik/grc ⭐️
-- https://github.com/owenthereal/ccat
-- https://github.com/pygments/pygments
-- https://github.com/joakim666/colortail
-- https://github.com/tanderson92/supercat
-- https://codeberg.org/mehrad/highlighter
-- https://www.gnu.org/software/src-highlite/
-- https://github.com/armandino/TxtStyle
-- [and more here...](https://stackoverflow.com/questions/7851134/syntax-highlighting-colorizing-cat)
-
-### `jq`/`yq`/`mlr`/`confget`/`plutil`
+### `jq`/`yq`/`jsome`/`mlr`/`confget`/`plutil`/`pup`/`peco`/`glow`/`hexyl`
 
 Command-line parsers and manipulators of JSON, YAML, XML, CSV, INI, and PLIST formats.
 
-### `rsync`/`rclone`/`rsnapshotd`/`sanoid`+`syncoid`
+- https://github.com/Javascipt/Jsome
+- https://github.com/peco/peco
+- https://github.com/ericchiang/pup
+- https://github.com/charmbracelet/glow
+- https://github.com/thetacom/hexabyte
 
-Backup and file syncing tools.
+### `watch`/`timeout`/`wait`/`mkfifo`/`nohup`/`disown`/`bg`/`fg`/`jobs`
+
+Watch the output of any command for changes and highlight the diff, useful in conjuction with other tools below.
 
 ```bash
-apt install rclone rsync rsnapshotd
+# show changes in the output of `ip -s link show eno1` highlighting network IO
+watch -n1 -d ip -s link show eno1
 
-# sync some local files to a remote server over ssh/rsyncd
-rsync --archive --info=progress2 /some/local/path user@host:/some/remote/path
+# show changes in the output of `lsof +D /mnt/somedrive` highlighting accesses
+watch -n1 -d lsof +D /media/usb
 
-# sync some local files to a remote directory on a cloud storage provider
-rclone sync source:path dest:path [flags]
+# run a long-running command with a given timeout
+timeout 10 wget &#39;https://example.com/some/large/file&#39;
 
-# mount remote dir as a local FUSE filesystem
-rclone mount remote:path/to/files /path/to/local/mount
+# wait for a pid to finish running and exit with its return status
+wait 123
 
-# take an rsync+hardlink snapshot of all the sources set in /etc/rsnapshot.conf
-rsnapshot
-
-# or take a zfs snapshot of a given pool/dataset
-zfs snapshot -r poolname/dataset@snapshotname
+# create a fifo pipe for inter-process communication
+mkfio /tmp/testpipe
+mknod /tmp/testpipe p
 ```
 
-### `watchdog`/`auditd`/`acct`
+- https://www.lostpenguin.net/index.php/bg-fg-jobs-nohup-and-disown/
+- https://www.networkworld.com/article/970196/sleeping-and-waiting-on-linux.html
+- https://github.com/pirate/bash-utils
 
-System event mointoring and alerting tools.
-
-### `gddrescue`/`dd_rescue`/`ddrescue-gui`/`recoverdisk`/`safecopy`
-
-- https://askubuntu.com/questions/211578/whats-the-difference-between-ddrescue-gddrescue-and-dd-rescue
-
-### `apt-mark showmanual`/`apt list --installed`/`apt-file search &lt;filename&gt;`
-
-Useful package management commands.
-
-### `mkcert`/`certbot`
-
-SSL certificate issuing tools.
-
-### `tailscale`/`wireguard`
-
-VPN layers.
-
-### `webmin`/`cockpit`
-
-Web GUI system control panels.
-
-### `op`/`passman`/`keyring`/`uuidgen`
+### `op`/`passman`/`keyring`/`uuidgen`/`openssl`/`mkcert`/`certbot`
 
 Password, secret, and token generators/managers.
+```bash
+openssl rand -hex 20
+# 8ca5a28c055a766aa5a676fff24a9755fdd113f4
+```
 
-### `zfs`/`nfs`/`samba`/`glusterfs`
 
-Filesystems.
+&lt;br/&gt;
 
 ---
+---
 
-### Further Reading
+&lt;br/&gt;
 
-- https://github.com/ibraheemdev/modern-unix (more cool commands)
+## Further Reading
+
+- https://github.com/ibraheemdev/modern-unix
 - https://github.com/rothgar/awesome-tuis
+- https://github.com/alebcay/awesome-shell
+- https://github.com/xuxiaodong/awesome-shell
+- https://github.com/awesome-lists/awesome-bash
+- https://github.com/joseluisq/awesome-bash-commands
+- https://github.com/toolleeo/cli-apps
+- https://github.com/agarrharr/awesome-cli-apps
+- https://github.com/Kikobeats/awesome-cli
 - https://www.linuxlinks.com/alternatives-popular-cli-tools/
 - https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6
 - https://awesome-docker.netlify.app/
+- https://docs.sweeting.me/s/an-intro-to-the-opt-directory
+- https://12factor.net/
 
 &lt;center&gt;
 

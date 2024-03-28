@@ -1,9 +1,103 @@
 /******* Projects & Open Source *******/
+
+
+/* Background */
+
 .monadical-projects-wrapper {
-    position: relative;
+    margin-bottom: 1rem;
+
+    @include smallPhone {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $cloud-full),
+            (100% 28.5%,
+                0% 73%,
+                100% 80.3%,
+                0% -0.5%));
+        background-size: resizeImage(197px, 471px, 0.35),
+            resizeImage(197px, 471px, 0.36),
+            resizeImage(402px, 945px, 0.3),
+            200%;
+    }
+
+    @include phone {
+        @include background-images(($tentacle-right,
+        $tentacle-left,
+
+                $cube-right,
+                $cloud-full),
+            (100% 27%,
+            0% 73%,
+
+                100% 79.5%,
+                0% -2%));
+        background-size: resizeImage(197px, 471px, 0.6),
+            resizeImage(197px, 471px, 0.6),
+            resizeImage(402px, 945px, 0.4),
+            200%;
+    }
+
+    @include tablet {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $cloud,
+                $cloud-left),
+            (100% 29%,
+                0% 74.5%,
+                100% 80.5%,
+                0% -2%,
+                0% 3%,
+            ));
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.5),
+            auto,
+            auto;
+    }
+
+    @include smallDesktop {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $cloud,
+                $cloud-left),
+            (100% 27.5%,
+                0% 68.5%,
+                100% 75.5%,
+                0% -2%,
+                0% 3%,
+            ));
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.6),
+            auto,
+            auto;
+    }
+
+    @include desktop {
+        @include background-images(($tentacle-right,
+                $tentacle-left,
+                $cube-right,
+                $cloud,
+                $cloud-left),
+            (100% 27%,
+                0% 68%,
+                100% 75.5%,
+                0% -2%,
+                0% 3%,
+            ));
+        background-size: resizeImage(197px, 471px, 0.8),
+            resizeImage(197px, 471px, 0.8),
+            resizeImage(402px, 945px, 0.6),
+            auto,
+            auto;
+    }
+
 }
 
-#monadical-projects {
+.monadical-projects {
     .project-row {
         font-size: 20px;
         font-weight: 400;
@@ -20,49 +114,13 @@
     }
 
     .main-image-wrapper-1 {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        padding: 0 0 0rem 0;
-        background-image: url(/static/core/img/img-portfolio-curl-left.png);
-        background-size: 17rem 16rem;
-        background-position: 0% 0%;
-        background-repeat: no-repeat;
+        padding:0;
         margin: 0%;
-
-        @include smallPhone {
-            padding: 0 0 4rem 0;
-            background-image: url(/static/core/img/img-portfolio-curl-left.png),
-                url(/static/core/img/img-portfolio-cube-right-full-small.png);
-            background-size: 30%, 30%;
-            background-position: 0% 0%, 100% 105%;
-            background-repeat: no-repeat;
-            margin: 0%;
-        }
-
-        @include phone {
-            padding: 0 0 4rem 0;
-            background-image: url(/static/core/img/img-portfolio-curl-left.png),
-                url(/static/core/img/img-portfolio-cube-right-full-small.png);
-            background-size: 30%, 30%;
-            background-position: 0% 0%, 100% 105%;
-            background-repeat: no-repeat;
-            margin: 0%;
-        }
-
-        @include tablet {
-            padding: 0 0 4rem 0;
-            background-image: url(/static/core/img/img-portfolio-curl-left.png),
-                url(/static/core/img/img-portfolio-cube-right-full-small.png);
-            background-size: 25%, 25%;
-            background-position: 0% 0%, 100% 110%;
-            background-repeat: no-repeat;
-            margin: 0%;
-        }
-
-
-
     }
 
 
@@ -70,8 +128,8 @@
     .main-image-1 {
         border-radius: 10px;
         width: 100%;
-        margin: 2rem;
-        max-width: 585px;
+        margin: 0;
+        max-width: 300px;
 
         @include media(smallPhone, phone) {
             width: 70%;
@@ -80,13 +138,30 @@
 
 
 
+    .main-image-2 {
+        position: absolute;
+        left: 0;
+        top: 10%;
+        border-radius: 10px;
+        width: 25rem;
+        max-width: 300px;
+
+        @include media(smallPhone, phone, tablet) {
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+    }
     .main-image-3 {
         position: absolute;
         right: 0;
         top: 4.0%;
         border-radius: 10px;
         width: 25rem;
-        max-width: 700px;
+        max-width: 250px;
 
         @include media(smallPhone, phone, tablet) {
             display: none;
@@ -109,7 +184,7 @@
 
         @include smallDesktop {
             top: -1%;
-            width: 90%;
+            width: 100%;
         }
 
         @include desktop {

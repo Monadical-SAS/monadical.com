@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Feb 23 2024 19:37:35 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Mar 28 2024 09:09:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">29328 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">30240 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -1585,12 +1585,12 @@ uwsgitop /tmp/stats.socket
 
 ### `nala` 🌈
 
-Prettier drop-in replacement for the `apt` package manager. Provides faster parallelized downloads, better progress bars, etc.
+Prettier drop-in replacement frontend for the `apt` package manager. Provides faster parallelized downloads, better progress bars, extra helpers, etc. on top of `apt`.
 
 ```bash
 apt install nala
 
-# then use it just like apt:
+# then use it in place of apt:
 nala update
 nala install python3 nodejs
 ```
@@ -1682,7 +1682,7 @@ progress
 - https://github.com/Xfennec/progress
 
 
-### `strace`/`dtrace` ⭐️
+### `strace`/`dtrace`/`dtruss` ⭐️
 
 Trace the system calls of a given process to watch what it&#39;s doing internally.
 ```bash
@@ -1696,10 +1696,12 @@ strace -t -e open,read ls /home
 strace -p 1234
 ```
 
-(`dtrace` is the BSD equivalent to `strace`)
+(`dtrace` is the macOS/BSD equivalent to `strace`)
 
 - https://www.tecmint.com/strace-commands-for-troubleshooting-and-debugging-linux/
 - https://www.thegeekstuff.com/2011/11/strace-examples/
+- https://www.deepanseeralan.com/tech/fun-with-dtruss-macOS/
+- https://poweruser.blog/using-dtrace-with-sip-enabled-3826a352e64b
 
 ### `ltrace`
 
@@ -1713,6 +1715,7 @@ ltrace -t -T -p 1234
 ltrace -t -T -l /lib/libselinux.so.1 docker ps
 ```
 
+- use [`LD_PRELOAD`](https://www.tomaz.me/2014/01/08/detecting-which-process-is-creating-a-file-using-ld-preload-trick.html?utm_source=pocket_saves)/[`DYLD_INSERT_LIBRARIES`](https://gist.github.com/talaviram/1f21e141a137744c89e81b58f73e23c3?permalink_comment_id=3975633&amp;utm_source=pocket_saves) directly for more preload-injection tracing fun
 - https://gitlab.com/cespedes/ltrace
 - https://manpages.ubuntu.com/manpages/cosmic/man1/ltrace.1.html
 

@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi</title>
+
+    <!-- Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi">
+    <meta name="description" content="Learn how to create an NFT-based application on the Solana blockchain.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="Learn how to create an NFT-based application on the Solana blockchain.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/solanaticket.png">
+    <meta property="og:title" content="Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content=https://monadical.com/posts/building-a-ticketing-system-with-solana-mobile-and-metaplex-foundation-umi.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:description" content="Learn how to create an NFT-based application on the Solana blockchain.">
+    <meta property="twitter:image" content="https://monadical.com/static/solanaticket.png">
+    <meta property="twitter:site" content="@MonadicalHQ">
+    <meta property="twitter:title" content="Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi">
+    <meta property="twitter:url" content=https://monadical.com/posts/building-a-ticketing-system-with-solana-mobile-and-metaplex-foundation-umi.html />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Meta Tags End -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
+
+    <link rel="canonical" href="https://monadical.com/posts/building-a-ticketing-system-with-solana-mobile-and-metaplex-foundation-umi.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+
+
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+                
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-content-container">
+                        <ul class="navbar-nav navbar-left">
+                            
+                            
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button"
+                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Services
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/ai-services.html">AI</a>
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/services.html">Web Dev</a>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/blog.html">Blog</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                            </li>
+                        </ul>
+
+                        
+                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
+                            GET A TECHNICAL ASSESSMENT
+                        </a>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }       
+        .authorbox {
+            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
+        }
+        .authorbox__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+            
+            header .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+
+            header .navbar-nav .nav-link {
+                padding-left: 15px;
+            }
+
+        }
+    </style>
+    <div id="post-content">
+        <div class="container">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="Learn how to create an NFT-based application on the Solana blockchain.">
+    
+    
+    
+    <meta property="og:title" content="Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi - HedgeDoc">
+    
+    
+    <meta property="og:description" content="Learn how to create an NFT-based application on the Solana blockchain.">
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
+<meta name="application-name" content="HedgeDoc - Ideas grow better together">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.67a0a5daa4bc987211b4.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.0d5fbbf27dee52197955.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.c696cbbf0654f912e3b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.03c68f0397eb54366b06.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Apr 10 2024 17:26:31 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Apr 11 2024 17:02:39 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">28 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+&lt;center&gt;
+    
+#  Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi  
+
+    
+&lt;big&gt;
+    
+**Learn how to create an NFT-based application on the Solana blockchain**
+    
+&lt;/big&gt;
+    
+*Written by [Juan David Arias](https://github.com/juanArias8). Originally published 2024-04-12 
+on the [Monadical blog](https://monadical.com/blog.html).*
+    
+
+&lt;/center&gt;
+
+# Introduction
+
+
+Solana Mobile Stack (SMS) stands out as an integrated Android mobile development platform with hardware and software components; it unlocks Web3 developers to create mobile dApps. SMS consists of the [SAGA](https://solanamobile.com/hardware) device, the [Seed Vault](https://github.com/solana-mobile/seed-vault-sdk) to keep secret keys secure, [Mobile wallet adapter](https://github.com/solana-mobile/mobile-wallet-adapter) to allows Wallet apps to provide transaction signing services for different types of apps on mobile devices. Development SDKs for integration with the Solana blockchain are available for native Android, React Native, Unity, and Unreal Engine. A dApp store is an alternate app distribution system well suited to distributing apps developed by the Solana ecosystem.  All of the features above are supported by a blockchain capable of processing thousands of transactions per second. This blockchain utilizes an innovative consensus mechanism called Proof of History (PoH), making it more cost-effective than other blockchains.
+
+This post explores decentralized applications (dApps) through the Solana Mobile Stack (SMS) capabilities, showcasing its effectiveness in delivering fast, secure, and scalable blockchain solutions on mobile platforms.
+
+We’ll provide a detailed tutorial on constructing a ticketing system using Non-Fungible Tokens (NFTs) on the Solana blockchain. Leveraging Solana Mobile, React Native, Phantom Wallet, Metaplex Foundation Umi, and Sugar, this guide leads readers through creating a functional NFT-based ticketing application. The system enables users to be verified using their Solana wallets, view available events (represented as NFT collections), mint a ticket for an event, and generate a QR code for ticket verification. 
+
+Overall, this tutorial aims to demonstrate the integration of blockchain technology into practical and real-world mobile applications, extending beyond the traditional domain of NFTs and cryptocurrencies.
+
+# Overview
+
+This tutorial outlines creating a ticketing system for event tickets or brand discounts using NFTs, specifically a Candy Machine NFT.
+
+To do this, we&#39;ll use Solana Mobile, React Native, Phantom Wallet, Metaplex Foundation Umi, and Sugar.
+
+
+The system flow will be: 
+1. The user opens the mobile application, and their Solana wallet verifies them. 
+2. The user can see the events (NFT collections) available in the system.
+3. The user gets a new ticket for the event they wish to attend (Minting of a token).
+4. The user generates a QR code with the ticket information.
+5. A validator user can verify if the user possesses the ticket by scanning the generated QR code.
+
+Here&#39;s a preview of what the finished application will look like:
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/98346b6e-261c-4010-ac8c-3b19d38223c8.gif&#34; /&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+We won&#39;t focus on the app&#39;s design for this tutorial because the idea is to show what&#39;s functional. We&#39;ll leave design and navigation improvements to the reader.
+Pre-requirements
+
+
+# Pre-requirements
+
+Throughout this tutorial, we&#39;ll use various technologies. The reader should understand mobile development with React Native, blockchain, Solana, and NFTs. However, I&#39;ll make it as detailed as possible so that the steps are easy to follow. Now, let&#39;s see the tools to use.
+
+
+
+## Android Studio 
+
+Android Studio is an integrated development environment for Android applications. In our guide, we&#39;ll be using it to build developed applications, handle Android SDKs, and manage the emulator. Follow the instructions at https://developer.android.com/studio/install based on your operating system to install it.
+
+An easy and quick way to install it is to use the JetBrains Toolbox App: https://www.jetbrains.com/toolbox-app. If you are a JetBrains user, search for Android Studio in the list of available editors in the toolbox, click on install, and then click to open, and your editor will be ready to use.
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/40b3aeb2-ca7a-4721-9247-f9194a2cc9b6.png&#34; /&gt;
+
+## Android device or emulator 
+
+Once you install Android, the next step is to set up an Android device or an emulator to test the created applications. The easiest way to do this is by creating an emulator with Android Studio.
+
+To create an emulator, open Android Studio, and from the homepage, select Virtual Device Manager from the options menu. Once inside, follow the step-by-step guide to create an emulator. Click on + to add an emulator, select the base device, and ensure it includes the Play Store. We&#39;ll use it to install Phantom. In the system image, choose &#34;UpsideDownCake&#34; API level 34 because this is the version required by React Native. Finally, name your emulator and click on Finish. Once created, you can run the emulator by clicking the Run triangle. Check https://developer.android.com/studio/run/managing-avds for more details.
+
+![](https://docs.monadical.com/uploads/263d66b8-f58d-4ceb-a059-92e3ce736b80.png)
+
+To test your applications using a physical device, make sure you have an Android device, developer mode, and USB debugging enabled. Then, connect your Android device to your computer and run a React native project. This action should install and launch the app on your device. Some platforms may require additional steps. For more information, check https://developer.android.com/studio/run/device.
+
+If you&#39;re using Linux and have already configured your device, but it still does not appear in the list of available devices when executing the command `adb devices`, try the following steps to solve the problem:
+
+```shell
+# Add user to plugdev group
+sudo usermod -aG plugdev $LOGNAME
+
+# List the devices available in ADB
+adb devices
+
+# In case your device is not listed, run the following commands
+# List connected devices
+lsusb
+
+# &gt;&gt;&gt; Bus 001 Device 002: ID 2717:ff08 Xiaomi Inc. Redmi Note 3 (ADB Interface)
+
+# Replaces with the values of idVendor and idProduct with the device ID
+echo &#39;SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;2717&#34;, ATTR{idProduct}==&#34;ff08&#34; MODE=&#34;0666&#34;, GROUP=&#34;plugdev&#34;&#39; | sudo tee /etc/udev/rules.d/51-android-usb.rules
+```
+
+
+## Phantom
+
+Once your emulator is running, download the Phantom Wallet application from Google Play: https://play.google.com/store/apps/details?id=app.phantom. We will use Phantom as the crypto wallet to verify our identity in the application, sign transactions, and track our assets.
+
+Log into Phantom and follow the step-by-step process to create a new wallet. Once completed, go to the settings screen -&gt; developer settings and enable the Testnet mode option. We must enable this option to use the wallet while conducting tests on the [devnet](https://www.alchemy.com/dapps/solana-devnet). 
+
+To sign transactions on the devnet, we will need some SOL in our wallet. To add funds, copy your account&#39;s public key from the account details and perform an airdrop from https://faucet.solana.com. 
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/8f0e5da1-ff41-4ffc-b2ab-66dc7e15f864.gif&#34; /&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+
+## React Native 
+
+
+To use React Native, you must have [Node.js](https://nodejs.org/en) installed in your development environment. In addition, you must have completed the steps for installing Android Studio and configured a device or emulator for testing. Before you can use React Native, you must have installed:
+
+- Android SDK
+- Android SDK Platform
+- Android 14 (UpsideDownCake) API 34
+- Android Virtual Device
+
+For details on configuring the system, follow the official guide at https://reactnative.dev/docs/environment-setup?guide=native. 
+
+Also, ensure you set up the Android environment variables on your computer:
+
+```shell
+# Linux
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+# Mac OS
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+source ~/.zshrc
+```
+
+To verify that everything is correctly configured, you can execute the command `npx react-native@latest init AwesomeProject` to create a new project, then use the command `npx react-native doctor` https://reactnative.dev/blog/2019/11/18/react-native-doctor, which will provide information on what may be missing in your setup and how to fix it.
+
+To run the project, use the commands `yarn start` or `npx react-native start` to start the development server bundler [(Metro)](https://reactnative.dev/docs/metro). Then, use the commands `yarn android` or `react-native run-android` to run the application on your device or emulator.
+
+
+## Solana CLI
+
+Solana is the blockchain we&#39;ll be using in our app. We chose it because of its unique ability to process thousands of transactions per second at a fraction of the cost of other blockchains due to its innovative consensus mechanism: [Proof of History (PoH)](https://solana.com/es/news/proof-of-historyhttps://solana.com/es/news/proof-of-history). 
+
+We&#39;ll install the Solana CLI to perform tasks such as creating wallets and airdrops. To install the CLI, execute the commands: 
+
+```shell
+sh -c &#34;$(curl -sSfL https://release.solana.com/v1.18.4/install)&#34;
+solana --version
+```
+
+You can also follow the instructions from its official documentation at https://docs.solanalabs.com/cli/install. 
+
+
+## Sugar 
+
+[Sugar](https://developers.metaplex.com/candy-machine/sugar) is a CLI developed by Metaplex that simplifies the NFT minting process on the Solana blockchain. This simplification allows candy machines to automate and manage the minting and distribution of NFT collections. We&#39;ll use Sugar to create a candy machine and upload the collection items that users can view and mint later. To install Sugar on your computer, execute the commands: 
+
+```shell
+bash &lt;(curl -sSf https://sugar.metaplex.com/install.sh)
+sugar --version
+```
+
+Now, we have completed our development environment. Our next steps are to create an NFT collection with Sugar and Solana and develop a React Native app to generate event tickets by minting NFTs.
+
+ 
+
+# Create an NFT collection
+
+In this section, we will prepare the assets for the NFT collection that we&#39;ll use as tickets for an event. Additionally, we&#39;ll create a [candy machine](https://developers.metaplex.com/candy-machine) with Sugar, allowing users to mint the NFTs.
+
+### Create a Solana wallet
+
+For the candy machine, you can designate a wallet for the owner and another for the treasury. Then, create a list with the creator&#39;s wallets and their respective royalties. We will use the owner&#39;s wallet for all cases. First, create a working directory and generate a new Solana wallet:
+
+```shell
+mkdir collection &amp;&amp; cd collection
+solana-keygen new --outfile ./wallets/owner.json
+solana config set --keypair ./wallets/owner.json
+solana config set --url https://api.devnet.solana.com
+```
+
+Once we create this new wallet, we&#39;ll set it as the default wallet for the Solana CLI. Finally, we&#39;ll set the Solana network to development mode to facilitate testing as we develop.
+Copy the public key to the clipboard; we&#39;ll use it soon when specifying the owner and treasury of the collection.
+
+
+```shell
+Wrote new keypair to ./wallets/owner.json
+=======================================================================
+pubkey: GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd
+=======================================================================
+```
+
+### Prepare the Assets
+
+Create an `assets` folder inside the `collection` directory and save all the images you want to be part of the candy machine. We should name the images with numbering in the format 0.png, 1.png, …, n.png. A JSON file containing the metadata of each image is also necessary. 
+
+For this tutorial, we will generate an NFT collection for [Morpheus](https://github.com/Monadical-SAS/Morpheus), a (shameless plug) framework I built for deploying diffusion models to production.
+
+Let&#39;s look at an example of an asset:
+
+0.png
+![](https://docs.monadical.com/uploads/f195a742-9448-4516-b8eb-364494205736.png)
+
+
+0.json
+```json
+// collection/assets/0.json
+{
+ &#34;name&#34;: &#34;Morpheus #1&#34;,
+ &#34;symbol&#34;: &#34;MORPHEUS&#34;,
+ &#34;description&#34;: &#34;A futuristic landscape of a city&#34;,
+ &#34;image&#34;: &#34;0.png&#34;,
+   &#34;attributes&#34;: [
+   {
+     &#34;trait_type&#34;: &#34;key&#34;,
+     &#34;value&#34;: &#34;value&#34;
+   }
+ ],
+ &#34;properties&#34;: {
+   &#34;category&#34;: &#34;image&#34;,
+   &#34;files&#34;: [
+     {
+       &#34;uri&#34;: &#34;0.png&#34;,
+       &#34;type&#34;: &#34;image/png&#34;
+     }
+   ]
+ }
+}
+```
+
+Adding a `collection.json` file containing the metadata and an image representing the collection will also be necessary. Here we will use the wallet owner we just created. Let&#39;s see an example of a `collection.json`:
+
+```json
+// collection/assets/collection.json
+{
+ &#34;image&#34;: &#34;collection.png&#34;,
+ &#34;name&#34;: &#34;Morpheus Art generator&#34;,
+ &#34;description&#34;: &#34;Morpheus: A Dream Machine for AI Art Generation.&#34;,
+ &#34;symbol&#34;: &#34;MORPHEUS&#34;,
+ &#34;attributes&#34;: [
+   {
+     &#34;trait_type&#34;: &#34;collection&#34;,
+     &#34;value&#34;: &#34;yep&#34;
+   }
+ ],
+ &#34;seller_fee_basis_points&#34;: 0,
+ &#34;properties&#34;: {
+   &#34;creators&#34;: [
+     {
+       &#34;address&#34;: &#34;GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd&#34;,
+       &#34;share&#34;: 100
+     }
+   ],
+   &#34;files&#34;: [
+     {
+       &#34;type&#34;: &#34;image/png&#34;,
+       &#34;uri&#34;: &#34;collection.png&#34;
+     }
+   ]
+ }
+}
+```
+
+
+Our complete asset collection should look like this:
+![](https://docs.monadical.com/uploads/8bea8374-a5ed-4875-9f40-a23d4a28af6e.png)
+
+### Upload collection to Solana 
+
+Execute the `sugar launch` command inside the `collection` folder to initiate an interactive CLI for configuring the candy machine and uploading the files to the blockchain. Follow the CLI instructions step by step to create the configuration for the candy machine. This process will generate a `config.json` file, validate the assets for the candy machine, and upload the collection to the blockchain. 
+
+Remember to airdrop some SOL to the owner&#39;s wallet. You can do this at https://faucet.solana.com by entering the owner&#39;s public key `GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd` or by using the Solana CLI with the command `solana airdrop 1 GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd`.
+
+![](https://docs.monadical.com/uploads/92d82789-9e5e-44f1-9333-ec09937e8acf.png)
+
+Once the upload and deployment of the collection are complete, you will
+see the mint and the candy machine ID in the console logs. Save them, as
+we will use them later to interact with the candy machine when using
+Metaplex/umi.
+
+![](https://docs.monadical.com/uploads/27f94e21-dd7a-40c0-a9a0-9c6be7d937e9.png)
+
+
+### Add Guards
+
+Guards are pieces of code that allow restrictions to be added to a
+token&#39;s minting stage. We will add a section with our guards inside the&#39;
+config.json\` file generated by Sugar:
+
+```json
+// collection/config.json
+{
+ &#34;tokenStandard&#34;: &#34;nft&#34;,
+ &#34;number&#34;: 10,
+ &#34;symbol&#34;: &#34;MORPHEUS&#34;,
+ &#34;sellerFeeBasisPoints&#34;: 0,
+ &#34;isMutable&#34;: true,
+ &#34;isSequential&#34;: true,
+ &#34;creators&#34;: [
+   {
+     &#34;address&#34;: &#34;GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd&#34;,
+     &#34;share&#34;: 100
+   }
+ ],
+ &#34;uploadMethod&#34;: &#34;bundlr&#34;,
+ &#34;ruleSet&#34;: null,
+ &#34;awsConfig&#34;: null,
+ &#34;sdriveApiKey&#34;: null,
+ &#34;nftStorageAuthToken&#34;: null,
+ &#34;shdwStorageAccount&#34;: null,
+ &#34;pinataConfig&#34;: null,
+ &#34;hiddenSettings&#34;: null,
+ &#34;guards&#34;: {
+   &#34;default&#34;: {
+     &#34;mintLimit&#34;: {
+       &#34;id&#34;: 1,
+       &#34;limit&#34;: 1
+     },
+     &#34;solPayment&#34;: {
+       &#34;value&#34;: 0.2,
+       &#34;destination&#34;: &#34;GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd&#34;
+     },
+     &#34;startDate&#34;: {
+       &#34;date&#34;: &#34;2024-03-23T04:00:00Z&#34;
+     },
+     &#34;botTax&#34;: {
+       &#34;value&#34;: 0.01,
+       &#34;lastInstruction&#34;: true
+     }
+   }
+ },
+ &#34;maxEditionSupply&#34;: null
+}
+```
+
+First, we restrict the number of mints per wallet to 1. Then, we define the wallet receiving payments for each mint,  the owner wallet we created earlier. We add an initial date from which the minting stage begins, and finally, we introduce a penalty of 0.01 SOL for mint attempts using bots.
+
+For more on the different types of existing guards, check the official documentation at https://developers.metaplex.com/candy-machine/guards. 
+
+
+Finally, run the command sugar guard and add the guards to the candy machine. You should receive output similar to:
+
+![](https://docs.monadical.com/uploads/b3bd7848-68e3-4d64-91b7-b624496b125e.png)
+
+
+Look for the ID of the candy machine in the Explorer to see its data
+https://explorer.solana.com/address/3Bn9DofFU6UwpjoyQyo4hFNHxbwU6zXAysKE3Vhmah9q?cluster=devnet 
+
+
+
+# Create a React Native Project
+
+To this point, we have configured and met all the prerequisites of our system, and it&#39;s time to continue creating the mobile application that will allow us to obtain tickets for events.
+
+Implementation steps:
+
+1. Installation and setup of the Solana Mobile template with React Native
+2. Integration of Metaplex Umi for interaction with the candy machine and NFT
+3. Adding a page for available events
+4. Adding a mint button to obtain a new ticket
+5. Adding a page to list the generated tickets
+6. Enabling QR code generation with my ticket data
+7. Adding a page for reading and verifying a QR code
+
+You can access the final version of the code used in this tutorial at https://github.com/Monadical-SAS/SolanaMobileTicketingSystem. 
+
+The Solana Mobile Stack is currently only available for Android platforms. To create dApps with Solana Mobile, you can choose between developing [native applications](https://docs.solanamobile.com/android-native/overview) with Android and Kotlin or using some of the frameworks for Android. You can choose between [react native](https://docs.solanamobile.com/react-native/overview), which has a template with [pure react native](https://github.com/solana-mobile/solana-mobile-dapp-scaffold) and another with [expo](https://github.com/solana-mobile/solana-mobile-expo-template). There are also SDK versions for [flutter](https://docs.solanamobile.com/flutter/overview), [unity](https://docs.solanamobile.com/unity/unity_sdk) and [unreal engine](https://docs.solanamobile.com/unreal/unreal_sdk).
+
+SMS also has some example applications that serve as starting points for more rapid iteration. You can find them in the GitHub repository at https://github.com/solana-mobile/tutorial-apps?tab=readme-ov-file  or from the official documentation at https://docs.solanamobile.com/sample-apps/sample_app_overview. Here, you will find examples of Android and React Native using Anchor, Metaplex, and IPFS, among others.
+
+We will take the React Native template as a starting point. To start the project, run from a terminal.
+
+```shell
+npx react-native init SolanaMobileTicketSystem --template
+@solana-mobile/solana-mobile-dapp-scaffold --npm
+```
+
+When you finish the installation process, run the command `yarn install` to install the project dependencies. Then, `yarn start` to start a Metro server for development. From a new terminal, `yarn android` to run the application on the emulator or the Android device.
+
+
+## Step 1: Connect Wallet Home Page 
+
+The first view available upon running the app is the connect wallet page, where we can use our Solana wallet as an authentication mechanism. After clicking the &#34;connect wallet&#34; button, the MWA (Mobile Wallet Adapter) will launch an intent on Android to search for an application that allows the use of the wallet and links it with the app. We will be using the Phantom app since we have already installed it. By accepting the linking from Phantom, we can use the wallet to sign and send transactions:
+
+&lt;div&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/03091c1e-3017-407c-80b7-ddaf9d223d97.png&#34;/&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/1963212c-b228-4fb2-84b8-eada46c73049.png&#34;/&gt;
+&lt;/div&gt;
+
+
+## Step 2: Main page
+
+After authentication, we are redirected to a main page where we find pre-configured buttons that allow actions such as signing a transaction, signing a message, requesting an airdrop, and disconnecting the wallet from the app (logout). In this view, we added two new buttons to enable us to navigate the pages for events and QR code validation:
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/89e26dfa-76bb-493c-9d0f-8f89349a2318.png&#34; /&gt;
+
+To add a navigation system to the app, follow the instructions in the official [React Navigation documentation](https://reactnavigation.org/docs/getting-started/). React Navigation is a widely used library for routing and navigation in React Native apps. It provides a way to navigate between screens and manage the navigation stack.
+
+The &#34;Sign Transaction&#34; button transfers SOL from an active wallet in Phantom to a randomly generated publicKey.
+
+```javascript
+// components/SignTransactionButton.tsx
+const signTransaction = useCallback(async () =&gt; {
+ return await transact(async (wallet: Web3MobileWallet) =&gt; {
+   // First, request for authorization from the wallet and fetch the latest
+   // blockhash for building the transaction.
+   const [authorizationResult, latestBlockhash] = await Promise.all([
+     authorizeSession(wallet),
+     connection.getLatestBlockhash(),
+   ]);
+
+   // Construct a transaction. This transaction uses web3.js `SystemProgram`
+   // to create a transfer that sends lamports to randomly generated address.
+   const keypair = Keypair.generate();
+   const randomTransferTransaction = new Transaction({
+     ...latestBlockhash,
+     feePayer: authorizationResult.publicKey,
+   }).add(
+     SystemProgram.transfer({
+       fromPubkey: authorizationResult.publicKey,
+       toPubkey: keypair.publicKey,
+       lamports: 1_000,
+     }),
+   );
+
+   // Sign a transaction and receive
+   const signedTransactions = await wallet.signTransactions({
+     transactions: [randomTransferTransaction],
+   });
+
+   return signedTransactions[0];
+ });
+}, [authorizeSession, connection]);
+```
+
+The `transact` function allows us to sign transactions using the active MWA (Mobile Wallet Adapter) wallet. In the `signTransaction` function, we authorize the wallet to sign a transfer of 1000 lamports to a randomly generated account. By clicking the button, we automatically launch Phantom to sign the transaction:
+&lt;div&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/108a76a9-3be0-4d18-af45-fc3b4563deef.png&#34; /&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/2fa0d421-6cf7-4b4f-849c-062e8c3990c0.png&#34; /&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+
+In the following diagram, you can see the flow carried out during the transaction process:
+![](https://docs.monadical.com/uploads/3cd455e9-ad05-41eb-80c0-09c02cdc592f.png)
+
+The dApp maintains communication with the Wallet App to authorize and sign transactions. The wallet app (Phantom) is an implementation of the [Mobile Wallet Adapter protocol](https://github.com/solana-mobile/mobile-wallet-adapter), which allows us to interact with the wallet. On a SAGA device, which has a [seed vault](https://docs.solanamobile.com/getting-started/overview#seed-vault) with our wallet information encrypted in a secure microchip, the complete transaction flow would be as follows:
+
+![](https://docs.monadical.com/uploads/09f1ffd2-db6a-4199-8e85-59868738f4fd.png)
+
+
+Our dApp establishes a communication channel with the Wallet App, an implementation of the MWA that allows interaction with the seed vault. The dApp requests the wallet app to sign a transaction, and the wallet app uses the Seed Vault to sign the transaction. Remember, the seed vault is an encrypted microchip that runs at the hardware level and is inaccessible even to the operating system.
+
+In Solana Mobile, there are two types of applications: dApps (decentralized Apps) developed for the general public, which use web3 libraries and wallet apps to perform crypto operations, and wallet apps, which are implementations of the MWA protocol allowing integration with the seed vault. These are the applications used by dApps to authorize and sign transactions. You can see the list of available WalletApps at https://solanamobile.com/wallets. 
+
+
+## Step 3: Integrate @metaplex-foundation/umi
+
+The most standard way to interact with NFTs on Solana is using [metaplex](https://www.metaplex.com). Metaplex has minted nearly 78% of the NFTs available on the Solana network. For this app, we will be using the [Candy Machine v3 protocol](https://developers.metaplex.com/candy-machine) from Metaplex and utilizing the [@metaplex/umi](https://developers.metaplex.com/umi) library, a modular framework for building and using JavaScript clients for Solana programs.
+
+Let&#39;s start by adding the Umi dependencies to our React Native project. From a terminal and at the root of your app, execute:
+
+```shell
+yarn add @metaplex-foundation/long \
+    @metaplex-foundation/length-bundle-defaults \
+    @metaplex-foundation/length-signer-wallet-adapters \
+    @solana/web3.js \
+    @metaplex-foundation/mpl-candy-machine@alpha \
+    @metaplex-foundation/mpl-token-metadata@alpha \
+    @metaplex-foundation/mpl-toolbox
+```
+
+Then, we create an Umi object to interact with the library. We will do this by creating a React context to expose a provider and a `useUmi` hook for easy access to the context. Let&#39;s look at the implementation.
+
+```javascript
+// components/providers/UmiProvider.tsx
+import {createContext, ReactNode, useContext} from &#39;react&#39;;
+import type {Umi} from &#39;@metaplex-foundation/umi&#39;;
+import {
+ createNoopSigner,
+ publicKey,
+ signerIdentity,
+} from &#39;@metaplex-foundation/umi&#39;;
+import {createUmi} from &#39;@metaplex-foundation/umi-bundle-defaults&#39;;
+import {
+ walletAdapterIdentity
+} from &#39;@metaplex-foundation/umi-signer-wallet-adapters&#39;;
+import {mplTokenMetadata} from &#39;@metaplex-foundation/mpl-token-metadata&#39;;
+import {mplCandyMachine} from &#39;@metaplex-foundation/mpl-candy-machine&#39;;
+import {useAuthorization} from &#39;./AuthorizationProvider&#39;;
+
+type UmiContext = {
+ umi: Umi | null;
+};
+
+const DEFAULT_CONTEXT: UmiContext = {
+ umi: null,
+};
+
+export const UmiContext = createContext&lt;UmiContext&gt;(DEFAULT_CONTEXT);
+
+export const UmiProvider = ({
+ endpoint,
+ children,
+}: {
+ endpoint: string;
+ children: ReactNode;
+}) =&gt; {
+ const {selectedAccount} = useAuthorization();
+ console.log(&#39;selectedAccount&#39;, selectedAccount);
+ const umi = createUmi(endpoint)
+   .use(mplTokenMetadata())
+   .use(mplCandyMachine());
+ if (selectedAccount === null) {
+   const noopSigner = createNoopSigner(
+     publicKey(&#39;11111111111111111111111111111111&#39;),
+   );
+   umi.use(signerIdentity(noopSigner));
+ } else {
+   umi.use(walletAdapterIdentity(selectedAccount));
+ }
+
+ return &lt;UmiContext.Provider value={{umi}}&gt;{children}&lt;/UmiContext.Provider&gt;;
+};
+
+export function useUmi(): Umi {
+ const umi = useContext(UmiContext).umi;
+ if (!umi) {
+   throw new Error(
+     &#39;Umi context was not initialized. &#39; +
+       &#39;Did you forget to wrap your app with &lt;UmiProvider /&gt;?&#39;,
+   );
+ }
+ return umi;
+}
+```
+
+In the previous script, we defined a provider using the `createUmi` function to create an instance of Umi. We then decorated this instance with the `mplTokenMetadata` and `mplCandyMachine` plugins to enable interaction with the candy machine and the metadata of the NFTs through the object. Finally, we set the Solana Mobile wallet as the Umi identity.
+
+We must wrap our application with the `&lt;UmiProvider/&gt;` provider to use the Umi context from our components:
+
+
+```javascript
+// App.tsx
+import {clusterApiUrl} from &#39;@solana/web3.js&#39;;
+import React from &#39;react&#39;;
+import {SafeAreaView, StyleSheet} from &#39;react-native&#39;;
+import {NavigationContainer} from &#39;@react-navigation/native&#39;;
+import {createNativeStackNavigator} from &#39;@react-navigation/native-stack&#39;;
+import {
+ ConnectionProvider,
+ RPC_ENDPOINT,
+} from &#39;./components/providers/ConnectionProvider&#39;;
+import {
+ AuthorizationProvider
+} from &#39;./components/providers/AuthorizationProvider&#39;;
+import {UmiProvider} from &#39;./components/providers/UmiProvider&#39;;
+import constants from &#39;./util/constants&#39;;
+
+const Stack = createNativeStackNavigator();
+const endpoint = constants.PUBLIC_RPC || &#39;https://api.devnet.solana.com&#39;;
+
+export default function App() {
+ return (
+   &lt;NavigationContainer&gt;
+     &lt;ConnectionProvider
+       config={{commitment: &#39;processed&#39;}}
+       endpoint={clusterApiUrl(RPC_ENDPOINT)}&gt;
+       &lt;AuthorizationProvider&gt;
+         &lt;UmiProvider endpoint={endpoint}&gt;
+           &lt;SafeAreaView style={styles.shell}&gt;
+               // omitted for simplicity, check the full file in the repository
+           &lt;/SafeAreaView&gt;
+         &lt;/UmiProvider&gt;
+       &lt;/AuthorizationProvider&gt;
+     &lt;/ConnectionProvider&gt;
+   &lt;/NavigationContainer&gt;
+ );
+}
+```
+:::warning
+**Warning**
+We encountered an import issue with the `@metaplex-foundation/umi/serializers` library when writing this article. 
+:::
+
+![](https://docs.monadical.com/uploads/22fe1d4b-a36b-4a30-b4dc-21b31c395ea0.png)
+
+You can find details of the issue at https://github.com/metaplex-foundation/umi/issues/94#issuecomment-2014069571. A workaround for this problem, and the only one that worked for me, is the one proposed by @mordonez-me at https://github.com/metaplex-foundation/umi/issues/94#issuecomment-1815527247. It involves overwriting all files where `@metaplex-foundation/umi/serializers` is imported with `@metaplex-foundation/umi-serializers`. This imperfect solution will allow us to use the library for now.
+
+Create a `metaplex-fixer` subdirectory within the root of your application. Paste the following script in a `fixer.mjs` file:
+
+```javascript
+// metaplex-fixer/fixer.mjs
+import * as fs from &#34;fs&#34;;
+import { globSync } from &#34;glob&#34;;
+
+const found = globSync(
+ &#34;./../node_modules/@metaplex-foundation/**/*.{ts,js,cjs}&#34;
+);
+
+found.forEach((file) =&gt; {
+ console.log(&#34;file&#34;, file);
+ const data = fs.readFileSync(file, &#34;utf8&#34;);
+ const result = data.replace(
+   /@metaplex-foundation\/umi\/serializers/g,
+   &#34;@metaplex-foundation/umi-serializers&#34;,
+ );
+
+ console.log(&#34;writing&#34;, file);
+ fs.writeFileSync(file, result, &#34;utf8&#34;);
+});
+```
+
+The above script replaces all occurrences of `umi/serializer` with `umi-serializer` within all `@metaplex-foundation` files, which solves the import error. To apply the patch, run the commands:
+
+```shell
+cd metaplex-fixer
+yarn install
+node fixer.mjs
+```
+
+With the above, we have completed the integration of `@metaplex-foundation/umi` within our app. Run the Metro server and `yarn android` again; your application should work again.
+
+
+## Step 4: Collection Preview Events Page 
+
+We will need a page in our application displaying information about available events, that means, the candy machine and its items. Users can also generate the mint from this page for a new ticket. Remember, each candy machine represents an event within our system, and every minted NFT represents a ticket. We will simplify using a single sample event, but if desired, the approach can be generalized to support multiple events. To support multiple events, create a new candy machine for each event, and add a view that allows an admin-type user to enter events into the app using a form.
+
+Let&#39;s start by adding a component to render the items belonging to a collection:
+
+```javascript
+// components/CollectionNFTs.tsx
+import React, {useEffect, use Memo, useState} from &#39;react&#39;;
+import {Image, StyleSheet, Text, View} from &#39;react-native&#39;;
+import {publicKey} from &#39;@metaplex-foundation/umi&#39;;
+import {fetchCandyMachine} from &#39;@metaplex-foundation/mpl-candy-machine&#39;;
+import {useUmi} from &#39;./providers/UmiProvider&#39;;
+import {fetchNFTData} from &#39;../util/metaplex&#39;;
+import constants from &#39;../util/constants&#39;;
+
+const collectionId = constants.PUBLIC_CANDY_MACHINE_ID;
+
+const CollectionNFTs = () =&gt; {
+ const length= useUmi();
+ const [collectionData, setCollectionData] = useState&lt;any&gt;(null);
+ const [itemsData, setItemsData]: any = useState(null);
+
+ const candyMachineId = use Memo(() =&gt; {
+   return publicKey(collectionId);
+ }, []);
+
+ useEffect(() =&gt; {
+   async function loadCandyMachineData() {
+     try {
+       const candyData = await fetchCandyMachine(length, candyMachineId);
+       const newItems = await Promise.all(
+         candyData.items.map(item =&gt; fetchNFTData(item.type)),
+       );
+       setCollectionData(candyData);
+       setItemsData(newItems);
+     } catch (error) {
+       console.log(&#39;Error fetching candy machine &#39; + error);
+     }
+   }
+
+   loadCandyMachineData().catch(() =&gt; {
+     console.log(&#39;Error fetching candy machine&#39;);
+   });
+ }, [candyMachineId, length]);
+
+
+ return (
+   &lt;View style={styles.container}&gt;
+     &lt;Text style={styles.title}&gt;
+       {collectionData?.data?.symbol || &#39;NFTs&#39;} Collection
+     &lt;/Text&gt;
+
+     {itemsData &amp;&amp;
+       itemsData.map((nft: any, index: number) =&gt; (
+         &lt;View key={index}&gt;
+           &lt;Image
+             source={{type: nft.image}}
+             style={styles.image}
+             everything={nft.name}
+           /&gt;
+           &lt;Text style={styles.name}&gt;{nft.name}&lt;/Text&gt;
+         &lt;/View&gt;
+       ))}
+   &lt;/View&gt;
+ );
+};
+
+const styles = StyleSheet.create({
+// omitted for simplicity, check the full file in the repository
+});
+
+export default CollectionNFTs;
+```
+
+The `loadCandyMachineData` function takes the Candy Machine ID of the previously created collection as a parameter and returns the metadata of the collection and its items. To do this, it retrieves data from the blockchain with `fetchCandyMachine` and then obtains the metadata for each item by fetching the `item.uri` property. We save the candy machine item data in the `itemsData` state and then render the image and name of each item on the screen.
+
+Now, let&#39;s add a new screen where we can use the component and display information about the event and the list of items in the collection:
+
+```javascript
+// screens/EventsScreen.tsx
+import React, {FC} from &#39;react&#39;;
+import {ScrollView, StyleSheet, View} from &#39;react-native&#39;;
+import {NativeStackNavigationProp} from &#39;@react-navigation/native-stack&#39;;
+import {RootStackParamList} from &#39;../util/types&#39;;
+import CollectionNFTs from &#39;../components/CollectionNFTs&#39;;
+import {Header} from &#39;../components/Header&#39;;
+import MintButton from &#39;../components/MintButton&#39;;
+import AppButton from &#39;../components/AppButton&#39;;
+
+type NFTsScreenProps = {
+ navigation: NativeStackNavigationProp&lt;RootStackParamList, &#39;Events&#39;&gt;;
+};
+
+const EventsScreen: FC&lt;NFTsScreenProps&gt; = ({navigation}) =&gt; {
+ return (
+   &lt;ScrollView style={styles.mainContainer}&gt;
+     &lt;Header title=&#34;NFT Events&#34; subtitle=&#34;Collection NFTs&#34; /&gt;
+     &lt;View style={styles.actionButtons}&gt;
+       &lt;MintButton /&gt;
+
+       &lt;AppButton
+         text={&#39;View my tickets&#39;}
+         onPress={() =&gt; navigation.navigate(&#39;MyTickets&#39;)}
+       /&gt;
+     &lt;/View&gt;
+     &lt;CollectionNFTs /&gt;
+   &lt;/ScrollView&gt;
+ );
+};
+
+const styles = StyleSheet.create({
+// omitted for simplicity, check the full file in the repository
+});
+
+export default EventsScreen;
+```
+
+After updating our application, we will see a list of collection items, a button to create a mint of the collection to get a new ticket, and a button to view a list of tickets in the user&#39;s wallet.
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/35b376de-511e-4785-91ef-675879f02f73.png&#34; /&gt;
+
+## Step 5: Generate a Ticket 
+
+In our system, getting a new ticket for an event means creating a mint from a collection, thus obtaining a new NFT. To enable users to get event tickets, we will add a new component containing a button to highlight the mint:
+
+```jsx
+// components/MintButton.tsx
+import React, {
+ ActivityIndicator,
+ Image,
+ Linking,
+ StyleSheet,
+ Text,
+ View,
+} from &#39;react-native&#39;;
+import {FC, useCallback, useMemo, useState} from &#39;react&#39;;
+import {
+ generateSigner,
+ publicKey,
+ PublicKey,
+ some,
+ transactionBuilder,
+} from &#39;@metaplex-foundation/umi&#39;;
+import {
+ fetchCandyMachine,
+ mintV2,
+ safeFetchCandyGuard,
+} from &#39;@metaplex-foundation/mpl-candy-machine&#39;;
+import {
+ DigitalAsset,
+ fetchDigitalAsset,
+ fetchJsonMetadata,
+ JsonMetadata,
+} from &#39;@metaplex-foundation/mpl-token-metadata&#39;;
+import {setComputeUnitLimit} from &#39;@metaplex-foundation/mpl-toolbox&#39;;
+import {
+ transact,
+ Web3MobileWallet,
+} from &#39;@solana-mobile/mobile-wallet-adapter-protocol-web3js&#39;;
+import {toWeb3JsLegacyTransaction} from &#39;@metaplex-foundation/umi-web3js-adapters&#39;;
+import {Buffer} from &#39;buffer&#39;;
+import {Keypair, VersionedTransaction} from &#39;@solana/web3.js&#39;;
+import {base58} from &#39;@metaplex-foundation/umi-serializers&#39;;
+import {useUmi} from &#39;./providers/UmiProvider&#39;;
+import constants from &#39;../util/constants&#39;;
+import {useConnection} from &#39;./providers/ConnectionProvider&#39;;
+import {useAuthorization} from &#39;./providers/AuthorizationProvider&#39;;
+import AppButton from &#39;./AppButton&#39;;
+
+const CANDY_MACHINE_ID = constants.PUBLIC_CANDY_MACHINE_ID;
+const TREASURY = constants.PUBLIC_TREASURY;
+
+const MintButton: FC = () =&gt; {
+ const umi = useUmi();
+ const {connection} = useConnection();
+ const {authorizeSession} = useAuthorization();
+
+ const [loading, setLoading] = useState(false);
+ const [digitalAsset, setDigitalAsset] = useState&lt;DigitalAsset | null&gt;(null);
+ const [jsonMetadata, setJsonMetadata] = useState&lt;JsonMetadata | null&gt;(null);
+
+ const candyMachineId = useMemo(() =&gt; {
+   return publicKey(CANDY_MACHINE_ID);
+ }, []);
+
+ const treasury = publicKey(TREASURY);
+
+ const handleMintNFT = useCallback(async () =&gt; {
+   setLoading(true);
+   if (!publicKey) {
+     throw new Error(&#39;Wallet not connected&#39;);
+   }
+
+   const candyMachine = await fetchCandyMachine(umi, candyMachineId);
+   const latestBlockhash = (await umi.rpc.getLatestBlockhash()).blockhash;
+   const candyGuard = await safeFetchCandyGuard(
+     umi,
+     candyMachine.mintAuthority,
+   );
+
+   try {
+     const nftMint = generateSigner(umi);
+     let tx = transactionBuilder().add(
+       mintV2(umi, {
+         candyMachine: candyMachine.publicKey,
+         collectionMint: candyMachine.collectionMint,
+         collectionUpdateAuthority: candyMachine.authority,
+         nftMint: nftMint,
+         candyGuard: candyGuard ? candyGuard.publicKey : undefined,
+         mintArgs: {
+           mintLimit: some({id: 1}),
+           solPayment: some({destination: treasury}),
+         },
+         tokenStandard: candyMachine.tokenStandard,
+       }),
+     );
+     tx = tx.prepend(setComputeUnitLimit(umi, {units: 800_000}));
+     tx = tx.setBlockhash(latestBlockhash);
+     const transaction = tx.build(umi);
+     const signedTransaction = await signTransaction(transaction, nftMint);
+     const txSignature = await connection.sendTransaction(
+       VersionedTransaction.deserialize(signedTransaction.serialize()),
+     );
+     const mint = await verifySignature(txSignature);
+     const {asset, metadata} = await fetchNft(publicKey(mint));
+     setDigitalAsset(asset);
+     setJsonMetadata(metadata);
+     setLoading(false);
+   } catch (error) {
+     console.error(&#39;Error creating NFT&#39;, error);
+     setLoading(false);
+   }
+ }, [
+   umi,
+   candyMachineId,
+   treasury,
+   connection,
+   signTransaction,
+   verifySignature,
+   fetchNft,
+ ]);
+
+ return (
+   &lt;View style={styles.mainContainer}&gt;
+     {loading ? (
+       &lt;ActivityIndicator /&gt;
+     ) : (
+       &lt;AppButton text={&#39;Mint a new NFT Ticket&#39;} onPress={handleMintNFT} /&gt;
+     )}
+
+     {digitalAsset &amp;&amp; (
+       &lt;View&gt;
+         &lt;Text style={styles.title}&gt;{digitalAsset.metadata.name}&lt;/Text&gt;
+         &lt;Text style={styles.mint}&gt;{digitalAsset.mint.publicKey}&lt;/Text&gt;
+         {jsonMetadata &amp;&amp; (
+           &lt;Image
+             source={{uri: jsonMetadata?.image || &#39;&#39;}}
+             style={styles.image}
+           /&gt;
+         )}
+
+         &lt;AppButton
+           text={&#39;Open in Solana Explorer&#39;}
+           onPress={openInSolanaExplorer}
+         /&gt;
+       &lt;/View&gt;
+     )}
+   &lt;/View&gt;
+ );
+};
+
+const styles = StyleSheet.create({
+// omitted for simplicity, check the full file in the repository
+});
+
+export default MintButton;
+```
+
+In the `handleMintNFT` function, we have instructions for minting an NFT with `@metaplex-foundation/umi` and signing the transaction using the `mobile-wallet-adapter`. 
+
+First, we construct the mint transaction to be executed on the Solana blockchain. We build the transaction using the `mintV2` function from `@metaplex-foundation` https://developers.metaplex.com/candy-machine/mint, passing it the previously generated candy machine, the transaction signer from the candy machine, and the guards for the candy machine as parameters.
+
+Once we have built the transaction, we must sign it with our wallet to send it to the Solana blockchain. The `@metaplex-foundation/umi` library provides functions for signing and sending transactions using the `wallet-adapter`. However, some modifications are required since we must use the `mobile-wallet-adapter` instead.
+
+Add the following function to the component to sign mint transactions with the mobile wallet adapter:
+
+```jsx
+// components/MintButton.tsx
+const signTransaction = useCallback(
+ async (transaction: any, signer: any) =&gt; {
+   return await transact(async (wallet: Web3MobileWallet) =&gt; {
+     const authorizationResult = await authorizeSession(wallet);
+     const newTransaction = {
+       ...transaction,
+       feePayer: authorizationResult.publicKey,
+     };
+     const web3Transaction = toWeb3JsLegacyTransaction(newTransaction);
+     web3Transaction.partialSign(
+       Keypair.fromSecretKey(Buffer.from(signer.secretKey)),
+     );
+     const signedTransactions = await wallet.signTransactions({
+       transactions: [web3Transaction],
+     });
+     return signedTransactions[0];
+   });
+ },
+ [authorizeSession],
+);
+```
+
+`signTransaction` receives a transaction generated with Umi and a signer for the mint. Using the transact function from the mobile wallet adapter, we initiate a transaction with the wallet app:
+
+1. The wallet session is authorized, and the transaction is modified to specify the wallet owner as the fee payer.
+2. It is transformed into a `web3LegacyTransaction` to perform the partial sign with the candy machine&#39;s wallet.
+3. The transaction is signed with the active wallet in Phantom and returned as a signed transaction.
+
+After the transaction is signed, it&#39;s sent to the Solana blockchain using the `connection.sendTransaction` call, registering the transaction in the network&#39;s blocks.
+The mint process also uses a function to verify the transaction signature against the blockchain. Let&#39;s see the implementation:
+
+```jsx
+// components/MintButton.tsx
+const verifySignature = useCallback(
+ async (signature: string): Promise&lt;any&gt; =&gt; {
+   let transaction;
+   const u8signature = base58.serialize(signature);
+   for (let i = 0; i &lt; 30; i++) {
+     transaction = await umi.rpc.getTransaction(u8signature);
+     if (transaction) {
+       break;
+     }
+     await new Promise(resolve =&gt; setTimeout(resolve, 3000));
+   }
+
+   if (!transaction) {
+     throw new Error(&#39;Transaction not found&#39;);
+   }
+
+   return transaction.message.accounts[1];
+ },
+ [umi.rpc],
+);
+```
+
+`verifySignature` searches for the transaction within the Solana blockchain and confirms that the transaction was completed successfully. The function implements a loop that attempts to retrieve the transaction results up to 30 times, with a waiting time of 3 seconds per attempt. If the function finds the transaction before the 30 attempts, it breaks the loop and returns the mint value. If the transaction is not found within the 30 attempts, an error is thrown, indicating the transaction was not found.
+
+
+Lastly, the mint function obtains the metadata of the newly minted NFT. The implementation is as follows:
+
+
+```jsx
+const fetchNft = useCallback(
+ async (nftAddress: PublicKey): Promise&lt;any&gt; =&gt; {
+   const asset = await fetchDigitalAsset(umi, nftAddress);
+   const metadata = await fetchJsonMetadata(umi, asset.metadata.uri);
+   if (!asset || !metadata) {
+     throw new Error(&#39;NFT not found&#39;);
+   }
+   return {asset, metadata};
+ },
+ [umi],
+);
+```
+
+With the `publicKey` of the mint, we can find the NFT&#39;s data using the `fetchDigitalAsset` function from Umi. Then, using `fetchJsonMetadata` and the asset&#39;s URI, we obtain the NFT&#39;s metadata to display the name.
+ 
+Once the mint button component is completed, we can generate a new NFT. After pressing the button and waiting while the transaction is processed in the blockchain network, we should see the new NFT generated on the screen.
+
+&lt;div&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/152481b9-9c61-4e9c-a785-e4dfefdaf86e.png&#34; /&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/b49289cc-0be6-4dd0-a4a5-278031dfb296.png&#34; /&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+
+Finally, you will see the newly created NFT in the Solana explorer. Add the `openInSolanaExplorer` function, which will launch an intent to open the URL created with the mint in a browser:
+
+```jsx
+const openInSolanaExplorer = useCallback(async () =&gt; {
+ if (digitalAsset) {
+   const url = `https://explorer.solana.com/address/${digitalAsset.mint.publicKey}/?cluster=devnet`;
+   Linking.openURL(url);
+ }
+}, [digitalAsset]);
+```
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/5082c220-3068-4c2a-a400-8100d96c7851.png&#34; /&gt;
+
+
+## Step 6: NFT Ticket Ownership 
+
+With the implementation for generating new event tickets completed, it&#39;s time to create a new screen where the user can view the available tickets, that is, the list of NFTs that have been minted. For this, we add a new component, `MyTicketsScreen` within the `screens` folder and add the following code:
+
+```jsx
+// screens/MyTicketsScreen.tsx
+import React, {FC, useEffect, useState} from &#39;react&#39;;
+import {Image, ScrollView, StyleSheet, Text, View} from &#39;react-native&#39;;
+import {Header} from &#39;../components/Header&#39;;
+import {useUmi} from &#39;../components/providers/UmiProvider&#39;;
+import {
+  fetchAllDigitalAssetByOwner,
+  fetchJsonMetadata,
+} from &#39;@metaplex-foundation/mpl-token-metadata&#39;;
+import QRGenerator from &#39;../components/QRGenerator&#39;;
+import AppModal from &#39;../components/Modal&#39;;
+import AppButton from &#39;../components/AppButton&#39;;
+
+const MyTicketsScreen: FC = () =&gt; {
+  const umi = useUmi();
+  const [events, setEvents] = useState&lt;any[]&gt;([]);
+  const [showQR, setShowQR] = useState&lt;boolean&gt;(false);
+
+  useEffect(() =&gt; {
+    const fetchEventsByOwner = async (): Promise&lt;any[]&gt; =&gt; {
+      try {
+        const assets = await fetchAllDigitalAssetByOwner(
+          umi,
+          umi.payer.publicKey,
+        );
+        return await Promise.all(
+          assets.map(async asset =&gt; {
+            const metadata = await fetchJsonMetadata(umi, asset.metadata.uri);
+            return {
+              ...asset,
+              metadata,
+            };
+          }),
+        );
+      } catch (error) {
+        console.error(&#39;fetchEventsByOwner&#39;, error);
+        throw new Error(&#39;Error fetching my events&#39;);
+      }
+    };
+
+    fetchEventsByOwner().then(data =&gt; {
+      setEvents(data);
+    });
+  }, [umi]);
+
+  return (
+    &lt;ScrollView style={styles.mainContainer}&gt;
+      &lt;Header title=&#34;My Tickets&#34; subtitle={&#39;See all your tickets&#39;} /&gt;
+      &lt;View style={styles.mainContent}&gt;
+        {events.map(event =&gt; (
+          &lt;View key={event.edition.publicKey} style={styles.card}&gt;
+            &lt;Text style={styles.title}&gt;{event.metadata.name}&lt;/Text&gt;
+            &lt;Image
+              source={{uri: event.metadata.image}}
+              style={styles.image}
+              alt={event.name}
+            /&gt;
+
+            &lt;View style={styles.qrButton}&gt;
+              {showQR ? (
+                &lt;AppModal modalVisible={showQR} setModalVisible={setShowQR}&gt;
+                  &lt;View style={styles.qrView}&gt;
+                    &lt;Text style={styles.title}&gt;{event.metadata.name}&lt;/Text&gt;
+                    &lt;QRGenerator
+                      value={`${umi.payer.publicKey}:${event.mint.publicKey}`}
+                    /&gt;
+                  &lt;/View&gt;
+                &lt;/AppModal&gt;
+              ) : (
+                &lt;AppButton text={&#39;Show QR&#39;} onPress={() =&gt; setShowQR(true)} /&gt;
+              )}
+            &lt;/View&gt;
+          &lt;/View&gt;
+        ))}
+      &lt;/View&gt;
+    &lt;/ScrollView&gt;
+  );
+};
+
+const styles = StyleSheet.create({
+// omitted for simplicity, check the full file in the repository
+});
+
+export default MyTicketsScreen;
+```
+
+Once the screen loads, we request the list of NFTs associated with the wallet using Umi&#39;s `fetchAllDigitalAssetByOwner` function. Then, we obtain the metadata for each asset and add a button to generate a QR code with the user&#39;s wallet and the NFT&#39;s mint. The data passed to the QR generator is in the form of `wallet:mint` since we want to verify if a user with a particular wallet owns an NFT with the searched mint value.
+
+To add support for generating QR codes within React Native, we will use the library [react-native-qrcode-svg](https://www.npmjs.com/package/react-native-qrcode-svg). To install it, run the commands:
+
+```shell
+yarn add react-native-svg
+yarn add react-native-qrcode-svg
+```
+
+And we create a new component that receives a string to generate the QR as parameters:
+
+```jsx
+// components/QRGenerator.tsx
+import React from &#39;react&#39;;
+import QRCode from &#39;react-native-qrcode-svg&#39;;
+
+type QRGeneratorProps = {
+ value: string;
+};
+
+const QRGenerator = ({value}: QRGeneratorProps) =&gt; {
+ return &lt;QRCode value={value} size={300} /&gt;;
+};
+
+export default QRGenerator;
+```
+
+After updating the application, we can see the tickets associated with the account and their respective button to generate the QR code. As soon as we press the button, we can see the QR code associated with the ticket, which we can present to the validator to prove our ownership of a ticket for the event:
+
+&lt;div&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/de19f1c1-135b-466b-9464-c3a3956da588.png&#34; /&gt;
+    &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/cabad9f2-ab3a-4080-b87d-4028124f7937.png&#34; /&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+
+## Step 7: Validate Ticket with QR Scanner
+
+The final step of our process is to create a new screen that allows an administrator to validate a user&#39;s ownership of a ticket. Let&#39;s add a new component, `TicketScannerScreen,` within our `screens` folder:
+
+```jsx
+// screens/TicketScannerScreen.tsx
+import React, {FC, useEffect} from &#39;react&#39;;
+import {ScrollView, StyleSheet, Text, View} from &#39;react-native&#39;;
+import {Header} from &#39;../components/Header&#39;;
+import QRScanner from &#39;../components/QRScanner&#39;;
+import Modal from &#39;../components/Modal&#39;;
+import {useUmi} from &#39;../components/providers/UmiProvider&#39;;
+import {
+ fetchCandyMachineData,
+ fetchEventsByOwner,
+ fetchMetadataByMint,
+} from &#39;../util/metaplex&#39;;
+import {publicKey} from &#39;@metaplex-foundation/umi&#39;;
+
+const TicketScannerScreen: FC = () =&gt; {
+ const length= useUmi();
+ const [scanned, setScanned] = React.useState(&#39;&#39;);
+ const [result, setResult] = React.useState(&#39;&#39;);
+ const [showModal, setShowModal] = React.useState(false);
+ const [collectionMint, setCollectionMint] = React.useState(&#39;&#39;);
+
+ useEffect(() =&gt; {
+   fetchCandyMachineData(length).then(data =&gt; {
+     setCollectionMint(data.collectionMint);
+   });
+ }, [length]);
+
+ useEffect(() =&gt; {
+   if (!scanned) {
+     return;
+   }
+
+   const [userPublicKey, as] = scanned.split(&#39;:&#39;);
+   try {
+     publicKey(userPublicKey);
+     publicKey(as);
+   } catch (error) {
+     setResult(&#39;Invalid ticket&#39;);
+     setShowModal(true);
+     return;
+   }
+
+   fetchMetadataByMint(length, publicKey(as)).then(mintData =&gt; {
+     if (!mintData) {
+       setResult(&#39;Ticket metadata not found&#39;);
+       return;
+     }
+     if (mintData.metadata.collection.value.key !== collectionMint) {
+       setResult(&#39;Ticket not found in collection&#39;);
+       return;
+     }
+
+     fetchEventsByOwner(length, publicKey(userPublicKey)).then(
+       (ownerData: any) =&gt; {
+         const foundInWallet = ownerData.find(
+           (event: any) =&gt; event.publicKey === as,
+         );
+         if (!foundInWallet) {
+           setResult(&#39;Ticket not found in user wallet&#39;);
+           return;
+         }
+
+         setResult(&#39;Ticket found in user wallet and collection&#39;);
+       },
+     );
+
+     setShowModal(true);
+   });
+ }, [length, collectionMint, scanned]);
+
+ const handleClose = () =&gt; {
+   setScanned(&#39;&#39;);
+   setResult(&#39;&#39;);
+   setShowModal(false);
+ };
+
+ return (
+   &lt;ScrollView&gt;
+     &lt;Header title=&#34;Ticket Scanner&#34; subtitle=&#34;Validate your NFT ticket&#34; /&gt;
+     &lt;View style={styles.mintButton}&gt;
+       &lt;QRScanner setScanned={setScanned} /&gt;
+
+       &lt;Modal modalVisible={showModal} setModalVisible={handleClose}&gt;
+         &lt;View style={styles.result}&gt;
+           &lt;Text style={styles.title}&gt;Scanner Result&lt;/Text&gt;
+           &lt;Text style={styles.text}&gt;{scanned}&lt;/Text&gt;
+           &lt;Text style={styles.text}&gt;{result}&lt;/Text&gt;
+         &lt;/View&gt;
+       &lt;/Modal&gt;
+     &lt;/View&gt;
+   &lt;/ScrollView&gt;
+ );
+};
+
+const styles = StyleSheet.create({
+// omitted for simplicity, check the full file in the repository
+});
+
+export default TicketScannerScreen;
+```
+
+To verify that a user holds a ticket for a specific event, we will first verify that the NFT&#39;s collection mint matches the mint of the event&#39;s collection. Secondly, we will confirm that the NFT the user claims to own exists in their wallet.
+
+To achieve this, `TicketScannerScreen` first loads the data from the candy machine to obtain the collection&#39;s mint. To load the data, `TicketScannerScreen` uses the `fetchCandyMachineData` function, which looks like this:
+
+```jsx
+// util/metaplex.ts
+export async function fetchCandyMachineData(umi: Umi): Promise&lt;CandyMachine&gt; {
+ try {
+   const candyMachineId = publicKey(collectionId);
+   return await fetchCandyMachine(umi, candyMachineId);
+ } catch (error) {
+   console.error(&#39;fetchCandyMachineData&#39;, error);
+   throw new Error(&#39;Error fetching candy machine data&#39;);
+ }
+}
+```
+
+Every time the `setScanned` event of the `&lt;QRScanner&gt;` component is executed, we can perform the validation whenever the scan data changes. To perform the validation, we use the `fetchMetadataByMint` function, which uses Umi&#39;s `fetchDigitalAsset` function to obtain an asset&#39;s data based on the mint value. Then, we use fetch to get the NFT&#39;s metadata and compare if the mint value of the candy machine matches the `nft.collection.mint value:
+    
+```jsx
+// util/metaplex.ts
+export async function fetchMetadataByMint(
+ umi: Umi,
+ mintPublicKey: PublicKey,
+): Promise&lt;any&gt; {
+ try {
+   const asset = await fetchDigitalAsset(umi, mintPublicKey);
+   const response = await fetch(asset.metadata.uri);
+   const metadata = await response.json();
+   return {...asset, ...metadata};
+ } catch (error) {
+   console.error(&#39;fetchMetadataByMint&#39;, error);
+   throw new Error(&#39;Error fetching NFT metadata&#39;);
+ }
+}
+```
+
+Secondly, we obtain the NFTs available in the user&#39;s wallet with the `fetchEventsByOwner` function and check if the mint the user claims to own exists in the list of available NFTs:
+
+```jsx
+// util/metaplex.ts
+export async function fetchEventsByOwner(
+ umi: Umi,
+ ownerPublicKey: PublicKey,
+): Promise&lt;any[]&gt; {
+ try {
+   return await fetchAllDigitalAssetByOwner(umi, ownerPublicKey);
+ } catch (error) {
+   console.error(&#39;fetchEventsByOwner&#39;, error);
+   throw new Error(&#39;Error fetching my events&#39;);
+ }
+}
+```
+
+If both previous conditions are met, an alert message indicating whether the operation was completed is displayed in a modal.
+ 
+We create the component to read the QR codes using the [VisionCamera] (https://react-native-vision-camera.com/docs/guides) library. This component allows us to use the camera in React Native and includes functionalities such as photo taking, video recording, QR and Barcode scanning, and video stabilization.
+
+To add the dependency, run the command:
+
+
+```shell
+yarn add react-native-vision-camera
+```
+
+```shell
+# android/gradle.properties
+# omitted for simplicity, check the full file in the repository
+# Enable code scanner
+VisionCamera_enableCodeScanner=true
+```
+
+To complete this, we add a new `&lt;QRScanner&gt;` component responsible for using the camera, scanning for present QR codes, and returning the result to a parent component:
+    
+```jsx
+import React, {Fragment, useCallback} from &#39;react&#39;;
+import {StyleSheet, Text} from &#39;react-native&#39;;
+import {
+ Camera,
+ Code,
+ useCameraDevice,
+ useCameraPermission,
+ useCodeScanner,
+} from &#39;react-native-vision-camera&#39;;
+
+type QRScannerProps = {
+ setScanned: (value: string) =&gt; void;
+};
+
+const QRScanner = ({setScanned}: QRScannerProps) =&gt; {
+ const {hasPermission, requestPermission} = useCameraPermission();
+ const device = useCameraDevice(&#39;back&#39;);
+
+ const onCodeScanned = useCallback(
+   (codes: Code[]) =&gt; {
+     const value = codes[0]?.value;
+     if (value == null) {
+       return;
+     }
+     setScanned(value);
+   },
+   [setScanned],
+ );
+
+ const codeScanner = useCodeScanner({
+   codeTypes: [&#39;qr&#39;, &#39;ean-13&#39;],
+   onCodeScanned: onCodeScanned,
+ });
+
+ if (!hasPermission) {
+   return &lt;Text onPress={requestPermission}&gt;Request camera permission&lt;/Text&gt;;
+ }
+
+ if (device == null) {
+   return &lt;Text&gt;No camera device available&lt;/Text&gt;;
+ }
+ return (
+   &lt;Fragment&gt;
+     &lt;Camera
+       style={styles.camera}
+       device={device}
+       isActive={true}
+       codeScanner={codeScanner}
+       enableZoomGesture={true}
+     /&gt;
+   &lt;/Fragment&gt;
+ );
+};
+export default QRScanner;
+
+const styles = StyleSheet.create({
+ camera: {
+   flex: 1,
+   width: &#39;100%&#39;,
+   height: undefined,
+   aspect: 1,
+ },
+});
+```
+
+Once the ticket validator scans a QR code generated with the wallet: mint pair, they can verify if the ticket is valid.
+
+&lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/5c1d1cb5-da20-4473-9284-7a4ab454a8ad.png&#34; /&gt;
+
+With the above, we conclude the implementation of our NFT ticketing app. You can check the repository https://github.com/Monadical-SAS/SolanaMobileTicketingSystem if you want to use the source code for this tutorial. The developed system is still far from being considered ready for production, but it exemplifies the flow we should follow for a ticketing system. 
+
+If the reader wishes to complete the implementation, they must ensure the entry of new collections by admin-type users. Additionally, they must be more rigorous with validations in the system, such as verifying that a ticket has been used previously in the system or displaying error messages when no more items are available to mint in the application.
+
+# Conclusion
+
+
+This article provides a comprehensive guide to developing an NFT ticketing system on the Solana blockchain, demonstrating the practical applications of NFTs beyond art and collectibles. Key takeaways include:
+
+* The versatility of NFTs: The project illustrates the innovative use of NFTs for ticketing, highlighting their potential in various sectors, including events management and brand engagement through discounts and special offers.
+
+* Solana&#39;s Ecosystem: The choice of Solana underscores the blockchain&#39;s capabilities in handling high throughput and low-cost transactions, essential for the scalability and efficiency of NFT-based applications.
+
+* Ease of Cryptocurrency Management: Integrating mobile wallet adapters like Phantom and Solflare into the project highlights Solana&#39;s growing ecosystem of wallet apps. These applications facilitate easier management and transaction of cryptocurrencies and NFTs, enhancing user experience and security. The Mobile Wallet Adapter protocol simplifies connecting dApps with mobile wallets, bridging the gap between blockchain applications and mobile devices.
+
+# Final Thoughts
+
+The development of an NFT ticketing system using Solana, React Native, and associated technologies exemplifies the practical application of blockchain technology in everyday use cases. The integration of mobile wallet adapters and the launch of the Solana dApp store are significant milestones that highlight the ecosystem&#39;s maturity and readiness for mainstream adoption. 
+
+The recent advancements in Solana&#39;s blockchain technology have not only improved the user experience but also opened up new opportunities for developers to create innovative and value-added services. We encourage you to develop new applications that will further enhance the user experience and share these ideas in the comments section below. By working together, we can establish blockchain&#39;s role in modern technology landscapes!
+
+
+# Resources
+    
+* https://github.com/solana-mobile/solana-mobile-dapp-scaffold
+* https://developers.metaplex.com/candy-machine/sugar
+* https://developers.metaplex.com/candy-machine
+* https://developers.metaplex.com/candy-machine/guards
+* https://developers.metaplex.com/umi
+* https://docs.solanamobile.com/getting-started/overview
+* https://docs.solanamobile.com/getting-started/mobile-dapp-architecture
+* https://docs.solanamobile.com/sample-apps/sample_app_overview
+* https://github.com/solana-mobile/dapp-publishing
+* https://medium.com/@varghesejoel6/how-to-mint-an-nft-using-metaplex-umi-and-candymachine-7c3880691ff2
+* https://github.com/wearekite/candy-machine-v3-ui/blob/main/src/hooks/useCandyMachineV3.tsx
+* https://porcupineplaygroundpals.com/how-to-create-a-minting-ui-for-collection-deployed-with-metaplex-sugar-2-1-1/
+* https://faucet.solana.com/
+* https://github.com/metaplex-foundation/umi/issues/94
+* https://discord.com/channels/848060988636921856/1159962886744059944
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.a2fac85c338ccd8282ca.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.8a4f868f9e7676405f31.js" defer="defer"></script>
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                
+                    <div class="authorbox__content">
+                        <h3>Juan David Arias</h3>
+                        <h5>
+                            Full-stack dev/PM
+                            <a href="https://github.com/juanArias8" target="_blank" rel="noopener">
+                                @juanArias8
+                            </a>
+                        </h5>
+                        
+                        <img src="/static/core/img/img-team-022.png" width="120px" height="120px" alt="Juan David Arias"/>
+                    </div>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2024-04-15</a></h5>
+            <div class="newsletterbox">
+                <a href="https://careers.monadical.com/" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
+            </div>
+        </div>
+        <center>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Recent posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/building-a-ticketing-system-with-solana-mobile-and-metaplex-foundation-umi.html">Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/how-to-build-a-talking-avatar-with-azure-cognitive-langchain-and-openai.html">Kraken the Code: How to Build a Talking Avatar</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/the-ai-evolution:-transforming-zulip-bots,-part-3.html">The AI Evolution: Transforming Zulip Bots, Part 3</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/how-to-make-llms-speak-your-language.html">How to Make LLMs Speak Your Language</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/9wiX6YBBV', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
+        </script>
+        <br/><br/>
+    </div>
+    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
+    <style>
+        @media (max-width: 991px) {
+            .show {
+                display: block !important;
+            }
+            .collapse:not(.show) {
+                display: none !important;
+            }
+        }
+    </style>
+
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="Vancouver, Canada">Vancouver</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                        <li><b title="Cali, Colombia">Cali</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://harmonizely.com/monadical">Get a Quote</a></li>
+                        <li><a href="https://careers.monadical.com/">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalHQ" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>
+                            
+                            Monadical Inc. © 2024<br />
+                            <small>All rights reserved.</small>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
+                                        title="ignore this">example.com</span>m</span>onadical.com
+                            </span>
+                            <br />
+                            <small>✉️&nbsp; Email us with your project idea.</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
+
+    <script src="/static/squares.js"></script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
+        function smoothScroll(e) {
+            const hash = decodeURIComponent(this.hash)
+            e.preventDefault()
+            e.stopPropagation()
+
+            console.log('Scrolling to', this.getAttribute('href'))
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)) {
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
+                behavior: 'smooth'
+            });
+            setTimeout(() => {
+                window.location.hash = hash
+            }, 500/*arbitrary value, not standartized*/);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                /*
+                   this code drops all the event listeners that were attached so far;
+                   we need to do it here because the event listeners themselves are not under control of this repo
+                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
+                   this is a very hacky hack, we shall negate it "as soon as we can"
+                */
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <!-- Highlight Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- End Highlight Code -->
+</body>
+
+</html>

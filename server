@@ -45,6 +45,7 @@ PAGES = {page['url']: page for page in list(CONFIG['PAGES'].values())}  # {url: 
 POSTS = {post['url']: post for post in list(CONFIG['POSTS'].values())}  # {url: {post_data}}
 CASES = {case['url']: case for case in list(CONFIG['CASES'].values())}  # {url: {post_data}}
 RATES = {rate['url']: rate for rate in list(CONFIG['RATES'].values())}  # {url: {post_data}}
+REPORTS = {report['url']: report for report in list(CONFIG['REPORTS'].values())}  # {url: {post_data}}
 
 
 ### Routes
@@ -115,6 +116,12 @@ def render_post(path):
     post = POSTS[f'/posts/{path}']
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
+
+@app.route('/reports/<path>')
+def render_report(path):
+    report = REPORTS[f'/reports/{path}']
+    download_post(report)
+    return render_template('report.html', now=datetime.now(), **CONFIG, **report)
 
 
 # Add feed rss

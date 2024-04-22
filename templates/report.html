@@ -18,6 +18,18 @@
         h1 {
             font-family: 'Fjalla One', sans-serif !important;
         }
+        #cover {
+            width: 100%;
+            height: 80vh;
+            margin-top: -1px;
+            background-image: url('{{img}}');
+            background-size: cover;
+            background-position: center center;
+        }
+        .article.row {
+            background-color: #FFF;
+            margin-top: -10vh;
+        }
         .article-content {
             border: 0px;
         }
@@ -123,8 +135,9 @@
         }
     </style>
     <div id="post-content">
+        <div id="cover"></div>
         <div class="container">
-            <div class="row">
+            <div class="row article">
                 <div class="col">
                     {% block post %}
                         <article class="article-content">

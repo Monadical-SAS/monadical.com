@@ -23,8 +23,10 @@
             font-size: 2em;
             font-weight: 400;
         }
-        #doc.markdown-body h1, #doc.markdown-body h2 {
+        #doc.markdown-body h1:not(::first-child) {
             padding-top: 1.75em;
+        }
+        #doc.markdown-body h1, #doc.markdown-body h2 {
             border-bottom: none;
         }
         #doc.markdown-body p {
@@ -49,7 +51,7 @@
         }
         .cover {
             width: 100%;
-            height: 1080px;
+            height: 450px;
             margin-top: -1px;
             background-image: url('{{img}}');
             background-size: cover;
@@ -57,11 +59,14 @@
         }
         .article.row {
             background-color: #FFF;
-            margin-top: -30vh;
+            margin-top: -24vh;
         }
         @media (max-width: 768px) {
+            .cover {
+                height: 25vh;
+            }
             .article.row {
-            margin-top: -650px;
+            margin-top: 0;
         }
         }
         .article-content {

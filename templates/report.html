@@ -15,6 +15,9 @@
 {% block article %}
 
     <style>
+        #doc.markdown-body {
+            width: 100%;
+        }
         #doc.markdown-body h1 {
             font-family: 'Fjalla One', sans-serif !important;
             font-size: 2em;
@@ -27,8 +30,22 @@
         #doc.markdown-body p {
             font-family: 'Inter', sans-serif;
         }
-        #doc.markdown-body {
-            width: 100%;
+        #doc.markdown-body p img {
+            margin: 1.5em 0;
+        }
+        #doc.markdown-body blockquote, .case-study {
+            margin: 1em 0;
+            padding: 0.8em 1em;
+            font-size: 1em;
+            color: #333;
+            background-color: #ecfeff; /* cyan-50 */
+            border-left: none;
+        }
+        .case-study {
+            border-left: 0.25em solid #06b6d4; /* cyan-500 */
+        }
+        #doc.markdown-body .case-study h4 {
+            margin-top: 0.8em;
         }
         .cover {
             width: 100%;

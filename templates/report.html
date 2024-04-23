@@ -66,8 +66,8 @@
                 height: 25vh;
             }
             .article.row {
-            margin-top: 0;
-        }
+                margin-top: 0;
+            }
         }
         .article-content {
             border: 0px;
@@ -152,7 +152,8 @@
             user-select: initial;
             max-width: 20vw;
             margin-left: 15px;
-            /* transition: opacity 400ms ease; */
+            opacity: 0;
+            transition: opacity 300ms;
         }
         #ui-toc-affix .nav > li {
             width: 100%;
@@ -257,13 +258,13 @@
             // hide the table of contents nav when you scroll down past the end
             $(window).scroll(function() {
                 const pos = $(window).scrollTop()
-                const topThreshold = $('.cover').position().top + 900
+                const topThreshold = $('.cover').position().top + 250
                 const bottomThreshold = $('.authorbox').position().top - 250
                 $('#ui-toc-affix').css({
-                    opacity: (pos > bottomThreshold || pos < topThreshold) ? 0 : 1
+                    opacity: (pos < bottomThreshold && pos > topThreshold) ? 1 : 0
                 });
                 $('.pull-right').css({
-                    opacity: (pos > bottomThreshold || pos < topThreshold) ? 0 : 1
+                    opacity: (pos < bottomThreshold && pos > topThreshold) ? 1 : 0
                 });
             });
             document.addEventListener('DOMContentLoaded', () => {

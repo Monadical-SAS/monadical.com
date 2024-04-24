@@ -36,10 +36,10 @@ open http://127.0.0.1:5000
 *Note: to publish a new blog post quickly you can **use our mini-webapp https://monadical.com/publishing/***
 
 1. prepare the content to be added
-  - for posts, create a new markdown document on https://docs.monadical.com, click `Publish` and get the public URL like `https://docs.monadical.com/s/Skcz_hUhM`
+  - for posts and reports, create a new markdown document on https://docs.monadical.com, click `Publish` and get the public URL like `https://docs.monadical.com/s/Skcz_hUhM`
   - for job listings, create a new markdown document on https://docs.monadical.com, click `Publish` and get the public URL
   - for team members, get a forward-facing headshot photo of the team member, run it through https://remove.bg, crop it square, and change it to greyscale
-2. edit `content.json`/`team.json`/etc. to add a new entry (copy and paste a previous entry to match the existing style), add any images under `static/`
+2. edit `content.json`/`team.json`/etc. to add a new entry (copy and paste a previous entry to match the existing style), add any images under `static/`. For blog posts, add them under the POSTS key. For reports, add them under REPORTS.
 5. PR your change on github and wait for approval from another team member to merge
 6. once merged, check that the autobuild deployed after a few minutes and verify that it looks good on `https://monadical.com`
 

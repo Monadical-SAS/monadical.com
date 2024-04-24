@@ -32,6 +32,7 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
+mkdir -p docs/reports
 
 
 cp -r static docs/static
@@ -43,11 +44,13 @@ cp static/_config.yml docs/_config.yml
 ./server --pages > docs/pages.txt
 ./server --posts > docs/posts.txt
 ./server --rates > docs/rates.txt
+./server --reports > docs/reports.txt
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; if [ -s pages.txt ]; then wget -q $(<pages.txt); fi)
 (cd docs/posts; if [ -s ../posts.txt ]; then wget -q $(<../posts.txt); fi)
+(cd docs/reports; if [ -s ../reports.txt ]; then wget -q $(<../reports.txt); fi)
 (cd docs; if [ -s rates.txt ]; then wget -q $(<rates.txt); fi)
 
 echo ""

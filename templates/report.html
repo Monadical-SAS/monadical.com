@@ -18,13 +18,14 @@
         #doc.markdown-body {
             width: 100%;
         }
-        #doc.markdown-body h1 {
+        #doc.markdown-body h1:first-child {
+            display: none;
+        }
+        #doc.markdown-body h1, h1 {
+            padding-top: 1.75em;
             font-family: 'Fjalla One', sans-serif !important;
             font-size: 2em;
             font-weight: 400;
-        }
-        #doc.markdown-body h1:not(::first-child) {
-            padding-top: 1.75em;
         }
         #doc.markdown-body h1, #doc.markdown-body h2 {
             border-bottom: none;
@@ -43,35 +44,42 @@
             background-color: #ecfeff; /* cyan-50 */
             border-left: none;
         }
+        #doc.markdown-body hr {
+            height: 1px;
+        }
         .case-study {
             border-left: 0.25em solid #06b6d4; /* cyan-500 */
         }
         #doc.markdown-body .case-study h4 {
             margin-top: 0.8em;
         }
+        .title {
+            max-width: 900px;
+        }
+        .title h1 {
+            font-size: clamp(32px, 5.8vw, 4.2em);
+            line-height: 130%;
+            color: #fff;
+        }
         .cover {
             width: 100%;
-            height: 450px;
+            height: 650px;
             margin-top: -1px;
-            background-image: url('{{img}}');
+            padding: 1em 1.8em;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(22, 78, 99, 0.00) 0%, rgba(22, 78, 99, 0.50) 100%), url('{{img}}') lightgray -45.909px -355.62px / 103.224% 220.423% no-repeat;
             background-size: cover;
             background-position: center center;
         }
         .article.row {
             background-color: #FFF;
-            margin-top: -24vh;
-        }
-        @media (max-width: 768px) {
-            .cover {
-                height: 25vh;
-            }
-            .article.row {
-                margin-top: 0;
-            }
         }
         @media (max-height: 490px) {
-            .article.row {
-                margin-top: -300px;
+            .cover {
+                max-height: 275px;
             }
         }
         .article-content {
@@ -188,7 +196,11 @@
         }
     </style>
     <div id="post-content">
-        <div class="cover"></div>
+        <div class="cover">
+            <div class="title">
+                <h1>{{title}}</h1>
+            </div>
+        </div>
         <div class="container">
             <div class="row article">
                 <div class="col">
@@ -263,7 +275,7 @@
             // hide the table of contents nav when you scroll down past the end
             $(window).scroll(function() {
                 const pos = $(window).scrollTop()
-                const topThreshold = $('.cover').position().top + 250
+                const topThreshold = $('.cover').position().top + 500
                 const bottomThreshold = $('.authorbox').position().top - 250
                 $('#ui-toc-affix').css({
                     opacity: (pos < bottomThreshold && pos > topThreshold) ? 1 : 0

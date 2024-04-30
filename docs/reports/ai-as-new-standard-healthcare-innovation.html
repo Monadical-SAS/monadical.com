@@ -175,19 +175,25 @@
         #doc.markdown-body p img {
             margin: 1.5em 0;
         }
-        #doc.markdown-body blockquote, .case-study {
+        #doc.markdown-body .case-study {
             margin: 1em 0;
             padding: 0.8em 1em;
             font-size: 1em;
             color: #333;
             background-color: #ecfeff; /* cyan-50 */
+            border-left: 0.25em solid #06b6d4; /* cyan-500 */
+        }
+        #doc.markdown-body blockquote {
+            padding: 1em 0.5em;
+            font-size: 1.5em;
+            line-height: 125%;
+            font-style: italic;
+            font-weight: 500;
+            color: #333;
             border-left: none;
         }
         #doc.markdown-body hr {
             height: 1px;
-        }
-        .case-study {
-            border-left: 0.25em solid #06b6d4; /* cyan-500 */
         }
         #doc.markdown-body .case-study h4 {
             margin-top: 0.8em;
@@ -313,6 +319,86 @@
         .dropup .dropdown-menu {
             bottom: auto !important;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: left;
+            font-family: "Inter", "Source Sans Pro", sans-serif;
+        }
+        .modal-content .text-lg {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-content label, .modal-content .text-sm {
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+        }
+        .modal-content .two-col {
+            display: flex;
+            align-items: flex-start;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+        .modal-content input {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .modal-content button {
+            padding: 12px;
+            background-color: #06b6d4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background-color: #0891b2;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .blur {
+             filter: blur(5px);
+        }
         @media (min-width: 768px) and (max-width: 991px) {
             header .navbar-collapse {
                 padding-left: 0;
@@ -341,7 +427,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row article">
+            <div id="article" class="row article">
                 <div class="col">
                     
                         <article class="article-content">
@@ -397,9 +483,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/c8e60d1f5706e17e788d1ff492f360d1?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="andy"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon Apr 22 2024 19:40:25 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Apr 29 2024 14:44:45 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Apr 22 2024 19:40:25 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Apr 30 2024 20:50:30 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">622 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">878 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -411,7 +497,7 @@
 
 &lt;br /&gt;
 
-&lt;p style=&#34;font-size: 1.5em;&#34;&gt;Exploring the AI-driven technologies and strategies poised to reshape the healthcare landscape.&lt;/p&gt;
+&lt;p style=&#34;font-size: 1.5em;padding: 1.25em 0;&#34;&gt;Exploring the AI-driven technologies and strategies poised to reshape the healthcare landscape.&lt;/p&gt;
 
 &lt;hr&gt;
 
@@ -419,6 +505,8 @@
 
 
 State-of-the-art AI applications, capable of understanding complex medical language, will go far beyond their current capabilities to radically transform healthcare. Imagine a world where AI assistants effortlessly handle all aspects of medical documentation, allowing clinicians to be more present with their patients. Or a world where AI chatbots bridge the knowledge gap between doctors and patients, empowering patients to take charge of their own health journey. These are just glimpses of a future where AI is paving the way towards a more robust, accessible, and compassionate healthcare system.
+
+&gt; “The AI healthcare market is projected to be worth $187 billion by 2030, with estimates that generative AI (GenAI) will add $150 billion to $260 billion in value to the healthcare industry per year.”
 
 Meanwhile, healthcare’s legacy systems - marked by data fragmentation, clinician burnout, and runaway costs - are reaching a breaking point. These challenges, paradoxically, have set the stage for AI to thrive. An immense opportunity now presents itself to innovators and business leaders: the AI healthcare market is projected to be worth $187 billion by 2030 [1], while McKinsey estimates that generative AI (GenAI) will add $150 billion to $260 billion in value to the healthcare industry per year [2].
 
@@ -433,8 +521,8 @@ To explore the ever-growing opportunities at the intersection of AI and healthca
 
 The AI Healthcare Spectrum spans six major domains, ranging from high-level, system-centric priorities like public health and research, to low-level, patient-centric opportunities in the clinic and at home. This overview offers a comprehensive look at AI&#39;s transformative potential across the entire healthcare landscape.
 
-![AI spectrum](https://docs.monadical.com/uploads/8e5369c4-a3b9-4b87-91df-87a8ec0e521a.png)
-
+![AI Healthcare Spectrum![](https://docs.monadical.com/uploads/1807feeb-f117-427b-95df-3685748e6221.png)
+](https://docs.monadical.com/uploads/b5bc9572-3097-4dad-b161-96462ef7b820.png)
 
 Right now, healthcare’s imminent transformation starts with the reimagining of enterprise-level tasks. These jobs, encompassing the broad spectrum of care beyond direct medical services, are often labour-intensive, repetitive, and burdened by vast amounts of information [3]. This makes them particularly well-suited for disruption by emerging AI technologies, especially GenAI. With the USA spending over $300 billion every year on healthcare administration [4], it&#39;s no coincidence that many startup success stories have focused on these problems. Many enterprise healthcare tasks are concentrated around the *Clinical support* and *Healthcare operations* domains on the AI Healthcare Spectrum.
 
@@ -444,18 +532,22 @@ From guiding pre-consultation inquiries to automating post-care communication, e
 
 There is a particularly exciting opportunity for AI in post-care adherence, a challenge that costs the American healthcare system over $100 billion annually [4]. Automating small but critical jobs like reminders and follow-up appointments can significantly improve patient outcomes while freeing up valuable time for nurses and care managers. For instance, imagine a computer vision-powered tool that not only reminds patients to take their medication, but can verify that they do, too. By streamlining provider-patient interactions and guiding patients through a confusing healthcare system, the entire patient experience stands to become more engaging, integrated, and holistic.
 
-![Patient engagement use cases](https://docs.monadical.com/uploads/29e142e4-17e9-42ee-8e6a-498a345c6260.png)
+![Patient engagement use cases](https://docs.monadical.com/uploads/dfc183c9-01ee-49b1-9295-dc2be344f64a.png)
+![](https://docs.monadical.com/uploads/1b76e2c2-5844-442b-af91-cc3263463d95.png)
+![](https://docs.monadical.com/uploads/be3d62c9-1712-4aed-88d3-a41eca7f7e4d.png)
 
 
 ## Clinical support
 
 In the clinic, AI agents will serve as powerful allies for physicians. They excel at analyzing unstructured data, from medical images to genetic sequences to even a patient’s own medical records, empowering clinicians to make more accurate diagnoses and personalized treatment plans. For jobs that are prone to bottlenecks in the healthcare system, like patient triage, AI has the potential to inform and accelerate decision-making.
 
+&gt; “AI-powered systems are like tireless virtual assistants, complementing, rather than replacing, the clinician&#39;s expertise.”
+
 In addition, AI can significantly reduce the time clinicians spend on information management. For example, an AI assistant could transcribe conversations, summarize visits, and then update the appropriate electronic health record for every consultation. Instead of being preoccupied with clipboards and computer monitors, these tools free providers to focus on what matters most: building relationships and providing exceptional care.
 
 AI&#39;s clinical impact extends beyond the doctor’s office, enabling proactive care through remote patient monitoring and real-time data analysis. By flagging changes in vital signs and providing early alerts, AI agents support timely interventions or discharges, improving health outcomes and patient flow. Whether by streamlining routine tasks or uncovering insights within complex medical data, AI-powered systems are like tireless virtual assistants, complementing, rather than replacing, the clinician&#39;s expertise.
 
-![Clinical support use cases](https://docs.monadical.com/uploads/7dd072f7-b42f-4944-89e1-5b01e72f3b5f.png)
+![Clinical support use cases](https://docs.monadical.com/uploads/34148943-2324-4605-862f-ace575804cfe.png)
 
 
 &lt;div class=&#34;case-study&#34;&gt;
@@ -471,7 +563,7 @@ Ensuring that patient care is delivered efficiently and effectively, operational
 
 Moreover, AI&#39;s role extends to the educational realm, where it serves as an on-demand training tool. By simulating real-world scenarios and distilling the latest medical literature, AI enables continuous learning and skill enhancement for healthcare professionals, ensuring they remain adept at employing cutting-edge knowledge in practical, patient-focused applications.
 
-![Operations and admin use cases](https://docs.monadical.com/uploads/ae6b8303-2c9c-45c3-af6e-083c4b25d416.png)
+![Operations and admin use cases](https://docs.monadical.com/uploads/eb39ccd8-8d17-4c17-8c0f-1d286eeaa6c9.png)
 
 
 ## Financing
@@ -480,7 +572,8 @@ At every turn, before or after a medical encounter, patients and providers both 
 
 Conversational AI agents equipped with powerful knowledge retrieval systems offer solutions to these challenges. These agents help patients navigate their benefits, providing clear and up-to-date answers to their questions about coverage and costs. By automating the tedious processes of claim submissions, denials, and prior authorizations, these systems can also streamline operations for providers and payers, cutting down the time spent on back-and-forth negotiations and enhancing user satisfaction across the board.
 
-![Financing use cases](https://docs.monadical.com/uploads/d1e07966-1707-42a9-b181-a7db2aab15a4.png)
+![Financing use cases](https://docs.monadical.com/uploads/1c452255-7c02-420a-a362-011b61bc50ec.png)
+
 
 ## Research &amp; innovation
 
@@ -488,32 +581,35 @@ Medical research has long been propelled by machine learning and data science, a
 
 GenAI’s role also extends to unraveling complex biological mechanisms, such as protein folding and genetic sequencing. A landmark study from MIT researchers showcased a diffusion model’s capacity to imagine new protein structures, marking a significant leap forward in our ability to comprehend and manipulate biological systems for medical advancement [7]. By harnessing the power of big data, GenAI will not only accelerate the pace of innovation, but also ensure that research outcomes align more closely with patient needs and safety standards.
 
-![Research use cases](https://docs.monadical.com/uploads/2546b56b-e3bc-4bf0-bc3b-3654da9d2f5d.png)
+![Research use cases](https://docs.monadical.com/uploads/019049f3-4dab-42fd-ab39-7f1655dd4176.png)
 
 
 ## Public health
 
 In the realm of public health, AI&#39;s role is rapidly expanding, offering new capabilities in disease surveillance and the analysis of social determinants of health. By drawing on vast data sets and predictive modelling, AI provides public health officials with the tools needed for proactive, evidence-based policy-making and community health interventions. Effective public health policy can reduce the burden on healthcare systems, prevent or control the spread of disease, and ensure healthcare is delivered equitably and fairly to everyone regardless of their background.
 
-![Public health use cases](https://docs.monadical.com/uploads/79736887-bcd4-45b4-8575-4def69b9b7fd.png)
+![Public health use cases](https://docs.monadical.com/uploads/95cba408-3d1d-4c12-84eb-48a47676d5bb.png)
 
 
 # Part II: State-of-the-art technologies pushing the frontier of medicine
 
 Innovators in AI have thrived by standing on the shoulders of giants. Each technological breakthrough inspires waves of researchers and creators to develop new specialized models, frameworks, and tooling, which not only unlocks greater possibilities in healthcare but also tests the limits of what can be achieved.
 
+&gt; “The biggest winners in this space will find a way to combine the best of both predictive and generative AI.”
+
 While the frontier of AI research has been dominated by GenAI, predictive AI (also called “traditional machine learning”) remains a cornerstone technology in healthcare. In contrast to GenAI, which focuses on creating content, predictive AI attempts to forecast the future, playing a critical role in areas like disease detection and cancer screening. The biggest winners in this space will find a way to combine the best of both predictive and generative AI. For instance, imagine a platform that can anticipate patient needs, predict disease progression, and then design uniquely tailored therapies for them.
 
 In this section, we explore state-of-the-art AI technologies poised to transform healthcare. Our selection reflects current trends in research publications and venture capital investment, highlighting areas of rapid innovation. This list is non-exhaustive, as the rate of new developments in the field continues to grow at breakneck speed.
 
-![Technologies table](https://docs.monadical.com/uploads/5b0391df-3333-4bfd-8c74-72a384d761ca.png)
+![Technologies table](https://docs.monadical.com/uploads/b904c244-7511-406a-b500-4a1e6efa9355.png)
+
 
 
 ## Knowledge augmentation will be a key step in the AI stack
 
 Knowledge augmentation techniques, like retrieval-augmented generation (RAG), address a major limitation of LLMs - their reliance on static or “old” data. While RAG is the dominant architectural approach, other techniques like few-shot learning, model composition, and prompt engineering are also widely used. RAG can incorporate the latest medical research or clinical guidelines into a model’s context window or “thought process”, generating more informed and accurate responses. This ensures that healthcare decisions are informed by the latest evidence, enhancing patient outcomes. 
 
-&gt; Out of the box, foundation models like [GPT-4](https://openai.com/research/gpt-4) demonstrate expert proficiency on the United States Medical Licensing Examination (USMLE), which is a three-step exam used to assess clinical competency in the USA [8]. With advanced prompt engineering techniques, these models can even outperform fine-tuned medical models like Google’s [Med-PaLM 2](https://sites.research.google/med-palm/) [9]. 
+Out of the box, foundation models like [GPT-4](https://openai.com/research/gpt-4) demonstrate expert proficiency on the United States Medical Licensing Examination (USMLE), which is a three-step exam used to assess clinical competency in the USA [8]. With advanced prompt engineering techniques, these models can even outperform fine-tuned medical models like Google’s [Med-PaLM 2](https://sites.research.google/med-palm/) [9]. 
 
 ## Multimodal LLMs are the next generation of innovation
 
@@ -527,7 +623,9 @@ LLMs excel in basic queries and conversations, but struggle with complex deducti
 
 AI-powered agents are systems that are capable of acting autonomously to solve complex problems. They do this through a technique called “Chain-of-Thought”, which breaks down large problems into multiple smaller ones. Agents are composed of different modules that enable them to use external tools (e.g web browsers), hold information in memory, and create actionable items - all thanks to the LLM “brain” that is orchestrating all of the above. 
 
-&gt; Imagine a triage agent that is capable of handling patient intake, assessing needs and priorities, and then referring patients to the right department, or a learning agent that assists medical students in becoming better surgeons. In fact, that is one of the use cases researchers explored with ChatGPT, where it was shown to be adept at scientific writing, doctor-patient communication, diagnostic imaging, and managing patients’ peri-operative care. [12]
+&gt; “LLM agents show great promise for addressing health care’s hardest problems. Companies that understand how to build and leverage sophisticated agent systems will gain significant tailwinds in this space.”
+
+Imagine a triage agent that is capable of handling patient intake, assessing needs and priorities, and then referring patients to the right department, or a learning agent that assists medical students in becoming better surgeons. In fact, that is one of the use cases researchers explored with ChatGPT, where it was shown to be adept at scientific writing, doctor-patient communication, diagnostic imaging, and managing patients’ peri-operative care. [12]
 
 Although LLM agents have not been widely used in healthcare yet, they show great promise for addressing some of healthcare’s hardest problems. Companies that understand how to build and leverage sophisticated agent systems will gain significant tailwinds in this space.
 
@@ -629,6 +727,29 @@ Agent: An autonomous AI system that can perceive its environment, make decisions
                     
                 </div>
             </div>
+            <div id="subscribe-modal" class="modal">
+                <div class="modal-content">
+                    <!-- <span class="close">&times;</span> -->
+                    <p class="text-lg">To continue reading this report, please complete the form below:</p>
+                    <form id="subscribe-form">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Business email</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="phone">Phone <span class="text-sm">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone">
+                        <div class="two-col">
+                        <div class="right-align">
+                            <p class="text-sm">
+                                By submitting this form, I agree to receive Monadical's electronic newsletters, updates, and related messages regarding Monadical's services.
+                            </p>
+                            <p class="text-sm">You can unsubscribe at any time by clicking on the unsubscribe link at the bottom of our emails.</p>
+                        </div>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div id="post-footer" class="container post-footer">
             <div class="authorbox">
@@ -645,12 +766,6 @@ Agent: An autonomous AI system that can perceive its environment, make decisions
                         <img src="/static/core/img/andy.png" width="120px" height="120px" alt="Andy Tran"/>
                     </div>
                 
-            </div>
-            <h5>Published on <a href="#permalink">2024-04-22</a></h5>
-            <div class="newsletterbox">
-                <a href="https://tinyletter.com/Monadical">
-                    Subscribe to our newsletter
-                </a>
             </div>
         </div>
         <center>
@@ -894,9 +1009,62 @@ Agent: An autonomous AI system that can perceive its environment, make decisions
 
                 // remove undesired css that break styles
                 setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+
+                // show subscribe modal
+                var modal = document.getElementById("subscribe-modal");
+                var userForm = document.getElementById("subscribe-form");
+                var article = document.getElementById("article");
+                var body = document.body;
+
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset >= 900 && !localStorage.getItem('subscribed')) {
+                        modal.style.display = "flex";
+                        article.classList.add("blur");
+                    }
+                });
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        postContent.classList.remove("blur");
+                        window.removeEventListener('scroll', preventScrollDown);
+                    }
+                }
+                
+                userForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // Save user details to local storage or send them to a server
+                    localStorage.setItem('subscribed', 'true');
+                    
+                    modal.style.display = "none";
+                    article.classList.remove("blur");
+                });
             })
 
             $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init({
+                publicKey: "xJxFU_aQG0X1r-DQ7",
+                });
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_qpcpcy5', 'template_6k33tgc', this)
+                        .then(() => {
+                            console.log('Form submitted!');
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
         </script>
         <script>
             function setOpacity(){

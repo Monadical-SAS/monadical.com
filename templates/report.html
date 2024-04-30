@@ -451,10 +451,9 @@
                 document.getElementById('subscribe-form').addEventListener('submit', function(event) {
                     event.preventDefault();
                     // these IDs from the previous steps
-                    console.log(this)
                     emailjs.sendForm('service_qpcpcy5', 'template_6k33tgc', this)
                         .then(() => {
-                            console.log('SUCCESS!');
+                            console.log('Form submitted!');
                         }, (error) => {
                             console.log('FAILED...', error);
                         });

@@ -31,7 +31,8 @@
         </div>
         <div class="container margin-bottom-150">
             <div class="row articles">
-                {% for post in POSTS.values() %}
+                {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) %}
+                {% for post in posts | sort(attribute='date', reverse=True) %}
                     <div class="col-12 col-md-6 text-center article mb-4 blog-card">
                         <div class="card h-100 ">
                             <a href="{{ post.url }}">

@@ -31,6 +31,45 @@
         </div>
         <div class="container margin-bottom-150">
             <div class="row articles">
+                {% for episode in PODCAST %}
+                    <div class="col-12 col-md-6 text-center article mb-4 blog-card">
+                        <div class="card h-100 ">
+                            <a href="{{ episode.url }}">
+                                <div class="blog-img" style="background-image: url('{{ episode.img }}')" title="{{episode.title}}">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <a class="card-link" href="{{ episode.url }}">
+                                    <div class="post-tags">
+                                        {% for tag in episode.tags %}
+                                            <span class="label">#{{ tag }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </a>
+                                <div class="card-title">
+                                    <a class="card-link" href="{{ episode.url }}">
+                                        <h2>{{ episode.title }}</h2>
+                                    </a>
+                                </div>
+                                <div class="card-text">
+                                    {{ episode.description }}
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="author small">
+                                    {{ episode.date }}<br/><br/>
+                                    <a href="{{ episode.url }}">
+                                        <button class="btn btn-primary">
+                                            {{ episode.length }}
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row articles">
                 {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) %}
                 {% for post in posts | sort(attribute='date', reverse=True) %}
                     <div class="col-12 col-md-6 text-center article mb-4 blog-card">

@@ -16,7 +16,7 @@
       "template": "about.html"
     },
     "blog": {
-      "title": "Blog",
+      "title": "Insights",
       "url": "/blog.html",
       "template": "blog.html"
     },
@@ -2381,6 +2381,39 @@
         }
       ]
     }
+  },
+  "PODCAST": {
+    "002-stephanie-losi": {
+      "title": "Risk and Regulation",
+      "description": "Max McCrea is joined by Stephanie Losi, the founder of Losi Consulting and creator of Risk Musings, to discuss regulation. ",
+      "date": "2024-05-30",
+      "img": "/static/podcast/paradigmatic.png",
+      "tags": [
+        "podcast",
+        "risk",
+        "regulation",
+        "ai"
+      ],
+      "length": "75 minutes",
+      "source": "",
+      "url": "https://open.spotify.com/episode/0Uuwb38MKt4ec3r06YVXPj?si=69a3e7180a8e4eb0",
+      "template": "reports/ai-as-new-standard-healthcare-innovation.html"
+    },
+    "001-nick-sweeting": {
+      "title": "Internet Archiving",
+      "description": "Max and Monadical co-founder Nick discuss their journeys in tech, the transformative power of open-source technology, and the ethical considerations that guide Nick's work in digital archiving.",
+      "date": "2024-05-30",
+      "img": "/static/podcast/paradigmatic.png",
+      "tags": [
+        "podcast",
+        "open source",
+        "archiving"
+      ],
+      "length": "65 minutes",
+      "source": "",
+      "url": "https://open.spotify.com/episode/47gL8wGUIOdHQ6CRpjl1eC?si=31b6e1a6e30f4c1c",
+      "template": "reports/ai-as-new-standard-healthcare-innovation.html"
+    } 
   },
   "SOCIAL": {
     "Twitter": {

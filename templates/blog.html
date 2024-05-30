@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col text-center">
                     <br/><br/>
-                    <h2><a id="main">Blog Posts from the Monadical Team</a></h2>
+                    <h2><a id="main">Insights from the Monadical Team</a></h2>
                     <br/>
                 </div>
             </div>
@@ -30,6 +30,24 @@
             </div>
         </div>
         <div class="container margin-bottom-150">
+            <div class="row align-items-center mt-4 mb-5">
+                <div class="col-12">
+                    <p class="text-center">
+                        Listen to Paradigmatic, a podcast about the interplay of technology, policy, and human society:
+                    </p>
+                </div>
+                
+                <div class="col-sm">
+                    <a href="https://open.spotify.com/show/36WbeLtpdRt5cPX18aY6yF" target="_blank">
+                        <img class="w-25 d-block m-auto" src="/static/podcast/spotify_logo.png" alt="Spotify button to listen to Paradigmatic">
+                    </a>
+                </div>
+                <div class="col-sm">
+                    <a href="https://podcasts.apple.com/ca/podcast/paradigmatic/id1747991729" target="_blank">
+                        <img class="w-25 d-block m-auto" src="/static/podcast/apple_badge.svg" alt="Apple button to listen to Paradigmatic">
+                    </a>
+                </div>
+            </div>
             <div class="row articles">
                 {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) %}
                 {% for post in posts | sort(attribute='date', reverse=True) %}

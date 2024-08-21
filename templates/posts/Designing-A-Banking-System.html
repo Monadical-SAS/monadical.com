@@ -50,9 +50,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Sep 21 2023 11:08:23 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 11 2024 23:31:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5228 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5280 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -571,7 +571,65 @@ def banking_runloop():
             finally:
                 cursor.execute(&#34;UNLOCK TABLES;&#34;)
 ```
-</div>
+
+&lt;br/&gt;
+
+## Further Reading
+
+
+### Data Models
+
+- https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+- https://substack.wasteman.codes/p/engineering-principles-and-best-practices
+- https://www.etsy.com/codeascraft/the-problem-with-timeseries-data-in-machine-learning-feature-systems
+- https://monadical.com/posts/from-firebase-to-django.html
+- https://milestone.topics.it/2023/01/19/pitfalls-of-request-response-over-messaging.html
+- https://brandur.org/soft-deletion
+- https://www.ietf.org/archive/id/draft-peabody-dispatch-new-uuid-format-01.html
+- https://blog.ploeh.dk/2024/06/03/youll-regret-using-natural-keys/
+
+### Distributed Systems
+
+- https://architecturenotes.co/p/fallacies-of-distributed-systems
+- https://muratbuffalo.blogspot.com/2021/02/foundational-distributed-systems-papers.html
+- https://ferd.ca/a-distributed-systems-reading-list.html
+- https://bravenewgeek.com/you-cannot-have-exactly-once-delivery/
+- https://www.figma.com/blog/how-figma-scaled-to-multiple-databases/
+- https://blog.jim-nielsen.com/2023/offline-is-online-with-extreme-latency/
+- https://www.exhypothesi.com/clocks-and-causality/
+- https://docs.monadical.com/s/demystifying-databases
+- https://planetscale.com/blog/what-is-database-sharding-and-how-does-it-work
+- https://www.cockroachlabs.com/blog/raft-is-so-fetch/
+- https://dbmsmusings.blogspot.com/2019/07/overview-of-consistency-levels-in.html
+- http://webdam.inria.fr/Alice/
+- https://jepsen.io/analyses
+- https://github.blog/2021-04-05-how-we-scaled-github-api-sharded-replicated-rate-limiter-redis/
+- https://www.figma.com/blog/making-multiplayer-more-reliable/
+- https://www.binwang.me/2020-11-02-Use-TLA+-to-Verify-Cache-Consistency.html
+
+### SQLite
+
+- https://github.com/rqlite/rqlite
+- https://www.sqlite.org/lockingv3.html
+- https://www.sqlite.org/np1queryprob.html
+
+### Postgres
+
+- https://supabase.com/blog/choosing-a-postgres-primary-key
+- https://www.infoq.com/articles/wonders-of-postgres-logical-decoding-messages/
+- https://www.2ndquadrant.com/en/blog/what-is-select-skip-locked-for-in-postgresql-9-5/
+- https://gds.blog.gov.uk/2024/01/17/how-we-migrated-our-postgresql-database-with-11-seconds-downtime/
+- https://www.cybertec-postgresql.com/en/column-order-in-postgresql-does-matter/
+- https://mastermind.dev/articles/indexes-in-postgresql
+- https://www.dylanpaulus.com/posts/postgres-is-a-graph-database/
+
+### File Systems
+
+- https://puzpuzpuz.dev/the-secret-life-of-fsync
+- https://lwn.net/Articles/752063/
+- https://danluu.com/file-consistency/
+- https://github.com/ligurio/unreliablefs
+- https://bun.uptrace.dev/postgres/tuning-zfs-aws-ebs.html</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">

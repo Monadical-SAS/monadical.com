@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Aug 21 2024 15:14:33 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Aug 22 2024 20:54:36 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">22 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">755 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -89,6 +89,8 @@ What’s a validator? I use this terminology rather frivolously here, as sometim
 &gt; The data format that all of those libraries validate is ultimately JSON-compatible dictionaries. That is dictated by how Javascript interacts with the outside world: whether you get a JSON string or a protobuf binary, at some stage, it usually ends up as an untyped dictionary with primitives or more dictionaries as values.
 
 So, for this review, the validator is something that takes a piece of data that’s supposed to be specifically structured and checks that it indeed conforms to such a structure, carrying this information further into your codebase:
+
+![Mermaid graph](https://docs.monadical.com/uploads/a926d0d9-8a36-4748-8877-d9594493508a.png)
 
 
 ```mermaid
@@ -137,49 +139,6 @@ Therefore, this review “features” mostly feature comparisons, leading me to 
 
 ### The test case
 
-
-```mermaid
-graph TD
-   A[User]
-
-
-   subgraph Properties
-       direction TB
-       A --&gt; B1[name: non-empty string]
-       A --&gt; B2[email: quasi-valid email]
-       A --&gt; B3[createdAt: ISO date string]
-       A --&gt; B4[updatedAt: ISO date string, not before createdAt]
-       A --&gt; B5[subscription: FREE, PRO, PREMIUM]
-       A --&gt; B6[stripeId: starts with cus_]
-       A --&gt; B7[visits: non-negative integer]
-       A --&gt; B8[favouriteColours: red, green, blue, or #NNNNNN, no duplicates]
-       A --&gt; B9[profile]
-       A --&gt; B10[fileSystem]
-   end
-
-   subgraph Profile
-       direction TB
-       B9 --&gt; C1[type: listener]
-       C1 --&gt; D1[boughtTracks: non-negative integer]
-       B9 --&gt; C2[type: artist]
-       C2 --&gt; D2[publishedTracks: non-negative integer]
-   end
-
-
-   subgraph FileSystem
-       direction TB
-       B10 --&gt; E1[type: directory]
-       E1 --&gt; F1[name: string]
-       E1 --&gt; F2[children: array of file or directory]
-
-       F2 --&gt; G1[type: directory]
-       G1 --&gt; H1[name: string]
-       G1 --&gt; H2[children: fileSystem]
-
-       F2 --&gt; G2[type: file]
-       G2 --&gt; H3[name: string]
-   end
-```
 
 
 It’s not an actual use case but a combination of use cases I’ve encountered. The purpose is to check as many features as possible with a reasonably compact data structure.

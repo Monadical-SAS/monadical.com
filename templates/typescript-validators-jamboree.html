@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Aug 22 2024 20:54:36 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Aug 23 2024 01:23:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">755 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">868 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -124,9 +124,9 @@ In this review, I assume we all agree that catching errors earlier is better tha
 
 Among the other criteria, **expressiveness **will dominate the evaluation process. That means a special focus of this review is how well the validator libraries leverage the Typescript type system to solidify the gap between runtime “chaos” and compile-time “order.” 
 
-&gt; It also means that being able to “transform” outside world types into domain/language types is expected, although lacking this ability doesn’t justify disqualification.
+&gt; It also means that being able to “transform” outside world types into domain/language types is expected.
 &gt;
-&gt; The most obvious example is when, through JSON, we receive an array of items that are supposed to be unique, e.g., the user’s favourite colours: we don’t tolerate when the user has favourited “pink” three times! In Javascript, this assumption naturally translates into the Set data structure, which the validator (
+&gt; The most obvious example is when, through JSON, we receive an array of items that are supposed to be unique, e.g., the user’s favourite colours: we don’t tolerate when the user has favourited “pink” three times! In Javascript, this assumption naturally translates into the Set data structure.
 
 **Composability** is another critical focus. I’d like to reuse already defined validators and combine them freely like LEGO blocks. Who wouldn’t? Real life dictates that sometimes (and eventually happens on most codebases), your data becomes fragmented, be it [partial API results](https://docs.stripe.com/expand) or multiple sources of truth. 
 

@@ -52,9 +52,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Aug 23 2024 02:21:40 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Aug 23 2024 15:50:06 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">908 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1482 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -219,7 +219,7 @@ Indeed, do you want to write your validation logic and then write types for it? 
 
 All the libraries that passed the criteria for this review support this convenience, with some inessential exceptions.
 
-&gt; I’m convicted that defining types one extra time isn’t a big deal, though, as long as the type system doesn’t allow for lies like `object({ n: integer() }; type O = {s: string}`. You’ll see that in some cases, we’ll have to write extra type definitions, notably for recursive structures, to help Typescript inver and not fall into infinite recursion. 
+&gt; I’m convicted that defining types one extra time isn’t a big deal, though, as long as the type system doesn’t allow for lies like `object({ n: integer() }; type O = {s: string}`. You’ll see that in some cases, we’ll have to write extra type definitions, notably for recursive structures, to help Typescript infer and not fall into infinite recursion. 
 
 This property is called “inference.” They “infer” types from runtime validation code. What’s important to emphasize, though, is that Typescript works only one way in this regard.
 

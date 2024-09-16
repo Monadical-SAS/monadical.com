@@ -58,6 +58,7 @@
         align-items: center;
         flex-direction: column;
         position: relative;
+        max-height: 70svh;
         /* min-height: 645px; */
     }
 
@@ -65,7 +66,7 @@
         border-radius: 10px;
         width: 100%;
         margin: 0rem;
-        max-width: 585px;
+        max-width: 400px;
 
         @include media(smallPhone, phone) {
             border-radius: 10px;
@@ -85,7 +86,7 @@
         border-radius: 10px;
         right: -10%;
         width: 60%;
-        max-width: 740px;
+        max-width: 540px;
 
         @include media(smallPhone, phone) {
             position: absolute;

@@ -49,13 +49,6 @@
   padding: 2.5rem 1rem;
 }
 
-.calendar iframe {
-  border: none;
-  height: 550px;
-  padding: 0;
-  width: 100%;
-}
-
 @media (max-width: 768px) {
   .container-full {
     background-image: url(/static/core/img/img-portfolio-tentacle-left.png),
@@ -88,9 +81,5 @@
 
   .calendar {
     box-shadow: 0px 4px 21px -5px #6161613c;
-  }
-
-  .calendar iframe {
-    height: 400px;
   }
 }

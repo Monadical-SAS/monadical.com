@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 from datetime import datetime
+import requests
 
 # Library to implement rss
 from feedgen.feed import FeedGenerator
@@ -15,17 +16,24 @@ from markupsafe import Markup
 app = Flask(__name__)
 app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.get_source(app.jinja_env, filename)[0])
 CONFIG_FILE = 'content.json'
-TEAM_FILE = 'team.json'
+TEAM_FILE = 'https://zippy-app.monadical.io/api/team-page/?format=json'
 STACK_FILE = 'stacks.json'
 OPEN_POSITIONS = 'open-positions.json'
 PORTFOLIO = 'portfolio.json'
 HOST = 'http://127.0.0.1:5000'
 
 
-def load_config(fname=CONFIG_FILE):
-    """read the content.json file and load it as a dictionary"""
-    with open(fname, 'r') as f:
-        return json.load(f)
+def is_url(inp: str) -> bool:
+    """check if a string is a url"""
+    return inp.startswith('http://') or inp.startswith('https://')
+
+def load_config(source: str = CONFIG_FILE):
+    """find the source ( either a url or a file path ) and load it as a dictionary"""
+    if is_url(source):
+        return requests.get(source).json()
+    else:
+        with open(source, 'r') as f:
+            return json.load(f)
 
 
 def download_post(post):

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content=" &lt;center&gt;  # Mastering Project Estimation  &lt;/center&gt;  &lt;center&gt;  *Written by Max McCrea . Originally ">
+    
+    
+    
+    <meta property="og:title" content="Mastering Project Estimation - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>Mastering Project Estimation - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
+<meta name="application-name" content="HedgeDoc - Ideas grow better together">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.67a0a5daa4bc987211b4.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.0d5fbbf27dee52197955.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.c696cbbf0654f912e3b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.03c68f0397eb54366b06.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Fri Nov 22 2024 14:29:21 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Nov 25 2024 16:27:18 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">2 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >
+&lt;center&gt;
+
+# Mastering Project Estimation
+
+&lt;/center&gt;
+
+&lt;center&gt;
+
+*Written by Max McCrea . Originally published 2024-12-25 on the [Monadical blog](https://monadical.com/blog.html).*
+
+&lt;/center&gt;
+
+&lt;big&gt;
+
+Project estimates are absolutely critical to Monadical’s business. An accurate assessment of a project is the single most impactful thing we can do to establish trust with a client. Given that the majority of our business comes through word of mouth, estimates have a major effect on our bottom line.
+
+If we are overly conservative in our estimation, a potential client may think we’re being too cautious and find someone with a more realistic approach. On the other hand, if we are overly ambitious, the client may feel that we mislead them to win the deal and not want to work with us again.
+
+The truth is, there is always uncertainty, in both directions! Sometimes it’s possible to discover a library or abstraction that reduces a project’s scope from four months to two weeks, and sometimes we discover that something is much more complicated than it seemed at first glance.
+
+To add another layer of complexity, the widespread availability of language models have unlocked new possibilities for projects of all shapes and sizes. With the ability to build prototypes in a fraction of the time and rapidly accelerate other stages of development, they can have a significant impact on project timelines.
+
+Luckily, we’ve found that estimating projects is a skill that can be improved over time through deliberate practice. Believe it or not, over 80% of our projects have been completed within or under the initial budget estimate over the past three years! Let’s look at our engineering estimate playbook.
+
+## **Think in terms of ranges of outcomes** 
+
+There is always uncertainty in any project, and so we try to reflect that in our thought process. Instead of coming up with a single number, we try to come up with two numbers internally to cover the 90th and 10th percentile outcomes. 
+
+The 90th percentile outcome is when everything goes right — no surprises during development, we didn’t miss anything, and everyone on the project is firing on all cylinders. 
+
+In contrast, the 10th percentile outcome can occur when the unexpected happens. This might include a key engineer becoming incapacitated, unforeseen production issues arising mid-development, or discovering a critical miscommunication during the validation phase that requires redoing a chunk of the project.
+
+## **Break projects down into chunks**
+
+We break our projects down into a timeline consisting of 1-2 week chunks for small (ideally less than 8-person) teams. We’ve found that these person-weeks are a kind of “sweet spot” — the chunk size is small enough that we can fairly reliably guess what will get done in that amount of time, but also large enough that the project timeline can be reasoned about. 
+
+An estimate that breaks projects down to the hour ends up with so many individual estimate decisions that it’s impossible to visualize the project as a whole, and it becomes easy to lose the forest for the trees. But if chunks of time become too large, the estimate loses resolution and it becomes easy to gloss over details that could be risk factors!
+
+It’s also important to note here that, if a client comes to us with a project that looks to be 6+ months of work, we break that project down and focus on coming up with an estimate for the first milestone. That means understanding the scope and resources needed for that initial phase, allowing for adjustments as the project progresses.
+
+## **Explicitly identify all of the variables likely to affect delivery dates**
+
+
+
+Is it possible we’ll deliver a frontend, only to find that the animated assets we used cause jitter on machines without a dedicated GPU? Is the scope defined well enough to ensure nothing is a bigger problem than we anticipate? Could the project’s technical complexity be greater than we realize? By identifying these and other risk factors explicitly, we can add all of them up to estimate an overarching distribution of outcomes.
+
+Note that it’s important to consider whether risk factors are independent or if they correlate with one-another. For example, clients who have little or no experience with software are more likely to miscommunicate their requirements and to change their minds about requirements once they get to interact with a system. 
+
+We work hard to mitigate these risks with robust discovery processes, getting interactive mockups ready ASAP, clear walk-throughs of our thought process, and regular check-ins. But correlated risk factors nonetheless remain, and so we bake that into our estimates — the range of outcomes is wider, and no client wants to find out that they need to spend a lot more than they were expecting!
+
+## **Regularly reassess your thought process**
+
+Have you ever heard the term “10,000 hours”? It’s an idea that Malcolm Gladwell coined in his book Outliers based on an imaginative misinterpretation of a study called “[The Role of Deliberate Practice in the Acquisition of Expert Performance](https://graphics8.nytimes.com/images/blogs/freakonomics/pdf/DeliberatePractice(PsychologicalReview).pdf)”.
+
+
+The study actually came to the opposite conclusion: instead of expertise being related to a magical number of hours of practice, [what experts had in common](https://arxiv.org/pdf/1807.06087) was their deliberate approach to self-improvement. That core idea has been shown to apply to a wide variety of fields.
+
+This is the key to accurate estimation: checking in on an estimate regularly throughout a project and revisiting assumptions. Was there a risk factor that we didn’t think of? If so, how likely is that kind of risk factor to reappear in future projects? Did we overestimate the complexity of anything?
+
+## **Combine multiple independent estimates**
+
+In practice, we’ve found that lead engineers with lots of practice far outperform the less experienced. But if we didn’t allow less experienced people to try their hand at estimating, how would they ever learn?
+
+Well, it turns out that a kind of mini-Delphi method gives us the best of both worlds: when multiple engineers estimate a project, and then give one another feedback on their estimates, the end result is better, and the less experienced programmers get the chance to improve their skills!
+
+## **Maintain skills redundancy**
+This last point is less of an estimation technique as it comes after we’ve started working on a project, but it’s worth mentioning. We always keep unassigned engineers up-to-speed on what’s happening on current projects. In-house R&amp;D is often on-going, and each week we present high-level updates on project implementation details and progress to the team.
+
+This approach can be a lifesaver in cases of unexpected employee absences. It also helps mitigate “blind-spot” risks and allows us to dynamically adjust team size when circumstances require it.
+
+## Conclusion
+We’ll never be perfect at estimating projects, but by continually and deliberately revisiting our assumptions, we can asymptotically approach that zenith. And the better we get, the more confidently we can take on new projects knowing that we have the tools and mindset needed to set realistic expectations and deliver successful outcomes for our clients.
+
+And, it turns out, this method of deliberate practice is the best way to get better as software engineers in general!
+
+</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.a2fac85c338ccd8282ca.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.8a4f868f9e7676405f31.js" defer="defer"></script>
+
+

@@ -1,0 +1,1 @@
+image optimization script for osx; optional

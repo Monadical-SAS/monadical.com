@@ -72,6 +72,32 @@
     }
   },
   "POSTS": {
+    "so-you-want-to-build-a-social-network": {
+      "title": "So you want to build a social network",
+      "description": "Here's what I've discovered about how online communities build trust or don't.",
+      "date": "2024-12-03",
+      "img": "/static/digital.png",
+      "tags": [
+        "Social Networks",
+        "Group Dynamics",
+        "Diversity and Conflict",
+        "Reputation Systems",
+        "Social dynamics"
+      ],
+      "length": "30 min read",
+      "source": "https://docs.monadical.com/s/so-you-want-to-build-a-social-network",
+      "url": "/posts/so-you-want-to-build-a-social-network.html",
+      "template": "so-you-want-to-build-a-social-network.html",
+      "authors": [
+        {
+          "name": "Nick Sweeting",
+          "title": "Co-Founder",
+          "handle": "@theSquashSH",
+          "url": "https://twitter.com/theSquashSH",
+          "image": "/static/nick.jpg"
+        }
+      ]
+    },
     "mastering-project-estimation": {
       "title": "Mastering Project Estimation",
       "description": "Strategies for developing a framework around accurate project timeline estimations.",
@@ -94,41 +120,6 @@
           "title": "Monadical Co-Founder",
           "url": "/team.html",
           "image": "/static/max.jpg"
-        }
-      ]
-    },
-    "typescript-validators-jamboree": {
-      "title": "Typescript Validators Jamboree",
-      "description": "A Fair(ly cruel) Review of Typescript Validation Libraries",
-      "date": "2024-08-21",
-      "img": "/static/typescriptvalidators.png",
-      "tags": [
-        "typescript",
-        "validators",
-        "parsers",
-        "ajv",
-        "arktype",
-        "effect-ts",
-        "effect-schema",
-        "rescript-schema",
-        "superstruct",
-        "typebox",
-        "valita",
-        "valibot",
-        "yup",
-        "zod"
-      ],
-      "length": "28 min read",
-      "source": "https://docs.monadical.com/s/typescript-validators-jamboree",
-      "url": "/posts/typescript-validators-jamboree.html",
-      "template": "typescript-validators-jamboree.html",
-      "authors": [
-        {
-          "name": "Igor Loskutov",
-          "title": "Monsieur Validateur",
-          "handle": "@dearlordylord",
-          "url": "https://github.com/dearlordylord",
-          "image": "/static/core/img/img-team-037.png"
         }
       ]
     },

@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>So you want to build a social network</title>
+
+    <!-- Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="So you want to build a social network">
+    <meta name="description" content="Here&#39;s what I&#39;ve discovered about how online communities build trust or don&#39;t.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="Here&#39;s what I&#39;ve discovered about how online communities build trust or don&#39;t.">
+    <meta property="og:image" name="image" content="https://monadical.com/static/social.png">
+    <meta property="og:title" content="So you want to build a social network">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content=https://monadical.com/posts/so-you-want-to-build-a-social-network.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:description" content="Here&#39;s what I&#39;ve discovered about how online communities build trust or don&#39;t.">
+    <meta property="twitter:image" content="https://monadical.com/static/social.png">
+    <meta property="twitter:site" content="@MonadicalHQ">
+    <meta property="twitter:title" content="So you want to build a social network">
+    <meta property="twitter:url" content=https://monadical.com/posts/so-you-want-to-build-a-social-network.html />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Meta Tags End -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
+
+    <link rel="canonical" href="https://monadical.com/posts/so-you-want-to-build-a-social-network.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+
+
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+                
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-content-container">
+                        <ul class="navbar-nav navbar-left">
+                            
+                            
+                            <div class="nav-item dropdown">
+                                <button class="nav-link btn-link dropdown-toggle" type="button"
+                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Services
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/ai-services.html">AI</a>
+                                    
+                                    <a class="dropdown-item nav-link text-truncate"
+                                        href="/services.html">Web Dev</a>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/team.html">Team</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="/blog.html">Insights</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                            </li>
+                        </ul>
+
+                        
+                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
+                            GET A TECHNICAL ASSESSMENT
+                        </a>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif !important;
+        }
+        .article-content {
+            border: 0px;
+        }
+        .fa-pencil {
+            opacity: 0.01;
+        }
+        footer .social-links {
+            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer .social-links a {
+            color: #333;
+            opacity: 0.7;
+        }
+        footer .social-links a:hover {
+            color: #333;
+            opacity: 0.9;
+        }       
+        .authorbox {
+            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px; 
+        }
+        .authorbox__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .authorbox__content img {
+            min-width: 120px;
+            max-width: 120px;
+            min-height: 120px;
+            max-height: 120px;
+            object-fit: cover;
+            border-radius: 50%
+        }
+        .authorbox__content h3 {
+            margin: 0;
+        }
+        .authorbox__content h5 {
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            column-gap: 24px;
+            max-width: 768px;
+            margin-top: 40px;
+        }
+        .newsletterbox {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            margin-top: 80px;
+        }
+        .post-footer h4 {
+            font-size: 18px;
+        }
+        body > main > h1 > em {
+            opacity: 0;
+        }
+        #ui-toc-affix {
+            display: block;
+            position: fixed;
+            top: 175px;
+            user-select: initial;
+            max-width: 20vw;
+            margin-left: 15px;
+            transition: opacity 400ms ease;
+        }
+        .dropup .dropdown-menu {
+            bottom: auto !important;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+            
+            header .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            header .navbar-collapse {
+                padding-left: 0;
+            }
+
+            header .navbar-nav .nav-link {
+                padding-left: 15px;
+            }
+
+        }
+    </style>
+    <div id="post-content">
+        <div class="container">
+            <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
+            <img class="tentacle-img-right" id="post-tentacle-right" src="/static/core/img/img-home-010.png">
+            <img class="cube-img-left" id="post-cube-left" src="/static/core/img/img-home-002.png">
+            <img class="cloud-img-right" src="/static/core/img/img-team-014.png">
+            <div class="row">
+                <div class="col">
+                    
+                        <article class="article-content">
+                            <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="&lt;center&gt;  # So you want to build a social network?  *Originally published 2024-11-10 by [Nick Sweeti">
+    
+    
+    
+    <meta property="og:title" content="So you want to build a social network? - HedgeDoc">
+    
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="HedgeDoc logo">
+    <meta property="og:image:type" content="image/png">
+    
+    <base href="">
+    <title>So you want to build a social network? - HedgeDoc</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
+<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
+<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
+<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
+<meta name="application-name" content="HedgeDoc - Ideas grow better together">
+<meta name="msapplication-TileColor" content="#b51f08">
+<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
+<meta name="theme-color" content="#b51f08">
+
+    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
+    <link href="https://docs.monadical.com/build/font-pack.6f3ecd0bf31c428a95f7.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.011fed84e8b0e1b602b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.b73adae1f3405136330d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.67a0a5daa4bc987211b4.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.0d5fbbf27dee52197955.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.c696cbbf0654f912e3b9.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.03c68f0397eb54366b06.css" rel="stylesheet">
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Mon Nov 11 2024 02:41:00 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 03 2024 03:45:46 GMT+0000 (Coordinated Universal Time)"></span>
+            </span>
+            <span class="pull-right">619 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body" >&lt;center&gt;
+
+# So you want to build a social network?
+
+*Originally published 2024-11-10 by [Nick Sweeting](https://blog.sweeting.me) on [Monadical.com](https://monadical.com/blog).*
+
+---
+
+
+&lt;/center&gt;
+
+&gt; What do prison gangs, US political parties, and Discord servers have in common?
+&gt; They all follow the same underlying game theory around trust evolution in groups.
+
+A recent conversation with a friend made me reflect on my 15 years of watching social platforms evolve. Here&#39;s what I&#39;ve discovered about how online communities build trust – or don&#39;t.
+
+
+[TOC]
+
+&lt;center style=&#34;opacity: 0.5&#34;&gt;(from a random millenial developer&#39;s perspective, YMMV)&lt;/center&gt;
+&lt;br/&gt;
+
+---
+
+&lt;center&gt;
+
+&gt; **Start by playing [The Evolution of Trust](https://ncase.me/trust/) mini-game** (by Nicky Case).
+&gt; &lt;a href=&#34;https://ncase.me/trust/&#34;&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/65a24072-fbc8-4ac2-b21d-4c3c5d2f6b74.png&#34;/&gt;&lt;/a&gt;
+&gt; It beautifully explains why trust evolves in groups, why it&#39;s game theoretically optimal &amp; not just an artifact of human psychology, and why it can break down.
+
+&lt;/center&gt;
+
+---
+
+&lt;br/&gt;
+
+## High-trust communities expect border security
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/1f8827c7-1398-4a27-ba0c-c7c047115bc3.png&#34; style=&#34;width: 25%; max-width: 159px; float: right; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.2); filter: invert() contrast(1.52);&#34;/&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+&gt; Fear around lax borders in *any* social system arises from a deep, primal, game theoretical aversion to risk from potential bad actors.&lt;br/&gt;(physical *OR* digital)
+
+&lt;br/&gt;
+
+- it only takes a small number of bad actors (&lt;10%) for people to lose trust in an entire group
+
+
+- **when they lose trust they&#39;re not really losing trust in &#34;the group&#34;, they&#39;re losing trust in the enforcement of the borders** / the group&#39;s ability to keep bad actors out
+
+- **enforcing strong borders allows people to be more vulnerable** in a group and form deeper connections because they have repeat interactions with friendly actors + **less fear of being hurt by a random bad actor**
+
+- **to maintain high trust, the largest groups with the laxest borders require the most moderation labor**, and [regress to tolerating only the most inoffensive content](https://stratechery.com/2024/metas-ai-abundance/#:~:text=the%20smiling%20curve%20and%20infinite%20content) (e.g. r/funny)
+
+- the corollary is that **the newest, smallest groups need the least moderation, and produce the most unique content**. smaller groups don&#39;t want/need heavy-handed moderation tooling, and process complexity / decision fatigue deters them from forming
+
+- writing and enforcing border &amp; internal policy at scale is hard. **once a group is too large, people can no longer agree on everything**. a &#34;bad actor&#34; in the eyes of one is a valuable member in the eyes of another
+
+&lt;img src=&#34;https://docs.monadical.com/uploads/d1b66b7b-7fd3-4446-9d97-76e40312eea8.png&#34; style=&#34;width: 95%; max-width: 350px; float: right; margin-left: 5px&#34;&gt;
+
+- **larger communities naturally break up and become smaller communities once they hit a critical size**, it&#39;s a natural part of all communities of diverse agents, not just humans. Don&#39;t try to prevent small groups from growing artificially, and don&#39;t become dismayed when big communities regress to the mean. (see [The Geeks, Mops, and Sociopaths](https://meaningness.com/geeks-mops-sociopaths))
+    - large Discord servers and subreddits often fracture into smaller ones
+    - people mute noisy public Slack channels and move real discussions to DMs
+    - DAOs with too many members collapse because democratic consensus is painfully slow
+
+
+&lt;div&gt;
+&lt;iframe src=&#34;https://sweeting.me/artifacts/group-social-dynamics.html&#34; style=&#34;float: right; border: 0; height: 390px; max-width: 340px; width: 95%; display: block; margin-top: 120px; margin-right: 2%&#34;&gt;&lt;/iframe&gt;
+&lt;div style=&#34;width: 100%; max-width: 600px; height:570px;&#34;&gt;
+
+
+```mermaid
+graph TD
+    subgraph &#34;The Geeks&#34;
+        A[artists/makers] --&gt;|create| B[original content]
+        C[insight havers] --&gt;|create| D[novel ideas]
+    end
+
+    subgraph &#34;The Mops&#34;
+        E[reposters] --&gt;|extract| F[reputation]
+        G[commenters] --&gt;|extract| H[attention]
+    end
+
+    subgraph &#34;The Sociopaths&#34;
+        I[engagement farming] --&gt;|destroys| J[signal-to-noise]
+        K[grifting/trolling] --&gt;|destroys| L[community trust]
+    end
+
+    B --&gt; E
+    D --&gt; G
+    F --&gt; I
+    H --&gt; K
+
+    style A fill:#90EE90
+    style B fill:#90EE90
+    style C fill:#90EE90
+    style D fill:#90EE90
+    style E fill:#FFB6C6
+    style F fill:#FFB6C6
+    style G fill:#FFB6C6
+    style H fill:#FFB6C6
+    style I fill:#FF6B6B
+    style J fill:#FF6B6B
+    style K fill:#FF6B6B
+    style L fill:#FF6B6B
+```
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;br/&gt;
+
+- **people that never rebuke bad actors are net negative for most groups** / too many people trying to practice &#34;0% interest altruism&#34; or hyper-tolerance erode net trust slowly
+    &lt;img src=&#34;https://docs.monadical.com/uploads/85410551-29a3-4ca4-8545-7cf6e62089ac.png&#34; style=&#34;float: right; width: 155px; border-radius: 14px; margin-top: 10px; margin-left: 4px&#34;/&gt;
+    - they allow existing bad actors to thrive
+    - they&#39;re a big magnet drawing &#34;opportunistic&#34; bad actors / &lt;br/&gt; new bad actors to the group
+    - they undo the benefits of border enforcement &amp; effective moderation by giving airtime + validation to the bad actors they engage with in group contexts
+    - leaky borders lower net safety for the *most vulnerable members first*
+    - **the most vulnerable / most fear-prone members will flee early**, and at first they will flee quietly to avoid being followed, eventually leaving only abusers + hyper-tolerants
+    - **this is a hard pill to swallow** for high-resilience + high-openness (+ high-privilege) people who don&#39;t personally experience the downsides of the Be Nice To Everyone and Forgive Everything™️ approach (myself included, this was rough to learn)
+    
+    &lt;br/&gt;
+
+    - those that leave early sometimes go on to regroup around their shared fear of the &#34;BAD&#34; they fled, forming a new group defined only by their intolerance of the first!
+
+&lt;center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/227f7169-e517-447b-86a7-1e35d2681dcf.png&#34; style=&#34;text-align: center; width: 90%; max-width: 350px; margin-left: 4px&#34;/&gt;&lt;/center&gt;
+&lt;br/&gt;
+
+- *perceived strictness* towards bad actors / around borders is often more important than actually doling out harsh punishment 100% of the time. if people *feel safe and protected* in public messaging, they wont try to micromanage border &amp; moderation policy as much
+
+- political parties that don&#39;t make a believable *show* of being &#34;tough on borders&#34; / &#34;tough on crime&#34; end up inadvertendly breeding authoritarians that stoke fear + promise safety
+
+&lt;center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/38fe4350-1245-4d3b-82ea-5437fe77b47c.png&#34; style=&#34;width: 95%; max-width: 390px; border-radius: 14px;&#34;/&gt;&lt;/center&gt;
+
+
+![](https://docs.monadical.com/uploads/57549f72-5438-40d6-895d-b180021603aa.png)
+
+
+
+
+
+- &#34;bad actor&#34; is subjective, defined by the group. the reality of large groups of humans is that there is no objective morality / &#34;right&#34; and &#34;wrong&#34; that everyone can agree on. what some people view as heinous/despicable behavior is a cultural norm for others, which brings me to the next point...
+
+
+
+&lt;br/&gt;
+
+---
+
+```mermaid
+graph TD
+    A[smol community&lt;br/&gt;vibing] --&gt;|growth| B[medium community&lt;br/&gt;starting to have drama]
+    B --&gt;|more growth| C[large community&lt;br/&gt;constant drama]
+    C --&gt;|inevitable civil war| D[two medium communities&lt;br/&gt;both claiming to be the real one]
+    D --&gt;|rinse| A
+    B --&gt;|smart leadership| E[stays medium forever&lt;br/&gt;becomes increasingly elitist]
+    C --&gt;|galaxy brain move| F[fractures into 100 small communities&lt;br/&gt;connected by shared hatred of the original]
+    F --&gt;|time heals all wounds| A
+    style A fill:#90EE90
+    style B fill:#FFB6C6
+    style C fill:#FF6B6B
+    style D fill:#FFB6C6
+    style E fill:#87CEEB
+    style F fill:#DDA0DD
+```
+&gt; This growth and split pattern shows up EVERYWHERE - from religions splitting into denominations, to programming language communities, to political movements, to literally any group of humans (any group of agents?) trying to coordinate at scale
+
+
+
+
+---
+
+&lt;br/&gt;
+
+## Diversity is important, and conflict is part of diversity
+
+- **diversity is the saving grace of humanity**, it&#39;s how we survive viruses (medical *and social*)
+
+- there must be a **mechanism for people to feel safe disagreeing** (e.g. **privacy**), usually by providing ways to restrict audience/engagement to specific groups/spaces
+
+- **minority opinions cannot sprout when there is no escape from loud majority**. if a platform feels oppressively homogenized or censored, it won&#39;t attract diversity of thought
+
+- there must be a way for people to **defend the boundaries of their spaces**, enforce the rules they decide on within, and evict repeat violators
+
+- **freedom of movement is crucial**, people must be allowed to vote with their feet so that good spaces grow and unhealthy spaces fizzle out naturally. don&#39;t force people to stay in past groups / restrict joining new ones. Nicky Case has [another great game about this &lt;img src=&#34;https://docs.monadical.com/uploads/44f87d9b-34d0-43ba-a77e-69f030f5a364.png&#34; style=&#34;height: 38px&#34;/&gt;](https://ncase.me/polygons/)
+
+
+
+- **[&#34;violence&#34;](#Glossary) (coercion through force) is an inevitable feature of diversity**, not a bug
+    - when groups disagree over allocation of finite resources (land, attention, votes, $, etc.), someone will eventually try force instead of consensus
+    - this isn&#39;t because people are &#34;evil&#34;, it&#39;s because consensus is *expensive* (it takes time, it kneecaps big ambitions, and it slows political momentum)
+
+    - platforms can **discourage violence** by:
+        - making consensus paths *cheaper* (clear rules, arbitration help, voting mechanisms)
+        - making violence *costlier* (platform-wide bans, legal action, collective punishment)
+        - fostering HIGH TRUST within groups (safe borders = less paranoid groups)
+
+    - but **they shouldn&#39;t try to eliminate conflict entirely**
+        - platform-level intervention often causes more harm than letting conflicts play out
+        - over-moderation degrades perception of platform neutrality / group autonomy, eventually driving people to less-moderated / &#34;more private&#34; platforms
+        - some level of conflict between diverse groups is natural and healthy
+
+
+&lt;br/&gt;
+
+**Watch out...**
+
+
+
+- **perfectly secure groups = perfectly isolated echo chambers**
+    - insular communities (from leftists to neo-Nazis) can thrive in isolation, but they stop being challenged by dissenting views. they end up fermenting in their reality distortion fields until they start spewing members in [CRUSADER MODE](https://en.wikipedia.org/wiki/Vote_brigading) who blindly attack others
+    - platforms need some shared public COMMONS where different people are forced to interact and see that the &#34;OTHER&#34;s they fear are still human too (like a city subway)
+    - our capacity to relate to others builds from our repository of observed feelings
+    - when we have no exposure to other people&#39;s realities beyond our own safe bubbles, our empathy muscles go unstretched and can start to atrophy
+
+![](https://docs.monadical.com/uploads/3d8dc60a-5dff-4940-927c-2732a99e4180.png)
+
+
+- groups with high trust in their moderation *can* be more resilient to fascist rhetoric, but it&#39;s not perfect... you also have to independently deal with the phenomena of ~~[people tending to get more conservative &amp; risk-averse as they get older/richer/less exposed to diversity](https://www.quora.com/Why-do-many-wealthy-and-influential-individuals-tend-to-hold-conservative-beliefs-Are-there-any-notable-exceptions-to-this-trend)~~ Edit: this may be just a [cohort effect among specific generations](https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=4ZrsaM4AAAAJ&amp;citation_for_view=4ZrsaM4AAAAJ:tzM49s52ZIMC), but cohort effects are real too!
+
+- groups can be high-trust within their own borders, but maintain an aggressive strategy of distrust in their interactions with *other groups*. this can be an effective strategy to fiercely protect these pockets of high-trust, but it can lead to [McCarthyism](https://en.wikipedia.org/wiki/McCarthyism) and genocide at scale
+
+&lt;br/&gt;
+
+&lt;br/&gt;
+
+```mermaid
+graph TD
+    D[Freedom of Speech] --&gt;|attracts| A[Diversity]
+    A --&gt;|creates| B[Conflict]
+    B --&gt;|requires| C[Moderation]
+    C --&gt;|limits| D
+
+    style A fill:#90EE90
+    style B fill:#FFB6C6
+    style C fill:#FF6B6B
+```
+
+---
+
+&lt;br/&gt;
+
+## Moderation requires *human* sacrifice
+
+- moderation is 3 responsibilities:
+  - **labor** (actually sorting through content / abuse reports and making decisions)
+  - **governance** (writing+evolving policies through consensus processes *or dictatorship*)
+  - **accountability** (being held responsible when things go wrong)
+
+- **moderation has to be compensated** or no one will do it. but... it can be paid via:
+  - **money**, OR...
+  - **clout** / social adoration (e.g. soldiers, reddit mods, etc. are underpaid $ but revered)
+
+  &gt; &#34;anytime you see a category of people being revered by society, it means they&#39;re underpaid financially. e.g. we were told to thank and respect emergency workers during COVID (because they were underpaid), we&#39;re told to thank and respect soldiers, teachers, etc.&#34; the same is true for unpaid moderators / elected leaders
+
+- &lt;span style=&#34;font-weight: 600; font-size: 0.98em&#34;&gt;distributed moderation&lt;/span&gt; where everyone is a tiny bit responsible for everything doesn&#39;t work
+  - **no one to blame** when things go wrong, which is important because otherwise people blame the entire group/platform and you get a net low-trust community as a result
+  - **bystander effect**, no one steps up to make hard decisions when they&#39;re needed
+  - lack of **confidentiality** to process sensitive moderation tasks (e.g. removing CSAM, revenge porn, etc. tasks where the whole group doesn&#39;t need to know all the details)
+  - lack of **consistency**/high-level vision means people lose trust in the group because they can&#39;t predict whether mod outcomes will be in their favor / &#34;safe&#34; in the future
+  - governance via direct democratic voting on *all* policy changes usually fails similarly
+
+&lt;br/&gt;&lt;center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/d4aaaf8e-cd30-476e-b9fe-654c57a6b438.png&#34; style=&#34;width: 95%; border-radius: 10%; max-width: 320px; opacity: 0.79&#34;/&gt;&lt;/center&gt;&lt;br/&gt;
+
+
+- **moderators need to be incentivized to *continue*** acting in their group&#39;s best interests
+    - this is commonly known as the [&#34;Principal-Agent Problem&#34;](https://en.wikipedia.org/wiki/Principal%E2%80%93agent_problem)
+    - power corrupts &amp; petty power corrupts absolutely. some mods grow bitter &amp; power-trip
+    - transparency helps, but if there&#39;s too much transparency everyone will have an opinion and the mods may get burnt out even sooner (&#34;too many chefs&#34;)
+    - should platform-level mechanisms exist for the group to evict bad moderators / *move* their content to a new space?
+    - if moderation is assessed by metrics (either for rewarding labor or steering the algorithm), how do you prevent bad actors or AI agents from focusing their effort on gaming the metrics ([Goodhart&#39;s Law](https://en.wikipedia.org/wiki/Goodhart%27s_law?))? Also how do you avoid over-engineering systems to prevent metric gaming? Too much &#34;distrust by default&#34; will scare good actors away.
+
+```mermaid
+graph TD
+    subgraph &#34;mod archetypes&#34;
+        S[Founding Member] --&gt;|runs on| T[Paternal Instinct]
+        M[Passionate Newbie] --&gt;|burns out in| N[3-6 months]
+        Q[Hired Help] --&gt;|needs| R[Actual Salary]
+        O[Power Tripper] --&gt;|stays for| P[Attention/Control]
+    end
+
+    style M fill:#90EE90
+    style N fill:#FFB6C6
+    style O fill:#FF6B6B
+    style P fill:#FF6B6B
+    style Q fill:#90EE90
+    style R fill:#FF6B6B
+```
+
+- distributed filesystems (BitTorrent, IPFS, Filecoin) are an **example of what happens in public forums with no moderation**
+    - it&#39;s VERY hard to remove something from filecoin/bittorrent/etc. because there&#39;s no one person you can ask, you have to go through a list of thousands of seeders OR publish a PUBLIC &#34;deletion request&#34; that announces to the world that you would &#34;very much like if everyone would please kindly delete XYZ content, and **please don&#39;t look at it too closely before deleting it**&#34;
+    - as a result most individuals and corporations are unwilling to use public distributed storage because they fear losing control of their data / it leaking out into a low-trust public sphere where **they might be hurt by some bad actor**.
+    - people would rather share their photos with their facebook friends / twitter followers / any moderated space where at least they have some **control over who sees it + the ability to delete** it themselves OR request a trusted moderator to delete it for them
+    - **0-moderation platforms become a magnet for all the bad actors** and worst types of content, as they learn there is no punishment here. the most impressionable users on these platforms start behaving poorly as they become desensitized to unrebuked bad behavior, and the [Overton Window](https://en.wikipedia.org/wiki/Overton_window) of acceptable behavior starts to shift platform-wide.
+
+- **technical solutions cannot replace human moderators**, but they can augment them
+    &gt; A COMPUTER CAN NEVER BE HELD ACCOUNTABLE, THEREFORE A COMPUTER MUST NEVER MAKE A MANAGEMENT DECISION [-- *1979 quote from IBM*](https://x.com/bumblebike/status/832394003492564993/photo/1)
+
+    - moderators can **use AI tools to speed up the review/sorting** of content
+    - but groups still **need to hold someone accountable**/know who to talk to **when the AI tools make incorrect judgements**, and *[someone needs to decide which models to use](https://monadical.com/posts/Trustless-is-A-Myth.html)*
+    - **community libraries of AI classifier models** could be developed, shared, and ranked, allowing groups (or individual users) to pick and choose their automated policies locally
+
+&lt;br/&gt;
+
+
+
+---
+
+```mermaid
+graph TD
+    A[authentic content] --&gt;|gets attention| B[attracts optimizers]
+    B --&gt;|they build optimization tools| C[optimization becomes easy]
+    C --&gt;|forces everyone to optimize| D[all signals compromised]
+    D --&gt;|people seek authenticity| E[new platform appears]
+    E --&gt;|cycle repeats| A
+
+    style A fill:#90EE90
+    style B fill:#FFB6C6
+    style C fill:#FF6B6B
+    style D fill:#FF6B6B
+    style E fill:#90EE90
+```
+
+
+
+---
+
+&lt;br/&gt;
+
+## Reputation is useless if new identities are free
+
+- When groups exceed [Dunbar&#39;s Number](https://en.wikipedia.org/wiki/Dunbar%27s_number) (~200), **users need help knowing who to trust**
+
+- Platforms desiring high-trust need to **provide systems to track reputation** (e.g. Uber ⭐️ ratings, Reddit karma, Twitter&#39;s # of followers, ☑️ checkmarks, crypto wallet balances, etc.)
+
+- some platforms also provide **reputation/score of individual pieces of content**, usually separate from the reputation of the author. they can also be linked too (e.g. reddit karma)
+
+- Peer-nomination/**voting-based reputation is worthless if *creating a new identity* is free**
+    - how do you know if a user/post with 1,000 points got 1 vote each from 1,000 real people, or from 1,000 fake bot accounts?
+    - how do you know if the 200 comments arguing under some post are separate people, or one person with a bot farm and an agenda to push?
+    - how do you prevent 51% [Sybil attacks](https://en.wikipedia.org/wiki/Sybil_attack) when voting on governance/moderation issues?
+
+- **You can delegate the management of identity** creation/rate-limiting/revoking to others
+&lt;img src=&#34;https://docs.monadical.com/uploads/2a6b6b75-580b-49b8-b757-8f5faaf179ad.png&#34; style=&#34;width: 90%; border-radius: 15px; max-width: 190px; margin-right: 20px; margin-left: 10px; margin-top: 25px; float: right&#34;/&gt;
+    - use gmail account to sign up -&gt; delegating identity management to Google
+    - use phone number to sign up -&gt; delegating identity to cellular provider
+    - provide driver&#39;s license to sign up -&gt; delegating identity management to the state
+    - link crypto wallet / credit card to sign up -&gt; delegating identity to blockchain / banks
+    - ... you punt a lot of abuse/hacking risk to them, but you also give up *a lot* of control
+
+
+
+
+- The identity provider has to put up **some barrier to make identity creation costly**, e.g.
+    - time (e.g. fill out this form to sign up, wait XYZ time for account to activate, etc.)
+    - effort (e.g. solve these CAPTCHAs, mail in this document, wait in line at the DMV, etc.)
+    - cost (pay some $$$ to get an account, pay $10 to get a &#34;validated&#34; checkmark, etc.)
+    - biometrics (e.g. provide your fingerprint, DNA, face scan, birth certificate, etc.)
+    - social (e.g. you must get at least 2 referrals from other users, enter an invite code, etc.)
+
+&lt;center&gt;&lt;a href=&#34;https://transmitsecurity.com/blog/recommendations-for-mitigating-risk-at-each-stage-of-the-machine-identity-lifecycle&#34;/&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/d1b1c820-d709-4c5c-b26e-00733c5dcad0.png&#34; style=&#34;max-width: 690px; width: 95%&#34;/&gt;&lt;small style=&#34;font-size: 0.5em&#34;&gt;transmitsecurity.com/blog/recommendations-for-mitigating-risk-at-each-stage-of-the-machine-identity-lifecycle&lt;/small&gt;&lt;/a&gt;&lt;/center&gt;
+
+- Your platform can allow **full anonymity, no anonymity, or something in between**:
+    - `full anon`: no stable username, no reputation, no verified accts. (4chan, BitTorrent) 
+    - **`pseudonymous`: stable username w/ reputation, but no real-name policy** (X, Reddit)
+    - `partial`: the platform knows who you are IRL, other users do not (Blind, Glassdoor)
+    - `real-names only`: platform-enforced 1 real person = 1 acct. (FB, LinkedIn, work Slack)
+
+
+
+- Each approach to anonymity and identity has tradeoffs, choose carefully...
+    - **anon users behave worse** ([Online Disinhibition Effect](https://en.wikipedia.org/wiki/Online_disinhibition_effect))
+    - **but real-name policies kill dissent**, edgy ideas, &amp; creativity ([LinkedIn, FB, Quora](https://www.internetmarketingninjas.com/blog/social-media/real-name-policies-on-social-media/))
+    - **you can&#39;t easily ban or limit bad actors if accounts are anonymous &amp; free** (Email)
+    - but you can&#39;t attract artists / whistleblowers / dissenters if real names are required
+    - if you claim to provide real name verification, you have to wage an endless war against impersonation attacks (`Visa Support` Caller-ID, `Elon is giving out free ₿tc`).
+    - if you allow verifying by ID OR *money*, then verification loses its value (see X.com ☑️s)
+    - if you don&#39;t offer *any* brand verification, celebrities and corporations may not want to use your platform as they cannot differentiate themselves from a sea of impostors
+    - knowing real identities makes you a target for ID theft hacking
+
+- **Most public platforms settle on pseudonymous identity** (e.g. stable identity that has a small cost to create + can be tracked with reputation, but no enforced real-name policy)
+
+- Any **failure to consistently enforce policies** around identity and reputation **will lead to users losing trust in peers, moderation systems, and eventually the entire platform**
+
+&lt;br/&gt;
+
+```mermaid
+graph LR
+    A[Free Identity] --&gt;|enables| B[Unlimited Accounts]
+    B --&gt;|destroys| C[Reputation &amp; SNR]
+    C --&gt;|forces platforms toward| D[requiring real names]
+    C --&gt;|or accepting| E[high moderation costs]
+
+    style A fill:#FFB6C6
+    style B fill:#FF6B6B
+    style C fill:#FF6B6B
+    style D fill:#FF9696
+    style E fill:#FFB6e6
+```
+
+&lt;br/&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/04b0a313-4144-49d0-a945-1e46f25cc326.png&#34; style=&#34;width: 99%; opacity: 0.35;&#34;/&gt;&lt;br/&gt;
+&lt;br/&gt;
+
+## Should users share-by-Copy or share-by-Reference?
+
+
+
+- you have to **decide if users will share content by sending a *COPY*, or a *REFERENCE***
+ 
+&lt;!--center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/7b5e4abe-179f-4ed6-9de4-7c2c9e47e304.png&#34; style=&#34;width: 80%; max-width: 300px&#34;/&gt;&lt;/center--&gt;
+
+- **share-by-COPY** &amp;nbsp; -- e.g. Email, SMS, WhatsApp, iMessage, Signal, Mastodon, BitTorrent
+&lt;img src=&#34;https://docs.monadical.com/uploads/37192162-dc99-41d6-8210-d46c2d08ff95.png&#34; style=&#34;width: 80%; max-width: 130px; float: right; margin-top: 25px; margin-left: 30px; margin-right: 60px; opacity: 0.2&#34;/&gt;
+
+    - best when anonymous or only sharing w/ specific users (email &#34;To:&#34;/&#34;CC:&#34; field / select ____ users to send to)
+  - **pros:** censorship-resistant, resilient, full content survives if even one reader has a copy, no draconian API limits
+
+  - **cons:** hard to monetize, impossible to delete mistakes/revenge-porn/CSAM once public
+
+&lt;br/&gt;
+
+- **share-by-REFERENCE** &amp;nbsp; -- e.g. FaceBook, TikTok, Insta, X, Discord, Slack, Google Docs
+&lt;img src=&#34;https://docs.monadical.com/uploads/6639b21f-6444-4f6d-a5b5-dbf82f87ac8c.png&#34; style=&#34;width: 80%; max-width: 140px; float: right; margin-top: 26px; margin-right: 60px&#34;/&gt;
+    - best for large, public, noisy forums, &lt;br/&gt;*risky* for very small or oppressed communities
+
+  - **pros:** easier moderation, artists keep ownership of their own creations, corporations &amp; creators more willing to publish original content if they can create exclusivity, limit audiences, block trolls, **monetize** wo/ piracy, etc.
+
+  - **cons:** content [dies easily](](https://news.ycombinator.com/item?id=39476074)) from account bans, sites going down, state censorship
+
+&lt;br/&gt;
+
+- obviously in all systems people can choose to *manually share a link/reference* or to *manually copy* content  (e.g. by taking a screenshot, copy+pasting, or forwarding)
+- but the DEFAULT sharing mechanism shapes the whole the platform&#39;s future
+
+&lt;br/&gt;
+
+```mermaid
+graph TD
+    subgraph &#34;share by reference&#34;
+        A[Creator Control] --&gt;|enables| B[Paid Content]
+        B --&gt;|but risks| C[Content Death]
+    end
+
+    subgraph &#34;share by copy&#34;
+        D[Content Survival] --&gt;|enables| E[Censorship Resistance]
+        E --&gt;|but risks| F[Harmful Spread]
+    end
+
+    style A fill:#90EE90
+    style B fill:#90EE90
+    style C fill:#FF6B6B
+    style D fill:#90EE90
+    style E fill:#90EE90
+    style F fill:#FF6B6B
+```
+
+
+---
+
+&lt;br/&gt;
+
+## There is no such thing as 0 platform bias / 100% transparency
+
+- **state-level compliance &amp; court rulings will force you to behave inconsistently**
+    - pick your poison: **comply with CCP censorship** / EU data laws / US subpoenas / DMCA / etc. **OR be fugitive operators &amp; users within those countries**
+
+    - biased enforcement or partial compliance = loss in platform trust or censorship by state
+
+    - gag orders &amp; privacy laws will prevent you from being fully transparent with the public
+
+&lt;br/&gt;
+
+- **100% diversity / free-speech absolutism with no platform bias is a [Faustian promise](https://en.wikipedia.org/wiki/Deal_with_the_Devil)**
+
+    - **&#34;we&#39;re neutral/free-speech absolutist&#34; backfires [when enforced inconsistently](https://arstechnica.com/security/2024/07/cloudflare-once-again-comes-under-pressure-for-enabling-abusive-sites/)**
+
+    - don&#39;t carve platform policies in stone lest ye be entombed by them in 5yr; 
+      public opinion, business needs, and the [whims of the CEO change](https://apnews.com/article/x-musk-blocking-change-harassment-2f31853749daeb86db70db53f8b1f62f)
+     &lt;center&gt;&lt;a href=&#34;https://www.hollandsentinel.com/story/opinion/editorials/2017/08/20/with-freedom-speech-comes-great/19409095007/&#34;&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/37ccdf7d-a933-4b40-ba66-4afe100bd482.png&#34; style=&#34;width: 90%; max-width: 560px;margin: 5px&#34;/&gt;&lt;br/&gt;&lt;small style=&#34;font-size: 0.5em&#34;&gt;hollandsentinel.com/story/opinion/editorials/2017/08/20/with-freedom-speech-comes-great/19409095007/&lt;br/&gt;&lt;br/&gt;&lt;/small&gt;&lt;/a&gt;&lt;/center&gt;
+
+    - terrorists, fraudsters, hate groups, and bots will try to use your platform. they&#39;ll clash, they&#39;ll need support, it&#39;ll invite subpoenas + bad PR. do you [help, ignore, or ban](https://en.wikipedia.org/wiki/Controversial_Reddit_communities) them?
+
+    - **Web3/distributed apps are not magically immune to the court of public opinion**, critics &amp; prosecutors will [find a **person** to hold accountable](https://www.forbes.com/sites/digital-assets/2024/08/25/telegrams-founder-arrested-what-it-means-for-popular-messaging-app/) when platforms misstep... beyond just CEO, who writes smart contracts? who is hosting? who funds payroll?
+
+
+&lt;br/&gt;
+
+- **being *too transparent* / *too democratic* can backfire, harm trust, &amp; unravel ambitions**
+
+
+    - some moderation decisions need context that can&#39;t be made public (private msgs, [PII](https://www.law.cornell.edu/uscode/text/18/2258A#:~:text=information%20relating%20to%20the%20identity%20of%20any%20individual%20who%20appears%20to%20have%20violated))
+
+    - full transparency promises create mistrust when exceptions emerge (e.g. [gag-orders](https://en.wikipedia.org/wiki/Warrant_canary))
+    
+    - too many cooks / [design-by-committee](https://en.wikipedia.org/wiki/Design_by_committee) / [having to defend all choices in public blocks rapid progress](https://www.law.com/dailybusinessreview/2024/09/17/eleventh-circuit-upholds-limits-on-public-comments-during-city-council-meetings/?slreturn=2024112343342) (giant orgs like Apple love to limit internal process visibility for a reason)
+    
+    - when leadership feels paralized because their every move is watched and critizised, they resort to using communication side channels like [Signal DMs and in-person meetings](https://www.theverge.com/2024/4/26/24141801/ftc-amazon-antitrust-signal-ephemeral-messaging-evidence), eventually [*normalizing* a culture of subverting transparency](https://calmatters.org/politics/2024/09/california-secret-negotiations-public-transparency/)!
+
+```mermaid
+graph TD
+    A[Platform Claims Neutrality] --&gt;|attracts| B[All Types of Users]
+    B --&gt;|including| C[Problematic Groups]
+    C --&gt;|forces| D[Take a Stance]
+    D --&gt;|contradicts| A
+
+    style A fill:#90EE90
+    style B fill:#FFB6C6
+    style C fill:#FF6B6B
+    style D fill:#FF6B6B
+```
+
+&lt;center&gt;&lt;small&gt;Of course there&#39;s &lt;a href=&#34;https://www.explainxkcd.com/wiki/index.php/1357:_Free_Speech&#34;&gt;an XKCD for this too: #1357 Free Speech&lt;/a&gt;.&lt;/small&gt;&lt;/center&gt;
+&lt;br/&gt;
+
+---
+
+&lt;br/&gt;
+
+## Extra food for thought...
+
+&lt;br/&gt;
+
+
+#### Social network platforms are like countries, and their subgroups are like states
+
+```mermaid
+graph TD
+    subgraph &#34; &#34;
+        A[Content Rules] --&gt;|==| B[Laws]
+        C[Moderation] --&gt;|==| D[Police/Courts]
+        E[User Identity] --&gt;|==| F[Citizenship]
+        G[Group Borders] --&gt;|==| H[Immigration Policy]
+    end
+
+    style A fill:#90EE90
+    style B fill:#FFB6C6
+    style C fill:#90EE90
+    style D fill:#FFB6C6
+    style E fill:#90EE90
+    style F fill:#FFB6C6
+    style G fill:#90EE90
+    style H fill:#FFB6C6
+```
+
+By now you have likely realized that **all of the issues digital groups face are the same issues that countries face**: governance, border enforcement, policing, peaceful dispute resolution vs military action, deciding what freedom of speech is allowed and what is dangerous harassment / libel / disinformation, limiting fake identity creation, preserving history as storage degrades, etc.
+
+*But what are some of the ways that digital platforms are different?*
+
+&lt;br/&gt;
+
+---
+
+&lt;br/&gt;
+
+#### *Most* apps end up becoming social apps eventually
+
+Many different types of platforms inadvertently end up with social network dynamics, whether they set out to be a &#34;social network&#34; or not:
+
+- a finance &amp; accounting tool that lets ppl edit forms and spreadsheets together? **yup.**
+- a mailing list for technical discussions about linux kernel development? **yup.**
+- a childcare app that lets mothers discuss issues / get community support in-app? **yup.**
+- a videogame where kids can chat + share screencaps while mining virtual coal? **definitely.**
+- a personal AI tool that lets you query other people&#39;s personal AI&#39;s? **absolutely**
+
+Whether you&#39;re trying to build something like these ^ or something &#34;completely new that the world has never seen&#34;, if your app involves connecting people with other people in any way, you&#39;re probably going to hit these challenges.
+
+&lt;br/&gt;
+
+
+---
+
+&lt;br/&gt;
+
+#### Should I &#34;care about those nearest to me&#34; or &#34;try to care about everyone&#34;?
+
+&lt;br/&gt;
+&lt;center&gt;
+&lt;img src=&#34;https://docs.monadical.com/uploads/a1e07817-28fc-4d96-95f8-ce55bf973d4d.png&#34; style=&#34;width: 90%; max-width: 550px&#34;/&gt;&lt;br/&gt;
+&lt;small style=&#34;font-size: 11px&#34;&gt;&lt;a href=&#34;https://www.researchgate.net/figure/Heatmaps-indicating-highest-moral-allocation-by-ideology-Study-3a-Source-data-are_fig6_336076674&#34;&gt;researchgate.net/figure/Heatmaps-indicating-highest-moral-allocation-by-ideology-Study-3a-Source-data-are_fig6_336076674&lt;/a&gt;&lt;/small&gt;
+&lt;/center&gt;&lt;br/&gt;
+
+People often self-sort into these categories situationally - both approaches can be valid depending on context. When these mindsets collide, predictable trust dynamics emerge:
+
+- **&#34;conservatives&#34; see &#34;liberals&#34; as dangerously naive** for extending trust too broadly
+- **&#34;liberals&#34; view &#34;conservatives&#34; as morally stunted** for concentrating care locally
+- both sides often metabolize their default bias into *crusades* when poked: conservatives protect their sacred inner rings, liberals expand their circle of moral consideration
+- neither grasps how the other&#39;s strategy evolved as a valid survival mechanism
+- **either strategy taken to its extreme is a recipie for disaster**, social evolution gave us both for a reason. the tension between them forces us to find a balance as different subgroups within our species oscillate between survival and abundance
+
+When designing trust systems at the platform level, honor both patterns - they&#39;re just different paths that people follow to protect and honor what they value. Platforms don&#39;t have the ability to ever know the full context when making moderation decisions.
+
+
+&lt;br/&gt;
+
+&gt; &#34;Everyone you meet is fighting a battle you know nothing about. Be kind.&#34;&lt;br/&gt; -- Ian MacLaren &lt;small style=&#34;display: inline&#34;&gt;or &lt;a href=&#34;https://old.reddit.com/r/QuotesPorn/comments/hyvlol/everyone_you_meet_is_fighting_a_battle_you_know/&#34;&gt;Robin Williams?&lt;/a&gt;&lt;/small&gt;
+
+&lt;br/&gt;
+
+---
+
+&lt;br/&gt;
+
+#### Glossary
+
+Before you write an angry comment about any of the words I chose for the concepts above, understand these are the working definitions I intended in this context:
+
+- **`platform`**: the social platform, app, or other medium that your users communicate through
+- **`group`**: a shared space for users and their content on your platform, using whatever mechanism your platform provides for this (e.g. a subreddit, mailing list, channel, etc.)
+- **`moderator`**: someone with the power to decide what content / users are allowed in a group
+- **`vulnerability`**: willingness to take risks in communication without fear of personal attack
+- **`diversity`**: presence of differences in background &amp; opinion (not just race/gender)
+- **`bad actor`**: a person who acts against a group&#39;s interests, *from the group&#39;s perspective*
+- **`&#34;violence&#34;`**: attempts at physical *or digital* coercion through overwhelming force instead of consensus / collaboration processes
+- **`&#34;conservatives&#34;`** == `risk averse / prioritize ingroup`
+- **`&#34;liberals&#34;`** == `risk tolerant / balance outgroup &amp; ingroup`
+
+&lt;br/&gt;
+
+---
+
+&lt;br/&gt;
+
+#### Further Reading
+
+- &lt;img src=&#34;https://docs.monadical.com/uploads/44f87d9b-34d0-43ba-a77e-69f030f5a364.png&#34; style=&#34;height: 38px; margin-bottom: 5px&#34;/&gt; https://ncase.me/trust/ and https://ncase.me/polygons/ A+ mini-games by Nicky Case
+- ⭐️ https://meaningness.com/geeks-mops-sociopaths
+- ⭐️ https://monadical.com/posts/Trustless-is-A-Myth.html
+- ⭐️ https://docs.sweeting.me/s/trust-and-relationships
+- ⭐️ https://apenwarr.ca/log/20211201 (100 years of whatever this will be)
+- ⭐️ https://www.jofreeman.com/joreen/tyranny.htm
+- https://www.lesswrong.com/posts/tscc3e5eujrsEeFN4/well-kept-gardens-die-by-pacifism
+- https://stratechery.com/2024/metas-ai-abundance/#:~:text=the%20smiling%20curve
+- https://x.com/itsannpierce/status/1859351663330595185
+- https://ourworldindata.org/trust
+- https://maxread.substack.com/p/is-web3-bullshit
+- https://docs.sweeting.me/s/decentralization
+- https://mnot.github.io/avoiding-internet-centralization/draft-nottingham-avoiding-internet-centralization.html#name-the-limits-of-decentralizat
+- https://docs.sweeting.me/s/principles-handbook#3-Trust-and-Verify
+- https://docs.monadical.com/s/love-and-ambiguity
+- https://monadical.com/posts/Downswings-and-the-Information-Game.html
+- https://adventurebagging.co.uk/2012/04/altruism-versus-self-interest/
+- https://reagle.org/joseph/2010/conflict/media/gibb-defensive-communication.html
+- https://alexdanco.com/2021/01/22/the-michael-scott-theory-of-social-class/</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
+<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
+<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
+<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.b63e803341293656b32e.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.dc359ffa1d303e78db47.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.d107ac6ccdc2f7684946.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.a2fac85c338ccd8282ca.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.8a4f868f9e7676405f31.js" defer="defer"></script>
+
+
+
+                        </article>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="post-footer" class="container post-footer">
+            <div class="authorbox">
+                
+                    <div class="authorbox__content">
+                        <h3>Nick Sweeting</h3>
+                        <h5>
+                            Co-Founder
+                            <a href="https://twitter.com/theSquashSH" target="_blank" rel="noopener">
+                                @theSquashSH
+                            </a>
+                        </h5>
+                        
+                        <img src="/static/nick.jpg" width="120px" height="120px" alt="Nick Sweeting"/>
+                    </div>
+                
+            </div>
+            <h5>Published on <a href="#permalink">2024-12-03</a></h5>
+            <!-- <div class="newsletterbox">
+                <a href="https://careers.monadical.com/" style="font-weight: bold;">
+                    We are hiring!
+                </a>
+                <a href="https://tinyletter.com/Monadical">
+                    Subscribe to our newsletter
+                </a>
+            </div> -->
+        </div>
+        <center>
+            <br/><br/><br/>
+            <i style="font-size: 18px">Recent posts:</i>
+            <ul style="max-width: 400px; text-align: left; font-size: 16px">
+                <br/><br/>
+                
+                    
+                        <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/typescript-validators-jamboree.html">Typescript Validators Jamboree</a></li>
+                    
+                
+                    
+                        <li><a href="/posts/build-a-digital-human-with-large-language-models.html">Revolutionize Animation: Build a Digital Human with Large Language Models</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <a href="/blog.html">
+                        View more posts...
+                    </a>
+                </li>
+            </ul>
+            <br/>
+        </center>
+        <script src="https://utteranc.es/client.js"
+                repo="Monadical-SAS/monadical.com"
+                issue-term="pathname"
+                label="blog"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <center>
+            <br/><br/>
+            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
+                Back to top <i class="fa fa-arrow-up"></i>
+            </a>
+            <br/>
+        </center>
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script>
+            // hide the table of contents nav when you scroll down past the end
+            $(window).scroll(function() {
+                const pos = $(window).scrollTop()
+                const threshold = $('.authorbox').position().top - 250
+                $('#ui-toc-affix').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+                $('.pull-right').css({
+                    opacity: (pos > threshold) ? 0 : 1
+                });
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc-affix > div.toc-menu > a.back-to-top').href = '#post-content'
+                // Popup toc for samll screens
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').innerHTML = 'Go to comments'
+                document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
+                document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
+                
+                // GET the original article source so they get they bump the view counter
+                fetch('https://docs.monadical.com/s/so-you-want-to-build-a-social-network', {mode: 'no-cors'})
+
+                // remove undesired css that break styles
+                setTimeout(() => document.querySelector("link[href*='pretty-styles-pack']").remove(), 500)
+            })
+
+            $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled')
+        </script>
+        <script>
+            function setOpacity(){
+                const maxWidth=1140
+                const width = $(window).width();
+                $('#post-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+                $('#post-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 1
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
+        </script>
+        <br/><br/>
+    </div>
+    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
+    <style>
+        @media (max-width: 991px) {
+            .show {
+                display: block !important;
+            }
+            .collapse:not(.show) {
+                display: none !important;
+            }
+        }
+    </style>
+
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="Vancouver, Canada">Vancouver</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                        <li><b title="Cali, Colombia">Cali</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://cal.com/monadical/widget">Get a Quote</a></li>
+                        <li><a href="https://careers.monadical.com/">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalHQ" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row contact-row">
+                <div class="col-12 col-lg-4 col-md-4">
+                    <ul>
+                        <li>
+                            
+                            Monadical Inc. © 2024<br />
+                            <small>All rights reserved.</small>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
+                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
+                    <ul>
+                        <li>
+                            <span style="white-space: nowrap;">
+                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
+                                        title="ignore this">example.com</span>m</span>onadical.com
+                            </span>
+                            <br />
+                            <small>✉️&nbsp; Email us with your project idea.</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
+
+    <script src="/static/squares.js"></script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
+        function smoothScroll(e) {
+            const hash = decodeURIComponent(this.hash)
+            e.preventDefault()
+            e.stopPropagation()
+
+            console.log('Scrolling to', this.getAttribute('href'))
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)) {
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
+                behavior: 'smooth'
+            });
+            setTimeout(() => {
+                window.location.hash = hash
+            }, 500/*arbitrary value, not standartized*/);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                /*
+                   this code drops all the event listeners that were attached so far;
+                   we need to do it here because the event listeners themselves are not under control of this repo
+                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
+                   this is a very hacky hack, we shall negate it "as soon as we can"
+                */
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <!-- Highlight Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- End Highlight Code -->
+</body>
+
+</html>

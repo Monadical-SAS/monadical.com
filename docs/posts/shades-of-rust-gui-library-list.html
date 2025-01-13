@@ -328,7 +328,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 25 2023 14:09:43 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Jul 27 2024 22:15:30 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">67858 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">67923 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -367,7 +367,7 @@ Now, onto the toolkit.
 
 &lt;iframe src=&#34;https://shades-dioxus.apps.loskutoff.com&#34; width=&#34;150px&#34; height=&#34;150px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 // main.rs
 
 fn main() {
@@ -450,7 +450,7 @@ fn App(cx: Scope) -&gt; Element {
 &lt;/div&gt;
 ```
 
-```typescript
+```typescript=
 // main.ts
 
 import { invoke } from &#34;@tauri-apps/api/tauri&#34;;
@@ -479,7 +479,7 @@ window.addEventListener(&#34;DOMContentLoaded&#34;, () =&gt; {
 });
 ```
 
-```rust
+```rust=
 //main.rs
 
 #[tauri::command]
@@ -508,7 +508,7 @@ Based on this article, the natural decision is to choose a centralized state lik
 **Iced** is [“a cross-platform GUI library for Rust focused on simplicity and type-safety.”](https://github.com/iced-rs/iced). It uses Elm architecture and a reactive programming model. By default, web builds use DOM to render, but Iced can be used with other backends, too, like wgpu or glow. The web part seems a bit overlooked right now (https://github.com/iced-rs/iced_web), and it [hasn’t been updated in a while](https://www.reddit.com/r/rust/comments/12zjysp/comment/jht57yc/). Here, their built Bezier tool employs Canvas: 
 &lt;iframe src=&#34;https://shades-iced.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;250px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // main.rs
 
@@ -799,7 +799,7 @@ Some of its goals are to be portable and easy to use. The native look is specifi
 
 &lt;iframe src=&#34;https://shades-egui.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;150px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 // app.rs
 // main.rs / lib.rs boilerplate omitted
 
@@ -937,7 +937,7 @@ Here is a built code of their tutorial:
 
 &lt;iframe src=&#34;https://shades-slint.apps.loskutoff.com&#34; width=&#34;326px&#34; height=&#34;326px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // main.rs
 
@@ -1118,7 +1118,7 @@ By default, Sycamore is made for the web, but it can be easily embedded into oth
 
 ![Sycamore example UI screenshot](https://docs.monadical.com/uploads/ddb486b1-51d1-438e-84f1-f0e00641eb85.png)
 
-```rust
+```rust=
 
 // app.rs
 
@@ -1168,7 +1168,7 @@ pub fn App&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
 
 ```
 
-```rust
+```rust=
 
 // main.rs
 
@@ -1224,7 +1224,7 @@ fn main() {
 Here is one of the lib’s examples compiled: 
 &lt;iframe src=&#34;https://shades-yew.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // main.rs
 
@@ -1481,7 +1481,7 @@ By default, bracket-lib runs in OpenGL mode (or WebGL if it detects that you are
 
 Source code would be too large to include in the article, so there is a “hello world” [example](https://bfnightly.bracketproductions.com/bracket-lib/hello_terminal.html) written with this library:
 
-```rust
+```rust=
 
 // main.rs
 
@@ -1518,7 +1518,7 @@ Below is one example running on the Desktop:
 
 As with the Bracket example, I’ve included a “Hello world” code here.
 
-```rust
+```rust=
 
 // main.rs
 
@@ -1548,7 +1548,7 @@ Here is one of their examples:
 
 &lt;iframe src=&#34;https://shades-vizia.apps.loskutoff.com&#34; width=&#34;250px&#34; height=&#34;250px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // main.rs
 
@@ -1737,7 +1737,7 @@ Check out Leptos’ router example:
 
 &lt;iframe src=&#34;https://shades-leptos.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;300px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // lib.rs
 
@@ -1935,7 +1935,7 @@ pub fn Settings(cx: Scope) -&gt; impl IntoView {
 
 ```
 
-```rust
+```rust=
 
 // api.rs
 
@@ -2060,7 +2060,7 @@ Example:
 
 &lt;iframe src=&#34;https://shades-perseus.apps.loskutoff.com&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // template/index.rs
 
@@ -2108,7 +2108,7 @@ pub fn get_template&lt;G: Html&gt;() -&gt; Template&lt;G&gt; {
 
 ```
 
-```rust
+```rust=
 
 // main.rs
 
@@ -2137,7 +2137,7 @@ Library for building UI for web with focus on simplicity. React-like UI declarat
 
 &lt;iframe src=&#34;https://shades-sauron.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;300px&#34;&gt;&lt;/iframe&gt;
 
-```rust
+```rust=
 
 // main.rs
 
@@ -2236,7 +2236,7 @@ A fullstack framework from a former Seed maintainer. From the examples, its fron
 
 The “counter” example code looks like this:
 
-```rust
+```rust=
 
 // main.rs
 
@@ -2298,7 +2298,7 @@ Here is a screenshot of one of their examples running on desktop:
 
 ![relm4 on desktop](https://docs.monadical.com/uploads/7c311763-38b4-46a9-8686-cff78d02573d.png)
 
-```rust
+```rust=
 
 // main.rs
 
@@ -2428,7 +2428,7 @@ The image below shows one of their examples running on the Desktop:
 
 ![](https://docs.monadical.com/uploads/fdc80573-7301-4cc4-8cbe-8ee1a9f105e1.png)
 
-```rust
+```rust=
 
 // main.rs
 
@@ -2842,7 +2842,7 @@ Open [the example](https://shades-makepad.apps.loskutoff.com) directly to hear s
 
 Instead of the provided player example code, there is an example code for a more simplistic Counter “hello world” app:
 
-```javascript
+```javascript=
 const wasm = await WasmWebGL.fetch_and_instantiate_wasm(
  &#34;/makepad/target/wasm32-unknown-unknown/release/makepad-example-simple.wasm&#34;
 );
@@ -2860,7 +2860,7 @@ let app = new MyWasmApp(wasm);
 
 ```
 
-```rust
+```rust=
 
 // main.rs
 

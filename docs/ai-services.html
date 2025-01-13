@@ -175,7 +175,35 @@
         </div>
 
         <div id="ai-menu-iframe-container">
-            <iframe src="https://ai-menu-liard.vercel.app" style="width: 100%; height: 600px; border: 0px; margin: 0px;border-radius: 14px 14px 0px 0px"></iframe>
+            <script>
+              function getIframe() {
+                return document.getElementById('ai-menu-iframe');
+              }
+              function onMessage(event) {
+
+                if (event.data.type !== 'heightUpdate') {
+                  return;
+                }
+                console.log('eventevent', event)
+
+                if (!event.data.height) throw new Error(`height expected in heightUpdate iframe event`);
+                getIframe().style.height = parseInt(event.data.height, 10) + 50 + 'px';
+              }
+              function init() {
+                if (window.addEventListener) {
+                  window.addEventListener('message', onMessage, false);
+                  return;
+                }
+                if (window.attachEvent) {
+                  window.attachEvent('onmessage', onMessage, false);
+                }
+              }
+              init();
+            </script>
+            <!-- https://ai-menu-liard.vercel.app is Igor's Vercel, TODO change -->
+<!--            <iframe id="ai-menu-iframe" src="http://localhost:4200/" style="width: 100%; height: 50px; border: 0px; margin: 0px;border-radius: 14px 14px 0px 0px"></iframe>-->
+            <iframe id="ai-menu-iframe" src="https://ai-menu-liard.vercel.app" style="width: 100%; height: 50px; border: 0px; margin: 0px;border-radius: 14px 14px 0px 0px"></iframe>
+
         </div>
 
         <div class="row margin-top-10">

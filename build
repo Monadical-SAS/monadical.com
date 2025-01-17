@@ -12,6 +12,9 @@ IFS=$'\n'
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Set default value for ACTIVATE_VENV if not defined
+: "${ACTIVATE_VENV:=1}"
+
 if [[ "$ACTIVATE_VENV" != "0" ]]; then
     source "$DIR/.venv/bin/activate" || echo "[X] Failed to source $DIR"
 fi

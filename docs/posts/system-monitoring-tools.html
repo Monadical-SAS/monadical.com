@@ -326,9 +326,9 @@
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 26 2024 21:30:24 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun Jan 19 2025 00:39:22 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">35473 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">35604 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -1928,7 +1928,7 @@ man auditd
 man acct
 ```
 
-### `systemd-analyze`
+### `systemd-analyze` / `isd`
 
 Useful for track down the cause of slow boots and other startup service issues.
 
@@ -1941,7 +1941,12 @@ systemd-analyze plot &gt; boot-trace.svg
 
 # see what security permissions the docker service has enabled
 systemd-analyze security docker
+
+# use a nice TUI to browse and manage systemd units
+isd
 ```
+
+- https://isd-project.github.io/isd/
 
 ### `dpkg`/`apt list`/`apt-file`/`apt-mark`
 
@@ -2630,6 +2635,7 @@ openssl rand -hex 20
                         <a href="/blog.html">Blog</a>
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/projects.html">Projects</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">

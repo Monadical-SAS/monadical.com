@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;      # How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR      *Writt">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,26 +46,26 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 08 2020 11:53:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Nov 03 2020 13:31:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">4026 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">4028 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
-    
+
 # How to Set Up a CI/CD Workflow, Part One: From GitHub Actions to AWS ECR
-    
+
 *Written by Cristian Vargas.
  Originally published 2020-09-10 on the [Monadical blog](https://monadical.com/blog.html).*
 
@@ -358,13 +358,13 @@ The first thing you will want to confirm is that the user can log in to AWS ECR.
 
 Replace &lt;aws-region&gt; with the region where you created the ECR repository. In my case it was done on **us-west-2**. The current file looks like this:
 
-    
+
 ![Docker file us-west-2](https://docs.monadical.com/uploads/upload_64534bc377c570fdccf926de3b359178.png)
 
 
 The workflow should be successful after running:
 
-    
+
 ![successfully running workflow](https://docs.monadical.com/uploads/upload_9b364b6c322c1204cc7684354052c5e2.png)
 
 Now, the next step is to finish the connection and actually send an image to the ECR repository. You can do this by adding a couple more steps. My version will differ from yours, because there are details that are different, like the region, and the ECR repository, so be careful with just copy-pasting. My final version will look like this:
@@ -413,16 +413,16 @@ As you can see, the build step was replaced. The registry is retrieved from the 
 
 After you push, and the GitHub Actions workflow is successful, you can confirm that the image was uploaded by checking the AWS ECR console:
 
-    
+
 ![AWS ECR console - uploaded image](https://docs.monadical.com/uploads/upload_0341adebe625f47c8ae977b9f6a675f6.png)
 
-    
+
 Now, every time you push, the image will be pushed too. There is a caveat: for every push, if the image didn’t change, your image will be tagged again. You can end up with a single image with thousands of tags. This may or may not be useful depending on your use case, but it’s important to be aware of this feature.
 
-    
+
 ### Selectively tag and send the container builds to AWS ECR
-    
-    
+
+
 To finish this post, you’ll restrict the uploading of images to a different event: releases. It&#39;s common practice to release artifacts only when a new release is out (with the artifact in this case being the image) and to use the version number as a tag. Given this use case, the workflow can be refactored to follow this practice.
 
 The simplest way to do this is to change the workflow trigger:
@@ -436,17 +436,17 @@ on:
 
 If you push this change, you’ll notice your action will not run. You can create a release to check that it’s triggered as expected. In GitHub:
 
-    
+
 ![release in GitHub](https://docs.monadical.com/uploads/upload_65fc99e607e72fbd9e71ab99766c76a4.png)
 
 
 Now, checking Github Actions:
 
-    
+
 ![Github Actions](https://docs.monadical.com/uploads/upload_6a15b5c7d9f7e68936aac02f826c00c9.png)
 
-    
-    
+
+
 This is great: you are automatically publishing new releases to your private registry. However, the tagging process can be enhanced. Rather than using the commit hash for tagging, it’s best to use the version of the release. To do this you need to modify the `IMAGE_TAG` variable a little:
 
 ```yaml
@@ -464,19 +464,19 @@ This is great: you are automatically publishing new releases to your private reg
 ```
 
 Add an [extra step to extract the tag](https://stackoverflow.com/a/58035262/3509554) and then put it in IMAGE_TAG. The rest of the process is the same.
-    
+
 In my repository, the final version is `0.3.0`. After creating this release, that tag is present in the AWS ECR image:
 
-    
+
 ![the tag in the AWS ECR image](https://docs.monadical.com/uploads/upload_d9bc61df9fb7e533711f13d96428fe79.png)
 
-    
+
 And...there it is!
 
-    
+
 ## Conclusion
 
-    
+
 With this setup, both the GitHub Actions and AWS ECR services are managed so you don’t need to install any software on a server (or do any maintenance). You can just set this up once and forget about it!
 
 This post focused on the step of generating an artifact (docker image) and pushing it to a private repository. This covers the end of your CI workflow, and the beginning of the CD workflow. You can compliment it by finishing both ends.
@@ -498,20 +498,20 @@ If you created resources on amazon for this exercise and don’t intend to keep 
 If you have any suggestions for how to improve this workflow, please leave a comment!
 
 You can read the second part of this post [here](https://monadical.com/posts/set-up-ci-workflow-part-two.html).
-    
-    
-    
-    
+
+
+
+
 
 ---
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;
 
 </div>
@@ -525,7 +525,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

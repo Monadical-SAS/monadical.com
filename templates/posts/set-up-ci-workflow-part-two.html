@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS ==  There are hug">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Oct 30 2020 13:48:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Dec 16 2020 21:57:10 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2979 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2981 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >How to Set Up a CI/CD Workflow, Part Two: Deploying Docker Images in AWS Using ECS
@@ -70,12 +70,12 @@ In a [previous article](https://monadical.com/posts/set-up-ci-workflow.html), I 
 
 &lt;/center&gt;
 
-There are several services for deploying images to production environments in the AWS ecosystem. I will explore a pipeline that takes the images received at AWS ECR and deploys them to AWS ECS using AWS CodePipeline. At a very high level, the AWS services that I will use to set up the pipeline are: 
+There are several services for deploying images to production environments in the AWS ecosystem. I will explore a pipeline that takes the images received at AWS ECR and deploys them to AWS ECS using AWS CodePipeline. At a very high level, the AWS services that I will use to set up the pipeline are:
 
  - AWS ECR (Elastic Container Registry): Repository where you upload your images.
  - AWS ECS (Elastic Container Service): The service that will serve as the deployment target for your images. This could be replaced by EBS (Elastic Beanstalk) or EKS (Elastic Kubernetes Service) with some modifications.
  - AWS CodePipeline: This service listens to events and reacts to them. It can be configured to serve a wide range of use cases. In this case, it will listen to AWS ECR image uploads.
- - AWS ELB (Elastic Load Balancer): This balances the load between the available instances. This demonstration will only use a single container, but AWS ELB is still needed to enable a public interface for the service. 
+ - AWS ELB (Elastic Load Balancer): This balances the load between the available instances. This demonstration will only use a single container, but AWS ELB is still needed to enable a public interface for the service.
 
 &lt;center&gt;
 
@@ -128,7 +128,7 @@ The next resource you will need is a cluster to deploy to. However, this require
 &lt;center&gt;
 
 ![console container services](https://docs.monadical.com/uploads/upload_9d8b533e8b4f28fe450c2c3aff036c6a.png)
-    
+
 &lt;/center&gt;
 
 The task definition will dictate how your task will be deployed and which strategy and resources you will use:
@@ -140,7 +140,7 @@ Use FARGATE and click continue. In the next step, pick a name for your task defi
 ![task definition - task size](https://docs.monadical.com/uploads/upload_a01c4dbabf84e6b1b3bb4ec3d3e1b332.png)
 
 &lt;center&gt;
-    
+
 ![container definition](https://docs.monadical.com/uploads/upload_58e4936a35427e2db10b4737b319a8cf.png)
 
 &lt;/center&gt;
@@ -158,9 +158,9 @@ In the case of the nginx image, you will need a port mapping to port 80, to allo
 If everything has been entered correctly, you can now create the cluster. Click on ‘Clusters’, and then create a cluster:
 
 &lt;center&gt;
-    
+
 ![clusters - elastic container service](https://docs.monadical.com/uploads/upload_ad1af3935d7a46d7f44f66614f8fce3b.png)
-    
+
 &lt;/center&gt;
 
 
@@ -222,9 +222,9 @@ You can copy the DNS name to your browser. It should work properly now:
 Now you are ready for the next step: you need to set up a pipeline in AWS CodePipeline. To do this, go to the AWS console and click on ‘CodePipeline’:
 
 &lt;center&gt;
-    
+
 ![nginx response](https://docs.monadical.com/uploads/upload_30bfd1e4526e90232e1f14b440af621b.png)
-    
+
 &lt;/center&gt;
 
 Once there, you should see this screen:
@@ -247,7 +247,7 @@ For the build step, select AWS CodeBuild as build provider and create a new proj
 &lt;center&gt;
 
 ![create build project](https://docs.monadical.com/uploads/upload_60c0aa5562540ec2f930d02e06d75473.png)
-    
+
 &lt;/center&gt;
 
 
@@ -323,12 +323,12 @@ You can also check the [part three](https://monadical.com/posts/set-up-ci-workfl
 ---
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;
 
 ---
@@ -343,7 +343,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

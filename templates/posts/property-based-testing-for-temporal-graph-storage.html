@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="Discover the crucial role of deterministic code in property-based tests! Unveil how the state monad enhances code structure for robust, reliable outcomes. Explore this and more in our exploration of isomorphic web apps and coding patterns in Typescript.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Property-Based Testing for Temporal Graph Storage: a motley of functional techniques to allow isomorphic and deterministic graph generation - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="Discover the crucial role of deterministic code in property-based tests! Unveil how the state monad enhances code structure for robust, reliable outcomes. Explore this and more in our exploration of isomorphic web apps and coding patterns in Typescript.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Property-Based Testing for Temporal Graph Storage: a motley of functional techniques to allow isomorphic and deterministic graph generation - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,15 +48,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Dec 04 2023 15:06:20 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Aug 21 2024 14:38:24 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1600 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1604 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -81,13 +81,13 @@
 
 We’ve all been there. You take your introverted friend to a party, and they get all soggy and sad after just half an hour. How to keep them cheerful and fresh throughout the whole event? The answer is not to overload them with social interactions. Instead, you carefully calculate their path through the house, giving them time and space to cool down, and apply social encounters in a carefully administered way. To do this like an engineer, you need the plan of the house, the position of each person at the party, and their compatibility with your friend to build an optimal social-pressure-free experience for your friend to get healthy socialization and not get drained of energy.
 
-This is exactly[^1] the kind of problem that our client wanted to solve using a graph database. 
+This is exactly[^1] the kind of problem that our client wanted to solve using a graph database.
 
 &gt; A graph database is a type of database that stores data as nodes and edges, representing entities and their relationships, whereas a social graph is a graph that models the social connections between people or other entities.
 
-But our client had a very challenging and unusual requirement: they wanted to be able to query their social graph not only for the present moment but also for any point in the past (yesterday, last month, last year, ten years ago), with high accuracy and performance. This meant that their graph database had to support [temporal queries](https://www.researchgate.net/publication/351428434_A_Model_and_Query_Language_for_Temporal_Graph_Databases), which are not common in most graph databases. 
+But our client had a very challenging and unusual requirement: they wanted to be able to query their social graph not only for the present moment but also for any point in the past (yesterday, last month, last year, ten years ago), with high accuracy and performance. This meant that their graph database had to support [temporal queries](https://www.researchgate.net/publication/351428434_A_Model_and_Query_Language_for_Temporal_Graph_Databases), which are not common in most graph databases.
 
-To make things even more complicated, their social graph was very dynamic, with frequent changes in the nodes and edges. Like real-life Facebook drama, people would often “unfriend” each other, creating different shapes and patterns in the subgraphs of their social network. 
+To make things even more complicated, their social graph was very dynamic, with frequent changes in the nodes and edges. Like real-life Facebook drama, people would often “unfriend” each other, creating different shapes and patterns in the subgraphs of their social network.
 
 How to even begin testing such a complex system? We implemented tests. And then more tests. Specifically, we implemented [property-based tests](https://en.wikipedia.org/wiki/Software_testing#Property_testing) that run once every time our branch is updated, a technique that generates random inputs and checks that the system satisfies certain properties (ex: only one friendship can exist between two people at any point in time). And then, I wrote about it here.
 
@@ -106,9 +106,9 @@ How much? A lot. A huge amount. The temporal graph feature is so critical for ou
 
 
 &lt;center&gt;
-    
+
 ![sausages in a box!](https://docs.monadical.com/uploads/734c2f37-49d6-4e17-9a28-7d4b8ed8886a.gif)
-    
+
 
 &lt;/center&gt;
 
@@ -124,7 +124,7 @@ And I just think that it’d be selfish of me not to share my findings.
 
 ## Definitions
 
-First of all, I’m going to colour-code some words; this should make it easier to distinguish each unique challenge of the task and to link those challenges with the terminology used. I’ll also explain how each requirement/solution is important and how it’s implemented. 
+First of all, I’m going to colour-code some words; this should make it easier to distinguish each unique challenge of the task and to link those challenges with the terminology used. I’ll also explain how each requirement/solution is important and how it’s implemented.
 
 In the picture below is a general outline of all the problems and solutions that I’ll cover. Also, notice that some solutions morph into “problems” that require their own solutions, which I’ll deal with as they arise.
 
@@ -149,13 +149,13 @@ I also realized that &lt;font color=&#34;orange&#34;&gt;laziness&lt;/font&gt; is
 
 The lazy evaluation also feels faster from a UX perspective, because the user sees the loading indicator.
 
-&lt;a name=&#34;deterministic&#34;&gt;&lt;/a&gt;&lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;Determinism&lt;/font&gt; is the core of the whole operation. Since I’m about to use the code for the &lt;font color=&#34;violet&#34;&gt;property-based&lt;/font&gt; testing of my algorithms, it’s important for me to have my test cases easily reproducible. To have this, I want the generated graph to be absolutely the same in every detail to the input of the generative process. And &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;determinism&lt;/font&gt; lets me have easily reproducible test cases. 
+&lt;a name=&#34;deterministic&#34;&gt;&lt;/a&gt;&lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;Determinism&lt;/font&gt; is the core of the whole operation. Since I’m about to use the code for the &lt;font color=&#34;violet&#34;&gt;property-based&lt;/font&gt; testing of my algorithms, it’s important for me to have my test cases easily reproducible. To have this, I want the generated graph to be absolutely the same in every detail to the input of the generative process. And &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;determinism&lt;/font&gt; lets me have easily reproducible test cases.
 
 Note, however, that the test cases themselves won’t be covered in this article since it strays into NDA content and is also not crucial for the topic. Note also that although I could have my code non-deterministic and get by with saving the whole graph generated — so, **output** instead of **input** — this hack turns out to be direly impractical, making me save 1+mb of a graph for each set of inputs. Having the calculation non-deterministic would also make this article less exciting!
 
 &lt;a name=&#34;random&#34;&gt;&lt;/a&gt;&lt;font color=&#34;green&#34;&gt;Randomness&lt;/font&gt;, or rather &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;pseudo&lt;/font&gt;-&lt;font color=&#34;green&#34;&gt;randomness&lt;/font&gt;, shares the same purpose as &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;determinism&lt;/font&gt; above. I need my test cases to generate different outputs for the same set of parametric inputs, but I need to control this randomness with an initial **seed** given to the graph.
 
-&lt;a name=&#34;quasi-realistic&#34;&gt;&lt;/a&gt;&lt;font color=&#34;aqua&#34;&gt;Quasi-realistic&lt;/font&gt; means that I want my graphs to be life-like. Our social graphs have a very distinct property: some of its nodes accumulate many more edges than others. In networks like this[^5], “[the rich get richer](https://isomorphis.wordpress.com/2012/05/09/why-the-rich-get-richer-and-other-preferential-attachments/)”. Those graphs are also allowed to have cycles[^6]. 
+&lt;a name=&#34;quasi-realistic&#34;&gt;&lt;/a&gt;&lt;font color=&#34;aqua&#34;&gt;Quasi-realistic&lt;/font&gt; means that I want my graphs to be life-like. Our social graphs have a very distinct property: some of its nodes accumulate many more edges than others. In networks like this[^5], “[the rich get richer](https://isomorphis.wordpress.com/2012/05/09/why-the-rich-get-richer-and-other-preferential-attachments/)”. Those graphs are also allowed to have cycles[^6].
 
 Note that in my case, the graphs are directional; we could work with non-directional graphs the same way, though.
 
@@ -175,15 +175,15 @@ Graph generation **Performance** isn’t the greatest concern because bottleneck
 
 So the main problem is to deterministically generate quasi-social graphs. This problem imposes multiple requirements that consequently spawn their own problems with themselves. Laziness, quasi-realism, isomorphism, and determinism are the properties that were deemed important for the task at hand.
 
-&lt;font color=&#34;orange&#34;&gt;Lazy evaluation&lt;/font&gt; isn’t standard practice in Javascript[^7], although it is supported by the language. 
+&lt;font color=&#34;orange&#34;&gt;Lazy evaluation&lt;/font&gt; isn’t standard practice in Javascript[^7], although it is supported by the language.
 
-We’ll try to do both &lt;font color=&#34;orange&#34;&gt;lazy&lt;/font&gt; and &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;functional&lt;/font&gt; here. Functional programming seems to be a good model for this case because the main characteristic of the whole computation is functional purity[^8]. Even the side effect of writing into the database looks more-or-less “pure-ish” because the database is effectively re-created for each test. The generation algorithm is also &lt;font color=&#34;orange&#34;&gt;lazy&lt;/font&gt; because we want to see the graph generation progress (and potentially, in future, set it into one big lazy pipeline with forceatlas2 layout simulation). 
+We’ll try to do both &lt;font color=&#34;orange&#34;&gt;lazy&lt;/font&gt; and &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;functional&lt;/font&gt; here. Functional programming seems to be a good model for this case because the main characteristic of the whole computation is functional purity[^8]. Even the side effect of writing into the database looks more-or-less “pure-ish” because the database is effectively re-created for each test. The generation algorithm is also &lt;font color=&#34;orange&#34;&gt;lazy&lt;/font&gt; because we want to see the graph generation progress (and potentially, in future, set it into one big lazy pipeline with forceatlas2 layout simulation).
 
 Lazy evaluation solves my &lt;font color=&#34;indigo&#34;&gt;profiling&lt;/font&gt; problem and also lets me organize the computation to work in **polling** mode. With graph generation in Node.js, it&#39;s especially important because the generation process tends to take over the whole main thread, and unless managed properly, it is a black box until a large bunch of its execution is done. This problem is purely development/technical but is nice to solve nevertheless.
 
-It was also important to make the generation process &lt;font color=&#34;indigo&#34;&gt;pausable/resumable&lt;/font&gt; because certain IO bottlenecks existed in my case, primarily Database IO and Web Socket IO (which I won’t delve into in this article). 
+It was also important to make the generation process &lt;font color=&#34;indigo&#34;&gt;pausable/resumable&lt;/font&gt; because certain IO bottlenecks existed in my case, primarily Database IO and Web Socket IO (which I won’t delve into in this article).
 
-Additionally, I want the code to be &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;functional&lt;/font&gt; to help with deterministic behaviour. Determinism is important in this case because it allows me to eventually repeat the computation exactly as it happened, even if randomness was involved. Remember, we store metrics of each execution, and the execution output is huge without determinism. 
+Additionally, I want the code to be &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;functional&lt;/font&gt; to help with deterministic behaviour. Determinism is important in this case because it allows me to eventually repeat the computation exactly as it happened, even if randomness was involved. Remember, we store metrics of each execution, and the execution output is huge without determinism.
 
 Going &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;functional&lt;/font&gt; is not necessary here, and we can archive determinism without it, but with PRNGs, it turned out to be a very convenient way to organize computation.
 
@@ -225,9 +225,9 @@ During **Genesis**, the number of **nodes** is always equal to the number of **e
 
 When I reach the target count of **nodes**, there is an optional phase of **Abundance** that adds extra **edges** if it’s required.
 
-In both phases, the crucial part of the generative process is “&lt;font color=&#34;aqua&#34;&gt;how does it choose the nodes to connect&lt;/font&gt;”. 
+In both phases, the crucial part of the generative process is “&lt;font color=&#34;aqua&#34;&gt;how does it choose the nodes to connect&lt;/font&gt;”.
 
-The goal is to give the “rich” **nodes** better chances, controlling this degree of social inequality through the **Heterogeneity** parameter. 
+The goal is to give the “rich” **nodes** better chances, controlling this degree of social inequality through the **Heterogeneity** parameter.
 
 One elegant way of giving some nodes a better chance to obtain more links than others is n[on-linear preferential attachment](https://en.wikipedia.org/wiki/Non-linear_preferential_attachment). It’s basically a self-reinforcing biased random distribution, where the nodes that already accumulated some edges have better and better chances to obtain even more (just like capitalism, yee-haw!).
 
@@ -252,7 +252,7 @@ Note that this tactic works just as well if we were to choose only one edge to c
 
 Let’s assume in Figure 3 that the connection A-C was formed (it had a high probability of doing so, after all), and also, very accidentally, the connection B-C was formed as well. B got lucky! Now, in Figures 4 and 5, we account for the new power balance. We give B and C better chances to form a link. Unfortunately, as we see in (5), B and C (and every other node) still weren’t lucky enough, but A formed a link again because it was already power-tripping. (Hooray to A, I guess?)
 
-&lt;iframe src=&#34;https://graphgen-ts.apps.loskutoff.com/?heterogeneity=0.44&amp;seed=seed2&amp;model=barabasi-albert&amp;density=0.08&amp;nodes=788&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt; 
+&lt;iframe src=&#34;https://graphgen-ts.apps.loskutoff.com/?heterogeneity=0.44&amp;seed=seed2&amp;model=barabasi-albert&amp;density=0.08&amp;nodes=788&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;
 
 That’s it! The task is done, right? …right?
 
@@ -268,7 +268,7 @@ We can save only the input parameters and close the case, but there’s an issue
 
 To get a reproducible sequence that behaves like a random number sequence, &lt;font color=&#34;yellow&#34; style=&#34;background-color: black&#34;&gt;Pseudo&lt;/font&gt; &lt;font color=&#34;green&#34;&gt;Random&lt;/font&gt; Number Generators (PRNG) [are used](https://paulgray.net/the-state-monad/).
 
-PRNGs always require, implicitly or explicitly, a “seed” that determines what sequence of pseudo-random numbers it will yield during sequential calls. If you’ve played [Minecraft](https://www.minecraft.net/)[^12] or [Dwarf Fortress](https://store.steampowered.com/app/975370/Dwarf_Fortress/), you’re probably familiar with seed world generation, when, giving a specific seed string, the game engine always generates the same game universe. 
+PRNGs always require, implicitly or explicitly, a “seed” that determines what sequence of pseudo-random numbers it will yield during sequential calls. If you’ve played [Minecraft](https://www.minecraft.net/)[^12] or [Dwarf Fortress](https://store.steampowered.com/app/975370/Dwarf_Fortress/), you’re probably familiar with seed world generation, when, giving a specific seed string, the game engine always generates the same game universe.
 
 That’s exactly it. &lt;font color=&#34;green&#34;&gt;PRNGs&lt;/font&gt;. Deterministic[^13] &lt;font color=&#34;green&#34;&gt;randomness&lt;/font&gt;.
 
@@ -288,11 +288,11 @@ console.log(generator.next()); // always 0.001
 
 ```
 
-That would be an implicit state stored inside the `generator` object. Some libraries work like this. 
+That would be an implicit state stored inside the `generator` object. Some libraries work like this.
 
 And yet again, we can implement it in the generative process and call it done.
 
-But how do we pass the `Generator` object around? Do we keep it as a global, or do we add it to each function as an argument? Both approaches will work, actually, and both have pros and cons. The global object is easy to implement, but you won’t be able to re-run your generative processes without proper clean-up. You won’t be able to run them in parallel[^14] either. 
+But how do we pass the `Generator` object around? Do we keep it as a global, or do we add it to each function as an argument? Both approaches will work, actually, and both have pros and cons. The global object is easy to implement, but you won’t be able to re-run your generative processes without proper clean-up. You won’t be able to run them in parallel[^14] either.
 
 So I chose to pass it around. There is another fork in the road now, though: to pass a mutable reference or somehow make the computation immutable?
 
@@ -355,7 +355,7 @@ return [newId, newRng];
 
 ```
 
-&gt;Note about the `pipe` function: it’s just an application flattened: i.e. instead of f5(f4(f3(f2(f1(v))))) you have `pipe(v, f1, f2, f3, f4, f5)`. This rearrangement makes it a lot simpler to work with [curried](https://en.wikipedia.org/wiki/Currying) functions and, as a result, with many [functional programming](https://en.wikipedia.org/wiki/Functional_programming) primitives. Another way of thinking of it is immediately applied [composition](http://www.sfu.ca/~tjd/383summer2019/haskell_comp_and_app_lhs.html). (i.e. in Haskell, you’d do `f5 . f4 . f3 . f2 . f1` and apply it to `v`). 
+&gt;Note about the `pipe` function: it’s just an application flattened: i.e. instead of f5(f4(f3(f2(f1(v))))) you have `pipe(v, f1, f2, f3, f4, f5)`. This rearrangement makes it a lot simpler to work with [curried](https://en.wikipedia.org/wiki/Currying) functions and, as a result, with many [functional programming](https://en.wikipedia.org/wiki/Functional_programming) primitives. Another way of thinking of it is immediately applied [composition](http://www.sfu.ca/~tjd/383summer2019/haskell_comp_and_app_lhs.html). (i.e. in Haskell, you’d do `f5 . f4 . f3 . f2 . f1` and apply it to `v`).
 
 
 It doesn’t look as spectacular for NLPA, where I just read State and pass the new State further, but check how the DnD bruteforce lays out:
@@ -372,7 +372,7 @@ pipe(
 
   RA.map(() =&gt; random), // RA is ReadonlyArray
 
-  // sequence is running those computations in sequence, one-by-one, passing the immutable RNG State through 
+  // sequence is running those computations in sequence, one-by-one, passing the immutable RNG State through
 
   ST.sequenceArray, // ST is State
 
@@ -400,7 +400,7 @@ We have actually just covered the &lt;font color=&#34;yellow&#34; style=&#34;bac
 
 Congratulations! Here’s a graph for you.
 
-&lt;iframe src=&#34;https://graphgen-ts.apps.loskutoff.com/?seed=seed22222&amp;model=barabasi-albert&amp;heterogeneity=1&amp;density=0&amp;nodes=529&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt; 
+&lt;iframe src=&#34;https://graphgen-ts.apps.loskutoff.com/?seed=seed22222&amp;model=barabasi-albert&amp;heterogeneity=1&amp;density=0&amp;nodes=529&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;
 
 Don’t worry, it just has very high **Heterogeneity**.
 
@@ -413,9 +413,9 @@ It’s worth introducing a typing pattern that I used in this program, which is 
 
 Heterogeneity can be any decimal in [0, 1]. Density can be any decimal in [0, 1]. Nodes can be any positive integer. Or rather, a non-negative integer. I want to have a graph with 0 nodes possible, which is simply my whim.
 
-So, **Heterogeneity** is a parameter of how “branchy” the graph is. 
+So, **Heterogeneity** is a parameter of how “branchy” the graph is.
 
-**Density** dictates how many more **Edges** the graph will have than **Nodes**. With a lot of edges, it becomes very dense - try it. Any value of **Density** higher than 0 will make the phase of **Abundance** possible. **Density** 0 means there is only **Genesis**. 
+**Density** dictates how many more **Edges** the graph will have than **Nodes**. With a lot of edges, it becomes very dense - try it. Any value of **Density** higher than 0 will make the phase of **Abundance** possible. **Density** 0 means there is only **Genesis**.
 
 The number of **Nodes** is basically how many nodes the generated graph will have.
 
@@ -459,9 +459,9 @@ doSomethingWithHeterogeneityAndDensity(density, heterogeneity);
 
 Do you think, however, that it’s just **too** convenient? Probably.
 
-Let’s make our lives harder and make [invalid states unrepresentable](https://fsharpforfunandprofit.com/posts/designing-with-types-making-illegal-states-unrepresentable/). 
+Let’s make our lives harder and make [invalid states unrepresentable](https://fsharpforfunandprofit.com/posts/designing-with-types-making-illegal-states-unrepresentable/).
 
-Because what the hell does `nodes + heterogeneity; // 1000.5` even mean? The next step would be to convert 1000.5 into USD and send it to a random user. Because this action makes exactly as much sense as adding **Nodes** with **Heterogeneity**. Why can we even do that? Don’t we have, like… types to prevent it? 
+Because what the hell does `nodes + heterogeneity; // 1000.5` even mean? The next step would be to convert 1000.5 into USD and send it to a random user. Because this action makes exactly as much sense as adding **Nodes** with **Heterogeneity**. Why can we even do that? Don’t we have, like… types to prevent it?
 
 Should we even be able to forget the argument order in `doSomethingWithHeterogeneityAndDensity` and pass **Heterogeneity** instead of **Density** (and vice-versa)?
 
@@ -469,7 +469,7 @@ Why does the type system prevent us from passing a number to a function expectin
 
 Although those questions look rhetorical, I think I can attempt to give an answer. Tooling immaturity - that’s it. The concept of “number is not a number” and “string is not a string” is, unfortunately, as it is precise, alien to the same degree.
 
-There is even an opinion that having strings (and numbers, if you let me extrapolate) is more often than not [a sign of bad domain design](https://ybogomolov.me/primitives-were-a-mistake). 
+There is even an opinion that having strings (and numbers, if you let me extrapolate) is more often than not [a sign of bad domain design](https://ybogomolov.me/primitives-were-a-mistake).
 
 And it’s time to stop using primitives where they don’t belong!
 
@@ -496,7 +496,7 @@ export type Decimal01 = Newtype&lt;{ readonly DECIMAL01: unique symbol }, NonNeg
 
 ```
 
-whereas `NonNegativeInteger` and `NonNegative` are helper types from the library [newtype-ts](https://github.com/gcanti/newtype-ts). 
+whereas `NonNegativeInteger` and `NonNegative` are helper types from the library [newtype-ts](https://github.com/gcanti/newtype-ts).
 
 I define the runtime bridges between Newtypes and primitives like this:
 
@@ -536,7 +536,7 @@ const nodes = castListLength(1000);
 
 const heterogeneity = castHeterogeneity(0.5);
 
-// @ts-expect-error 
+// @ts-expect-error
 
 const x = nodes + heterogeneity; // won’t compile
 
@@ -544,7 +544,7 @@ const doSomethingWithHeterogeneityAndDensity = (heterogeneity: Heterogeneity, de
 
 const density = castDensity(0);
 
-// @ts-expect-error 
+// @ts-expect-error
 
 doSomethingWithHeterogeneityAndDensity(density, heterogeneity);  // won’t compile
 
@@ -568,11 +568,11 @@ I’ll continue trying to make this approach work, though, in the future. I thin
 ![the lazy part](https://docs.monadical.com/uploads/bf7a0766-409a-4e10-a3ba-721d69513916.jpg &#34;The lazy section of the problem/solution graph&#34;)
 
 
-Alright, we’re really close: the Lazy part and then some &lt;font color=&#34;red&#34;&gt;technicalities&lt;/font&gt;. 
+Alright, we’re really close: the Lazy part and then some &lt;font color=&#34;red&#34;&gt;technicalities&lt;/font&gt;.
 
 I want to give you a loading indicator. Not only that, but I would also love to be able to see how fast my graph generation phase goes.
 
-Let me give you some insight into the parts/phases of graph generation and representation pipeline. 
+Let me give you some insight into the parts/phases of graph generation and representation pipeline.
 
 First, we’d like to generate the graph, which is just nodes and edges, represented in whatever way. [Adjacency List](https://en.wikipedia.org/wiki/Adjacency_list) data structure is quite popular. I use one from the [thi.ng](https://thi.ng/) toolkit (check it out - it’s fascinating).
 
@@ -593,15 +593,15 @@ As a bonus, the generation process feels much faster when I see a &lt;font color
 
 ### Monorepo and web workers
 
-This is the easiest part, really. 
+This is the easiest part, really.
 
-I use the generator code on the &lt;font color=&#34;red&#34;&gt;backend&lt;/font&gt;, but I also want to &lt;font color=&#34;red&#34;&gt;show the generator to you&lt;/font&gt;. 
+I use the generator code on the &lt;font color=&#34;red&#34;&gt;backend&lt;/font&gt;, but I also want to &lt;font color=&#34;red&#34;&gt;show the generator to you&lt;/font&gt;.
 
-First, I tried to generate graphs on the backend and send them through API. This is the obvious solution. 
+First, I tried to generate graphs on the backend and send them through API. This is the obvious solution.
 
-I found that not only could the generated graphs be quite large JSONs (so, network load), but also, I don’t have proper &lt;font color=&#34;orange&#34;&gt;streaming&lt;/font&gt; (which could be solved with [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), which is another way of doing it). 
+I found that not only could the generated graphs be quite large JSONs (so, network load), but also, I don’t have proper &lt;font color=&#34;orange&#34;&gt;streaming&lt;/font&gt; (which could be solved with [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), which is another way of doing it).
 
-I found, though, that the [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) generates the graph much faster (or rather, perceivably much faster - I didn’t actually benchmark it) than my API. 
+I found, though, that the [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) generates the graph much faster (or rather, perceivably much faster - I didn’t actually benchmark it) than my API.
 
 The Web Worker code is stupidly simple:
 
@@ -658,11 +658,11 @@ To marry the backend and frontend/Web Worker code, I used an [Nx monorepo](https
 
 Let’s review.  \
  \
-We’ve learned: 
+We’ve learned:
 
 
 
-* That it’s possible to make a TypeScript &lt;font color=&#34;red&#34;&gt;isomorphic&lt;/font&gt; with a &lt;font color=&#34;red&#34;&gt;monorepo&lt;/font&gt;[^17] 
+* That it’s possible to make a TypeScript &lt;font color=&#34;red&#34;&gt;isomorphic&lt;/font&gt; with a &lt;font color=&#34;red&#34;&gt;monorepo&lt;/font&gt;[^17]
 
 
 * That &lt;font color=&#34;orange&#34;&gt;perceived performance and UX&lt;/font&gt; can be improved by having a &lt;font color=&#34;orange&#34;&gt;loading indicator&lt;/font&gt; for long-running tasks, which can be made possible with &lt;font color=&#34;orange&#34;&gt;lazy computations&lt;/font&gt;.
@@ -676,7 +676,7 @@ And we have established software foundations for continuous property-based testi
 
 **That’s it! Have fun and enjoy!**
 
-[https://graphgen-ts.apps.loskutoff.com/](https://graphgen-ts.apps.loskutoff.com/) 
+[https://graphgen-ts.apps.loskutoff.com/](https://graphgen-ts.apps.loskutoff.com/)
 
 
 &lt;!-- Footnotes themselves at the bottom. --&gt;
@@ -707,10 +707,10 @@ And we have established software foundations for continuous property-based testi
      https://en.wikipedia.org/wiki/Pure_function
 
 [^9]:
-     [https://en.wikipedia.org/wiki/Memoization](https://en.wikipedia.org/wiki/Memoization) 
+     [https://en.wikipedia.org/wiki/Memoization](https://en.wikipedia.org/wiki/Memoization)
 
 [^10]:
-     Which is also the core game mechanic for wildly popular videogame Baldurs’ Gate 3 [https://store.steampowered.com/app/1086940/Baldurs_Gate_3/](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/) 
+     Which is also the core game mechanic for wildly popular videogame Baldurs’ Gate 3 [https://store.steampowered.com/app/1086940/Baldurs_Gate_3/](https://store.steampowered.com/app/1086940/Baldurs_Gate_3/)
 
 [^11]:
      https://en.wikipedia.org/wiki/Scale-free_network
@@ -725,10 +725,10 @@ And we have established software foundations for continuous property-based testi
      Node is single-threaded but, if any asynchronous computation is introduced, concurrent calls will still mess each other up
 
 [^15]:
-     Well, unless you are an Elf or a Half-Elf of Xanathar&#39;s Guide to Everything with the trait Elven Accuracy, when you are able to roll 3 advantage rolls instead of 2 in some situations. 
+     Well, unless you are an Elf or a Half-Elf of Xanathar&#39;s Guide to Everything with the trait Elven Accuracy, when you are able to roll 3 advantage rolls instead of 2 in some situations.
 
 [^16]:
-     [https://www.youtube.com/watch?v=Q0w2djkO_bc](https://www.youtube.com/watch?v=Q0w2djkO_bc) 
+     [https://www.youtube.com/watch?v=Q0w2djkO_bc](https://www.youtube.com/watch?v=Q0w2djkO_bc)
 
 [^17]:
 
@@ -744,7 +744,7 @@ And we have established software foundations for continuous property-based testi
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

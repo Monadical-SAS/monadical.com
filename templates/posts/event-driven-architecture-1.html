@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="Lessons learned in building a poker platform using event-driven architecture, part one--the backend.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Event-Driven Architecture, Lessons Learned pt 1 - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="Lessons learned in building a poker platform using event-driven architecture, part one--the backend.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Event-Driven Architecture, Lessons Learned pt 1 - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,26 +48,26 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/9bdd52c193d004e65c5442c3d04ae25a?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="max"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Dec 24 2020 15:30:56 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Dec 24 2020 15:41:24 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5843 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5847 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 
 &lt;center&gt;
-    
+
 # Event-Driven Architecture
 
 &lt;big&gt;
 Lessons Learned in Building a Poker Platform with Event Sourcing
-&lt;/big&gt;    
+&lt;/big&gt;
 
 &lt;/center&gt;
 &lt;br/&gt;
@@ -85,7 +85,7 @@ We’d also read Jay Kreps’ wonderful article, [The Log: What every software e
 
 [^blockchain]: Bitcoin’s success is a result of its clever combination of the ideas of [proof of work](https://en.wikipedia.org/wiki/Proof_of_work), [merkle trees](https://en.wikipedia.org/wiki/Merkle_tree), and event-driven architecture. An (oversimplified) explanation of the latter: each `block` in the `blockchain` is effectively a list of `transactions`, or updates to the `ledger`. For example, a `transaction` might be “I sent one unit of cryptocurrency from my `address` to John’s”. Finding the current balances of all addresses is a matter of running a [fold](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) (aka reduce, aggregate, or accumulate, depending on your language of choice) function over the whole chain. These `transactions` are conceptually equivalent to `events`.
 
-Seeing the benefits of this approach, we set out to build our game platform using an event-driven architecture (also known as log-structured or [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)). But that doesn’t mean we got to work installing Kafka and Samza; you don’t need any heavy frameworks or tools to reap the benefits of event-driven architecture. In fact, we ended up storing our Django models and event logs in the same postgres database! 
+Seeing the benefits of this approach, we set out to build our game platform using an event-driven architecture (also known as log-structured or [event sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)). But that doesn’t mean we got to work installing Kafka and Samza; you don’t need any heavy frameworks or tools to reap the benefits of event-driven architecture. In fact, we ended up storing our Django models and event logs in the same postgres database!
 
 It just means we built our codebase around the idea that we should have a single event stream, that we should store it in a log, and that all application states should be reproducible given a starting state and that log.
 
@@ -109,21 +109,21 @@ In a typical architecture, each of those actions (people sign up, sit at a table
 
 
 &lt;small&gt;&lt;i&gt; A starting state, log, and current state. &lt;br/&gt; State change in event-driven architecture is linear and deterministic! If there was a bug that happened when the second player sat, we can fire up a test database, point our codebase at it, and dispatch the first two events to reproduce it. &lt;/i&gt;&lt;/small&gt;
-    
+
 &lt;/center&gt;
-	
+
 Here’s a simplified version of what our architecture ended up looking like[^detailed]:
 
 [^detailed]: If you’re curious to learn about the architecture in all its glorious detail, I recommend [starting here](https://github.com/Monadical-SAS/oddslingers.poker/wiki/Layers-of-the-Stack).
 
 
 &lt;center&gt;
-    
+
 &lt;img style=&#34;width:400px&#34; src=&#34;https://docs.monadical.com/uploads/upload_b5e363ae7cf10a27975aac57cb4e3b75.png&#34; alt=&#34;OddSlingers heirarchical architecture&#34;/&gt;
 
- 
+
 &lt;small&gt;&lt;i&gt;A hierarchical, linear architecture is easy to follow! The “controller process” is where the magic happens, and I’ll be going into much more detail about how that works in the next section.&lt;/i&gt;&lt;/small&gt;
-    
+
 &lt;/center&gt;
 
 There are some notable advantages to this approach:
@@ -143,9 +143,9 @@ Armed with the “why,” let’s take a look at how our backend, which was buil
 
 
 &lt;center&gt;
-    
+
 ![The dispatch cycle](https://docs.monadical.com/uploads/upload_cb448ef41dcf74245267698137b8bb53.png)
-    
+
 &lt;small&gt;&lt;i&gt;The `Controller`’s `dispatch()` cycle determines how a given `Action` modifies application state, and then `commit()`s that action and its state changes to the database. &lt;/i&gt;&lt;/small&gt;
 
 &lt;/center&gt;
@@ -160,7 +160,7 @@ Once some `Models` are defined (`Player`, `PokerTable`[^tip], `Deck`, …), we n
 
 The entrypoint into the `Controller` is the `dispatch()` function (so named to follow `redux`; more on our frontend in part 2). It passes the incoming data around through a series of functions that come up with a list of modifications to make to the in-memory `Models`.
 
-It then passes those `Events` to the `internal_dispatch()`, which handles `Subscribers` and applies the changes to `Models`. `Subscribers` handle side effects (for example, computing an animation to send to the frontend) and can produce `Events` of their own, to be grouped up with those produced earlier by the `subevent_generator`. Finally, all of those `Events` are processed: each one applies its designated change to its designated `Model`. 
+It then passes those `Events` to the `internal_dispatch()`, which handles `Subscribers` and applies the changes to `Models`. `Subscribers` handle side effects (for example, computing an animation to send to the frontend) and can produce `Events` of their own, to be grouped up with those produced earlier by the `subevent_generator`. Finally, all of those `Events` are processed: each one applies its designated change to its designated `Model`.
 
 When they’ve all been updated, a single `commit()` is executed. By batching all the writes until the end of the event lifecycle, we could make sure that all of the data changes would occur atomically without needing to lock for excessive amounts of time.
 
@@ -201,7 +201,7 @@ class GameController:
 
         self.log.write_action(action_name, **kwargs)
         self.internal_dispatch(events)
-        
+
         self.commit(should_broadcast=action_name in PUBLIC_ACTIONS)
 ```
 There are a few steps here:
@@ -213,8 +213,8 @@ There are a few steps here:
 ```python
 &#34;actions&#34;: [
     {
-        &#34;subj&#34;: &#34;cowpig&#34;, 
-        &#34;action&#34;: &#34;RAISE_TO&#34;, 
+        &#34;subj&#34;: &#34;cowpig&#34;,
+        &#34;action&#34;: &#34;RAISE_TO&#34;,
         &#34;args&#34;: {&#34;amt&#34;: 100}
     },
     {
@@ -285,7 +285,7 @@ class BotTest(SixPlayersTest):
 ```
 
 With the error log, we could pass it into a Replayer, and step through the error with `ipdb`.
- 
+
 #### Lessons Learned
 
 Phew! Now that we’ve had a peek into what the architecture looked like, let’s look at the pros and cons of having chosen to build our platform with an event-driven architecture.
@@ -305,12 +305,12 @@ That’s all for the backend. Next time I’ll talk about the frontend, where we
 &lt;br/&gt;
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34; alt=&#34;Monadical logo&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
@@ -323,7 +323,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

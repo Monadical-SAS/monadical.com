@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt; &lt;img src=&#34;https://i.imgur.com/HYm9FeC.png&#34; height=&#34;100px&#34;/&gt;  # Architecting a Banking Servi">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Architecting a Banking Service for  Real-Time Gaming at OddSlingers - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Architecting a Banking Service for  Real-Time Gaming at OddSlingers - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 11 2024 23:31:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5471 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5474 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -76,9 +76,9 @@ Examples in this article talk specifically about the Django app which powers our
 
 ---
 
-## Intro 
+## Intro
 
-Our goal today is to design a banking service for an app which can handle a user depositing and withdrawing money, and using that money to cash in and out of poker games.  
+Our goal today is to design a banking service for an app which can handle a user depositing and withdrawing money, and using that money to cash in and out of poker games.
 
 In online poker, users buys chips to put into a &#34;wallet&#34; and use them to play at multiple poker tables simultaneously, occasionally &#34;rebuying&#34; more chips or cashing out for dollars.
 
@@ -138,7 +138,7 @@ Another reason to work with Decimal only:
 :::success
 Get expected rounding behavior with:
 ```python
-&gt;&gt;&gt; decimal.Decimal(&#39;2.5&#39;).quantize(decimal.Decimal(&#39;1&#39;), 
+&gt;&gt;&gt; decimal.Decimal(&#39;2.5&#39;).quantize(decimal.Decimal(&#39;1&#39;),
                                     rounding=decimal.ROUND_HALF_UP)
 Decimal(&#39;3&#39;)
 ```
@@ -238,7 +238,7 @@ If you think you can get away with storing all your money data in one table, and
 With only a single process modifying any locked tables, you&#39;ll never run into a scenario where the data you write is stale, or multiple people attempt to modify the same value.  You can even have multiple servers submitting transactions to your central queue, as long as the timestamps are accurate, things will be processed in the order received and will never execute at the same time.
 
 Syncronizing time between multiple servers is *very hard* though, so don&#39;t rely on having strictly ordered transactions unless your servers are synchronized via [atomic clocks](http://www.wired.com/wiredenterprise/2012/11/google-spanner-time/)!
- 
+
 ## Designing thread-safe banking transactions
 
 
@@ -280,7 +280,7 @@ updated = User.objects.filter(id=241, balance=100).update(balance=50)
 if not updated:
     raise Exception(&#39;Someone else modified balance!&#39;)
 ```
-This &#34;compare-and-swap&#34; is a single atomic operation that will only succeed if the balance is sufficient, preventing TOCTTOU bugs. 
+This &#34;compare-and-swap&#34; is a single atomic operation that will only succeed if the balance is sufficient, preventing TOCTTOU bugs.
 :::
 
 Now we&#39;re only updating the user object if the balance is exactly what we expect it to be! If it&#39;s different from what we expected, the `.filter()` will return no rows, and the update will fail.  The great part is that this is a single, atomic SQL statement, there&#39;s no way for the balance to change between the check and the update.
@@ -350,11 +350,11 @@ def buy_chips(user, amt):
     with transaction.atomic():
         # Lock user row, preventing anyone else from changing total
         UserBalance.objects.select_for_update().filter(id=user.id)
-        
+
         # Update the user&#39;s total and add a Transfer row atomically
         UserBalance.objects.filter(id=user.id).update(total=F(&#39;total&#39;) + amt)
         Transfer.objects.create(src=Cashier, dst=user, amt=amt)
-        
+
     # Exiting context handler commits transaction and releases User row lock
 ```
 
@@ -442,7 +442,7 @@ with transaction.atomic():
 User.objects.filter(id=user.id, balance__gt=50)\
             .update(balance=F(&#39;balance) - 50)`
 ```
-:::    
+:::
 
 :::success
 **Span transactions across multiple databases, keep financial db separate:**
@@ -565,7 +565,7 @@ def banking_runloop():
                         eval(txn.action)
                         Txn.objects.get(id=txn.id).update(status=&#39;succeeded&#39;)
                     else:
-                        raise Exception(&#39;Condition was false&#39;)   
+                        raise Exception(&#39;Condition was false&#39;)
             except Exception:
                 Txn.objects.get(id=txn.id).update(status=&#39;failed&#39;)
             finally:
@@ -640,7 +640,7 @@ def banking_runloop():
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

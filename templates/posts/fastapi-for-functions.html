@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;  # Building a FastAPI Server to Evaluate Mathematical Functions   &lt;big&gt;  **We make an alrea">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Building a FastAPI Server to Evaluate Mathematical Functions - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Building a FastAPI Server to Evaluate Mathematical Functions - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,27 +46,27 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 03 2022 18:51:40 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Sep 01 2022 16:52:33 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1689 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1695 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
 
-# Building a FastAPI Server to Evaluate Mathematical Functions 
+# Building a FastAPI Server to Evaluate Mathematical Functions
 
 &lt;big&gt;
 
 **We make an already-powerful program for plotting mathematical functions even better using three steps.**
 
-&lt;/big&gt;    
-    
+&lt;/big&gt;
+
 *Written by [Juan David Arias](https://github.com/juanArias8). Published 2022-08-04 on the [Monadical blog](https://monadical.com/blog.html).*
 
 &lt;/center&gt;
@@ -74,19 +74,19 @@
 
 In my [last post](https://monadical.com/posts/plot-mathematical-functions-in-python.html), I shared a Python script that I wrote to plot function graphs using the SymPy, NumPy and Matplotlib libraries. Since then, I’ve revisited the project and dealt with some of the limitations of the script that I noticed. It might be worth reading that post first to understand the context of this article if you haven’t already.
 
-Two of the big past limitations of the script were **portability &amp; accessibility.** The previous script could only be used by devices that had Python, SymPy, NumPy and Matplotlib installed. This meant that users who lacked knowledge of these tools or the languages used in the script wouldn’t have been able to use it. 
+Two of the big past limitations of the script were **portability &amp; accessibility.** The previous script could only be used by devices that had Python, SymPy, NumPy and Matplotlib installed. This meant that users who lacked knowledge of these tools or the languages used in the script wouldn’t have been able to use it.
 
 In this blog, we’ll create a more accessible version of the script, and therefore expand the number of potential users.
 
 
-## The plan: building the application server 
- 
+## The plan: building the application server
+
 We&#39;ll create a server that is easier to use for people who have limited or no knowledge of programs like Python or SymPy. The main features of this application server will be to:
 
 * receive the information associated with a mathematical function $f(x)=(...)$
 * evaluate the function in the interval defined by $[a, b]$
 * create the grid of values associated in the corresponding dimensions
-* return all of this information to the client.  
+* return all of this information to the client.
 
 With this new server, users will only need to make use of the server’s endpoints. In addition, this solution will make the graph more interactive for client applications like web or mobile.
 
@@ -105,7 +105,7 @@ To start creating a *FastAPI* server, we’ll need a version of Python 3.6+ inst
 Python --version
 ```
 
-These are the libraries and the concept we’ll need to use in order to build the application server. 
+These are the libraries and the concept we’ll need to use in order to build the application server.
 
 **[FastAPI](https://fastapi.tiangolo.com):** is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 
@@ -129,7 +129,7 @@ mkdir grafar-server &amp;&amp; cd grafar-server
 Once inside the directory, let’s create a virtual environment to store the dependencies of the project. Then, run the following commands from the terminal:
 
 ```shell
-pip install virtualenv 
+pip install virtualenv
 virtualenv venv
 source venv/activate
 ```
@@ -197,9 +197,9 @@ In the `pydantic` library, a model is an object that abstracts the attributes an
 The models diagram and their relationships are as follows:
 
 &lt;center&gt;
-    
+
 ![Models diagrama](https://docs.monadical.com/uploads/218654ab-0442-456b-87ff-5330474b629a.png)
-    
+
 &lt;/center&gt;
 
 Start by creating a file called `models` inside the directory `grafar-server`:
@@ -252,7 +252,7 @@ class Function(BaseModel):
 
 The `Function` model also has a series of functions that will be useful when creating the value grids. Here’s an example:
 
-Initially, the user will ask to evaluate a function in a given interval. What happens if the user asks to evaluate $x^2$ in the interval $[0, 10000]$? Do we create a vector with points from 0 to 10000 with jumps of 1? And what if the user asks to evaluate it in the interval $[1, 2]$? Do we create a vector with only two points? 
+Initially, the user will ask to evaluate a function in a given interval. What happens if the user asks to evaluate $x^2$ in the interval $[0, 10000]$? Do we create a vector with points from 0 to 10000 with jumps of 1? And what if the user asks to evaluate it in the interval $[1, 2]$? Do we create a vector with only two points?
 
 In order to avoid steps that are too big or too small, we can use a normalization method. The `get_step` function scales the number of steps to the size of the interval so we show a consistent number of line segments on the resulting graph.
 
@@ -261,7 +261,7 @@ def get_step(self, interval: Interval):
     return (interval.b - interval.a) / self.points.
 ```
 
-In this code, something we&#39;ll do often is creating NumPy vectors which are required to make the function&#39;s domain. To avoid ending up with duplicate code, isolate the logic of these processes in the `get_vector` function. 
+In this code, something we&#39;ll do often is creating NumPy vectors which are required to make the function&#39;s domain. To avoid ending up with duplicate code, isolate the logic of these processes in the `get_vector` function.
 
 ```python
 def get_vector(self, interval: Interval):
@@ -292,19 +292,19 @@ class Function2D(Function):
             &#34;x&#34;: vector_x.tolist(),
             &#34;y&#34;: vector_y.tolist()
         }
-    
+
     def evaluate_function_2d(self, vector_x):
         symbol_x, _ = self.get_symbols().
         function_fx = self.create_function(symbol_x)
         return function_fx(vector_x)
 ```
 
-Let&#39;s take a look at the `create_mesh` method: 
+Let&#39;s take a look at the `create_mesh` method:
 * `vector_x`  creates a vector with the values for the $x$ axis in the interval `self.inverval_x`.
 * `vector_y` creates the vector with the values for the $y$ axis based on the values of `vector_x`, this line makes use of the`self.evaluate_function_2d()` function, which we’ll detail later.
 * `self.mesh` creates a dictionary with the values associated with the $x$ and $y$ axes of the function.
 
-The `evaluate_function_2d()` method receives a vector as a parameter, with the values for the $x$ axis of the function, and returns a new vector with the values for the $y$ axis. 
+The `evaluate_function_2d()` method receives a vector as a parameter, with the values for the $x$ axis of the function, and returns a new vector with the values for the $y$ axis.
 
 ### Model 4: The Function3D Model
 
@@ -371,8 +371,8 @@ async def create_2d_function_mesh(function_2d: Function2D):
 
 To verify that the endpoint is working correctly, let&#39;s perform an API test using *Postman*.
 
-&lt;center&gt; 
-    
+&lt;center&gt;
+
 ![Postman 2d test image](https://docs.monadical.com/uploads/50102a89-e099-4688-bfcb-7732f60c7743.png)
 &lt;/center&gt;
 
@@ -399,20 +399,20 @@ Again we can verify with the help of postman that the endpoint is running.
 
 ## Conclusion
 
-In this blog post, we resolved the portability and accessibility limitations associated with the Python script that I shared previously. Here’s a recap of what we did: 
+In this blog post, we resolved the portability and accessibility limitations associated with the Python script that I shared previously. Here’s a recap of what we did:
 
 1. Created an Application Server Using *FastAPI*
-2. Worked with *OOP* in Python to create the interval and function models 
+2. Worked with *OOP* in Python to create the interval and function models
 3. Created two REST API endpoints evaluate mathematical functions
 
 After following these steps, we should now have developed a server to evaluate mathematical functions in two- and three-dimensions.
 
-But we’re not done yet! Stay tuned for my next post where we’ll solve issues of display and interactivity limitations of the API server. We&#39;ll also look at how I built a web application in React using the PlotyJs visualization library. This web application is an interactive plotter called Grafar which allows users to plot two- and three-dimensionsional graphs. 
+But we’re not done yet! Stay tuned for my next post where we’ll solve issues of display and interactivity limitations of the API server. We&#39;ll also look at how I built a web application in React using the PlotyJs visualization library. This web application is an interactive plotter called Grafar which allows users to plot two- and three-dimensionsional graphs.
 
 If you want to see the results of my work in Grafar, please go to:
-Github: https://github.com/juanArias8/GRAFAR  
+Github: https://github.com/juanArias8/GRAFAR
 
-Here are some screenshots of the final web interactive plotter: 
+Here are some screenshots of the final web interactive plotter:
 
 ### Grafar web: two-dimensional graph
 
@@ -433,7 +433,7 @@ Here are some screenshots of the final web interactive plotter:
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

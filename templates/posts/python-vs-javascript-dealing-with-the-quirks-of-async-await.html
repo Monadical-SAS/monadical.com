@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Python vs Javascript Dealing with the quirks of async await - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Python vs Javascript Dealing with the quirks of async await - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,34 +48,34 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="joyce"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:52:02 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">4855 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">4864 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 
 &lt;center&gt;
-    
+
 # Python vs Javascript: Dealing with the quirks of   async/await
 
 &lt;big&gt;
-    
+
 **As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.**
 
 &lt;/big&gt;
-    
-        
+
+
 _Written by [Joyce Obi](https://github.com/Joyce-O). Originally published 2022-08-22 on the [Monadical blog](https://monadical.com/blog.html)_.
 
 ![Coding and programming app in laptop for web vector image](https://docs.monadical.com/uploads/e05804fe-c9ca-4ec2-bb9f-e2e58f77330f.png) [Credit: ZinetroN](https://www.vectorstock.com/royalty-free-vectors/vectors-by_ZinetroN)
-    
+
 &lt;/center&gt;
 
 ***Tech stack:***
@@ -119,7 +119,7 @@ Aside from the last step being quite different from the way you would run a typi
 `RuntimeError: This event loop is already running`
 
 
-Wait what? Oh yes! This must be because of this line 
+Wait what? Oh yes! This must be because of this line
 
 `loop = asyncio.get_event_loop()`
 
@@ -149,7 +149,7 @@ run().catch(console.log)
  ```
 Similar steps, but without the call to an event_loop (🤔), and definitely without the error.
 
-Part of the confusion with async/await in these different languages, and something to be aware of, is that they use the same keywords/syntax in a slightly different way to accomplish the same thing. 
+Part of the confusion with async/await in these different languages, and something to be aware of, is that they use the same keywords/syntax in a slightly different way to accomplish the same thing.
 
 Let’s look more closely at how those keywords are used in each language.
 
@@ -174,8 +174,8 @@ asyncio.run(main())
 ```
 Expected output:
 ```
-API A has started… 
-API B has started… 
+API A has started…
+API B has started…
 API B is done!
 API A is done!
 ```
@@ -184,14 +184,14 @@ From the example above, we can see that ==API A== starts and continues in the ba
 
 Note that in this example we use asyncio ==sleep()== to mimic an I/O call.
 
-It is also worth noting that when the `async` keyword is used to define a function in Python, the resulting coroutine is referred to as a native coroutine. This is because there is also another type of coroutine called the generator-based coroutine. The generator-based coroutine is beyond the scope of this article, so we won’t cover it here; If you want extra information on this, check out this [article](https://www.integralist.co.uk/posts/python-generators/), I think it provides a good comparison of the two. 
+It is also worth noting that when the `async` keyword is used to define a function in Python, the resulting coroutine is referred to as a native coroutine. This is because there is also another type of coroutine called the generator-based coroutine. The generator-based coroutine is beyond the scope of this article, so we won’t cover it here; If you want extra information on this, check out this [article](https://www.integralist.co.uk/posts/python-generators/), I think it provides a good comparison of the two.
 
 
 ## Async/await keywords in JavaScript
 
 Now let’s contrast this to the keywords in JavaScript. Here the async/await keywords enable asynchronous, promise-based behavior.
 
-A `promise` in JavaScript is simply a proxy for a value not yet known at the time of function execution. Similar to the `future` (This represents an eventual result of an asynchronous operation) concept in Python, it allows functions to return values like synchronous functions. 
+A `promise` in JavaScript is simply a proxy for a value not yet known at the time of function execution. Similar to the `future` (This represents an eventual result of an asynchronous operation) concept in Python, it allows functions to return values like synchronous functions.
 A typical way to create a `promise`:
 ```javascript=101
 const itsRaining = true
@@ -229,17 +229,17 @@ I’ve shown you how the keywords are used in each language, now let’s dive a 
 
 #### Similarities include:
 + You cannot use the `await` keyword outside an `async` function.
-+ They both operate within the concept of promises or futures as it is known in the Python world. These functions can be paused or suspended and resumed when you want. 
++ They both operate within the concept of promises or futures as it is known in the Python world. These functions can be paused or suspended and resumed when you want.
 
 However, the `event loop` – a design pattern that waits for and dispatches events in a program – is handled differently in both languages. For starters, JavaScript has an event loop built in natively, Python does not, this subsequently informs how the asynchronous functions are executed.
 
 In JavaScript (NodeJs), the event loop starts when the application is executed and continuously checks the call stack to see if there’s any function that needs to run.
 
-In contrast, in Python, applications with `async/await` functions cannot execute without an event loop that is &#34;running&#34;. Hence why this part 
+In contrast, in Python, applications with `async/await` functions cannot execute without an event loop that is &#34;running&#34;. Hence why this part
 `loop = asyncio.get_event_loop()`
 `loop.run_until_complete(main())`
 
-was necessary. This is the part that executes the `async` function and returns the value returned by the function you passed to it. 
+was necessary. This is the part that executes the `async` function and returns the value returned by the function you passed to it.
 
 The tricky thing with event loop in Python is that most Python libraries were not written for this paradigm. That is, functions in libraries do not await I/O bound tasks, that means they don&#39;t yield control and therefore block the event loop. That’s what makes it so easy to end up blocking the event loop.
 In JavaScript you can almost think of the asynchronous execution of the code where awaits are like &#34;stop here to continue sequentially later when result is available&#34; while in Python it is like &#34;you are yielding control of the event loop until result is available&#34;.
@@ -252,9 +252,9 @@ In JavaScript you can almost think of the asynchronous execution of the code whe
 
 ## Wait, what happened to my RuntimeError?
 
-I actually ended up not resolving the RuntimeError that drew me in to explore async/await concept in Python due to array of reasons, some of which include: 
+I actually ended up not resolving the RuntimeError that drew me in to explore async/await concept in Python due to array of reasons, some of which include:
 - Flask – the Python framework used in the application is not ASGI compatible by default, which is what Elasticsearch Async is based on (this [article](https://sethmlarson.dev/blog/flask-async-views-and-async-globals))
-- The application runs on Python 3.6 which in itself meant we couldn&#39;t access some of the newer asyncio methods. 
+- The application runs on Python 3.6 which in itself meant we couldn&#39;t access some of the newer asyncio methods.
 
 After a long deliberation with our team we decided to go with the normal Elasticsearch client and use Threading to achieve the intended behavior. If you want to know the difference between using async/await and threading, I recommend this [article](https://itnext.io/practical-guide-to-async-threading-multiprocessing-958e57d7bbb8).
 
@@ -277,7 +277,7 @@ As I mentioned, I didn’t end up using the AsyncElasticsearch class but, noneth
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

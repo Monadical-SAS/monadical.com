@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="   &lt;center&gt;      #  From Chaos to Cohesion: Architecting Your Own Monorepo        &lt;big&gt;      **Build">
-    
-    
-    
+
+
+
     <meta property="og:title" content="From Chaos to Cohesion: Architecting Your Own Monorepo - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>From Chaos to Cohesion: Architecting Your Own Monorepo - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,36 +46,36 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Oct 13 2023 18:41:21 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Oct 19 2023 23:40:17 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">10754 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">10760 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 
 
 &lt;center&gt;
-    
-#  From Chaos to Cohesion: Architecting Your Own Monorepo 
 
-    
+#  From Chaos to Cohesion: Architecting Your Own Monorepo
+
+
 &lt;big&gt;
-    
+
 **Build a simple monorepo using GitHub Actions as a CI/CD tool.**
-    
+
 &lt;/big&gt;
-    
+
 *Written by Angel Rey and Hanna Jodrey. Originally published 2023-10-24 on the [Monadical blog](https://monadical.com/blog.html).*
-    
+
 
 &lt;/center&gt;
-    
+
 Managing a massive codebase is not an easy task, yet the most influential and successful tech companies in the world seem to handle it with ease. Take Google, for instance: [back in 2015](https://qeunit.com/blog/how-google-does-monorepo), when Google was still significantly smaller than today (with a mere 2 billion lines of code), it made a bold and significant move to faciliate its code management: it migrated to a monorepo,  a single repository that contains multiple projects (often with different languages and technologies). This strategy enabled its developers to share code, tools, and resources across teams and products.
 
 In this article, we’ll follow in Google’s footsteps. You’ll learn how to:
@@ -137,7 +137,7 @@ Essentially, trunk-based development is a source-control branching model where d
 ![](https://docs.monadical.com/uploads/eb696ed1-3f62-46eb-8af3-e829562ea58e.png)
 
 &lt;/center&gt;
-    
+
 Trunk-based development is a branching strategy that has some clear benefits for a project:
 - You only have to deal with the trunk and sometimes create release branches from the current state of the monorepo. You don’t have to worry about maintaining many different long-term branches.
 - You can ensure the quality of your code by having automated tests that cover most of your code. If something goes wrong in the trunk, it will be noticed and fixed quickly. ([Read more](https://martinfowler.com/articles/practical-test-pyramid.html) [here](https://buttondown.email/hillelwayne/archive/i-have-complicated-feelings-about-tdd-8403)). While it’s true that trunk-based development requires more interactions with the main branch and more effort for test automation - since the code should be production-ready - this is not a drawback! This is a good practice and something that every project should do.
@@ -145,7 +145,7 @@ Trunk-based development is a branching strategy that has some clear benefits for
 - You can improve the communication and collaboration among your team members, since they have to work on the same branch and share ideas constantly.
 - You can refactor your code more easily, since you can include the complete refactor in a single pull request.
 
-By using trunk-based development, you can increase the speed and quality of your development process. Of course, this also requires adopting some best practices such as automated testing, coding standards, design patterns, peer reviews and improving the collaboration among the different team members. 
+By using trunk-based development, you can increase the speed and quality of your development process. Of course, this also requires adopting some best practices such as automated testing, coding standards, design patterns, peer reviews and improving the collaboration among the different team members.
 
 ### What are the minimal requirements we’ll need?
 While admittedly there are a lot of “nice-to-haves” (like local computation caching, code sharing and code generation, etc.), none of these features are really required when building your own monorepo.
@@ -153,8 +153,8 @@ While admittedly there are a lot of “nice-to-haves” (like local computation 
 To create a successful monorepo, you should consider implementing at least these features:
 
 - A way to detect changes in specific projects within the monorepo: This will allow you to trigger the appropriate actions for each project, such as testing, building, or deploying. Use some existing tools that support monorepo management, such as [Lerna](https://lerna.js.org/), [Nx](https://nx.dev/), or [Bazel](https://bazel.build/), or write your own script in Python, bash, or any other language that can access the Git history and compare the files that have changed.
-- A set of CI and CD pipelines that can handle different types of projects in the monorepo: Avoid writing custom workflows for each project, since this can be tedious and error-prone. Instead, standardize as much as possible the processes for testing, building, and deploying your projects, using common tools and configurations. 
- 
+- A set of CI and CD pipelines that can handle different types of projects in the monorepo: Avoid writing custom workflows for each project, since this can be tedious and error-prone. Instead, standardize as much as possible the processes for testing, building, and deploying your projects, using common tools and configurations.
+
 
 
 ## How do we implement our monorepo using GitHub Actions?
@@ -180,10 +180,10 @@ If you need to add more projects in the monorepo, this file should include the r
 The flow diagram below describes the general CI/CD process that we will implement:
 
 &lt;center&gt;
-    
+
 ![](https://docs.monadical.com/uploads/de88f8cd-ed69-419e-83ad-497e020beed9.png)
 
-    
+
 &lt;/center&gt;
 
 ### Detecting what files have changed in a project
@@ -192,7 +192,7 @@ To detect which files might have changed in a project, you’ll need to write a 
 
 - It creates a new git repo object using the repo path as an argument.
 - It gets the differences between the current commit and the last one (or a branch).
-- It iterates over the different files that have changed, checking their status. If the status is modified, added, or deleted, it searches the project.json file. 
+- It iterates over the different files that have changed, checking their status. If the status is modified, added, or deleted, it searches the project.json file.
 - If it finds any metadata file, the script extracts the name of the project and adds it to a set (to avoid duplicated info in case a project has multiple files distributed across the monorepo codebase).
 
 &lt;center&gt;
@@ -210,7 +210,7 @@ The script uses a function that takes a file path as an argument and tries to fi
 &lt;center&gt;
 
 ![](https://docs.monadical.com/uploads/28726ff4-9b0c-4cee-90fd-74a310c86d88.png)
-     
+
 &lt;/center&gt;
 
 In this case, the Python script is designed to work with GitHub Actions as a CI/CD tool. It returns the list of projects that have changed in a format that GitHub Actions can use to iterate over them and deploy them accordingly.
@@ -239,7 +239,7 @@ The goal of this workflow is to detect the projects that have changed and to cal
 
 #### CI
 
-This process is defined in the GitHub Actions workflow file: .github/workflows/cicd.yaml. 
+This process is defined in the GitHub Actions workflow file: .github/workflows/cicd.yaml.
 
 The first job (ci-projects job) uses the projects_updated.py script to obtain the list of projects that need to be updated. The result is stored in an output variable called projects. The output variable projects is then used as an input for the CI job, which is a matrix that contains the names of the projects. GitHub Actions will iterate over this matrix and call the CI workflow for each project. This workflow is specified in: .github/workflows/ci.yaml file.
 
@@ -260,16 +260,16 @@ The first part of the CI workflow is to extract the configuration information fr
 
 The second part of the workflow is to execute the specific build method for each project. Notice that there is an “if” condition that checks if the build variable is Docker, after which the corresponding commands are executed.
 
-&lt;center&gt; 
-    
+&lt;center&gt;
+
 ![](https://docs.monadical.com/uploads/98fbed14-ee81-48f5-8658-99344c7202cc.png)
-   
+
 &lt;/center&gt;
 
 #### CD
 This process is defined in the GitHub Actions workflow file: .github/workflows/cicd.yaml.
 
-The first part of the CD workflow is to get the list of projects that need to be updated from the output variable projects, which was generated by the projects_updated.py script in the .github/workflows/cd.yaml file. 
+The first part of the CD workflow is to get the list of projects that need to be updated from the output variable projects, which was generated by the projects_updated.py script in the .github/workflows/cd.yaml file.
 
 &lt;center&gt;
 
@@ -306,7 +306,7 @@ The second phase of the workflow is to run the CI workflow for each project, as 
 
 &lt;/center&gt;
 
-The third phase of the workflow is to execute the specific deployment method for each project. You can see that there is an “if” condition that checks if the build variable is Helm, and then runs the corresponding commands. In our demo, the specific commands for deploying an application using Helm are omitted. 
+The third phase of the workflow is to execute the specific deployment method for each project. You can see that there is an “if” condition that checks if the build variable is Helm, and then runs the corresponding commands. In our demo, the specific commands for deploying an application using Helm are omitted.
 
 &lt;center&gt;
 
@@ -316,7 +316,7 @@ The third phase of the workflow is to execute the specific deployment method for
 
 ### Triggering the pipelines
 
-Whenever you push a commit to a feature branch that includes any modifications within the company&#39;s project, Github Actions will trigger the CI pipeline. You can verify that everything is running well by checking the GitHub Actions project page. Notice that it will only run the CI processes because the CD steps run only within the main branch. 
+Whenever you push a commit to a feature branch that includes any modifications within the company&#39;s project, Github Actions will trigger the CI pipeline. You can verify that everything is running well by checking the GitHub Actions project page. Notice that it will only run the CI processes because the CD steps run only within the main branch.
 
 &lt;center&gt;
 
@@ -367,7 +367,7 @@ Now, the thrill of hands-on experience and experimentation awaits! Explore the [
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

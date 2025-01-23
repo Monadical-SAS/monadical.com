@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to Migrate from Firebase to Django (or another SQL ORM) - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to Migrate from Firebase to Django (or another SQL ORM) - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,15 +48,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="karim"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 29 2020 14:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 09 2021 15:32:50 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3837 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3841 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -65,7 +65,7 @@
 
 
 &lt;big&gt;
-    
+
 How to Migrate from Firebase to Django
 ===
 &lt;/big&gt;
@@ -84,7 +84,7 @@ In recent years, Firebase has emerged as a strong contender in the NoSQL space, 
 
 ### Step One: Get your models in order
 
-The very first step in migrating your Firebase application to Django is to stabilize your models. By this, I mean that you should have a concrete idea of how your data is structured and [related](https://en.wikipedia.org/wiki/Relational_database). Take a look at the objects in your Firebase store and try to follow them as they move through your frontend application. Which fields are actually used? Which fields can be normalized? It&#39;s hard to overstate how important this step is. Look at your data in the collections interface of Firebase first, then as they flow into your application, and, finally, start defining your Django models.  
+The very first step in migrating your Firebase application to Django is to stabilize your models. By this, I mean that you should have a concrete idea of how your data is structured and [related](https://en.wikipedia.org/wiki/Relational_database). Take a look at the objects in your Firebase store and try to follow them as they move through your frontend application. Which fields are actually used? Which fields can be normalized? It&#39;s hard to overstate how important this step is. Look at your data in the collections interface of Firebase first, then as they flow into your application, and, finally, start defining your Django models.
 
 If you have no experience with SQL, then you will need to familiarize yourself with at least [one-to-many relationships](https://docs.djangoproject.com/en/3.0/topics/db/examples/many_to_one/). Armed with this knowledge, you should have a Django model for each of your collections in Firebase.  If you are a developer who relies on Firebase, this will likely be the hardest step for you, since, unlike with Firebase, you will now need to make concrete decisions about how your objects should look and behave. However, just because you are using [Django&#39;s migrations](https://docs.djangoproject.com/en/dev/topics/migrations/) to manage our SQL database schema, this does not mean that the decisions for a model are set in stone. Indeed, the migration system exists precisely for that: propagating changes you make to your models into your SQL database schema.
 
@@ -247,15 +247,15 @@ print(
 ```
 Note that as part of the loading of those pickled objects, I added the `firebase_id` key to the aforementioned `metadata` JSON field in our Django objects. This allows you to reference this object with `firebase_id` later should the need arise. I also check for the existence of `some_key` and, if found, it&#39;s added to the `metadata` field. This will allow us to access this data in the future, perhaps also adding it as `some_column` in the future for the Django objects.
 
-If the migration is a multi-week process and you want to be as close to the current Firebase production collections as possible, simply run those scripts as cron jobs on a daily basis. Their failures will point to problems that you have not addressed in the serialization of Firebase objects to your Django database. In the course of helping our client migrate to Django, we did this process several times to ensure that every object in Firebase could move to Django. Each time we ran the script and it failed, we examined the object that raised the exception thoroughly and added the necessary logic to load it. 
+If the migration is a multi-week process and you want to be as close to the current Firebase production collections as possible, simply run those scripts as cron jobs on a daily basis. Their failures will point to problems that you have not addressed in the serialization of Firebase objects to your Django database. In the course of helping our client migrate to Django, we did this process several times to ensure that every object in Firebase could move to Django. Each time we ran the script and it failed, we examined the object that raised the exception thoroughly and added the necessary logic to load it.
 
-Finally, there are use cases for which I do recommend using Firebase, since replicating the same functionality in Django would require a more in-depth engineering effort. Examples include real time apps such as whiteboards, and [push notifications](https://github.com/xtrinch/fcm-django). Still, even in those cases, Firebase can be used for part of your application, rather than as the main tool for the whole thing.  
+Finally, there are use cases for which I do recommend using Firebase, since replicating the same functionality in Django would require a more in-depth engineering effort. Examples include real time apps such as whiteboards, and [push notifications](https://github.com/xtrinch/fcm-django). Still, even in those cases, Firebase can be used for part of your application, rather than as the main tool for the whole thing.
 
 Thanks to Juan Diego Caballero for his valuable contributions to this article.
 
 ### Further Reading
 
-A common problem called the N+1 select problem in ORMs like Django’s: https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping 
+A common problem called the N+1 select problem in ORMs like Django’s: https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping
 
 A new open-source project called Supabase that offers real time subscriptions on Postgresql databases, thus mimicking a core feature of Firebase: https://github.com/supabase
 
@@ -267,12 +267,12 @@ A tool to convert Firebase databases (Firestores) to Postgresql-based GraphQL ba
 ---
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
@@ -284,7 +284,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

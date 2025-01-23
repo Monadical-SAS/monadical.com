@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;      #  How to Make LLMs Speak Your Language       &lt;big&gt;      **A Review of the Top Tools f">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to Make LLMs Speak Your Language - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to Make LLMs Speak Your Language - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,36 +46,36 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 19 2023 15:40:04 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Dec 20 2023 17:17:51 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2868 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2877 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
-    
+
 #  How to Make LLMs Speak Your Language
 
-    
+
 &lt;big&gt;
-    
+
 **A Review of the Top Tools for Generating Structured Output**
-    
+
 &lt;/big&gt;
-    
+
 *This is an applied research report by Michał Flak and JDC for Monadical Labs, where we write about emerging technologies. Originally published on 2023-12-20 on the [Monadical blog](https://monadical.com/blog.html).*
-    
+
 
 &lt;/center&gt;
 
 ## Introduction
 
-Businesses today rely on seamless and intuitive communication to thrive, and Large Language Models (LLMs) have emerged as powerful tools that promise to transform how we communicate. In our previous article, [“To Fine-Tune or Not Fine-Tune: Large Language Models for AI-Driven Business Transformation](https://monadical.com/posts/fine-tune-or-not-llm-ai-business-transformation.html),” we explored how LLMs can enhance various aspects of business operations. In this article, we will focus on one specific application of LLMs that holds incredible promise and is rewriting the rulebook for customer interactions, process optimization, and data handling: **generating text from an LLM that adheres to a predefined output format.** 
+Businesses today rely on seamless and intuitive communication to thrive, and Large Language Models (LLMs) have emerged as powerful tools that promise to transform how we communicate. In our previous article, [“To Fine-Tune or Not Fine-Tune: Large Language Models for AI-Driven Business Transformation](https://monadical.com/posts/fine-tune-or-not-llm-ai-business-transformation.html),” we explored how LLMs can enhance various aspects of business operations. In this article, we will focus on one specific application of LLMs that holds incredible promise and is rewriting the rulebook for customer interactions, process optimization, and data handling: **generating text from an LLM that adheres to a predefined output format.**
 
 ![](https://docs.monadical.com/uploads/9da6facb-d883-4b25-83e3-2478208eb11a.png)
 
@@ -84,11 +84,11 @@ When LLMs provide answers and advice, they often use words in a way that feels l
 
 For instance, in the domain of computational interaction, the communicative efficacy between LLMs and external systems hinges upon their adherence to a predefined output format.
 
-Getting LLMs to adhere to a specific output format, like a JSON object or even code, presents a challenge, as autoregressive LLMs are often unpredictable and inherently [lack controllability](https://drive.google.com/file/d/1BU5bV3X5w65DwSMapKcsr0ZvrMRU_Nbi/view). How can we balance the creativity of language generation with the need for structured output, and which tools are available to help in this endeavour? In this article, we’ll review different approaches, from open-source packages to simple yet effective solutions. We will also show you how to implement a smart text interface using an LLM that can generate text in a specific output format. 
+Getting LLMs to adhere to a specific output format, like a JSON object or even code, presents a challenge, as autoregressive LLMs are often unpredictable and inherently [lack controllability](https://drive.google.com/file/d/1BU5bV3X5w65DwSMapKcsr0ZvrMRU_Nbi/view). How can we balance the creativity of language generation with the need for structured output, and which tools are available to help in this endeavour? In this article, we’ll review different approaches, from open-source packages to simple yet effective solutions. We will also show you how to implement a smart text interface using an LLM that can generate text in a specific output format.
 
-But first, let’s examine how LLMs generate output in the first place. 
+But first, let’s examine how LLMs generate output in the first place.
 
-## How do LLMs generate output? 
+## How do LLMs generate output?
 
 To see how an LLM can follow a certain output structure, our focus will be on a causal transformer model, where the goal is to predict the (N + 1)th token based on a sequence of N tokens. This framework provides a basis to examine the strategies that steer LLMs toward producing structured output.
 
@@ -304,9 +304,9 @@ python argparse_demo.py --input cat.png --format jpg --output cats/mittens.jpg
 
 As seen here, a satisfactory result can be achieved even with a very small local model.
 
-## Overview of tools for guiding LLM output 
+## Overview of tools for guiding LLM output
 
-Below is a list of the tools we’ll explore, as well as a quick summary of their advantages and disadvantages. Keep reading for a deep dive into each one. 
+Below is a list of the tools we’ll explore, as well as a quick summary of their advantages and disadvantages. Keep reading for a deep dive into each one.
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -426,7 +426,7 @@ Below is a list of the tools we’ll explore, as well as a quick summary of thei
       &lt;td&gt;
         - Works with Hugging Face Transformers and OpenAI&lt;br&gt;
         - Ensures valid output with constraints&lt;br&gt;
-        - Rich feature set with Python scripting / templating 
+        - Rich feature set with Python scripting / templating
       &lt;/td&gt;
       &lt;td&gt;
         - No CFG support yet
@@ -712,7 +712,7 @@ async function translate(request: string, promptPreamble?: string | PromptSectio
 * No guarantee of a valid output ever returned; it can throw error and fail, which misses the point of this exercise
 * Limited approach based on prompt engineering and completion API (this is a limitation of OpenAI and other proprietary models)
 * Only generates JSON objects
-* Only uses OpenAI API 
+* Only uses OpenAI API
 
 ### 4. [Jsonformer](https://github.com/1rgs/jsonformer)
 
@@ -776,8 +776,8 @@ tokenizer = AutoTokenizer.from_pretrained(&#34;gpt2&#34;)
 
 prompt = &#34;ReLLM, the best way to get structured data out of LLMs, is an acronym for &#34;
 pattern = regex.compile(r&#39;Re[a-z]+ L[a-z]+ L[a-z]+ M[a-z]+&#39;)
-output = complete_re(tokenizer=tokenizer, 
-                     model=model, 
+output = complete_re(tokenizer=tokenizer,
+                     model=model,
                      prompt=prompt,
                      pattern=pattern,
                      do_sample=True,
@@ -862,10 +862,10 @@ json_parser = Lark(json_grammar, parser=&#39;lalr&#39;,
                    regex=True)
 
 prompt = &#34;Write the first three letters of the alphabet in valid JSON format\n&#34;
-print(complete_cf(prompt, json_parser, &#34;&#34;, 
-                  tokenizer, 
+print(complete_cf(prompt, json_parser, &#34;&#34;,
+                  tokenizer,
                   model,
-                  max_new_tokens=15, 
+                  max_new_tokens=15,
                   debug=True))
 
 print(&#34;regular\n&#34;, &#39; &#39;.join(tokenizer.batch_decode(model.generate(tokenizer.encode(prompt, return_tensors=&#34;pt&#34;),
@@ -897,7 +897,7 @@ Thiggle is a paid service that leverages ReLLM and parserLLM under the hood to o
 * Regex Completion API
 * Context-Free Grammar Completion API
 
-However, Thiggle does not disclose which LLMs are used for these features, and the models might change without notice, which risks affecting the performance. 
+However, Thiggle does not disclose which LLMs are used for these features, and the models might change without notice, which risks affecting the performance.
 
 **Pros:**
 * Easy to use - just call an API
@@ -910,13 +910,13 @@ However, Thiggle does not disclose which LLMs are used for these features, and t
 
 ### 8. [Outlines](https://github.com/normal-computing/outlines)
 
-Normal Computing created a wrapper around Hugging Face Transformers that focuses on efficient guided generation, a method explained in detail in this paper, [&#34;Efficient Guided Generation for Large Language Models&#34;](https://arxiv.org/pdf/2307.09702.pdf). 
+Normal Computing created a wrapper around Hugging Face Transformers that focuses on efficient guided generation, a method explained in detail in this paper, [&#34;Efficient Guided Generation for Large Language Models&#34;](https://arxiv.org/pdf/2307.09702.pdf).
 
 Unlike other libraries that support regex or CFG matching, which loop through the entire vocabulary (around 50k tokens) to check if a token matches, this wrapper performs a crucial optimization. It converts any regular expression to an equivalent finite state machine (FSM) and maps each state of the FSM to valid next tokens, which can be cached and reused. This avoids iterating over the whole vocabulary at each token generation.
 
 This method can also be extended to optimize context-free grammar-based constraining, [for which there is a pull request pending](https://github.com/outlines-dev/outlines/pull/391).
 
-The paper claims that this method can achieve an average **O(1) complexity**. However, it requires storing valid tokens for each FSM state, which takes up memory. In the words of the authors: 
+The paper claims that this method can achieve an average **O(1) complexity**. However, it requires storing valid tokens for each FSM state, which takes up memory. In the words of the authors:
 
 &gt;Fortunately, for non-pathological combinations of regular expressions and vocabularies, not every string in the vocabulary will be accepted by the FSM, and not every FSM state will be represented by a string in V.
 
@@ -1054,7 +1054,7 @@ class UserDetails(OpenAISchema):
 
 ## Other methods of steering LLMs
 
-While beyond the scope of this article, there are indeed other, more subtle, methods of steering LLMs, like [activation vectors](https://www.alignmentforum.org/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector) (vectors that can be added to LLM’s activations, to skew it towards a desired direction in the activation space). This can affect the LLM’s output in terms of its content, style, sentiment, or other properties. 
+While beyond the scope of this article, there are indeed other, more subtle, methods of steering LLMs, like [activation vectors](https://www.alignmentforum.org/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector) (vectors that can be added to LLM’s activations, to skew it towards a desired direction in the activation space). This can affect the LLM’s output in terms of its content, style, sentiment, or other properties.
 
 ![](https://docs.monadical.com/uploads/51260597-5728-4a79-8282-960cc56f49c5.png)
 
@@ -1078,7 +1078,7 @@ We hope this article has given you some insights and inspiration on how to gener
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

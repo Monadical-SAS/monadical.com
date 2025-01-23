@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="Learn how to create an NFT-based application on the Solana blockchain.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="Learn how to create an NFT-based application on the Solana blockchain.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,37 +48,37 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Apr 10 2024 17:26:31 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Apr 12 2024 16:42:25 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1173 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1176 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 &lt;center&gt;
-    
-#  Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi  
 
-    
+#  Building a Ticketing System with Solana Mobile and Metaplex Foundation Umi
+
+
 &lt;big&gt;
-    
+
 **Learn how to create an NFT-based application on the Solana blockchain**
-    
+
 &lt;/big&gt;
-    
-*Written by [Juan David Arias](https://github.com/juanArias8). Originally published 2024-04-12 
+
+*Written by [Juan David Arias](https://github.com/juanArias8). Originally published 2024-04-12
 on the [Monadical blog](https://monadical.com/blog.html).*
-    
+
 
 &lt;/center&gt;
 
@@ -89,7 +89,7 @@ Solana Mobile Stack (SMS) stands out as an integrated Android mobile development
 
 This post explores decentralized applications (dApps) through the Solana Mobile Stack (SMS) capabilities, showcasing its effectiveness in delivering fast, secure, and scalable blockchain solutions on mobile platforms.
 
-We’ll provide a detailed tutorial on constructing a ticketing system using Non-Fungible Tokens (NFTs) on the Solana blockchain. Leveraging Solana Mobile, React Native, Phantom Wallet, Metaplex Foundation Umi, and Sugar, this guide leads readers through creating a functional NFT-based ticketing application. The system enables users to be verified using their Solana wallets, view available events (represented as NFT collections), mint a ticket for an event, and generate a QR code for ticket verification. 
+We’ll provide a detailed tutorial on constructing a ticketing system using Non-Fungible Tokens (NFTs) on the Solana blockchain. Leveraging Solana Mobile, React Native, Phantom Wallet, Metaplex Foundation Umi, and Sugar, this guide leads readers through creating a functional NFT-based ticketing application. The system enables users to be verified using their Solana wallets, view available events (represented as NFT collections), mint a ticket for an event, and generate a QR code for ticket verification.
 
 Overall, this tutorial aims to demonstrate the integration of blockchain technology into practical and real-world mobile applications, extending beyond the traditional domain of NFTs and cryptocurrencies.
 
@@ -100,8 +100,8 @@ This tutorial outlines creating a ticketing system for event tickets or brand di
 To do this, we&#39;ll use Solana Mobile, React Native, Phantom Wallet, Metaplex Foundation Umi, and Sugar.
 
 
-The system flow will be: 
-1. The user opens the mobile application, and their Solana wallet verifies them. 
+The system flow will be:
+1. The user opens the mobile application, and their Solana wallet verifies them.
 2. The user can see the events (NFT collections) available in the system.
 3. The user gets a new ticket for the event they wish to attend (Minting of a token).
 4. The user generates a QR code with the ticket information.
@@ -122,7 +122,7 @@ Throughout this tutorial, we&#39;ll use various technologies. The reader should 
 
 
 
-## Android Studio 
+## Android Studio
 
 Android Studio is an integrated development environment for Android applications. In our guide, we&#39;ll be using it to build developed applications, handle Android SDKs, and manage the emulator. Follow the instructions at https://developer.android.com/studio/install based on your operating system to install it.
 
@@ -130,7 +130,7 @@ An easy and quick way to install it is to use the JetBrains Toolbox App: https:/
 
 &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/40b3aeb2-ca7a-4721-9247-f9194a2cc9b6.png&#34; /&gt;
 
-## Android device or emulator 
+## Android device or emulator
 
 Once you install Android, the next step is to set up an Android device or an emulator to test the created applications. The easiest way to do this is by creating an emulator with Android Studio.
 
@@ -164,15 +164,15 @@ echo &#39;SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;2717&#34;, ATTR{idProdu
 
 Once your emulator is running, download the Phantom Wallet application from Google Play: https://play.google.com/store/apps/details?id=app.phantom. We will use Phantom as the crypto wallet to verify our identity in the application, sign transactions, and track our assets.
 
-Log into Phantom and follow the step-by-step process to create a new wallet. Once completed, go to the settings screen -&gt; developer settings and enable the Testnet mode option. We must enable this option to use the wallet while conducting tests on the [devnet](https://www.alchemy.com/dapps/solana-devnet). 
+Log into Phantom and follow the step-by-step process to create a new wallet. Once completed, go to the settings screen -&gt; developer settings and enable the Testnet mode option. We must enable this option to use the wallet while conducting tests on the [devnet](https://www.alchemy.com/dapps/solana-devnet).
 
-To sign transactions on the devnet, we will need some SOL in our wallet. To add funds, copy your account&#39;s public key from the account details and perform an airdrop from https://faucet.solana.com. 
+To sign transactions on the devnet, we will need some SOL in our wallet. To add funds, copy your account&#39;s public key from the account details and perform an airdrop from https://faucet.solana.com.
 
 &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/8f0e5da1-ff41-4ffc-b2ab-66dc7e15f864.gif&#34; /&gt;
 &lt;br/&gt;&lt;br/&gt;
 
 
-## React Native 
+## React Native
 
 
 To use React Native, you must have [Node.js](https://nodejs.org/en) installed in your development environment. In addition, you must have completed the steps for installing Android Studio and configured a device or emulator for testing. Before you can use React Native, you must have installed:
@@ -182,7 +182,7 @@ To use React Native, you must have [Node.js](https://nodejs.org/en) installed in
 - Android 14 (UpsideDownCake) API 34
 - Android Virtual Device
 
-For details on configuring the system, follow the official guide at https://reactnative.dev/docs/environment-setup?guide=native. 
+For details on configuring the system, follow the official guide at https://reactnative.dev/docs/environment-setup?guide=native.
 
 Also, ensure you set up the Android environment variables on your computer:
 
@@ -209,21 +209,21 @@ To run the project, use the commands `yarn start` or `npx react-native start` to
 
 ## Solana CLI
 
-Solana is the blockchain we&#39;ll be using in our app. We chose it because of its unique ability to process thousands of transactions per second at a fraction of the cost of other blockchains due to its innovative consensus mechanism: [Proof of History (PoH)](https://solana.com/es/news/proof-of-historyhttps://solana.com/es/news/proof-of-history). 
+Solana is the blockchain we&#39;ll be using in our app. We chose it because of its unique ability to process thousands of transactions per second at a fraction of the cost of other blockchains due to its innovative consensus mechanism: [Proof of History (PoH)](https://solana.com/es/news/proof-of-historyhttps://solana.com/es/news/proof-of-history).
 
-We&#39;ll install the Solana CLI to perform tasks such as creating wallets and airdrops. To install the CLI, execute the commands: 
+We&#39;ll install the Solana CLI to perform tasks such as creating wallets and airdrops. To install the CLI, execute the commands:
 
 ```shell
 sh -c &#34;$(curl -sSfL https://release.solana.com/v1.18.4/install)&#34;
 solana --version
 ```
 
-You can also follow the instructions from its official documentation at https://docs.solanalabs.com/cli/install. 
+You can also follow the instructions from its official documentation at https://docs.solanalabs.com/cli/install.
 
 
-## Sugar 
+## Sugar
 
-[Sugar](https://developers.metaplex.com/candy-machine/sugar) is a CLI developed by Metaplex that simplifies the NFT minting process on the Solana blockchain. This simplification allows candy machines to automate and manage the minting and distribution of NFT collections. We&#39;ll use Sugar to create a candy machine and upload the collection items that users can view and mint later. To install Sugar on your computer, execute the commands: 
+[Sugar](https://developers.metaplex.com/candy-machine/sugar) is a CLI developed by Metaplex that simplifies the NFT minting process on the Solana blockchain. This simplification allows candy machines to automate and manage the minting and distribution of NFT collections. We&#39;ll use Sugar to create a candy machine and upload the collection items that users can view and mint later. To install Sugar on your computer, execute the commands:
 
 ```shell
 bash &lt;(curl -sSf https://sugar.metaplex.com/install.sh)
@@ -232,7 +232,7 @@ sugar --version
 
 Now, we have completed our development environment. Our next steps are to create an NFT collection with Sugar and Solana and develop a React Native app to generate event tickets by minting NFTs.
 
- 
+
 
 # Create an NFT collection
 
@@ -262,7 +262,7 @@ pubkey: GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd
 
 ### Prepare the Assets
 
-Create an `assets` folder inside the `collection` directory and save all the images you want to be part of the candy machine. We should name the images with numbering in the format 0.png, 1.png, …, n.png. A JSON file containing the metadata of each image is also necessary. 
+Create an `assets` folder inside the `collection` directory and save all the images you want to be part of the candy machine. We should name the images with numbering in the format 0.png, 1.png, …, n.png. A JSON file containing the metadata of each image is also necessary.
 
 For this tutorial, we will generate an NFT collection for [Morpheus](https://github.com/Monadical-SAS/Morpheus), a (shameless plug) framework I built for deploying diffusion models to production.
 
@@ -335,9 +335,9 @@ Adding a `collection.json` file containing the metadata and an image representin
 Our complete asset collection should look like this:
 ![](https://docs.monadical.com/uploads/8bea8374-a5ed-4875-9f40-a23d4a28af6e.png)
 
-### Upload collection to Solana 
+### Upload collection to Solana
 
-Execute the `sugar launch` command inside the `collection` folder to initiate an interactive CLI for configuring the candy machine and uploading the files to the blockchain. Follow the CLI instructions step by step to create the configuration for the candy machine. This process will generate a `config.json` file, validate the assets for the candy machine, and upload the collection to the blockchain. 
+Execute the `sugar launch` command inside the `collection` folder to initiate an interactive CLI for configuring the candy machine and uploading the files to the blockchain. Follow the CLI instructions step by step to create the configuration for the candy machine. This process will generate a `config.json` file, validate the assets for the candy machine, and upload the collection to the blockchain.
 
 Remember to airdrop some SOL to the owner&#39;s wallet. You can do this at https://faucet.solana.com by entering the owner&#39;s public key `GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd` or by using the Solana CLI with the command `solana airdrop 1 GhLwJtoRbSZrzYLCL4szkhKCat5BN3FD3nXQggQaGLrd`.
 
@@ -405,7 +405,7 @@ config.json\` file generated by Sugar:
 
 First, we restrict the number of mints per wallet to 1. Then, we define the wallet receiving payments for each mint,  the owner wallet we created earlier. We add an initial date from which the minting stage begins, and finally, we introduce a penalty of 0.01 SOL for mint attempts using bots.
 
-For more on the different types of existing guards, check the official documentation at https://developers.metaplex.com/candy-machine/guards. 
+For more on the different types of existing guards, check the official documentation at https://developers.metaplex.com/candy-machine/guards.
 
 
 Finally, run the command sugar guard and add the guards to the candy machine. You should receive output similar to:
@@ -414,7 +414,7 @@ Finally, run the command sugar guard and add the guards to the candy machine. Yo
 
 
 Look for the ID of the candy machine in the Explorer to see its data
-https://explorer.solana.com/address/3Bn9DofFU6UwpjoyQyo4hFNHxbwU6zXAysKE3Vhmah9q?cluster=devnet 
+https://explorer.solana.com/address/3Bn9DofFU6UwpjoyQyo4hFNHxbwU6zXAysKE3Vhmah9q?cluster=devnet
 
 
 
@@ -432,7 +432,7 @@ Implementation steps:
 6. Enabling QR code generation with my ticket data
 7. Adding a page for reading and verifying a QR code
 
-You can access the final version of the code used in this tutorial at https://github.com/Monadical-SAS/SolanaMobileTicketingSystem. 
+You can access the final version of the code used in this tutorial at https://github.com/Monadical-SAS/SolanaMobileTicketingSystem.
 
 The Solana Mobile Stack is currently only available for Android platforms. To create dApps with Solana Mobile, you can choose between developing [native applications](https://docs.solanamobile.com/android-native/overview) with Android and Kotlin or using some of the frameworks for Android. You can choose between [react native](https://docs.solanamobile.com/react-native/overview), which has a template with [pure react native](https://github.com/solana-mobile/solana-mobile-dapp-scaffold) and another with [expo](https://github.com/solana-mobile/solana-mobile-expo-template). There are also SDK versions for [flutter](https://docs.solanamobile.com/flutter/overview), [unity](https://docs.solanamobile.com/unity/unity_sdk) and [unreal engine](https://docs.solanamobile.com/unreal/unreal_sdk).
 
@@ -448,7 +448,7 @@ npx react-native init SolanaMobileTicketSystem --template
 When you finish the installation process, run the command `yarn install` to install the project dependencies. Then, `yarn start` to start a Metro server for development. From a new terminal, `yarn android` to run the application on the emulator or the Android device.
 
 
-## Step 1: Connect Wallet Home Page 
+## Step 1: Connect Wallet Home Page
 
 The first view available upon running the app is the connect wallet page, where we can use our Solana wallet as an authentication mechanism. After clicking the &#34;connect wallet&#34; button, the MWA (Mobile Wallet Adapter) will launch an intent on Android to search for an application that allows the use of the wallet and links it with the app. We will be using the Phantom app since we have already installed it. By accepting the linking from Phantom, we can use the wallet to sign and send transactions:
 
@@ -520,7 +520,7 @@ The dApp maintains communication with the Wallet App to authorize and sign trans
 
 Our dApp establishes a communication channel with the Wallet App, an implementation of the MWA that allows interaction with the seed vault. The dApp requests the wallet app to sign a transaction, and the wallet app uses the Seed Vault to sign the transaction. Remember, the seed vault is an encrypted microchip that runs at the hardware level and is inaccessible even to the operating system.
 
-In Solana Mobile, there are two types of applications: dApps (decentralized Apps) developed for the general public, which use web3 libraries and wallet apps to perform crypto operations, and wallet apps, which are implementations of the MWA protocol allowing integration with the seed vault. These are the applications used by dApps to authorize and sign transactions. You can see the list of available WalletApps at https://solanamobile.com/wallets. 
+In Solana Mobile, there are two types of applications: dApps (decentralized Apps) developed for the general public, which use web3 libraries and wallet apps to perform crypto operations, and wallet apps, which are implementations of the MWA protocol allowing integration with the seed vault. These are the applications used by dApps to authorize and sign transactions. You can see the list of available WalletApps at https://solanamobile.com/wallets.
 
 
 ## Step 3: Integrate @metaplex-foundation/umi
@@ -649,7 +649,7 @@ export default function App() {
 ```
 :::warning
 **Warning**
-We encountered an import issue with the `@metaplex-foundation/umi/serializers` library when writing this article. 
+We encountered an import issue with the `@metaplex-foundation/umi/serializers` library when writing this article.
 :::
 
 ![](https://docs.monadical.com/uploads/22fe1d4b-a36b-4a30-b4dc-21b31c395ea0.png)
@@ -691,7 +691,7 @@ node fixer.mjs
 With the above, we have completed the integration of `@metaplex-foundation/umi` within our app. Run the Metro server and `yarn android` again; your application should work again.
 
 
-## Step 4: Collection Preview Events Page 
+## Step 4: Collection Preview Events Page
 
 We will need a page in our application displaying information about available events, that means, the candy machine and its items. Users can also generate the mint from this page for a new ticket. Remember, each candy machine represents an event within our system, and every minted NFT represents a ticket. We will simplify using a single sample event, but if desired, the approach can be generalized to support multiple events. To support multiple events, create a new candy machine for each event, and add a view that allows an admin-type user to enter events into the app using a form.
 
@@ -813,7 +813,7 @@ After updating our application, we will see a list of collection items, a button
 
 &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/35b376de-511e-4785-91ef-675879f02f73.png&#34; /&gt;
 
-## Step 5: Generate a Ticket 
+## Step 5: Generate a Ticket
 
 In our system, getting a new ticket for an event means creating a mint from a collection, thus obtaining a new NFT. To enable users to get event tickets, we will add a new component containing a button to highlight the mint:
 
@@ -970,7 +970,7 @@ const styles = StyleSheet.create({
 export default MintButton;
 ```
 
-In the `handleMintNFT` function, we have instructions for minting an NFT with `@metaplex-foundation/umi` and signing the transaction using the `mobile-wallet-adapter`. 
+In the `handleMintNFT` function, we have instructions for minting an NFT with `@metaplex-foundation/umi` and signing the transaction using the `mobile-wallet-adapter`.
 
 First, we construct the mint transaction to be executed on the Solana blockchain. We build the transaction using the `mintV2` function from `@metaplex-foundation` https://developers.metaplex.com/candy-machine/mint, passing it the previously generated candy machine, the transaction signer from the candy machine, and the guards for the candy machine as parameters.
 
@@ -1056,7 +1056,7 @@ const fetchNft = useCallback(
 ```
 
 With the `publicKey` of the mint, we can find the NFT&#39;s data using the `fetchDigitalAsset` function from Umi. Then, using `fetchJsonMetadata` and the asset&#39;s URI, we obtain the NFT&#39;s metadata to display the name.
- 
+
 Once the mint button component is completed, we can generate a new NFT. After pressing the button and waiting while the transaction is processed in the blockchain network, we should see the new NFT generated on the screen.
 
 &lt;div&gt;
@@ -1079,7 +1079,7 @@ const openInSolanaExplorer = useCallback(async () =&gt; {
 &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/5082c220-3068-4c2a-a400-8100d96c7851.png&#34; /&gt;
 
 
-## Step 6: NFT Ticket Ownership 
+## Step 6: NFT Ticket Ownership
 
 With the implementation for generating new event tickets completed, it&#39;s time to create a new screen where the user can view the available tickets, that is, the list of NFTs that have been minted. For this, we add a new component, `MyTicketsScreen` within the `screens` folder and add the following code:
 
@@ -1329,7 +1329,7 @@ export async function fetchCandyMachineData(umi: Umi): Promise&lt;CandyMachine&g
 ```
 
 Every time the `setScanned` event of the `&lt;QRScanner&gt;` component is executed, we can perform the validation whenever the scan data changes. To perform the validation, we use the `fetchMetadataByMint` function, which uses Umi&#39;s `fetchDigitalAsset` function to obtain an asset&#39;s data based on the mint value. Then, we use fetch to get the NFT&#39;s metadata and compare if the mint value of the candy machine matches the `nft.collection.mint value:
-    
+
 ```jsx
 // util/metaplex.ts
 export async function fetchMetadataByMint(
@@ -1366,7 +1366,7 @@ export async function fetchEventsByOwner(
 ```
 
 If both previous conditions are met, an alert message indicating whether the operation was completed is displayed in a modal.
- 
+
 We create the component to read the QR codes using the [VisionCamera] (https://react-native-vision-camera.com/docs/guides) library. This component allows us to use the camera in React Native and includes functionalities such as photo taking, video recording, QR and Barcode scanning, and video stabilization.
 
 To add the dependency, run the command:
@@ -1384,7 +1384,7 @@ VisionCamera_enableCodeScanner=true
 ```
 
 To complete this, we add a new `&lt;QRScanner&gt;` component responsible for using the camera, scanning for present QR codes, and returning the result to a parent component:
-    
+
 ```jsx
 import React, {Fragment, useCallback} from &#39;react&#39;;
 import {StyleSheet, Text} from &#39;react-native&#39;;
@@ -1455,7 +1455,7 @@ Once the ticket validator scans a QR code generated with the wallet: mint pair, 
 
 &lt;img width=&#34;350&#34; src=&#34;https://docs.monadical.com/uploads/5c1d1cb5-da20-4473-9284-7a4ab454a8ad.png&#34; /&gt;
 
-With the above, we conclude the implementation of our NFT ticketing app. You can check the repository https://github.com/Monadical-SAS/SolanaMobileTicketingSystem if you want to use the source code for this tutorial. The developed system is still far from being considered ready for production, but it exemplifies the flow we should follow for a ticketing system. 
+With the above, we conclude the implementation of our NFT ticketing app. You can check the repository https://github.com/Monadical-SAS/SolanaMobileTicketingSystem if you want to use the source code for this tutorial. The developed system is still far from being considered ready for production, but it exemplifies the flow we should follow for a ticketing system.
 
 If the reader wishes to complete the implementation, they must ensure the entry of new collections by admin-type users. Additionally, they must be more rigorous with validations in the system, such as verifying that a ticket has been used previously in the system or displaying error messages when no more items are available to mint in the application.
 
@@ -1473,13 +1473,13 @@ This article provides a comprehensive guide to developing an NFT ticketing syste
 
 # Final Thoughts
 
-The development of an NFT ticketing system using Solana, React Native, and associated technologies exemplifies the practical application of blockchain technology in everyday use cases. The integration of mobile wallet adapters and the launch of the Solana dApp store are significant milestones that highlight the ecosystem&#39;s maturity and readiness for mainstream adoption. 
+The development of an NFT ticketing system using Solana, React Native, and associated technologies exemplifies the practical application of blockchain technology in everyday use cases. The integration of mobile wallet adapters and the launch of the Solana dApp store are significant milestones that highlight the ecosystem&#39;s maturity and readiness for mainstream adoption.
 
 The recent advancements in Solana&#39;s blockchain technology have not only improved the user experience but also opened up new opportunities for developers to create innovative and value-added services. We encourage you to develop new applications that will further enhance the user experience and share these ideas in the comments section below. By working together, we can establish blockchain&#39;s role in modern technology landscapes!
 
 
 # Resources
-    
+
 * https://github.com/solana-mobile/solana-mobile-dapp-scaffold
 * https://developers.metaplex.com/candy-machine/sugar
 * https://developers.metaplex.com/candy-machine
@@ -1507,7 +1507,7 @@ The recent advancements in Solana&#39;s blockchain technology have not only impr
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="50 Shades of Rust, or emerging Rust GUIs in a WASM world - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>50 Shades of Rust, or emerging Rust GUIs in a WASM world - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,15 +48,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 25 2023 14:09:43 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Jul 27 2024 22:15:30 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">68068 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -76,20 +76,20 @@
 
 &lt;/center&gt;
 
-GUI in Rust progresses with unprecedented speed – 3 months in Rust GUI-land is like 3 years in the mortal world. To put things in perspective, GUI moves so fast for the web that it&#39;s even ahead of browsers. There are many possible reasons for this, from the cross-platform nature of Rust to the WebAssembly support, which provides easier distribution of software. 
+GUI in Rust progresses with unprecedented speed – 3 months in Rust GUI-land is like 3 years in the mortal world. To put things in perspective, GUI moves so fast for the web that it&#39;s even ahead of browsers. There are many possible reasons for this, from the cross-platform nature of Rust to the WebAssembly support, which provides easier distribution of software.
 
 In this post, I&#39;ll review the current toolkit for GUI in Rust, and share some tips for building WebAssembly bundles. Due to the speed at which GUI in Rust moves, some tools I’ve outlined below may deprecate in the near future. So, at the risk of this post becoming obsolete before you’ve finished reading it, let&#39;s dive into the most current GUI architecture for Rust that I&#39;ve discovered thus far.
 
-## The current toolkit 
+## The current toolkit
 
-Before we get into the toolkit, please note that I mention Elm Architecture and Immediate Mode many times here, although their definitions are beyond the scope of this post. However, you can think of [Elm Architecture](https://guide.elm-lang.org/architecture/) as roughly similar to Redux (if you have experience with it), and you can consider [Immediate Mode](https://en.wikipedia.org/wiki/Immediate_mode_GUI) more imperative than Elm. 
+Before we get into the toolkit, please note that I mention Elm Architecture and Immediate Mode many times here, although their definitions are beyond the scope of this post. However, you can think of [Elm Architecture](https://guide.elm-lang.org/architecture/) as roughly similar to Redux (if you have experience with it), and you can consider [Immediate Mode](https://en.wikipedia.org/wiki/Immediate_mode_GUI) more imperative than Elm.
 It’s also worth mentioning that many libraries have now started  using “signal” reactive semantics, where you mutate your state variables directly; this is then reflected in the UI automatically, just like we had in the times of Angular 1.
 
-Now, onto the toolkit. 
+Now, onto the toolkit.
 
-### 1. [Dioxus](https://github.com/DioxusLabs/dioxus) 
+### 1. [Dioxus](https://github.com/DioxusLabs/dioxus)
 
-**Dioxus** has a react-like interface architecture, but on Rust. For Desktop builds, it uses Tauri, focuses on the Web, has experimental Terminal support, and has an SSR feature for generating server-side markup. Dioxus also implements React-like interior mutability for data handling with, for example, `use_state`. Because of its global state management through useContext-like API, potential Redux-like tools [can be integrated through it](https://dioxuslabs.com/docs/0.3/guide/en/roadmap.html) (“redux/recoil/mobx on top of context”). Below is an example widget built with Dioxus: 
+**Dioxus** has a react-like interface architecture, but on Rust. For Desktop builds, it uses Tauri, focuses on the Web, has experimental Terminal support, and has an SSR feature for generating server-side markup. Dioxus also implements React-like interior mutability for data handling with, for example, `use_state`. Because of its global state management through useContext-like API, potential Redux-like tools [can be integrated through it](https://dioxuslabs.com/docs/0.3/guide/en/roadmap.html) (“redux/recoil/mobx on top of context”). Below is an example widget built with Dioxus:
 
 &lt;iframe src=&#34;https://shades-dioxus.apps.loskutoff.com&#34; width=&#34;150px&#34; height=&#34;150px&#34;&gt;&lt;/iframe&gt;
 
@@ -225,13 +225,13 @@ fn main() {
 ### 3. [Xilem](https://github.com/linebender/xilem)
 
 **Xilem** is an experimental but very promising attempt at the data-first architecture that aligns well with Rust’s language architecture^[Notably, it means avoiding a shared mutable state and using Rust type inference at its fullest.]. It’s the successor of [Druid](https://github.com/linebender/druid).
-The library’s author Raph Levien stated that “Xilem aims to be the premier UI library for Rust, drawing considerable inspiration from SwiftUI, with a serious focus on performance.” Please check out his entire article on Rust UI architecture: https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html. It’s the best article on this topic to date, in my opinion. 
+The library’s author Raph Levien stated that “Xilem aims to be the premier UI library for Rust, drawing considerable inspiration from SwiftUI, with a serious focus on performance.” Please check out his entire article on Rust UI architecture: https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html. It’s the best article on this topic to date, in my opinion.
 
 Based on this article, the natural decision is to choose a centralized state like in Elm architecture. The library uses its own renderer and is about to start heavily utilizing GPU features for even faster rendering. The project is at a very early experimental stage at the moment. It currently targets WebGPU, which is problematic to run in the browser at this point, but it has a lot of promise.
 
 ### 4. [Iced](https://github.com/iced-rs/iced)
 
-**Iced** is [“a cross-platform GUI library for Rust focused on simplicity and type-safety.”](https://github.com/iced-rs/iced). It uses Elm architecture and a reactive programming model. By default, web builds use DOM to render, but Iced can be used with other backends, too, like wgpu or glow. The web part seems a bit overlooked right now (https://github.com/iced-rs/iced_web), and it [hasn’t been updated in a while](https://www.reddit.com/r/rust/comments/12zjysp/comment/jht57yc/). Here, their built Bezier tool employs Canvas: 
+**Iced** is [“a cross-platform GUI library for Rust focused on simplicity and type-safety.”](https://github.com/iced-rs/iced). It uses Elm architecture and a reactive programming model. By default, web builds use DOM to render, but Iced can be used with other backends, too, like wgpu or glow. The web part seems a bit overlooked right now (https://github.com/iced-rs/iced_web), and it [hasn’t been updated in a while](https://www.reddit.com/r/rust/comments/12zjysp/comment/jht57yc/). Here, their built Bezier tool employs Canvas:
 &lt;iframe src=&#34;https://shades-iced.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;250px&#34;&gt;&lt;/iframe&gt;
 
 ```rust=
@@ -520,7 +520,7 @@ mod bezier {
 
 ### 5. [Egui](https://github.com/emilk/egui)
 
-**Egui** is &#34;the easiest to use GUI library.” [https://github.com/emilk/egui]. It utilizes Immediate Mode GUI architecture [https://en.wikipedia.org/wiki/Immediate_mode_GUI]. 
+**Egui** is &#34;the easiest to use GUI library.” [https://github.com/emilk/egui]. It utilizes Immediate Mode GUI architecture [https://en.wikipedia.org/wiki/Immediate_mode_GUI].
 Some of its goals are to be portable and easy to use. The native look is specifically a non-goal. For example, it fits simple GUIs, games, or other apps that need a quick GUI drop-in library. Check out  their example build for WebAssembly:
 
 &lt;iframe src=&#34;https://shades-egui.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;150px&#34;&gt;&lt;/iframe&gt;
@@ -659,7 +659,7 @@ Note their bigger demo on https://www.egui.rs/#demo
 
 With **Slint**, the web is not the focus; it can be compiled into WebAssembly only for demo purposes. Slint targets native looks, embedded systems, microcontrollers and desktop. It uses its own script language to describe UI, which provides components&#39; state and look description. Slint does allow some scripting, although it’s possible to run the most heavyweight code in Rust. Overall, it’s an imperative tool.
 
-Here is a built code of their tutorial: 
+Here is a built code of their tutorial:
 
 &lt;iframe src=&#34;https://shades-slint.apps.loskutoff.com&#34; width=&#34;326px&#34; height=&#34;326px&#34;&gt;&lt;/iframe&gt;
 
@@ -838,7 +838,7 @@ p { &#34;Input value: &#34; (a.get()) }
 
 ```
 
-The code above generates DOM. 
+The code above generates DOM.
 
 By default, Sycamore is made for the web, but it can be easily embedded into other tools like Tauri to create desktop apps: https://github.com/JonasKruckenberg/tauri-sycamore-template. Currently, the Sycamore template isn’t in Tauri’s create-tauri-app tool https://github.com/tauri-apps/create-tauri-app, but Yew is.
 
@@ -876,7 +876,7 @@ pub fn App&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
 
 
    view! { cx,
-       main(class=&#34;container&#34;) {             
+       main(class=&#34;container&#34;) {
            div(class=&#34;row&#34;) {
                input(id=&#34;greet-input&#34;,bind:value=name,placeholder=&#34;Enter a name...&#34;)
                button(type=&#34;button&#34;,on:click=greet) {
@@ -947,7 +947,7 @@ fn main() {
 
 **Yew** seems rather popular right now. It’s a GUI framework made specifically for the web and  has a bit of a React feel to it, albeit with some differences. For example, components are made like state machines with defined messages and reactions to those messages. The components keep state in themselves. [Yewdux](https://github.com/intendednull/yewdux) can be used to implement redux-like data handling. Among other features, Yew also has [hydration](https://en.wikipedia.org/wiki/Hydration_(web_development)) and [server-side rendering](https://solutionshub.epam.com/blog/post/what-is-server-side-rendering). It also lets us define components in a way not unlike functional components defined in React.
 
-Here is one of the lib’s examples compiled: 
+Here is one of the lib’s examples compiled:
 &lt;iframe src=&#34;https://shades-yew.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&lt;/iframe&gt;
 
 ```rust=
@@ -1270,7 +1270,7 @@ fn main() {
 
 **Vizia** is a declarative and reactive GUI framework. It can be used on multiple platforms (Windows, Linux, MacOS, Web), has Elm-like data handling, and is rendered on GPU.
 
-Here is one of their examples: 
+Here is one of their examples:
 
 &lt;iframe src=&#34;https://shades-vizia.apps.loskutoff.com&#34; width=&#34;250px&#34; height=&#34;250px&#34;&gt;&lt;/iframe&gt;
 
@@ -1457,7 +1457,7 @@ fn main() {
 
 ### 12. [Leptos](https://github.com/leptos-rs/leptos)
 
-**Leptos** is an isomorphic web framework that defines GUI like React does, but with more fine-grained reactivity done with the help of Rust closures. The whole render function isn’t executed on every signal update, but rather considered a “setup” function. There’s also no virtual dom. Included in Leptos is a router that works on both the server and the client. 
+**Leptos** is an isomorphic web framework that defines GUI like React does, but with more fine-grained reactivity done with the help of Rust closures. The whole render function isn’t executed on every signal update, but rather considered a “setup” function. There’s also no virtual dom. Included in Leptos is a router that works on both the server and the client.
 
 Check out Leptos’ router example:
 
@@ -2148,7 +2148,7 @@ fn main() {
 
 ### 17. [Fltk-rs](https://github.com/fltk-rs/fltk-rs)
 
-**Fltk-rs** is bindings for https://www.fltk.org. FLTK currently doesn&#39;t support Wasm or iOS. It has experimental support for Android (YMMV) and is focused on desktop applications. This is one of the low-level bindings that can be used as graphic foundations by apps or GUI frameworks. 
+**Fltk-rs** is bindings for https://www.fltk.org. FLTK currently doesn&#39;t support Wasm or iOS. It has experimental support for Android (YMMV) and is focused on desktop applications. This is one of the low-level bindings that can be used as graphic foundations by apps or GUI frameworks.
 
 The image below shows one of their examples running on the Desktop:
 
@@ -2265,7 +2265,7 @@ const POWER: &amp;str = r#&#34;&lt;?xml version=&#34;1.0&#34; encoding=&#34;iso-
 	&lt;/radialGradient&gt;
 
 
-	
+
 
 
 		&lt;ellipse style=&#34;fill:url(#SVGID_3_);stroke:url(#SVGID_4_);stroke-miterlimit:10;&#34; cx=&#34;157.542&#34; cy=&#34;89.922&#34; rx=&#34;59.833&#34; ry=&#34;64.62&#34;/&gt;
@@ -2286,7 +2286,7 @@ const POWER: &amp;str = r#&#34;&lt;?xml version=&#34;1.0&#34; encoding=&#34;iso-
 		c14.912,0,28.412-6.044,38.184-15.816s15.816-23.272,15.816-38.184c0-14.912-6.044-28.412-15.816-38.184&#34;/&gt;
 
 
-	
+
 
 
 		&lt;line style=&#34;fill:none;stroke:red;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;&#34; x1=&#34;157.542&#34; y1=&#34;154.542&#34; x2=&#34;157.542&#34; y2=&#34;100.542&#34;/&gt;
@@ -2560,7 +2560,7 @@ According to the framework description, “applications built using Makepad Fram
 
 The styling of Makepad Framework applications is described using a domain-specific language with Rust macros. It allows for a live reload of these templates since they’re being fed right into a running Rust app, so the screen changes on the fly.
 
-This is a great example of this framework in action: 
+This is a great example of this framework in action:
 
 &lt;iframe src=&#34;https://shades-makepad.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
 
@@ -2793,7 +2793,7 @@ impl App {
 
 Rui is an immediate mode GUI library. It’s GPU rendered, updates reactively when state changes, and has richer layout options than other immediate mode UIs. The lib uses its own rendering tool vger-rs, like Druid would use Piet or Vello. One of its main goals is to [“Encode UI in types to ensure stable identity.”](https://github.com/audulus/rui#goals). For more info on identity and id paths, read [Xilem’s creator UI architecture article](https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html).
 
-The initial purpose of Rui was that the creators wanted to move their own app (a modular music processing app) to a better platform (namely, Rust). The lib is not properly runnable on the web right now because the library’s default backend is WebGPU. However, I think it could be run on the web, albeit with some effort. 
+The initial purpose of Rui was that the creators wanted to move their own app (a modular music processing app) to a better platform (namely, Rust). The lib is not properly runnable on the web right now because the library’s default backend is WebGPU. However, I think it could be run on the web, albeit with some effort.
 
 ### 20. [Silkenweb](https://github.com/silkenweb/silkenweb)
 
@@ -3007,25 +3007,25 @@ pub async fn main_js() -&gt; Result&lt;(), JsValue&gt; {
 ```
 
 
-## Six tips for building WebAssembly bundles 
+## Six tips for building WebAssembly bundles
 
-Now that we’ve established the contemporary toolkit, I’d like to share how I built WebAssembly bundles using these libraries.  
+Now that we’ve established the contemporary toolkit, I’d like to share how I built WebAssembly bundles using these libraries.
 
 First, [Trunk](https://github.com/thedodd/trunk) is a nice tool to build Wasm and roll out a dev web server for live updates. In some cases, just running `trunk serve` was enough for me. In other cases, you have to build the classy way (`cargo build --release --target wasm32-unknown-unknown` and `wasm-bindgen`), and serve with any static server, for example,  `python3 -m http.server`.
 
 Second, the [getrandom](https://github.com/rust-random/getrandom) lib used in the dependency tree was often an issue, but it can be resolved if we just add it to the project with the “js” feature enabled.
 
-Third, any asynchronous features have issues with Wasm builds. This is currently mitigated by the lib [gloo-timers](https://docs.rs/gloo-timers/latest/gloo_timers/). Other ways to cope with these issues are addressed in my blog post How to set up a Wasm API for a CHIP-8 emulator. 
+Third, any asynchronous features have issues with Wasm builds. This is currently mitigated by the lib [gloo-timers](https://docs.rs/gloo-timers/latest/gloo_timers/). Other ways to cope with these issues are addressed in my blog post How to set up a Wasm API for a CHIP-8 emulator.
 
 Fourth, some libs/framework ship their own futures, like Sycamore: `features=[“suspense”]`.
 
-Fifth, I had to run most examples from the latest master branches (the published lib APIs were already outdated there) because the libraries are so volatile at this point. 
+Fifth, I had to run most examples from the latest master branches (the published lib APIs were already outdated there) because the libraries are so volatile at this point.
 
 Sixth, although the standard is called WebGPU, the apps written as backend with WebGPU actually work better on Desktop. However, this will change soon when WebGPU gets better support in browsers.
 
 ## Pet Sematary
 
-It’s also worth mentioning tools that are currently discontinued or no longer actively maintained. Most of these tools were the foundation and inspiration of the currently maintained libraries I’ve mentioned above. Since Rust UI is extremely turbulent, I’ll include the repositories that haven’t been updated in a year. 
+It’s also worth mentioning tools that are currently discontinued or no longer actively maintained. Most of these tools were the foundation and inspiration of the currently maintained libraries I’ve mentioned above. Since Rust UI is extremely turbulent, I’ll include the repositories that haven’t been updated in a year.
 
 1. [Druid](https://github.com/linebender/druid)
 
@@ -3033,7 +3033,7 @@ Druid has been discontinued by the core development team who moved their efforts
 
 2. [Moxie](https://github.com/anp/moxie)
 
-Moxie is either dead or in a very deep sleep. 
+Moxie is either dead or in a very deep sleep.
 
 3. [Seed](https://github.com/seed-rs/seed)
 
@@ -3049,13 +3049,13 @@ Orbtk has experienced its sunset.
 
 ## Conclusions
 
-Overall, the current state of Rust GUI tools is precarious, so the tools you choose today can deprecate by tomorrow.  These tools move so fast that they’re even ahead of browsers (WebGPU–I’m talking about you). And that’s not a bad thing. 
+Overall, the current state of Rust GUI tools is precarious, so the tools you choose today can deprecate by tomorrow.  These tools move so fast that they’re even ahead of browsers (WebGPU–I’m talking about you). And that’s not a bad thing.
 
-There’s a lot of momentum in development right now, which will lead to both new and better ways to deal with GUI as devs improve on the techniques that were established in the (shockingly) recent past. 
+There’s a lot of momentum in development right now, which will lead to both new and better ways to deal with GUI as devs improve on the techniques that were established in the (shockingly) recent past.
 
-If it exists at all, the Holy Grail of Rust GUI architecture is yet to be found, as GUI has its own set of complex problems. However, the community is searching for the best solutions right now, which means some tools will inevitably be abandoned. And soon, this post will become obsolete and retire to the Pet Sematary as well. When this inevitably happens, I’ll publish a new post. You should also expect to discover new tools popping up from time to time as you explore on your own. For better or for worse, it’s an interesting time to be alive as we discover the capacities of Rust GUI tools, new and old! 
+If it exists at all, the Holy Grail of Rust GUI architecture is yet to be found, as GUI has its own set of complex problems. However, the community is searching for the best solutions right now, which means some tools will inevitably be abandoned. And soon, this post will become obsolete and retire to the Pet Sematary as well. When this inevitably happens, I’ll publish a new post. You should also expect to discover new tools popping up from time to time as you explore on your own. For better or for worse, it’s an interesting time to be alive as we discover the capacities of Rust GUI tools, new and old!
 
-## References 
+## References
 
 Although I used multiple different articles to feed and validate this work, the two that impressed me the most were Raph Levien’s blog, Xilem: an architecture for UI in Rust and Diggory Hardy’s blog, State of GUI 2022.
 
@@ -3064,12 +3064,12 @@ Each blog provides an in-depth, educated look into the problems and solutions of
 Also, [here is my Github repository](https://github.com/Firfi/shades-of-rust) with complete code examples for most of the tools presented in the article.
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
@@ -3081,7 +3081,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

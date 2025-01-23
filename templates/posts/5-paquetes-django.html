@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;  Cinco Paquetes De Django Que Amamos En Monadical ===   *Escrito por Karim. Original public">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Cinco Paquetes De Django Que Amamos En Monadical - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Cinco Paquetes De Django Que Amamos En Monadical - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Feb 23 2021 22:39:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 08 2021 15:50:46 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">1602 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -72,7 +72,7 @@ Cinco Paquetes De Django Que Amamos En Monadical
 
 
 Uno de los mayores atractivos de Django es su ecosistema. Si se presenta algún problema existen muchas posibilidades de que alguien en la comunidad también lo haya tenido, y fuera tan amable de abstraerlo en un paquete reutilizable y publicarlo para la comunidad. Aquí encontrará cinco paquetes muy útiles que usamos con regularidad en Monadical.
- 
+
 
 ## 1 [django-polymorphic](https://github.com/django-polymorphic/django-polymorphic)
 
@@ -93,7 +93,7 @@ class ProyectoArte(Proyecto):
 class ProyectoInvestigacion(Proyecto):
     supervisor = models.CharField(max_length=30)
 
-``` 
+```
 Y luego creamos algunos proyectos
 
 ```python
@@ -101,20 +101,20 @@ Y luego creamos algunos proyectos
 &gt;&gt;&gt; ProyectoArte.objects.create(tema=&#34;Pintando con Tim&#34;, artista=&#34;T. Turner&#34;)
 &gt;&gt;&gt; ProyectoInvestigacion.objects.create(tema=&#34;Aerodinamica&#34;, supervisor=&#34;Dr. Winter&#34;)
 ```
-Al realizar la consulta de `Proyectos`, obtenemos los resultados con polimorfismo: 
+Al realizar la consulta de `Proyectos`, obtenemos los resultados con polimorfismo:
 ```python
 &gt;&gt;&gt; Proyecto.objects.all()
 [ &lt;Proyecto:        id 1, tema &#34;Fiesta de Departamento&#34;&gt;,
   &lt;ArtProject:      id 2, tema &#34;Pintando con Tim&#34;, artista &#34;T. Turner&#34;&gt;,
   &lt;ProjectoInvestigacion: id 3, tema &#34;Aerodinamica&#34;, supervisor &#34;Dr. Winter&#34;&gt; ]
 
-``` 
+```
 ## 2 [django-allauth](https://www.intenct.nl/projects/django-allauth/)
 django-allauth provee un conjunto de aplicaciones modulares integradas que implementan los flujos comunes de registro y login, tanto locales como integrados con redes sociales. Se destaca especialmente al soportar de forma simultánea los flujos para login local y con redes social. It just works™.
 
 ## 3 [Django Lifecycle Hooks](https://rsinger86.github.io/django-lifecycle/)
 
-Este paquete es mi nuevo favorito. Aún se encuentra en beta así que no lo recomendaría de entrada para uso en producción. Sin embargo, creo que tiene el potencial de mejorar la claridad del código y el mantenimiento de [modelos gordos](https://django-best-practices.readthedocs.io/en/latest/applications.html). Puede reemplazar las [Signals](https://docs.djangoproject.com/en/dev/ref/signals/) y los hooks  `__init__` &amp; `save`. 
+Este paquete es mi nuevo favorito. Aún se encuentra en beta así que no lo recomendaría de entrada para uso en producción. Sin embargo, creo que tiene el potencial de mejorar la claridad del código y el mantenimiento de [modelos gordos](https://django-best-practices.readthedocs.io/en/latest/applications.html). Puede reemplazar las [Signals](https://docs.djangoproject.com/en/dev/ref/signals/) y los hooks  `__init__` &amp; `save`.
 
 Por ejemplo, si está acostumbrado a hacer lo siguiente con hooks:
 
@@ -209,12 +209,12 @@ Si alguna vez ha arrancado un proyecto de Django debe saber que el comando`djang
 ---
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
@@ -227,7 +227,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

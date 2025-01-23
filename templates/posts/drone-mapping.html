@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to Create Your Own Terrain Surface Model - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to Create Your Own Terrain Surface Model - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,15 +48,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/bd996ca3d6f681cbd3a036c679873b56?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jose.zdy"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Sep 17 2020 15:36:32 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 28 2022 17:24:10 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">3994 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -67,7 +67,7 @@
 
 *Written by Jose Benitez.
  Originally published 2020-09-22 on the [Monadical blog](https://monadical.com/blog.html).*
-    
+
 &lt;/center&gt;
 
 ---
@@ -85,7 +85,7 @@ So let’s take off! But first...
 
 ## What is drone mapping?
 
-Drone mapping is the art of generating a digital model of the surface of an area using images that are taken with drones. These models provide useful information about the land (e.g, distances, areas or volume measurements) and can be used to create various types of plans/schemas used in civil industry, mining, real estate, and law. 
+Drone mapping is the art of generating a digital model of the surface of an area using images that are taken with drones. These models provide useful information about the land (e.g, distances, areas or volume measurements) and can be used to create various types of plans/schemas used in civil industry, mining, real estate, and law.
 
 As well as being great for the environment (no more paper, digital drawings are the future! :deciduous_tree:), drone mapping has lots of advantages over other types of satellite, human, or aircraft inspection. It’s much faster, cheaper, and more precise. It also allows us to track the progress of a project by keeping a record of developments as they happen.
 
@@ -105,7 +105,7 @@ And finally, the drone must have a camera. To create the surface model, you’re
 For this task, the drone must be able to follow a path in the air, while taking overhead photos. These photos are taken at predefined spatial or temporal intervals and can sometimes include images from different angles to improve the accuracy of the model. Photos contain metadata, like [EXIF tags](https://en.wikipedia.org/wiki/Exif), that store the location (GPS coordinates) where the photo was taken -- this will be used to build the model.
 
 ### Mission platforms
-Before you take your drone out, you need to install an app that has drone mapping capabilities. There are also desktop applications for this, but most people find that a mobile app is more practical. Apps for drone mapping allow you to define your flying area and create a mission for your drone. 
+Before you take your drone out, you need to install an app that has drone mapping capabilities. There are also desktop applications for this, but most people find that a mobile app is more practical. Apps for drone mapping allow you to define your flying area and create a mission for your drone.
 
 &lt;center&gt;
 &lt;img src=&#34;https://docs.monadical.com/uploads/upload_0f7bd139b906db07769cf5a10f5fb63b.jpeg&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;drone-apps&#34;&gt;
@@ -153,7 +153,7 @@ For my flight, I used DroneHarmony and planned the mission in the field, but you
 ## Processing images
 After gathering the images, the next step is a process called [*photogrammetry*](https://en.wikipedia.org/wiki/Photogrammetry) to construct the final model of the area. Photogrammetry is performed by software, and involves taking measurements from photos by using trigonometry and the GPS coordinates attached to each image. The resulting model contains information concerning the height of the surface of the terrain and can be used to create contour lines, a point cloud and/or an [orthophoto](https://en.wikipedia.org/wiki/Orthophoto).
 
-Before you process your images, you need to have an idea of your desired result. Do you want a digital 3D model, a contour lines image, or an orthophoto? You will input this into your photogrammetry platform (if you don’t specify this up front, the software will churn out every possible result and take much longer to process your images). 
+Before you process your images, you need to have an idea of your desired result. Do you want a digital 3D model, a contour lines image, or an orthophoto? You will input this into your photogrammetry platform (if you don’t specify this up front, the software will churn out every possible result and take much longer to process your images).
 
 ### Photogrammetry platforms
 
@@ -215,7 +215,7 @@ This last model was done for a friend who wanted to make an architectural sketch
 ## Conclusion
 Drone mapping is no longer a new and exclusive technology. Even though the selection of drones available is still pretty limited (mostly to DJI), there are some great options when it comes to mobile apps and photogrammetry software.
 
-So grab a drone, a mission app, some photogrammetry software, and you&#39;re all set. Have a good flight and watch out for those trees! :sunglasses: 
+So grab a drone, a mission app, some photogrammetry software, and you&#39;re all set. Have a good flight and watch out for those trees! :sunglasses:
 
 
 ## Tips
@@ -235,7 +235,7 @@ So grab a drone, a mission app, some photogrammetry software, and you&#39;re all
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

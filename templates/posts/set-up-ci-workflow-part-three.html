@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;  # How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Acti">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to Set Up a CI/CD Workflow, Part 3: CI/CD Workflow For a Flask App Using GitHub Actions and AWS ECS - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f9eb411e8af0f8bd174cf9bd8ab3656e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cristian"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Dec 15 2020 19:17:12 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Dec 15 2020 21:37:16 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">2372 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -72,7 +72,7 @@ In [Part One](https://monadical.com/posts/set-up-ci-workflow.html) and [Part Two
 - Linting code and the Dockerfile
 - Using a containerized Python application (instead of a base Nginx image)
 
-These tests will ensure that any conditions you have put in place so that the application works as expected, are still there. Linting will help you avoid common pitfalls in style and syntax. Part Two of this series used a simple, default Nginx service. This post will look at a case with a more complex setup: you’ll learn how to adapt the workflow to different containers by using a containerized Python application. 
+These tests will ensure that any conditions you have put in place so that the application works as expected, are still there. Linting will help you avoid common pitfalls in style and syntax. Part Two of this series used a simple, default Nginx service. This post will look at a case with a more complex setup: you’ll learn how to adapt the workflow to different containers by using a containerized Python application.
 
 To get started, you can use this repository as a base: https://github.com/cdvv7788/flask-to-ecs. It contains a sample hello world application written in Flask. It has a couple of utility scripts to run and build the image in the Makefile, and the required Dockerfile to create the image. Other than that, it&#39;s as basic as it gets.
 
@@ -132,7 +132,7 @@ lint:
 ```
 
 &lt;center&gt;
-    
+
 ![Hadolint running in github actions](https://docs.monadical.com/uploads/upload_78f3e9371a40e2892c8ac2082a244f8c.png)
 &lt;/center&gt;
 
@@ -229,7 +229,7 @@ Replacing the Nginx container that was used in [Part Two](https://monadical.com/
 ## And...that’s it!
 
 
-If you visit the endpoint for your load balancer, you should see the message `hello world` in the browser. If you push a change to the repository, it should pick up the changes just like it did in the second blog post of this series[^first]. 
+If you visit the endpoint for your load balancer, you should see the message `hello world` in the browser. If you push a change to the repository, it should pick up the changes just like it did in the second blog post of this series[^first].
 
 ## Conclusion
 
@@ -242,12 +242,12 @@ Congratulations, you now have a fully automated and functional DevOps pipeline!
 ---
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;
 
 
@@ -265,7 +265,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

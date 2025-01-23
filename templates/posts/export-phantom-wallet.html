@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="Whether you’re looking to backup your wallet or or deliver NFTs, importing your wallet is a great trick to have up your sleeve.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="How to import your Phantom or Sollet Wallet to use with the Solana CLI - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="Whether you’re looking to backup your wallet or or deliver NFTs, importing your wallet is a great trick to have up your sleeve.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>How to import your Phantom or Sollet Wallet to use with the Solana CLI - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,20 +48,20 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/7a4046902e89413f142b9833b9ff6c49?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="erin"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sun Nov 21 2021 15:32:57 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 11 2022 15:39:40 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">5184 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -79,24 +79,24 @@
 
 ## Intro
 
-For those of you who have missed it, [Solana](https://solana.com/) is a blockchain built to enable scalable, user-friendly apps. 
+For those of you who have missed it, [Solana](https://solana.com/) is a blockchain built to enable scalable, user-friendly apps.
 
-When people first get started on Solana, they often use browser extensions such as Phantom or Sollet because they’re easy to install and create - an excellent option for beginners who want to keep it simple. However, as you become more advanced, you might want to use your wallet with the Solana command line interface (CLI) from a terminal, in order to run a command from a script to deliver tokens or NFTs  to your friends. This requires an imported Solana Wallet. 
+When people first get started on Solana, they often use browser extensions such as Phantom or Sollet because they’re easy to install and create - an excellent option for beginners who want to keep it simple. However, as you become more advanced, you might want to use your wallet with the Solana command line interface (CLI) from a terminal, in order to run a command from a script to deliver tokens or NFTs  to your friends. This requires an imported Solana Wallet.
 
-Even if you don’t want to get complicated, importing your wallet allows you to back up your wallet, and store it in multiple locations, such as a USB or external hard drive. That way, you don’t have to worry about losing your wallet if something happens to your computer. 
+Even if you don’t want to get complicated, importing your wallet allows you to back up your wallet, and store it in multiple locations, such as a USB or external hard drive. That way, you don’t have to worry about losing your wallet if something happens to your computer.
 
 So, if you’re wondering what steps to take to import your wallet, this quick guide is for you.
 
 
 ## Step 1: Install Solana CLI tools
 
-Before you do anything, make sure you have the [latest solana cli tools](https://docs.solana.com/cli/install-solana-cli-tools) installed and configured. 
- 
+Before you do anything, make sure you have the [latest solana cli tools](https://docs.solana.com/cli/install-solana-cli-tools) installed and configured.
+
 ## Step 2: Get the seed phrase in Phantom Wallet
 
-This step is only necessary for people using a Phantom Wallet. If you created your  Solana wallet using Sollet, you should already have the seed phrase written somewhere. 
+This step is only necessary for people using a Phantom Wallet. If you created your  Solana wallet using Sollet, you should already have the seed phrase written somewhere.
 
-Those who already have their [seed phrase](https://coinmarketcap.com/alexandria/glossary/seed) can go ahead and skip this step. 
+Those who already have their [seed phrase](https://coinmarketcap.com/alexandria/glossary/seed) can go ahead and skip this step.
 
 If not, this is how you can access the seed phrase in Phantom Wallet by following these four steps:
 
@@ -124,7 +124,7 @@ This step is optional, but important: you want to make sure that everything will
 
 To verify your wallet, open a terminal window and input the following command to verify your public key.
 
-The public key, that we will be using as example is: 
+The public key, that we will be using as example is:
 
 `5vdAeq93iynwZPGyj5QaSczQ9uYzvN4bRsJ4NySucZyB`
 
@@ -141,7 +141,7 @@ Input the seed phrase and hit the enter key. When the program requests you to fi
 ## Step 4: Import your wallet
 
  To import your wallet, input the following command:
- 
+
 ```bash
 solana-keygen recover prompt://?full-path=m/44&#39;/501&#39;/0&#39;/0&#39;
 ```
@@ -154,38 +154,38 @@ solana-keygen recover prompt://?full-path=m/44&#39;/501&#39;/0&#39;/0&#39; -o my
 
 ![A screenshot of what your wallet should now look like](https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b60e.png)
 
- 
+
 ## Multiple Wallets
- 
+
 If you created multiple wallets with the same phantom installation you might need to tweak the derivation path&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, depending on the wallet.
- 
+
 The first wallet the derivation path is:
- 
-`m/44&#39;/501&#39;/0&#39;/0&#39;`  
- 
-The second derivation path changes slightly, with the value of the number following `/501&#39;/` rising by one. So, the second derivation path would be  `/44&#39;/501&#39;/1&#39;/0&#39;,` the third `m/44&#39;/501&#39;/3&#39;/0&#39;` and so on. 
- 
+
+`m/44&#39;/501&#39;/0&#39;/0&#39;`
+
+The second derivation path changes slightly, with the value of the number following `/501&#39;/` rising by one. So, the second derivation path would be  `/44&#39;/501&#39;/1&#39;/0&#39;,` the third `m/44&#39;/501&#39;/3&#39;/0&#39;` and so on.
+
 Use the verification step to be sure the derivation path corresponds with the wallet you want to import.
 
 &lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;/a&gt;[1] A [derivation path](https://learnmeabitcoin.com/technical/derivation-paths) is a piece of data that tells a Hierarchical Deterministic (HD) wallet how to derive a specific key within a tree of keys. Derivation paths are used as a Bitcoin standard and were introduced with HD wallets as a part of BIP 32..
- 
-## Conclusion 
- 
-That’s it! Now your wallet is imported in a format that can be used with the Solana CLI, opening up many new ways to use Solana.  
 
-Make sure to keep this file extremely safe by saving it on a separate USB key in encrypted format. 
+## Conclusion
+
+That’s it! Now your wallet is imported in a format that can be used with the Solana CLI, opening up many new ways to use Solana.
+
+Make sure to keep this file extremely safe by saving it on a separate USB key in encrypted format.
 
 
 
 ---
 
 &lt;center&gt;
- 
+
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-    
+
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-    
+
 &lt;/center&gt;
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
@@ -198,7 +198,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

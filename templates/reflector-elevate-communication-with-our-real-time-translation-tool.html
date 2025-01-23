@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="Explore Monadical&#39;s open-source speech-to-text translation tool designed for online meetings.">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Reflector: An Open-Source, Real-Time Translation Solution - HedgeDoc">
-    
-    
+
+
     <meta property="og:description" content="Explore Monadical&#39;s open-source speech-to-text translation tool designed for online meetings.">
-    
-    
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Reflector: An Open-Source, Real-Time Translation Solution - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,42 +48,42 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sat Mar 16 2024 15:50:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Apr 29 2024 18:35:38 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">1887 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 &lt;center&gt;
-    
-#  Reflector: An Open-Source, Real-Time Translation Solution 
 
-    
+#  Reflector: An Open-Source, Real-Time Translation Solution
+
+
 &lt;big&gt;
-    
+
 **Explore Monadical’s Open-Source Solution for Online Meetings**
-    
+
 &lt;/big&gt;
-    
+
 *Written by Hanna Jodrey and Gokul Mohanarangan. Originally published 2024-04-18 on the [Monadical blog](https://monadical.com/blog.html).*
 &lt;/center&gt;
 
 ## Executive Summary
 In today&#39;s digital landscape, audio content&#39;s sheer volume and complexity pose significant challenges for analysis, accessibility, and meaningful data extraction. Monadical&#39;s Reflector platform aims to address these challenges by providing an open-source solution designed to transform speech, audio, or text into actionable knowledge while ensuring data security, privacy, and organization.
 
-This technical overview begins by highlighting Reflector&#39;s current capabilities and deployment options. It then provides a technical description of the platform&#39;s architecture and the AI technologies underpinning its core functionalities. Furthermore, it examines how Reflector addresses specific user needs across various domains and discusses its competitive advantages over existing solutions. Potential real-world applications and the platform&#39;s anticipated impact are also explored. Finally,  it outlines Reflector&#39;s future enhancements and long-term objectives. 
+This technical overview begins by highlighting Reflector&#39;s current capabilities and deployment options. It then provides a technical description of the platform&#39;s architecture and the AI technologies underpinning its core functionalities. Furthermore, it examines how Reflector addresses specific user needs across various domains and discusses its competitive advantages over existing solutions. Potential real-world applications and the platform&#39;s anticipated impact are also explored. Finally,  it outlines Reflector&#39;s future enhancements and long-term objectives.
 
 
 ## Background
 Reflector originated from a need to analyze and derive insights from presentations or idea pitches. Initially a simple NLP program for keyword detection, it has evolved into a robust speech-to-text (STT) translation tool with advanced capabilities.
 
-## Current Capabilities and Deployment Options 
+## Current Capabilities and Deployment Options
 Reflector offers real-time transcription services (predominantly in English) and the ability to simultaneously translate transcriptions into over 100 languages. It provides customizable settings to filter out profane language and segments audio content into live topics with concise summaries and transcriptions. Additionally, it generates high-level summaries, identifies individual speakers through diarization, and allows users to edit transcriptions and summaries.
 
 Reflector supports three primary deployment options: the Monadical Instance for internal use, the Media instance for external audiences, and the Projector Reflector for large-scale events and conferences.
@@ -96,7 +96,7 @@ Reflector&#39;s infrastructure caters to diverse user requirements through its t
 
 The following outlines what each deployment option offers:
 
-- **Monadical Instance:** Built for Monadical’s internal use, this instance keeps our audio data secure while recording and summarizing key insights and takeaways from meetings, pitches, and presentations. 
+- **Monadical Instance:** Built for Monadical’s internal use, this instance keeps our audio data secure while recording and summarizing key insights and takeaways from meetings, pitches, and presentations.
 
 
 - **Media Instance:** Expanding Reflector&#39;s reach, the Media instance targets external audiences in other organizations, fostering greater accessibility and insight generation.
@@ -112,7 +112,7 @@ The following outlines what each deployment option offers:
 &lt;/figure&gt;
 
 &lt;style&gt;
-    
+
 figcaption {
   text-align: center; /* This centers the caption text */
 }
@@ -124,14 +124,14 @@ figcaption {
     &lt;img src=&#34;https://docs.monadical.com/uploads/26935151-89a9-4434-b41f-0c55fc08be4a.png&#34;&gt;
     &lt;figcaption&gt;
         Showcasing Project Reflector on the big screen at
-        &lt;a href=&#34;https://allinevent.ai/&#34;&gt; 
-            ALL IN 
-        &lt;/a&gt; 
-        in 2023.  
+        &lt;a href=&#34;https://allinevent.ai/&#34;&gt;
+            ALL IN
+        &lt;/a&gt;
+        in 2023.
     &lt;/figcaption&gt;
     &lt;/img&gt;
 &lt;/figure&gt;
-   
+
 ### Architecture
 
 Reflector&#39;s architecture uses [React](https://react.dev/), [NextJS](https://nextjs.org/), [ChakraUI](https://chakra-ui.com/), and [Tailwind CSS](https://tailwindcss.com/) for the UI and an [OpenAPI](https://www.openapis.org/) back-end API. It utilizes [SQLite](https://www.sqlite.org/) and [Alembic](https://alembic.sqlalchemy.org/en/latest/) for data management and leverages APIs, Websockets, and [WebRTC](https://webrtc.org/) for real-time interactions.
@@ -145,7 +145,7 @@ Reflector&#39;s architecture uses [React](https://react.dev/), [NextJS](https://
 &lt;/figure&gt;
 
 &lt;style&gt;
-    
+
 figcaption {
   text-align: center; /* This centers the caption text */
 }
@@ -164,7 +164,7 @@ Reflector employs open-source AI technologies selected through R&amp;D. Key mode
 &lt;/figure&gt;
 
 &lt;style&gt;
-    
+
 figcaption {
   text-align: center; /* This centers the caption text */
 }
@@ -187,20 +187,20 @@ By addressing and anticipating user needs, Reflector provides an intuitive platf
 &#34;&gt;
     &lt;figcaption&gt;
         A sample session with the
-        &lt;a href=&#34;https://reflector.media/transcripts/new&#34;&gt; 
-            Reflector Media Instance 
-        &lt;/a&gt; 
-        demonstrating live topics, speaker diarization, and meeting summary features.  
+        &lt;a href=&#34;https://reflector.media/transcripts/new&#34;&gt;
+            Reflector Media Instance
+        &lt;/a&gt;
+        demonstrating live topics, speaker diarization, and meeting summary features.
     &lt;/figcaption&gt;
     &lt;/img&gt;
 &lt;/figure&gt;
 
-## Competitive Edge 
+## Competitive Edge
 Reflector&#39;s unique advantages include its open-source nature, self-hosting capability for enhanced privacy and control, balanced approach to generalization and customization, and focused R&amp;D for continuous improvement.
 
 
 
-A detailed description of each advantage: 
+A detailed description of each advantage:
 
 **Open-Source:** Reflector utilizes open-source models, aligning with Monadical&#39;s sharing of knowledge and expertise.
 
@@ -212,7 +212,7 @@ A detailed description of each advantage:
 
 
 
-## Real-World Applications and Impact 
+## Real-World Applications and Impact
 
 Reflector has the potential to benefit users across various sectors:
 
@@ -234,7 +234,7 @@ Reflector has also received positive reception, demonstrated at the [ALL IN](htt
 &lt;/figure&gt;
 
 &lt;style&gt;
-    
+
 figcaption {
   text-align: center; /* This centers the caption text */
 }
@@ -242,7 +242,7 @@ figcaption {
 
 
 
-## Future Enhancements and Roadmap 
+## Future Enhancements and Roadmap
 
 Reflector&#39;s short-term enhancements will include fine-tuned domain-specific transcription, speaker recognition, dynamic topic detection, multimedia content integration, on-demand generative features, and edit history and revisions.
 
@@ -273,7 +273,7 @@ A detailed description of each enhancement is outlined below.
 
 **Refinement through feedback:** Continuous optimization of LLM workflows, informed by direct user feedback to ensure alignment with user expectations.
 
-**Voice-driven NLP interface:** Introduction of a voice-activated interface, making Reflector more intuitive and accessible to a broader user base. 
+**Voice-driven NLP interface:** Introduction of a voice-activated interface, making Reflector more intuitive and accessible to a broader user base.
 
 Reflector prioritizes enhancements based on their impact, technical feasibility, and value to the ecosystem. Decisions on development and resource allocation are made collaboratively with periodic reviews. User feedback and annotated data are critical in refining and advancing Reflector&#39;s capabilities. This plan reflects Reflector&#39;s commitment to staying ahead in audio content analysis technology and its responsive approach to meeting users&#39; changing needs.
 
@@ -296,7 +296,7 @@ Monadical welcomes insights, critiques, and collaboration opportunities from sta
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

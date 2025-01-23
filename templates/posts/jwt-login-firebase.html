@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;      # A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in">
-    
-    
-    
+
+
+
     <meta property="og:title" content="A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in to Firebase - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in to Firebase - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,19 +46,19 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 20 2020 12:55:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 20 2020 22:21:41 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">3671 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
-    
+
 # A Cheat Sheet for Using your JWT Authentication with Django REST Framework to log in to Firebase
 
 *Getting DRF, SimpleJWT and Firebase to play nice.*
@@ -67,11 +67,11 @@
 
 ---
 
-[Firebase](https://firebase.google.com/) is a Google platform composed of more than eighteen products that can speed up the development of mobile and web applications. It has some really nice advanced features, such as real-time updates and horizontal scalability for greenfield software projects. However, applications with a considerable user base can end up being expensive to host on Firebase. For cases like this, it’s usually worth migrating to a different solution like Django. For a general strategy for how to do this, have a look at [How to Migrate from Firebase to Django](https://monadical.com/posts/from-firebase-to-django.html). 
+[Firebase](https://firebase.google.com/) is a Google platform composed of more than eighteen products that can speed up the development of mobile and web applications. It has some really nice advanced features, such as real-time updates and horizontal scalability for greenfield software projects. However, applications with a considerable user base can end up being expensive to host on Firebase. For cases like this, it’s usually worth migrating to a different solution like Django. For a general strategy for how to do this, have a look at [How to Migrate from Firebase to Django](https://monadical.com/posts/from-firebase-to-django.html).
 
 Whether as a first step towards a larger migration, or a component of a hybrid approach (for example, if you want to augment Firebase with data that has to be hosted on your own servers), sometimes it’s useful to migrate the login process while retaining access to Firebase&#39;s services
 
-This post gives you a quick cheat sheet for **how to use Firebase services with a token emitted from your Django backend. The token will be both valid for Firebase and for your backend.** This way you’ll also be prepared for any future migrations from Firebase. We will set SimpleJWT, DRF and Django to log in to Firebase. 
+This post gives you a quick cheat sheet for **how to use Firebase services with a token emitted from your Django backend. The token will be both valid for Firebase and for your backend.** This way you’ll also be prepared for any future migrations from Firebase. We will set SimpleJWT, DRF and Django to log in to Firebase.
 
 
 ## Installation and Setup
@@ -81,11 +81,11 @@ For this setup, we are going to use [DRF](https://www.django-rest-framework.org/
 First, let’s install the packages.
 
 ```bash
-pip install djangorestframework 
+pip install djangorestframework
 pip install djangorestframework_simplejwt
 ```
 
-Then let’s configure DRF to use `JWTAuthentication` and require authenticated requests as default. 
+Then let’s configure DRF to use `JWTAuthentication` and require authenticated requests as default.
 
 These SimpleJWT settings tell SimpleJWT to use the appropriate algorithm and set some of the claims required by Firebase without needing to install and call [firebase-admin-python](https://github.com/firebase/firebase-admin-python) to create the token.
 
@@ -125,7 +125,7 @@ from django.urls import path
 
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from .views import FirebaseTokenObtainPairView 
+from .views import FirebaseTokenObtainPairView
 
 urlpatterns = [
     path(&#39;api/token/&#39;, FirebaseTokenObtainPairView.as_view(), name=&#39;token_obtain_pair&#39;),
@@ -178,16 +178,16 @@ additional_claims = {
 
 custom_token = auth.create_custom_token(uid, additional_claims)
 ```
-When we have the token, we return it at the view. And that&#39;s it! We have our token. 
+When we have the token, we return it at the view. And that&#39;s it! We have our token.
 
 ## Test
 
 Let’s do a quick test with [httpie](https://httpie.org/) and one of our existing Django accounts.
 
 ```bash
-http post localhost:8000/api/token username=test password=test 
+http post localhost:8000/api/token username=test password=test
 ```
-We get a token valid for both our Django backend and Firebase services. Woot. 
+We get a token valid for both our Django backend and Firebase services. Woot.
 
 ```bash
 HTTP/1.1 200 OK
@@ -228,7 +228,7 @@ x-xss-protection: 1; mode=block
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

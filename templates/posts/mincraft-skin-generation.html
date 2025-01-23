@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-    
-    
+
+
     <meta name="description" content="&lt;center&gt;  # Digging into Stable Diffusion-Generated Minecraft Skins  *Written by Cory Spencer. Origi">
-    
-    
-    
+
+
+
     <meta property="og:title" content="Digging into Stable Diffusion-Generated Minecraft Skins - HedgeDoc">
-    
-    
-    
+
+
+
     <meta property="og:type" content="website">
-    
+
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-    
+
     <base href="">
     <title>Digging into Stable Diffusion-Generated Minecraft Skins - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,20 +46,20 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-                
+
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="hanna"></i></span>
-                
+
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Jun 26 2023 21:48:51 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Oct 23 2023 22:05:39 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
             <span class="pull-right">3680 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-            
+
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f80d5ae419320f353be2a501f30e233e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cory"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-            
+
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -69,9 +69,9 @@
 *Written by Cory Spencer. Originally published 2023-06-27 on the [Monadical blog](https://monadical.com/blog.html).*
 
 *This is Part 1 of a two-part series. In Part 2, &#34;[Even More Skin in the Game: Digging Deeper Into Stable Diffusion-Generated Minecraft Skins](https://monadical.com/posts/minecraft-skins-part2.html)&#34;, we&#39;ll cover the generation of usable Minecraft skins. For more, check out the [Minecraft Skin Generator](https://skingenerator.io/).*
-    
+
 &lt;/center&gt;
-    
+
 ***Update:** Check out the hosted version of our [Minecraft Skin Generator](https://www.skingenerator.io). This closed-source version significantly improves on the quality of generated skins from the publicly available model.*
 
 &lt;/center&gt;
@@ -82,7 +82,7 @@ Who doesn’t love Minecraft, the ridiculously popular [sandbox video game](http
 
 The hallmark of the game is that it allows players to embark on endless adventures in infinite, blocky worlds, building, mining, battling mobs, and exploring a dynamically-generated world made of blocks. However, an often-overlooked side effect is that Minecraft has also been instrumental in spawning and strengthening familial relationships; for example, I can spend quality time bonding with my son over Minecraft, without the threat of pollen allergies and/or risking a potential sunburn. In fact, his interest in the game inspired me to build a Stable Diffusion-powered model to create customized character skins.
 
-In the spirit of Minecraft’s emphasis on freedom and creation, Part One of this two-part series will explore how to fine-tune a Stable Diffusion model to create Minecraft-style characters, based solely on a text prompt provided to our model. Part Two will look at integrating the Minecraft skin generation plugin as a part of an open-source project we have in the pipeline, with very few changes. 
+In the spirit of Minecraft’s emphasis on freedom and creation, Part One of this two-part series will explore how to fine-tune a Stable Diffusion model to create Minecraft-style characters, based solely on a text prompt provided to our model. Part Two will look at integrating the Minecraft skin generation plugin as a part of an open-source project we have in the pipeline, with very few changes.
 
 Let’s get started!
 
@@ -112,7 +112,7 @@ Now let’s see how we can turn all these images into a fine-tuned model.
 
 ## Setting up the training environment
 
-Before we start the fine-tuning process, we first need to set up the training environment. To do this, we’ll use a script included with the [Hugging Face Diffusers library](https://huggingface.co/docs/diffusers/index) to fine-tune our model. 
+Before we start the fine-tuning process, we first need to set up the training environment. To do this, we’ll use a script included with the [Hugging Face Diffusers library](https://huggingface.co/docs/diffusers/index) to fine-tune our model.
 
 1. First, let’s check out the most recent copy of the Diffusers library, and switch into that directory:
 
@@ -133,26 +133,26 @@ Before we start the fine-tuning process, we first need to set up the training en
     ```bash
     $ pipenv shell
     ```
-    
+
 1. We can install the Hugging Face Diffusers library we’ve checked out of git as follows:
 
     ```bash
     $ pip install .
     ```
-    
+
 1. Switch into the examples/text_to_image directory, and install the Python modules required by the training scripts:
 
     ```bash
     $ cd examples/text_to_image
-    $ pip install -r ./requirements.txt 
+    $ pip install -r ./requirements.txt
     ```
-    
+
 1. Next, initialize an ‘accelerate’ environment. Using ‘accelerate’ allows us to train on all GPUs available on the system, without having to write additional code:
 
     ```bash
     $ accelerate config
     ```
-    
+
 1. Finally, the training dataset can be cloned with ‘git’ into the current directory as follows:
 
     ```bash
@@ -163,7 +163,7 @@ Now with everything installed, we can start the training process.
 
 ## Fine-tuning the Stable Diffusion model
 
-Before we start fine-tuning the model, we first need to set up some environment variables as follows: 
+Before we start fine-tuning the model, we first need to set up some environment variables as follows:
 
 ```bash
 $ export SD_MODEL_NAME=&#34;stabilityai/stable-diffusion-2&#34;
@@ -182,7 +182,7 @@ $SAVE_STEPS tells the training script that we want to save a checkpoint of the m
 
 $MAX_STEPS indicates that we will be training the model for a maximum of 18,000 steps, after which a usable model will be written out to $MODEL_DIR.
 
-With these environment variables set, we’re ready to start training at last! Launch the train_text_to_image.py script as follows: 
+With these environment variables set, we’re ready to start training at last! Launch the train_text_to_image.py script as follows:
 
 ```bash
    $ accelerate launch --mixed_precision=&#34;fp16&#34; train_text_to_image.py \
@@ -200,8 +200,8 @@ With these environment variables set, we’re ready to start training at last! L
         --lr_scheduler=&#34;constant&#34; --lr_warmup_steps=0 \
         --output_dir=$MODEL_DIR
 ```
-   
-This process will probably take a long time, so if you have young children waiting for their custom skins, make sure you have a contingency plan to keep them occupied. On an NVidia RTX A6000, for example, the training process took in excess of 18 hours (which means that your child could feasibly ask, “Is it ready yet?” over 60,000 times, assuming they are awake, which of course they will be because children don’t sleep). 
+
+This process will probably take a long time, so if you have young children waiting for their custom skins, make sure you have a contingency plan to keep them occupied. On an NVidia RTX A6000, for example, the training process took in excess of 18 hours (which means that your child could feasibly ask, “Is it ready yet?” over 60,000 times, assuming they are awake, which of course they will be because children don’t sleep).
 
 As a sleep-deprived father of a young child, I digress.
 
@@ -229,7 +229,7 @@ import torch
 
 from diffusers import StableDiffusionPipeline
 
-MODEL_PATH = &#34;./minecraft-model&#34;  # Path to the fine-tuned model.                                                                
+MODEL_PATH = &#34;./minecraft-model&#34;  # Path to the fine-tuned model.
 
 parser = argparse.ArgumentParser(description=&#39;Process some inputs.&#39;)
 
@@ -275,7 +275,7 @@ That’s it - we’ve successfully fine-tuned a model to generate Minecraft char
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+
 </body>
 
 </html>

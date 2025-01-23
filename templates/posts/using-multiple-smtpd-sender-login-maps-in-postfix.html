@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="&lt;center&gt;  # A Postfix deployment postmortem:&lt;br/&gt;Debugging short-circuiting of mapping lookups    *O">
-
-
-
+    
+    
+    
     <meta property="og:title" content="A Postfix deployment postmortem:Debugging short-circuiting of mapping lookups - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>A Postfix deployment postmortem:Debugging short-circuiting of mapping lookups - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,20 +46,20 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sat Feb 29 2020 04:30:36 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Feb 29 2020 07:24:42 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5724 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5725 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
 
-# A Postfix deployment postmortem:&lt;br/&gt;Debugging short-circuiting of mapping lookups
+# A Postfix deployment postmortem:&lt;br/&gt;Debugging short-circuiting of mapping lookups  
 
 *Originally published 2020-02-28 on [docs.sweeting.me](https://docs.sweeting.me/s/blog).*
 *Also published as an [answer on ServerFault](https://serverfault.com/questions/948362/postfix-multiple-smtpd-sender-login-maps/1005041#1005041), and in the [Mailu Issue Tracker #1096](https://github.com/Mailu/Mailu/issues/1096).*
@@ -68,7 +68,7 @@
 &lt;img src=&#34;https://docs.monadical.com/uploads/upload_9ca60c0fc523e381ddd262d3625ab373.png&#34; alt=&#34;Diagram of SMTP over the internet&#34; style=&#34;width: 60%&#34;/&gt;
 
 How we tracked down an email sending bug caused by Postfix&#39;s counterintuitive `type:table` &lt;br/&gt;  lookup behavior, and how we fixed it with Postfix 3.0&#39;s new `unionmap` feature.
-
+    
 ---
 
 &lt;/center&gt;
@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5 {
 
 ## How it all went wrong
 
-&gt; One week ago we had a mailserver that was running perfectly fine...
+&gt; One week ago we had a mailserver that was running perfectly fine... 
 &gt; or so we thought....
 
 Prompted by [error reports from other people](https://github.com/Mailu/Mailu/issues/1096#issuecomment-583147927) using our config with [Mailu](https://mailu.io/) (a Docker mailserver), we went down a rabbit hole of investigation before discovering a critical issue with our setup.
@@ -135,13 +135,13 @@ There are 3 users stored in the MySQL DB who can authenticate via SMTP with Post
 - `bob@example.com`: can only send from `bob@example.com`,`bob.jones@example.com`
 - `admin@example.com`: should be able to send from *any* `.*@example.com` address
 
-Regular users can only send from their main address and their aliases, but we want to allow the admin to be able to masquerade as *any* sender without restrictions.
+Regular users can only send from their main address and their aliases, but we want to allow the admin to be able to masquerade as *any* sender without restrictions. 
 
 &lt;center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/upload_630aba0208fb9289013db5627cdd8ed5.png&#34;&gt;&lt;br/&gt;&lt;i&gt;The admin could add any any sending address they wanted in their mail client.&lt;/i&gt;&lt;/center&gt;
 &lt;br/&gt;
 
 &gt; In real life this type of setup is common whenever a user needs to be able to send from many addresses `.*@example.com` using only one SMTP login.
-&gt;
+&gt; 
 &gt; &lt;small&gt;e.g. if the addresses are dynamically-generated or belong to other users&lt;/small&gt;
 
 The normal approach to achieve fine-grained control over sender address validation is to point [`smtpd_sender_login_maps`](http://www.postfix.org/postconf.5.html#smtpd_sender_login_maps) to a SQL query or PCRE file that defines FROM addr -&gt; SMTP users.
@@ -175,16 +175,16 @@ It&#39;s a powerful feature to restrict the addresses a client impersonate based
 
 As  you can imagine, being able to granularly filter allowed senders has many use cases:
 
-- **Prevent a user from logging in and sending a message as someone else**
+- **Prevent a user from logging in and sending a message as someone else**  
     *&gt; Bob can send as `bob@example.com`, but can&#39;t send as `alice@example.com`*
 
-- **Allow multiple users to send from a single shared address neither of them own**
+- **Allow multiple users to send from a single shared address neither of them own**  
     *&gt; Bob and Alice can both send as `marketing@example.com`*
 
-- **Allow a single user to send from multiple addresses they own**
+- **Allow a single user to send from multiple addresses they own**  
     *&gt; Alice can send as both `alice@example.com` and `alice.smith@example.com`*
 
-- **Allow an admin to send messages from many addresses (even owned by others)**
+- **Allow an admin to send messages from many addresses (even owned by others)**  
     *&gt; Tracy, the IT admin can send as anyone `.*@example.com`*
 
 - **And more...** (remember, lookups can be via TCP socket, SQL query, regex, etc.)
@@ -218,7 +218,7 @@ Each lookup table used by `smtpd_sender_login_maps` is a mapping of:
 
 &gt; `msg FROM addr -&gt; SMTP users allowed to send as that address`
 
-For `alice@example.com` to be able to log in and send from `alice.smith@example.com`,
+For `alice@example.com` to be able to log in and send from `alice.smith@example.com`, 
 one of the lookups must return `alice@example.com` in the allowed SMTP user list:
 
 &gt; `alice.smith@example.com -&gt; alice@example.com,admin@example.com`
@@ -230,7 +230,7 @@ one of the lookups must return `alice@example.com` in the allowed SMTP user list
 #### `/etc/postfix/main.cf` &lt;small style=&#34;float:right&#34;&gt;[`type:postconf`](http://www.postfix.org/postconf.5.html)&lt;/small&gt;:
 ```ini
 ...
-smtpd_sender_login_maps =
+smtpd_sender_login_maps = 
    mysql:/etc/postfix/sender_logins.cf,
    pcre:/etc/postfix/sender_overrides.cf
 ```
@@ -255,9 +255,9 @@ query = SELECT email FROM users WHERE email=&#39;%s&#39;
 ```
 
 This query checks the DB and returns the allowed SMTP users for a given FROM addr.
-
-&gt;   `alice@example.com     -----&gt; alice@example.com`
-&gt;   `bob.jones@example.com     -&gt; bob@example.com`
+ 
+&gt;   `alice@example.com     -----&gt; alice@example.com`  
+&gt;   `bob.jones@example.com     -&gt; bob@example.com`  
 
 :::
 
@@ -270,7 +270,7 @@ This query checks the DB and returns the allowed SMTP users for a given FROM add
 
 This regex matches *all* `@example.com` FROM addrs and returns the admin SMTP user.
 
-&gt;   `.*@example.com ---------&gt; admin@example.com`
+&gt;   `.*@example.com ---------&gt; admin@example.com`  
 
 :::
 
@@ -297,7 +297,7 @@ Great, so far we&#39;ve configured our server to check two lookup tables to dete
 
 1. `admin@example.com` logs in via SMTP to send a msg from `alice@example.com`
 2. `alice@example.com` lookup in `smtpd_sender_login_maps` returns `alice@example.com`
-3. Sending fails, `alice@example.com` != SMTP authed user `admin@example.com`
+3. Sending fails, `alice@example.com` != SMTP authed user `admin@example.com`  
     ```
     postfix/smtpd[16645]: NOQUEUE: reject: RCPT from webmail.mailserver[192.168.1.5]: 553 5.7.1 &lt;alice@example.com&gt;: Sender address rejected: not owned by user admin@example.com; from=&lt;alice@example.com&gt; to=&lt;bob@example.com&gt; proto=ESMTP helo=&lt;mail.example.com&gt;
     ```
@@ -311,7 +311,7 @@ Great, so far we&#39;ve configured our server to check two lookup tables to dete
 
 **`/etc/postfix/main.cf`:**
 ```ini
-smtpd_sender_login_maps =
+smtpd_sender_login_maps = 
     pcre:...,        # does moving the pcre mapping above mysql work?
     mysql:...
 ```
@@ -342,7 +342,7 @@ When it looks up `alice@example.com` in the pcre file, it returns `admin@example
 &lt;img src=&#34;https://docs.monadical.com/uploads/upload_97148b3c67f496c293f79eb648dd0d0e.gif&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 4px 4px 4px rgba(0,0,0,0.02)&#34;/&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;i&gt;Clearly there&#39;s something preventing us from using both mappings simultaneously...&lt;/i&gt;
 &lt;/center&gt;
-
+ 
 &lt;br/&gt;
 
 ---
@@ -393,13 +393,13 @@ The same lookup conflict can happen with any two mappings that share keys, e.g. 
 
 If the mappings don&#39;t contain any overlap in keys, then the order doesn&#39;t matter, and any lookup that doesn&#39;t match the first db will proceed to check the subsequent ones as expected.
 
-Mappings earlier in the list cannot have any &#34;catchall&#34; or wildcard keys or they will match everything and overshadow results from later mappings.
+Mappings earlier in the list cannot have any &#34;catchall&#34; or wildcard keys or they will match everything and overshadow results from later mappings. 
 
 &lt;br/&gt;
 
 ### Solution B. Join multiple lookup results in SQL with `UNION`
 
-If you&#39;re using the `mysql` table type for your `smtpd_sender_login_maps` mappings, then you can control the SQL query run when doing an address lookup and you may be able to join multiple mappings at the SQL level.
+If you&#39;re using the `mysql` table type for your `smtpd_sender_login_maps` mappings, then you can control the SQL query run when doing an address lookup and you may be able to join multiple mappings at the SQL level. 
 
 Assuming all your mappings are accessible in the same MySQL database, you can concatenante the results of multiple address lookups at the SQL level using a `UNION` statement like so:
 
@@ -470,7 +470,7 @@ This post talked about a specific Postfix config option `smtpd_sender_login_maps
 - `alias_maps`, `canonical_maps`, `transport_maps`, `local_recipient_maps`
 - `virtual_alias_maps`, `virtual_uid_maps`, `virtual_mailbox_maps`
 - `authorized_flush_users`, `authorized_mailq_users`, `authorized_submit_users`
-- ... and many more in http://www.postfix.org/postconf.5.html
+- ... and many more in http://www.postfix.org/postconf.5.html 
 
 &lt;br/&gt;
 
@@ -483,7 +483,7 @@ They all have something like this in the config parameter documentation:
 &gt; Specify zero or more &#34;type:table&#34; lookup table names, separated by comma or whitespace. The tables are queried in the specified order until a match is found. The first table match wins.
 
 &lt;center&gt;
-
+    
 **So watch out for `&#34;until a match is found&#34;` when setting up your own config!**
 
 &lt;/center&gt;
@@ -497,7 +497,7 @@ They all have something like this in the config parameter documentation:
 
 ## Further Reading
 
-- https://www.mail-archive.com/postfix-devel@postfix.org/msg00677.html
+- https://www.mail-archive.com/postfix-devel@postfix.org/msg00677.html  
   (I highly recommend reading this entire mailing list thread for full context)
 - http://www.postfix.org/postconf.5.html#smtpd_sender_login_maps
 - http://www.postfix.org/SMTPD_ACCESS_README.html#lists
@@ -520,7 +520,7 @@ They all have something like this in the config parameter documentation:
 &lt;center&gt;
 
 &lt;a href=&#34;https://monadical.com&#34;&gt;&lt;img src=&#34;https://monadical.com/static/logo-blue.png&#34; style=&#34;height: 60px&#34;&gt;&lt;h4&gt;Monadical Inc. | Full-Stack Software Consultancy&lt;/h4&gt;&lt;/a&gt;
-
+    
 &lt;i&gt;Need help with your mail server? &lt;a href=&#34;https://monadical.com/index.html#consulting&#34;&gt;Hire us!&lt;/a&gt;&lt;/i&gt;
 &lt;/center&gt;</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
@@ -533,7 +533,7 @@ They all have something like this in the config parameter documentation:
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

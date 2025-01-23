@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack">
-
-
-
+    
+    
+    
     <meta property="og:title" content="Integrating AI models into Zulip bots using FastAPI - Part 1 - HedgeDoc">
-
-
+    
+    
     <meta property="og:description" content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack">
-
-
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>Integrating AI models into Zulip bots using FastAPI - Part 1 - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,15 +48,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 31 2023 08:42:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 01 2023 04:29:37 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1715 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1716 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -80,7 +80,7 @@
 
 Robotic Process Automation is a term for when virtual robots (bots) are used within the tech infrastructure of a company to perform automated, digital tasks. Bots are like little computer soldiers that are recruited to perform the repetitive and tedious tasks that we all dread.
 
-The appeal of bots is obvious – who wouldn’t want to be like Iron Man, offloading all the boring crap to J.A.R.V.I.S., leaving you free to unlock your true potential as a gadget-building genius?   Of course, a fully automated, intelligent, world-saving butler-bot (botler?) like J.A.R.V.I.S isn’t quite within our reach just yet, but we imagine a pared-down corporate J.A.R.V.I.S as bot that can do stuff like:
+The appeal of bots is obvious – who wouldn’t want to be like Iron Man, offloading all the boring crap to J.A.R.V.I.S., leaving you free to unlock your true potential as a gadget-building genius?   Of course, a fully automated, intelligent, world-saving butler-bot (botler?) like J.A.R.V.I.S isn’t quite within our reach just yet, but we imagine a pared-down corporate J.A.R.V.I.S as bot that can do stuff like: 
 
 * Provide a succinct summary of what was discussed in a particular stream from a chat platform -- no more reading through 2,300 inane messages to catch up just because you took a couple days off!
 * Translate content in a simple and integrated way, making communication smoother for multinational teams – this one’s like C3PO, but without the crippling neuroses.
@@ -94,14 +94,14 @@ This post is the first of the series. Here, you’ll learn how to create a Zulip
 Let’s begin!
 
 ## Setting up an example bot
-Before creating the bot using FastAPI, let’s  test one of the example bots found in [Zulip&#39;s repository](https ://github.com/zulip/python-zulip-api.git). First, you’ll need to set up your development environment. According to the [documentation](https://zulip.com/api/running-bots):
+Before creating the bot using FastAPI, let’s  test one of the example bots found in [Zulip&#39;s repository](https ://github.com/zulip/python-zulip-api.git). First, you’ll need to set up your development environment. According to the [documentation](https://zulip.com/api/running-bots): 
 
 1. Add a new bot to your Zulip account by going to your Zulip client app &gt; settings icon &gt; personal settings &gt; Bots (https://zulip.com/help/add-a-bot-or-integration) &gt; click on the “Add new bot” button
 
 2. Select the type of bot (generic, incoming or outgoing webhook). In this case, an outgoing webhook.
 Feel free to play around with a  generic type bot, but be aware that  for the example with FastAPI, we’re going to use an outgoing webhook type. You can find more  information on  the difference between the options  [here](https://zulip.com/help/bots-and-integrations#bot-type).
 
-3. Set a name and an email to the new bot. The email doesn’t have to correspond to a real email; it can be fictitious.
+3. Set a name and an email to the new bot. The email doesn’t have to correspond to a real email; it can be fictitious. 
 
 4. Set the Endpoint URL field as https://localhost:5000. We’ll change it later.
 
@@ -156,12 +156,12 @@ The bot above receives any message as input and responds by adding a reaction to
 ![](https://docs.monadical.com/uploads/acaf22b3-cb07-48b5-88a5-3b952991ec22.png)
 
 
-Or interact with it locally without having to create a server, like so: `zulip-bot-shell -b zuliprc helloworld`
+Or interact with it locally without having to create a server, like so: `zulip-bot-shell -b zuliprc helloworld` 
 
 ![](https://docs.monadical.com/uploads/8711a72f-b3c7-4994-a280-b48a924e8695.png)
 
 
-We recommend checking out the different bots that the Zulip team offers, in order to familiarize yourself with bot coding and to see what’s already available. You can find them [here](https://github.com/zulip/python-zulip-api/tree/main/zulip_bots/zulip_bots/bots). There are converters, games, translators, search engines, and more.
+We recommend checking out the different bots that the Zulip team offers, in order to familiarize yourself with bot coding and to see what’s already available. You can find them [here](https://github.com/zulip/python-zulip-api/tree/main/zulip_bots/zulip_bots/bots). There are converters, games, translators, search engines, and more. 
 
 As you can see, the only thing that’s needed to create a Zulip bot is to define a bot handler with the methods usage and handle_message. The remaining code corresponds to the business logic of the functionality you want to add to the bot.
 
@@ -187,11 +187,11 @@ Once you’ve run a couple of examples and feel comfortable by using them, you&#
 
 
 ## Setting up a bot with FastAPI
-So far, we&#39;ve used the initial Zulip example bot repository and executed one of their bots. The repository code that Zulip provides contains the structure to create and integrate a new bot, as well as several test examples, and a series of libraries that allow for the  creation and management of the bots. The libraries also add functionalities for things like local tests, deployments, pull requests, etc.
+So far, we&#39;ve used the initial Zulip example bot repository and executed one of their bots. The repository code that Zulip provides contains the structure to create and integrate a new bot, as well as several test examples, and a series of libraries that allow for the  creation and management of the bots. The libraries also add functionalities for things like local tests, deployments, pull requests, etc. 
 
-This structure, while useful, is overly complex if what we want is to integrate a simple bot. So, we’ll only maintain some key concepts and redefine the structure in the new project we’re going to create.
+This structure, while useful, is overly complex if what we want is to integrate a simple bot. So, we’ll only maintain some key concepts and redefine the structure in the new project we’re going to create. 
 
-In the next section, you’ll learn how to write your own Zulip bot server in FastAPI by migrating some Flask files to be FastAPI compatible.
+In the next section, you’ll learn how to write your own Zulip bot server in FastAPI by migrating some Flask files to be FastAPI compatible. 
 The bot we’re going to create is named Delphos, this in reference to the city that housed [The Delphi Oracle](https://blogs.unimelb.edu.au/sciencecommunication/2021/08/15/the-delphi-or/) in Greek mythology, because our goal is for Delphos to be the source of all knowledge within our company.
 
 ## Migrating from Flask to FastAPI
@@ -199,7 +199,7 @@ While it&#39;s possible to implement the project from scratch, for ease, we&#39;
 
 The `zulip-botserver` tool  has two essential files that we’re going to use:
 
-* [input_parameters.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/input_parameters.py) is an implementation of [argparse](https://docs.python.org/3/library/argparse.html) which allows the server to receive configuration arguments when running the application. `argparse` is a Python module that is compatible with both Flask and FastAPI, so it’s not necessary to make changes to this file.
+* [input_parameters.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/input_parameters.py) is an implementation of [argparse](https://docs.python.org/3/library/argparse.html) which allows the server to receive configuration arguments when running the application. `argparse` is a Python module that is compatible with both Flask and FastAPI, so it’s not necessary to make changes to this file. 
 
 * [server.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/server.py) is the entrypoint for the bot application. This file contains the code that creates the application, defines the POST endpoint, runs the application, and loads the system configurations. The file was initially written to run on Flask, but we’re going to change it to be  FastAPI compatible. To do that, follow the next steps.
 
@@ -239,12 +239,12 @@ The above script creates a basic FastAPI server with a GET endpoint that returns
 
 To start with the migration, first copy the contents of [server.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/server.py) into the `server.py` file in the main directory of the delphos project.
 
- Then copy the contents of [input_parameters.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/input_parameters.py) into `src/config/input_parameters.py`.
+ Then copy the contents of [input_parameters.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/input_parameters.py) into `src/config/input_parameters.py`. 
 
 ### Step 2: Create the request schemas
-With the files moved to the right directories, let’s create the [Pydantic Schemas](https://pydantic-docs.helpmanual.io/usage/schema), that are based on the JSON’s content sent from the Zulip client through a POST method. See [here](https://zulip.com/api/outgoing-webhooks) for more info.
+With the files moved to the right directories, let’s create the [Pydantic Schemas](https://pydantic-docs.helpmanual.io/usage/schema), that are based on the JSON’s content sent from the Zulip client through a POST method. See [here](https://zulip.com/api/outgoing-webhooks) for more info. 
 
-By using Pydantic to create the schemas, you can make use of the default typing validations that Pydantic provides. To define the schemas, create a new file `src/models/schemas.py` and then add the following content:
+By using Pydantic to create the schemas, you can make use of the default typing validations that Pydantic provides. To define the schemas, create a new file `src/models/schemas.py` and then add the following content:  
 
 
 ```python
@@ -286,7 +286,7 @@ class ZulipEvent(BaseModel):
 ```
 
 
-The bot endpoint will always receive an object of type `ZulipEvent` as the body of the request. `ZulipEvent` contains the event’s metadata and  a field of type `Message` that describes the message information. For instance,  the `Message` object indicates the content, the time, the message’s detailed information,  and the list of `Recipients` which are representations of Zulip users.
+The bot endpoint will always receive an object of type `ZulipEvent` as the body of the request. `ZulipEvent` contains the event’s metadata and  a field of type `Message` that describes the message information. For instance,  the `Message` object indicates the content, the time, the message’s detailed information,  and the list of `Recipients` which are representations of Zulip users. 
 
 ### Step 3: Create the config module
 Now create a new file `src/config/config.py` and add the following content:
@@ -313,7 +313,7 @@ This settings model will replace the Flask `app.config` for the FastAPI version,
 
 * `bots_lib_module` is a dictionary that maps each of the available bots with the file as a module containing the bot source code.
 
-* `bots_handler` is a dictionary that maps each of the bots with an object of type `ExternalBotHandler` containing the connection to the Zulip API client and other properties. The connection is established based on the bot credentials exposed in the `zuliprc` file.
+* `bots_handler` is a dictionary that maps each of the bots with an object of type `ExternalBotHandler` containing the connection to the Zulip API client and other properties. The connection is established based on the bot credentials exposed in the `zuliprc` file. 
 
 * `message_handlers` is another dictionary that’s responsible for mapping each of the bots with the `BotHandler` functionality. The `BotHandler` functionality is then responsible for operating the bot logic and  sending responses to the client, this by using the `handle_message` function that each bot must implement.
 
@@ -338,10 +338,10 @@ message_handlers: {
 ```
 
 
-The above is a preview of what the Settings object will look like once theDelphos server is initialized.
+The above is a preview of what the Settings object will look like once theDelphos server is initialized. 
 
-### Step 4: Import third-party library
-FastAPI is a framework that works asynchronously, which means that FastAPI needs to run on an asynchronous server engine.  You’ll use `uvicorn`, an Asynchronous Server Gateway Interface (ASGI) for Python.
+### Step 4: Import third-party library 
+FastAPI is a framework that works asynchronously, which means that FastAPI needs to run on an asynchronous server engine.  You’ll use `uvicorn`, an Asynchronous Server Gateway Interface (ASGI) for Python.  
 
 In the `server.py` file, let’s import the `uvicorn` library for serving the files, also import the main FastAPI object, which will be used to define the application instance in later steps.
 
@@ -360,7 +360,7 @@ You also need to change the function `read_config_section` to update the module_
 
 
 ### Step 6: Initialize the FastAPI app
-Change the app instance so that it &#39;s an object of type FastAPI. Additionally, define an `initdata` variable of type `Settings` that will serve to store the initial configuration of the bot server as a global state of the app.
+Change the app instance so that it &#39;s an object of type FastAPI. Additionally, define an `initdata` variable of type `Settings` that will serve to store the initial configuration of the bot server as a global state of the app. 
 
 ![](https://docs.monadical.com/uploads/764f1f24-57bc-4c47-a976-24ecca3fa458.png)
 
@@ -372,7 +372,7 @@ Adapt the POST entrypoint so that it’s compatible with FastAPI. Here, the `Zul
 ![](https://docs.monadical.com/uploads/f248b2f6-9613-4ec5-b14f-4ebd5382f921.png)
 
 
-### Step 8: Update the `handle_bot` function
+### Step 8: Update the `handle_bot` function 
 Change the way the configuration’s attributes are obtained. Instead of using the `app.config` of Flask, use the values of the `initdata` dictionary that represents `Settings`. In the return,  the `json.dumps()` call is eliminated, because FastAPI takes care of the response encoding process internally.
 
 ![](https://docs.monadical.com/uploads/434e257d-b321-42e6-8390-ec74127f1525.png)
@@ -392,13 +392,13 @@ Finally, make use of `uvicorn` to run the application:
 ![](https://docs.monadical.com/uploads/6a5ffcd1-d3d0-4990-819e-7e066083c448.png)
 
 
-Note that some of the parameters of the run command are passed as environment variables arguments when running the application from the console.
+Note that some of the parameters of the run command are passed as environment variables arguments when running the application from the console. 
 
 Up to this point, you’ve managed to migrate the `zulip-botserver` from Flask to FastAPI changing only what’s necessary. With the content of the `server.py` file, you can start the server that’ll be executing the bot and receiving requests from a Zulip client. But before that, let’s add a basic functionality to the bot.
 
 ### Step 11: Add your bot functionality
-To run your own functionalities, you need to add commands to the bot. The following is an example of the process, with a command to get a city’s weather specified as a parameter. For example, `@delphos weather Medellin`.
-To achieve this, we’ll make use of the public API **www.weatherapi.com**. First, register on its page to obtain an API KEY. Once you have the API KEY, you can make requests to its endpoint. Attach the API KEY and specify the name of the city as a parameter. Something like `http://api.weatherapi.com/v1/current.json?key=API_KEY&amp;q=Medellin`. Let&#39;s see the complete example.
+To run your own functionalities, you need to add commands to the bot. The following is an example of the process, with a command to get a city’s weather specified as a parameter. For example, `@delphos weather Medellin`. 
+To achieve this, we’ll make use of the public API **www.weatherapi.com**. First, register on its page to obtain an API KEY. Once you have the API KEY, you can make requests to its endpoint. Attach the API KEY and specify the name of the city as a parameter. Something like `http://api.weatherapi.com/v1/current.json?key=API_KEY&amp;q=Medellin`. Let&#39;s see the complete example. 
 
 Create a new file file `src/bots/delphos/delphos.py` and add the following content:
 
@@ -418,7 +418,7 @@ def get_weather(city_name: str):
 
 class DelphosHandler:
     ERROR_MESSAGE = &#34;&#34;&#34;
-    Sorry, No command/city found. You need to write the command and city:
+    Sorry, No command/city found. You need to write the command and city: 
     &#39;@weather weather &lt;city&gt;&#39; or &#39;weather &lt;city&gt;&#39; in DM
     &#34;&#34;&#34;
 
@@ -431,7 +431,7 @@ class DelphosHandler:
     def handle_message(self, message: Dict[str, Any], bot_handler: BotHandler) -&gt; None:
         content = message.get(&#34;content&#34;, None)
         response = self.ERROR_MESSAGE
-
+        
         try:
             content = content.strip().split()[-2:]
             command = content[0]
@@ -439,10 +439,10 @@ class DelphosHandler:
         except IndexError as e:
             command = None
             city = None
-
+            
         if command == &#34;weather&#34; and city:
             response = get_weather(city)
-
+        
         bot_handler.send_reply(message, response)
         return
 
@@ -470,25 +470,25 @@ python3 server.py --config-file zuliprc-delphos --hostname=&#34;0.0.0.0&#34; --p
 ```
 
 
-Here, the bot(s)’ credential’s file, hostname, port, and name that matches the key of the credentials file are specified.
+Here, the bot(s)’ credential’s file, hostname, port, and name that matches the key of the credentials file are specified. 
 
 ![](https://docs.monadical.com/uploads/8fb862bc-fa28-42b5-9f2d-b305421ef815.png)
 
 
-Finally, to test the success of the bot’s operation and integration with Zulip, we’ll expose our local machine as a secure server with the help of [ngrok](https://ngrok.com/). Then, we’ll expose the local machine as a secure server. From a new terminal, run the command `ngrok http 8000`. If successful, you should have an  image similar to:
+Finally, to test the success of the bot’s operation and integration with Zulip, we’ll expose our local machine as a secure server with the help of [ngrok](https://ngrok.com/). Then, we’ll expose the local machine as a secure server. From a new terminal, run the command `ngrok http 8000`. If successful, you should have an  image similar to:  
 
 ![](https://docs.monadical.com/uploads/cf4d68e1-d569-4af8-a84c-59cc0c15f170.png)
 
-
+ 
 Once ngrok has completed the setup, replace the URL in the Endpoint URL field of the bot configuration form with the value returned:
 
 ![](https://docs.monadical.com/uploads/3735e588-02b9-43d0-97b2-2ea32df813bb.png)
 
 
-To Deploy your bot in the cloud, deploy the project as a microservice in a cloud provider and run the same command as before. When the app is running, replace the URL in the Endpoint URL field with the domain of your microservice.
+To Deploy your bot in the cloud, deploy the project as a microservice in a cloud provider and run the same command as before. When the app is running, replace the URL in the Endpoint URL field with the domain of your microservice. 
 
 ### Step 13: Playing with the bot
-Once the bot is running and integrated with Zulip, test it by writing something like `weather medellin` to Delphos by DM.
+Once the bot is running and integrated with Zulip, test it by writing something like `weather medellin` to Delphos by DM. 
 
 ![](https://docs.monadical.com/uploads/08557440-ae34-4f2b-8266-e81c5c35f747.png)
 
@@ -498,12 +498,12 @@ If you write an incomplete command, you’ll receive a help message like this:
 ![](https://docs.monadical.com/uploads/28d228be-6f32-4cb0-9020-8cebd5422044.png)
 
 You’ve just run a Zulip bot with a FastAPI server 🎉!
-You can also find all the source code at https://github.com/juanArias8/zulip-delphos-bot.
+You can also find all the source code at https://github.com/juanArias8/zulip-delphos-bot. 
 
 ### Conclusions
-Instead of creating a bot server from scratch, we’ve adapted Zulip’s base repository from Flask to FastAPI.
+Instead of creating a bot server from scratch, we’ve adapted Zulip’s base repository from Flask to FastAPI. 
 
-At first, you may have questioned the adaptation of the bot. After reading this blog post, we hope you’ve learned how FastAPI offers some cool tools that make the developer experience easier. This is because of its asynchronous process handling, automatic integration with OpenAPI, Swagger and Redoc for documentation, strong typing and automatic validations with pydantic. With this adaptation, you can use the FastAPI server to run your bots.
+At first, you may have questioned the adaptation of the bot. After reading this blog post, we hope you’ve learned how FastAPI offers some cool tools that make the developer experience easier. This is because of its asynchronous process handling, automatic integration with OpenAPI, Swagger and Redoc for documentation, strong typing and automatic validations with pydantic. With this adaptation, you can use the FastAPI server to run your bots. 
 
 Finally, we’ve implemented a simple project structure without going into detail. In the next post, you’ll learn how to structure your project with a more elaborate architecture. Once you understand the architecture, you’ll be able to quickly integrate new features into your bot and easily scale it.
 
@@ -527,7 +527,7 @@ Finally, we’ve implemented a simple project structure without going into detai
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

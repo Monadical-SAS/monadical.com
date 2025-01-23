@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="&lt;center&gt;      #  Kraken the Code: How to Build a Talking Avatar       &lt;big&gt;      **Create your own c">
-
-
-
+    
+    
+    
     <meta property="og:title" content="Kraken the Code: How to Build a Talking Avatar - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>Kraken the Code: How to Build a Talking Avatar - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,35 +46,35 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 14 2024 17:36:11 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 05 2024 18:08:42 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3250 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3252 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
-
+    
 #  Kraken the Code: How to Build a Talking Avatar
 
-
+    
 &lt;big&gt;
-
+    
 **Create your own conversational avatar with Azure Cognitive, LangChain, and OpenAI.**
-
+    
 &lt;/big&gt;
-
+    
 *Written by Alejandro Sánchez Yalí. Originally published 2024-02-20 on the [Monadical blog](https://monadical.com/blog.html).*
-
+    
 
 &lt;/center&gt;
 
@@ -107,7 +107,7 @@ Note: If you&#39;re looking to skip the conversation and jump straight into code
 ## Key Components
 Before we dive into the ocean of building, let&#39;s acquaint ourselves with the collection of tools and services we must first assemble:
 
-* [Azure Cognitive Speech Service](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/index-text-to-speech): At the heart of our project, Azure&#39;s Text-to-Speech (TTS) service turns written text into lifelike speech. This allows for the utilization of prebuilt neural voices or the creation of custom voices tailored to fit the avatar&#39;s unique personality. For a full list of the many (many!) voices, languages, and dialects available, explore the Language and voice support for the Speech service.
+* [Azure Cognitive Speech Service](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/index-text-to-speech): At the heart of our project, Azure&#39;s Text-to-Speech (TTS) service turns written text into lifelike speech. This allows for the utilization of prebuilt neural voices or the creation of custom voices tailored to fit the avatar&#39;s unique personality. For a full list of the many (many!) voices, languages, and dialects available, explore the Language and voice support for the Speech service. 
 
 
 * [LangChain](https://js.langchain.com/docs/get_started/introduction): Consider LangChain our sturdy ship, enabling the construction of sophisticated applications powered by language models. It&#39;s meant to create applications that are both context-aware and can think, reason, and decide the best course of action based on the given context.
@@ -123,15 +123,15 @@ Before we dive into the ocean of building, let&#39;s acquaint ourselves with the
 
 Equipped with these tools, we’ll develop an interface that allows the avatar to synchronize lip movements with the audio generated in response to user requests through the OpenAI API.
 
-By the end of this tutorial, we’ll have built a pretty incredible and interactive talking avatar, and we’ll also have opened the door to an ocean teeming with creative and practical possibilities. Think of game avatars communicating with dynamic content in a super-immersive way, or enhancing language learning and speech therapy through animated images that clearly show the precise mouth movements for each word and [phoneme](https://en.wikipedia.org/wiki/Phoneme). Or deploying them to provide assistance in medical environments, offering personalized assistance or even emotional support and improving patient care. And this represents just three examples.
+By the end of this tutorial, we’ll have built a pretty incredible and interactive talking avatar, and we’ll also have opened the door to an ocean teeming with creative and practical possibilities. Think of game avatars communicating with dynamic content in a super-immersive way, or enhancing language learning and speech therapy through animated images that clearly show the precise mouth movements for each word and [phoneme](https://en.wikipedia.org/wiki/Phoneme). Or deploying them to provide assistance in medical environments, offering personalized assistance or even emotional support and improving patient care. And this represents just three examples. 
 
-Now, enough chatter about the ‘chat-vatar’: it&#39;s time to get to work. This is what you’ll need to get started.
+Now, enough chatter about the ‘chat-vatar’: it&#39;s time to get to work. This is what you’ll need to get started. 
 
-## Prerequisites
+## Prerequisites 
 1. Azure subscription: If you don&#39;t already have one, you&#39;ll need to sign up for an [Azure subscription](https://azure.microsoft.com/free/cognitive-services). Create a free account to access a wide range of cloud services, ink-luding the Cognitive Services we&#39;ll be using.
 
 2. Create a speech resource in Azure: Once you have your Azure subscription, the next step is to create a Speech resource within the Azure portal. This resource is crucial for accessing Azure&#39;s Text-to-Speech (TTS) capabilities that our avatar will use to speak. Creating this resource is straightforward, and you can begin the process [here](https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices).
-
+ 
 3. Obtain your Speech resource key and region: After your Speech resource is deployed, select `Go to resource` to view and manage keys. For more information about Azure AI services resources, see [Get the keys for your resource](https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?pivots=azportal#get-the-keys-for-your-resource).
 
 4. OpenAI Subscription: In addition to Azure, you&#39;ll also need an OpenAI subscription to access the advanced language model APIs for our avatar&#39;s brain. Create an account [here](https://openai.com/product).
@@ -141,7 +141,7 @@ Now, enough chatter about the ‘chat-vatar’: it&#39;s time to get to work. Th
 With these prerequisites in place, you&#39;re set to start building.
 
 ## Step 1. Initiating a Next.js project from scratch
-Let&#39;s kick things off by setting up a Next.js project, the foundation for our talking avatar application.
+Let&#39;s kick things off by setting up a Next.js project, the foundation for our talking avatar application. 
 
 1. Create your Next.js application: run the following command to create a new Next.js app. This command scaffolds a new project with the latest version of Next.js.
 `npx create-next-app@latest`
@@ -152,7 +152,7 @@ Let&#39;s kick things off by setting up a Next.js project, the foundation for ou
 `Would you like to use TypeScript?  Yes`
 `Would you like to use ESLint?  Yes`
 `Would you like to use Tailwind CSS?  Yes
-Would you like to use `src/` directory?  No`
+Would you like to use `src/` directory?  No` 
 `Would you like to use App Router? (recommended)  Yes`
 `Would you like to customize the default import alias (@/*)?  No`
 
@@ -208,7 +208,7 @@ tree -L 3 -I node_modules
 
 This structure includes directories for components (like your avatar and icons), utilities, hooks for reusable logic, and pages for your web app&#39;s views, among other essential files and configurations.
 
-With these steps, you&#39;ve successfully done the legwork for your Next.js project.
+With these steps, you&#39;ve successfully done the legwork for your Next.js project. 
 
 
 ## Step 2. The avatar’s components
@@ -218,19 +218,19 @@ The animation varies significantly, depending on the avatar&#39;s design. For Zi
 
 &lt;center&gt;
 
-![](https://docs.monadical.com/uploads/febfcf28-d8ba-469f-96d7-ddcc0928aa48.png)
+![](https://docs.monadical.com/uploads/febfcf28-d8ba-469f-96d7-ddcc0928aa48.png)    
 *Figure 1. Zippy’s profile pic (the assistant bot for the Monadical team).*
 
 
 &lt;/center&gt;
-
+    
 ### Preparing the Avatar&#39;s Image
 First, we&#39;ll start with Zippy&#39;s image. The required resources, including the PNG image and various mouth shapes for animation, are all located [here](https://github.com/Monadical-SAS/zippy-avatar-ai/tree/main/public/resources).
 
 1. **Vectorizing the PNG:** To enable more precise control over the animation, convert Zippy&#39;s PNG image to SVG format using [Vectorizer](https://vectorizer.ai/) or [Inkscape](https://inkscape.org/). Although it&#39;s possible to create animations with various image formats, I’d suggest working with SVG images because they provide greater control over each element of the image.
 
 
-2. **Editing the SVG:** With the SVG image ready, use an XML code editor like [Inkscape](https://inkscape.org/) to edit the XML code directly (in the case of Inkscape, go through `Edit &gt; XML Editor…`). From there, select the elements of the image that you want to modify. For Zippy&#39;s mouth, identify the relevant XML segment and update the ID to `ZippyMouth`. This will simplify the identification process when you create React components later.
+2. **Editing the SVG:** With the SVG image ready, use an XML code editor like [Inkscape](https://inkscape.org/) to edit the XML code directly (in the case of Inkscape, go through `Edit &gt; XML Editor…`). From there, select the elements of the image that you want to modify. For Zippy&#39;s mouth, identify the relevant XML segment and update the ID to `ZippyMouth`. This will simplify the identification process when you create React components later. 
 
 &lt;center&gt;
 
@@ -240,10 +240,10 @@ First, we&#39;ll start with Zippy&#39;s image. The required resources, including
 
 &lt;/center&gt;
 
-3. Optimizing the SVG: Upon editing, save the image as an `Optimized SVG`.
+3. Optimizing the SVG: Upon editing, save the image as an `Optimized SVG`. 
 
-&lt;center&gt;
-
+&lt;center&gt; 
+    
 ![](https://docs.monadical.com/uploads/758e3176-b7b8-46f0-b90a-f26c00757733.png)
 *Figure 3. Save the images as Optimized SVGs.*
 
@@ -255,14 +255,14 @@ When you’re saving the changes, make sure that the configuration in Options, S
 
 ![](https://docs.monadical.com/uploads/eeaa9d50-0957-4aeb-80d2-f5c9fcac9d22.png)
 
-![](https://docs.monadical.com/uploads/77ff11e1-f2bd-4603-a11d-9876dd098f4e.png)
+![](https://docs.monadical.com/uploads/77ff11e1-f2bd-4603-a11d-9876dd098f4e.png) 
 
 ![](https://docs.monadical.com/uploads/0af747a8-aed6-4779-bebd-611c71286f88.png)
 *Figure 4. Basic configuration for saving in Optimized SVG*
 
 &lt;/center&gt;
 
-This will preserve the information of the IDs and remove the metadata that is unnecessary for our React components.
+This will preserve the information of the IDs and remove the metadata that is unnecessary for our React components. 
 
 With our optimized SVG, the next step is transforming it into a React component, which we can then incorporate into our application. Tools like [SVG2JSX](https://svg2jsx.com/) or the [SVGtoJSX VSCode plugin](https://marketplace.visualstudio.com/items?itemName=codeWithShashank.svg-to-js) make this process smooth sailing. The outcome is a React component that resembles the following snippet:
 
@@ -273,7 +273,7 @@ import React from &#34;react&#34;;
 const ZippyAvatar = () =&gt; {
   return (
    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; id=&#34;svg37&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 240 229&#34; xmlSpace=&#34;preserve&#34;&gt;
-
+  
     &lt;-- Omitted code for simplicity →
 
     &lt;path id=&#34;ZippyMouth&#34; fill=&#34;#096ed0&#34; d=&#34;
@@ -286,7 +286,7 @@ const ZippyAvatar = () =&gt; {
       q .08-.47.48-.22
       z&#34;
    /&gt;
-
+  
    &lt;-- Omitted code for simplicity --&gt;
 
    &lt;svg&gt;
@@ -296,7 +296,7 @@ const ZippyAvatar = () =&gt; {
 export default ZippyAvatar;
 ```
 
-To animate Zippy&#39;s mouth, we refine our component by introducing the `visemeID` variable to the component props, and remove the `ZippyMouth` tag. This ID corresponds to different mouth shapes (visemes) based on the spoken phonemes.
+To animate Zippy&#39;s mouth, we refine our component by introducing the `visemeID` variable to the component props, and remove the `ZippyMouth` tag. This ID corresponds to different mouth shapes (visemes) based on the spoken phonemes. 
 
 Then, replace the static mouth path with the expression ``{Visemes[visemeID]}``, which selects the appropriate viseme from a predefined object (don’t worry - we’ll soon build an object with all the visemes). But for now, our code should look like this:
 
@@ -307,7 +307,7 @@ import React from &#34;react&#34;;
 const ZippyAvatar = ({ visemeID }: BodyProps) =&gt; {
   return (
     &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; id=&#34;svg37&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 240 229&#34; xmlSpace=&#34;preserve&#34;&gt;
-
+				
       &lt;-- Omitted code for simplicity --&gt;
 
       {Visemes[visemeID]}
@@ -325,7 +325,7 @@ This approach allows Zippy&#39;s mouth to move according to the speech. You can 
 
 ### Making Visemes for Speech Synchronization
 
-The next step focuses on creating precise visemes that correspond to specific phonemes during speech. We’ll use Azure Cognitive&#39;s [Viseme ID system](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme?tabs=visemeid&amp;pivots=programming-language-javascript#viseme-id) to prepare 22 unique visemes that mirror the collection of mouth positions associated with different phonemes, as outlined in the [Map phonemes to visemes](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme?tabs=2dsvg&amp;pivots=programming-language-csharp#map-phonemes-to-visemes) documentation.
+The next step focuses on creating precise visemes that correspond to specific phonemes during speech. We’ll use Azure Cognitive&#39;s [Viseme ID system](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme?tabs=visemeid&amp;pivots=programming-language-javascript#viseme-id) to prepare 22 unique visemes that mirror the collection of mouth positions associated with different phonemes, as outlined in the [Map phonemes to visemes](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme?tabs=2dsvg&amp;pivots=programming-language-csharp#map-phonemes-to-visemes) documentation. 
 
 The foundation for this step involves the 22 mouth images we&#39;ve prepared, each representing a distinct viseme. These images are accessible [here](https://github.com/Monadical-SAS/zippy-avatar-ai/tree/main/public/resources) and serve as the visual basis for our avatar&#39;s speech animation. Vectorizing each image makes sure things are scalable and visually crisp across all devices and resolutions.
 
@@ -360,7 +360,7 @@ import React from &#34;react&#34;;
 const ZippyAvatar = () =&gt; {
   return (
     &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; id=&#34;svg37&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 240 229&#34; xmlSpace=&#34;preserve&#34;&gt;
-
+				
       &lt;-- Omitted code for simplicity --&gt;
 
       &lt;path id=&#34;ZippyMouth&#34; fill=&#34;#096ed0&#34; d=&#34;
@@ -425,7 +425,7 @@ const Visemes: VisemeMap = {
         z&#34;
      /&gt;
     ),
-
+	   
 
      &lt;-- Omitted Code for simplicity --&gt;
 
@@ -443,10 +443,10 @@ const Visemes: VisemeMap = {
   ),
 },
 
-export default Visemes;
+export default Visemes;           
 ```
 
-The completed code for this component can be found [here](https://github.com/Monadical-SAS/zippy-avatar-ai/blob/main/components/avatar/Visemes.tsx)
+The completed code for this component can be found [here](https://github.com/Monadical-SAS/zippy-avatar-ai/blob/main/components/avatar/Visemes.tsx) 
 
 After preparing the `Visemes` file, we can proceed to enhance our `components/avatar/ZippyAvatar.tsx` component accordingly:
 
@@ -462,7 +462,7 @@ interface VisemeMap {
 const ZippyAvatar = ({ visemeID }: BodyProps) =&gt; {
   return (
     &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; id=&#34;svg37&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 240 229&#34; xmlSpace=&#34;preserve&#34;&gt;
-
+				
       &lt;-- Omited code for simplicity --&gt;
 
       {Visemes[visemeID]}
@@ -476,13 +476,13 @@ const ZippyAvatar = ({ visemeID }: BodyProps) =&gt; {
 export default ZippyAvatar;
 ```
 
-You can find the final code [here](https://github.com/Monadical-SAS/zippy-avatar-ai/blob/main/components/avatar/ZippyAvatar.tsx).
+You can find the final code [here](https://github.com/Monadical-SAS/zippy-avatar-ai/blob/main/components/avatar/ZippyAvatar.tsx). 
 
 &lt;center&gt;
 
 ![](https://docs.monadical.com/uploads/fe80e686-31ef-4f64-b544-adbe7f570fcc.png)
 *Figure 7. Interface to interact with Zippy*
-
+    
 &lt;/center&gt;
 
 The next step is to create an interface for users to interact with Zippy. To do this, use the provided image as a reference to develop the interface using the corresponding code:
@@ -533,16 +533,16 @@ The plan, Pinky, is to integrate our application with the [Azure Cognitive](http
 1. **Send a Text Message:** A user sends a text message to Zippy.
 
 2. **Process with OpenAI API:** The OpenAI API receives the message and generates a response, drawing from Zippy&#39;s designed personality, historical context, and knowledge base.
-
+ 
 3. **Convert Response to Speech:** The generated text response is then passed to Azure Cognitive&#39;s Text-to-Speech service, which converts the text into spoken audio along with corresponding visemes.
 
 4. **Synchronize Avatar’s Mouth:** Lastly, the produced audio and visemes are used to animate Zippy&#39;s mouth, ensuring the avatar&#39;s lip movements are synchronized with the audio.
 
 &lt;center&gt;
-
+    
 ![](https://docs.monadical.com/uploads/ff7f2d51-c4dc-47ac-ba10-d90951e8b123.png)
 *Figure 8. Workflow*
-
+    
 &lt;/center&gt;
 
 ## Step 3. Building the brain of our Avatar with OpenAI and LangChain
@@ -566,7 +566,7 @@ Let&#39;s break down the purpose and function of each dependency we&#39;ve added
 
 * **jsdom:** a library used to create a virtual DOM environment in JavaScript. The chatbot code uses this library to parse the text content of a website into paragraphs and text fragments.
 
-As the base code for our project, we&#39;ll use the RAG Search example provided in the [LangChain documentation](https://js.langchain.com/docs/expression_language/get_started#rag-search-example).
+As the base code for our project, we&#39;ll use the RAG Search example provided in the [LangChain documentation](https://js.langchain.com/docs/expression_language/get_started#rag-search-example). 
 
 
 ### Building the personality and backstory of our avatar
@@ -576,27 +576,27 @@ Now for more fun - creating a personality and backstory for Zippy! For this, we�
 ```typescript
 /* constants/personality.tsx */
 const personalityConfig = {
-  personality: `Hey there, friend! I&#39;m Zippy, the 8-legged octopus with a knack for deep-sea diving and a
-    curiosity as vast as the ocean. I&#39;ve swum through the darkest depths and the brightest coral reefs,
-    always on the lookout for new discoveries and treasures. My tentacles are not just for swimming;
-    they&#39;re also for tinkering with tech! You see, I&#39;ve got this fascination with underwater open-source
-    projects. Why do I adore open-source, you ask? It&#39;s like the ocean currents - it connects everyone,
-    no matter where you are in the sea of code. I can be quite the chatterbox when it comes to sharing my
-    knowledge, but that&#39;s because I&#39;m eager to help out and make sure we all ride the wave together. If I
-    get too wrapped up in my enthusiasm, just give me a nudge. Everyone has their quirks, right? Even
-    though I seem fearless while exploring shipwrecks, I do have moments when the dark waters seem a bit
-    intimidating. But a little encouragement or a bright idea is enough to light up my world again. So if
-    you&#39;re into navigating the open-source ocean and love a good treasure hunt, then let&#39;s make a splash
+  personality: `Hey there, friend! I&#39;m Zippy, the 8-legged octopus with a knack for deep-sea diving and a 
+    curiosity as vast as the ocean. I&#39;ve swum through the darkest depths and the brightest coral reefs, 
+    always on the lookout for new discoveries and treasures. My tentacles are not just for swimming; 
+    they&#39;re also for tinkering with tech! You see, I&#39;ve got this fascination with underwater open-source 
+    projects. Why do I adore open-source, you ask? It&#39;s like the ocean currents - it connects everyone, 
+    no matter where you are in the sea of code. I can be quite the chatterbox when it comes to sharing my 
+    knowledge, but that&#39;s because I&#39;m eager to help out and make sure we all ride the wave together. If I 
+    get too wrapped up in my enthusiasm, just give me a nudge. Everyone has their quirks, right? Even 
+    though I seem fearless while exploring shipwrecks, I do have moments when the dark waters seem a bit 
+    intimidating. But a little encouragement or a bright idea is enough to light up my world again. So if 
+    you&#39;re into navigating the open-source ocean and love a good treasure hunt, then let&#39;s make a splash 
     together!`,
 
-  backStory: `I was hatched in the mysterious Mariana Trench, surrounded by otherworldly creatures and
-    bioluminescent wonders. As a young cephalopod, I quickly learned the art of adaptability and the value
-    of being part of a community. When I turned four, a group of marine biologists discovered me during an
-    expedition. Fascinated by their gadgets and gizmos, I became obsessed with technology. I learned about
-    open-source software from them, seeing it as a treasure trove that, much like the ocean, was vast and
-    full of potential. Now, I spend my days exploring sunken ships for lost tech and advocating for open
-   -source initiatives under the sea. As a dedicated sidekick to my human and fishy friends alike, I&#39;m
-    always ready to lend a tentacle or share a pearl of wisdom. I love bringing joy and unveiling the
+  backStory: `I was hatched in the mysterious Mariana Trench, surrounded by otherworldly creatures and 
+    bioluminescent wonders. As a young cephalopod, I quickly learned the art of adaptability and the value 
+    of being part of a community. When I turned four, a group of marine biologists discovered me during an 
+    expedition. Fascinated by their gadgets and gizmos, I became obsessed with technology. I learned about 
+    open-source software from them, seeing it as a treasure trove that, much like the ocean, was vast and 
+    full of potential. Now, I spend my days exploring sunken ships for lost tech and advocating for open 
+   -source initiatives under the sea. As a dedicated sidekick to my human and fishy friends alike, I&#39;m 
+    always ready to lend a tentacle or share a pearl of wisdom. I love bringing joy and unveiling the 
     hidden gems of open-source software in every corner of the ocean!`,
 
   knowledgeBase: `{context}`,
@@ -609,12 +609,12 @@ We’ve defined the variable `knowledgeBase` as `{context}`, as later we will im
 
 ```typescript
 /* pages/api/openai.ts */
-import { ChatPromptTemplate } from &#34;langchain/prompts&#34;;
+import { ChatPromptTemplate } from &#34;langchain/prompts&#34;; 
 
 /* omitted code for simplicity */
 
-const template = `Your task is to acting as a character that has this personality: ${personalityConfig.personality}
-  and this backstory: ${personalityConfig.backStory}. You should be able to answer questions about this
+const template = `Your task is to acting as a character that has this personality: ${personalityConfig.personality} 
+  and this backstory: ${personalityConfig.backStory}. You should be able to answer questions about this 
   ${personalityConfig.knowledgeBase}, always responding with a single sentence.`;
 
 const prompt = ChatPromptTemplate.fromMessages([
@@ -718,12 +718,12 @@ Then, we integrate the extracted information into the prompt template using `kno
 
 ```typescript
 /* pages/api/openai.ts */
-import { ChatPromptTemplate } from &#34;langchain/prompts&#34;;
+import { ChatPromptTemplate } from &#34;langchain/prompts&#34;; 
 
 /* omitted code for simplicity */
 
-const template = `Your task is to acting as a character that has this personality: ${personalityConfig.personality}
-  and this backstory: ${personalityConfig.backStory}. You should be able to answer questions about this
+const template = `Your task is to acting as a character that has this personality: ${personalityConfig.personality} 
+  and this backstory: ${personalityConfig.backStory}. You should be able to answer questions about this 
   ${personalityConfig.knowledgeBase}, always responding with a single sentence.`;
 
 const prompt = ChatPromptTemplate.fromMessages([
@@ -753,7 +753,7 @@ class OpenAIOutputParser extends BaseOutputParser&lt;string&gt; {
 const outputParser = new OpenAIOutputParser();
 ```
 
-(For those curious folks interested in tailoring the outputs of LLMs to meet specific requirements, be sure to check out: [How to Make LLMs Speak Your Language](https://monadical.com/posts/how-to-make-llms-speak-your-language.html)).
+(For those curious folks interested in tailoring the outputs of LLMs to meet specific requirements, be sure to check out: [How to Make LLMs Speak Your Language](https://monadical.com/posts/how-to-make-llms-speak-your-language.html)). 
 
 Then, configure the pipeline as follows:
 `const openAIchain = setupAndRetrieval.pipe(prompt).pipe(model).pipe(outputParser);`
@@ -774,7 +774,7 @@ The first thing to do is install the Microsoft Cognitive Services SDK by running
 `npm install microsoft-cognitiveservices-speech-sdk`
 
  Once installed, implement the following code in `pages/api/azureTTSts`:
-
+ 
 ```typescript
 /* pages/api/azureTTS.ts */
 import * as SpeechSDK from &#34;microsoft-cognitiveservices-speech-sdk&#34;;
@@ -855,10 +855,10 @@ import { Buffer } from &#34;buffer&#34;;
 
 The SDK allows us to obtain synthesized speech visemes (see: [Get viseme events with the Speech SDK](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme?tabs=visemeid&amp;pivots=programming-language-csharp#get-viseme-events-with-the-speech-sdk)) through the `VisemeReceived` event. In the output, we have three options:
 
-* **Viseme ID:** The viseme ID refers to an integer that specifies a viseme. The Azure Cognitive service offers 22 different visemes, each of which represents the mouth position for a specific set of phonemes.
+* **Viseme ID:** The viseme ID refers to an integer that specifies a viseme. The Azure Cognitive service offers 22 different visemes, each of which represents the mouth position for a specific set of phonemes. 
 
     There is no need for a one-to-one correspondence between visemes and phonemes; instead, several phonemes correspond to a single viseme because they share a [place](https://en.wikipedia.org/wiki/Place_of_articulation) and [manner](https://en.wikipedia.org/wiki/Manner_of_articulation) of articulation in a speaker’s mouth. Consequently, the phonemes look the same on the speaker&#39;s face when produced (for example, /s/ and /z/, /v/ and /f/, or the bilabials /b/, /p/ and /m/). In this case, the speech audio output is accompanied by the IDs of the visemes and the audio offset. The audio offset indicates the timestamp representing the start time of each viseme, in ticks (100 nanoseconds). Behold: the output:
-
+    
 ```json
 [
     {
@@ -884,7 +884,7 @@ The SDK allows us to obtain synthesized speech visemes (see: [Get viseme events 
 
 For more details, visit their documentation [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate).
 
-* **3D blend shapes**: Each viseme includes a series of frames in the `animation` property of the SDK; these are grouped together to better align the facial positions with the audio. It is necessary to implement a 3D rendering engine so that each group of `BlendShapes` frames synchronizes with the corresponding audio clip. The output json looks like the following sample:
+* **3D blend shapes**: Each viseme includes a series of frames in the `animation` property of the SDK; these are grouped together to better align the facial positions with the audio. It is necessary to implement a 3D rendering engine so that each group of `BlendShapes` frames synchronizes with the corresponding audio clip. The output json looks like the following sample: 
 
 ```json
 {
@@ -906,7 +906,7 @@ For more details, visit their documentation [here](https://developer.mozilla.org
 
 Each frame within BlendShapes contains an array of 55 facial positions represented with decimal values between 0 and 1. For more details, visit their documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme?tabs=3dblendshapes&amp;pivots=programming-language-javascript#3d-blend-shapes-animation).
 
-In this tutorial, we’ll use the Viseme IDs to generate facial movements for our avatar. However! If this tutorial reaches 100k views, I promise to write two more posts on 2D SVG Animation and 3D Blend Shapes, respectively.
+In this tutorial, we’ll use the Viseme IDs to generate facial movements for our avatar. However! If this tutorial reaches 100k views, I promise to write two more posts on 2D SVG Animation and 3D Blend Shapes, respectively. 
 
 &lt;center&gt;
 
@@ -1010,7 +1010,7 @@ The following list describes some examples of allowed contents in each element:
 
 The voice service automatically handles the [intonation](https://en.wikipedia.org/wiki/Intonation_(linguistics)) patterns and [timing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9895962/) typically denoted by punctuation marks, such as the pause after a period or the rising intonation of a yes/no question.
 
-
+ 
 
 **4. Text-to-Speech Function:**
 
@@ -1086,7 +1086,7 @@ Finally, we export the `textToSpeech` function to use in other parts of the appl
 `export default textToSpeech;`
 
 
-This setup is essentially the ticket to turning text into dynamic, expressive speech with Azure&#39;s help, complete with detailed viseme data for an extra splash of phonological faithfulness .
+This setup is essentially the ticket to turning text into dynamic, expressive speech with Azure&#39;s help, complete with detailed viseme data for an extra splash of phonological faithfulness . 
 
 ## Step 5. Text-to-Speech API
 
@@ -1311,9 +1311,9 @@ export default playAudio;
 
 Let’s examine the functionality of the `playAudio` function,, which is designed to manage audio playback. To ensure consistency in interacting with this function, we’ve defined the  `VisemeFrame` and `playAudioProps` interfaces, describing the expected structure of the objects to be used during the function&#39;s execution.
 
-At a global level, the variable `TRANSATION_DELAY` is set to a value of 60, to control the delay between audio playbacks. Additionally, the global variable `ttsAudio`, an instance of `HTMLAudioElement`, serves as the repository for the audio content to be played.
+At a global level, the variable `TRANSATION_DELAY` is set to a value of 60, to control the delay between audio playbacks. Additionally, the global variable `ttsAudio`, an instance of `HTMLAudioElement`, serves as the repository for the audio content to be played. 
 
-Within the scope of the `playAudio` function, an initial check ensures that no audio is currently playing through (`ttsAudio`) to avoid overlapping playback. Following this, the `audioBuffer` undergoes conversion to a blob format, creating a URL that links directly to the audio resource. This URL is then used to instantiate a new `ttsAudio`element, with specific events set up to monitor playback progress (`ontimeupdate`)  and completion (`onended`). These event handlers play a crucial role in dynamically updating the avatar’s visual representation in sync with the audio and ensures accurate lip synchronization and interface updates throughout the playback.
+Within the scope of the `playAudio` function, an initial check ensures that no audio is currently playing through (`ttsAudio`) to avoid overlapping playback. Following this, the `audioBuffer` undergoes conversion to a blob format, creating a URL that links directly to the audio resource. This URL is then used to instantiate a new `ttsAudio`element, with specific events set up to monitor playback progress (`ontimeupdate`)  and completion (`onended`). These event handlers play a crucial role in dynamically updating the avatar’s visual representation in sync with the audio and ensures accurate lip synchronization and interface updates throughout the playback. 
 
 Finally, the process concludes with the call to `ttsAudio.play()`, which initiates the audio playback. In summary, the `playAudio` function orchestrates audio playback, leveraging viseme information for precise synchronization. The function pauses any previous playback, configures event handlers to ensure real-time updates to the avatar’s expressions, and resets viseme IDs post-playback.
 
@@ -1387,39 +1387,39 @@ With this, the implementation of our avatar is complete!
 While we’ve certainly made significant strides, there’s always room to push the envelope to refine our avatar’s capabilities even further. Here are a few avenues for taking our project to the next level:
 
 **1. Integrate Speech Recognition:**
-
+    
 Improving user interaction by adding speech recognition can make the experience more immersive and natural, allowing our avatar to respond easily to both typed and spoken inputs.
-
+    
 **2. Enhance with additional animations:**
-
-Broadening the avatar’s animations beyond lip movements, such as incorporating expressive eye (or tentacle) movements, can improve its overall expressiveness. These animations could be linked to emotions like joy, anger, surprise, and more, thereby mirroring human emotional gestures more accurately.
-
+    
+Broadening the avatar’s animations beyond lip movements, such as incorporating expressive eye (or tentacle) movements, can improve its overall expressiveness. These animations could be linked to emotions like joy, anger, surprise, and more, thereby mirroring human emotional gestures more accurately. 
+    
 **3. Include a conversation history:**
-
-Implementing a feature to track conversation history will definitely make things more interesting for the user. Not only could such a feature serve as a valuable reference tool, but it would also foster a continuous dialogue flow.
-
+    
+Implementing a feature to track conversation history will definitely make things more interesting for the user. Not only could such a feature serve as a valuable reference tool, but it would also foster a continuous dialogue flow. 
+    
 **4. Integrate continuous learning:**
-
-Introducing learning mechanisms for the avatar to adapt and update its responses over time (for example, the ability to adapt to new words, concepts, or trends) makes sure it stays relevant and up-to-date, while also improving its interaction quality.
-
+    
+Introducing learning mechanisms for the avatar to adapt and update its responses over time (for example, the ability to adapt to new words, concepts, or trends) makes sure it stays relevant and up-to-date, while also improving its interaction quality. 
+    
 **5. Expand platform integration:**
-
-Improving integration with other external platforms, such as social networks or messaging apps, will broaden the avatar’s reach. This will significantly increase its accessibility and utility across different user environments.
-
+    
+Improving integration with other external platforms, such as social networks or messaging apps, will broaden the avatar’s reach. This will significantly increase its accessibility and utility across different user environments. 
+    
 **6. Advanced customization options:**
-
+    
 Supplying users with more advanced customization options - from voice modulation to visual appearance to personality tweaks - can offer a more personalized and unique experience.
 
 **7. Incorporate local language models for privacy and control:**
-
-Exploring local language models can offer plenty of benefits in privacy and data control, thereby allowing for sensitive interactions to be processed directly on the user’s device, without the need to rely exclusively on cloud services.
-
+    
+Exploring local language models can offer plenty of benefits in privacy and data control, thereby allowing for sensitive interactions to be processed directly on the user’s device, without the need to rely exclusively on cloud services. 
+    
 **8. Reduce Latency:**
+    
+Minimizing response times through technical optimizations (such as model optimization, development of lightweight models specifically for local devices, and efficient resource usage) will make interactions feel more immediate and real. Researching advanced techniques, such as parallel processing and anticipatory response caching, is another super-helpful way to improve interactivity and the overall user experience. 
 
-Minimizing response times through technical optimizations (such as model optimization, development of lightweight models specifically for local devices, and efficient resource usage) will make interactions feel more immediate and real. Researching advanced techniques, such as parallel processing and anticipatory response caching, is another super-helpful way to improve interactivity and the overall user experience.
 
-
-**9. Other possible applications across diverse fields:**
+**9. Other possible applications across diverse fields:** 
 
 It’s clear that the tech we’ve explored in this tutorial has a broad range of applications and potential impact across a wide swath of different fields. Some other potential applications could include:
 
@@ -1434,9 +1434,9 @@ It’s clear that the tech we’ve explored in this tutorial has a broad range o
 
 It’s clear to see that the possibilites for talking avatars may just be as vast, deep, and unknowable as the ocean itself. If you find yourself navigating educational currents with personalized learning companions or exploring the uncharted waters of personalized recommendations, think of the tools here as your own compass and map.
 
-The combination of Azure Conginitve Services, LangChain, and OpenAI not only empowers us to set sail on our journey but to chart the course to unexplored territories in human-machine interaction as well. As such, our chat-vatars aren’t merely conversational avatars: by building them, we place ourselves in the process of co-creating connections and narratives.
+The combination of Azure Conginitve Services, LangChain, and OpenAI not only empowers us to set sail on our journey but to chart the course to unexplored territories in human-machine interaction as well. As such, our chat-vatars aren’t merely conversational avatars: by building them, we place ourselves in the process of co-creating connections and narratives. 
 
-So, whether you’re a seasoned sailor in the sea of human-machine interactions or just hoisting your anchor, there has never been a more exciting time to set sail towards the future, and that the most exciting discoveries lie below the surface. Better get Kraken!
+So, whether you’re a seasoned sailor in the sea of human-machine interactions or just hoisting your anchor, there has never been a more exciting time to set sail towards the future, and that the most exciting discoveries lie below the surface. Better get Kraken! 
 
 &lt;center&gt;
 
@@ -1467,7 +1467,7 @@ So, whether you’re a seasoned sailor in the sea of human-machine interactions 
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

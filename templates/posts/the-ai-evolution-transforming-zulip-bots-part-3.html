@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="&lt;center&gt;      #  The AI Evolution: Transforming Zulip Bots, Part 3       &lt;big&gt;      **Discover how A">
-
-
-
+    
+    
+    
     <meta property="og:title" content="The AI Evolution: Transforming Zulip Bots, Part 3 - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>The AI Evolution: Transforming Zulip Bots, Part 3 - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,49 +46,49 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                   <span class="ui-no-lastchangeuser">&thinsp;<i class="fa fa-clock-o fa-fw" style="width: 18px;"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Sun Jan 28 2024 17:16:29 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 30 2024 06:02:53 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">438 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">439 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
-
+    
 #  The AI Evolution: Transforming Zulip Bots, Part 3
 
-
+    
 &lt;big&gt;
-
+    
 **Discover how AI reshapes chat automation in Zulip bots**
-
+    
 &lt;/big&gt;
-
+    
 *Written by Juan David Arias. Originally published 2024-01-30 on the [Monadical blog](https://monadical.com/blog.html).*
-
+    
 
 &lt;/center&gt;
 
 ## Introduction
-We&#39;re back, at long last! If you&#39;ve been journeying with us through the wonderful world of Zulip bots, now is not yet the time to rest, fellow traveller. Welcome to our third and final installment of the Zulip bot series!
+We&#39;re back, at long last! If you&#39;ve been journeying with us through the wonderful world of Zulip bots, now is not yet the time to rest, fellow traveller. Welcome to our third and final installment of the Zulip bot series! 
 
 &lt;center&gt;
-
+    
 ![](https://docs.monadical.com/uploads/9792ba40-46b1-44c1-a882-1d5944ce6ad4.gif)
+    
+&lt;/center&gt; 
 
-&lt;/center&gt;
 
-
-After laying the groundwork with a basic Zulip bot using FastAPI in our [first article](https://monadical.com/posts/zulip-ia-bot-1.html), and scaling up with [N-tier architecture in the second](https://monadical.com/posts/zulip-ai-bot-2.html), we&#39;re now diving into the depths of chat automation with generative AI models. But not just any chat automation: we’re talking about a chatbot that generates images, writes poems, answers questions, spins up concise summaries, translates text, and more.
+After laying the groundwork with a basic Zulip bot using FastAPI in our [first article](https://monadical.com/posts/zulip-ia-bot-1.html), and scaling up with [N-tier architecture in the second](https://monadical.com/posts/zulip-ai-bot-2.html), we&#39;re now diving into the depths of chat automation with generative AI models. But not just any chat automation: we’re talking about a chatbot that generates images, writes poems, answers questions, spins up concise summaries, translates text, and more. 
 
 While our series is tailored for Zulip, the tricks that we’ve picked up along the way are pretty universal. So if you’re playing around with chatbots on Discord, Slack, or any other platform, you’ll surely find a few nuggets of insight.
 
@@ -98,15 +98,15 @@ In this final installment, we’re going to:
 - Show you how to integrate these advancements into Delphos, our flagship Zulip chatbot.
 
 The tools that we will be using in this tutorial are:
-- [Hugging Face](https://huggingface.co/ ): a  platform for researchers and developers to share, train, and deploy NLP models
+- [Hugging Face](https://huggingface.co/ ): a  platform for researchers and developers to share, train, and deploy NLP models 
 - [LLM models](https://aws.amazon.com/what-is/large-language-model/): Large Language Models are a kind of AI trained on massive amounts of text data. This allows them to generate human-quality text, translate languages, write different kinds of creative content, and answer your questions in an informative way.
 - [Stable Diffusion](https://aws.amazon.com/what-is/stable-diffusion/#) models use a technique called diffusion to create images from text descriptions. Diffusion is the process of adding noise to an image and then gradually denoising it until it resembles the desired image.
-- [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html): an asynchronous task queue based on distributed message passing. It is a Python-based system that allows you to defer the execution of tasks until a worker is available to execute them.
+- [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html): an asynchronous task queue based on distributed message passing. It is a Python-based system that allows you to defer the execution of tasks until a worker is available to execute them. 
 - [Redis](https://redis.io/): an open-source, in-memory data structure store used as a database, cache, and message broker.
 - [Zulip](https://zulip.com/): an open-source team chat platform. It supports long-form conversations, threaded discussions, and powerful search, making it easy to stay on top of conversations and find information.
 - [Delphos](https://github.com/juanArias8/zulip-delphos-bot):  an implementation in FastAPI for a Zulip bot, it is the same chatbot that we’ve been working on in this series of articles.
 
-We’ll follow the steps below:
+We’ll follow the steps below: 
 1. Getting started with LLM and Diffusion models (which means creating interfaces for managing Stable Diffusion models and LLM models)
 2. Adding Celery for handling asynchronous tasks (integrating Celery, creating a task queue for generation, and integrating AI models into Delphos, our chatbot for Zulip)
 3. Integrating the model engine into the chatbot
@@ -115,11 +115,11 @@ We’ll follow the steps below:
 
 Diving into the world of LLM and Stable Diffusion models may sound complex and intimidating, but in reality, it follows a pretty standard flow. Let’s break it down into simple, easy-to-follow steps:
 
-**1. Model Hunting on Hugging Face:** Choose your own adventure by exploring the [Hugging Face model repository](https://huggingface.co/models?search=stable%20diffusion) for the model you want to use. Simply searching for models based on Stable Diffusion will yield more than a thousand models listed, so there is indeed a treasure trove of options available.
-
+**1. Model Hunting on Hugging Face:** Choose your own adventure by exploring the [Hugging Face model repository](https://huggingface.co/models?search=stable%20diffusion) for the model you want to use. Simply searching for models based on Stable Diffusion will yield more than a thousand models listed, so there is indeed a treasure trove of options available. 
+ 
 **2. Select and Script:** Once you’ve spotted the model that fits your needs, the next step is to create a Python script to run it. Generally, the model&#39;s card includes steps for running the model, making it easy enough to get started.
 
-**3. Setting the Stage:** Now, it’s time to roll up your sleeves. This involves creating a Python environment, installing dependencies, writing the pipeline, and executing the code. Think of it as laying the groundwork for your project.
+**3. Setting the Stage:** Now, it’s time to roll up your sleeves. This involves creating a Python environment, installing dependencies, writing the pipeline, and executing the code. Think of it as laying the groundwork for your project. 
 
 **4. Initial Setup and Download:** The first execution of your code brings your chosen model from the Hugging Face repository to the local machine and stores it in a directory as a cache mechanism.
 
@@ -263,7 +263,7 @@ class StableDiffusionAbstract(ABC):
         print(f&#34;Generation results: {len(result)}&#34;)
         return result[0]
 ```
-In our script, we’ve defined a `StableDiffusionAbstract` class, which serves as an interface for other classes to create models dynamically. Let’s peel back the layers of this class.
+In our script, we’ve defined a `StableDiffusionAbstract` class, which serves as an interface for other classes to create models dynamically. Let’s peel back the layers of this class. 
 
 The `StableDiffusionAbstract` class takes three parameters: `model_id`, `pipeline`, and `scheduler`. The `model_id` corresponds to the model’s ID on Hugging Face, the `pipeline` is the operational core (the class responsible for running the model from the diffusers) and the `scheduler` - essentially a timekeeper - dictates the flow and execution of the model’s operations ([more info on schedulers here](https://huggingface.co/docs/diffusers/using-diffusers/schedulers)). The default model is StableDiffusionXL, but it’s flexible enough to adapt to any model you specify.
 
@@ -350,7 +350,7 @@ When you run the code in the command line with `python3 image_generation.py`, tw
 ![](https://docs.monadical.com/uploads/591b3007-6e2d-411a-bf79-dc53f7ccd643.png)
 
 &lt;/center&gt;
-
+    
 A quick heads-up: if you bump into any dependency hiccups while generating images, these are the versions that were in use by poetry as of the date this article was written.
 
 ```shell
@@ -373,7 +373,7 @@ class ImageGenerationRequest(BaseModel):
    image: Image = None
    mask: Image = None
 
-
+ 
 class StableDiffusionXLInpainting(StableDiffusionAbstract):
     def __init__(self):
         super().__init__(
@@ -406,15 +406,15 @@ To give you a broader picture, here’s a table listing some of the models and p
 
 &lt;center&gt;
 
-| **Model** | **Pipeline** |
-| -------- | -------- |
-| stabilityai/stable-diffusion-2    | StableDiffusionPipeline    |
-| prompthero/openjourney-v4     | StableDiffusionPipeline   |
-| stabilityai/stable-diffusion-xl-base-1.0    | StableDiffusionXLPipeline    |
-| stabilityai/stable-diffusion-xl-refiner-1.0     | StableDiffusionXLImg2ImgPipeline    |
-| stabilityai/stable-diffusion-xl-base-1.0     | StableDiffusionXLInpaintPipeline     |
+| **Model** | **Pipeline** | 
+| -------- | -------- | 
+| stabilityai/stable-diffusion-2    | StableDiffusionPipeline    | 
+| prompthero/openjourney-v4     | StableDiffusionPipeline   | 
+| stabilityai/stable-diffusion-xl-base-1.0    | StableDiffusionXLPipeline    | 
+| stabilityai/stable-diffusion-xl-refiner-1.0     | StableDiffusionXLImg2ImgPipeline    | 
+| stabilityai/stable-diffusion-xl-base-1.0     | StableDiffusionXLInpaintPipeline     | 
 
-&lt;/center&gt;
+&lt;/center&gt; 
 
 ### Creating an interface for running LLMs
 
@@ -522,7 +522,7 @@ class ChatGLMTextGeneration(TextGenerationAbstract):
            tokenizer=&#34;AutoTokenizer&#34;,
        )
 
-
+   
    # Overwrites the generate function
    def generate(self, request: TextGenerationRequest):
        model = self.pipeline.eval()
@@ -558,7 +558,7 @@ poetry add sentencepiece einops
 
 With these dependencies in place, we’re set to run the script. By executing `python3 llm_base.py` in the command line, we can see each of the models responding to our prompts.
 
-```python
+```python 
 ----------------------------------------------------------------------------------
 GPT2 response: What is python?
 Python is a programming language that is used to create and manipulate data.
@@ -601,7 +601,7 @@ Let’s break this down:
 
 - **Generation time:** A diffusion model can take anywhere from 10 seconds to over 30 seconds to generate an image; this could even extend to minutes the first time, while the model downloads.
 
-- **Size matters:** generative models are big, typically ranging from 3GB to more than 12GB. You’ll need a hefty amount of RAM, whether on the CPU or GPU, to run just one generation.
+- **Size matters:** generative models are big, typically ranging from 3GB to more than 12GB. You’ll need a hefty amount of RAM, whether on the CPU or GPU, to run just one generation. 
 
 - **The Power Play:** The generation time is directly proportional to the device’s power. A 32 GB vRAM NVIDIA V100 GPU will outperform a 12GB RTX 3060, capable of churning out more results in less time.
 
@@ -609,13 +609,13 @@ Let’s break this down:
 
 - **Handling the crowd:** In a real-world scenario, multiple users might be firing requests at your models all at once. To keep things orderly and efficient, we either need a queuing system to process these tasks or an auto-scaling system to adjust the number of GPUs based on demand.
 
-Now, let&#39;s talk about our Zulip bot. Zulip has its own way of handling messages between the client and server. One rule is the ten-second timeout for requests. If our bot doesn&#39;t reply within those ten seconds, the request gets dropped, and the communication between the client and server is lost. Additionally, if Zulip doesn’t hear back within a certain timeframe, it starts sending follow-up requests, which could lead to scenarios like:
+Now, let&#39;s talk about our Zulip bot. Zulip has its own way of handling messages between the client and server. One rule is the ten-second timeout for requests. If our bot doesn&#39;t reply within those ten seconds, the request gets dropped, and the communication between the client and server is lost. Additionally, if Zulip doesn’t hear back within a certain timeframe, it starts sending follow-up requests, which could lead to scenarios like: 
 
-&lt;center&gt;
+&lt;center&gt; 
 
 ![](https://docs.monadical.com/uploads/1e3e7a6e-2eb4-424f-aefb-4e18d8a42d48.png)
 
-&lt;/center&gt;
+&lt;/center&gt; 
 
 But how to prevent this unwanted behaviour? How to enhance our bot&#39;s functionality? By introducing an asynchronous task manager into our system. This ensures our bot can queue requests, process generations, and then, once it&#39;s ready, deliver the results back to the user without a hitch. We&#39;re essentially aiming to set up a flow that handles tasks efficiently and keeps everything running smoothly, as illustrated below:
 &lt;center&gt;
@@ -686,7 +686,7 @@ def text_generation_task(*, request: TextGenerationRequest, message: Message):
    model = map_text_handler_to_model(request.model_handler)()
    response = model.generate(request=request)
    print(response)
-   # send response to the client
+   # send response to the client 
    return response
 
 
@@ -696,13 +696,13 @@ def image_generation_task(*, request: ImageGenerationRequest, message: Message):
    response = model.generate(request=request)
    response.show()
    # upload image
-   # send response to the client
+   # send response to the client 
    return image_url
 ````
 
 As we dig deeper into the functionality of our bot, we come across the task.py file, which houses a couple of auxiliary functions: `map_text_handler_to_model` and `map_image_handler_to_model`. These are our friendly neighborhood guides, helping link the generator classes we previously created to a specific tag. This tag is what we pass externally through the `model_handler` request field. And just to keep things straightforward, we default to the Chat GLM model for text and Stable Diffusion XL for image generation.
 
-Now, let’s take a moment to spotlight the `text_generation_task` function: decorated with `@app.task`, this function takes on the responsibility of running text generation with LLM models in the background. How? First, it picks the model based on the `model_handler` parameter received from the chatbot; then, it calls the `generate` method of the generator and prints the response. The cool part?  The response gets stored in the Redis backend and can be fetched later using `AsyncResult(task_id)`. Just a heads-up, though: to integrate this with the chatbot, we’ll need to tweak this task a bit to send the result back to the Zulip client. But we’re going to save that for the next section.
+Now, let’s take a moment to spotlight the `text_generation_task` function: decorated with `@app.task`, this function takes on the responsibility of running text generation with LLM models in the background. How? First, it picks the model based on the `model_handler` parameter received from the chatbot; then, it calls the `generate` method of the generator and prints the response. The cool part?  The response gets stored in the Redis backend and can be fetched later using `AsyncResult(task_id)`. Just a heads-up, though: to integrate this with the chatbot, we’ll need to tweak this task a bit to send the result back to the Zulip client. But we’re going to save that for the next section. 
 
 Moving on to the `image_generation_task`, this function is the mastermind behind processing image generation with Stable Diffusion models. It follows a similar pattern: selecting a  model, running the `generate` method to produce the images, and then processing the results. For the chatbot scenario, we’ll need to upload the image to the Zulip server-client first and then share the image URL to the chat.
 
@@ -722,7 +722,7 @@ request = ImageGenerationRequest(prompt=”a black cat”)
 image_generation_task.delay(request=request)
 ```
 
-## 3. Integrating the model engine into the chatbot
+## 3. Integrating the model engine into the chatbot 
 
 So far, so good! We&#39;ve successfully created a generative model engine that runs locally and responds to commands. The next step? Transforming this engine into a dynamic service provider for external clients, such as web applications or chatbots, which means integrating this with the Zulip platform.
 
@@ -898,7 +898,7 @@ def image_generation_task(*, request: ImageGenerationRequest, message: Message):
     return image_url
 ```
 
-The `image_generation_task` function uses the method `upload_image_file_to_zulip` from the `ZulipIntegration` class, which uploads a `PIL.Image` image to Zulip&#39;s file server and returns a URL in markdown format. This URL is then sent to the Zulip chat. It also uses `get_image_file_name` to create a filename for the image, which makes a string like `image-timestamp.png`.
+The `image_generation_task` function uses the method `upload_image_file_to_zulip` from the `ZulipIntegration` class, which uploads a `PIL.Image` image to Zulip&#39;s file server and returns a URL in markdown format. This URL is then sent to the Zulip chat. It also uses `get_image_file_name` to create a filename for the image, which makes a string like `image-timestamp.png`. 
 
 Here’s how both functions are implemented:
 
@@ -926,7 +926,7 @@ class ZulipIntegration:
         uri = result.get(&#34;uri&#34;)
         return f&#34;[{filename}]({uri})&#34; if uri else None
 
-
+    
 # src.utils.py
 def get_image_file_name():
     now = datetime.now()
@@ -958,7 +958,7 @@ $ celery --app=src.integrations.celery.task.app worker --concurrency=1 --logleve
 $ ngrok http 8000
 ```
 
-5. Update the endpoint URL field in **Manage bot** on your [Zulip domain](https://zulip.your-domain.com/#settings/your-bots) with the URL from [ngrok](https://ngrok.com).
+5. Update the endpoint URL field in **Manage bot** on your [Zulip domain](https://zulip.your-domain.com/#settings/your-bots) with the URL from [ngrok](https://ngrok.com). 
 
 Now - the moment of truth! Test out the models in your chatbot! Send a private message to **@delphos** in Zulip, using the chat command for LLM models or diffusion for Stable Diffusion models. Just give it a prompt and see what your bot generates.
 
@@ -973,7 +973,7 @@ Now - the moment of truth! Test out the models in your chatbot! Send a private m
 &lt;/center&gt;
 
 ## Conclusion
-And there we have it! What started off as a simple exploration of Zulip bots has turned into an odyssey through the world of generative AI models. We&#39;ve navigated the integration of these advanced models with real-world applications, making AI applications not just smart, but also approachable and user-friendly.
+And there we have it! What started off as a simple exploration of Zulip bots has turned into an odyssey through the world of generative AI models. We&#39;ve navigated the integration of these advanced models with real-world applications, making AI applications not just smart, but also approachable and user-friendly. 
 
 Our bot stays efficient, even under the heavy computational load of the generative models. This is because we have Celery as our secret ingredient, keeping the bot agile, responsive, and capable of handling multiple requests easily, while coupled with task queues and the Redis backend.
 
@@ -993,7 +993,7 @@ We&#39;re excited about the potential of this project, like sharpening our model
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

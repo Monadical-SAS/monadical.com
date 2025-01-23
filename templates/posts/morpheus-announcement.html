@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="   &lt;center&gt;      #  Morpheus: A Dream Machine for AI Art Generation      &lt;big&gt;      **Giving you the">
-
-
-
+    
+    
+    
     <meta property="og:title" content="Morpheus: A Dream Machine for AI Art Generation - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>Morpheus: A Dream Machine for AI Art Generation - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,32 +46,32 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="hanna"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Sep 15 2023 02:11:57 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Sep 26 2023 15:51:08 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1009 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1010 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 
 
 &lt;center&gt;
-
+    
 #  Morpheus: A Dream Machine for AI Art Generation
-
+    
 &lt;big&gt;
-
+    
 **Giving you the power to create stunning and beautiful generative art**
-
+    
 &lt;/big&gt;
-
+    
 *Written by Hanna Jodrey. Originally published 2023-09-26 on the [Monadical blog](https://monadical.com/blog.html).*
-
+    
 &lt;/center&gt;
 
 We&#39;re excited and delighted to announce the launch of [Morpheus](https://morpheus.monadical.io/), our brand-new, open-source, self-hosted, generative art WebUI and build pipeline!
@@ -92,10 +92,10 @@ Morpheus allows artists and developers to use diverse generative models to creat
 
 ## The Features
 
-Morpheus boasts some standout tools for creators and developers to enhance and customize their art. In addition to generating images based on both text prompts and other uploaded images, Morpheus also lets you change the style of an image, offers an integrated, collaborative painting system, allows you to modify sections of an existing image, and features a private image gallery.
+Morpheus boasts some standout tools for creators and developers to enhance and customize their art. In addition to generating images based on both text prompts and other uploaded images, Morpheus also lets you change the style of an image, offers an integrated, collaborative painting system, allows you to modify sections of an existing image, and features a private image gallery. 
 
 
-- **To generate an image based on a prompt,** just enter a text description of the image you want to create.
+- **To generate an image based on a prompt,** just enter a text description of the image you want to create. 
 
 - **To generate an image based on another image,** load your base image and, in the text prompt, describe the changes you want to see.
 
@@ -104,7 +104,7 @@ Morpheus boasts some standout tools for creators and developers to enhance and c
 ![](https://docs.monadical.com/uploads/36059ef3-be38-4cb8-b00b-be0a035450b9.png)
 
 
-- **The integrated collaborative painting system** allows you to make initial sketches of the desired images. In an online editor, you can also collaborate with other users to create a collaborative painting.
+- **The integrated collaborative painting system** allows you to make initial sketches of the desired images. In an online editor, you can also collaborate with other users to create a collaborative painting.  
 
 ![](https://docs.monadical.com/uploads/69f610e7-b9be-4c0e-93f6-9a37911c5348.png)
 
@@ -112,19 +112,19 @@ Morpheus boasts some standout tools for creators and developers to enhance and c
 
 ![](https://docs.monadical.com/uploads/ca08399d-7355-4214-a0a7-02686b1826c2.png)
 
-- **The Image Gallery** stores your images in a private folder. You can also create image collections to store similar concepts, which you can then use as base images to edit with AI models.
+- **The Image Gallery** stores your images in a private folder. You can also create image collections to store similar concepts, which you can then use as base images to edit with AI models.  
 
 ![](https://docs.monadical.com/uploads/b443935f-2645-437a-806d-83352e6de97c.png)
 
 ## The Details
 
-Let’s talk for a moment about the heavy lifting. We built the frontend with NextJs/React, while the backend, where all the magic happens, was developed with FastAPI. We also used PostgreSQL to store and manage data and AWS S3 to store the images and models. To handle the GPU power, run the models, and generate the art, we use [Ray](https://www.ray.io/). We also use AWS EKS (Kubernetes cluster) to deploy everything online and scale up or down as needed. To manage the infrastructure, we use Terraform, and to send the code to production, we use Helm.
+Let’s talk for a moment about the heavy lifting. We built the frontend with NextJs/React, while the backend, where all the magic happens, was developed with FastAPI. We also used PostgreSQL to store and manage data and AWS S3 to store the images and models. To handle the GPU power, run the models, and generate the art, we use [Ray](https://www.ray.io/). We also use AWS EKS (Kubernetes cluster) to deploy everything online and scale up or down as needed. To manage the infrastructure, we use Terraform, and to send the code to production, we use Helm. 
 
 In terms of non-functional requirements, Morpheus is a flexible beast and can work in a variety of different scenarios and platforms. Portability-wise, you can run the project on your local PC or deploy it in the cloud with just a few commands. Since Morpheus also runs on a Kubernetes cluster, you can switch between different cloud providers or platforms easily. It’s smart and scalable too; it allows you to set the minimum and maximum resources to be used in the project configuration files. Morpheus also uses a warm pool strategy, which means it can spin up new server instances if needed, and quickly.
 
 
 
-
+    
 ![](https://docs.monadical.com/uploads/10051b1f-11dd-49cd-9001-5f901c4b12ea.png)
 
 
@@ -135,7 +135,7 @@ In terms of non-functional requirements, Morpheus is a flexible beast and can wo
 
 ## The Future
 
-Looking ahead, we have a few things up our sleeve! Namely, we’re going to expand our Gallery functions to create a public collection; you can look forward to sharing your favourite images with the rest of the world, or use any of the publicly available images as a base for new image generation. We’re also integrating a plugin system to create a Shopify-like marketplace, where we intend to connect multiple plugins developed by the community of users. What’s more, we’re creating a micro-framework to deploy models as plugins in the global system, and we’re currently building a payment system to allow users to access premium features, such as our 3D texturing and [Minecraft Skin Generator](link) plugins. We’re also exploring the possibility of adding text2video and image outpainting features. Lastly, we&#39;re considering Solana integration so that you can pay with crypto, while NFT and Blockchain integration would enable you to send the artwork directly to your wallet.
+Looking ahead, we have a few things up our sleeve! Namely, we’re going to expand our Gallery functions to create a public collection; you can look forward to sharing your favourite images with the rest of the world, or use any of the publicly available images as a base for new image generation. We’re also integrating a plugin system to create a Shopify-like marketplace, where we intend to connect multiple plugins developed by the community of users. What’s more, we’re creating a micro-framework to deploy models as plugins in the global system, and we’re currently building a payment system to allow users to access premium features, such as our 3D texturing and [Minecraft Skin Generator](link) plugins. We’re also exploring the possibility of adding text2video and image outpainting features. Lastly, we&#39;re considering Solana integration so that you can pay with crypto, while NFT and Blockchain integration would enable you to send the artwork directly to your wallet. 
 
 ![](https://docs.monadical.com/uploads/bfc60051-4de3-46dc-a860-e4aa45ba0cef.png)
 
@@ -143,7 +143,7 @@ Looking ahead, we have a few things up our sleeve! Namely, we’re going to expa
 *Futuristic photo studio, wide, stunning, ultra-high-definition (UHD), 8K, detailed, controlled, distinctive, rich, trending, precise, intricate, Blockchain technology.*
 
 
-At [Monadical](https://monadical.com/), we&#39;re proud to be a part of the growing community of tools and technologies that are making generative art more fun and accessible than ever before. We believe that, in collaboration with the creative minds of artists and dreamers, Morpheus has the potential to unlock unimagined possibilities in generative AI.
+At [Monadical](https://monadical.com/), we&#39;re proud to be a part of the growing community of tools and technologies that are making generative art more fun and accessible than ever before. We believe that, in collaboration with the creative minds of artists and dreamers, Morpheus has the potential to unlock unimagined possibilities in generative AI. 
 
 Interested in checking it out for yourself? To get started, visit our website and [GitHub repository](https://github.com/Monadical-SAS/Morpheus). We can’t wait to see what you’ll dream up! 🚀🎨
 </div>
@@ -157,7 +157,7 @@ Interested in checking it out for yourself? To get started, visit our website an
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="&lt;center&gt;  Drone Web Platform ===  &lt;big&gt;  **A Platform for Operating Drones Through the Internet**  &lt;">
-
-
-
+    
+    
+    
     <meta property="og:title" content="Drone Web Platform - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>Drone Web Platform - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,20 +46,20 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/bd996ca3d6f681cbd3a036c679873b56?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jose.zdy"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 22 2021 17:39:29 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 28 2022 17:24:13 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2151 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">2153 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
             <span class="ui-owner">
                 &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i>
                 &nbsp;<span class="text-uppercase">owned this note</span>
             </span>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -100,7 +100,7 @@ Well, last year I finally decided to give the project a shot. In this post, I’
 
 Drones are mainly composed of two things: the vehicle and a remote controller or station. So, first of all, I needed to be able to interact with the drone from a server as if the server were the control station. This meant that the drone had to be able to connect to the internet! Nice, two problems at once: connect to the internet and create a web control station.
 
-I took a drone (a quadcopter to be precise), connected it to a mini PC (a Raspberry Pi), connected my mini PC to the internet through a 4G dongle, and started building the most freaking awesome web platform to manage drones 🥳.
+I took a drone (a quadcopter to be precise), connected it to a mini PC (a Raspberry Pi), connected my mini PC to the internet through a 4G dongle, and started building the most freaking awesome web platform to manage drones 🥳. 
 
 What about the control station? Let me introduce you to the wonderful world of Mavlink! ✨ Mavlink is a message protocol, which means it’s a standard set of commands, messages and definitions that drones use to communicate with the external world. For example, you can send a message to the drone that says “MOVE FORWARD 10 METERS”, and the drone will understand. In the same way, a drone can say, “I&#39;M AT COORDINATES X,Y” and you will know where the drone is. This communication can occur through many channels: WiFi, 4G, Serial USB, etc.
 
@@ -118,11 +118,11 @@ Drones that use Mavlink have so many capabilities--the number of messages availa
 
 The next step was to connect a 4G dongle to the mini PC to establish a communication channel to a server. This was straightforward, since the problem has already been solved--4G is what allows mobile networks to provide internet to devices (using a SIM card, like with your cell phone). There’s a small piece of software written in [Python](https://www.python.org/) that runs on the mini PC which simply serves as a bridge in the communication channel. There is no magic in it--it’s just a script to pass messages from the drone’s onboard controller to the server and vice versa. This is all done using [websockets](https://en.wikipedia.org/wiki/WebSocket).
 
-All that was left to build was the server and client software...
+All that was left to build was the server and client software... 
 
 ## Cloud control station
 
-Web applications use [client-server architecture](https://cio-wiki.org/wiki/Client_Server_Architecture), composed mainly of two parts called the &#39;backend&#39; and the &#39;frontend&#39;.[^3] For this project, I wrote the backend in Python using a framework called [Django](https://www.djangoproject.com/), and the frontend in [Javascript](https://www.javascript.com/) using a library called [‘React’](https://reactjs.org/)[^4].
+Web applications use [client-server architecture](https://cio-wiki.org/wiki/Client_Server_Architecture), composed mainly of two parts called the &#39;backend&#39; and the &#39;frontend&#39;.[^3] For this project, I wrote the backend in Python using a framework called [Django](https://www.djangoproject.com/), and the frontend in [Javascript](https://www.javascript.com/) using a library called [‘React’](https://reactjs.org/)[^4]. 
 
 It’s really important to remember that the communication here happens through websockets, so once the connection is established, the mini PC, server and client can communicate in real time. The backend handles two major endpoints, one for drones and one for users (frontend/client). After the whole communication channel was up--i.e, the drone talks to the mini PC, the mini PC talks to the server, and the client talks to the server--it was time to start sending real commands and messages to control, and to manage the drone from a web browser.
 
@@ -157,7 +157,7 @@ The image above shows the current interface. The base is a map where the positio
 
 One important component that is still a work in progress is the video streaming pane. The idea is to have it floating around, with the controls to move the gimbal, take pictures and/or record video. In the long-term future, I also plan to add some AI to it.
 
-Eventually, I want to create an authentication system, link drones to users, build flight rooms and scale the infrastructure to handle multiple connections. The platform will have a flight log, a dashboard, and a mission creator/editor.
+Eventually, I want to create an authentication system, link drones to users, build flight rooms and scale the infrastructure to handle multiple connections. The platform will have a flight log, a dashboard, and a mission creator/editor. 
 
 
 ## What’s next?
@@ -170,7 +170,7 @@ I think there are some really exciting applications for this project...
 ![Egyptian Sculpture Gallery](https://docs.monadical.com/uploads/upload_611e308ca2b46eb00d59c45df26bbb1d.png)
 *The Egyptian Sculpture Gallery*
 
-During the pandemic, we’ve experienced what it&#39;s like to have our movement restricted and this has sparked a welcome increase in accessibility. With a web platform like this, everyone could visit the world from their phones or laptops. It wouldn’t even be necessary to own a drone: people could rent drones housed as sites of interest and explore places they’d otherwise never get a chance to see.
+During the pandemic, we’ve experienced what it&#39;s like to have our movement restricted and this has sparked a welcome increase in accessibility. With a web platform like this, everyone could visit the world from their phones or laptops. It wouldn’t even be necessary to own a drone: people could rent drones housed as sites of interest and explore places they’d otherwise never get a chance to see. 
 
 **Scheduled flights** - Drones are already being used for monitoring purposes, e.g., you can fly one around a farm to monitor the growing process of crops. However, you have to be there in person to do this. Having a docking station in place would allow you to remotely schedule flight routines and record (or livestream) what you have programmed the drone to see. With AI integrations, it could even identify intruders, sound alarms, or count trees or animals. This technology could also be useful on solar farms, where scheduled flights with AI integrations could inspect and detect faulty solar panels.
 
@@ -187,7 +187,7 @@ During the pandemic, we’ve experienced what it&#39;s like to have our movement
 
 ## Concerns
 
-These possibilities are naturally going to raise privacy concerns for us. The prospect of a dystopian drone-surveilled future is not something to take lightly! But, as drones become more and more accessible, we need to think about how to legislate around their use.
+These possibilities are naturally going to raise privacy concerns for us. The prospect of a dystopian drone-surveilled future is not something to take lightly! But, as drones become more and more accessible, we need to think about how to legislate around their use. 
 
 One way to control drone use could be to create a public database with designated airspace available to drones. Drones would have to make contact with the database to get permissions and flying space instructions. As long as the drone is connected to the internet, it could be constrained to a certain airspace (the angle of its camera could also be constrained :+1:), and could be tracked and monitored.
 
@@ -202,7 +202,7 @@ There are already a few web drone platforms out there[^5]. However, these platfo
 
 [^2]: Check out the full list of Mavlink messages [here](https://mavlink.io/en/messages/common.html).
 
-[^3]: The backend is what happens in a server (away from you) and the frontend is whatever code is run on the client’s side (your own machine: phone, PC, tablet, tv).
+[^3]: The backend is what happens in a server (away from you) and the frontend is whatever code is run on the client’s side (your own machine: phone, PC, tablet, tv). 
 
 [^4]: I chose these technologies because I’d seen how powerful they were when we used them to build [Oddslingers](https://oddslingers.com/), a super cool free poker site (now open source!)--go check out the site, it’s browser native and works wonderfully!
 
@@ -218,7 +218,7 @@ There are already a few web drone platforms out there[^5]. However, these platfo
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

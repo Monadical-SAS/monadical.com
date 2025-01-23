@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="&lt;center&gt;  # An Overview of Animation Programming **Declarative Animations in a Functional World**  *">
-
-
-
+    
+    
+    
     <meta property="og:title" content="An Overview of Animation Programming - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>An Overview of Animation Programming - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:53:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun May 07 2023 10:14:18 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3135 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3136 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -86,7 +86,7 @@ This summary of animation techniques showcases browser-based animation with Java
 
 You may have used libraries like GSAP, react-move, or jQuery to do animations in the past.  Maybe you&#39;ve heard terms like &#34;tween&#34; and &#34;timeline&#34; before, or maybe you&#39;re just using `setTimeout`.  At one point or another though, all of us have likely experienced the frustration of working with an animation system that has mutable state scattered all over the place, causing spaghetti code that mixes user interaction and animation rendering.
 
-Today we&#39;re going to explore ways to design an animation system that allows us to keep all the animation state in one place, with a clean render loop that doesn&#39;t mix user interation and animation scheduling.
+Today we&#39;re going to explore ways to design an animation system that allows us to keep all the animation state in one place, with a clean render loop that doesn&#39;t mix user interation and animation scheduling. 
 
 ## What Is an Animation?
 
@@ -166,9 +166,9 @@ animate() {
 }
 ```
 
-The difference is subtle, but important: **in this example there is no mutable state**.
+The difference is subtle, but important: **in this example there is no mutable state**.  
 
-The animation is always computed as a pure function of the start position and current timestamp.
+The animation is always computed as a pure function of the start position and current timestamp. 
 
 ### Declarative Animation
 
@@ -244,7 +244,7 @@ const compute_animated_state = (anim, ts) =&gt; {
         const progress = (ts - start_time) / duration
         return start_state + (progress * delta_total)
     }
-
+    
     // if not currently animating, return start or end state
     return ts &gt; end_time
         ? end_state
@@ -278,7 +278,7 @@ runloop()
 
 ReactDOM.render(
     &lt;Provider store={store}&gt;
-       &lt;Ball/&gt;
+       &lt;Ball/&gt; 
     &lt;/Provider&gt;
 )
 ```
@@ -295,7 +295,7 @@ At OddSlingers, we use `redux-time` for rendering [real-time online poker](https
 
 &lt;center&gt;
 &lt;a href=&#34;https://github.com/Monadical-SAS/redux-time&#34;&gt;
-
+    
 ![](https://github.com/Monadical-SAS/redux-time/blob/master/logo.png?raw=true)
 
 &lt;/a&gt;
@@ -336,7 +336,7 @@ https://github.com/Monadical-SAS/redux-time
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

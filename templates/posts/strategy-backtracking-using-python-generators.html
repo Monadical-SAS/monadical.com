@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python generators and generator expressions.">
-
-
-
+    
+    
+    
     <meta property="og:title" content="A pattern for strategy backtracking using Python generators - HedgeDoc">
-
-
+    
+    
     <meta property="og:description" content="While fixing a bug that was affecting an ETL pipeline, we found a clean and simple pattern for strategy backtracking using Python generators and generator expressions.">
-
-
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>A pattern for strategy backtracking using Python generators - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,15 +48,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 25 2022 13:28:53 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Oct 25 2022 18:02:29 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1079 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1080 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
@@ -78,7 +78,7 @@
 
 
 
-A while back, we were tasked with fixing a bug that was affecting an [ETL pipeline](https://en.wikipedia.org/wiki/Extract,_transform,_load). The pipeline ingested events and generated a name string for an asset during one of the steps. The name string would be generated using one of several strategies and in order of preference. We noticed that the catch-all final strategy was being selected more often than was expected, and several asset names were empty.
+A while back, we were tasked with fixing a bug that was affecting an [ETL pipeline](https://en.wikipedia.org/wiki/Extract,_transform,_load). The pipeline ingested events and generated a name string for an asset during one of the steps. The name string would be generated using one of several strategies and in order of preference. We noticed that the catch-all final strategy was being selected more often than was expected, and several asset names were empty. 
 
 Doing the bug fix, we found a very cool, clean, and simple pattern for strategy backtracking using Python Generators and generator expressions. Here’s how we did it!
 
@@ -94,13 +94,13 @@ A function returned a candidate asset name string using different strategies as 
 
         if conditions_B(*args, **kwargs):
             return name_with_strategy_B(*args, **kwargs)
-
+	 
         if conditions_C(*args, **kwargs):
-            return name_with_strategy_C(*args, **kwargs)
+            return name_with_strategy_C(*args, **kwargs)	 
 
-
+        
         return name_with_catch_all_strategy(*args, **kwargs)
-```
+``` 
 And then, was used as follows:
 ```python
 asset_name = get_candidate_asset_name(*args, **kwargs )
@@ -134,11 +134,11 @@ def get_candidate_asset_name(*args, **kwargs) -&gt; Generator[str, None, str]:
 
         if conditions_B(*args, **kwargs):
             yield name_with_strategy_B(*args, **kwargs)
-
+	 
         if conditions_C(*args, **kwargs):
-            yield name_with_strategy_C(*args, **kwargs)
+            yield name_with_strategy_C(*args, **kwargs)	 
 
-        yield name_with_catch_all_strategy(*args, **kwargs)
+        yield name_with_catch_all_strategy(*args, **kwargs)  
 ```
 And we used it as follows:
 ```python
@@ -153,7 +153,7 @@ And we used it as follows:
 ```
 So, what is the code actually doing? First, a generator expression is created from the non-empty sanitized `name candidates` and advanced to the first yield using `next`. Then, it gets the first non-empty sanitized name. In case none of the strategies, which are tried in order of preference sequentially, produce a non-empty sanitized name the default value “NAME NOT FOUND” is returned by the `next` function when `StopIteration` is reached.
 
-Cool, huh? Let us know if you can find other clever uses for this pattern!
+Cool, huh? Let us know if you can find other clever uses for this pattern! 
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
@@ -165,7 +165,7 @@ Cool, huh? Let us know if you can find other clever uses for this pattern!
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

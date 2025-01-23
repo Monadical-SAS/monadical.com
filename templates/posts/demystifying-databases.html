@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="# Demystifying Databases: Cracking the Code of Efficient Data Storage  *Written by Jose Benitez. Ori">
-
-
-
+    
+    
+    
     <meta property="og:title" content="Demystifying Databases: Cracking the Code of Efficient Data Storage - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>Demystifying Databases: Cracking the Code of Efficient Data Storage - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="hanna"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri May 26 2023 19:34:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon May 29 2023 21:49:02 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">839 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">840 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" ># Demystifying Databases: Cracking the Code of Efficient Data Storage
@@ -73,7 +73,7 @@ Selecting the perfect database might sound like a mundane task, but let me assur
 
 But fear not! In this article, I&#39;m here to guide you through the database labyrinth, sharing my firsthand experience and insights to help you make informed decisions. We&#39;ll explore various database types, their inner workings, and the applications they integrate with. I&#39;ll also reveal the challenges I&#39;ve faced and the workarounds I&#39;ve discovered along the way. From the ever-reliable relational databases to cutting-edge blockchain technology, we&#39;ll cover it all. So, fasten your seatbelts, as we embark on a journey to demystify the world of databases and empower you to make the right choices for your projects.
 
-Let’s get started!
+Let’s get started! 
 
 ## Relational Databases
 
@@ -94,9 +94,9 @@ As illustrated in the image below, relational databases establish predefined rel
 
 Relational databases store data in separate tables, with the programmer responsible for defining these tables and distributing a single object across multiple entities. While almost every type of application can benefit from a relational database, it&#39;s important to acknowledge the [maintenance, scalability, and complexity limitations](https://databasetown.com/relational-database-benefits-and-limitations/) that come with this approach.
 
-In my experience, I&#39;ve employed relational databases in a range of applications, including customer relationship management software like Salesforce, an [online poker platform](https://oddslingers.com/), a dynamic real estate platform, and even a cutting-edge medical data synchronization app.
+In my experience, I&#39;ve employed relational databases in a range of applications, including customer relationship management software like Salesforce, an [online poker platform](https://oddslingers.com/), a dynamic real estate platform, and even a cutting-edge medical data synchronization app. 
 
-In each of these cases, my primary concern revolved around query optimization. While the relational database performed admirably overall, sometimes there remained complex computations which necessitated [complex queries](https://www.sqlshack.com/learn-sql-how-to-write-a-complex-select-query/); these queries, in turn, had the potential to slow down an application’s performance. While the impact on performance isn’t an inherent characteristic of relational databases, a developer could nonetheless encounter the problem on occasion and as a result should be aware of workarounds.
+In each of these cases, my primary concern revolved around query optimization. While the relational database performed admirably overall, sometimes there remained complex computations which necessitated [complex queries](https://www.sqlshack.com/learn-sql-how-to-write-a-complex-select-query/); these queries, in turn, had the potential to slow down an application’s performance. While the impact on performance isn’t an inherent characteristic of relational databases, a developer could nonetheless encounter the problem on occasion and as a result should be aware of workarounds. 
 
 Using the example of the online poker game application, let me illustrate this challenge and how I came up with a solution. On the leaderboard page, I encountered the task of querying multiple tables to calculate the [hands](https://en.wikipedia.org/wiki/List_of_poker_hands) and games played by each player, ultimately ranking them based on their weekly and seasonal winnings. This process, although essential, proved to be a bottleneck, causing significant delays as the database engine scoured through the data, organized the information, and returned the results to the web page. Additionally, the database was queried on every page load—an unfavourable situation for a web page that demands lightning-fast load times in milliseconds.
 
@@ -108,11 +108,11 @@ To overcome this hurdle, I devised a solution: since the leaderboard data change
 
 *If you&#39;re interested in exploring the code behind this leaderboard optimization, you&#39;ll find the complete open-source implementation in the [leaderboard file](https://github.com/Monadical-SAS/oddslingers.poker/blob/main/core/ui/views/leaderboard.py).*
 
-Relational databases have undoubtedly shaped the foundations of modern data storage, but as we delve deeper into other database types, you&#39;ll discover alternative solutions that tackle the occasional limitations they pose.
+Relational databases have undoubtedly shaped the foundations of modern data storage, but as we delve deeper into other database types, you&#39;ll discover alternative solutions that tackle the occasional limitations they pose. 
 
 ## Document Databases
 
-While relational databases rely on multiple tables to house interconnected data fragments, providing strong data integrity but potentially leading to a more rigid data model, [**document databases**](https://aws.amazon.com/nosql/document/) store comprehensive documents for each entity, allowing for flexibility in handling complex data structures. Document databases are like flexible storage containers for your data in any app that can benefit from it. Instead of using rigid tables and fixed schemas, you can store information in a document-oriented format, such as [JSON or BSON](https://www.mongodb.com/json-and-bson), allowing for easy adaptation and retrieval of complex, evolving data structures. Unlike their structured counterparts, document databases store all the information pertaining to a specific object within a single document in the database. The intriguing part? Each stored object can [differ from the others](https://en.wikipedia.org/wiki/Document-oriented_database) in structure and content, offering additional flexibility and adaptability.
+While relational databases rely on multiple tables to house interconnected data fragments, providing strong data integrity but potentially leading to a more rigid data model, [**document databases**](https://aws.amazon.com/nosql/document/) store comprehensive documents for each entity, allowing for flexibility in handling complex data structures. Document databases are like flexible storage containers for your data in any app that can benefit from it. Instead of using rigid tables and fixed schemas, you can store information in a document-oriented format, such as [JSON or BSON](https://www.mongodb.com/json-and-bson), allowing for easy adaptation and retrieval of complex, evolving data structures. Unlike their structured counterparts, document databases store all the information pertaining to a specific object within a single document in the database. The intriguing part? Each stored object can [differ from the others](https://en.wikipedia.org/wiki/Document-oriented_database) in structure and content, offering additional flexibility and adaptability. 
 
 Traditional relational databases (left) rely on multiple tables to house separate fragments of interconnected data. This approach stands in stark contrast to document databases (right), where every user is represented by a comprehensive document, encapsulating all their pertinent information.
 
@@ -131,7 +131,7 @@ Let&#39;s zoom in on my experience with the [Lean Startup methodology](https://w
 
 *Note that in the document database, a collection comprises a set of documents.*
 
-Should any field require an update, the database can conveniently populate the corresponding form with the document&#39;s content. Accessing specific document content is a breeze using designated paths like `/mainForms/TDNB3hGG152zmU6I1w2M`.
+Should any field require an update, the database can conveniently populate the corresponding form with the document&#39;s content. Accessing specific document content is a breeze using designated paths like `/mainForms/TDNB3hGG152zmU6I1w2M`. 
 
 However, filtering documents poses a performance challenge, as the database engine must query each document that matches the specified criteria. Matters worsened when I searched across different collections, which amplified the computational burden. To mitigate these limitations, I took a crucial design process that involved organizing the information effectively into collections and documents, which ensured optimal resource utilization.
 
@@ -154,7 +154,7 @@ To gain a visual understanding of time-series data, take a look at the snapshot 
 
 I&#39;ve had the opportunity to leverage time-series databases in a unique application: monitoring my greenhouse variables. The first step involved setting up an array of sensors, measuring crucial factors such as pH, electrical conductivity, water level, and pump activation. Next, I connected these sensors to a microcontroller equipped with internet connectivity. Leveraging the [database&#39;s API](https://docs.influxdata.com/influxdb/v2.4/api-guide/api_intro/), I then pushed the sensor data into the database, meticulously tagging and organizing it within a designated bucket.
 
-To extract valuable insights from this wealth of data, I utilized [Flux](https://docs.influxdata.com/flux/v0.x/get-started/syntax-basics/), a query language tailored for time-series data manipulation. Flux processed the data before presenting it through a user-friendly interface, enabling me to assemble customized monitoring views with ease. Allow me to share a glimpse of my greenhouse pH control interface, showcasing four distinct signals: the desired pH, the current pH, and the yellow and green points representing dosages of acid or alkaline solutions employed to adjust the pH level of the water tank.
+To extract valuable insights from this wealth of data, I utilized [Flux](https://docs.influxdata.com/flux/v0.x/get-started/syntax-basics/), a query language tailored for time-series data manipulation. Flux processed the data before presenting it through a user-friendly interface, enabling me to assemble customized monitoring views with ease. Allow me to share a glimpse of my greenhouse pH control interface, showcasing four distinct signals: the desired pH, the current pH, and the yellow and green points representing dosages of acid or alkaline solutions employed to adjust the pH level of the water tank. 
 
 &lt;center&gt;
 &lt;img src=&#34;https://docs.monadical.com/uploads/c5c08a59-d7de-481b-b087-b62794ccb9a0.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
@@ -174,17 +174,17 @@ While this view represents a rudimentary example, the flexibility of time-series
 
 *While relational databases handle data relationships, graph databases excel at linking massive and complex entities.*
 
-One intriguing project where I used graph databases was with [Currents](https://a.currents.fm/), an innovative music platform that acted as a bridge, connecting music enthusiasts with music curators through a federated royalty distribution system. Artists carved their unique channels, where they could share their musical creations, while fans eagerly subscribed to these channels. Fans also had the opportunity to subscribe to curated lists, consequently contributing to the financial support of the artists featured on these lists. To foster a sense of solidarity within the artistic community, artists themselves could endorse and uplift fellow creators, referred to as beneficiaries.
+One intriguing project where I used graph databases was with [Currents](https://a.currents.fm/), an innovative music platform that acted as a bridge, connecting music enthusiasts with music curators through a federated royalty distribution system. Artists carved their unique channels, where they could share their musical creations, while fans eagerly subscribed to these channels. Fans also had the opportunity to subscribe to curated lists, consequently contributing to the financial support of the artists featured on these lists. To foster a sense of solidarity within the artistic community, artists themselves could endorse and uplift fellow creators, referred to as beneficiaries. 
 
 However, as the relationships within this musical ecosystem grew increasingly intricate, the computation of royalties spiralled into a daunting task, so I turned to graph databases. By strategically storing and organizing the necessary information within the graph database, I was able to transform royalty computation and tracking into a remarkably manageable endeavour. The graph database deftly handled the efficient management of the complex web of relationships.
 
-To provide you with a visual glimpse into this musical graph database, notice the image below. Here, graph databases map artists, channels, and fans as ‘entities’ and subscriptions and beneficiaries as *&#39;relationships’*:
+To provide you with a visual glimpse into this musical graph database, notice the image below. Here, graph databases map artists, channels, and fans as ‘entities’ and subscriptions and beneficiaries as *&#39;relationships’*: 
 
 &lt;center&gt;
 &lt;img src=&#34;https://docs.monadical.com/uploads/e72b3543-1e92-4d5a-a285-34eb76ab7948.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
 &lt;/center&gt;
 
-*A graph database drawing of a music streaming platform project. The red dots represent payment methods, green are users, and pink are artist channels.*
+*A graph database drawing of a music streaming platform project. The red dots represent payment methods, green are users, and pink are artist channels.* 
 
 The innate visual nature of graph databases makes them an ideal choice for managing highly interconnected data landscapes. In my case, their ability to track and compute royalty payments demonstrates their capacity of handling complex relationships, solidifying their indispensable role in projects of this nature.
 
@@ -194,7 +194,7 @@ The innate visual nature of graph databases makes them an ideal choice for manag
 
 The images below provide a glimpse into this dynamic exchange, showcasing how messages flow from producer to consumers. Two distinct mapping strategies come into play, each with its own charm, as the choice of mapping depends entirely on the unique demands of the application at hand.
 
-In the first strategy, processes produce many messages. Then, other processes consume those messages in an asynchronous and random way. This is useful for applications that share resources among many consumers, such as IO buffers, pipes, CPUs, or network adapters.
+In the first strategy, processes produce many messages. Then, other processes consume those messages in an asynchronous and random way. This is useful for applications that share resources among many consumers, such as IO buffers, pipes, CPUs, or network adapters. 
 
 ![](https://docs.monadical.com/uploads/8639487c-9b12-42d7-9b0b-471a9921b897.png)
 *Taken from [The Perfect Message Queue Solution Based on the Redis Stream Type](https://betterprogramming.pub/the-perfect-message-queue-solution-based-on-the-redis-stream-type-ccf273554178)*
@@ -213,7 +213,7 @@ In both cases, messages can be mapped from any producer to any consumer dependin
 
 Let&#39;s look at a situation in which I used queues with the key-value approach to enhance the execution of a set of tasks. I had set out to develop a program that would collect data from an array of sensors gracefully adorning a vehicle. The task at hand involved transmitting these readings to a remote server, thus paving the way for a wealth of insights. However, hurdles awaited me. The sensors, with their intrinsic nature, operated at their own pace, introducing delays in delivering the readings. The server, too, exhibited a sluggish response time, hindering the program&#39;s execution. To add to the complexity, the execution time of the program&#39;s tasks varied significantly, further worsening the program&#39;s clumsiness and roughness.
 
-This clumsy awkwardness meant that I had to find a workaround. I realized that in this particular application, the readings from the sensors could play the role of producers, while pushing the readings to a server could act as the consumer program. With both programs working asynchronously, readings and pushes worked smoothly by not interfering with each other’s executions. However, the main challenge lay in facilitating seamless data sharing between the two programs. In this case, queues emerged as the ultimate saviour, providing a conduit to store and retrieve the readings. With this newfound solution, I divided the program into discrete tasks, relying on the key-value database used as a queue to foster data exchange between these tasks.
+This clumsy awkwardness meant that I had to find a workaround. I realized that in this particular application, the readings from the sensors could play the role of producers, while pushing the readings to a server could act as the consumer program. With both programs working asynchronously, readings and pushes worked smoothly by not interfering with each other’s executions. However, the main challenge lay in facilitating seamless data sharing between the two programs. In this case, queues emerged as the ultimate saviour, providing a conduit to store and retrieve the readings. With this newfound solution, I divided the program into discrete tasks, relying on the key-value database used as a queue to foster data exchange between these tasks. 
 
 ## Blockchains
 
@@ -242,7 +242,7 @@ As you venture into the realm of databases, I encourage you to consider the [mul
 
 To further expand your knowledge and discover additional guidance on selecting the correct database for specific applications, I recommend [exploring the resources](https://scientificprogrammer.net/2019/08/18/when-nosql-is-better-choice-than-rdbms-and-when-its-not/) provided in this link and the additional links below. These valuable references offer further insights and perspectives from experts in the field, enhancing your understanding and refining your decision-making process. And if you’re an academic and want to go deeper into the theory, be sure to check out [database foundations](http://webdam.inria.fr/Alice/).
 
-Lastly, don’t overlook the fundamental concepts of [atomicity, consistency, isolation, and durability (ACID)](https://en.wikipedia.org/wiki/ACID), as they play a vital role in ensuring data integrity. These principles form the bedrock of reliable and robust databases, safeguarding the integrity and reliability of your valuable information.
+Lastly, don’t overlook the fundamental concepts of [atomicity, consistency, isolation, and durability (ACID)](https://en.wikipedia.org/wiki/ACID), as they play a vital role in ensuring data integrity. These principles form the bedrock of reliable and robust databases, safeguarding the integrity and reliability of your valuable information. 
 
 I hope that the insights and solutions shared here will serve as valuable tools as you embark on your own database journey. Experimentation and exploration are the keys to unlocking the full potential of these powerful tools. Allow the experiences and lessons learned to shape your path, enabling you to build efficient and robust systems that unleash the true power of data. Finally, embrace curiosity, adaptability, and continuous learning as you navigate the ever-changing landscape. By doing so, you will be poised to conquer new challenges, innovate with confidence, and harness the transformative potential of data in the pursuit of progress.
 
@@ -269,7 +269,7 @@ Some database engines for each paradigm, in no particular order:
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

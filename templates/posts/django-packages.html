@@ -8,22 +8,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="&lt;center&gt;  Five Django Packages We Love at Monadical ===   *Written by Karim. Originally published 20">
-
-
-
+    
+    
+    
     <meta property="og:title" content="Five Django Packages We Love at Monadical - HedgeDoc">
-
-
-
+    
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>Five Django Packages We Love at Monadical - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -46,15 +46,15 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Feb 23 2021 18:37:40 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Feb 23 2021 18:44:52 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">6115 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">6116 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >&lt;center&gt;
@@ -70,12 +70,12 @@ Five Django Packages We Love at Monadical
 
 
 
-One of the biggest draws to Django is its ecosystem. If you encounter a problem, the chances are that someone else in the community has too, and has been kind enough to abstract it into a package and release it. Here are five packages we find ourselves coming back to.
-
+One of the biggest draws to Django is its ecosystem. If you encounter a problem, the chances are that someone else in the community has too, and has been kind enough to abstract it into a package and release it. Here are five packages we find ourselves coming back to. 
+ 
 
 ## 1 [django-polymorphic](https://github.com/django-polymorphic/django-polymorphic)
 
-In object-oriented programming, we use the term ‘polymorphism’ to refer to objects that share an interface but not an implementation. A common pedagogical example is modeling animals in object oriented code: a dog and a cat can both make a sound--which can be invoked by the same function--but the sound is different. A more practical example is items in an e-commerce store: items in the store share some characteristics, but differ in many others. There is an [excellent article on Real Python](https://realpython.com/modeling-polymorphism-django-python) that goes through some approaches to modeling polymorphism.
+In object-oriented programming, we use the term ‘polymorphism’ to refer to objects that share an interface but not an implementation. A common pedagogical example is modeling animals in object oriented code: a dog and a cat can both make a sound--which can be invoked by the same function--but the sound is different. A more practical example is items in an e-commerce store: items in the store share some characteristics, but differ in many others. There is an [excellent article on Real Python](https://realpython.com/modeling-polymorphism-django-python) that goes through some approaches to modeling polymorphism. 
 
 Where does django-polymorphic fit in? It makes modeling concrete, multi-table inheritance easy. If I define the following models to abstract a `Project`:
 
@@ -91,7 +91,7 @@ class ArtProject(Project):
 class ResearchProject(Project):
     supervisor = models.CharField(max_length=30)
 
-```
+``` 
 Then we create some projects:
 
 ```python
@@ -99,14 +99,14 @@ Then we create some projects:
 &gt;&gt;&gt; ArtProject.objects.create(topic=&#34;Painting with Tim&#34;, artist=&#34;T. Turner&#34;)
 &gt;&gt;&gt; ResearchProject.objects.create(topic=&#34;Swallow Aerodynamics&#34;, supervisor=&#34;Dr. Winter&#34;)
 ```
-If we query `Projects`, we get polymorphic results:
+If we query `Projects`, we get polymorphic results: 
 ```python
 &gt;&gt;&gt; Project.objects.all()
 [ &lt;Project:         id 1, topic &#34;Department Party&#34;&gt;,
   &lt;ArtProject:      id 2, topic &#34;Painting with Tim&#34;, artist &#34;T. Turner&#34;&gt;,
   &lt;ResearchProject: id 3, topic &#34;Swallow Aerodynamics&#34;, supervisor &#34;Dr. Winter&#34;&gt; ]
 
-```
+``` 
 ## 2 [django-allauth](https://www.intenct.nl/projects/django-allauth/)
 django-allauth provides a set of modular, well-integrated apps that allow you to have any of the common signup and login flows, whether local or social. It shines when it comes to supporting both local and social login flows simultaneously, and it just works™.
 
@@ -200,12 +200,12 @@ If you have set up a Django project before, you will know that `django-admin sta
 ---
 
 &lt;center&gt;
-
+ 
 &lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
-
+    
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
-
+    
 &lt;/center&gt;
 </div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
@@ -218,7 +218,7 @@ Monadical.com | Full-Stack Consultancy
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

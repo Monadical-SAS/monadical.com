@@ -8,24 +8,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
-
-
+    
+    
     <meta name="description" content="Learn about Ray.io&#39;s capabilities in GPU management and scalable AI development.">
-
-
-
+    
+    
+    
     <meta property="og:title" content="The Essential Guide to Ray.io’s Anatomy - HedgeDoc">
-
-
+    
+    
     <meta property="og:description" content="Learn about Ray.io&#39;s capabilities in GPU management and scalable AI development.">
-
-
+    
+    
     <meta property="og:type" content="website">
-
+    
     <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
     <meta property="og:image:alt" content="HedgeDoc logo">
     <meta property="og:image:type" content="image/png">
-
+    
     <base href="">
     <title>The Essential Guide to Ray.io’s Anatomy - HedgeDoc</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
@@ -48,54 +48,54 @@
     <div class="ui-infobar container-fluid unselectable hidden-print">
         <small>
             <span>
-
+                
                     <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
-
+                
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Mar 06 2024 20:28:13 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Apr 30 2024 18:20:36 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">800 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">801 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
-
+            
         </small>
     </div>
     <div id="doc" class="container markdown-body" >
 &lt;center&gt;
-
+    
 #  The Essential Guide to Ray.io’s Anatomy
 
-
+    
 &lt;big&gt;
-
+    
 **A Journey Through Ray&#39;s Capabilities in GPU Management and Scalable AI Development**
-
+    
 &lt;/big&gt;
-
-*Written by Angel Rey. Originally published 2024-04-29
+    
+*Written by Angel Rey. Originally published 2024-04-29 
 on the [Monadical blog](https://monadical.com/blog.html).*
-
+    
 
 &lt;/center&gt;
 
-## Introduction
+## Introduction 
 
 It can be challenging to choose the right framework when developing an application that involves GPU hardware and AI workloads. Our team faced this decision while building Morpheus, a self-hosted open-source AI image generator. Initially, we used Celery to run Morpheus, but we quickly discovered that it couldn&#39;t efficiently allocate GPU resources based on task requirements. So, we explored other frameworks and eventually switched to [Ray.io](https://www.ray.io), which was a game-changer for us.
 
-With Ray&#39;s built-in functions, we could designate specific nodes for tasks like traffic management (CPU nodes) and inference processing (GPU nodes), as shown in the diagram below.
+With Ray&#39;s built-in functions, we could designate specific nodes for tasks like traffic management (CPU nodes) and inference processing (GPU nodes), as shown in the diagram below. 
 
 ![](https://docs.monadical.com/uploads/d12f6f3a-4162-480c-a442-799d82301be4.png)
 **&lt;center&gt;The architecture of Morpheus in AWS.&lt;/center&gt;**
 
-We then combined Ray with FastAPI to expose Morpheus as a set of inference endpoints. This strategic combination allowed us to distribute GPU tasks within the Ray cluster, solving our initial problem with GPU resource allocation.
+We then combined Ray with FastAPI to expose Morpheus as a set of inference endpoints. This strategic combination allowed us to distribute GPU tasks within the Ray cluster, solving our initial problem with GPU resource allocation.  
 
 If you&#39;re interested in the benefits of using Ray to build machine learning (ML) and general workloads, we&#39;ve got you covered. This post will delve deeper into Ray&#39;s background, advantages, and use case examples. We&#39;ll also provide a guide to Ray&#39;s setup and three task examples. Let&#39;s begin our journey!
 
-## Background and Advantages
+## Background and Advantages 
 
 ### Background
-Ray was initially designed to improve ML applications, specifically those that operate in a dynamic environment. The best model for this type of application is Reinforcement Learning (RL) [(Moritz et al., 2018)](https://arxiv.org/pdf/1712.05889.pdf).
+Ray was initially designed to improve ML applications, specifically those that operate in a dynamic environment. The best model for this type of application is Reinforcement Learning (RL) [(Moritz et al., 2018)](https://arxiv.org/pdf/1712.05889.pdf). 
 
-The primary concept of RL applications involves training an agent to learn a policy by interacting with the environment and then choosing an action to execute based on that learning. The goal is for the agent to maximize its long-term rewards.
+The primary concept of RL applications involves training an agent to learn a policy by interacting with the environment and then choosing an action to execute based on that learning. The goal is for the agent to maximize its long-term rewards. 
 
 Therefore, we require these methods:
 
@@ -107,26 +107,26 @@ Therefore, we require these methods:
 
 The implementation of the methods above motivates Ray to create new system requirements such as:
 
-- **Distributed tasks:** use multiple servers and add new servers to the group (cluster)
+- **Distributed tasks:** use multiple servers and add new servers to the group (cluster) 
 - **Fine-grained computations:** run small tasks with low latency
 - **Heterogeneity:** reduce time running tasks and resources (GPU resources for training and CPU resources for simulations)
 - **Dynamic computation:** handles millions of heterogeneous tasks with low latencies
 
 These requirements point to Ray’s edge over other technologies because with Ray, you can achieve better:
 
-- **Scalability:** Ray can parallelly scale stateful task executions. For instance, when implementing a parameter server, Ray can distribute worker nodes to maintain stateful task executions such as a model&#39;s globally shared parameters (a neural network), data, and computation of calculating updates. Ray also allows you to take advantage of the different resources available in a cluster. https://docs.ray.io/en/latest/ray-core/examples/plot_parameter_server.html.
+- **Scalability:** Ray can parallelly scale stateful task executions. For instance, when implementing a parameter server, Ray can distribute worker nodes to maintain stateful task executions such as a model&#39;s globally shared parameters (a neural network), data, and computation of calculating updates. Ray also allows you to take advantage of the different resources available in a cluster. https://docs.ray.io/en/latest/ray-core/examples/plot_parameter_server.html. 
 
 
 - **Efficiency:** Ray allows for fractional allocation of GPU resources, allowing tasks to use only the necessary resources. Conversely, Celery does not allow for fractional resource use, making it less efficient than Ray.
 
 
-- **Simplicity:** Ray is a Python-first framework, which is convenient since most ML is done in Python. Ray also supports interactive development, making debugging and testing your code easy and flattening the learning curve for developers.
+- **Simplicity:** Ray is a Python-first framework, which is convenient since most ML is done in Python. Ray also supports interactive development, making debugging and testing your code easy and flattening the learning curve for developers. 
 
 - **Specialization:** Ray has developed specific libraries for their official use cases. Instead of replacing existing libraries, Ray tries to use and integrate them into its ecosystem. For instance, with the Run library, you can experiment with hyperparameter tuning using any ML framework like PyTorch, Xgboost, and TensorFlow.
 
 - **Unification:** Spotify used Ray to unify their end-to-end ML workflows, from data preprocessing to model serving. They focused on accessibility, flexibility, availability, and performance when using Ray and Kubernetes in GCP. Using a graph learning approach for content recommendations, they created a graph from their data warehouse using Ray datasets, transformed the data using Ray preprocessors, trained the model using the distributed training feature, and implemented predictors using batch inferences.
 
-## Use-Cases
+## Use-Cases 
 
 If you still need convincing to switch to Ray, let&#39;s examine how three features fit into one salient example:
 
@@ -152,7 +152,7 @@ And there you have it! Combining the use cases above will allow you to build an 
 
 ## Basic Setup and Usage
 
-Getting Ray up and running is straightforward, whether installing it on your machine or cloud platform. Next, we’ll look at how to install Ray on your machine using a virtual environment; this way, you can isolate your Python environment and dependencies from other projects. While several virtual environment tools exist, we use `virtualenv` for our guide.
+Getting Ray up and running is straightforward, whether installing it on your machine or cloud platform. Next, we’ll look at how to install Ray on your machine using a virtual environment; this way, you can isolate your Python environment and dependencies from other projects. While several virtual environment tools exist, we use `virtualenv` for our guide. 
 
 
 To install Ray using `virtualenv`, follow these steps:
@@ -176,16 +176,16 @@ source .venv/bin/activate
 pip install -U &#34;ray[default]&#34;
 ```
 
-### Concepts
+### Concepts 
 
-Diving into Ray requires getting familiar with a few foundational concepts. While they might appear similar at first glance, each plays a unique and critical role within the Ray ecosystem.
+Diving into Ray requires getting familiar with a few foundational concepts. While they might appear similar at first glance, each plays a unique and critical role within the Ray ecosystem. 
 
 - **Worker:** a worker is a process that executes tasks submitted to the Ray cluster. It essentially carries out the computations you define in your Ray application. Workers reside on machines (nodes) within your Ray cluster. Typically, by default, Ray launches one worker per CPU core on each node. Workers communicate with each other, and the head node manages the cluster to receive tasks, share data (objects), and coordinate their work.
 
-* **Task:** A task is a unit of work that a worker process can execute. It can be anything from simple calculations to complex machine-learning algorithms. It can run in parallel and is typically part of a larger computation. Tasks are submitted to the Ray cluster for execution; the system performs calculations or operations. See more at: https://docs.ray.io/en/latest/ray-core/tasks.html#ray-remote-functions.
+* **Task:** A task is a unit of work that a worker process can execute. It can be anything from simple calculations to complex machine-learning algorithms. It can run in parallel and is typically part of a larger computation. Tasks are submitted to the Ray cluster for execution; the system performs calculations or operations. See more at: https://docs.ray.io/en/latest/ray-core/tasks.html#ray-remote-functions. 
 
 
-* **Job:** A job is a collection of tasks related to accomplishing a specific computational goal. The big-picture view covers tasks working together to achieve an objective. A job might involve multiple tasks running concurrently or sequentially to solve a problem or perform a complex computation. See more at: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html.
+* **Job:** A job is a collection of tasks related to accomplishing a specific computational goal. The big-picture view covers tasks working together to achieve an objective. A job might involve multiple tasks running concurrently or sequentially to solve a problem or perform a complex computation. See more at: https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html. 
 
 * **Actor:** Actors can store data and methods, allowing multiple tasks to interact with them simultaneously. Actors are useful for scenarios needing persistent state or shared resources across various tasks. See more at: https://docs.ray.io/en/latest/ray-core/actors.html#actor-guide.
 
@@ -193,13 +193,13 @@ Diving into Ray requires getting familiar with a few foundational concepts. Whil
 
 Grasping these distinctions is critical to using Ray and distributing computing within its framework. With this knowledge, you can build efficient, scalable, and sophisticated systems with Ray.
 
-### Basic Use
+### Basic Use 
 
 Ray&#39;s setup is straightforward. Start by importing the library in a Python file. The primary use is to run tasks synced using the available resources. Ray defaults to utilizing the CPU for task execution, simplifying the initial setup process.
 
 The next step is to define a function with the `@ray.remote` decorator. This step signals to Ray that the function is intended for remote execution across its network, efficiently utilizing available resources.
 
-Consider deploying a simple  `hello_world` as follows:
+Consider deploying a simple  `hello_world` as follows: 
 
 ```python
 hello_world.remote()
@@ -210,7 +210,7 @@ To get the result of the function, use `ray.get()`. This function is necessary f
 Upon completion, the script will show the result. It also allows for assigning the result to a variable if desired.
 
 
-```python
+```python 
 # ray-basic/src/script.py
 import ray
 
@@ -227,7 +227,7 @@ print(ray.get(hello_world.remote()))
 
 Another way to use Ray is to implement nested functions. You can call a remote function from within another, effectively setting up a multi-layered approach to task execution. The beauty of this setup lies in its ability to distribute tasks across different nodes, each potentially equipped with diverse resources like GPUs or specialized hardware.
 
-Consider this: `main_function` initiates a call to `second_function` remotely. Should `second_function` land on a node already busy, `main_function` exhibits patience, awaiting `second_function`&#39;s completion.
+Consider this: `main_function` initiates a call to `second_function` remotely. Should `second_function` land on a node already busy, `main_function` exhibits patience, awaiting `second_function`&#39;s completion. 
 
 
 ```python
@@ -355,7 +355,7 @@ ray start --num-gpus=5 --address=&#39;worker-ray:6379&#39; --block
 
 The critical part here is the flag `--num-gpus=5`, which tells Ray that this node has 5 GPUs available for the tasks.  The `--address` flag tells the worker node where to find the head node.
 
-Finally, our `docker-compose.yml` should look like this:
+Finally, our `docker-compose.yml` should look like this: 
 
 ```yaml=
 # ray-core/docker-compose.yml
@@ -444,7 +444,7 @@ job_id = client.submit_job(
 print(job_id)
 ```
 
-Much like the previous example, `time.py` unfurls with a simple function —its primary aim is to convey a message. You&#39;ll find that delays can commonly creep in, stretching the wait times to longer than anticipated. This isn&#39;t unusual within the realm of ML tasks.
+Much like the previous example, `time.py` unfurls with a simple function —its primary aim is to convey a message. You&#39;ll find that delays can commonly creep in, stretching the wait times to longer than anticipated. This isn&#39;t unusual within the realm of ML tasks. 
 
 ```python
 # ray-core/src/time.py
@@ -481,7 +481,7 @@ job_id = client.submit_job(
 print(job_id)
 ```
 
-Subsequently, the environment variable can be accessed within the `env.py` script using the `os.environ` method.
+Subsequently, the environment variable can be accessed within the `env.py` script using the `os.environ` method. 
 
 ```python
 # ray-core/src/env_vars.py
@@ -501,7 +501,7 @@ ray.init()
 ray.get(hello_world.remote(os.environ.get(&#34;MY_ENV_VALUE&#34;)))
 ```
 
-### Scaling the Cluster
+### Scaling the Cluster 
 
 Scaling a Ray cluster consists of adding a service similar to the initial worker and connecting it to the head node. This process entails specifying a new worker in your configuration.
 
@@ -556,7 +556,7 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [ gpu ]
-```
+``` 
 
 
 The implementation is quite simple. You can implement any remote function you need using the `ray.remote` decorator, which allows you to specify the necessary resources for each function. For instance, in this case, we have a function designed to generate an image with a Stable Diffusion model; here, the decorator indicates that this function requires a single GPU to operate.
@@ -633,7 +633,7 @@ deployment = APIIngress.bind()
 
 It’s essential to understand that the remote function enables the application to scale because it depends on the resource and node availability. Ray Serve will automatically distribute the requests to the available replicas and nodes and scale up or down as needed.
 
-## Conclusion
+## Conclusion 
 
 In this post, we covered all things Ray, including its advantages, use cases, basic setup and usage, and how to use this framework beyond basic examples.
 
@@ -657,7 +657,7 @@ Moritz, Philipp, et al. &#34;Ray: A Distributed Framework for Emerging AI Applic
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-
+    
 </body>
 
 </html>

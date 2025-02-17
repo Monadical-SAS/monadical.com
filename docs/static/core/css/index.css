@@ -1,35 +1,701 @@
-.cube-img-left {
-    top: 630px;
+/* Base Layout */
+.container {
+    max-width: 100% !important;  /* Override Bootstrap's max-width */
+    padding-left: 5% !important;  /* Add horizontal padding */
+    padding-right: 5% !important;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.cube-img-right {
-    top: 3149px;
+/* For smaller screens, adjust the padding */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
 }
 
-.tentacle-img-left {
-    top: 2720px;
-}
-
+/* Floating Images */
+.cube-img-left,
+.cube-img-right,
+.tentacle-img-left,
 .tentacle-img-right {
-    top: 1607px;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.content-padding {
+    padding: 0 120px;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 400;  /* Changed from 800 to 400 for thinner weight */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #1A1A1A;
+}
+
+.hero-title .highlight {
+    color: #0087B4;
+    position: relative;
+    font-weight: 400;  /* Ensure the highlight also uses the thinner weight */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    padding: 18px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 100px;
+    background-color: #0087B4;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    background-color: #007399;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,135,180,0.2);
+}
+
+/* Problem Statement Section */
+.problem-statement {
+    padding: 120px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Main question styling */
+.problem-statement .main-question {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    color: #1A1A1A;
+    margin-bottom: 3rem;
+    font-weight: 300;  /* Thin weight for regular text */
+}
+
+.problem-statement .main-question .emphasis {
+    color: #1A1A1A;
+    font-weight: 700;  /* Restored bold weight for underlined text */
+    text-decoration: none;
+    position: relative;
+}
+
+.problem-statement .main-question .emphasis::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0087B4;
+}
+
+/* Context paragraphs styling */
+.problem-statement .context,
+.problem-statement .pain-points,
+.problem-statement .market-context {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #4A4A4A;
+    margin-bottom: 2.5rem;
+    font-weight: 300;  /* Thin weight */
+    text-align: left;
+}
+
+/* Solution points styling */
+.solution-points {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.solution-points p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #4A4A4A;
+    font-weight: 300;  /* Thin weight */
+    margin-bottom: 2.5rem;
+}
+
+/* Emphasized text styling for "You know you need..." and "You need a partner" */
+.solution-points .emphasis-text {
+    color: #1A1A1A;
+    font-weight: 700;  /* Restored bold weight for underlined text */
+    position: relative;
+    display: inline;
+}
+
+.solution-points .emphasis-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0087B4;
+}
+
+.solution-points .subtext {
+    margin-bottom: 3rem;
+}
+
+/* Nice to meet you styling */
+.nice-to-meet {
+    font-size: 1.8rem;
+    color: #4A4A4A;
+    font-weight: 300;  /* Thin weight */
+    text-align: left;
+}
+
+/* Roadmap Section */
+.roadmap-container {
+    background: radial-gradient(ellipse 40% 50% at center, #0087B4 0%, #003c50 120%);  /* Horizontal oval gradient */
+    color: white;
+    padding: 80px;
+    border-radius: 20px;
+    margin: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-title {
+    font-size: 2.5rem;
+    font-weight: 400;  /* Regular weight for most of the title */
+    margin-bottom: 1.5rem;
+}
+
+.roadmap-title strong {
+    font-weight: 700;  /* Bold only for "Roadmap" */
+}
+
+.roadmap-subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.roadmap-subtitle strong {
+    font-weight: 700;  /* Bold for specific part */
+}
+
+/* Roadmap Container Layout */
+.roadmap-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+/* Testimonial styling */
+.testimonial {
+    flex: 1;  /* Take up available space */
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 0;  /* Remove vertical margins */
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-content {
+    flex: 1;
+    max-width: 60%;
+}
+
+.testimonial-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.testimonial-author {
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Form styling */
+.roadmap-form {
+    width: 300px;  /* Fixed width */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;  /* Remove margins */
+}
+
+.roadmap-form input {
+    width: 300px;  /* Fixed width for input */
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.roadmap-form button {
+    width: 300px;  /* Match input width */
+    padding: 15px 30px;
+    border-radius: 100px;
+    background: #0087B4;
+    color: white;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.roadmap-form button:hover {
+    background: #006d91;
+    transform: translateY(-2px);
+}
+
+/* Services Section */
+.services-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.services-content {
+    display: flex;
+    gap: 60px;
+}
+
+.services-left {
+    flex: 1;
+    max-width: 60%;
+}
+
+.services-right {
+    flex: 1;
+    position: relative;
+}
+
+.services-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.mini-title {
+    font-size: 0.9rem;
+    color: #4A4A4A;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 900;  /* Changed from 600 to 900 to make it extra bold */
+    text-transform: uppercase;  /* Ensure it's uppercase */
+}
+
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-align: left;
+    color: #1A1A1A;
+}
+
+.section-title .highlight {
+    color: #0087B4;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: left;
+    color: #4A4A4A;
+    margin-bottom: 4rem;
+    font-weight: 300;  /* Keep subtitle thin */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: #1A1A1A;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+}
+
+/* Navigation Arrows */
+.services-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-arrow {
+    width: 20px;
+    height: 20px;
+    border: solid #0087B4;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.nav-arrow.prev {
+    transform: rotate(135deg);  /* Points left */
+}
+
+.nav-arrow.next {
+    transform: rotate(-45deg);  /* Points right */
+}
+
+/* Learn More Link */
+.services-learn-more {
+    display: inline-block;
+    margin-top: 40px;
+    color: #0087B4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.services-learn-more::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0087B4;
+}
+
+/* Case Study Section */
+.case-study-section {
+    padding: 100px 0;
+    margin: 80px 0;
+}
+
+.case-study-content {
+    padding-left: 60px;  /* Changed from padding-right to padding-left */
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 900;  /* Extra bold for the tag */
+    color: #4A4A4A;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.case-study-content h2 {
+    font-size: 2.4rem;
+    font-weight: 400;  /* Changed from 700 to 400 for thinner weight */
+    margin-bottom: 1.5rem;
+    color: #1A1A1A;
+}
+
+.case-study-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4A4A4A;
+    margin-bottom: 2rem;
+}
+
+.case-study-image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.case-study-content .read-more {
+    color: #0087B4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;  /* Added for underline positioning */
+}
+
+.case-study-content .read-more::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0087B4;
+}
+
+/* Articles Section */
+.articles-section {
+    padding: 80px 0;
+}
+
+.articles-section .row {
+    margin-top: 20px;  /* Added margin-top */
+}
+
+.article-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 60px;
+    height: 100%;  /* Take full height of parent */
+    display: flex;  /* Enable flexbox */
+    flex-direction: column;  /* Stack children vertically */
+}
+
+.article-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.article-card h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #1A1A1A;
+}
+
+.article-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4A4A4A;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;  /* Allow paragraph to grow and fill space */
+}
+
+.article-card .read-more {
+    color: #0087B4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    margin-top: auto;  /* Push link to bottom */
+}
+
+/* Final CTA */
+.final-cta {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 2.4rem;  /* Changed from 3rem to 2.4rem */
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    color: #1A1A1A;
+}
+
+.final-cta h2 .highlight {
+    color: #0087B4;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .case-study-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .problem-statement .main-question {
+        font-size: 1.8rem;
+    }
+
+    .problem-statement .context,
+    .problem-statement .pain-points,
+    .problem-statement .market-context,
+    .solution-points .subtext {
+        font-size: 1.5rem;
+    }
+
+    .solution-points .highlight-point {
+        font-size: 1.7rem;
+    }
+
+    .nice-to-meet {
+        font-size: 1.7rem;
+    }
+
+    .roadmap-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .roadmap-form {
+        width: 100%;
+    }
+
+    .services-content {
+        flex-direction: column;
+    }
+
+    .services-left {
+        max-width: 100%;
+    }
+
+    .services-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-container {
+        padding: 40px 20px;
+    }
+
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .roadmap-form {
+        align-items: stretch;
+    }
+
+    .roadmap-form input,
+    .roadmap-form button {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .final-cta h2 {
+        font-size: 2.4rem;
+    }
+
+    .problem-statement {
+        padding: 80px 20px;
+    }
+
+    .problem-statement .main-question {
+        font-size: 1.6rem;
+    }
+
+    .problem-statement .context,
+    .problem-statement .pain-points,
+    .problem-statement .market-context,
+    .solution-points .subtext {
+        font-size: 1.3rem;
+    }
+
+    .solution-points .highlight-point {
+        font-size: 1.5rem;
+    }
+
+    .nice-to-meet {
+        font-size: 1.5rem;
+    }
+}
+
+/* Scroll Down Section */
+.scroll-down {
+    position: relative;
+    margin-top: 40px;  /* Reduced from default spacing */
+}
+
+.scroll-arrow {
+    width: 20px;  /* Slightly smaller size */
+    height: 20px;
+    border: solid #0087B4;  /* Changed from #666 to #0087B4 */
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateY(-15px) rotate(45deg);  /* Reduced bounce height */
+    }
+    60% {
+        transform: translateY(-8px) rotate(45deg);   /* Reduced bounce height */
+    }
+}
+
+/* Floating Images Responsive Adjustments */
+@media (max-width: 992px) {
     .cube-img-left {
-        top: 900px;
         max-width: 40%;
         height: auto;
     }
 
-    .tentacle-img-left {
-        top: 3950px;
-        max-width: 100%;
-        width: 40%;
-        height: auto;
-    }
-
     .tentacle-img-right {
-        top: 2090px;
-
+        max-width: 40%;
+        height: auto;
     }
 }

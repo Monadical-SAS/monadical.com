@@ -20,7 +20,6 @@ header .collapse {
 }
 
 header .navbar {
-    border-bottom: 1px solid #2b2b2b;
     padding-bottom: 12px;
     padding-top: 8px;
     padding-left: 16px;
@@ -31,10 +30,10 @@ header .navbar {
 header .container .nav-item .nav-link {
     color: #2b2b2b;
     font-family: Lato;
-    font-size: 18px;
+    font-size: 16px;
     font-stretch: normal;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 1.43;
     letter-spacing: normal;
     object-fit: contain;
@@ -358,19 +357,61 @@ a:hover {
 
 /* end button styles */
 
-/* Navbar */
+/* Navigation Menu */
 .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 25px 0;
 }
 
 .navbar-content-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #0087B4 !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Add styling for active nav item */
+.nav-link.active {
+    color: #1A1A1A !important;  /* Subtle black color */
+    opacity: 1;  /* Ensure full opacity when active */
+}
+
+.nav-link.active:hover {
+    opacity: 0.8;
+}
+
+.button-navbar {
+    background: #0087B4;
+    color: white !important;
+    padding: 12px 24px !important;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button-navbar:hover {
+    background: #006d91;
+    transform: translateY(-2px);
+    color: white !important;
 }
 
 header .container::before {
@@ -399,9 +440,9 @@ header .navbar-toggler-icon {
 }
 
 #monadical-brand {
+    margin-right: auto;
     display: inline-block;
     padding: 0.3125rem 0 0.3125rem 0;
-    margin-right: 1rem;
     font-size: 1.25rem;
     height: auto;
     line-height: inherit;
@@ -768,7 +809,7 @@ header .navbar-toggler-icon {
 }
 
 footer {
-    background-color: #2b2b2b;
+    background-color: #2a2c43;
 }
 
 footer .footer .row ul {
@@ -778,7 +819,7 @@ footer .footer .row ul {
 
 footer .footer:first-child {
     padding-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 60px;
 }
 
 footer .footer hr {
@@ -1812,4 +1853,108 @@ ul.open-positions>li {
 {
     display: inline-block;
     margin: 0 2em;
+}
+
+/* Background Images */
+.cube-img-left,
+.tentacle-img-right {
+    position: absolute;
+    width: 300px;  /* Set a consistent width */
+    height: auto;  /* Maintain aspect ratio */
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* First set - top of page */
+.cube-img-left:nth-of-type(1) {
+    left: -50px;
+    top: 100px;
+}
+
+.tentacle-img-right:nth-of-type(1) {
+    right: -50px;
+    top: 400px;
+}
+
+/* Second set */
+.cube-img-left:nth-of-type(2) {
+    left: -50px;
+    top: 1200px;
+}
+
+.tentacle-img-right:nth-of-type(2) {
+    right: -50px;
+    top: 1500px;
+}
+
+/* Third set */
+.cube-img-left:nth-of-type(3) {
+    left: -50px;
+    top: 2300px;
+}
+
+.tentacle-img-right:nth-of-type(3) {
+    right: -50px;
+    top: 2600px;
+}
+
+/* Fourth set */
+.cube-img-left:nth-of-type(4) {
+    left: -50px;
+    top: 3400px;
+}
+
+.tentacle-img-right:nth-of-type(4) {
+    right: -50px;
+    top: 3700px;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .cube-img-left,
+    .tentacle-img-right {
+        display: none;
+    }
+}
+
+/* Background Pattern */
+.container-full::before,
+.container-full::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4000px; /* Adjust based on your page length */
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        url('/static/core/img/img-home-002.png'),  /* cube */
+        url('/static/core/img/img-home-010.png'),  /* tentacle */
+        url('/static/core/img/img-home-002.png'),  /* cube */
+        url('/static/core/img/img-home-010.png'),  /* tentacle */
+        url('/static/core/img/img-home-002.png'),  /* cube */
+        url('/static/core/img/img-home-010.png');  /* tentacle */
+    background-position:
+        -10px 0px,    /* First cube */
+        calc(100%) 600px,  /* First tentacle */
+        -10px 1200px,   /* Second cube */
+        calc(100%) 1700px, /* Second tentacle */
+        -10px 2300px,   /* Third cube */
+        calc(100%) 2800px; /* Third tentacle */
+    background-repeat: no-repeat;
+    background-size:
+        300px auto,  /* cube */
+        300px auto,  /* tentacle */
+        300px auto,  /* cube */
+        300px auto,  /* tentacle */
+        300px auto,  /* cube */
+        300px auto;  /* tentacle */
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .container-full::before,
+    .container-full::after {
+        display: none;
+    }
 }

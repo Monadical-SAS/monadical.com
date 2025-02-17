@@ -28,8 +28,11 @@ white=${txtbld}$(tput setaf 7)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 LOCAL_RSYNC="${LOCAL_DEPLOY:-0}"
 
+# Set default port if not defined
+: "${PORT:=5000}"
+
 echo "${blue}[+] Starting Flask server to render pages...$normal"
-./server > /dev/null &
+./server --port $PORT > /dev/null &
 sleep 1.5
 
 # Recreate output folder

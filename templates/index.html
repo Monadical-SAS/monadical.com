@@ -10,377 +10,198 @@
 
 {% block article %}
 <div class="container-full">
-    <img class="cube-img-left" src="/static/core/img/img-home-002.png">
-    <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
-    <img class="tentacle-img-left" src="/static/core/img/img-home-011.png">
-    <img class="cube-img-right" src="/static/core/img/img-home-012.png">
     <div class="container">
-        <div class="row scroll-down-container">
-            <div class="col-12 col-md-7 first-section margin-top-90">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="text-size-1">
-                            We build software that outlasts us
-                        </h1>
-                    </div>
-                    <div class="col-12 d-block d-sm-none">
-                        <img src="/static/core/img/img-home-001-mobile.png" class="octopus-img">
-                    </div>
-                    <div class="col-12 margin-top-60">
-                        <p class="subtext-size-1">
-                            We're committed to providing the highest quality experience for our clients,
-                            their end users, and the developers that inherit and extend our
-                            projects years in the future
+        <!-- Hero Section -->
+        <div class="row hero-section">
+            <div class="col-12 text-center">
+                <h1 class="hero-title">
+                    Transform your organization<br>
+                    in the <span class="highlight">Age of AI</span> 🤖.
+                </h1>
+                <p class="hero-subtitle">
+                    Monadical helps organizations safely harness the power of AI<br>
+                    to redesign the way they work.
+                </p>
+                <a href="/contact-us.html" class="btn btn-primary cta-button">
+                    BOOK A FREE AI STRATEGY CALL
+                </a>
+            </div>
+            <div class="scroll-down">
+                <a href="#main-content">
+                    <span class="scroll-arrow"></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div id="main-content" class="row content-section">
+            <div class="col-12">
+                <div class="text-center problem-statement">
+                    <p class="main-question">
+                        You are constantly hearing you need an AI strategy.<br>
+                        But what does that <span class="emphasis">really</span> mean? And how do you do it?
+                    </p>
+
+                    <div class="content-padding">
+                        <p class="context">
+                            It's a brave new world. The pace of innovation is<br>
+                            incredibly hard to keep up with.
                         </p>
-                    </div>
-                    <div class="col-12 margin-top-60">
-                        <a href="/contact-us.html" class="btn btn-info-inverse">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
+
+                        <p class="pain-points">
+                            There are hundreds of Al solutions out there, all claiming to be best of breed.
+                            Your team is probably already using some of it, without understanding where your valuable data is going.
+                        </p>
+
+                        <p class="market-context">
+                            Investors, builders, and the media are all incentivized to hype new technology.
+                            This is creating confusion around what Al can (and can't) do for your company.
+                        </p>
+
+
+                        <div class="solution-points">
+                            <p>
+                                <span class="emphasis-text">You know you need to do something</span>, but you're not sure where to start.
+                            </p>
+
+                            <p>
+                                <span class="emphasis-text">You need a partner</span>
+                                that understands the landscape, can help you make sense of AI,<br>
+                                and knows how to fail fast and iterate towards success.
+                            </p>
+
+                            <p class="nice-to-meet">Nice to meet you 👋.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
-                <img src="/static/core/img/img-home-001.png" class="octopus-img d-none d-sm-none d-md-block">
-                <img src="/static/core/img/img-home-001-mobile.png" class="octopus-img d-none d-sm-block d-md-none">
-            </div>
-            <div class="scroll-down">
-                <a href="#second-section" class="scroll-down">
-                    <span>Scroll Down</span><br>
-                    <i class="fa fa-chevron-down"></i>
-                </a>
+        </div>
+
+        <!-- AI Transformation Roadmap Section -->
+        <div class="row roadmap-section">
+            <div class="col-12">
+                <div class="roadmap-container">
+                    <h2 class="roadmap-title">The AI Transformation <strong>Roadmap</strong></h2>
+                    <p class="roadmap-subtitle">Get our <strong>comprehensive step-by-step guide</strong> on safely integrating AI into your operations.</p>
+
+                    <div class="roadmap-content">
+                        <div class="testimonial">
+                            <img src="/static/core/img/avatar.png" class="testimonial-avatar" alt="Testimonial">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "This is the first time I can really "see" how our company can take advantage of Al in a material way. Thank you!"
+                                </p>
+                                <p class="testimonial-author">JOSHUA ESSEX, COFOUNDER</p>
+                            </div>
+                        </div>
+
+                        <form class="roadmap-form">
+                            <input type="email" placeholder="Your Email" class="form-control">
+                            <button type="submit" class="btn btn-primary">DOWNLOAD</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Services Section -->
-        <div class="row margin-top-60">
-            <!-- First Box (AI) -->
-            <div
-                class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center margin-top-20">
-                <a href="/ai-services.html" class="image-link-services d-flex flex-column justify-content-center">
-                    <div class="text-center ai-link text">
-                        AI
-                    </div>
-                    <div class="image" style="background-image: url('/static/core/img/ai_paint_splatter.png');">
-                    </div>
-                </a>
-            </div>
-            <!-- Second Box (Web Dev) -->
-            <div
-                class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center margin-top-20">
-                <a href="/services.html" class="image-link-services d-flex flex-column justify-content-center">
-                    <div class="text-center text">
-                        Web Dev
-                    </div>
-                    <div class="image" style="background-image: url('/static/core/img/webdev_paint_splatter.png');">
-                    </div>
-                </a>
-            </div>
-            <!-- End of Services Section -->
-        </div>
-
-
-        <div class="row">
-            <div id="second-section"
-                class="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1 second-section text-center">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="text-size-2">
-                            Monadical revolutionizes how
-                            software teams operate
-                        </h2>
-                    </div>
-                    <div class="offset-1 col-10 margin-top-30">
-                        <p class="subtext-size-2">
-                            You'll never be left in the dark wondering how
-                            to deploy, maintain, or support your project
+        <div class="row services-section">
+            <div class="col-12">
+                <div class="services-content">
+                    <div class="services-left">
+                        <span class="mini-title">USE CASES</span>
+                        <h2 class="section-title">Unleash Your <span class="highlight">Engineering</span> Team's Potential.</h2>
+                        <p class="section-subtitle">
+                            Your engineers want to spend as much time as possible doing what they do best: solving difficult problems
+                            and translating those problems into elegant technical solutions. Al can help eliminate tedious
+                            or repetitive tasks freeing them up to focus on activities that create genuine enterprise value.
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 third-section">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="text-size-2 text-center">
-                            Our quality guarantee
-                        </h2>
-                    </div>
-                    <div class="col-12 margin-top-20">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12 my-2">
-                                <div class="card card-guaranties">
-                                    <div class="card-img-top">
-                                        <img src="/static/core/img/img-home-003.png" class="documented-code-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            You will get a well-tested, beautifully-documented
-                                            codebase with complete deployment, growth,
-                                            and maintenance stories.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12 my-2">
-                                <div class="card card-guaranties">
-                                    <div class="card-img-top">
-                                        <img src="/static/core/img/img-home-004.png" class="security-review-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            You will get long-term support, refactoring,
-                                            and security reviews. We stand behind our code.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12 my-2">
-                                <div class="card card-guaranties">
-                                    <div class="card-img-top">
-                                        <img src="/static/core/img/img-home-005.png" class="dead-code-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            You will be involved and in control every step of the way -- no
-                                            surprises.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 fourth-section">
-                    <div class="row">
-                        <div class="col-xl-10 offset-xl-1 col-md-10 offset-md-1 col-sm-12 col-12">
-                            <h2 class="text-size-2 text-center">
-                                Monadical is a full-stack software
-                                development consultancy
-                            </h2>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
-                            <p class="subtext-size-2 text-center">
-                                We specialize in full-stack web development and custom
-                                software solutions.
-                            </p>
-                            <p class="subtext-size-3 margin-top-30">
-                                Our team of engineers has a wide range of experience, from shipping major new products
-                                to
-                                refactoring gnarly codebases; from designing custom
-                                data pipelines to providing security reviews to building devops infrastructure, and
-                                beyond!
-                            </p>
-                        </div>
-                        <div class="col-12 margin-top-60">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-006.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                WORLD CLASS TALENT
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    As a fully remote company, we
-                                                    have access to the best programmers
-                                                    from all over the world.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Working with us means
-                                                    super-powering your team with
-                                                    highly-skilled, effective developers.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    More cost-efficient than
-                                                    hiring in-house.
 
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-007.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                FLEXIBLE SCALABILITY
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    Our awesome team = your awesome team
-                                                    -- as much or as little as you need!
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Quickly increase capacity when you
-                                                    need to meet a deadline, and decrease
-                                                    capacity when things are slow.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Total control over your
-                                                    project, from beginning
-                                                    to end.
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-008.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                FULL ACCOUNTABILITY
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    Complete visibility into
-                                                    the progress
-                                                    of your project.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Transparent communication with
-                                                    weekly check-ins and continual
-                                                    updates -- never be left wondering
-                                                    what’s going on.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Access your code any time
-                                                    from your dedicated dashboard.
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-009.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                RISK-FREE CONTRACTS
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    Work on a month-to-month
-                                                    basis.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Cancel anytime, no long-term commitment or cancellation fees.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Pay for what you need
-                                                    when you need it.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Keep control over your IP.
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <h3>Code Generation and Refactoring</h3>
+                                <p>Accelerate code drafts, refactor legacy Systems for performance and maintainability. etc</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Quality Assurance & Testing</h3>
+                                <p>Test case generation for broader coverage, real-time anomaly detection, root-cause analysis. etc</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Project Management</h3>
+                                <p>Forecast delivery timelines and team workload, optimize pipeline for smoother sprints. etc.</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Knowledge Management</h3>
+                                <p>Documentation generation and updating, smart search & QA, best practice capture and sharing.</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Predictive CI/CD Pipelines</h3>
+                                <p>Anticipate build failures, optimize resource allocation for fast, reliable releases, etc.</p>
+                            </div>
+                            <div class="service-card">
+                                <h3>Security & Compliance</h3>
+                                <p>Continuous code scanning, automated compliance checks, etc.</p>
                             </div>
                         </div>
-                        <div class="col-12 text-center margin-top-60">
-                            <a href="/contact-us.html" class="btn btn-info-inverse">
-                                GET A TECHNICAL ASSESSMENT
-                            </a>
-                        </div>
-                        <div class="col-12 text-center margin-top-150">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <h2 class="text-size-2">
-                                        We love open source
-                                    </h2>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <p class="subtext-size-2">
-                                        Check out our most successful open source projects, with active users in 100+
-                                        countries.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Templates -->
-                {% include "open-source.html" %}
-                {# {% include "clients-reviews.html" %} #}
-                {% include "work-with-us.html" %}
-            </div>
 
-            {#<div class="col-12 text-center margin-top-150">
-                <h2 class="text-size-2 text-center">
-                    Our team and our projects have
-                    been featured in:
-                </h2>
-            </div>
-            <div class="col-12 text-center margin-top-50 media-section">
-                <div class="row">
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-021.png">
+                        <a href="#" class="services-learn-more">LEARN MORE ABOUT MONADICAL'S SERVICES ></a>
                     </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-022.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-023.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-024.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-025.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-026.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-027.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-028.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-029.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-030.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-031.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-032.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-033.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-034.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-035.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-036.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-037.png">
+
+                    <div class="services-right">
+                        <img src="/static/core/img/services-image.png" alt="Services" class="services-image">
                     </div>
                 </div>
-            </div>#}
+
+                <div class="services-nav">
+                    <div class="nav-arrow prev"></div>
+                    <div class="nav-arrow next"></div>
+                </div>
+            </div>
         </div>
+
+        <!-- Featured Case Study -->
+        <div class="row case-study-section">
+            <div class="col-md-6">
+                <img src="/static/core/img/case-study-image.png" alt="Case Study" class="case-study-image">
+            </div>
+            <div class="col-md-6">
+                <div class="case-study-content">
+                    <span class="tag">FEATURED CASE STUDY</span>
+                    <h2>Transforming Criminal Justice with AI</h2>
+                    <p>Recidiviz is working to address systemic issues in the criminal justice system. After deploying data aggregation tools across multiple states,
+                        they were ready to laverage AI to build their next generation of tools focused on reducing
+                        incarceraton rates.</p>
+                    <a href="#" class="read-more">READ MORE →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Articles -->
+        <div class="row articles-section">
+            <div class="col-12">
+                <span class="mini-title">FEATURED ARTICLES</span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="article-card">
+                            <img src="/static/core/img/article1.png" alt="Article 1">
+                            <h3>Don't Give Big Tech Your Papaya</h3>
+                            <p>Companies increasingly invest in AI to process information. But turning over your data to tech giants comes with persistent risk. Here's our guide for avoiding lock-in.</p>
+                            <a href="#" class="read-more">READ MORE →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="article-card">
+                            <img src="/static/core/img/article2.png" alt="Article 2">
+                            <h3>Conversations are the New Oil</h3>
+                            <p>Every chat message, every water cooler chat, every meeting contains bits of institutional knowledge. For the first time, this knowledge can be captured, organized and distributed through your organization. Here's how it's done.</p>
+                            <a href="#" class="read-more">READ MORE →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "_final_cta.html" %}
     </div>
 </div>
 {% endblock %}

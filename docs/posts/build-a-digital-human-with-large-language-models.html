@@ -61,8 +61,8 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-
-
+<link rel="stylesheet" href="/static/core/css/post.css">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -73,75 +73,69 @@
         
 
         <div id="header-container" class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+            <nav class="navbar navbar-expand-lg">
                 
                 <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
-                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                                 /static/core/img/logo@2x.png 2x"
+                         src="/static/core/img/logo.png"
+                         id="brand-img" />
                 </a>
                 
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-content-container">
-                        <ul class="navbar-nav navbar-left">
+                        <ul class="navbar-nav">
                             
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/portfolio.html">Portfolio</a>
+                                    </li>
+                                
                             
-                            <div class="nav-item dropdown">
-                                <button class="nav-link btn-link dropdown-toggle" type="button"
-                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Services
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/ai-services.html">AI</a>
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/services.html">Web Dev</a>
-                                </div>
-                            </div>
+                                
+                                    <div class="nav-item dropdown">
+                                        <button class="nav-link btn-link dropdown-toggle" type="button"
+                                            id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Services
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                            
+                                                <a class="dropdown-item nav-link"
+                                                href="/ai-services.html">AI</a>
+                                            
+                                            <a class="dropdown-item nav-link"
+                                                href="/services.html">Web Dev</a>
+                                        </div>
+                                    </div>
+                                
                             
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/about.html">About Us</a>
+                                    </li>
+                                
                             
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/team.html">Team</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/blog.html">Insights</a>
-                            </li>
-                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/blog.html">Insights</a>
+                                    </li>
+                                
                             
                             <li class="nav-item">
-                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                                <a class="nav-link"
+                                   href="/contact-us.html">LET'S TALK</a>
                             </li>
                         </ul>
 
-                        
-                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                        
                     </div>
                 </div>
             </nav>
@@ -153,115 +147,6 @@
     
     <article>
         
-
-    <style>
-        h1 {
-            font-family: 'Fjalla One', sans-serif !important;
-        }
-        .article-content {
-            border: 0px;
-        }
-        .fa-pencil {
-            opacity: 0.01;
-        }
-        footer .social-links {
-            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        footer .social-links a {
-            color: #333;
-            opacity: 0.7;
-        }
-        footer .social-links a:hover {
-            color: #333;
-            opacity: 0.9;
-        }       
-        .authorbox {
-            font-size: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            margin-bottom: 40px; 
-        }
-        .authorbox__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .authorbox__content img {
-            min-width: 120px;
-            max-width: 120px;
-            min-height: 120px;
-            max-height: 120px;
-            object-fit: cover;
-            border-radius: 50%
-        }
-        .authorbox__content h3 {
-            margin: 0;
-        }
-        .authorbox__content h5 {
-            margin-bottom: 20px;
-        }
-        .post-footer {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            column-gap: 24px;
-            max-width: 768px;
-            margin-top: 40px;
-        }
-        .newsletterbox {
-            font-size: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-            margin-top: 80px;
-        }
-        .post-footer h4 {
-            font-size: 18px;
-        }
-        body > main > h1 > em {
-            opacity: 0;
-        }
-        #ui-toc-affix {
-            display: block;
-            position: fixed;
-            top: 175px;
-            user-select: initial;
-            max-width: 20vw;
-            margin-left: 15px;
-            transition: opacity 400ms ease;
-        }
-        .dropup .dropdown-menu {
-            bottom: auto !important;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-            
-            header .navbar-nav > li > a {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-        }
-        @media (max-width: 768px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-
-            header .navbar-nav .nav-link {
-                padding-left: 15px;
-            }
-
-        }
-    </style>
     <div id="post-content">
         <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
@@ -328,7 +213,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Jun 21 2024 13:02:42 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Nov 25 2024 21:00:44 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3007 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3422 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -504,7 +389,7 @@ yarn add zod
 
 In the `frontend/src/App.js`, we will implement the following base code:
     
-```javascript
+```javascript=
 // frontend/src/App.jsx 
 
 import { Loader } from &#34;@react-three/drei&#34;;
@@ -542,7 +427,7 @@ Additionally, we have integrated [`LEVA`](https://github.com/pmndrs/leva), a too
 
 The `Scenario` component represents the core of our 3D scene, where all objects, lights, and specific environment configurations are placed. This component looks like:
 
-```javascript
+```javascript=
 // frontend/src/components/Scenario.jsx
 
 
@@ -594,7 +479,7 @@ With the `avatar.glb` file, we go to [gltf.pmnd.rs](https://gltf.pmnd.rs/) to cr
 
 Since we&#39;re not using TypeScript in our case, the generated code for our avatar would be as follows:
 
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 
 import React, { useRef } from &#34;react&#34;;
@@ -694,7 +579,7 @@ The previous code defines an Avatar component that renders an interactive 3D ava
 
 Now, what we&#39;ll do is update our `Scenario` component as follows:
     
-```javascript
+```javascript=
 // frontend/src/components/Scenario.jsx
 
 
@@ -718,7 +603,7 @@ export const Scenario = () =&gt; {
 };    
 ```    
 And we place our avatar far away from the camera:
-```javascript
+```javascript=
 //frontend/src/components/Avatar.js
 // Omitted code for simplicity
 &lt;group {...props} dispose={null} position={[0, -0.65, 0]}&gt;
@@ -782,7 +667,7 @@ Before we continue, I want to explain the relation between these animations with
 
 By doing this, we improve the overall user experience, making interactions feel more natural. The code for this module looks like this:
     
-```javascript
+```javascript=
 // backend/modules/openAI.mjs
 
 
@@ -852,7 +737,7 @@ In this code, we use `@langchain/openai` to create an interactive chat system th
 
 The facial expressions that Felix can use in responding are a smile, sadness (`sad`), anger (`angry`), surprise (`surprised`), funny face (`funnyFace`), and a default expression (`default`). These expressions humanize  the responses generated by the AI. In addition, we detail some animations that Felix can execute while responding, such as `Idle, TalkingOne, TalkingThree, SadIdle, Defeated, Angry, Surprised, DismissingGesture` and `ThoughtfulHeadShake`. These animations make the interaction more dynamic and entertaining, providing an additional element that accompanies the generated text:
 
-```javascript    
+```javascript=    
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
     messages: z.array(
@@ -949,7 +834,7 @@ The next step will be to add the other animations as follows:
 
 Once our animation package is ready, we must export it as a `.glb` file and place it in the `public/models/` directory. By implementing them in our code, it is enough to do the following in the `Avatar.js` component:
 
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 import { useAnimations, useGLTF } from &#34;@react-three/drei&#34;;
 
@@ -981,7 +866,7 @@ return () =\&gt; actions\[animation\].fadeOut(0.5);
     
 In the above code snippet, we use `useGLTF` to load the animations from `models` `animations.glb`. `useGLTF` returns an object containing the `animations` property, which we extract for easier use. Then, we define a reference with `useRef` to refer to the 3D group that contains the model. In our case, it would be the group provided by the Avatar.jsx component.
 
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 \&lt;group {...props} dispose={null} ref={group} position={\[0, -0.65,
 0\]}\&gt;
@@ -996,7 +881,7 @@ In summary, this code loads an animation file, connects it to a 3D model, and co
 ### Update Function for Morphological Traits
 In this section, we will implement a function called `lerpMorphTarget` in the Avatar.jsx component. In game development and 3D animations, `lerp` is a commonly used term that means &#34;linear interpolation&#34; - a process that allows for a smooth transition between two points or values. In this case, &#34;MorphTarget&#34; refers to a feature of 3D models representing different states or shapes they can adopt. The code for our function will look like this:
 
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 const lerpMorphTarget = (target, value, speed = 0.1) =&gt; {
    scene.traverse((child) =&gt; {
@@ -1023,7 +908,7 @@ If both references are valid, the function reassigns the respective morph target
 ### Eye Blinking Feature
 If we want our digital human to behave more realistically, adding natural eye blinking is necessary. To add eye blinking, we will animate the morphological elements `eyeBlinkLeft` and `eyeBlinkRight` in the `Avatar.jsx` component. We start by importing the `useFrame` hook from `@react-three/fiber`which allows us to update the scene or objects in the scene frame by frame:
     
-```javascript    
+```javascript=    
 // frontend/src/components/Avatar.jsx
 import { useFrame } from &#34;@react-three/fiber&#34;;   
 ```    
@@ -1031,13 +916,13 @@ import { useFrame } from &#34;@react-three/fiber&#34;;
 We set the `blink` state to control the eyes&#39; state:
 
 // frontend/src/components/Avatar.jsx
-```javascript
+```javascript=
 const [blink, setBlink] = useState(false);
 ```
     
 Then we use the `useFrame` hook, which will check if the state of `blink` has changed from second to second and will update the state of the eyes in the avatar through the `lerpMorphTarget` function, generating the blinking of the eyes:
 
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 useFrame(() =&gt; {
    lerpMorphTarget(&#34;eyeBlinkLeft&#34;, blink ? 1 : 0, 0.5);
@@ -1047,7 +932,7 @@ useFrame(() =&gt; {
     
 As you can see, if we don&#39;t update the `blink` state, the eyes will never blink. To accomplish this, we implement the following `useEffect`, where we randomly change the state of `blink` in a threshold of 1 second to 5 seconds, generating natural blinking.
 
-```javascript 
+```javascript= 
 // frontend/src/components/Avatar.jsx
     useEffect(() =&gt; {
    let blinkTimeout;
@@ -1073,13 +958,13 @@ In this way, we get a charming look for our avatar:
 ### Facial Expressions with Leva Library
 As mentioned before, [Leva](https://sbcode.net/react-three-fiber/leva/) is a library to control all the avatar&#39;s features, such as eyes, eyebrows, mouth, hands, feet, etc. In this case, we will use it to create a set of facial expressions and debug our code. The first thing we&#39;ll do is import `useControls` and `button` to configure the control panel that will allow us to modify all the attributes of our avatar:
 
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 import { button, useControls } from &#34;leva&#34;;
 ```
 Then, according to the Ready Player Me documentation, we define an array with all the [morphTargets](https://docs.readyplayer.me/ready-player-me/api-reference/avatars/morph-targets/apple-arkit) and the [visemes](https://docs.readyplayer.me/ready-player-me/api-reference/avatars/morph-targets/oculus-ovr-libsync) in the `frontend/src/constants/morphTargets.js` file:
 
-```javascript
+```javascript=
 \\ frontend/src/constants/morphTargets.js
 
 const morphTargets = [
@@ -1177,7 +1062,7 @@ From this interface, you can customize your avatar&#39;s facial expressions. Sim
 
 By clicking on `logMorphTargetValues`, the object logged in the console is:
 
-```javascript    
+```javascript=    
 {
   &#34;mouthOpen&#34;: 0.5038846174508553,
   &#34;viseme_O&#34;: 0.48860157907883556,
@@ -1194,7 +1079,7 @@ By clicking on `logMorphTargetValues`, the object logged in the console is:
 ```
 
 Once you have customized all the facial expressions you want your avatar to use when speaking, you must save them in a file. In my case, I placed them in the `constant/facialExpressions.js` directory:
-```javascript
+```javascript=
 \\ frontend/src/constants/facialExpressions.js
 const facialExpressions = {
  default: {},
@@ -1283,7 +1168,7 @@ export default facialExpressions;
 
 
 Remember that in the template we used with OpenAI, we asked GPT to return a facial expression:
-```javascript
+```javascript=
 \\ backend/modules/openAI.mjs
 const parser = StructuredOutputParser.fromZodSchema(
  z.object({
@@ -1333,7 +1218,7 @@ There will be two main workflows based on the user input being in text or audio 
 ### Client Text and Audio 
 We will use the following hook to handle text, audio, and backend responses: a React context and multiple states to manage voice recording and send it to the backend. Then, through the Whisper API, we will transform the audio into text, allowing the OpenAI GPT API to process it and provide a response that we can further process with the ElevenLabs API and Rhubarb Lip-Sync to generate lip synchronization for the avatar, thus producing a more human-like response on the client side.
     
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx
 
 
@@ -1488,7 +1373,7 @@ export const useSpeech = () =&gt; {
 In the previous code, we find the following:
     
 **Imports and initial configurations**
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx
 import { createContext, useContext, useEffect, useState } from &#34;react&#34;;
 
@@ -1499,7 +1384,7 @@ const SpeechContext = createContext();
 First, we import the necessary React functions for our code: `createContext`, `useContext`, `useEffect`, and `useState`. These functions will allow us to structure our hook and manage its state. Then, we set our server&#39;s URL to &#39;backendUrl&#39; and finish the snippet by creating our context, &#39;SpeechContext&#39;.
     
 **SpeechProvider and initial states**
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx
 export const SpeechProvider = ({ children }) =&gt; {
   const [recording, setRecording] = useState(false);
@@ -1513,7 +1398,7 @@ export const SpeechProvider = ({ children }) =&gt; {
 Now, we set up our main component, `SpeechProvider`. Additionally, we initialize a series of states using `useState`. These states include `recording` to track if the recording is ongoing, `mediaRecorder` to store our media recording object, `messages` to maintain a list of voice messages, `message` for the current voice message, `loading` to indicate if something is loading, and `chunks` to store recorded audio chunks.
 
 **Essential Recording Functions**
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx 
  const initiateRecording = () =&gt; {
    chunks = [];
@@ -1554,7 +1439,7 @@ const sendAudioData = async (audioBlob) =&gt; {
 Next, we set up our recording functions. `initiateRecognition` clears itself for each new recording, `onDataAvailable` collects the recording chunks, and `sendAudioData` sends all these chunks as a Blob to the server to convert them into text.
 
 **MediaRecorder Configuration**
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx
 useEffect(() =&gt; {
    if (typeof window !== &#34;undefined&#34;) {
@@ -1582,7 +1467,7 @@ useEffect(() =&gt; {
 Here, we use `useEffect` to set up our `MediaRecorder` once the `SpeechProvider` is mounted in the DOM. We bind our recording functions to trigger when `MediaRecorder` starts or stops recording.
 
 **Recording Control Functions**
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx 
  const tts = async (message) =&gt; {
    setLoading(true);
@@ -1615,7 +1500,7 @@ Here, we use `useEffect` to set up our `MediaRecorder` once the `SpeechProvider`
 The code provides a `tts` function pointing to the endpoint in the backend that can process the text directly and generate the audio and visemes used in the avatar&#39;s lip synchronization. Meanwhile, `onMessagePlayed` simply removes a message once it has been played. When the `messages` list changes, the `useEffect` sets the current message.
 
 **Providing the Context**
-```javascript
+```javascript=
 \\ frontend/src/hooks/useSpeech.jsx 
  return (
    &lt;SpeechContext.Provider
@@ -1650,7 +1535,7 @@ With this, we have a `SpeechProvider` component that allows users to record thei
 ### Chat Interface and SpeechProvider Integration
 To integrate the SpeechProvider, we will use the following interface:
 
-```javascript
+```javascript=
 \\ frontend/src/components/ChatInterface.jsx
 import { useRef } from &#34;react&#34;;
 import { useSpeech } from &#34;../hooks/useSpeech&#34;;
@@ -1731,7 +1616,7 @@ export const ChatInterface = ({ hidden, ...props }) =&gt; {
 };
 ```
 We won&#39;t go into detail on the previous code since it&#39;s quite standard. In addition to this, we need to update the file `frontend/src/index.js` as follows:
-```javascript
+```javascript=
 \\ frontend/src/index.js
 import React from &#34;react&#34;;
 import ReactDOM from &#34;react-dom/client&#34;;
@@ -1750,7 +1635,7 @@ ReactDOM.createRoot(document.getElementById(&#34;root&#34;)).render(
 ```
 ### OpenAI GPT API with LangChain
 The OpenAI GPT API will serve as the brain of our avatar. Once Felix receives a text from the client, he will respond using the following predefined prompt:
-```javascript
+```javascript=
 \\ backend/modules/openAI.mjs
 const template = `
  You are Felix, a world traveler.
@@ -1764,7 +1649,7 @@ const template = `
 ```
 Once the interaction with Felix has started, the OpenAI GPT API generates a series of responses. Specifically, these responses will consist of an array with a limit of three sentences designed as follows:
 
-```javascript
+```javascript=
 {
 &#34;text&#34;: &#34;Felix&#39;s response&#34;,
 &#34;facialExpression&#34;: &#34;Facial expression of Felix when he begins to speak&#34;,
@@ -1774,7 +1659,7 @@ Once the interaction with Felix has started, the OpenAI GPT API generates a seri
     
 The concept behind splitting the response into three sentences is to prevent Felix from constantly using the same facial expressions and body movements when speaking, giving him a more realistic appearance. Overall, this process is controlled by the following code:
 
-```javascript
+```javascript=
 \\ backend/modules/openAI.mjs
 import { ChatOpenAI } from &#34;@langchain/openai&#34;;
 import { ChatPromptTemplate } from &#34;@langchain/core/prompts&#34;;
@@ -1852,7 +1737,7 @@ In summary, the code connects LangChain with the OpenAI GPT API, sends the prede
 ### OpenAI and Whisper API Setup 
 As the reader may have noticed, the previous component can only process text. So if the user decides to use the microphone, the audio must be processed beforehand. In other words, we need to transcribe the audio. For this, we will use the Whisper service offered by OpenAI with the following implementation:
 
-```javascript
+```javascript=
 \\ backend/modules/whisper.mjs
 import { OpenAIWhisperAudio } from &#34;langchain/document_loaders/fs/openai_whisper_audio&#34;;
 import { convertAudioToMp3 } from &#34;../utils/audios.mjs&#34;;
@@ -1882,7 +1767,7 @@ The main purpose of this code is to convert audio to text. To achieve this, it f
     
 ### ElevenLabs API Voice Generation 
 Once we are sure that the user input (text or audio) has been passed through the OpenAI GPT API and has generated a response, acting according to the flow described above, the response is a text that we must convert into audio. For this, we use the TTS service of [ElevenLabs API](https://elevenlabs.io/) through the following service:
-```javascript
+```javascript=
 \\ backend/modules/elenvenLabs.mjs
 import ElevenLabs from &#34;elevenlabs-node&#34;;
 import dotenv from &#34;dotenv&#34;;
@@ -1921,7 +1806,7 @@ In the previous fragment, a function called `convertTextToSpeech` has been imple
 Specifically:
 
 1. The `elevenlabs-node` library is imported to interact with the ElevenLabs API, and `dotenv` is used to load environment variables from a `.env` file:
-```javascript
+```javascript=
 \\ backend/modules/elenvenLabs.mjs
 import ElevenLabs from &#34;elevenlabs-node&#34;;
 import dotenv from &#34;dotenv&#34;;
@@ -1929,14 +1814,14 @@ dotenv.config();
 ```
     
 2. The necessary credentials to authenticate with the ElevenLabs service are obtained from the environment variables. These credentials include the ElevenLabs API Key, the voice ID, and the model ID:
-```javascript
+```javascript=
 \\ backend/modules/elenvenLabs.mjs
 const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
 const voiceID = process.env.ELEVEN_LABS_VOICE_ID;
 const modelID = process.env.ELEVEN_LABS_MODEL_ID;
 ```
 3. An instance of ElevenLabs is created by passing the credentials obtained earlier:
-```javascript
+```javascript=
 \\ backend/modules/elenvenLabs.mjs
 const voice = new ElevenLabs({
  apiKey: elevenLabsApiKey,
@@ -1944,7 +1829,7 @@ const voice = new ElevenLabs({
 });
 ```
 4. The function `convertTextToSpeech` takes an object as an argument containing the text to be converted into audio and the name of the output file:
-```javascript
+```javascript=
 \\ backend/modules/elenvenLabs.mjs
 async function convertTextToSpeech({ text, fileName }) {
  await voice.textToSpeech({
@@ -1962,7 +1847,7 @@ async function convertTextToSpeech({ text, fileName }) {
 5. Within the `convertTextToSpeech` function, the `textToSpeech` method provided by the `ElevenLabs` instance to converts text into audio. Several parameters are passed, including the output file name, the text to be converted, the voice ID, stability, similarity boost, model ID, style, and speaker boost. The ID for all available voices in Eleven Labs can be accessed [here](https://api.elevenlabs.io/v1/voices). It&#39;s recommended to have the paid version. With the free version, the avatar doesn&#39;t work well due to an error caused by too many requests.
 
 6. Finally, the `convertTextToSpeech` function and the `voice` instance are exported so that they can be used in other modules of the application:
-```javascript
+```javascript=
 export { convertTextToSpeech, voice };
 ```
 
@@ -1981,7 +1866,7 @@ To use Rhubarb Lip-Sync, we need to do the following:
 3. Install `ffmpeg` for  [Mac OS](https://formulae.brew.sh/formula/ffmpeg), [Linux](https://ffmpeg.org/download.html) or [Windows](https://ffmpeg.org/download.html).
 4. Implement the service `backend/modules/rhubarbLipSync.mjs` in the backend.
 
-```javascript
+```javascript=
 // backend/modules/rhubarbLipSync.mjs
 import { execCommand } from &#34;../utils/files.mjs&#34;;
 
@@ -2006,7 +1891,7 @@ export { getPhonemes };
 ```
 This code imports the `execCommand` function from the `files.mjs` file in the `backend/utils` directory.
     
-```javascript
+```javascript=
 // backend/utils/file.mjs
 import { exec } from &#34;child_process&#34;;
 import { promises as fs } from &#34;fs&#34;;
@@ -2023,7 +1908,7 @@ const execCommand = ({ command }) =&gt; {
 ```
 Then, the `getPhonemes` function is defined to execute two commands using the `execCommand` function. The first command converts an MP3 audio file into a WAV file using the `ffmpeg` tool. Then, the second command is executed to run `rhubarb` from the `/bin` directory to determine the timestamps and phonemes produced during the audio playback. The result is saved in a JSON file, which has a structure like this:
     
-```javascript
+```javascript=
 {
  &#34;metadata&#34;: {
    &#34;soundFile&#34;: &#34;api_0.wav&#34;,
@@ -2055,7 +1940,7 @@ Then, the `getPhonemes` function is defined to execute two commands using the `e
 The result of these files will be used later for lip synchronization with the audio.
 
 5. Implement in the frontend the file `frontend/src/constants/visemeMappings.js` with the following mapping:
-```javascript
+```javascript=
 // frontend/src/constants/visemeMappings.js
 const visemesMapping = {
  A: &#34;viseme_PP&#34;,
@@ -2077,7 +1962,7 @@ Here, we aim to match the phonemes identified by Rhubarb Lip-sync with the corre
 ### Audio Lip-Sync 
 In our backend, we have the following code to carry out vocal synchronization with the audio:
 
-```javascript
+```javascript=
 // backend/modules/lip-sync.mjs
 import { convertTextToSpeech } from &#34;./elevenLabs.mjs&#34;;
 import { getPhonemes } from &#34;./rhubarbLipSync.mjs&#34;;
@@ -2104,7 +1989,7 @@ export { lipSync };
 Here, we import crucial previously implemented functions, such as `convertTextToSpeech` and `getPhonemes`, `readJsonTranscript` and `audioFileToBase64`. The latter are responsible for:
 
 1. `readJsonTranscript`: Reads information from a JSON file associated with lip synchronization. Its implementation is as follows:
-```javascript
+```javascript=
 // backend/utils/files.mjs
 const readJsonTranscript = async ({ fileName }) =&gt; {
  const data = await fs.readFile(fileName, &#34;utf8&#34;);
@@ -2113,7 +1998,7 @@ const readJsonTranscript = async ({ fileName }) =&gt; {
 ```
     
 2. `audioFileToBase64`: Converts an audio file into a Base64 encoded string, facilitating its transmission or efficient storage. Its implementation is as follows:
-```javascript
+```javascript=
 // backend/utils/files.mjs
 const audioFileToBase64 = async ({ fileName }) =&gt; {
  const data = await fs.readFile(fileName);
@@ -2133,7 +2018,7 @@ The main `lipSync` function performs the following tasks:
 
 Additionally, in the backend, we have also implemented this server:
 
-```javascript
+```javascript=
 // backend/index.mjs
 import cors from &#34;cors&#34;;
 import dotenv from &#34;dotenv&#34;;
@@ -2195,7 +2080,7 @@ This server makes use of all previously implemented functions and exposes two en
 
 In both cases, the server returns an object called `messages` with the following structure:
 
-```javascript
+```javascript=
 [
   {
     text: &#34;I&#39;ve been to so many places around the world, each with its own unique charm and beauty.&#34;,
@@ -2225,7 +2110,7 @@ These objects contain the parameters `text`, `facialExpression`, `animation`, `a
 
 Remember that on the frontend side, we have already implemented a hook called `useSpeech`, which makes use of the following context:
 
-```javascript
+```javascript=
 {
     text: &#34;I&#39;ve been to so many places around the world, each with its own unique charm and beauty.&#34;,
     facialExpression: &#39;smile&#39;,
@@ -2237,7 +2122,7 @@ Remember that on the frontend side, we have already implemented a hook called `u
 
 The one we&#39;ll use in the Avatar.jsx component to finally achieve lip synchronization. To do this, we will update the code of the Avatar.jsx file as follows:
     
-```javascript
+```javascript=
 // frontend/src/components/Avatar.jsx
 import { useSpeech } from &#34;../hooks/useSpeech&#34;;
 import facialExpressions from &#34;../constants/facialExpressions&#34;;
@@ -2397,251 +2282,241 @@ If you found this tutorial useful, please share it with your friends and colleag
                 </div>
             </div>
         </div>
-        <div id="post-footer" class="container post-footer">
+        <div class="container">
             <div class="authorbox">
                 
                     <div class="authorbox__content">
-                        <h3>Alejandro Sánchez Yalí</h3>
-                        <h5>
-                            Full-stack developer
-                            <a href="https://twitter.com/asanchezyali" target="_blank" rel="noopener">
-                                @asanchezyali
-                            </a>
-                        </h5>
-                        
-                        <img src="/static/core/img/img-team-019.png" width="120px" height="120px" alt="Alejandro Sánchez Yalí"/>
+                        <img src="/static/core/img/img-team-019.png" alt="Alejandro Sánchez Yalí"/>
+                        <div>
+                            <h3><a href="https://twitter.com/asanchezyali" target="_blank" rel="noopener">Alejandro Sánchez Yalí</a></h3>
+                            <h5> is a Full-stack developer of Monadical</h5>
+                        </div>
                     </div>
                 
             </div>
-            <h5>Published on <a href="#permalink">2024-07-02</a></h5>
-            <!-- <div class="newsletterbox">
-                <a href="https://careers.monadical.com/" style="font-weight: bold;">
-                    We are hiring!
-                </a>
-                <a href="https://tinyletter.com/Monadical">
-                    Subscribe to our newsletter
-                </a>
-            </div> -->
-        </div>
-        <center>
-            <br/><br/><br/>
-            <i style="font-size: 18px">Recent posts:</i>
-            <ul style="max-width: 400px; text-align: left; font-size: 16px">
-                <br/><br/>
-                
+            <div class="recent-posts">
+                <h4>Recent posts</h4>
+                <ul>
                     
-                        <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network?</a></li>
+                        
+                            <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network?</a></li>
+                        
                     
-                
+                        
+                            <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                        
                     
-                        <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                        
+                            <li><a href="/posts/typescript-validators-jamboree.html">Typescript Validators Jamboree</a></li>
+                        
                     
-                
+                        
+                            <li><a href="/posts/if-else-1.html">Mindfulness in Typescript code branching. Exhaustiveness, pattern matching, and side effects</a></li>
+                        
                     
-                        <li><a href="/posts/typescript-validators-jamboree.html">Typescript Validators Jamboree</a></li>
+                        
                     
-                
+                        
                     
-                        <li><a href="/posts/if-else-1.html">Mindfulness in Typescript code branching. Exhaustiveness, pattern matching, and side effects</a></li>
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
-                    
-                
-                    
-                
-                    
-                
-                <li>
-                    <a href="/blog.html">
-                        View more posts...
-                    </a>
-                </li>
-            </ul>
-            <br/>
-        </center>
-        <script src="https://utteranc.es/client.js"
+                    <li>
+                        <a href="/blog.html">
+                            View more posts...
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script src="https://utteranc.es/client.js"
                 repo="Monadical-SAS/monadical.com"
                 issue-term="pathname"
                 label="blog"
                 theme="github-light"
                 crossorigin="anonymous"
                 async>
-        </script>
-        <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
-        </center>
+            </script>
+            <center>
+                <a href="#post-content" class="back-to-top">
+                    Back to top <i class="fa fa-arrow-up"></i>
+                </a>
+            </center>
+
+            <!-- Final CTA -->
+<div class="row final-cta">
+  <div class="col-12 text-center">
+      <h2>Let's <span class="highlight">transform</span> your organization.</h2>
+      <a href="/contact-us.html" class="btn btn-primary cta-button">BOOK A FREE AI STRATEGY CALL</a>
+  </div>
+</div>
+        </div>
         <script type="text/javascript" id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
@@ -2667,7 +2542,7 @@ If you found this tutorial useful, please share it with your friends and colleag
                 document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
-                
+
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/yVtP8kPst', {mode: 'no-cors'})
 
@@ -2679,33 +2554,26 @@ If you found this tutorial useful, please share it with your friends and colleag
         </script>
         <script>
             function setOpacity(){
-                const maxWidth=1140
+                const maxWidth = 1140;
                 const width = $(window).width();
                 $('#post-cube-left').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
                 });
                 $('#post-tentacle-right').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
                 });
             }
 
             $(document).ready(setOpacity);
             $(window).resize(setOpacity);
-        </script>
-        <br/><br/>
-    </div>
-    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
-    <style>
-        @media (max-width: 991px) {
-            .show {
-                display: block !important;
-            }
-            .collapse:not(.show) {
-                display: none !important;
-            }
-        }
-    </style>
 
+            // Remove undesired bootstrap styles
+            setTimeout(() => {
+                $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled');
+                document.querySelector("link[href*='pretty-styles-pack']")?.remove();
+            }, 500);
+        </script>
+    </div>
 
     </article>
     
@@ -2783,32 +2651,6 @@ If you found this tutorial useful, please share it with your friends and colleag
                                 rel="noopener">
                                 <i class="fa fa-github"></i>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row contact-row">
-                <div class="col-12 col-lg-4 col-md-4">
-                    <ul>
-                        <li>
-                            
-                            Monadical Inc. © 2025<br />
-                            <small>All rights reserved.</small>
-                            
-                        </li>
-                    </ul>
-                </div>
-                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
-                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
-                    <ul>
-                        <li>
-                            <span style="white-space: nowrap;">
-                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
-                                        title="ignore this">example.com</span>m</span>onadical.com
-                            </span>
-                            <br />
-                            <small>✉️&nbsp; Email us with your project idea.</small>
                         </li>
                     </ul>
                 </div>

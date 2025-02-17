@@ -70,74 +70,53 @@
         {% endblock %}
 
         <div id="header-container" class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+            <nav class="navbar navbar-expand-lg">
                 {% block logo %}
                 <a class="navbar-brand" id="monadical-brand" href="{{PAGES.index.url}}">
                     <img srcset="/static/core/img/logo@3x.png 3x,
-                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                                 /static/core/img/logo@2x.png 2x"
+                         src="/static/core/img/logo.png"
+                         id="brand-img" />
                 </a>
                 {% endblock %}
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-content-container">
-                        <ul class="navbar-nav navbar-left">
+                        <ul class="navbar-nav">
                             {% for link in HeaderLinks %}
-                            {% if link != "jasette" and not SubHeaderLinks[link] %}
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
-                            </li>
-                            {% elif SubHeaderLinks[link] %}
-                            <div class="nav-item dropdown">
-                                <button class="nav-link btn-link dropdown-toggle" type="button"
-                                    id="dropdown{{link}}Button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    {{SubHeaderLinks[link].title}}
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdown{{link}}Button">
-                                    {% for sublink in SubHeaderLinks[link].links %}
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="{{PAGES[sublink].url}}">{{PAGES[sublink].title}}</a>
-                                    {% endfor %}
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
-                                </div>
-                            </div>
-                            {% endif %}
+                                {% if link != "jasette" and not SubHeaderLinks[link] %}
+                                    <li class="nav-item">
+                                        <a class="nav-link {% if request.path == PAGES[link].url %}active{% endif %}"
+                                           href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
+                                    </li>
+                                {% elif SubHeaderLinks[link] %}
+                                    <div class="nav-item dropdown">
+                                        <button class="nav-link btn-link dropdown-toggle" type="button"
+                                            id="dropdown{{link}}Button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            {{SubHeaderLinks[link].title}}
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdown{{link}}Button">
+                                            {% for sublink in SubHeaderLinks[link].links %}
+                                                <a class="dropdown-item nav-link"
+                                                href="{{PAGES[sublink].url}}">{{PAGES[sublink].title}}</a>
+                                            {% endfor %}
+                                            <a class="dropdown-item nav-link"
+                                                href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             {% endfor %}
                             <li class="nav-item">
-                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                                <a class="nav-link"
+                                   href="/contact-us.html">LET'S TALK</a>
                             </li>
                         </ul>
 
-                        {% if title == "Lightning Yak" %}
-                        <span>
-                            <a class="disabled-link" style="margin: 5px;" href="{{PAGES['yak'].url}}">Eng<a> |
-                                    <a style="margin: 5px;" href="{{ PAGES['jasette'].url }}">Fr</a>
-                        </span>
-                        <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc"
-                            onclick="_paq.push(['trackEvent', 'Lightning Yark Form', 'Clicked']);">
-                            APPLY
-                        </a>
-                        {% elif title == "Jasette Éclair" %}
-                        <span>
-                            <a style="margin: 5px;" href="{{PAGES['yak'].url}}">Eng<a> |
-                                    <a class="disabled-link" style="margin: 5px;"
-                                        href="{{ PAGES['jasette'].url }}">Fr</a>
-                        </span>
-                        <a class="beta-btn nav-link button-navbar" href="https://nick764452.typeform.com/to/N57mNTlc"
-                            onclick="_paq.push(['trackEvent', 'Jasette Éclair Form', 'Clicked']);">
-                            APPLY
-                        </a>
-                        {% else %}
-                        <a class="beta-btn nav-link button-navbar" href="{{PAGES.contact.url}}">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                        {% endif %}
                     </div>
                 </div>
             </nav>
@@ -226,32 +205,6 @@
                                 rel="noopener">
                                 <i class="fa fa-github"></i>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row contact-row">
-                <div class="col-12 col-lg-4 col-md-4">
-                    <ul>
-                        <li>
-                            {% block footercopyright %}
-                            Monadical Inc. © {{now.year}}<br />
-                            <small>All rights reserved.</small>
-                            {% endblock %}
-                        </li>
-                    </ul>
-                </div>
-                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
-                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
-                    <ul>
-                        <li>
-                            <span style="white-space: nowrap;">
-                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
-                                        title="ignore this">example.com</span>m</span>onadical.com
-                            </span>
-                            <br />
-                            <small>✉️&nbsp; Email us with your project idea.</small>
                         </li>
                     </ul>
                 </div>

@@ -1,0 +1,268 @@
+/* Typography and Base Styles */
+.article-content {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    color: #333 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.article-content h1 {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 54px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 30px !important;
+    text-align: center !important;
+    font-weight: 300 !important;
+}
+
+.article-content h2 {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 32px !important;
+    margin-top: 60px !important;
+    margin-bottom: 25px !important;
+    color: #1a1a1a !important;
+    font-weight: 400 !important;
+    border-bottom: none !important;
+}
+
+.article-content h3,
+.article-content h4 {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 24px !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    color: #1a1a1a !important;
+    font-weight: 400 !important;
+}
+
+/* Blockquote Styles */
+.article-content blockquote {
+    font-family: 'Lato', sans-serif !important;
+    margin: 30px 0 !important;
+    padding: 25px 30px !important;
+    background: white !important;
+    font-style: italic !important;
+    border-radius: 12px !important;
+    border-left: none !important;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1) !important;
+}
+
+.article-content blockquote p {
+    font-family: 'Lato', sans-serif !important;
+    margin: 0 !important;
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    color: #444 !important;
+    font-weight: 300 !important;
+}
+
+.article-content center {
+    margin: 30px 0 !important;
+}
+
+.article-content center small {
+    display: block !important;
+    color: #666 !important;
+    margin-top: 10px !important;
+    font-size: 14px !important;
+}
+
+/* Author Box Styles */
+.authorbox {
+    margin: 60px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.authorbox__content {
+    display: flex !important;
+    align-items: center !important;
+    text-align: left !important;
+    margin: 0 0 30px 0 !important;
+}
+
+.authorbox__content:last-child {
+    margin-bottom: 0 !important;
+}
+
+.authorbox__content img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important;
+    margin-right: 20px !important;
+}
+
+.authorbox__content h3 {
+    display: inline !important;
+    font-family: 'Lato', sans-serif !important;
+    font-size: 18px !important;
+    color: #0087B4 !important;
+    margin: 0 !important;
+    font-weight: 700 !important;
+}
+
+.authorbox__content h3 a {
+    color: #0087B4 !important;
+    text-decoration: none !important;
+}
+
+.authorbox__content h3 a:hover {
+    text-decoration: underline !important;
+}
+
+.authorbox__content h5 {
+    display: inline !important;
+    font-family: 'Lato', sans-serif !important;
+    font-size: 18px !important;
+    color: #333 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+}
+
+.authorbox__content h5 a {
+    display: none !important;
+}
+
+/* Recent Posts Section */
+.recent-posts {
+    margin: 60px 0 !important;
+    text-align: center !important;
+}
+
+.recent-posts h4 {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 20px !important;
+    color: #666 !important;
+    margin-bottom: 30px !important;
+    font-weight: 400 !important;
+}
+
+.recent-posts ul {
+    list-style: none !important;
+    padding: 0 !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+.recent-posts li {
+    margin: 15px 0 !important;
+}
+
+.recent-posts a {
+    font-family: 'Lato', sans-serif !important;
+    color: #0087B4 !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    transition: color 0.2s ease !important;
+}
+
+.recent-posts a:hover {
+    color: #006688 !important;
+    text-decoration: underline !important;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    font-family: 'Lato', sans-serif !important;
+    display: inline-block !important;
+    padding: 10px 20px !important;
+    background: #f8f9fa !important;
+    color: #0087B4 !important;
+    border-radius: 100px !important;
+    text-decoration: none !important;
+    margin: 30px 0 !important;
+    transition: all 0.2s ease !important;
+    font-weight: 400 !important;
+}
+
+.back-to-top:hover {
+    background: #0087B4 !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Decorative elements */
+.cloud-img-left,
+.tentacle-img-right,
+.cube-img-left,
+.cloud-img-right {
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+}
+
+/* Hide HedgeDoc UI elements */
+.ui-infobar {
+    display: none !important;
+}
+
+.markdown-body h1 {
+    border-bottom: none !important;
+}
+
+/* Hide unnecessary elements */
+.fa-pencil {
+    display: none !important;
+}
+
+/* Additional HedgeDoc overrides */
+.markdown-body {
+    font-family: 'Lato', sans-serif !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .article-content {
+        font-size: 16px !important;
+        padding: 0 15px !important;
+    }
+
+    .article-content h1 {
+        font-size: 36px !important;
+    }
+
+    .article-content h2 {
+        font-size: 28px !important;
+    }
+
+    .article-content blockquote {
+        padding: 15px 20px !important;
+    }
+
+    .article-content blockquote p {
+        font-size: 18px !important;
+    }
+
+    .authorbox {
+        padding: 30px 20px !important;
+    }
+}
+
+/* List Styles */
+.article-content ul {
+    list-style: none !important;
+    padding-left: 20px !important;
+    margin: 20px 0 !important;
+}
+
+.article-content ul li {
+    position: relative !important;
+    padding-left: 25px !important;
+    margin: 10px 0 !important;
+}
+
+.article-content ul li::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 8px !important;
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #0087B4 !important;
+    border-radius: 1px !important;
+}

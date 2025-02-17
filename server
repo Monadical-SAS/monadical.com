@@ -109,7 +109,7 @@ def render_pricing_model(path):
     rate = RATES[f'/rates/{path}']
     download_post(rate)
     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
-    
+
 
 @app.route('/posts/<path>')
 def render_post(path):
@@ -140,10 +140,10 @@ def generate_rss():
         feed_entry.pubDate("{date} 00:00:00 UTC".format(**post_info))
         feed_entry.description(post_info['description'])
         feed_entry.link(href="https://{SITE_DOMAIN}{url}".format(**CONFIG, **post_info))
-        
+
     response = make_response(feedg.rss_str(pretty=True))
     response.headers.set('Content-Type', 'application/xml')  # headers dont work when serving the static site, this only applies when using the development server. however, it's still nice to have as it allows wget (or any other tool we use in the future to generate the static site) to verify that the content is indeed xml and not application/octet-stream, xhtml, or other random MIME types it might try to auto-detect/rename.
-    
+
     return response
 
 @app.route('/projects/<path>')
@@ -171,4 +171,5 @@ if __name__ == '__main__':
             print('\n'.join(HOST + url for url in REPORTS.keys()))
     else:
         # run the flask http server
-        app.run()
+        port = int(os.environ.get('PORT', 5000))
+        app.run(port=port)

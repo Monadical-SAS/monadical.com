@@ -28,8 +28,11 @@ white=${txtbld}$(tput setaf 7)
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 LOCAL_RSYNC="${LOCAL_DEPLOY:-0}"
 
+# Set default port if not defined
+: "${PORT:=5000}"
+
 echo "${blue}[+] Starting Flask server to render pages...$normal"
-./server > /dev/null &
+./server --port $PORT > /dev/null &
 sleep 1.5
 
 # Recreate output folder
@@ -51,14 +54,14 @@ cp static/_config.yml docs/_config.yml
 
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
-(cd docs; if [ -s pages.txt ]; then wget -q $(<pages.txt); fi)
-(cd docs/posts; if [ -s ../posts.txt ]; then wget -q $(<../posts.txt); fi)
-(cd docs/reports; if [ -s ../reports.txt ]; then wget -q $(<../reports.txt); fi)
-(cd docs; if [ -s rates.txt ]; then wget -q $(<rates.txt); fi)
+(cd docs; if [ -s pages.txt ]; then wget -q --no-check-certificate $(<pages.txt); fi)
+(cd docs/posts; if [ -s ../posts.txt ]; then wget -q --no-check-certificate $(<../posts.txt); fi)
+(cd docs/reports; if [ -s ../reports.txt ]; then wget -q --no-check-certificate $(<../reports.txt); fi)
+(cd docs; if [ -s rates.txt ]; then wget -q --no-check-certificate $(<../rates.txt); fi)
 
 echo ""
 echo "${blue}[+] Saving rss feed as static XML to output/...$normal"
-(cd docs/posts/; wget -q http://127.0.0.1:5000/posts/feed.xml)
+(cd docs/posts/; wget -q --no-check-certificate http://127.0.0.1:$PORT/posts/feed.xml)
 
 echo ""
 echo "${blue}[+] Including stevie king to docs/...$normal"

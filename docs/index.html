@@ -30,7 +30,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
@@ -71,7 +72,7 @@
         
 
         <div id="header-container" class="container">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 
                 <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
@@ -202,7 +203,7 @@
 
                             <p>
                                 <span class="emphasis-text">You need a partner</span>
-                                that understands the landscape, can help you make sense of AI,<br>
+                                that understands the landscape, can help you make sense of AI,
                                 and knows how to fail fast and iterate towards success.
                             </p>
 
@@ -243,10 +244,18 @@
         <!-- Services Section -->
         <div class="row services-section">
             <div class="col-12">
-                <div class="services-content">
-                    <div class="services-left">
+                <div class="services-header">
+                    <div class="title-group">
                         <span class="mini-title">USE CASES</span>
                         <h2 class="section-title">Unleash Your <span class="highlight">Engineering</span> Team's Potential.</h2>
+                    </div>
+                    <div class="services-nav">
+                        <div class="nav-arrow prev"></div>
+                        <div class="nav-arrow next"></div>
+                    </div>
+                </div>
+                <div class="services-content">
+                    <div class="services-left">
                         <p class="section-subtitle">
                             Your engineers want to spend as much time as possible doing what they do best: solving difficult problems
                             and translating those problems into elegant technical solutions. Al can help eliminate tedious
@@ -282,32 +291,32 @@
 
                         <a href="#" class="services-learn-more">LEARN MORE ABOUT MONADICAL'S SERVICES ></a>
                     </div>
-
                     <div class="services-right">
-                        <img src="/static/core/img/services-image.png" alt="Services" class="services-image">
+                        <img src="/static/engineering.png" alt="Services" class="services-image">
                     </div>
-                </div>
-
-                <div class="services-nav">
-                    <div class="nav-arrow prev"></div>
-                    <div class="nav-arrow next"></div>
                 </div>
             </div>
         </div>
 
         <!-- Featured Case Study -->
         <div class="row case-study-section">
-            <div class="col-md-6">
-                <img src="/static/core/img/case-study-image.png" alt="Case Study" class="case-study-image">
-            </div>
-            <div class="col-md-6">
-                <div class="case-study-content">
+            <div class="col-12">
+                <div class="case-study-header">
                     <span class="tag">FEATURED CASE STUDY</span>
                     <h2>Transforming Criminal Justice with AI</h2>
-                    <p>Recidiviz is working to address systemic issues in the criminal justice system. After deploying data aggregation tools across multiple states,
-                        they were ready to laverage AI to build their next generation of tools focused on reducing
-                        incarceraton rates.</p>
-                    <a href="#" class="read-more">READ MORE →</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/static/recidiviz.png" alt="Case Study" class="case-study-image">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="case-study-content">
+                            <p>Recidiviz is working to address systemic issues in the criminal justice system. After deploying data aggregation tools across multiple states,
+                                they were ready to laverage AI to build their next generation of tools focused on reducing
+                                incarceraton rates.</p>
+                            <a href="#" class="read-more">READ MORE →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -317,20 +326,25 @@
             <div class="col-12">
                 <span class="mini-title">FEATURED ARTICLES</span>
                 <div class="row">
+                    
+                    
+                    
+                    
+                    
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="/static/core/img/article1.png" alt="Article 1">
-                            <h3>Don't Give Big Tech Your Papaya</h3>
-                            <p>Companies increasingly invest in AI to process information. But turning over your data to tech giants comes with persistent risk. Here's our guide for avoiding lock-in.</p>
-                            <a href="#" class="read-more">READ MORE →</a>
+                            <img src="/static/social.png" alt="So you want to build a social network?">
+                            <h3>So you want to build a social network?</h3>
+                            <p>Here&#39;s what I&#39;ve discovered about how online communities build trust or don&#39;t.</p>
+                            <a href="/posts/so-you-want-to-build-a-social-network.html" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="/static/core/img/article2.png" alt="Article 2">
-                            <h3>Conversations are the New Oil</h3>
-                            <p>Every chat message, every water cooler chat, every meeting contains bits of institutional knowledge. For the first time, this knowledge can be captured, organized and distributed through your organization. Here's how it's done.</p>
-                            <a href="#" class="read-more">READ MORE →</a>
+                            <img src="/static/knowledge-in-box.png" alt="How to Fit All Human Knowledge in a Box">
+                            <h3>How to Fit All Human Knowledge in a Box</h3>
+                            <p>How we used the power of Cython to help streamline how knowledge can be packaged and accessed all over the world – even without the internet.</p>
+                            <a href="/posts/knowledge-in-box.html" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                 </div>

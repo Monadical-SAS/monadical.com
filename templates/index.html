@@ -66,7 +66,7 @@
 
                             <p>
                                 <span class="emphasis-text">You need a partner</span>
-                                that understands the landscape, can help you make sense of AI,<br>
+                                that understands the landscape, can help you make sense of AI,
                                 and knows how to fail fast and iterate towards success.
                             </p>
 
@@ -107,10 +107,18 @@
         <!-- Services Section -->
         <div class="row services-section">
             <div class="col-12">
-                <div class="services-content">
-                    <div class="services-left">
+                <div class="services-header">
+                    <div class="title-group">
                         <span class="mini-title">USE CASES</span>
                         <h2 class="section-title">Unleash Your <span class="highlight">Engineering</span> Team's Potential.</h2>
+                    </div>
+                    <div class="services-nav">
+                        <div class="nav-arrow prev"></div>
+                        <div class="nav-arrow next"></div>
+                    </div>
+                </div>
+                <div class="services-content">
+                    <div class="services-left">
                         <p class="section-subtitle">
                             Your engineers want to spend as much time as possible doing what they do best: solving difficult problems
                             and translating those problems into elegant technical solutions. Al can help eliminate tedious
@@ -146,32 +154,32 @@
 
                         <a href="#" class="services-learn-more">LEARN MORE ABOUT MONADICAL'S SERVICES ></a>
                     </div>
-
                     <div class="services-right">
-                        <img src="/static/core/img/services-image.png" alt="Services" class="services-image">
+                        <img src="/static/engineering.png" alt="Services" class="services-image">
                     </div>
-                </div>
-
-                <div class="services-nav">
-                    <div class="nav-arrow prev"></div>
-                    <div class="nav-arrow next"></div>
                 </div>
             </div>
         </div>
 
         <!-- Featured Case Study -->
         <div class="row case-study-section">
-            <div class="col-md-6">
-                <img src="/static/core/img/case-study-image.png" alt="Case Study" class="case-study-image">
-            </div>
-            <div class="col-md-6">
-                <div class="case-study-content">
+            <div class="col-12">
+                <div class="case-study-header">
                     <span class="tag">FEATURED CASE STUDY</span>
                     <h2>Transforming Criminal Justice with AI</h2>
-                    <p>Recidiviz is working to address systemic issues in the criminal justice system. After deploying data aggregation tools across multiple states,
-                        they were ready to laverage AI to build their next generation of tools focused on reducing
-                        incarceraton rates.</p>
-                    <a href="#" class="read-more">READ MORE →</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/static/recidiviz.png" alt="Case Study" class="case-study-image">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="case-study-content">
+                            <p>Recidiviz is working to address systemic issues in the criminal justice system. After deploying data aggregation tools across multiple states,
+                                they were ready to laverage AI to build their next generation of tools focused on reducing
+                                incarceraton rates.</p>
+                            <a href="#" class="read-more">READ MORE →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,20 +189,27 @@
             <div class="col-12">
                 <span class="mini-title">FEATURED ARTICLES</span>
                 <div class="row">
+                    {% set posts = POSTS.values()|list %}
+                    {% set posts_length = posts|length %}
+                    {% set first_index = range(0, posts_length)|random %}
+                    {% set second_index = range(0, posts_length)|random %}
+                    {% if first_index == second_index and posts_length > 1 %}
+                        {% set second_index = (first_index + 1) % posts_length %}
+                    {% endif %}
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="/static/core/img/article1.png" alt="Article 1">
-                            <h3>Don't Give Big Tech Your Papaya</h3>
-                            <p>Companies increasingly invest in AI to process information. But turning over your data to tech giants comes with persistent risk. Here's our guide for avoiding lock-in.</p>
-                            <a href="#" class="read-more">READ MORE →</a>
+                            <img src="{{posts[first_index].img}}" alt="{{posts[first_index].title}}">
+                            <h3>{{posts[first_index].title}}</h3>
+                            <p>{{posts[first_index].description}}</p>
+                            <a href="{{posts[first_index].url}}" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="/static/core/img/article2.png" alt="Article 2">
-                            <h3>Conversations are the New Oil</h3>
-                            <p>Every chat message, every water cooler chat, every meeting contains bits of institutional knowledge. For the first time, this knowledge can be captured, organized and distributed through your organization. Here's how it's done.</p>
-                            <a href="#" class="read-more">READ MORE →</a>
+                            <img src="{{posts[second_index].img}}" alt="{{posts[second_index].title}}">
+                            <h3>{{posts[second_index].title}}</h3>
+                            <p>{{posts[second_index].description}}</p>
+                            <a href="{{posts[second_index].url}}" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                 </div>

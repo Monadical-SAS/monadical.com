@@ -9,6 +9,20 @@
     padding: 0 20px !important;
 }
 
+/* Exception for the final CTA section */
+.article-content .final-cta {
+    font-size: initial !important;
+}
+
+.article-content .final-cta h2 {
+    font-size: 2.8rem !important;
+    margin-top: 0 !important;
+}
+
+.article-content .final-cta .highlight {
+    color: #0087B4 !important;
+}
+
 .article-content h1 {
     font-family: 'Lato', sans-serif !important;
     font-size: 54px !important;

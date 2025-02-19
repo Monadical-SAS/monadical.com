@@ -1,14 +1,3 @@
-/* Typography and Base Styles */
-.article-content {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 18px !important;
-    line-height: 1.6 !important;
-    color: #333 !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
-}
-
 /* Exception for the final CTA section */
 .article-content .final-cta {
     font-size: initial !important;
@@ -21,67 +10,6 @@
 
 .article-content .final-cta .highlight {
     color: #0087B4 !important;
-}
-
-.article-content h1 {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 54px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 30px !important;
-    text-align: center !important;
-    font-weight: 300 !important;
-}
-
-.article-content h2 {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 32px !important;
-    margin-top: 60px !important;
-    margin-bottom: 25px !important;
-    color: #1a1a1a !important;
-    font-weight: 400 !important;
-    border-bottom: none !important;
-}
-
-.article-content h3,
-.article-content h4 {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 24px !important;
-    margin-top: 40px !important;
-    margin-bottom: 20px !important;
-    color: #1a1a1a !important;
-    font-weight: 400 !important;
-}
-
-/* Blockquote Styles */
-.article-content blockquote {
-    font-family: 'Lato', sans-serif !important;
-    margin: 30px 0 !important;
-    padding: 25px 30px !important;
-    background: white !important;
-    font-style: italic !important;
-    border-radius: 12px !important;
-    border-left: none !important;
-    box-shadow: 0 0 2px rgba(0,0,0,0.1) !important;
-}
-
-.article-content blockquote p {
-    font-family: 'Lato', sans-serif !important;
-    margin: 0 !important;
-    font-size: 20px !important;
-    line-height: 1.5 !important;
-    color: #444 !important;
-    font-weight: 300 !important;
-}
-
-.article-content center {
-    margin: 30px 0 !important;
-}
-
-.article-content center small {
-    display: block !important;
-    color: #666 !important;
-    margin-top: 10px !important;
-    font-size: 14px !important;
 }
 
 /* Author Box Styles */
@@ -231,52 +159,7 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .article-content {
-        font-size: 16px !important;
-        padding: 0 15px !important;
-    }
-
-    .article-content h1 {
-        font-size: 36px !important;
-    }
-
-    .article-content h2 {
-        font-size: 28px !important;
-    }
-
-    .article-content blockquote {
-        padding: 15px 20px !important;
-    }
-
-    .article-content blockquote p {
-        font-size: 18px !important;
-    }
-
     .authorbox {
         padding: 30px 20px !important;
     }
-}
-
-/* List Styles */
-.article-content ul {
-    list-style: none !important;
-    padding-left: 20px !important;
-    margin: 20px 0 !important;
-}
-
-.article-content ul li {
-    position: relative !important;
-    padding-left: 25px !important;
-    margin: 10px 0 !important;
-}
-
-.article-content ul li::before {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 8px !important;
-    width: 8px !important;
-    height: 8px !important;
-    background-color: #0087B4 !important;
-    border-radius: 1px !important;
 }

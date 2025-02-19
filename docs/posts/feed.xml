@@ -6,7 +6,7 @@
     <description>Here you can find our publications</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Tue, 18 Feb 2025 20:16:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2025 17:08:11 +0000</lastBuildDate>
     <item>
       <title>Downswings and the Information Game</title>
       <link>https://monadical.com/posts/Downswings-and-the-Information-Game.html</link>
@@ -31,7 +31,7 @@
     <item>
       <title>Two Approaches to Concurrent Write-Safety in Django</title>
       <link>https://monadical.com/posts/Django-Concurrent-Write-Safety.html</link>
-      <description>When dealing with Django models accessed by multiple people, you want a way to make sure two requests don’t perform writes at the same time.</description>
+      <description>When dealing with Django models accessed by multiple people, you want a way to make sure two requests don't perform writes at the same time.</description>
       <guid isPermaLink="false">/posts/Django-Concurrent-Write-Safety.html</guid>
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
     </item>
@@ -45,7 +45,7 @@
     <item>
       <title>An Explanation of Segwit and the Lighning Network</title>
       <link>https://monadical.com/posts/Segwit-and-the-Lightning-Network.html</link>
-      <description>Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don’t count as much against the limit.</description>
+      <description>Segwit increases total number of bytes for each transaction (very slightly), but changes the way that block size is calculated so that the signatures don't count as much against the limit.</description>
       <guid isPermaLink="false">/posts/Segwit-and-the-Lightning-Network.html</guid>
       <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
     </item>
@@ -85,7 +85,7 @@
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>We’re Building A Company, Not An ICO</title>
+      <title>We're Building A Company, Not An ICO</title>
       <link>https://monadical.com/posts/Building-a-Company-Not-an-ICO.html</link>
       <description>A frank discussion about the benefits and pitfalls of the ICO hype, and why Monadical' vision goes far beyond short-term fundraising.</description>
       <guid isPermaLink="false">/posts/Building-a-Company-Not-an-ICO.html</guid>
@@ -157,7 +157,7 @@
     <item>
       <title>A Postfix deployment postmortem: Debugging short-circuiting of mapping lookups</title>
       <link>https://monadical.com/posts/using-multiple-smtpd-sender-login-maps-in-postfix.html</link>
-      <description>How we tracked down and fixed a bug caused by Postfix’s type:table using the new unionmap feature.</description>
+      <description>How we tracked down and fixed a bug caused by Postfix's type:table using the new unionmap feature.</description>
       <guid isPermaLink="false">/posts/using-multiple-smtpd-sender-login-maps-in-postfix.html</guid>
       <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
     </item>
@@ -213,7 +213,7 @@
     <item>
       <title>How to set up a CI workflow</title>
       <link>https://monadical.com/posts/set-up-ci-workflow.html</link>
-      <description>How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don’t increase your maintenance burden.</description>
+      <description>How to set up a basic CI workflow using GitHub and AWS, relying completely on managed services so you don't increase your maintenance burden.</description>
       <guid isPermaLink="false">/posts/set-up-ci-workflow.html</guid>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
     </item>
@@ -241,7 +241,7 @@
     <item>
       <title>How COVID-19 will affect Outsourcing Trends</title>
       <link>https://monadical.com/posts/covid-affects-outsourcing.html</link>
-      <description>How the increase in remote work during COVID-19 will affect companies’ decisions on whether to outsource.</description>
+      <description>How the increase in remote work during COVID-19 will affect companies' decisions on whether to outsource.</description>
       <guid isPermaLink="false">/posts/covid-affects-outsourcing.html</guid>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
     </item>
@@ -388,7 +388,7 @@
     <item>
       <title>How to import your wallet to Solana CLI</title>
       <link>https://monadical.com/posts/export-phantom-wallet.html</link>
-      <description>Whether you’re looking to backup your wallet or deliver NFTs,  importing your wallet is a great trick to have up your sleeve.</description>
+      <description>Whether you're looking to backup your wallet or deliver NFTs,  importing your wallet is a great trick to have up your sleeve.</description>
       <guid isPermaLink="false">/posts/export-phantom-wallet.html</guid>
       <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
     </item>
@@ -416,7 +416,7 @@
     <item>
       <title>How to setup a Wasm API for a CHIP-8 emulator</title>
       <link>https://monadical.com/posts/wasm-chip8.html</link>
-      <description>In this guide, you’ll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!</description>
+      <description>In this guide, you'll learn how to keep control over the lifecycle of the library, allow signals/commands, and callbacks – all while keeping the asynchronous style that you know and love!</description>
       <guid isPermaLink="false">/posts/wasm-chip8.html</guid>
       <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
     </item>
@@ -444,14 +444,14 @@
     <item>
       <title>Python vs Javascript: Dealing with the quirks of async/await</title>
       <link>https://monadical.com/posts/python-vs-javascript-dealing-with-the-quirks-of-async-await.html</link>
-      <description>As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.</description>
+      <description>As someone who's used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here's what I learned.</description>
       <guid isPermaLink="false">/posts/python-vs-javascript-dealing-with-the-quirks-of-async-await.html</guid>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>How to get blog post ideas as a developer</title>
       <link>https://monadical.com/posts/blog-ideas-for-developers.html</link>
-      <description>Whenever I hit writer’s block, I explore these four areas. They’ve never failed to help me find ideas for my next article.</description>
+      <description>Whenever I hit writer's block, I explore these four areas. They've never failed to help me find ideas for my next article.</description>
       <guid isPermaLink="false">/posts/blog-ideas-for-developers.html</guid>
       <pubDate>Wed, 31 Aug 2022 00:00:00 +0000</pubDate>
     </item>
@@ -470,9 +470,9 @@
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to mint NFTs using Solana’s mobile wallet adapter</title>
+      <title>How to mint NFTs using Solana's mobile wallet adapter</title>
       <link>https://monadical.com/posts/minting-nft-solana-mobile.html</link>
-      <description>React Native is a powerful tool for developing mobile apps that make use of Solana’s mobile wallet adapter. Here’s how to use the tech to mint an NFT.</description>
+      <description>React Native is a powerful tool for developing mobile apps that make use of Solana's mobile wallet adapter. Here's how to use the tech to mint an NFT.</description>
       <guid isPermaLink="false">/posts/minting-nft-solana-mobile.html</guid>
       <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
     </item>
@@ -603,9 +603,9 @@
       <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>The Essential Guide to Ray.io’s Anatomy</title>
+      <title>The Essential Guide to Ray.io's Anatomy</title>
       <link>https://monadical.com/posts/the-essential-guide-to-rays-anatomy.html</link>
-      <description>A Journey Through Ray’s Capabilities in GPU Management and Scalable AI Development</description>
+      <description>A Journey Through Ray's Capabilities in GPU Management and Scalable AI Development</description>
       <guid isPermaLink="false">/posts/the-essential-guide-to-rays-anatomy.html</guid>
       <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
     </item>

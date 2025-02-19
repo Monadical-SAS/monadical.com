@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+{% block description %}{{description}}{% endblock %}
+{% block type %}webinar{% endblock %}
+{% block img %}https://{{SITE_DOMAIN}}{{img}}{% endblock %}
+{% block subtitle %}<a href="{{PAGES.webinars.url}}">Webinars</a>{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/core/css/index.css">
+<link rel="stylesheet" href="/static/core/css/webinar.css">
+{% endblock %}
+
+{% block article %}
+    <div id="webinar-content">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="webinar-header">
+                        <span class="mini-title">WEBINAR</span>
+                        <h1>{{title}}</h1>
+                        <p class="subtitle">{{description}}</p>
+                    </div>
+
+                    {% if is_future_webinar %}
+                        <!-- Pre-webinar promotion view -->
+                        <div class="webinar-promo">
+                            <div class="date-time">
+                                <h3>{{formatted_date}}</h3>
+                            </div>
+
+                            <div class="countdown" id="countdown">
+                                <div class="countdown-item">
+                                    <span id="days">12</span>
+                                    <span class="label">DAYS</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="hours">7</span>
+                                    <span class="label">HOURS</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="minutes">14</span>
+                                    <span class="label">MINUTES</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="seconds">39</span>
+                                    <span class="label">SECONDS</span>
+                                </div>
+                            </div>
+
+                            <a href="#rsvp" class="cta-button">RSVP HERE</a>
+                            <div class="scroll-down">
+                                <span class="scroll-arrow"></span>
+                            </div>
+                        </div>
+
+                        <!-- Embedded promotion content -->
+                        <div class="article-content">
+                            {{ include_raw(promotion_template) }}
+                        </div>
+
+                        <div class="text-center">
+                            <a href="#rsvp" class="cta-button">RSVP HERE</a>
+                        </div>
+                    {% else %}
+                        <div id="webinar-content-wrapper">
+                            <!-- Post-webinar access form -->
+                            <div id="webinar-form-section">
+                                <h3 class="webinar-form-title">To Watch This Webinar, Fill Out the Brief Form Below:</h3>
+                                <div class="webinar-access-form">
+                                    <form id="webinarAccessForm" onsubmit="handleFormSubmit(event)">
+                                        <div class="form-group">
+                                            <input type="text" id="name" name="name" placeholder=" " required>
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="email" name="email" placeholder=" " required>
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="company" name="company" placeholder=" " required>
+                                            <label for="company">Company Name</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="role" name="role" placeholder=" " required>
+                                            <label for="role">Your Role</label>
+                                        </div>
+                                        <button type="submit" class="cta-button">GET INSTANT ACCESS</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Webinar content view -->
+                            <div id="webinar-full-content" style="display: none;">
+                                {% if video_url %}
+                                    <div class="video-container">
+                                      <iframe src="{{video_url}}" width="640" height="360" allow="autoplay" allowfullscreen></iframe>
+                                    </div>
+                                {% endif %}
+
+                                <div class="action-buttons">
+                                    {% if slides_url %}
+                                        <a href="{{slides_url}}" class="cta-button" target="_blank">
+                                            DOWNLOAD THE SLIDES
+                                        </a>
+                                    {% endif %}
+                                    <a href="/contact-us.html" class="secondary-button" target="_blank">
+                                        SCHEDULE A STRATEGY CALL WITH MAX
+                                    </a>
+                                </div>
+
+                                <div class="article-content">
+                                    {{ include_raw(transcription_template) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            // Check localStorage on page load
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const hasAccess = localStorage.getItem('webinar_access_granted') === 'true';
+                                if (hasAccess) {
+                                    document.getElementById('webinar-form-section').style.display = 'none';
+                                    document.getElementById('webinar-full-content').style.display = 'block';
+                                }
+                            });
+
+                            // Form submission handler
+                            function handleFormSubmit(event) {
+                                event.preventDefault();
+                                const form = event.target;
+                                const formData = new FormData(form);
+
+                                // Store access granted in localStorage
+                                localStorage.setItem('webinar_access_granted', 'true');
+
+                                // Show content immediately
+                                document.getElementById('webinar-form-section').style.display = 'none';
+                                document.getElementById('webinar-full-content').style.display = 'block';
+                            }
+                        </script>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% include "_final_cta.html" %}
+
+        <script>
+            // Countdown Timer
+            function updateCountdown() {
+                const webinarDate = new Date("{{date}}").getTime();
+                const now = new Date().getTime();
+                const distance = webinarDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").textContent = days;
+                document.getElementById("hours").textContent = hours;
+                document.getElementById("minutes").textContent = minutes;
+                document.getElementById("seconds").textContent = seconds;
+
+                if (distance < 0) {
+                    clearInterval(countdownTimer);
+                    document.getElementById("countdown").style.display = "none";
+                }
+            }
+
+            {% if is_future_webinar %}
+                updateCountdown();
+                const countdownTimer = setInterval(updateCountdown, 1000);
+            {% endif %}
+
+            // Background image opacity control
+            function setOpacity(){
+                const maxWidth = 1140;
+                const width = $(window).width();
+                $('#webinar-cube-left').css({
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
+                });
+                $('#webinar-tentacle-right').css({
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
+                });
+            }
+
+            $(document).ready(setOpacity);
+            $(window).resize(setOpacity);
+        </script>
+    </div>
+{% endblock %}

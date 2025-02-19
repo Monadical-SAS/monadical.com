@@ -253,7 +253,7 @@
 
 /* Services Section */
 .services-section {
-    padding: 100px 0;
+    padding: 100px 50px;
     position: relative;
 }
 
@@ -264,6 +264,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .services-header .title-group {
@@ -279,7 +280,7 @@
 
 .services-left {
     flex: 0 0 65%;
-    max-width: 65%;
+    max-width: 100%;
 }
 
 .services-right {
@@ -296,6 +297,7 @@
     height: 700px;
     object-fit: cover;
     border-radius: 20px;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .mini-title {
@@ -706,11 +708,25 @@
     }
 
     .services-header {
-        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0;
     }
 
     .services-header .title-group {
         padding-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .services-nav {
+        margin: 0;  /* Reset margin */
+        justify-content: center;  /* Center the arrows */
+    }
+
+    .section-title {
+        text-align: center;
     }
 
     .articles-section .col-md-6 {
@@ -718,9 +734,23 @@
         max-width: 100%;
     }
 
-    .services-nav {
-        top: 0;
-        transform: none;
+    .services-layout {
+        grid-template-columns: 1fr;  /* Stack on mobile */
+        gap: 40px;
+    }
+
+    .services-carousel {
+        grid-row: 2;
+        max-width: 100%;
+    }
+
+    .services-image {
+        height: 400px;
+    }
+
+    .carousel-dots {
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
 }
 
@@ -967,6 +997,129 @@
     .final-cta h2 {
         font-size: 32px !important;  /* Adjusted for mobile */
         margin-bottom: 1.5rem !important;
+    }
+}
+
+/* Services Layout */
+.services-layout {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.services-carousel {
+    grid-column: 1;
+    position: relative;
+    width: 100%;
+    max-width: 100%;  /* Ensure content doesn't overflow */
+}
+
+.carousel-item {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+    visibility: visible;
+}
+
+.services-fixed-image {
+    grid-column: 2;
+    position: sticky;
+    margin-top: -60px;
+    height: fit-content;
+    width: 100%;      /* Ensure image container takes full width */
+    max-width: 100%;  /* Prevent overflow */
+}
+
+.services-content {
+    width: 100%;
+    max-width: 100%;  /* Ensure content doesn't overflow */
+}
+
+.services-image {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Update responsive styles to maintain proportions as long as possible */
+@media (max-width: 992px) {
+    .services-layout {
+        grid-template-columns: 1fr;  /* Stack on mobile */
+        gap: 40px;
+    }
+
+    .services-carousel {
+        grid-row: 2;
+        max-width: 100%;
+    }
+
+    .services-fixed-image {
+        grid-column: 1;
+        grid-row: 1;
+        position: relative;
+        top: 0;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+
+    .services-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-image {
+        height: 300px;
+    }
+}
+
+/* Carousel Dots Navigation */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #0087B4;
+    transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+    .carousel-dots {
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
 }
 

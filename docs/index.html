@@ -247,53 +247,281 @@
                 <div class="services-header">
                     <div class="title-group">
                         <span class="mini-title">USE CASES</span>
-                        <h2 class="section-title">Unleash Your <span class="highlight">Engineering</span> Team's Potential.</h2>
+                        <h2 class="section-title carousel-title">Unleash Your <span class="highlight">Engineering</span> Team's Potential.</h2>
                     </div>
                     <div class="services-nav">
-                        <div class="nav-arrow prev"></div>
-                        <div class="nav-arrow next"></div>
+                        <div class="nav-arrow prev" onclick="moveCarousel(-1)"></div>
+                        <div class="nav-arrow next" onclick="moveCarousel(1)"></div>
                     </div>
                 </div>
-                <div class="services-content">
-                    <div class="services-left">
-                        <p class="section-subtitle">
-                            Your engineers want to spend as much time as possible doing what they do best: solving difficult problems
-                            and translating those problems into elegant technical solutions. Al can help eliminate tedious
-                            or repetitive tasks freeing them up to focus on activities that create genuine enterprise value.
-                        </p>
+                <div class="services-layout">
+                    <div class="services-carousel">
+                        <!-- Engineering Section -->
+                        <div class="services-content carousel-item active" data-index="0">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your engineers want to spend as much time as possible doing what they do best: solving difficult problems
+                                    and translating those problems into elegant technical solutions. AI can help eliminate tedious
+                                    or repetitive tasks freeing them up to focus on activities that create genuine enterprise value.
+                                </p>
 
-                        <div class="services-grid">
-                            <div class="service-card">
-                                <h3>Code Generation and Refactoring</h3>
-                                <p>Accelerate code drafts, refactor legacy Systems for performance and maintainability. etc</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>Quality Assurance & Testing</h3>
-                                <p>Test case generation for broader coverage, real-time anomaly detection, root-cause analysis. etc</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>Project Management</h3>
-                                <p>Forecast delivery timelines and team workload, optimize pipeline for smoother sprints. etc.</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>Knowledge Management</h3>
-                                <p>Documentation generation and updating, smart search & QA, best practice capture and sharing.</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>Predictive CI/CD Pipelines</h3>
-                                <p>Anticipate build failures, optimize resource allocation for fast, reliable releases, etc.</p>
-                            </div>
-                            <div class="service-card">
-                                <h3>Security & Compliance</h3>
-                                <p>Continuous code scanning, automated compliance checks, etc.</p>
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Code Generation and Refactoring</h3>
+                                        <p>Accelerate code drafts, refactor legacy Systems for performance and maintainability. etc</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Quality Assurance & Testing</h3>
+                                        <p>Test case generation for broader coverage, real-time anomaly detection, root-cause analysis. etc</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Project Management</h3>
+                                        <p>Forecast delivery timelines and team workload, optimize pipeline for smoother sprints. etc.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Knowledge Management</h3>
+                                        <p>Documentation generation and updating, smart search & QA, best practice capture and sharing.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Predictive CI/CD Pipelines</h3>
+                                        <p>Anticipate build failures, optimize resource allocation for fast, reliable releases, etc.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Security & Compliance</h3>
+                                        <p>Continuous code scanning, automated compliance checks, etc.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <a href="#" class="services-learn-more">LEARN MORE ABOUT MONADICAL'S SERVICES ></a>
+                        <!-- Operations Section -->
+                        <div class="services-content carousel-item" data-index="1">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your operations team keeps your business running smoothly. But they often get bogged down with repetitive tasks and manual data processing. AI can streamline workflows, automate routine decisions, and help your team focus on strategic improvements that drive efficiency.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Process Optimization</h3>
+                                        <p>Identify bottlenecks, recommend workflow improvements, automate routine approvals.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Resource Planning</h3>
+                                        <p>Predict resource needs, optimize scheduling, balance workload distribution</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Data Integration</h3>
+                                        <p>Automate data collection and cleansing, connect siloed systems, standardize reporting</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Risk Management</h3>
+                                        <p>Monitor operational metrics, flag potential issues, recommend mitigation steps.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Vendor Management</h3>
+                                        <p>Track performance metrics, automate communications, optimize contract renewals</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Knowledge Capture</h3>
+                                        <p>Document SOPs, maintain process libraries, enable smart search across operational data</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sales Section -->
+                        <div class="services-content carousel-item" data-index="2">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your sales team needs to spend their time building relationships and closing deals, not getting lost in administrative tasks. AI can handle the busywork, surface key insights, and help reps focus their energy where it matters most.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Lead Qualification</h3>
+                                        <p>Score and prioritize prospects, recommend next best actions, automate follow-ups</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Deal Intelligence</h3>
+                                        <p>Track pipeline health, forecast outcomes, identify at-risk opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Meeting Support</h3>
+                                        <p>Automated note-taking, action item capture, conversation intelligence</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Proposal Generation</h3>
+                                        <p>Custom document creation, pricing optimization, competitor analysis</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Account Planning</h3>
+                                        <p>Relationship mapping, whitespace analysis, strategic recommendations</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Sales Enablement</h3>
+                                        <p>Smart content recommendations, guided selling, best practice sharing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Section -->
+                        <div class="services-content carousel-item" data-index="3">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your product team needs deep insights into customer needs and market opportunities. AI can help process vast amounts of feedback, identify patterns, and accelerate the path from idea to launch.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Customer Insights</h3>
+                                        <p>Analyze feedback across channels, identify emerging needs, track sentiment</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Feature Planning</h3>
+                                        <p>Prioritize roadmap items, estimate development effort, model impact</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Market Research</h3>
+                                        <p>Track competitor moves, identify industry trends, surface opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>User Experience</h3>
+                                        <p>Generate test scenarios, analyze usage patterns, optimize flows</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Documentation</h3>
+                                        <p>Auto-generate product specs, maintain technical docs, create user guides</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Launch Planning</h3>
+                                        <p>Coordinate cross-functional tasks, track dependencies, optimize timing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Support Section -->
+                        <div class="services-content carousel-item" data-index="4">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your support team strives to provide excellent service. But repetitive queries and manual processes slow them down. AI can handle routine questions, surface relevant solutions, and help your team focus on complex issues that require human expertise.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Query Resolution</h3>
+                                        <p>Auto-categorize tickets, suggest responses, route to right experts</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Knowledge Base</h3>
+                                        <p>Maintain living documentation, smart search, identify content gaps</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Customer Intelligence</h3>
+                                        <p>Track satisfaction trends, predict churn risks, identify upsell opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Performance Analytics</h3>
+                                        <p>Monitor response times, identify training needs, optimize staffing</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Self-Service</h3>
+                                        <p>Power intelligent chatbots, guide users to solutions, automate common fixes</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Proactive Support</h3>
+                                        <p>Predict potential issues, trigger preventive actions, automate check-ins</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Finance Section -->
+                        <div class="services-content carousel-item" data-index="5">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your finance team needs to maintain accuracy while providing strategic insights. AI can automate routine calculations, flag anomalies, and help your team focus on analysis that drives business decisions.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Financial Planning</h3>
+                                        <p>Forecast scenarios, optimize budgets, identify cost savings</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Expense Management</h3>
+                                        <p>Automate approvals, detect fraud, track policy compliance</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Revenue Analysis</h3>
+                                        <p>Track performance metrics, identify trends, model projections</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Audit Support</h3>
+                                        <p>Flag unusual patterns, maintain audit trails, automate reconciliations</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Cash Management</h3>
+                                        <p>Optimize working capital, predict cash flows, manage collections</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Reporting</h3>
+                                        <p>Automate standard reports, generate custom views, maintain compliance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marketing Section -->
+                        <div class="services-content carousel-item" data-index="6">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your marketing team needs to create compelling campaigns while measuring what works. AI can automate campaign management, surface performance insights, and help your team focus on creative strategy.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Content Creation</h3>
+                                        <p>Generate drafts, optimize messaging, personalize at scale</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Campaign Analytics</h3>
+                                        <p>Track performance, identify winning tactics, optimize spend</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Audience Insights</h3>
+                                        <p>Segment customers, predict behaviors, identify opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Social Media</h3>
+                                        <p>Schedule posts, monitor engagement, recommend content</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Email Marketing</h3>
+                                        <p>Optimize send times, personalize content, automate workflows</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Brand Monitoring</h3>
+                                        <p>Track mentions, analyze sentiment, identify trends</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="services-right">
+                    <div class="services-fixed-image">
                         <img src="/static/engineering.png" alt="Services" class="services-image">
                     </div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="carousel-dot active" data-index="0"></div>
+                    <div class="carousel-dot" data-index="1"></div>
+                    <div class="carousel-dot" data-index="2"></div>
+                    <div class="carousel-dot" data-index="3"></div>
+                    <div class="carousel-dot" data-index="4"></div>
+                    <div class="carousel-dot" data-index="5"></div>
+                    <div class="carousel-dot" data-index="6"></div>
                 </div>
             </div>
         </div>
@@ -333,18 +561,18 @@
                     
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="/static/remote-work.jpg" alt="How to Make Remote Work: Part One">
-                            <h3>How to Make Remote Work: Part One</h3>
-                            <p>How to build asyncronous processes that enable you to work efficiently with a distributed engineering team.</p>
-                            <a href="/posts/how-to-make-remote-work-part-one.html" class="read-more">READ MORE →</a>
+                            <img src="/static/from-firebase-to-django.png?v=2" alt="How to Migrate from Firebase to Django">
+                            <h3>How to Migrate from Firebase to Django</h3>
+                            <p>Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)</p>
+                            <a href="/posts/from-firebase-to-django.html" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="/static/open-source-innovation-technology.jpg" alt="Why Open Source Projects Are Key to Innovation &amp; Technology">
-                            <h3>Why Open Source Projects Are Key to Innovation &amp; Technology</h3>
-                            <p>Find out how open source projects are essential to innovation and the development of new technology.</p>
-                            <a href="/posts/open-source-innovation-technology.html" class="read-more">READ MORE →</a>
+                            <img src="/static/morpheus.png" alt="Morpheus: A Dream Machine for AI Art Generation">
+                            <h3>Morpheus: A Dream Machine for AI Art Generation</h3>
+                            <p>Giving you the power to create stunning and beautiful generative art.</p>
+                            <a href="/posts/morpheus-announcement.html" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                 </div>
@@ -460,7 +688,8 @@
 
 
     
-    
+<script src="/static/core/js/carousel.js"></script>
+
 
     <!-- Smooth Scroll to Anchor Links Animation -->
     <script>

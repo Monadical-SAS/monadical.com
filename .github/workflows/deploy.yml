@@ -22,9 +22,9 @@ jobs:
         with:
           fetch-depth: 1
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.12.8
+          python-version: 3.12.9
           architecture: x64
       - name: Detect last autodeployment
         run: |

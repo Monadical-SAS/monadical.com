@@ -84,10 +84,25 @@
     margin-bottom: 40px;
 }
 
+.date-time.past-webinar {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
 .date-time h3 {
     font-size: 28px;
     font-weight: 700;
     color: #1A1A1A;
+}
+
+.date-time h3.thank-you {
+    font-size: 36px;
+    color: #0087B4;
+    margin-bottom: 1rem;
 }
 
 .date-time .starting-soon {
@@ -100,6 +115,13 @@
     color: #666;
     margin-top: 8px;
     font-style: italic;
+}
+
+.date-time .subtitle {
+    font-size: 1.6rem;
+    color: #666;
+    margin-top: 1rem;
+    line-height: 1.5;
 }
 
 .countdown {

@@ -23,23 +23,19 @@
                         <p class="subtitle">{{description}}</p>
                     </div>
 
-                    {% if is_future_webinar %}
+                    {% if not published %}
                         <!-- Pre-webinar promotion view -->
                         <div class="webinar-promo">
+                          {% if is_future_webinar %}
                             <div class="date-time">
-                                {% if is_future_webinar %}
-                                    {% set minutes_until = ((webinar_date - now).total_seconds() / 60) | int %}
-                                    {% if minutes_until <= 60 and minutes_until > 0 %}
-                                        <h3 class="starting-soon" id="countdown-minutes">STARTING IN {{ minutes_until }} MINUTES!</h3>
-                                        <p class="redirect-notice">You'll be redirected once we start</p>
-                                    {% else %}
-                                        <h3>{{formatted_date}}</h3>
-                                    {% endif %}
-                                {% else %}
-                                    <h3>{{formatted_date}}</h3>
-                                {% endif %}
+                              {% set minutes_until = ((webinar_date - now).total_seconds() / 60) | int %}
+                              {% if minutes_until <= 60 and minutes_until > 0 %}
+                                  <h3 class="starting-soon" id="countdown-minutes">STARTING IN {{ minutes_until }} MINUTES!</h3>
+                                  <p class="redirect-notice">You'll be redirected once we start</p>
+                              {% else %}
+                                  <h3>{{formatted_date}}</h3>
+                              {% endif %}
                             </div>
-
                             <div class="countdown" id="countdown">
                                 <div class="countdown-item">
                                     <span id="days">12</span>
@@ -63,6 +59,12 @@
                             <div class="scroll-down">
                                 <span class="scroll-arrow"></span>
                             </div>
+                          {% else %}
+                            <div class="date-time past-webinar">
+                                <h3 class="thank-you">Thank you for your interest!</h3>
+                                <p class="subtitle">The webinar has ended. We'll be publishing the slides and video recording shortly.</p>
+                            </div>
+                          {% endif %}
                         </div>
 
                         <!-- Embedded promotion content -->

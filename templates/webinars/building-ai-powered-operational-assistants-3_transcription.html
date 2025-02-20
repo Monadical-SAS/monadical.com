@@ -10,11 +10,11 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     
-    <meta name="description" content="&lt;center&gt;  # Effective Refactoring  *Originally published 2019-01-25 on [docs.sweeting.me](https://do">
+    <meta name="description" content="## Quick recap  The meeting focused on the topic of AI-powered operational assistance, exploring the">
     
     
     
-    <meta property="og:title" content="Effective Refactoring - HedgeDoc">
+    <meta property="og:title" content="HedgeDoc - Collaborative markdown notes">
     
     
     
@@ -25,7 +25,7 @@
     <meta property="og:image:type" content="image/png">
     
     <base href="">
-    <title>Effective Refactoring - HedgeDoc</title>
+    <title>HedgeDoc - Collaborative markdown notes</title>
     <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
@@ -47,65 +47,42 @@
         <small>
             <span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/02e90754bed70d2da7009cc8fd16e11c?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="milton+docs"></i></span>
                 
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:31:29 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sun Jan 12 2020 21:47:45 GMT+0000 (Coordinated Universal Time)"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 19 2025 15:35:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 19 2025 15:48:46 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">2023 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">111 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
     </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+    <div id="doc" class="container markdown-body" >## Quick recap
 
-# Effective Refactoring
+The meeting focused on the topic of AI-powered operational assistance, exploring the current state and hype surrounding AI agents. Participants delved into the reality of AI capabilities, discussing the advantages and limitations of open-source models and self-hosting. They highlighted various use cases for AI in organizations, such as loan processing, travel and expense reporting. and RFP processing, empnasizing the benents of AI in data-intensive and repetitive tasks. The discussion also covered the importance of identifving suitable use cases. the need for numan intervention in complex decision-making processes, and the growing trend towards self-hosting for better control and security
 
-*Originally published 2019-01-25 on [docs.sweeting.me](https://docs.sweeting.me/s/blog).*
+## Summary
 
-&lt;/center&gt;
+## AI-powered operational assistance
+The main subject discussed in the transcript revolves around AI-powered operational assistance. Participants
+highlighted the current state and hype surrounding AI agents, emphasizing the importance of open-source models and self-hosting for organizations. They explored various use cases for AI in businesses, focusing on the benefits and limitations of integrating AI into organizational processes.
 
-The title is misleading, because this is actually about how to design your code *beforehand* so that you can do effective refactoring *later*.
+## Hype vs reality of AI agents
+In the discussion on the hype vs reality of AI agents, particiants explored the current state of AI agents, their capabilities, and the misconceptions surrounding them.
+They highlighted the need for clarity in defining AI agents and the reality of tneir current limitations, as well as the growing sentiment towards open-source models and self-hosting for better control and security.
 
+## Open-source models and self-hosting
+The discussion on open-source models and self-hosting focused on the advantages of using open-source models, such as cost-effectiveness, flexibility, and the ability to fine-tune models for specific use cases. Participants emphasized the growing trend towards self-hosting, as it allows organizations to maintain control over their data and reduce reliance on third-party platforms, which can be more secure ana cost-effective in the long run.
 
-Use subtle queues to create natural API boundaries in your code.
+## Use cases for AI in organizations
+Participants discussed various use cases for AI in organizations, highlighting the benefits of AI in data-intensive, repetitive tasks, such as loan processing, travel and expense reporting, clinical reporting. and RFP processing. They emphasized the importance of identifying processes where AI can effectively process
+large amounts or informanion and provide value by reducing manual labor and enhancing decision-making.
 
-
-This is a good thing, not an antipattern:
-
-```python
-EXAMPLE_TASKS [
-    do_thing_to_text,
-    do_some_other_thing,
-    do_another_thing,
-]
-
-for func in EXAMPLE_TASKS:
-    func(**some_context)
-```
-
-Or even better:
-
-```python
-def do_all_things(data, do_thing, do_some_other_thing, do_another_thing):
-    if do_thing:
-        data = do_thing_to_text(data)
-    if do_some_other_thing:
-        data = do_some_other_thing(data)
-    if do_another_thing:
-        data = do_another_thing(data)
-    return data
-```
-
-This is a great pattern.  To the novice programmer, this might look repetitive, like it&#39;s in need of some DRYing, but actually this is an extremely friendly pattern for refactoring later, as it requires very little thought for a programmer to come in and understand exactly what&#39;s happening, and where the boundaries are between concerns.
-
-This pattern allows your application to be &#34;strangled&#34; by a lator refactor with greater ease:
-
-https://www.martinfowler.com/bliki/EventInterception.html
-https://www.martinfowler.com/bliki/StranglerApplication.html
-
-http://matthewrocklin.com/blog/work/2019/06/23/avoid-indirection
-https://overreacted.io/goodbye-clean-code/</div>
+## Benefits and limitations of AI in business processes
+The discussion on the benefits and limitations of AI in business processes centered around the strengths of AI in processing vast amounts or unstructured information and its ability to improve ethciency in repetitive tasks.
+Participants also acknowledged the limitations of AI, such as its lack or judgement and the need for human
+intervention in complex decision-making processes. They emphasized the importance of identifying suitable use
+cases and integrating AI in a way that complements human expertise.</div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">

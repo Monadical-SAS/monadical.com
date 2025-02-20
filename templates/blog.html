@@ -48,7 +48,7 @@
 
         <!-- Articles Grid -->
         <div class="insights-grid" id="articles-grid">
-            {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) + (PODCAST.values() | list) %}
+            {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) + (PODCAST.values() | list) + (WEBINARS.values() | list) %}
             {% set total_posts = posts|length %}
 
             {% for post in posts | sort(attribute='date', reverse=True) %}
@@ -56,12 +56,14 @@
                      data-type="{% if post in POSTS.values() %}article
                              {% elif post in REPORTS.values() %}report
                              {% elif post in PODCAST.values() %}podcast
+                             {% elif post in WEBINARS.values() %}webinar
                              {% endif %}">
                     <a href="{{ post.url }}" class="card-link">
                         <div class="content-type">
                             {% if post in POSTS.values() %}ARTICLE
                             {% elif post in REPORTS.values() %}REPORT
                             {% elif post in PODCAST.values() %}PODCAST
+                            {% elif post in WEBINARS.values() %}WEBINAR
                             {% endif %}
                         </div>
                         <div class="card-image" style="background-image: url('{{ post.img }}')"></div>
@@ -70,7 +72,13 @@
                             <p>{{ post.description }}</p>
                             <div class="card-action">
                                 {% if post.type == 'webinar' %}
-                                    <button class="action-btn">WATCH WEBINAR REPLAY →</button>
+                                    {% set webinar_date = post.date | string %}
+                                    {% set current_time = now | string %}
+                                    {% if webinar_date > current_time %}
+                                        <button class="action-btn">RSVP HERE →</button>
+                                    {% else %}
+                                        <button class="action-btn">WATCH WEBINAR REPLAY →</button>
+                                    {% endif %}
                                 {% elif post.type == 'podcast' %}
                                     <button class="action-btn">LISTEN →</button>
                                 {% elif post.type == 'resource' %}

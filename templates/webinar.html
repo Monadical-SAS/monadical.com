@@ -27,7 +27,17 @@
                         <!-- Pre-webinar promotion view -->
                         <div class="webinar-promo">
                             <div class="date-time">
-                                <h3>{{formatted_date}}</h3>
+                                {% if is_future_webinar %}
+                                    {% set minutes_until = ((webinar_date - now).total_seconds() / 60) | int %}
+                                    {% if minutes_until <= 60 and minutes_until > 0 %}
+                                        <h3 class="starting-soon" id="countdown-minutes">STARTING IN {{ minutes_until }} MINUTES!</h3>
+                                        <p class="redirect-notice">You'll be redirected once we start</p>
+                                    {% else %}
+                                        <h3>{{formatted_date}}</h3>
+                                    {% endif %}
+                                {% else %}
+                                    <h3>{{formatted_date}}</h3>
+                                {% endif %}
                             </div>
 
                             <div class="countdown" id="countdown">
@@ -154,15 +164,27 @@
                 const now = new Date().getTime();
                 const distance = webinarDate - now;
 
+                // Calculate days, hours, minutes, seconds
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+                // Update the countdown display
                 document.getElementById("days").textContent = days;
                 document.getElementById("hours").textContent = hours;
                 document.getElementById("minutes").textContent = minutes;
                 document.getElementById("seconds").textContent = seconds;
+
+                // Update the "minutes until start" message if within 60 minutes
+                const totalMinutes = Math.ceil(distance / (1000 * 60));
+                const countdownMinutes = document.getElementById("countdown-minutes");
+                if (countdownMinutes && totalMinutes <= 60 && totalMinutes > 0) {
+                    countdownMinutes.textContent = `STARTING IN ${totalMinutes} MINUTES!`;
+                } else if (countdownMinutes && totalMinutes <= 0) {
+                    // Redirect to the webinar URL when it starts
+                    window.location.href = "{{redirect_url}}";
+                }
 
                 if (distance < 0) {
                     clearInterval(countdownTimer);

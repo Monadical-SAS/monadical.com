@@ -161,7 +161,12 @@
                         <!-- Pre-webinar promotion view -->
                         <div class="webinar-promo">
                             <div class="date-time">
-                                <h3>Saturday, March 22th @ 12PM EST</h3>
+                                
+                                    
+                                    
+                                        <h3>Saturday, March 22th @ 12PM EST</h3>
+                                    
+                                
                             </div>
 
                             <div class="countdown" id="countdown">
@@ -245,7 +250,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 19 2025 15:31:20 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 19 2025 16:07:41 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">59 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">95 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -316,19 +321,31 @@ Plan to walk away with a clear understanding of how to implement Al solutions in
         <script>
             // Countdown Timer
             function updateCountdown() {
-                const webinarDate = new Date("2025-03-22T12:00:00-06:00").getTime();
+                const webinarDate = new Date("2025-03-22T12:00:00-05:00").getTime();
                 const now = new Date().getTime();
                 const distance = webinarDate - now;
 
+                // Calculate days, hours, minutes, seconds
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+                // Update the countdown display
                 document.getElementById("days").textContent = days;
                 document.getElementById("hours").textContent = hours;
                 document.getElementById("minutes").textContent = minutes;
                 document.getElementById("seconds").textContent = seconds;
+
+                // Update the "minutes until start" message if within 60 minutes
+                const totalMinutes = Math.ceil(distance / (1000 * 60));
+                const countdownMinutes = document.getElementById("countdown-minutes");
+                if (countdownMinutes && totalMinutes <= 60 && totalMinutes > 0) {
+                    countdownMinutes.textContent = `STARTING IN ${totalMinutes} MINUTES!`;
+                } else if (countdownMinutes && totalMinutes <= 0) {
+                    // Redirect to the webinar URL when it starts
+                    window.location.href = "https://reflector.monadical.com/webinars/ai-operational-assistant";
+                }
 
                 if (distance < 0) {
                     clearInterval(countdownTimer);

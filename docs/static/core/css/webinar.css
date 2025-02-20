@@ -90,6 +90,18 @@
     color: #1A1A1A;
 }
 
+.date-time .starting-soon {
+    color: #00A651;  /* Green color for urgency */
+    animation: pulse 2s infinite;
+}
+
+.date-time .redirect-notice {
+    font-size: 16px;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
+
 .countdown {
     display: flex;
     justify-content: center;
@@ -154,6 +166,18 @@
     }
     60% {
         transform: translateY(-15px) rotate(45deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

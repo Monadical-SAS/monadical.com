@@ -5,15 +5,35 @@ import os
 import subprocess
 import sys
 from datetime import datetime
+from bs4 import BeautifulSoup
+from markupsafe import Markup
+import markdown2
 
 # Library to implement rss
 from feedgen.feed import FeedGenerator
-from flask import Flask, render_template, redirect, make_response
-from markupsafe import Markup
+from flask import Flask, render_template, redirect, make_response, abort
 
 ### Config
 app = Flask(__name__)
+
+def get_doc_content(filename):
+    """Extract only the content from within the markdown-body div and render markdown to HTML"""
+    content = app.jinja_loader.get_source(app.jinja_env, filename)[0]
+    soup = BeautifulSoup(content, 'html.parser')
+    doc_div = soup.find('div', {'id': 'doc'})
+
+    if doc_div:
+        # Get the raw content
+        raw_content = doc_div.decode_contents()
+        # Convert markdown to HTML
+        html_content = markdown2.markdown(raw_content, extras=['fenced-code-blocks', 'header-ids'])
+        return Markup(html_content)
+
+    return Markup('')
+
 app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.get_source(app.jinja_env, filename)[0])
+app.jinja_env.globals['get_doc_content'] = get_doc_content
+
 CONFIG_FILE = 'content.json'
 TEAM_FILE = 'team.json'
 STACK_FILE = 'stacks.json'
@@ -43,6 +63,7 @@ CONFIG = load_config(CONFIG_FILE)
 
 PAGES = {page['url']: page for page in list(CONFIG['PAGES'].values())}  # {url: {page_data}}
 POSTS = {post['url']: post for post in list(CONFIG['POSTS'].values())}  # {url: {post_data}}
+WEBINARS = {webinar['url']: webinar for webinar in list(CONFIG['WEBINARS'].values())}  # {url: {post_data}}
 CASES = {case['url']: case for case in list(CONFIG['CASES'].values())}  # {url: {post_data}}
 RATES = {rate['url']: rate for rate in list(CONFIG['RATES'].values())}  # {url: {post_data}}
 REPORTS = {report['url']: report for report in list(CONFIG['REPORTS'].values())}  # {url: {post_data}}
@@ -117,6 +138,65 @@ def render_post(path):
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 
+
+@app.route('/webinars/<path>')
+def render_webinar(path):
+    try:
+        webinar = WEBINARS[f'/webinars/{path}']
+    except KeyError:
+        abort(404)
+
+    # Create promotion template
+    promotion_template = f"webinars/{webinar['key']}_promotion.html"
+    transcription_template = f"webinars/{webinar['key']}_transcription.html"
+
+    # Download promotion and transcription content
+    if 'promotion_source' in webinar:
+        download_post({
+            'template': promotion_template,
+            'source': webinar['promotion_source']
+        })
+        webinar['promotion_template'] = promotion_template
+
+    if 'transcription_source' in webinar:
+        download_post({
+            'template': transcription_template,
+            'source': webinar['transcription_source']
+        })
+        webinar['transcription_template'] = transcription_template
+
+    # Calculate if webinar is in the future using timezone-aware comparison
+    webinar_date = datetime.fromisoformat(webinar['date'])
+    current_time = datetime.now(webinar_date.tzinfo)  # Use same timezone as webinar_date
+    is_future_webinar = webinar_date > current_time
+
+    # Format the date for display
+    day_suffix = 'th'
+    if webinar_date.day in [1, 21, 31]:
+        day_suffix = 'st'
+    elif webinar_date.day == 2:
+        day_suffix = 'nd'
+    elif webinar_date.day == 3:
+        day_suffix = 'rd'
+
+    formatted_date = webinar_date.strftime(f'%A, %B %-d{day_suffix} @ %-I%p EST')
+
+    # For now, access is controlled client-side via localStorage
+    # In a real implementation, this would be server-side session management
+    access_granted = False
+
+    return render_template(
+        'webinar.html',
+        now=current_time,
+        webinar_date=webinar_date,
+        is_future_webinar=is_future_webinar,
+        access_granted=access_granted,
+        formatted_date=formatted_date,
+        **CONFIG,
+        **webinar
+    )
+
+
 @app.route('/reports/<path>')
 def render_report(path):
     report = REPORTS[f'/reports/{path}']
@@ -146,6 +226,7 @@ def generate_rss():
 
     return response
 
+
 @app.route('/projects/<path>')
 def render_case(path):
     case = CASES[f'/projects/{path}']
@@ -169,6 +250,10 @@ if __name__ == '__main__':
         # just print list of report urls
         if len(REPORTS) > 0:
             print('\n'.join(HOST + url for url in REPORTS.keys()))
+    elif len(sys.argv) > 1 and sys.argv[1] == '--webinars':
+        # just print list of webinar urls
+        if len(WEBINARS) > 0:
+            print('\n'.join(HOST + url for url in WEBINARS.keys()))
     else:
         # run the flask http server
         port = int(os.environ.get('PORT', 5000))

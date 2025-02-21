@@ -1,0 +1,94 @@
+/* Markdown Content Styles */
+.article-content {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 2rem 0 !important;
+    line-height: 1.6 !important;
+}
+
+.article-content p {
+    font-size: 1.3rem !important;
+    color: #4A4A4A !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+}
+
+.article-content h2 {
+    font-size: 2.8rem !important;
+    font-weight: 300 !important;
+    color: #1A1A1A !important;
+    margin: 2.5rem 0 1.5rem !important;
+    line-height: 1.2 !important;
+}
+
+.article-content ul {
+    margin: 1.5rem 0 2rem !important;
+    padding-left: 1rem !important;
+}
+
+.article-content ul li {
+    font-size: 1.3rem !important;
+    color: #4A4A4A !important;
+    margin-bottom: 1rem !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+    position: relative !important;
+}
+
+.article-content ul li::before {
+    content: '' !important;
+    position: absolute !important;
+    left: -1.2rem !important;
+    top: 0.6rem !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #0087B4 !important;
+    border-radius: 0 !important;
+}
+
+/* Code blocks if needed */
+.article-content pre {
+    background: #f5f7f9 !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    overflow-x: auto !important;
+}
+
+.article-content code {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.2rem !important;
+    color: #1A1A1A !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .article-content {
+        padding: 1.5rem 2rem !important;
+    }
+
+    .article-content h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .article-content p,
+    .article-content ul li {
+        font-size: 1.3rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-content {
+        padding: 1rem !important;
+    }
+
+    .article-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .article-content p,
+    .article-content ul li {
+        font-size: 1.2rem !important;
+    }
+}

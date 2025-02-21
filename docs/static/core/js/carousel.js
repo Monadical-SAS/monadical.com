@@ -59,7 +59,7 @@
     function startAutoPlay() {
         autoPlayInterval = setInterval(() => {
             moveCarousel(1);
-        }, 5000);
+        }, 15000);
     }
 
     function resetAutoPlay() {

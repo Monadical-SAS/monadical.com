@@ -437,27 +437,22 @@
             <div class="col-12">
                 <span class="mini-title">FEATURED ARTICLES</span>
                 <div class="row">
-                    {% set posts = POSTS.values()|list %}
-                    {% set posts_length = posts|length %}
-                    {% set first_index = range(0, posts_length)|random %}
-                    {% set second_index = range(0, posts_length)|random %}
-                    {% if first_index == second_index and posts_length > 1 %}
-                        {% set second_index = (first_index + 1) % posts_length %}
-                    {% endif %}
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="{{posts[first_index].img}}" alt="{{posts[first_index].title}}">
-                            <h3>{{posts[first_index].title}}</h3>
-                            <p>{{posts[first_index].description}}</p>
-                            <a href="{{posts[first_index].url}}" class="read-more">READ MORE →</a>
+                            <img src="{{POSTS['dont-give-big-tech-your-papaya'].img}}"
+                                alt="{{POSTS['dont-give-big-tech-your-papaya'].title}}">
+                            <h3>{{POSTS['dont-give-big-tech-your-papaya'].title}}</h3>
+                            <p>{{POSTS['dont-give-big-tech-your-papaya'].description}}</p>
+                            <a href="{{POSTS['dont-give-big-tech-your-papaya'].url}}" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="article-card">
-                            <img src="{{posts[second_index].img}}" alt="{{posts[second_index].title}}">
-                            <h3>{{posts[second_index].title}}</h3>
-                            <p>{{posts[second_index].description}}</p>
-                            <a href="{{posts[second_index].url}}" class="read-more">READ MORE →</a>
+                            <img src="{{POSTS['conversations-are-the-new-oil'].img}}"
+                                alt="{{POSTS['conversations-are-the-new-oil'].title}}">
+                            <h3>{{POSTS['conversations-are-the-new-oil'].title}}</h3>
+                            <p>{{POSTS['conversations-are-the-new-oil'].description}}</p>
+                            <a href="{{POSTS['conversations-are-the-new-oil'].url}}" class="read-more">READ MORE →</a>
                         </div>
                     </div>
                 </div>

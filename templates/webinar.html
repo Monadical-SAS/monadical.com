@@ -10,6 +10,7 @@
 {% block head %}
 <link rel="stylesheet" href="/static/core/css/index.css">
 <link rel="stylesheet" href="/static/core/css/webinar.css">
+<link rel="stylesheet" href="/static/core/css/markdown-content.css">
 {% endblock %}
 
 {% block article %}
@@ -23,10 +24,9 @@
                         <p class="subtitle">{{description}}</p>
                     </div>
 
-                    {% if not published %}
+                    {% if is_future_webinar %}
                         <!-- Pre-webinar promotion view -->
                         <div class="webinar-promo">
-                          {% if is_future_webinar %}
                             <div class="date-time">
                               {% set minutes_until = ((webinar_date - now).total_seconds() / 60) | int %}
                               {% if minutes_until <= 60 and minutes_until > 0 %}
@@ -59,26 +59,35 @@
                             <div class="scroll-down">
                                 <span class="scroll-arrow"></span>
                             </div>
-                          {% else %}
-                            <div class="date-time past-webinar">
-                                <h3 class="thank-you">Thank you for your interest!</h3>
-                                <p class="subtitle">The webinar has ended. We'll be publishing the slides and video recording shortly.</p>
-                            </div>
-                          {% endif %}
                         </div>
 
                         <!-- Embedded promotion content -->
                         <div class="article-content">
-                            {{ include_raw(promotion_template) }}
+                            {{ get_doc_content(promotion_template) }}
                         </div>
 
                         <div class="text-center">
                             <a href="{{rsvp_url}}" class="cta-button">RSVP HERE</a>
                         </div>
+                    {% elif not published %}
+                        <div class="webinar-promo">
+                          <div class="date-time past-webinar">
+                              <h3 class="thank-you">Thank you for your interest!</h3>
+                              <p class="subtitle">The webinar has ended. We'll be publishing the slides and video recording shortly.</p>
+                          </div>
+                        </div>
+                        <!-- Embedded promotion content -->
+                        <div class="article-content">
+                            {{ get_doc_content(promotion_template) }}
+                        </div>
                     {% else %}
                         <div id="webinar-content-wrapper">
                             <!-- Post-webinar access form -->
                             <div id="webinar-form-section">
+                                <!-- Embedded promotion content -->
+                                <div class="article-content">
+                                    {{ get_doc_content(promotion_template) }}
+                                </div>
                                 <h3 class="webinar-form-title">To Watch This Webinar, Fill Out the Brief Form Below:</h3>
                                 <div class="webinar-access-form">
                                     <form id="webinarAccessForm" onsubmit="handleFormSubmit(event)">
@@ -107,7 +116,9 @@
                             <div id="webinar-full-content" style="display: none;">
                                 {% if video_url %}
                                     <div class="video-container">
-                                      <iframe src="{{video_url}}" width="640" height="360" allow="autoplay" allowfullscreen></iframe>
+                                      <video controls preload="none" width="100%" allowfullscreen>
+                                          <source src="{{video_url}}" type="video/mp4">
+                                      </video>
                                     </div>
                                 {% endif %}
 
@@ -123,7 +134,7 @@
                                 </div>
 
                                 <div class="article-content">
-                                    {{ include_raw(transcription_template) }}
+                                    {{ get_doc_content(transcription_template) }}
                                 </div>
                             </div>
                         </div>

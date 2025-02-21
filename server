@@ -5,15 +5,35 @@ import os
 import subprocess
 import sys
 from datetime import datetime
+from bs4 import BeautifulSoup
+from markupsafe import Markup
+import markdown2
 
 # Library to implement rss
 from feedgen.feed import FeedGenerator
-from flask import Flask, render_template, redirect, make_response
-from markupsafe import Markup
+from flask import Flask, render_template, redirect, make_response, abort
 
 ### Config
 app = Flask(__name__)
+
+def get_doc_content(filename):
+    """Extract only the content from within the markdown-body div and render markdown to HTML"""
+    content = app.jinja_loader.get_source(app.jinja_env, filename)[0]
+    soup = BeautifulSoup(content, 'html.parser')
+    doc_div = soup.find('div', {'id': 'doc'})
+
+    if doc_div:
+        # Get the raw content
+        raw_content = doc_div.decode_contents()
+        # Convert markdown to HTML
+        html_content = markdown2.markdown(raw_content, extras=['fenced-code-blocks', 'header-ids'])
+        return Markup(html_content)
+
+    return Markup('')
+
 app.jinja_env.globals['include_raw'] = lambda filename: Markup(app.jinja_loader.get_source(app.jinja_env, filename)[0])
+app.jinja_env.globals['get_doc_content'] = get_doc_content
+
 CONFIG_FILE = 'content.json'
 TEAM_FILE = 'team.json'
 STACK_FILE = 'stacks.json'
@@ -121,7 +141,10 @@ def render_post(path):
 
 @app.route('/webinars/<path>')
 def render_webinar(path):
-    webinar = WEBINARS[f'/webinars/{path}']
+    try:
+        webinar = WEBINARS[f'/webinars/{path}']
+    except KeyError:
+        abort(404)
 
     # Create promotion template
     promotion_template = f"webinars/{webinar['key']}_promotion.html"

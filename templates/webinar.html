@@ -116,9 +116,12 @@
                             <div id="webinar-full-content" style="display: none;">
                                 {% if video_url %}
                                     <div class="video-container">
-                                      <video controls preload="none" width="100%" allowfullscreen>
-                                          <source src="{{video_url}}" type="video/mp4">
-                                      </video>
+                                        <video controls preload="none" width="100%" allowfullscreen>
+                                            <source src="{{video_url}}/download" type="video/mp4">
+                                            <source src="{{video_url}}/download" type="video/webm">
+                                            Your browser does not support the video tag or the video format.
+                                            You can <a href="{{video_url}}/download">download the video</a> to watch it locally.
+                                        </video>
                                     </div>
                                 {% endif %}
 

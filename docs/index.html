@@ -62,6 +62,7 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
+<script src="/static/core/js/newsletter.js" defer></script>
 
 </head>
 
@@ -242,23 +243,28 @@
         </div>-->
         <!-- Newsletter Signup -->
         <div class="newsletter-signup">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="signup-content">
-                        <h3>Our latest thinking on AI, in your inbox.</h3>
-                        <p>Be the most AI-savvy person on your team.<br>
-                           Get the Monadical newsletter and stay up to date.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="signup-form">
-                        <input type="email" placeholder="Your Email">
-                        <button class="subscribe-btn">SUBSCRIBE</button>
-                    </div>
-                    <small>We don't share your info with anyone, ever.</small>
-                </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="signup-content">
+                <h3>Our latest thinking on AI, in your inbox.</h3>
+                <p>Be the most AI-savvy person on your team.<br>
+                   Get the Monadical newsletter and stay up to date.</p>
             </div>
         </div>
+        <div class="col-md-6">
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <div class="signup-form">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+                </div>
+                <div class="success-message" style="display: none;">
+                    Thank you for your submission, we will get back to you as soon as possible.
+                </div>
+                <small>We don't share your info with anyone, ever.</small>
+            </form>
+        </div>
+    </div>
+</div>
 
         <!-- Services Section -->
         <div class="row services-section">

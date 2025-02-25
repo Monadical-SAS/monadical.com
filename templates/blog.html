@@ -6,6 +6,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/core/css/insights.css">
+<script src="/static/core/js/newsletter.js" defer></script>
 <script src="/static/core/js/insights.js" defer></script>
 {% endblock %}
 
@@ -27,24 +28,7 @@
         </div>
 
         <!-- Newsletter Signup -->
-        <div class="newsletter-signup">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="signup-content">
-                        <h3>Our latest thinking on AI, in your inbox.</h3>
-                        <p>Be the most AI-savvy person on your team.<br>
-                           Get the Monadical newsletter and stay up to date.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="signup-form">
-                        <input type="email" placeholder="Your Email">
-                        <button class="subscribe-btn">SUBSCRIBE</button>
-                    </div>
-                    <small>We don't share your info with anyone, ever.</small>
-                </div>
-            </div>
-        </div>
+        {% include "_newsletter_form.html" %}
 
         <!-- Articles Grid -->
         <div class="insights-grid" id="articles-grid">

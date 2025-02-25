@@ -64,6 +64,7 @@
 <link rel="stylesheet" href="/static/core/css/index.css">
 <link rel="stylesheet" href="/static/core/css/webinar.css">
 <link rel="stylesheet" href="/static/core/css/markdown-content.css">
+<script src="/static/core/js/webinar.js" defer></script>
 
 </head>
 
@@ -148,7 +149,10 @@
     
     <article>
         
-    <div id="webinar-content">
+    <div id="webinar-content"
+         data-webinar-date="2025-02-05T12:00:00-05:00"
+         data-redirect-url="https://reflector.monadical.com/webinars/ai-operational-assistant"
+         data-is-future-webinar="false">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -192,7 +196,7 @@ But operational assistants are very real, available today, and can unlock your t
                                 </div>
                                 <h3 class="webinar-form-title">To Watch This Webinar, Fill Out the Brief Form Below:</h3>
                                 <div class="webinar-access-form">
-                                    <form id="webinarAccessForm" onsubmit="handleFormSubmit(event)">
+                                    <form id="webinarAccessForm">
                                         <div class="form-group">
                                             <input type="text" id="name" name="name" placeholder=" " required>
                                             <label for="name">Your Name</label>
@@ -268,31 +272,6 @@ But operational assistants are very real, available today, and can unlock your t
                                 </div>
                             </div>
                         </div>
-
-                        <script>
-                            // Check localStorage on page load
-                            document.addEventListener('DOMContentLoaded', function() {
-                                const hasAccess = localStorage.getItem('webinar_access_granted') === 'true';
-                                if (hasAccess) {
-                                    document.getElementById('webinar-form-section').style.display = 'none';
-                                    document.getElementById('webinar-full-content').style.display = 'block';
-                                }
-                            });
-
-                            // Form submission handler
-                            function handleFormSubmit(event) {
-                                event.preventDefault();
-                                const form = event.target;
-                                const formData = new FormData(form);
-
-                                // Store access granted in localStorage
-                                localStorage.setItem('webinar_access_granted', 'true');
-
-                                // Show content immediately
-                                document.getElementById('webinar-form-section').style.display = 'none';
-                                document.getElementById('webinar-full-content').style.display = 'block';
-                            }
-                        </script>
                     
                 </div>
             </div>
@@ -305,59 +284,6 @@ But operational assistants are very real, available today, and can unlock your t
       <a href="/contact-us.html" class="btn btn-primary cta-button">BOOK A FREE AI STRATEGY CALL</a>
   </div>
 </div>
-
-        <script>
-            // Countdown Timer
-            function updateCountdown() {
-                const webinarDate = new Date("2025-02-05T12:00:00-05:00").getTime();
-                const now = new Date().getTime();
-                const distance = webinarDate - now;
-
-                // Calculate days, hours, minutes, seconds
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Update the countdown display
-                document.getElementById("days").textContent = days;
-                document.getElementById("hours").textContent = hours;
-                document.getElementById("minutes").textContent = minutes;
-                document.getElementById("seconds").textContent = seconds;
-
-                // Update the "minutes until start" message if within 60 minutes
-                const totalMinutes = Math.ceil(distance / (1000 * 60));
-                const countdownMinutes = document.getElementById("countdown-minutes");
-                if (countdownMinutes && totalMinutes <= 60 && totalMinutes > 0) {
-                    countdownMinutes.textContent = `STARTING IN ${totalMinutes} MINUTES!`;
-                } else if (countdownMinutes && totalMinutes <= 0) {
-                    // Redirect to the webinar URL when it starts
-                    window.location.href = "https://reflector.monadical.com/webinars/ai-operational-assistant";
-                }
-
-                if (distance < 0) {
-                    clearInterval(countdownTimer);
-                    document.getElementById("countdown").style.display = "none";
-                }
-            }
-
-            
-
-            // Background image opacity control
-            function setOpacity(){
-                const maxWidth = 1140;
-                const width = $(window).width();
-                $('#webinar-cube-left').css({
-                    opacity: (width < maxWidth) ? 0.1 : 0.6
-                });
-                $('#webinar-tentacle-right').css({
-                    opacity: (width < maxWidth) ? 0.1 : 0.6
-                });
-            }
-
-            $(document).ready(setOpacity);
-            $(window).resize(setOpacity);
-        </script>
     </div>
 
     </article>

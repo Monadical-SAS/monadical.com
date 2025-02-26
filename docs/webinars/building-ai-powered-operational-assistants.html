@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Building AI-Powered Operational Assistants</title>
+
+    <!-- Meta Tags Start -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Building AI-Powered Operational Assistants">
+    <meta name="description" content="From Simple Automation to Strategic Implementation">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="From Simple Automation to Strategic Implementation">
+    <meta property="og:image" name="image" content="https://monadical.com/static/webinar_slides/ai-assistants.png">
+    <meta property="og:title" content="Building AI-Powered Operational Assistants">
+    <meta property="og:type" content="webinar">
+    <meta property="og:url" content=https://monadical.com/webinars/building-ai-powered-operational-assistants.html />
+    <meta property="og:site_name" content="Monadical Consulting" />
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:description" content="From Simple Automation to Strategic Implementation">
+    <meta property="twitter:image" content="https://monadical.com/static/webinar_slides/ai-assistants.png">
+    <meta property="twitter:site" content="@MonadicalHQ">
+    <meta property="twitter:title" content="Building AI-Powered Operational Assistants">
+    <meta property="twitter:url" content=https://monadical.com/webinars/building-ai-powered-operational-assistants.html />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Meta Tags End -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+
+    <link rel="stylesheet" href="/static/bootstrap4-pleasant.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/core/css/base.css" type="text/css">
+
+    <link rel="canonical" href="https://monadical.com/webinars/building-ai-powered-operational-assistants.html" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+
+    
+<link rel="stylesheet" href="/static/core/css/index.css">
+<link rel="stylesheet" href="/static/core/css/webinar.css">
+<link rel="stylesheet" href="/static/core/css/markdown-content.css">
+<script src="/static/core/js/webinar.js" defer></script>
+
+</head>
+
+<body>
+    
+    <header>
+        
+        
+
+        <div id="header-container" class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                
+                <a class="navbar-brand" id="monadical-brand" href="/index.html">
+                    <img srcset="/static/core/img/logo@3x.png 3x,
+                                 /static/core/img/logo@2x.png 2x"
+                         src="/static/core/img/logo.png"
+                         id="brand-img" />
+                </a>
+                
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-content-container">
+                        <ul class="navbar-nav">
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/portfolio.html">Portfolio</a>
+                                    </li>
+                                
+                            
+                                
+                                    <div class="nav-item dropdown">
+                                        <button class="nav-link btn-link dropdown-toggle" type="button"
+                                            id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Services
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                            
+                                                <a class="dropdown-item nav-link"
+                                                href="/ai-services.html">AI</a>
+                                            
+                                            <a class="dropdown-item nav-link"
+                                                href="/services.html">Web Dev</a>
+                                        </div>
+                                    </div>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/about.html">About Us</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/blog.html">Insights</a>
+                                    </li>
+                                
+                            
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="/contact-us.html">LET'S TALK</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+    <article>
+        
+    <div id="webinar-content"
+         data-webinar-date="2025-02-05T12:00:00-05:00"
+         data-redirect-url="https://reflector.monadical.com/webinars/ai-operational-assistant"
+         data-is-future-webinar="false">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="webinar-header">
+                        <span class="mini-title">WEBINAR</span>
+                        <h1>Building AI-Powered Operational Assistants</h1>
+                        <p class="subtitle">From Simple Automation to Strategic Implementation</p>
+                    </div>
+
+                    
+                        <div id="webinar-content-wrapper">
+                            <!-- Post-webinar access form -->
+                            <div id="webinar-form-section">
+                                <!-- Embedded promotion content -->
+                                <div class="article-content">
+                                    <p>The hype around AI agents might be a little premature.
+But operational assistants are very real, available today, and can unlock your team to do their best work.</p>
+
+<p>In this session, Monadical cofounder Max McCrea will dive into what operational assistants are and how you can implement them in your organization to deliver real, tangible value.</p>
+
+<h3 id="what-well-cover">What We'll Cover:</h3>
+
+<ul>
+<li>What an AI operational assistant is (and isn't).</li>
+<li>Example use cases for how they can be implemented across your organization.</li>
+<li>Key security and design considerations to avoid sharing sensitive data with outside platforms.</li>
+<li>Live demos showing both entry-level and advanced implementations.</li>
+<li>How you can start implementing them to immediately unlock value.</li>
+</ul>
+
+<h3 id="who-should-attend">Who Should Attend:</h3>
+
+<ul>
+<li>Operations leaders looking to reduce manual work</li>
+<li>Technical decision makers evaluating AI solutions</li>
+<li>Teams concerned about data security and control</li>
+</ul>
+
+<p>Plan to walk away with a clear understanding of how to implement AI solutions in your organization, with live demos of actual implementations and plenty of time for Q&amp;A to address your specific challenges.</p>
+
+                                </div>
+                                <h3 class="webinar-form-title">To Watch This Webinar, Fill Out the Brief Form Below:</h3>
+                                <div class="webinar-access-form">
+                                    <form id="webinarAccessForm">
+                                        <div class="form-group">
+                                            <input type="text" id="name" name="name" placeholder=" " required>
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="email" name="email" placeholder=" " required>
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="company" name="company" placeholder=" " required>
+                                            <label for="company">Company Name</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="role" name="role" placeholder=" " required>
+                                            <label for="role">Your Role</label>
+                                        </div>
+                                        <button type="submit" class="cta-button">GET INSTANT ACCESS</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Webinar content view -->
+                            <div id="webinar-full-content" style="display: none;">
+                                
+                                    <div class="video-container">
+                                        <video controls preload="none" width="100%" allowfullscreen>
+                                            <source src="https://cloud.monadical.com/s/YsdxAq2w3Lwd8Nb/download" type="video/mp4">
+                                            <source src="https://cloud.monadical.com/s/YsdxAq2w3Lwd8Nb/download" type="video/webm">
+                                            Your browser does not support the video tag or the video format.
+                                            You can <a href="https://cloud.monadical.com/s/YsdxAq2w3Lwd8Nb/download">download the video</a> to watch it locally.
+                                        </video>
+                                    </div>
+                                
+
+                                <div class="action-buttons">
+                                    
+                                        <a href="/static/webinar_slides/ai-assistants-slides.pdf" class="cta-button" target="_blank">
+                                            DOWNLOAD THE SLIDES
+                                        </a>
+                                    
+                                    <a href="/contact-us.html" class="secondary-button" target="_blank">
+                                        SCHEDULE A STRATEGY CALL WITH MAX
+                                    </a>
+                                </div>
+
+                                <div class="article-content">
+                                    <h3 id="quick-recap">Quick recap</h3>
+
+<p>The meeting focused on the topic of AI-powered operational assistance, exploring the current state and hype surrounding AI agents. Participants delved into the reality of AI capabilities, discussing the advantages and limitations of open-source models and self-hosting. They highlighted various use cases for AI in organizations, such as loan processing, travel and expense reporting, and RFP processing, emphasizing the benefits of AI in data-intensive and repetitive tasks. The discussion also covered the importance of identifying suitable use cases, the need for human intervention in complex decision-making processes, and the growing trend towards self-hosting for better control and security.</p>
+
+<h3 id="summary">Summary</h3>
+
+<h4 id="ai-powered-operational-assistance">AI-powered operational assistance</h4>
+
+<p>The main subject discussed in the presentation revolves around AI-powered operational assistance. Participants highlighted the current state and hype surrounding AI agents, emphasizing the importance of open-source models and self-hosting for organizations. They explored various use cases for AI in businesses, focusing on the benefits and limitations of integrating AI into organizational processes.</p>
+
+<h4 id="hype-vs-reality-of-ai-agents">Hype vs reality of AI agents</h4>
+
+<p>In the discussion on the hype vs reality of AI agents, participants explored the current state of AI agents, their capabilities, and the misconceptions surrounding them.They highlighted the need for clarity in defining AI agents and the reality of their current limitations, as well as the growing sentiment towards open-source models and self-hosting for better control and security.</p>
+
+<h4 id="open-source-models-and-self-hosting">Open-source models and self-hosting</h4>
+
+<p>The discussion on open-source models and self-hosting focused on the advantages of using open-source models, such as cost-effectiveness, flexibility, and the ability to fine-tune models for specific use cases. Participants emphasized the growing trend towards self-hosting, as it allows organizations to maintain control over their data and reduce reliance on third-party platforms, which can be more secure and cost-effective in the long run.</p>
+
+<h4 id="use-cases-for-ai-in-organizations">Use cases for AI in organizations</h4>
+
+<p>Participants discussed various use cases for AI in organizations, highlighting the benefits of AI in data-intensive, repetitive tasks, such as loan processing, travel and expense reporting, clinical reporting. and RFP processing. They emphasized the importance of identifying processes where AI can effectively process large amounts or information and provide value by reducing manual labor and enhancing decision-making.</p>
+
+<h4 id="benefits-and-limitations-of-ai-in-business-processes">Benefits and limitations of AI in business processes</h4>
+
+<p>The discussion on the benefits and limitations of AI in business processes centered around the strengths of AI in processing vast amounts or unstructured information and its ability to improve efficiency in repetitive tasks. Participants also acknowledged the limitations of AI, such as its lack or judgement and the need for human intervention in complex decision-making processes. They emphasized the importance of identifying suitable use cases and integrating AI in a way that complements human expertise.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+<div class="row final-cta">
+  <div class="col-12 text-center">
+      <h2>Let's <span class="highlight">transform</span> your organization.</h2>
+      <a href="/contact-us.html" class="btn btn-primary cta-button">BOOK A FREE AI STRATEGY CALL</a>
+  </div>
+</div>
+    </div>
+
+    </article>
+    
+
+    
+    <footer>
+        
+        
+        <div class="container footer">
+            
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul>
+                        <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="New York, USA">New York</b></li>
+                        <li><b title="San Francisco, USA">San Francisco</b></li>
+                        <li><b title="Vancouver, Canada">Vancouver</b></li>
+                        <li><b title="Medellín, Colombia">Medellín</b></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>Monadical</b>
+                        </li>
+                        <a href="/blog.html">Blog</a>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/projects.html">Projects</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3">
+                    <ul>
+                        <li>
+                            <b>About Us</b>
+                        </li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/team.html">Team</a></li>
+                        <li><a href="/principles.html">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                    <ul>
+                        <li>
+                            <b>Contact Us</b>
+                        </li>
+                        <li><a href="https://cal.com/monadical/widget">Get a Quote</a></li>
+                        <li><a href="https://careers.monadical.com/">Careers</a></li>
+                        <li><a href="/contact-us.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/MonadicalHQ" title="Monadical Twitter" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/monadical" title="Monadical Facebook" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/company/monadical" title="Monadical LinkedIn" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Monadical-SAS" title="Monadical Github" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </footer>
+    
+
+    <script type="text/javascript">
+        // hide all the tags containing fake contact info that are there to throw off scrapers
+        // most scrapers dont run JS, so this fairly effectively masks our real info from bots
+        for (const elem of document.querySelectorAll('.please-scrape-this-fake-info')) {
+            elem.style.display = 'none'
+        }
+    </script>
+
+    <script src="/static/squares.js"></script>
+
+
+    
+    
+
+    <!-- Smooth Scroll to Anchor Links Animation -->
+    <script>
+        function getUnicodeHash(reference) {
+            return "#\\" + reference.codePointAt(1).toString(16) + " " + reference.slice(2)
+        }
+        function smoothScroll(e) {
+            const hash = decodeURIComponent(this.hash)
+            e.preventDefault()
+            e.stopPropagation()
+
+            console.log('Scrolling to', this.getAttribute('href'))
+            let reference = this.getAttribute('href')
+            if (reference.match(/^#[0-9]+/)) {
+                reference = getUnicodeHash(reference)
+            }
+            document.querySelector(reference).scrollIntoView({
+                behavior: 'smooth'
+            });
+            setTimeout(() => {
+                window.location.hash = hash
+            }, 500/*arbitrary value, not standartized*/);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[smoothhashscroll]').forEach(elem => {
+                /*
+                   this code drops all the event listeners that were attached so far;
+                   we need to do it here because the event listeners themselves are not under control of this repo
+                   this content together with js files (that are executed) is presumably downloaded from hedgedoc
+                   this is a very hacky hack, we shall negate it "as soon as we can"
+                */
+                elem.parentNode.outerHTML = elem.parentNode.outerHTML
+            })
+            document.querySelectorAll('a[href^="#"], a[smoothhashscroll]').forEach(anchor => {
+                anchor.addEventListener('click', smoothScroll);
+            });
+        })
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.monadical.com"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        // accurately measure the time spent in the visit
+        _paq.push(['enableHeartBeatTimer']);
+        (function () {
+            var u = "//analytics.zervice.io/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '12']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <!-- Highlight Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- End Highlight Code -->
+</body>
+
+</html>

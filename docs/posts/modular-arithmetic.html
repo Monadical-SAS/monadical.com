@@ -30,7 +30,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
@@ -61,8 +62,7 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-
-
+<link rel="stylesheet" href="/static/core/css/post.css">
 
 </head>
 
@@ -73,75 +73,69 @@
         
 
         <div id="header-container" class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 
                 <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
-                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                                 /static/core/img/logo@2x.png 2x"
+                         src="/static/core/img/logo.png"
+                         id="brand-img" />
                 </a>
                 
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-content-container">
-                        <ul class="navbar-nav navbar-left">
+                        <ul class="navbar-nav">
                             
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/portfolio.html">Portfolio</a>
+                                    </li>
+                                
                             
-                            <div class="nav-item dropdown">
-                                <button class="nav-link btn-link dropdown-toggle" type="button"
-                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Services
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/ai-services.html">AI</a>
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/services.html">Web Dev</a>
-                                </div>
-                            </div>
+                                
+                                    <div class="nav-item dropdown">
+                                        <button class="nav-link btn-link dropdown-toggle" type="button"
+                                            id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Services
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                            
+                                                <a class="dropdown-item nav-link"
+                                                href="/ai-services.html">AI</a>
+                                            
+                                            <a class="dropdown-item nav-link"
+                                                href="/services.html">Web Dev</a>
+                                        </div>
+                                    </div>
+                                
                             
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/about.html">About Us</a>
+                                    </li>
+                                
                             
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/team.html">Team</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/blog.html">Insights</a>
-                            </li>
-                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/blog.html">Insights</a>
+                                    </li>
+                                
                             
                             <li class="nav-item">
-                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                                <a class="nav-link"
+                                   href="/contact-us.html">LET'S TALK</a>
                             </li>
                         </ul>
 
-                        
-                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                        
                     </div>
                 </div>
             </nav>
@@ -153,115 +147,6 @@
     
     <article>
         
-
-    <style>
-        h1 {
-            font-family: 'Fjalla One', sans-serif !important;
-        }
-        .article-content {
-            border: 0px;
-        }
-        .fa-pencil {
-            opacity: 0.01;
-        }
-        footer .social-links {
-            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        footer .social-links a {
-            color: #333;
-            opacity: 0.7;
-        }
-        footer .social-links a:hover {
-            color: #333;
-            opacity: 0.9;
-        }       
-        .authorbox {
-            font-size: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            margin-bottom: 40px; 
-        }
-        .authorbox__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .authorbox__content img {
-            min-width: 120px;
-            max-width: 120px;
-            min-height: 120px;
-            max-height: 120px;
-            object-fit: cover;
-            border-radius: 50%
-        }
-        .authorbox__content h3 {
-            margin: 0;
-        }
-        .authorbox__content h5 {
-            margin-bottom: 20px;
-        }
-        .post-footer {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            column-gap: 24px;
-            max-width: 768px;
-            margin-top: 40px;
-        }
-        .newsletterbox {
-            font-size: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-            margin-top: 80px;
-        }
-        .post-footer h4 {
-            font-size: 18px;
-        }
-        body > main > h1 > em {
-            opacity: 0;
-        }
-        #ui-toc-affix {
-            display: block;
-            position: fixed;
-            top: 175px;
-            user-select: initial;
-            max-width: 20vw;
-            margin-left: 15px;
-            transition: opacity 400ms ease;
-        }
-        .dropup .dropdown-menu {
-            bottom: auto !important;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-            
-            header .navbar-nav > li > a {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-        }
-        @media (max-width: 768px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-
-            header .navbar-nav .nav-link {
-                padding-left: 15px;
-            }
-
-        }
-    </style>
     <div id="post-content">
         <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
@@ -328,7 +213,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 04 2022 18:43:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Oct 05 2022 16:27:18 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">3121 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">3152 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -384,7 +269,7 @@ Before we start our tutorial, I’d like to highlight one of the problems I enco
 
 If we have, for example:
 
-```python
+```python=
 import numpy as np
 a = np.array([[1, 2], [3, 8]]) % 7
 a
@@ -396,7 +281,7 @@ a
 
 and calculate the inverse using NumPy, we get:
 
-```python
+```python=
 np.linalg.inv(a)
 ```
 ```python
@@ -406,7 +291,7 @@ np.linalg.inv(a)
 
 This matrix is not the inverse in modular arithmetic with modulo $7$, mainly because the result is in decimals and not integers. Another way we could try is:
 
-```python
+```python=
 np.linalg.inv(a) % 7
 ```
 ```python
@@ -525,7 +410,7 @@ For this tutorial we’ll need:
 ### Step 1: Build a Python class to manipulate the elements of $\mathbb{Z}/n\mathbb{Z}$
 To start, let’s define a class named `Zmodn` (integers module $n$):
 
-```python
+```python=
 class Zmodn:
     def __init__(self, module: int = 2):
         self.representative = None
@@ -544,7 +429,7 @@ Note that Zmodn receives only the variable `module`, which allows defining the s
 
 To see how this works, let’s generate the elements of  $\mathbb{Z}/n\mathbb{Z} =\{0\; (mod\; 2), 1\; (mod\; 2)\}$. To do this, we first write:
 
-```python
+```python=
 mod2 = Zmodn(2)
 ```
 At this point, `mod2` is a function that we can pass any integer to. Let’s look at some examples:
@@ -566,7 +451,7 @@ As we saw in my post about [operator overloading](https://monadical.com/posts/op
 
 The next step is to redefine the methods `__add__`($+$), `__sub__`($-$), `__mul__`($\times$), and `__truediv__` ($/$). For this, we’ll make use of what we learned in the operator overloading post. So we have:
 
-```python
+```python=
 def __add__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
@@ -593,7 +478,7 @@ Note that before calculating any operation, we must ensure that the elements tha
 
 As for the division between two elements $a$ and $b$ of $\mathbb{Z}/n\mathbb{Z}$, it only makes sense if $b$ is [coprime](https://en.wikipedia.org/wiki/Coprime_integers) with $n$. In that case, we first make use of the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for remainders and then calculate the multiplicative inverse of $b$. So we have:
 
-```python
+```python=
 def multiplicative_inverse(self):
     if self.representative == 0:
         raise ZeroDivisionError(&#39;Cannot compute the multiplicative inverse of 0&#39;)
@@ -614,7 +499,7 @@ def multiplicative_inverse(self):
 
 And after this, we can define the division as follows:
 
-```python
+```python=
 def __truediv__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
@@ -625,14 +510,14 @@ def __truediv__(self, other: int):
 
 In the next step, we’ll need the integer representation. So we define the following method:
 
-```python
+```python=
 def __int__(self) -&gt; int:
     return self.representative
 ```
 
 Finally, our `Zmodn` class would be:
 
-```python
+```python=
 class Zmodn:
     def __init__(self, module: int = 2):
         self.representative = None
@@ -722,7 +607,7 @@ Other methods we could implement are:`__eq__`, `__neg__`, `__isub__`, and `__iad
 
 In this step, we’re going to look at how to create arrays using `Zmodn` with some of NumPy’s functionalities. For this, we’ll build the following class:
 
-```python
+```python=
 import numpy as np
 class ZmodnArray:
     def __init__(self, module):
@@ -744,7 +629,7 @@ What’s new here is the line `congruence_class = np.vectorize(self.congruence_c
 
 To complete this class, we add the `__add__`, `__sub__` and `__mul__` methods. This has a similar structure to the methods already implemented in `Zmodn`, the only difference here is that the operations ($+,-,\times$) are executed through NumPy, and we make use of the `astype(int)` method to obtain the integer representatives of the `Zmodn` classes. These methods would be:
 
-```python
+```python=
 def __add__(self, other: list):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
@@ -771,7 +656,7 @@ def __mul__(self, other: list):
 
 So far, we can execute some basic operations between arrays of `Zmodn` elements. Let’s look at some examples:
 
-```python
+```python=
 mod7_array = ZmodnArray(7)
 a = mod7_array([[1, 2], [3, 8]])
 b = mod7_array([[10, 7], [3, 8]])
@@ -808,7 +693,7 @@ For the case of modular arithmetic with matrices in $\mathbb{Z}/n\mathbb{Z}$, th
 
 Here’s the method for calculating the adjugate matrix:
 
-```python
+```python=
 @staticmethod
 def adjoint_of_matrix(matrix):
     adjoint = np.zeros(matrix.shape, dtype=np.int16)
@@ -823,7 +708,7 @@ def adjoint_of_matrix(matrix):
 
 And the method for calculating the inverse matrix:
 
-```python
+```python=
 def inv(self):
     matrix = self.representatives.astype(int)
     if matrix.shape[0] != matrix.shape[1]:
@@ -855,7 +740,7 @@ So far, we’ve seen how to build a `Zmodn` class that allows us to work with th
 
 Next, we’ll solve the problem in a different way by redefining NumPy&#39;s universal functions. For this, we’ll use the special method `__array_function__`, which allows us to override NumPy’s native methods. The structure of this method is:
 
-```python
+```python=
 def __array_ufunc__(self, ufunc, method, *inputs, **kwargs)
 	...
 	return result
@@ -872,7 +757,7 @@ Therefore, the arguments are normalized; only the necessary input arguments are 
 
 With this in mind, we can build a class to work with modular arithmetic as follows:
 
-```python
+```python=
 import numpy as np
 HANDLED_FUNCTIONS = dict()
 
@@ -906,7 +791,7 @@ Note three important elements:
 
 NumPy has a list of universal functions that can be overridden with this strategy. The list can be found in the [documentation](https://numpy.org/neps/nep-0013-ufunc-overrides.html#list-of-operators-and-numpy-ufuncs). For our case, we’re only going to redefine `__add__`, `__sub__` and `__mul__`. In effect, the redefinitions would be:
 
-```python
+```python=
 @implements(np.add)
 def __add__(self, other):
     if not self.module == other.module and not isinstance(other, self.__class__):
@@ -937,7 +822,7 @@ def __mul__(self, other):
 
 As we can see, the structure is similar to what we already implemented in the previous sections. What’s new here is the implementation of the decorator `@implements(numpy_function)`, which is named after the universal function we want to rewrite. Furthermore, in the redefinition, we implement addition, subtraction, and multiplication using NumPy’s native operations, but we’re  careful to extract the remainder. For example, in the case of an addition, we return the following:
 
-```python
+```python=
     repr_sum = np.array(self.representatives) + np.array(other.representatives)
     return self.__class__(repr_sum % self.module, self.module)
 ```
@@ -946,7 +831,7 @@ Note that the sum is calculated through the native sum for objects of type `np.a
 
 Our final class would be:
 
-```python
+```python=
 import numpy as np
 HANDLED_FUNCTIONS = dict()
 
@@ -1000,7 +885,7 @@ class ZmodnArrays:
         return self.__class__(repr_dot % self.module, self.module)
 ```
 To test this class, we can do:
-```python
+```python=
 mod7_array = ZmodnArrays(7)
 a = mod7_array([[1, 2], [3, 8]])
 b = mod7_array([[10, 7], [3, 8]])
@@ -1027,7 +912,7 @@ Let’s wrap up what we’ve covered today in our four steps:
 2. Using the `__array_function__` method, we can tell NumPy how to execute the universal operations according to the needs of our objects.
 3. According to the NumPy [documentation](https://numpy.org/devdocs/reference/arrays.classes.html#numpy.class.__array_ufunc__), the standard structure for building a class to redefine NumPy’s universal functions is:
 
-```python
+```python=
 HANDLED_FUNCTIONS = {}
 
 class MyArray:
@@ -1114,255 +999,245 @@ Monadical.com | Full-Stack Consultancy
                 </div>
             </div>
         </div>
-        <div id="post-footer" class="container post-footer">
+        <div class="container">
             <div class="authorbox">
                 
                     <div class="authorbox__content">
-                        <h3>Alejandro Sánchez Yalí</h3>
-                        <h5>
-                            Full-stack developer
-                            <a href="https://twitter.com/asanchezyali" target="_blank" rel="noopener">
-                                @asanchezyali
-                            </a>
-                        </h5>
-                        
-                        <img src="/static/core/img/img-team-019.png" width="120px" height="120px" alt="Alejandro Sánchez Yalí"/>
+                        <img src="/static/core/img/img-team-019.png" alt="Alejandro Sánchez Yalí"/>
+                        <div>
+                            <h3><a href="https://twitter.com/asanchezyali" target="_blank" rel="noopener">Alejandro Sánchez Yalí</a></h3>
+                            <h5> is a Full-stack developer of Monadical</h5>
+                        </div>
                     </div>
                 
             </div>
-            <h5>Published on <a href="#permalink">2022-10-05</a></h5>
-            <!-- <div class="newsletterbox">
-                <a href="https://careers.monadical.com/" style="font-weight: bold;">
-                    We are hiring!
-                </a>
-                <a href="https://tinyletter.com/Monadical">
-                    Subscribe to our newsletter
-                </a>
-            </div> -->
-        </div>
-        <center>
-            <br/><br/><br/>
-            <i style="font-size: 18px">Recent posts:</i>
-            <ul style="max-width: 400px; text-align: left; font-size: 16px">
-                <br/><br/>
-                
+            <div class="recent-posts">
+                <h4>Recent posts</h4>
+                <ul>
                     
-                        <li><a href="/posts/conversations-are-the-new-oil.html">Conversations are the New Oil</a></li>
+                        
+                            <li><a href="/posts/conversations-are-the-new-oil.html">Conversations are the New Oil</a></li>
+                        
                     
-                
+                        
+                            <li><a href="/posts/don&#39;t-give-big-tech-your-papaya.html">Don&#39;t Give Big Tech Your Papaya</a></li>
+                        
                     
-                        <li><a href="/posts/don&#39;t-give-big-tech-your-papaya.html">Don&#39;t Give Big Tech Your Papaya</a></li>
+                        
+                            <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network?</a></li>
+                        
                     
-                
+                        
+                            <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                        
                     
-                        <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network?</a></li>
+                        
                     
-                
+                        
                     
-                        <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
-                    
-                
-                    
-                
-                    
-                
-                <li>
-                    <a href="/blog.html">
-                        View more posts...
-                    </a>
-                </li>
-            </ul>
-            <br/>
-        </center>
-        <script src="https://utteranc.es/client.js"
+                    <li>
+                        <a href="/blog.html">
+                            View more posts...
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script src="https://utteranc.es/client.js"
                 repo="Monadical-SAS/monadical.com"
                 issue-term="pathname"
                 label="blog"
                 theme="github-light"
                 crossorigin="anonymous"
                 async>
-        </script>
-        <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
-        </center>
+            </script>
+            <center>
+                <a href="#post-content" class="back-to-top">
+                    Back to top <i class="fa fa-arrow-up"></i>
+                </a>
+            </center>
+
+            <!-- Final CTA -->
+<div class="row final-cta">
+  <div class="col-12 text-center">
+      <h2>Let's <span class="highlight">transform</span> your organization.</h2>
+      <a href="/contact-us.html" class="btn btn-primary cta-button">BOOK A FREE AI STRATEGY CALL</a>
+  </div>
+</div>
+        </div>
         <script type="text/javascript" id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
@@ -1388,7 +1263,7 @@ Monadical.com | Full-Stack Consultancy
                 document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
-                
+
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/asanchezyali-modular-arithmetic', {mode: 'no-cors'})
 
@@ -1400,33 +1275,26 @@ Monadical.com | Full-Stack Consultancy
         </script>
         <script>
             function setOpacity(){
-                const maxWidth=1140
+                const maxWidth = 1140;
                 const width = $(window).width();
                 $('#post-cube-left').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
                 });
                 $('#post-tentacle-right').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
                 });
             }
 
             $(document).ready(setOpacity);
             $(window).resize(setOpacity);
-        </script>
-        <br/><br/>
-    </div>
-    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
-    <style>
-        @media (max-width: 991px) {
-            .show {
-                display: block !important;
-            }
-            .collapse:not(.show) {
-                display: none !important;
-            }
-        }
-    </style>
 
+            // Remove undesired bootstrap styles
+            setTimeout(() => {
+                $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled');
+                document.querySelector("link[href*='pretty-styles-pack']")?.remove();
+            }, 500);
+        </script>
+    </div>
 
     </article>
     
@@ -1441,9 +1309,10 @@ Monadical.com | Full-Stack Consultancy
                 <div class="col-12 col-md-4">
                     <ul>
                         <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="New York, USA">New York</b></li>
+                        <li><b title="San Francisco, USA">San Francisco</b></li>
                         <li><b title="Vancouver, Canada">Vancouver</b></li>
                         <li><b title="Medellín, Colombia">Medellín</b></li>
-                        <li><b title="Cali, Colombia">Cali</b></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">
@@ -1504,32 +1373,6 @@ Monadical.com | Full-Stack Consultancy
                                 rel="noopener">
                                 <i class="fa fa-github"></i>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row contact-row">
-                <div class="col-12 col-lg-4 col-md-4">
-                    <ul>
-                        <li>
-                            
-                            Monadical Inc. © 2025<br />
-                            <small>All rights reserved.</small>
-                            
-                        </li>
-                    </ul>
-                </div>
-                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
-                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
-                    <ul>
-                        <li>
-                            <span style="white-space: nowrap;">
-                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
-                                        title="ignore this">example.com</span>m</span>onadical.com
-                            </span>
-                            <br />
-                            <small>✉️&nbsp; Email us with your project idea.</small>
                         </li>
                     </ul>
                 </div>

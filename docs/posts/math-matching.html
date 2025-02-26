@@ -30,7 +30,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css">
@@ -61,8 +62,7 @@
 
     
 <link rel="stylesheet" href="/static/core/css/index.css">
-
-
+<link rel="stylesheet" href="/static/core/css/post.css">
 
 </head>
 
@@ -73,75 +73,69 @@
         
 
         <div id="header-container" class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 
                 <a class="navbar-brand" id="monadical-brand" href="/index.html">
                     <img srcset="/static/core/img/logo@3x.png 3x,
-                                 /static/core/img/logo@2x.png 2x" src="/static/core/img/logo.png" id="brand-img" />
+                                 /static/core/img/logo@2x.png 2x"
+                         src="/static/core/img/logo.png"
+                         id="brand-img" />
                 </a>
                 
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-content-container">
-                        <ul class="navbar-nav navbar-left">
+                        <ul class="navbar-nav">
                             
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/portfolio.html">Portfolio</a>
+                                    </li>
+                                
                             
-                            <div class="nav-item dropdown">
-                                <button class="nav-link btn-link dropdown-toggle" type="button"
-                                    id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Services
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/ai-services.html">AI</a>
-                                    
-                                    <a class="dropdown-item nav-link text-truncate"
-                                        href="/services.html">Web Dev</a>
-                                </div>
-                            </div>
+                                
+                                    <div class="nav-item dropdown">
+                                        <button class="nav-link btn-link dropdown-toggle" type="button"
+                                            id="dropdownservicesButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Services
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownservicesButton">
+                                            
+                                                <a class="dropdown-item nav-link"
+                                                href="/ai-services.html">AI</a>
+                                            
+                                            <a class="dropdown-item nav-link"
+                                                href="/services.html">Web Dev</a>
+                                        </div>
+                                    </div>
+                                
                             
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/about.html">About Us</a>
+                                    </li>
+                                
                             
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/portfolio.html">Portfolio</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/principles.html">Principles</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/team.html">Team</a>
-                            </li>
-                            
-                            
-                            
-                            <li class="nav-item">
-                                <a class="nav-link text-truncate" href="/blog.html">Insights</a>
-                            </li>
-                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link "
+                                           href="/blog.html">Insights</a>
+                                    </li>
+                                
                             
                             <li class="nav-item">
-                                <a class="nav-link text-truncate" href="https://careers.monadical.com/">Careers</a>
+                                <a class="nav-link"
+                                   href="/contact-us.html">LET'S TALK</a>
                             </li>
                         </ul>
 
-                        
-                        <a class="beta-btn nav-link button-navbar" href="/contact-us.html">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                        
                     </div>
                 </div>
             </nav>
@@ -153,115 +147,6 @@
     
     <article>
         
-
-    <style>
-        h1 {
-            font-family: 'Fjalla One', sans-serif !important;
-        }
-        .article-content {
-            border: 0px;
-        }
-        .fa-pencil {
-            opacity: 0.01;
-        }
-        footer .social-links {
-            text-shadow: 4px 4px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        footer .social-links a {
-            color: #333;
-            opacity: 0.7;
-        }
-        footer .social-links a:hover {
-            color: #333;
-            opacity: 0.9;
-        }       
-        .authorbox {
-            font-size: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            margin-bottom: 40px; 
-        }
-        .authorbox__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .authorbox__content img {
-            min-width: 120px;
-            max-width: 120px;
-            min-height: 120px;
-            max-height: 120px;
-            object-fit: cover;
-            border-radius: 50%
-        }
-        .authorbox__content h3 {
-            margin: 0;
-        }
-        .authorbox__content h5 {
-            margin-bottom: 20px;
-        }
-        .post-footer {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            column-gap: 24px;
-            max-width: 768px;
-            margin-top: 40px;
-        }
-        .newsletterbox {
-            font-size: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-            margin-top: 80px;
-        }
-        .post-footer h4 {
-            font-size: 18px;
-        }
-        body > main > h1 > em {
-            opacity: 0;
-        }
-        #ui-toc-affix {
-            display: block;
-            position: fixed;
-            top: 175px;
-            user-select: initial;
-            max-width: 20vw;
-            margin-left: 15px;
-            transition: opacity 400ms ease;
-        }
-        .dropup .dropdown-menu {
-            bottom: auto !important;
-        }
-        @media (min-width: 768px) and (max-width: 991px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-            
-            header .navbar-nav > li > a {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-        }
-        @media (max-width: 768px) {
-            header .navbar-collapse {
-                padding-left: 0;
-            }
-
-            header .navbar-nav .nav-link {
-                padding-left: 15px;
-            }
-
-        }
-    </style>
     <div id="post-content">
         <div class="container">
             <img class="cloud-img-left" src="/static/core/img/img-team-013.png">
@@ -328,7 +213,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Tue Jul 12 2022 14:07:11 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 28 2022 13:05:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">1331 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">1356 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -489,267 +374,253 @@ It’s just about finding the right algorithm to *match* the situation!</div>
                 </div>
             </div>
         </div>
-        <div id="post-footer" class="container post-footer">
+        <div class="container">
             <div class="authorbox">
                 
                     <div class="authorbox__content">
-                        <h3>Ben Dichter</h3>
-                        <h5>
-                            CatalystNeuro
-                            <a href="https://github.com/bendichter" target="_blank" rel="noopener">
-                                @bendichter
-                            </a>
-                        </h5>
-                        
-                        <img src="/static/core/img/ben.png" width="120px" height="120px" alt="Ben Dichter"/>
+                        <img src="/static/core/img/ben.png" alt="Ben Dichter"/>
+                        <div>
+                            <h3><a href="https://github.com/bendichter" target="_blank" rel="noopener">Ben Dichter</a></h3>
+                            <h5> is a CatalystNeuro of Monadical</h5>
+                        </div>
                     </div>
                 
                     <div class="authorbox__content">
-                        <h3>Mirjam Guesgen</h3>
-                        <h5>
-                            Content Creator
-                            <a href="https://twitter.com/MirjamJG" target="_blank" rel="noopener">
-                                @MirjamJG
-                            </a>
-                        </h5>
-                        
-                        <img src="/static/core/img/img-team-039.png" width="120px" height="120px" alt="Mirjam Guesgen"/>
+                        <img src="/static/core/img/img-team-039.png" alt="Mirjam Guesgen"/>
+                        <div>
+                            <h3><a href="https://twitter.com/MirjamJG" target="_blank" rel="noopener">Mirjam Guesgen</a></h3>
+                            <h5> is a Content Creator of Monadical</h5>
+                        </div>
                     </div>
                 
             </div>
-            <h5>Published on <a href="#permalink">2022-07-18</a></h5>
-            <!-- <div class="newsletterbox">
-                <a href="https://careers.monadical.com/" style="font-weight: bold;">
-                    We are hiring!
-                </a>
-                <a href="https://tinyletter.com/Monadical">
-                    Subscribe to our newsletter
-                </a>
-            </div> -->
-        </div>
-        <center>
-            <br/><br/><br/>
-            <i style="font-size: 18px">Recent posts:</i>
-            <ul style="max-width: 400px; text-align: left; font-size: 16px">
-                <br/><br/>
-                
+            <div class="recent-posts">
+                <h4>Recent posts</h4>
+                <ul>
                     
-                        <li><a href="/posts/conversations-are-the-new-oil.html">Conversations are the New Oil</a></li>
+                        
+                            <li><a href="/posts/conversations-are-the-new-oil.html">Conversations are the New Oil</a></li>
+                        
                     
-                
+                        
+                            <li><a href="/posts/don&#39;t-give-big-tech-your-papaya.html">Don&#39;t Give Big Tech Your Papaya</a></li>
+                        
                     
-                        <li><a href="/posts/don&#39;t-give-big-tech-your-papaya.html">Don&#39;t Give Big Tech Your Papaya</a></li>
+                        
+                            <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network?</a></li>
+                        
                     
-                
+                        
+                            <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                        
                     
-                        <li><a href="/posts/so-you-want-to-build-a-social-network.html">So you want to build a social network?</a></li>
+                        
                     
-                
+                        
                     
-                        <li><a href="/posts/mastering-project-estimation.html">Mastering Project Estimation</a></li>
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
+                        
                     
-                
-                    
-                
-                    
-                
-                    
-                
-                <li>
-                    <a href="/blog.html">
-                        View more posts...
-                    </a>
-                </li>
-            </ul>
-            <br/>
-        </center>
-        <script src="https://utteranc.es/client.js"
+                    <li>
+                        <a href="/blog.html">
+                            View more posts...
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script src="https://utteranc.es/client.js"
                 repo="Monadical-SAS/monadical.com"
                 issue-term="pathname"
                 label="blog"
                 theme="github-light"
                 crossorigin="anonymous"
                 async>
-        </script>
-        <center>
-            <br/><br/>
-            <a href="#post-content" class="btn btn-sm btn-shadow btn-success btn-light btn-outline-primary">
-                Back to top <i class="fa fa-arrow-up"></i>
-            </a>
-            <br/>
-        </center>
+            </script>
+            <center>
+                <a href="#post-content" class="back-to-top">
+                    Back to top <i class="fa fa-arrow-up"></i>
+                </a>
+            </center>
+
+            <!-- Final CTA -->
+<div class="row final-cta">
+  <div class="col-12 text-center">
+      <h2>Let's <span class="highlight">transform</span> your organization.</h2>
+      <a href="/contact-us.html" class="btn btn-primary cta-button">BOOK A FREE AI STRATEGY CALL</a>
+  </div>
+</div>
+        </div>
         <script type="text/javascript" id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
@@ -775,7 +646,7 @@ It’s just about finding the right algorithm to *match* the situation!</div>
                 document.querySelector('#ui-toc > div.toc-menu > a.go-to-bottom').href = '#post-footer'
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').innerHTML = 'Go to top'
                 document.querySelector('#ui-toc > div.toc-menu > a.back-to-top').href = '#post-content'
-                
+
                 // GET the original article source so they get they bump the view counter
                 fetch('https://docs.monadical.com/s/mathmatching', {mode: 'no-cors'})
 
@@ -787,33 +658,26 @@ It’s just about finding the right algorithm to *match* the situation!</div>
         </script>
         <script>
             function setOpacity(){
-                const maxWidth=1140
+                const maxWidth = 1140;
                 const width = $(window).width();
                 $('#post-cube-left').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
                 });
                 $('#post-tentacle-right').css({
-                    opacity: (width < maxWidth) ? 0.1 : 1
+                    opacity: (width < maxWidth) ? 0.1 : 0.6
                 });
             }
 
             $(document).ready(setOpacity);
             $(window).resize(setOpacity);
-        </script>
-        <br/><br/>
-    </div>
-    <!-- To fix some troubles with "!important" elements in bootstrap for the navbar -->
-    <style>
-        @media (max-width: 991px) {
-            .show {
-                display: block !important;
-            }
-            .collapse:not(.show) {
-                display: none !important;
-            }
-        }
-    </style>
 
+            // Remove undesired bootstrap styles
+            setTimeout(() => {
+                $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled');
+                document.querySelector("link[href*='pretty-styles-pack']")?.remove();
+            }, 500);
+        </script>
+    </div>
 
     </article>
     
@@ -828,9 +692,10 @@ It’s just about finding the right algorithm to *match* the situation!</div>
                 <div class="col-12 col-md-4">
                     <ul>
                         <li><b title="Montréal, Canada">Montréal</b></li>
+                        <li><b title="New York, USA">New York</b></li>
+                        <li><b title="San Francisco, USA">San Francisco</b></li>
                         <li><b title="Vancouver, Canada">Vancouver</b></li>
                         <li><b title="Medellín, Colombia">Medellín</b></li>
-                        <li><b title="Cali, Colombia">Cali</b></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3">
@@ -891,32 +756,6 @@ It’s just about finding the right algorithm to *match* the situation!</div>
                                 rel="noopener">
                                 <i class="fa fa-github"></i>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="row contact-row">
-                <div class="col-12 col-lg-4 col-md-4">
-                    <ul>
-                        <li>
-                            
-                            Monadical Inc. © 2025<br />
-                            <small>All rights reserved.</small>
-                            
-                        </li>
-                    </ul>
-                </div>
-                <!-- real contact info interspersed with fake info to throw off leadgen scraping bots, fake info is removed by JS on pageload -->
-                <div class="col-12 col-lg-3 offset-lg-3 col-md-4">
-                    <ul>
-                        <li>
-                            <span style="white-space: nowrap;">
-                                hello<span>@<span class="please-scrape-this-fake-info" style="opacity: 0.1; color: red"
-                                        title="ignore this">example.com</span>m</span>onadical.com
-                            </span>
-                            <br />
-                            <small>✉️&nbsp; Email us with your project idea.</small>
                         </li>
                     </ul>
                 </div>

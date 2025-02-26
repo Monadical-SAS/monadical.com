@@ -1,96 +1,95 @@
 {% extends "base.html" %}
 
-{% block title %}Posts &amp; Articles | Monadical Consulting{% endblock %}
-{% block subtitle %}Blog{% endblock %}
+{% block title %}Insights | Monadical{% endblock %}
+{% block subtitle %}Insights{% endblock %}
 {% block enableLogo %}enable-logo{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="/static/core/css/insights.css">
+<script src="/static/core/js/newsletter.js" defer></script>
+<script src="/static/core/js/insights.js" defer></script>
+{% endblock %}
+
 {% block article %}
-    <!--<canvas class="animated-color-grid" height="100"></canvas>-->
-    <div class="container-full post">
-        <div class="container mb-3">
-            <div class="row">
-                <div class="col text-center">
-                    <br/><br/>
-                    <h2><a id="main">Insights from the Monadical Team</a></h2>
-                    <br/>
+<div class="container-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="insights-title">Insights from the Monadical Team</h1>
+                <div class="insights-filters">
+                    <button class="filter-btn active" data-type="article">ARTICLES</button>
+                    <button class="filter-btn active" data-type="report">REPORTS</button>
+                    <button class="filter-btn active" data-type="webinar">WEBINARS</button>
+                    <button class="filter-btn active" data-type="podcast">PODCASTS</button>
+                    <button class="filter-btn active" data-type="resource">RESOURCES</button>
+                    <button class="filter-btn active" data-type="newsletter">NEWSLETTERS</button>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <a href="https://twitter.com/MonadicalHQ"
-                       class="btn btn-info btn-dark">
-                        Follow us on Twitter <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="https://monadical.com/posts/feed.xml"
-                       class="btn btn-info btn-dark">
-                        RSS Feed <i class="fa fa-rss"></i>
-                    </a>
-                </div>
-                
             </div>
         </div>
-        <div class="container margin-bottom-150">
-            <div class="row align-items-center mt-4 mb-5">
-                <div class="col-12">
-                    <p class="text-center">
-                        Listen to Paradigmatic, a podcast about the interplay of technology, policy, and human society:
-                    </p>
-                </div>
-                
-                <div class="col-sm mb-2">
-                    <a href="https://open.spotify.com/show/36WbeLtpdRt5cPX18aY6yF" target="_blank">
-                        <img class="d-block m-auto" style="max-width: 140px;" src="/static/podcast/spotify_logo.png" alt="Spotify button to listen to Paradigmatic">
-                    </a>
-                </div>
-                <div class="col-sm mb-2">
-                    <a href="https://podcasts.apple.com/ca/podcast/paradigmatic/id1747991729" target="_blank">
-                        <img class="d-block m-auto" style="max-width: 130px;" src="/static/podcast/apple_badge.svg" alt="Apple button to listen to Paradigmatic">
-                    </a>
-                </div>
-            </div>
-            <div class="row articles">
-                {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) %}
-                {% for post in posts | sort(attribute='date', reverse=True) %}
-                    <div class="col-12 col-md-6 text-center article mb-4 blog-card">
-                        <div class="card h-100 ">
-                            <a href="{{ post.url }}">
-                                <div class="blog-img" style="background-image: url('{{ post.img }}')" title="{{post.title}}">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                <a class="card-link" href="{{ post.url }}">
-                                    <div class="post-tags">
-                                        {% for tag in post.tags %}
-                                            <span class="label">#{{ tag }}</span>
-                                        {% endfor %}
-                                    </div>
-                                </a>
-                                <div class="card-title">
-                                    <a class="card-link" href="{{ post.url }}">
-                                        <h2>{{ post.title }}</h2>
-                                    </a>
-                                </div>
-                                <div class="card-text">
-                                    {{ post.description }}
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="author small">
-                                    {% for author in post.authors %}
-                                    {{ author.name }}{% if loop.index != loop.length %}, {% endif %}
-                                    {%endfor%}
-                                    - {{ post.date }}<br/><br/>
-                                    <a href="{{ post.url }}">
-                                        <button class="btn btn-primary">
-                                            {{ post.length }}
-                                        </button>
-                                    </a>
-                                </div>
+
+        <!-- Newsletter Signup -->
+        {% include "_newsletter_form.html" %}
+
+        <!-- Articles Grid -->
+        <div class="insights-grid" id="articles-grid">
+            {% set posts = (POSTS.values() | list) + (REPORTS.values() | list) + (PODCAST.values() | list) + (WEBINARS.values() | list) %}
+            {% set total_posts = posts|length %}
+
+            {% for post in posts | sort(attribute='date', reverse=True) %}
+                <div class="insight-card {% if loop.index > 20 %}hidden{% endif %}"
+                     data-type="{% if post in POSTS.values() %}article
+                             {% elif post in REPORTS.values() %}report
+                             {% elif post in PODCAST.values() %}podcast
+                             {% elif post in WEBINARS.values() %}webinar
+                             {% endif %}">
+                    <a href="{{ post.url }}" class="card-link">
+                        <div class="content-type">
+                            {% if post in POSTS.values() %}ARTICLE
+                            {% elif post in REPORTS.values() %}REPORT
+                            {% elif post in PODCAST.values() %}PODCAST
+                            {% elif post in WEBINARS.values() %}WEBINAR
+                            {% endif %}
+                        </div>
+                        <div class="card-image" style="background-image: url('{{ post.img }}')"></div>
+                        <div class="card-content">
+                            <h2>{{ post.title }}</h2>
+                            <p>{{ post.description }}</p>
+                            <div class="card-action">
+                                {% if post.type == 'webinar' %}
+                                    {% set webinar_date = post.date | string %}
+                                    {% set current_time = now | string %}
+                                    {% if webinar_date > current_time %}
+                                        <button class="action-btn">RSVP HERE →</button>
+                                    {% else %}
+                                        <button class="action-btn">WATCH WEBINAR REPLAY →</button>
+                                    {% endif %}
+                                {% elif post.type == 'podcast' %}
+                                    <button class="action-btn">LISTEN →</button>
+                                {% elif post.type == 'resource' %}
+                                    <button class="action-btn">DOWNLOAD YOUR COPY →</button>
+                                {% else %}
+                                    <button class="action-btn">READ MORE →</button>
+                                {% endif %}
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
-            </div>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
+
+        <!-- Load More Section -->
+        {% if total_posts > 20 %}
+        <div class="load-more-container text-center">
+            <button id="load-more-btn" class="load-more-btn"
+                    data-total-posts="{{ total_posts }}"
+                    data-current-page="1"
+                    data-posts-per-page="20">
+                LOAD MORE
+            </button>
+        </div>
+        {% endif %}
+
+        {% include "_final_cta.html" %}
     </div>
+</div>
 {% endblock %}

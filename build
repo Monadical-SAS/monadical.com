@@ -39,6 +39,7 @@ sleep 1.5
 rm -Rf docs
 mkdir -p docs/posts
 mkdir -p docs/reports
+mkdir -p docs/webinars
 
 
 cp -r static docs/static
@@ -51,12 +52,13 @@ cp static/_config.yml docs/_config.yml
 ./server --posts > docs/posts.txt
 ./server --rates > docs/rates.txt
 ./server --reports > docs/reports.txt
-
+./server --webinars > docs/webinars.txt
 echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; if [ -s pages.txt ]; then wget -q --no-check-certificate $(<pages.txt); fi)
 (cd docs/posts; if [ -s ../posts.txt ]; then wget -q --no-check-certificate $(<../posts.txt); fi)
 (cd docs/reports; if [ -s ../reports.txt ]; then wget -q --no-check-certificate $(<../reports.txt); fi)
+(cd docs/webinars; if [ -s ../webinars.txt ]; then wget -q --no-check-certificate $(<../webinars.txt); fi)
 (cd docs; if [ -s rates.txt ]; then wget -q --no-check-certificate $(<../rates.txt); fi)
 
 echo ""

@@ -6,381 +6,448 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/core/css/index.css">
+<script src="/static/core/js/newsletter.js" defer></script>
 {% endblock %}
 
 {% block article %}
 <div class="container-full">
-    <img class="cube-img-left" src="/static/core/img/img-home-002.png">
-    <img class="tentacle-img-right" src="/static/core/img/img-home-010.png">
-    <img class="tentacle-img-left" src="/static/core/img/img-home-011.png">
-    <img class="cube-img-right" src="/static/core/img/img-home-012.png">
     <div class="container">
-        <div class="row scroll-down-container">
-            <div class="col-12 col-md-7 first-section margin-top-90">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="text-size-1">
-                            We build software that outlasts us
-                        </h1>
-                    </div>
-                    <div class="col-12 d-block d-sm-none">
-                        <img src="/static/core/img/img-home-001-mobile.png" class="octopus-img">
-                    </div>
-                    <div class="col-12 margin-top-60">
-                        <p class="subtext-size-1">
-                            We're committed to providing the highest quality experience for our clients,
-                            their end users, and the developers that inherit and extend our
-                            projects years in the future
-                        </p>
-                    </div>
-                    <div class="col-12 margin-top-60">
-                        <a href="/contact-us.html" class="btn btn-info-inverse">
-                            GET A TECHNICAL ASSESSMENT
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <img src="/static/core/img/img-home-001.png" class="octopus-img d-none d-sm-none d-md-block">
-                <img src="/static/core/img/img-home-001-mobile.png" class="octopus-img d-none d-sm-block d-md-none">
+        <!-- Hero Section -->
+        <div class="row hero-section">
+            <div class="col-12 text-center">
+                <h1 class="hero-title">
+                    Transform your organization<br>
+                    in the <span class="highlight">Age of AI</span> 🤖.
+                </h1>
+                <p class="hero-subtitle">
+                    Monadical helps organizations safely harness the power of AI<br>
+                    to redesign the way they work.
+                </p>
+                <a href="/contact-us.html" class="btn btn-primary cta-button">
+                    BOOK A FREE AI STRATEGY CALL
+                </a>
             </div>
             <div class="scroll-down">
-                <a href="#second-section" class="scroll-down">
-                    <span>Scroll Down</span><br>
-                    <i class="fa fa-chevron-down"></i>
+                <a href="#main-content">
+                    <span class="scroll-arrow"></span>
                 </a>
             </div>
         </div>
+
+        <!-- Main Content Section -->
+        <div id="main-content" class="row content-section">
+            <div class="col-12">
+                <div class="text-center problem-statement">
+                    <p class="main-question">
+                        You are constantly hearing you need an AI strategy.<br>
+                        But what does that <span class="emphasis">really</span> mean? And how do you do it?
+                    </p>
+
+                    <div class="content-padding">
+                        <p class="context">
+                            It's a brave new world. The pace of innovation is<br>
+                            incredibly hard to keep up with.
+                        </p>
+
+                        <p class="pain-points">
+                            There are hundreds of Al solutions out there, all claiming to be best of breed.
+                            Your team is probably already using some of it, without understanding where your valuable data is going.
+                        </p>
+
+                        <p class="market-context">
+                            Investors, builders, and the media are all incentivized to hype new technology.
+                            This is creating confusion around what Al can (and can't) do for your company.
+                        </p>
+
+
+                        <div class="solution-points">
+                            <p>
+                                <span class="emphasis-text">You know you need to do something</span>, but you're not sure where to start.
+                            </p>
+
+                            <p>
+                                <span class="emphasis-text">You need a partner</span>
+                                that understands the landscape, can help you make sense of AI,
+                                and knows how to fail fast and iterate towards success.
+                            </p>
+
+                            <p class="nice-to-meet">Nice to meet you 👋.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Transformation Roadmap Section -->
+        <!--<div class="row roadmap-section">
+            <div class="col-12">
+                <div class="roadmap-container">
+                    <h2 class="roadmap-title">The AI Transformation <strong>Roadmap</strong></h2>
+                    <p class="roadmap-subtitle">Get our <strong>comprehensive step-by-step guide</strong> on safely integrating AI into your operations.</p>
+
+                    <div class="roadmap-content">
+                        <div class="testimonial">
+                            <img src="/static/core/img/avatar.png" class="testimonial-avatar" alt="Testimonial">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "This is the first time I can really "see" how our company can take advantage of Al in a material way. Thank you!"
+                                </p>
+                                <p class="testimonial-author">JOSHUA ESSEX, COFOUNDER</p>
+                            </div>
+                        </div>
+
+                        <form class="roadmap-form">
+                            <input type="email" placeholder="Your Email" class="form-control">
+                            <button type="submit" class="btn btn-primary">DOWNLOAD</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Newsletter Signup -->
+        {% include "_newsletter_form.html" %}
 
         <!-- Services Section -->
-        <div class="row margin-top-60">
-            <!-- First Box (AI) -->
-            <div
-                class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center margin-top-20">
-                <a href="/ai-services.html" class="image-link-services d-flex flex-column justify-content-center">
-                    <div class="text-center ai-link text">
-                        AI
+        <div class="row services-section">
+            <div class="col-12">
+                <div class="services-header">
+                    <div class="title-group">
+                        <span class="mini-title">USE CASES</span>
+                        <h2 class="section-title carousel-title">Unleash Your <span class="highlight">Engineering</span> Team's Potential.</h2>
                     </div>
-                    <div class="image" style="background-image: url('/static/core/img/ai_paint_splatter.png');">
+                    <div class="services-nav">
+                        <div class="nav-arrow prev" onclick="moveCarousel(-1)"></div>
+                        <div class="nav-arrow next" onclick="moveCarousel(1)"></div>
                     </div>
-                </a>
+                </div>
+                <div class="services-layout">
+                    <div class="services-carousel">
+                        <!-- Engineering Section -->
+                        <div class="services-content carousel-item active" data-index="0">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your engineers want to spend as much time as possible doing what they do best: solving difficult problems
+                                    and translating those problems into elegant technical solutions. AI can help eliminate tedious
+                                    or repetitive tasks freeing them up to focus on activities that create genuine enterprise value.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Code Generation and Refactoring</h3>
+                                        <p>Accelerate code drafts, refactor legacy Systems for performance and maintainability. etc</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Quality Assurance & Testing</h3>
+                                        <p>Test case generation for broader coverage, real-time anomaly detection, root-cause analysis. etc</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Project Management</h3>
+                                        <p>Forecast delivery timelines and team workload, optimize pipeline for smoother sprints. etc.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Knowledge Management</h3>
+                                        <p>Documentation generation and updating, smart search & QA, best practice capture and sharing.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Predictive CI/CD Pipelines</h3>
+                                        <p>Anticipate build failures, optimize resource allocation for fast, reliable releases, etc.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Security & Compliance</h3>
+                                        <p>Continuous code scanning, automated compliance checks, etc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operations Section -->
+                        <div class="services-content carousel-item" data-index="1">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your operations team keeps your business running smoothly. But they often get bogged down with repetitive tasks and manual data processing. AI can streamline workflows, automate routine decisions, and help your team focus on strategic improvements that drive efficiency.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Process Optimization</h3>
+                                        <p>Identify bottlenecks, recommend workflow improvements, automate routine approvals.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Resource Planning</h3>
+                                        <p>Predict resource needs, optimize scheduling, balance workload distribution</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Data Integration</h3>
+                                        <p>Automate data collection and cleansing, connect siloed systems, standardize reporting</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Risk Management</h3>
+                                        <p>Monitor operational metrics, flag potential issues, recommend mitigation steps.</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Vendor Management</h3>
+                                        <p>Track performance metrics, automate communications, optimize contract renewals</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Knowledge Capture</h3>
+                                        <p>Document SOPs, maintain process libraries, enable smart search across operational data</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sales Section -->
+                        <div class="services-content carousel-item" data-index="2">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your sales team needs to spend their time building relationships and closing deals, not getting lost in administrative tasks. AI can handle the busywork, surface key insights, and help reps focus their energy where it matters most.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Lead Qualification</h3>
+                                        <p>Score and prioritize prospects, recommend next best actions, automate follow-ups</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Deal Intelligence</h3>
+                                        <p>Track pipeline health, forecast outcomes, identify at-risk opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Meeting Support</h3>
+                                        <p>Automated note-taking, action item capture, conversation intelligence</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Proposal Generation</h3>
+                                        <p>Custom document creation, pricing optimization, competitor analysis</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Account Planning</h3>
+                                        <p>Relationship mapping, whitespace analysis, strategic recommendations</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Sales Enablement</h3>
+                                        <p>Smart content recommendations, guided selling, best practice sharing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Section -->
+                        <div class="services-content carousel-item" data-index="3">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your product team needs deep insights into customer needs and market opportunities. AI can help process vast amounts of feedback, identify patterns, and accelerate the path from idea to launch.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Customer Insights</h3>
+                                        <p>Analyze feedback across channels, identify emerging needs, track sentiment</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Feature Planning</h3>
+                                        <p>Prioritize roadmap items, estimate development effort, model impact</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Market Research</h3>
+                                        <p>Track competitor moves, identify industry trends, surface opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>User Experience</h3>
+                                        <p>Generate test scenarios, analyze usage patterns, optimize flows</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Documentation</h3>
+                                        <p>Auto-generate product specs, maintain technical docs, create user guides</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Launch Planning</h3>
+                                        <p>Coordinate cross-functional tasks, track dependencies, optimize timing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Support Section -->
+                        <div class="services-content carousel-item" data-index="4">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your support team strives to provide excellent service. But repetitive queries and manual processes slow them down. AI can handle routine questions, surface relevant solutions, and help your team focus on complex issues that require human expertise.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Query Resolution</h3>
+                                        <p>Auto-categorize tickets, suggest responses, route to right experts</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Knowledge Base</h3>
+                                        <p>Maintain living documentation, smart search, identify content gaps</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Customer Intelligence</h3>
+                                        <p>Track satisfaction trends, predict churn risks, identify upsell opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Performance Analytics</h3>
+                                        <p>Monitor response times, identify training needs, optimize staffing</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Self-Service</h3>
+                                        <p>Power intelligent chatbots, guide users to solutions, automate common fixes</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Proactive Support</h3>
+                                        <p>Predict potential issues, trigger preventive actions, automate check-ins</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Finance Section -->
+                        <div class="services-content carousel-item" data-index="5">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your finance team needs to maintain accuracy while providing strategic insights. AI can automate routine calculations, flag anomalies, and help your team focus on analysis that drives business decisions.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Financial Planning</h3>
+                                        <p>Forecast scenarios, optimize budgets, identify cost savings</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Expense Management</h3>
+                                        <p>Automate approvals, detect fraud, track policy compliance</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Revenue Analysis</h3>
+                                        <p>Track performance metrics, identify trends, model projections</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Audit Support</h3>
+                                        <p>Flag unusual patterns, maintain audit trails, automate reconciliations</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Cash Management</h3>
+                                        <p>Optimize working capital, predict cash flows, manage collections</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Reporting</h3>
+                                        <p>Automate standard reports, generate custom views, maintain compliance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marketing Section -->
+                        <div class="services-content carousel-item" data-index="6">
+                            <div class="services-left">
+                                <p class="section-subtitle">
+                                    Your marketing team needs to create compelling campaigns while measuring what works. AI can automate campaign management, surface performance insights, and help your team focus on creative strategy.
+                                </p>
+
+                                <div class="services-grid">
+                                    <div class="service-card">
+                                        <h3>Content Creation</h3>
+                                        <p>Generate drafts, optimize messaging, personalize at scale</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Campaign Analytics</h3>
+                                        <p>Track performance, identify winning tactics, optimize spend</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Audience Insights</h3>
+                                        <p>Segment customers, predict behaviors, identify opportunities</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Social Media</h3>
+                                        <p>Schedule posts, monitor engagement, recommend content</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Email Marketing</h3>
+                                        <p>Optimize send times, personalize content, automate workflows</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <h3>Brand Monitoring</h3>
+                                        <p>Track mentions, analyze sentiment, identify trends</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-fixed-image">
+                        <img src="/static/engineering.png" alt="Services" class="services-image">
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="carousel-dot active" data-index="0"></div>
+                    <div class="carousel-dot" data-index="1"></div>
+                    <div class="carousel-dot" data-index="2"></div>
+                    <div class="carousel-dot" data-index="3"></div>
+                    <div class="carousel-dot" data-index="4"></div>
+                    <div class="carousel-dot" data-index="5"></div>
+                    <div class="carousel-dot" data-index="6"></div>
+                </div>
             </div>
-            <!-- Second Box (Web Dev) -->
-            <div
-                class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center margin-top-20">
-                <a href="/services.html" class="image-link-services d-flex flex-column justify-content-center">
-                    <div class="text-center text">
-                        Web Dev
-                    </div>
-                    <div class="image" style="background-image: url('/static/core/img/webdev_paint_splatter.png');">
-                    </div>
-                </a>
-            </div>
-            <!-- End of Services Section -->
         </div>
 
-
-        <div class="row">
-            <div id="second-section"
-                class="col-lg-8 col-md-10 col-sm-12 offset-lg-2 offset-md-1 second-section text-center">
+        <!-- Featured Case Study -->
+         <!---
+        <div class="row case-study-section">
+            <div class="col-12">
+                <div class="case-study-header">
+                    <span class="tag">FEATURED CASE STUDY</span>
+                    <h2>Transforming Criminal Justice with AI</h2>
+                </div>
                 <div class="row">
-                    <div class="col-12">
-                        <h2 class="text-size-2">
-                            Monadical revolutionizes how
-                            software teams operate
-                        </h2>
+                    <div class="col-md-6">
+                        <img src="/static/recidiviz.png" alt="Case Study" class="case-study-image">
                     </div>
-                    <div class="offset-1 col-10 margin-top-30">
-                        <p class="subtext-size-2">
-                            You'll never be left in the dark wondering how
-                            to deploy, maintain, or support your project
-                        </p>
+                    <div class="col-md-6">
+                        <div class="case-study-content">
+                            <p>Recidiviz is working to address systemic issues in the criminal justice system. After deploying data aggregation tools across multiple states,
+                                they were ready to laverage AI to build their next generation of tools focused on reducing
+                                incarceraton rates.</p>
+                            <a href="#" class="read-more">READ MORE →</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 third-section">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="text-size-2 text-center">
-                            Our quality guarantee
-                        </h2>
-                    </div>
-                    <div class="col-12 margin-top-20">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12 my-2">
-                                <div class="card card-guaranties">
-                                    <div class="card-img-top">
-                                        <img src="/static/core/img/img-home-003.png" class="documented-code-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            You will get a well-tested, beautifully-documented
-                                            codebase with complete deployment, growth,
-                                            and maintenance stories.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12 my-2">
-                                <div class="card card-guaranties">
-                                    <div class="card-img-top">
-                                        <img src="/static/core/img/img-home-004.png" class="security-review-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            You will get long-term support, refactoring,
-                                            and security reviews. We stand behind our code.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12 my-2">
-                                <div class="card card-guaranties">
-                                    <div class="card-img-top">
-                                        <img src="/static/core/img/img-home-005.png" class="dead-code-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-text">
-                                            You will be involved and in control every step of the way -- no
-                                            surprises.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 fourth-section">
-                    <div class="row">
-                        <div class="col-xl-10 offset-xl-1 col-md-10 offset-md-1 col-sm-12 col-12">
-                            <h2 class="text-size-2 text-center">
-                                Monadical is a full-stack software
-                                development consultancy
-                            </h2>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 margin-top-30">
-                            <p class="subtext-size-2 text-center">
-                                We specialize in full-stack web development and custom
-                                software solutions.
-                            </p>
-                            <p class="subtext-size-3 margin-top-30">
-                                Our team of engineers has a wide range of experience, from shipping major new products
-                                to
-                                refactoring gnarly codebases; from designing custom
-                                data pipelines to providing security reviews to building devops infrastructure, and
-                                beyond!
-                            </p>
-                        </div>
-                        <div class="col-12 margin-top-60">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-006.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                WORLD CLASS TALENT
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    As a fully remote company, we
-                                                    have access to the best programmers
-                                                    from all over the world.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Working with us means
-                                                    super-powering your team with
-                                                    highly-skilled, effective developers.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    More cost-efficient than
-                                                    hiring in-house.
+        </div>-->
 
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-007.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                FLEXIBLE SCALABILITY
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    Our awesome team = your awesome team
-                                                    -- as much or as little as you need!
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Quickly increase capacity when you
-                                                    need to meet a deadline, and decrease
-                                                    capacity when things are slow.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Total control over your
-                                                    project, from beginning
-                                                    to end.
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-008.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                FULL ACCOUNTABILITY
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    Complete visibility into
-                                                    the progress
-                                                    of your project.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Transparent communication with
-                                                    weekly check-ins and continual
-                                                    updates -- never be left wondering
-                                                    what’s going on.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Access your code any time
-                                                    from your dedicated dashboard.
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="card team-card">
-                                        <img class="monad-image" src="/static/core/img/img-home-009.png">
-                                        <div class="card-body">
-                                            <p class="card-title team-card-title">
-                                                RISK-FREE CONTRACTS
-                                            </p>
-                                            <p class="card-text">
-                                            <ul>
-                                                <li class="team-card-text">
-                                                    Work on a month-to-month
-                                                    basis.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Cancel anytime, no long-term commitment or cancellation fees.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Pay for what you need
-                                                    when you need it.
-                                                </li>
-                                                <li class="team-card-text">
-                                                    Keep control over your IP.
-                                                </li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 text-center margin-top-60">
-                            <a href="/contact-us.html" class="btn btn-info-inverse">
-                                GET A TECHNICAL ASSESSMENT
-                            </a>
-                        </div>
-                        <div class="col-12 text-center margin-top-150">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <h2 class="text-size-2">
-                                        We love open source
-                                    </h2>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <p class="subtext-size-2">
-                                        Check out our most successful open source projects, with active users in 100+
-                                        countries.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Templates -->
-                {% include "open-source.html" %}
-                {# {% include "clients-reviews.html" %} #}
-                {% include "work-with-us.html" %}
-            </div>
-
-            {#<div class="col-12 text-center margin-top-150">
-                <h2 class="text-size-2 text-center">
-                    Our team and our projects have
-                    been featured in:
-                </h2>
-            </div>
-            <div class="col-12 text-center margin-top-50 media-section">
+        <!-- Featured Articles -->
+        <div class="row articles-section">
+            <div class="col-12">
+                <span class="mini-title">FEATURED ARTICLES</span>
                 <div class="row">
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-021.png">
+                    <div class="col-md-6">
+                        <div class="article-card">
+                            <img src="{{POSTS['dont-give-big-tech-your-papaya'].img}}"
+                                alt="{{POSTS['dont-give-big-tech-your-papaya'].title}}">
+                            <h3>{{POSTS['dont-give-big-tech-your-papaya'].title}}</h3>
+                            <p>{{POSTS['dont-give-big-tech-your-papaya'].description}}</p>
+                            <a href="{{POSTS['dont-give-big-tech-your-papaya'].url}}" class="read-more">READ MORE →</a>
+                        </div>
                     </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-022.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-023.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-024.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-025.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-026.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-027.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-028.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-029.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-030.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-031.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-032.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-033.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-034.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-035.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-036.png">
-                    </div>
-                    <div class="col-md-3 col-4">
-                        <img src="/static/core/img/img-home-037.png">
+                    <div class="col-md-6">
+                        <div class="article-card">
+                            <img src="{{POSTS['conversations-are-the-new-oil'].img}}"
+                                alt="{{POSTS['conversations-are-the-new-oil'].title}}">
+                            <h3>{{POSTS['conversations-are-the-new-oil'].title}}</h3>
+                            <p>{{POSTS['conversations-are-the-new-oil'].description}}</p>
+                            <a href="{{POSTS['conversations-are-the-new-oil'].url}}" class="read-more">READ MORE →</a>
+                        </div>
                     </div>
                 </div>
-            </div>#}
+            </div>
         </div>
+
+        {% include "_final_cta.html" %}
     </div>
 </div>
+{% endblock %}
+
+{% block bodyafter %}
+<script src="/static/core/js/carousel.js"></script>
 {% endblock %}

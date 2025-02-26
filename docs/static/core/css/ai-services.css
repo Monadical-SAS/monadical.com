@@ -1,0 +1,233 @@
+/* AI Services Page Styles */
+
+/* Hero Section */
+.hero-section {
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #1A1A1A;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Styles */
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.section-title .highlight {
+    color: #0087B4;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4A4A4A;
+}
+
+.feature-list li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #0087B4;
+    font-size: 1.2rem;
+}
+
+/* Use Case Section */
+.use-case-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.use-case-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+}
+
+/* Knowledge Management Section */
+.knowledge-section img,
+.operations-section img,
+.customer-section img,
+.analytics-section img {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Expertise Section */
+.expertise-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 25px;
+    height: 100%;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.expertise-card h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #0087B4;
+    margin-bottom: 15px;
+}
+
+.expertise-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    margin-bottom: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 30px 0 60px;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #0087B4;
+    color: white;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,135,180,0.2);
+}
+
+.cta-button:hover {
+    background: #006d91;
+    color: white;
+    text-decoration: none;
+}
+
+/* Animation styles */
+.service-card,
+.expertise-card,
+.article-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service-card.animated,
+.expertise-card.animated,
+.article-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation for cards */
+.service-card:nth-child(1),
+.expertise-card:nth-child(1),
+.article-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.service-card:nth-child(2),
+.expertise-card:nth-child(2),
+.article-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.service-card:nth-child(3),
+.expertise-card:nth-child(3),
+.article-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .knowledge-section .order-md-1 {
+        order: 2;
+    }
+
+    .knowledge-section .order-md-2 {
+        order: 1;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0 60px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .expertise-card {
+        margin-bottom: 20px;
+    }
+}

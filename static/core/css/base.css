@@ -390,7 +390,11 @@ a:hover {
 .dropdown-toggle {
     background: none;
     border: none;
-    padding-right: 15px !important;
+}
+
+.dropdown-toggle::after {
+    content: none;
+    border: none;
 }
 
 .dropdown-menu {

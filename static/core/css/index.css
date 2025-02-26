@@ -1,5 +1,5 @@
 /* Base Layout */
-.container {
+.content-container {
     max-width: 100% !important;  /* Override Bootstrap's max-width */
     padding-left: 5% !important;  /* Add horizontal padding */
     padding-right: 5% !important;
@@ -9,7 +9,7 @@
 
 /* For smaller screens, adjust the padding */
 @media (max-width: 768px) {
-    .container {
+    .content-container {
         padding-left: 5% !important;
         padding-right: 5% !important;
     }

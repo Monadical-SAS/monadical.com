@@ -220,7 +220,7 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:52:02 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
-            <span class="pull-right">5011 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <span class="pull-right">5012 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
             <br>
             
         </small>
@@ -255,7 +255,7 @@ Let’s start off with the problem that led to this. I was tasked with implement
 
 Using Elasticsearch asynchronously in Python is as basic as following this example in their documentation, assuming you’ve already sent some data to Elasticsearch.
 
-```python=
+```python
 import asyncio
 from elasticsearch import AsyncElasticsearch
 
@@ -295,7 +295,7 @@ But why is that line included in the first place? And where else in the applicat
 #### How does it look in JavaScript?
 
 For comparison, if we move over to JavaScript, to accomplish a similar task as above, also using the example from Elasticsearch documentation, we have this:
-```python=
+```python
 const client = require(&#39;elasticsearch&#39;).Client()
 
 async function run() {
@@ -325,7 +325,7 @@ Async/await keywords were added in Python 3.5 and `coroutines` are at the heart 
 
 Here’s an example `coroutine` function:
 
-```python=
+```python
 import asyncio
 
 async def make_api_call(name, time_out):
@@ -359,7 +359,7 @@ Now let’s contrast this to the keywords in JavaScript. Here the async/await ke
 
 A `promise` in JavaScript is simply a proxy for a value not yet known at the time of function execution. Similar to the `future` (This represents an eventual result of an asynchronous operation) concept in Python, it allows functions to return values like synchronous functions. 
 A typical way to create a `promise`:
-```javascript=101
+```javascript101
 const itsRaining = true
 
 const whatSaysTheWeather = new Promise((resolve, reject) =&gt; {
@@ -382,7 +382,7 @@ As the above example shows, we have a `resolve` state and a `reject` state, plus
 Async/await functions use `promise` behind the scenes, with the added benefit of having a more readable syntax.
 
 This is the basic syntax of a function created using the `async/await` keyword in JavaScript:
-```javascript=101
+```javascript101
 async function read_data(db) {
     const data = await db.fetch(&#39;SELECT ...&#39;)
     …
@@ -781,7 +781,7 @@ As I mentioned, I didn’t end up using the AsyncElasticsearch class but, noneth
                         <li>
                             <b>Monadical</b>
                         </li>
-                        <a href="/blog.html">Blog</a>
+                        <li><a href="/blog.html">Blog</a></li>
                         <li><a href="/services.html">Services</a></li>
                         <li><a href="/projects.html">Projects</a></li>
                         <li><a href="/privacy.html">Privacy Policy</a></li>

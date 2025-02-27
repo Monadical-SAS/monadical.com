@@ -1990,7 +1990,7 @@ ul.open-positions>li {
 .container-full::after {
     content: '';
     position: absolute;
-
+    opacity: 0.3;
     left: 0;
     width: 100%;
     height: 4000px;

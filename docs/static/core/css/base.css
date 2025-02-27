@@ -763,7 +763,7 @@ header .navbar::after {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
 
     .signup-form {
         flex-direction: column;
@@ -830,6 +830,11 @@ header .navbar::after {
 
     .xs-hide {
         display: none;
+    }
+
+    .markdown-body {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
 
@@ -1985,34 +1990,35 @@ ul.open-positions>li {
 .container-full::after {
     content: '';
     position: absolute;
+
     left: 0;
     width: 100%;
-    height: 4000px; /* Adjust based on your page length */
+    height: 4000px;
     z-index: -1;
     pointer-events: none;
     background-image:
-        url('/static/cloud-bg-2x.png'),  /* cube */
-        url('/static/b-thing-2x.png'),  /* tentacle */
-        url('/static/figure8-2x.png'),  /* cube */
-        url('/static/cross-2x.png'),  /* tentacle */
-        url('/static/b-thing-2x.png'),  /* cube */
-        url('/static/figure8-2x.png');  /* tentacle */
+        url(/static/cloud-bg-2x.png),
+        url(/static/b-thing-2x.png),
+        url(/static/figure8-2x.png),
+        url(/static/cross-2x.png),
+        url(/static/b-thing-2x.png),
+        url(/static/figure8-2x.png);
     background-position:
         -10px 0px,
-        -200px 600px,
-        calc(100% + 150px) 1400px,
-        -200px 2100px,
-        calc(100% + 150px) 2900px,
-        -200px 3500px,
-        calc(100% + 150px) 4300px;
+        -320px 600px,
+        calc(100% + 250px) 1400px,
+        -350px 2100px,
+        calc(100% + 310px) 2900px,
+        -360px 3500px,
+        calc(100% + 250px) 4300px;
     background-repeat: no-repeat;
     background-size:
-        1300px auto,  /* cube */
-        500px auto,  /* tentacle */
-        500px auto,  /* cube */
-        500px auto,  /* tentacle */
-        500px auto,  /* cube */
-        500px auto;  /* tentacle */
+        1300px auto,
+        500px auto,
+        500px auto,
+        500px auto,
+        500px auto,
+        500px auto;
 }
 
 /* Hide on mobile */
@@ -2197,7 +2203,6 @@ ul.open-positions>li {
 @media (max-width: 768px) {
     .article-content {
         font-size: 16px !important;
-        padding: 0 15px !important;
     }
 
     .article-content h1 {

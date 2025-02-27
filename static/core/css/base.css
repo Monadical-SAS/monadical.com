@@ -831,6 +831,11 @@ header .navbar::after {
     .xs-hide {
         display: none;
     }
+
+    .markdown-body {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 .our-clients .card-clients-name {
@@ -1985,7 +1990,7 @@ ul.open-positions>li {
 .container-full::after {
     content: '';
     position: absolute;
-    opacity: 0.3;
+
     left: 0;
     width: 100%;
     height: 4000px;
@@ -2000,11 +2005,11 @@ ul.open-positions>li {
         url(/static/figure8-2x.png);
     background-position:
         -10px 0px,
-        -300px 600px,
+        -320px 600px,
         calc(100% + 250px) 1400px,
-        -300px 2100px,
-        calc(100% + 300px) 2900px,
-        -350px 3500px,
+        -350px 2100px,
+        calc(100% + 310px) 2900px,
+        -360px 3500px,
         calc(100% + 250px) 4300px;
     background-repeat: no-repeat;
     background-size:
@@ -2198,7 +2203,6 @@ ul.open-positions>li {
 @media (max-width: 768px) {
     .article-content {
         font-size: 16px !important;
-        padding: 0 15px !important;
     }
 
     .article-content h1 {

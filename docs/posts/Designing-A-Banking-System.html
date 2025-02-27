@@ -218,7 +218,11 @@
                 &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
                 <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 11 2024 23:31:12 GMT+0000 (Coordinated Universal Time)"></span>
             </span>
+<<<<<<< HEAD
             <span class="pull-right">5562 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+=======
+            <span class="pull-right">5561 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+>>>>>>> 37720a11b77fc6f64d60cbae1c141732a91eddb9
             <br>
             
         </small>
@@ -427,7 +431,7 @@ A SQL transaction is basically a way of saying &#34;perform all these operations
 Atomic transaction alone aren&#39;t magic though, we still need to avoid [TOCTTOU](https://en.wikipedia.org/wiki/Time_of_check_to_time_of_use) bugs, which means that the `condition` and `action` actually need to be a single statement to avoid data changing between the read and the write.  For example, to subtract 50 chips from a user&#39;s balance, we might write:
 
 :::danger
-```python=
+```python
 user = User.objects.get(id=241)
 if user.balance == 100:
     user.balance = 50

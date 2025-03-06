@@ -770,7 +770,20 @@
     }
 
     .content-padding {
-        padding: 0 20px;
+        padding: 0px;
+    }
+
+    .newsletter-signup {
+        max-width: 100% !important;
+        margin: 0px !important;
+    }
+
+    .services-section {
+        padding: 50px 0px !important;
+    }
+
+    .articles-section .col-md-6 {
+        padding: 15px 0px !important;
     }
 
     .services-grid {

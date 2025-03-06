@@ -8,23 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const postsPerPage = parseInt(loadMoreBtn?.dataset.postsPerPage || 20);
     const totalPosts = parseInt(loadMoreBtn?.dataset.totalPosts || 0);
     let currentPage = parseInt(loadMoreBtn?.dataset.currentPage || 1);
-    let activeFilters = new Set(['article', 'report', 'webinar', 'podcast', 'resource', 'newsletter']);
+    let activeFilters = new Set(['article']);
 
     // Filter functionality
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const filterType = this.dataset.type;
-
-            // Toggle active state
-            this.classList.toggle('active');
-
-            // Update active filters set
-            if (this.classList.contains('active')) {
-                activeFilters.add(filterType);
-            } else {
-                activeFilters.delete(filterType);
+            for (const item of filterBtns) {
+                item.classList.remove('active');
             }
-
+            this.classList.toggle('active')
+            activeFilters.clear()
+            activeFilters.add(filterType)   
             // Apply filters and reset pagination
             currentPage = 1;
             if (loadMoreBtn) {
@@ -71,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+    applyFilters();
 
     // Load More functionality
     if (loadMoreBtn) {

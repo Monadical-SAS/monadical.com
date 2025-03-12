@@ -89,7 +89,12 @@
                     <div class="navbar-content-container">
                         <ul class="navbar-nav">
                             {% for link in HeaderLinks %}
-                                {% if link != "jasette" and not SubHeaderLinks[link] %}
+                                {% if link == "careers" %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" target="_blank"
+                                        href="https://careers.monadical.com/">Careers</a>
+                                    </li>
+                                {% elif link != "jasette" and not SubHeaderLinks[link] %}
                                     <li class="nav-item">
                                         <a class="nav-link {% if request.path == PAGES[link].url %}active{% endif %}"
                                            href="{{PAGES[link].url}}">{{PAGES[link].title}}</a>
@@ -115,10 +120,6 @@
                             <li class="nav-item">
                                 <a class="nav-link"
                                    href="/contact-us.html">LET'S TALK</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" target="_blank"
-                                   href="https://careers.monadical.com/">Careers</a>
                             </li>
                         </ul>
 

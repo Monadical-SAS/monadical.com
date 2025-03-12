@@ -412,8 +412,10 @@ a:hover {
 
 /* Add styling for active nav item */
 .nav-link.active {
-    color: #1A1A1A !important;  /* Subtle black color */
-    opacity: 1;  /* Ensure full opacity when active */
+    color: #1A1A1A !important;
+    /* Subtle black color */
+    opacity: 1;
+    /* Ensure full opacity when active */
 }
 
 .nav-link.active:hover {
@@ -595,8 +597,7 @@ header .navbar::after {
     margin-top: 1em;
 }
 
-.ai-services-card
-{
+.ai-services-card {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 180%;
@@ -1917,8 +1918,7 @@ ul.open-positions>li {
     border-radius: 10px;
 }
 
-.portfolio-scroll-link
-{
+.portfolio-scroll-link {
     display: inline-block;
     margin: 0 2em;
 }
@@ -1927,8 +1927,10 @@ ul.open-positions>li {
 .cube-img-left,
 .tentacle-img-right {
     position: absolute;
-    width: 300px;  /* Set a consistent width */
-    height: auto;  /* Maintain aspect ratio */
+    width: 300px;
+    /* Set a consistent width */
+    height: auto;
+    /* Maintain aspect ratio */
     z-index: -1;
     pointer-events: none;
 }
@@ -1979,6 +1981,7 @@ ul.open-positions>li {
 
 /* Hide on mobile */
 @media (max-width: 768px) {
+
     .cube-img-left,
     .tentacle-img-right {
         display: none;
@@ -2023,6 +2026,7 @@ ul.open-positions>li {
 
 /* Hide on mobile */
 @media (max-width: 768px) {
+
     .container-full::before,
     .container-full::after {
         display: none;
@@ -2049,7 +2053,7 @@ ul.open-positions>li {
 .cta-button:hover {
     background-color: #007399;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,135,180,0.2);
+    box-shadow: 0 4px 12px rgba(0, 135, 180, 0.2);
 }
 
 /* Final CTA */
@@ -2059,7 +2063,8 @@ ul.open-positions>li {
 }
 
 .final-cta h2 {
-    font-size: 2.5rem;  /* Changed from 3rem to 2.4rem */
+    font-size: 2.5rem;
+    /* Changed from 3rem to 2.4rem */
     font-weight: 300;
     margin-bottom: 2.5rem;
     color: #1A1A1A;
@@ -2077,12 +2082,14 @@ ul.open-positions>li {
 }
 
 .services-left {
-    flex: 0 0 60%;  /* Takes 60% of the space */
+    flex: 0 0 60%;
+    /* Takes 60% of the space */
     max-width: 60%;
 }
 
 .services-right {
-    flex: 0 0 40%;  /* Takes 40% of the space */
+    flex: 0 0 40%;
+    /* Takes 40% of the space */
     max-width: 40%;
 }
 
@@ -2151,7 +2158,7 @@ ul.open-positions>li {
     font-style: italic !important;
     border-radius: 12px !important;
     border-left: none !important;
-    box-shadow: 0 0 2px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) !important;
 }
 
 .article-content blockquote p {
@@ -2177,7 +2184,6 @@ ul.open-positions>li {
 /* List Styles */
 .article-content ul {
     list-style: none !important;
-    padding-left: 20px !important;
     margin: 20px 0 !important;
 }
 
@@ -2187,6 +2193,22 @@ ul.open-positions>li {
     position: relative !important;
     padding-left: 25px !important;
     margin: 10px 0 !important;
+}
+
+.ui-affix-toc{
+    display: none !important;
+}
+
+.ui-toc-dropdown > .toc{
+    overflow: hidden !important;
+}
+
+.invisable-node::before {
+    display: none;
+}
+
+.ui-toc-dropdown .nav .nav>li>a{
+    padding-left: 0px !important;
 }
 
 .article-content ul li::before {

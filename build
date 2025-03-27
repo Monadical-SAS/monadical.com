@@ -38,6 +38,7 @@ sleep 1.5
 # Recreate output folder
 rm -Rf docs
 mkdir -p docs/posts
+mkdir -p docs/jobs
 mkdir -p docs/reports
 mkdir -p docs/webinars
 
@@ -50,6 +51,7 @@ cp static/robots.txt docs/robots.txt
 cp static/_config.yml docs/_config.yml
 ./server --pages > docs/pages.txt
 ./server --posts > docs/posts.txt
+./server --jobs > docs/jobs.txt
 ./server --rates > docs/rates.txt
 ./server --reports > docs/reports.txt
 ./server --webinars > docs/webinars.txt
@@ -57,6 +59,7 @@ echo ""
 echo "${blue}[+] Saving pages as static HTML to output/...$normal"
 (cd docs; if [ -s pages.txt ]; then wget -q --no-check-certificate $(<pages.txt); fi)
 (cd docs/posts; if [ -s ../posts.txt ]; then wget -q --no-check-certificate $(<../posts.txt); fi)
+(cd docs/jobs; if [ -s ../jobs.txt ]; then wget -q --no-check-certificate $(<../jobs.txt); fi)
 (cd docs/reports; if [ -s ../reports.txt ]; then wget -q --no-check-certificate $(<../reports.txt); fi)
 (cd docs/webinars; if [ -s ../webinars.txt ]; then wget -q --no-check-certificate $(<../webinars.txt); fi)
 (cd docs; if [ -s rates.txt ]; then wget -q --no-check-certificate $(<../rates.txt); fi)

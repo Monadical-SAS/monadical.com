@@ -63,6 +63,7 @@ CONFIG = load_config(CONFIG_FILE)
 
 PAGES = {page['url']: page for page in list(CONFIG['PAGES'].values())}  # {url: {page_data}}
 POSTS = {post['url']: post for post in list(CONFIG['POSTS'].values())}  # {url: {post_data}}
+JOBS = {job['url']: job for job in list(CONFIG['JOB_POSTS'].values())}  # {url: {post_data}}
 WEBINARS = {webinar['url']: webinar for webinar in list(CONFIG['WEBINARS'].values())}  # {url: {post_data}}
 CASES = {case['url']: case for case in list(CONFIG['CASES'].values())}  # {url: {post_data}}
 RATES = {rate['url']: rate for rate in list(CONFIG['RATES'].values())}  # {url: {post_data}}
@@ -137,6 +138,12 @@ def render_post(path):
     post = POSTS[f'/posts/{path}']
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
+
+
+@app.route('/jobs/<path>')
+def render_job(path):
+    job = JOBS[f'/jobs/{path}']
+    return render_template('job_post.html', now=datetime.now(), **CONFIG, **job)
 
 
 @app.route('/webinars/<path>')
@@ -254,6 +261,10 @@ if __name__ == '__main__':
         # just print list of webinar urls
         if len(WEBINARS) > 0:
             print('\n'.join(HOST + url for url in WEBINARS.keys()))
+    elif len(sys.argv) > 1 and sys.argv[1] == '--jobs':
+        # just print list of job urls
+        if len(JOBS) > 0:
+            print('\n'.join(HOST + url for url in JOBS.keys()))
     else:
         # run the flask http server
         port = int(os.environ.get('PORT', 5000))

@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+{% block description %}{{description}}{% endblock %}
+{% block type %}job-posting{% endblock %}
+{% block img %}https://{{SITE_DOMAIN}}{{img}}{% endblock %}
+{% block subtitle %}<a href="{{PAGES.blog.url}}">Careers</a>{% endblock %}
+{% block enableLogo %}enable-logo{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/core/css/index.css">
+<link rel="stylesheet" href="/static/core/css/job_post.css">
+
+<!-- Google Job Posting Structured Data -->
+<script type="application/ld+json">
+{
+  "@context" : "https://schema.org/",
+  "@type" : "JobPosting",
+  "title" : "{{ title }}",
+  "description" : "{{ job_description|striptags|escape }} <br><br> <strong>Minimum Requirements:</strong> <ul> {% for req in minimum_requirements %}<li>{{ req }}</li>{% endfor %} </ul> <br> <strong>Nice-to-have:</strong> <ul> {% for req in nice_to_have %}<li>{{ req }}</li>{% endfor %} </ul> <br> <strong>Perks:</strong> <ul><li>Work from home (we're fully remote!)</li><li>Flexible working hours</li><li>Six weeks of paid vacation</li><li>Competitive salary</li><li>Time, funding, and support for self-improvement/blogging/talks/side-projects/FOSS contribution</li><li>Strong culture emphasis on individual autonomy and impact on company direction</li></ul> <br> <strong>Application Process:</strong> <p>Our application process is easy and transparent:</p><ol><li>30min: Take an untimed coding test and access the application form upon passing.</li><li>45min: Non-coding conversational interview with Ana.</li><li>2-6 hr: Small untimed take-home project.</li><li>60 min: Pairing interview: Add a feature to take-home project with a lead developer.</li><li>60min: Pairing interview: Same structure as above, pairing with another lead developer.</li></ol><p>The whole process usually takes 2-3 weeks.</p>",
+  "datePosted" : "{{ date }}",
+  // "validThrough" : "YYYY-MM-DD", // Optional: Add an expiration date if applicable
+  "employmentType" : "FULL_TIME", // Assuming full-time, adjust if needed (e.g., "CONTRACTOR", "PART_TIME")
+  "hiringOrganization" : {
+    "@type" : "Organization",
+    "name" : "Monadical",
+    "sameAs" : "https://{{ SITE_DOMAIN }}",
+    "logo" : "https://{{ SITE_DOMAIN }}/static/logo-blue.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      // Optional but recommended: Specify country/region if relevant for remote work laws/taxes
+      // "addressCountry": "US"
+      "addressLocality": "", // Leave empty for remote
+      "addressRegion": "", // Leave empty for remote
+      "postalCode": "", // Leave empty for remote
+      "streetAddress": "" // Leave empty for remote
+    }
+  },
+  "jobLocationType": "TELECOMMUTE", // Indicates the job is remote
+  "applicantLocationRequirements": { // Optional: Specify geographic restrictions if any
+    "@type": "Country",
+    "name": "Canada"
+    // Example: "name": "USA"
+    // Example: "name": ["USA", "Canada"]
+    // Leave empty or omit if open worldwide
+  }
+  // Optional: Add salary information if available
+  // "baseSalary": {
+  //   "@type": "MonetaryAmount",
+  //   "currency": "USD", // Or appropriate currency
+  //   "value": {
+  //     "@type": "QuantitativeValue",
+  //     "minValue": 80000, // Example minimum salary
+  //     "maxValue": 120000, // Example maximum salary
+  //     "unitText": "YEAR" // Or "HOUR", "MONTH"
+  //   }
+  // }
+}
+</script>
+{% endblock %}
+
+{% block article %}
+<div class="container-full">
+    <div class="content-container">
+        <!-- Job Post Hero Section -->
+        <div class="row hero-section job-hero-section">
+            <div class="col-12 text-center">
+                <h1 class="hero-title">{{title}}</h1>
+                <p class="hero-subtitle">{{description}}</p>
+                <a href="{{apply_url}}" class="btn btn-primary cta-button" target="_blank">APPLY NOW</a>
+            </div>
+        </div>
+
+        <!-- Job Content -->
+        <div id="job-post-content" class="row content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <article class="job-content">
+                            <!-- Work Environment Section -->
+                            <div class="section">
+                                <div class="title-group">
+                                    <span class="mini-title">WORK ENVIRONMENT</span>
+                                    <h2 class="section-title">Join Our Team</h2>
+                                </div>
+
+                                <div class="sub-section">
+                                    <h3 class="sub-section-title">Company Culture</h3>
+                                    <div class="sub-section-content">
+                                        <p>
+                                            Monadical is a fully-remote software consultancy that prides ourselves on maintaining
+                                            a healthy work/life balance and supportive remote working culture. We strive to build a
+                                            diverse, friendly, and knowledgeable <a href="/team.html" target="_blank">team</a>, and expose ourselves to a <a href="/portfolio.html" target="_blank">variety of industries</a>
+                                            and learning environments. We work with a wide range of clients on medium/large projects,
+                                            ranging from 3-12+ months. The industries we've worked with are varied, from real-estate to
+                                            finance to biomedicine and neuroscience. Most of our clients find us via word-of-mouth or by
+                                            reading our blog posts and watching our employees talks.
+                                        </p>
+                                        <p>
+                                            We try to build our company structure to ensure employees have lots of freedom to choose
+                                            the projects they enjoy most, and the power to have a real impact on product decisions and
+                                            company direction. We also have a strong set of <a href="/principles.html" target="_blank">company principles</a> that drive who we work
+                                            with and how we maintain our culture. The company principles handbook is a collaborative,
+                                            public effort and is editable by any employee by submitting a pull-request.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="sub-section">
+                                    <h3 class="sub-section-title">Perks</h3>
+                                    <div class="sub-section-content">
+                                        <p>Some perks of working with us include:</p>
+                                        <ul class="perks-list">
+                                            <li>Work from home (we're fully remote!)</li>
+                                            <li>Flexible working hours</li>
+                                            <li>Six weeks of paid vacation</li>
+                                            <li>Competitive salary</li>
+                                            <li>Time, funding, and support for self-improvement/blogging/talks/side-projects/FOSS contribution</li>
+                                            <li>Strong culture emphasis on individual autonomy and impact on company direction</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Job Description Section -->
+                            <div class="section">
+                                <div class="title-group">
+                                    <span class="mini-title">ROLE DETAILS</span>
+                                    <h2 class="section-title">Job Description</h2>
+                                </div>
+
+                                <div class="job-description">
+                                    {{ job_description|safe }}
+                                </div>
+
+                                <div class="requirements-container">
+                                    <div class="sub-section requirements-section">
+                                        <h3 class="sub-section-title">Minimum Requirements</h3>
+                                        <ul class="requirements-list">
+                                            {% for requirement in minimum_requirements %}
+                                                <li>{{ requirement }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-section requirements-section">
+                                        <h3 class="sub-section-title">Nice-to-have</h3>
+                                        <ul class="requirements-list">
+                                            {% for requirement in nice_to_have %}
+                                                <li>{{ requirement }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Application Process Section -->
+                            <div class="section">
+                                <div class="title-group">
+                                    <span class="mini-title">HOW TO APPLY</span>
+                                    <h2 class="section-title">Application Process</h2>
+                                </div>
+
+                                <div class="sub-section-content">
+                                    <p>Our application process is easy and transparent:</p>
+
+                                    <div class="application-steps">
+                                        <div class="application-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h4>30min: Take an <a href="{{apply_url}}" target="_blank">untimed coding test</a></h4>
+                                                <p>Access the application form upon passing.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="application-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h4>45min: Non-coding conversational interview</h4>
+                                                <p>Chat with Ana (no whiteboarding or quizzing theory/architecture/etc)</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="application-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h4>2-6 hr: Small untimed take-home project</h4>
+                                                <p>See <a href="https://docs.monadical.com/s/monadical-study-guide" target="_blank">Monadical Study Guide</a> for more details.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="application-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <h4>60 min: Pairing interview</h4>
+                                                <p>Add a feature to take-home project with a lead developer</p>
+                                                <ul>
+                                                    <li>First 10 min: Discuss your take-home project and the current state of their code.</li>
+                                                    <li>Next 10 min: Have you step into the shoes of a product manager and discuss potential features to add to their project. Frame it as if it's a client project and have you explain your thought process when gathering requirements, prioritizing tickets, delegating, and making time estimates.</li>
+                                                    <li>Last 40-60 min: Pair on adding a feature to the codebase together. This interview is to gauge the experience of working together on a technical task, not to measure raw coding speed. We're more impressed by people who talk clearly through their thought process and code deliberately, than those who try to add as many features as possible in a short time. Treat the task of adding a feature as if it were an un-timed take-home task, and focus on explaining your decisions, more than sheer lines-of-code output during the interview.</li>
+                                                    <li>We've all had interview jitters, so if the feature was not completed during pairing or if you feel the interview wasn't a good representation of your abilities, you're welcome to push further commits up to 24 hours afterward with a short description of the changes made, and we'll include it with equal weight when evaluating the codebase.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="application-step">
+                                            <div class="step-number">5</div>
+                                            <div class="step-content">
+                                                <h4>60min: Pairing interview</h4>
+                                                <p>Same structure as above, pairing with another lead developer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="process-note">
+                                        The whole process usually takes 2-3 weeks depending on the applicant pipeline and response times.
+                                        More details on the application process (along with tips and tricks) can be found in our
+                                        <a href="https://docs.monadical.com/s/monadical-study-guide" target="_blank">Monadical Study Guide</a>.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Apply Now CTA -->
+                            <div class="apply-cta">
+                                <a href="{{apply_url}}" class="btn btn-primary cta-button" target="_blank">APPLY NOW</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Include the final CTA section -->
+        {% include "_final_cta.html" %}
+    </div>
+
+    <!-- Background Elements -->
+    <div id="job-cube-left" class="background-element left-cube"></div>
+    <div id="job-tentacle-right" class="background-element right-tentacle"></div>
+</div>
+
+<script>
+    function setOpacity(){
+        const maxWidth = 1140;
+        const width = $(window).width();
+        $('#job-cube-left').css({
+            opacity: (width < maxWidth) ? 0.1 : 0.6
+        });
+        $('#job-tentacle-right').css({
+            opacity: (width < maxWidth) ? 0.1 : 0.6
+        });
+    }
+
+    $(document).ready(setOpacity);
+    $(window).resize(setOpacity);
+
+    // Remove undesired bootstrap styles
+    setTimeout(() => {
+        $('[href$="bootstrap.min.css"]').attr('disabled', 'disabled');
+        document.querySelector("link[href*='pretty-styles-pack']")?.remove();
+    }, 500);
+</script>
+{% endblock %}

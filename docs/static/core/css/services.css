@@ -1,3 +1,9 @@
+.content-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 .tentacle-img-left{
     top: 4020px;
 }
@@ -34,6 +40,15 @@
     .circle-img-left{
         top: 37%;
     }
+
+    .use-cases-grid,
+    .toolkit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-container {
+        padding: 0 20px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1200px){
     .tentacle-img-left{
@@ -49,7 +64,7 @@
 }
 
 @media  (max-width: 1200px){
-    .cube-img-left {    
+    .cube-img-left {
         top: 12rem;
         max-width: 30%;
         height: auto;
@@ -71,6 +86,178 @@
 @media (max-width: 768px) {
     .card-img-top {
         object-fit: cover;
-        
+
     }
+
+    .use-cases-grid,
+    .toolkit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-categories {
+        gap: 15px;
+    }
+
+    .service-category {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    .feature-card {
+        margin-top: 40px;
+    }
+
+    .content-container {
+        padding: 0 15px;
+    }
+}
+
+/* Service Categories */
+.service-categories {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-category {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A1A1A;
+    padding: 8px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-category.active {
+    background-color: #0087B4;
+    color: white;
+}
+
+.service-category:hover:not(.active) {
+    background-color: rgba(0, 135, 180, 0.1);
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.feature-list li:before {
+    content: "•";
+    color: #0087B4;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.feature-list li strong {
+    color: #1A1A1A;
+    margin-bottom: 5px;
+}
+
+/* Feature Card */
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.feature-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.feature-card .read-more {
+    color: #0087B4;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 20px;
+    position: relative;
+}
+
+.feature-card .read-more:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #0087B4;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.feature-card .read-more:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Use Cases Grid */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.use-case-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.use-case-card h4 {
+    color: #1A1A1A;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.use-case-card p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Toolkit Grid */
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.toolkit-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.toolkit-card:hover {
+    transform: translateY(-5px);
+}
+
+.toolkit-card h4 {
+    color: #1A1A1A;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.toolkit-card p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
 }

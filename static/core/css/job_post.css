@@ -1,0 +1,288 @@
+/* Job Post Styles */
+/* Background Elements */
+.left-cube {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('/static/cube.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.right-tentacle {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-image: url('/static/tentacles.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Hero Section */
+.job-hero-section {
+    padding:0;
+}
+
+
+.hero-subtitle {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+/* Content Layout */
+#job-post-content {
+    padding-top: 1rem;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.job-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.title-group {
+    margin-bottom: 1.5rem;
+}
+
+.mini-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0087B4;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(0, 135, 180, 0.2);
+}
+
+.highlight {
+    color: #0087B4;
+}
+
+.sub-section {
+    margin-bottom: 2rem;
+}
+
+.sub-section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 1rem;
+}
+
+.sub-section-content {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Requirements Section */
+.requirements-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.requirements-section {
+    flex: 1 1 45%;
+    min-width: 300px;
+    padding: 0 1rem;
+}
+
+.perks-list, .requirements-list {
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.perks-list li, .requirements-list li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.perks-list li::before, .requirements-list li::before {
+    content: "•";
+    color: #0087B4;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.job-description {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.job-description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Application Process */
+.application-steps {
+    margin-top: 2rem;
+}
+
+.application-step {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    background-color: #0087B4;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1A1A1A;
+}
+
+.step-content p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.step-content ul {
+    padding-left: 1.25rem;
+    margin-top: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.step-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.process-note {
+    font-style: italic;
+    margin-top: 2rem;
+    color: #555;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Apply Button */
+.apply-cta {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0087B4;
+    color: white !important;
+    text-decoration: none;
+    padding: 0.75rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid #0087B4;
+    letter-spacing: 0.05em;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #0087B4 !important;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .sub-section-title {
+        font-size: 1.3rem;
+    }
+
+    .application-step {
+        flex-direction: column;
+    }
+
+    .step-number {
+        margin-bottom: 1rem;
+    }
+
+    .requirements-container {
+        flex-direction: column;
+    }
+
+    .requirements-section {
+        flex: 1 1 100%;
+    }
+
+    .left-cube, .right-tentacle {
+        opacity: 0.1 !important;
+    }
+}

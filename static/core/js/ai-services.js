@@ -1,21 +1,35 @@
-// AI Services Page JavaScript
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Animation for cards on scroll
-    function animateOnScroll() {
-        const cards = document.querySelectorAll('.service-card, .expertise-card, .article-card');
-        cards.forEach(card => {
-            const cardTop = card.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (cardTop < windowHeight - 100) {
-                card.classList.add('animated');
+    console.log('AI Services JS loaded');
+
+    // Get all filter buttons and content sections
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    console.log('Found filter buttons:', filterButtons.length);
+    console.log('Found content sections:', contentSections.length);
+
+    // Add click event listeners to each filter button
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            console.log('Button clicked:', this.getAttribute('data-type'));
+
+            // Get the filter type from data attribute
+            const filterType = this.getAttribute('data-type');
+
+            // Remove active class from all buttons and add to clicked button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Hide all content sections
+            contentSections.forEach(section => section.classList.remove('active'));
+
+            // Show the corresponding content section
+            const targetSection = document.getElementById(filterType + '-section');
+            console.log('Target section:', filterType + '-section', targetSection ? 'found' : 'not found');
+
+            if (targetSection) {
+                targetSection.classList.add('active');
             }
         });
-    }
-
-    // Initial check on page load
-    animateOnScroll();
-
-    // Listen for scroll events
-    window.addEventListener('scroll', animateOnScroll);
+    });
 });

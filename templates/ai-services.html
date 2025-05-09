@@ -14,6 +14,16 @@
     .content-section.active {
         display: block;
     }
+    .article-card {
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .article-card img {
+        width: 100%;
+        object-fit: cover;
+    }
 </style>
 {% endblock %}
 
@@ -69,8 +79,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="article-card">
+                    <div class="col-12 col-lg-6 d-flex align-items-center">
+                        <div class="article-card" style="height: auto; width: 100%;">
                             <img src="{{POSTS['conversations-are-the-new-oil'].img}}" alt="{{POSTS['conversations-are-the-new-oil'].title}}">
                             <h3>{{POSTS['conversations-are-the-new-oil'].title}}</h3>
                             <p>{{POSTS['conversations-are-the-new-oil'].description}}</p>
@@ -127,8 +137,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="article-card">
+                    <div class="col-12 col-lg-6 d-flex align-items-center">
+                        <div class="article-card" style="height: auto; width: 100%;">
                             <img src="{{POSTS['conversations-are-the-new-oil'].img}}" alt="{{POSTS['conversations-are-the-new-oil'].title}}">
                             <h3>{{POSTS['conversations-are-the-new-oil'].title}}</h3>
                             <p>{{POSTS['conversations-are-the-new-oil'].description}}</p>
@@ -185,8 +195,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="article-card">
+                    <div class="col-12 col-lg-6 d-flex align-items-center">
+                        <div class="article-card" style="height: auto; width: 100%;">
                             <img src="{{POSTS['conversations-are-the-new-oil'].img}}" alt="{{POSTS['conversations-are-the-new-oil'].title}}">
                             <h3>{{POSTS['conversations-are-the-new-oil'].title}}</h3>
                             <p>{{POSTS['conversations-are-the-new-oil'].description}}</p>
@@ -243,8 +253,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="article-card">
+                    <div class="col-12 col-lg-6 d-flex align-items-center">
+                        <div class="article-card" style="height: auto; width: 100%;">
                             <img src="{{POSTS['conversations-are-the-new-oil'].img}}" alt="{{POSTS['conversations-are-the-new-oil'].title}}">
                             <h3>{{POSTS['conversations-are-the-new-oil'].title}}</h3>
                             <p>{{POSTS['conversations-are-the-new-oil'].description}}</p>
@@ -279,30 +289,42 @@
             <div class="row margin-top-90">
                 <div class="col-12">
                     <h2 class="section-title text-center">Deep Expertise In the Tools That Matter:</h2>
-                    <div class="services-grid margin-top-60">
-                        <div class="service-card">
-                            <h3>AI Strategy</h3>
-                            <p>Go beyond buzzwords to deliver real cost savings and productivity gains. We assess your specific business challenges and create a tailored implementation plan that connects the right technologies to your actual needs.</p>
+                    <div class="row margin-top-60">
+                        <div class="col-md-4 mb-4">
+                            <div class="service-card h-100">
+                                <h3>AI Strategy</h3>
+                                <p>Go beyond buzzwords to deliver real cost savings and productivity gains. We assess your specific business challenges and create a tailored implementation plan that connects the right technologies to your actual needs.</p>
+                            </div>
                         </div>
-                        <div class="service-card">
-                            <h3>Large Language Models</h3>
-                            <p>Transform your daily workflows through chatbots, transcription, translation, and semantic search. We build custom LLM tools that boost employee productivity while creating simpler experiences for your end users.</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="service-card h-100">
+                                <h3>Large Language Models</h3>
+                                <p>Transform your daily workflows through chatbots, transcription, translation, and semantic search. We build custom LLM tools that boost employee productivity while creating simpler experiences for your end users.</p>
+                            </div>
                         </div>
-                        <div class="service-card">
-                            <h3>Machine Learning</h3>
-                            <p>Combine your domain knowledge with our technical expertise to identify patterns in your data and unlock advanced forecasting and predictive capabilities.</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="service-card h-100">
+                                <h3>Machine Learning</h3>
+                                <p>Combine your domain knowledge with our technical expertise to identify patterns in your data and unlock advanced forecasting and predictive capabilities.</p>
+                            </div>
                         </div>
-                        <div class="service-card">
-                            <h3>Computer Vision</h3>
-                            <p>Analyze images to extract insights that integrate smoothly with your pipeline. From manufacturing defect detection to livestock health monitoring, these systems create higher yields and reduced losses across your operations.</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="service-card h-100">
+                                <h3>Computer Vision</h3>
+                                <p>Analyze images to extract insights that integrate smoothly with your pipeline. From manufacturing defect detection to livestock health monitoring, these systems create higher yields and reduced losses across your operations.</p>
+                            </div>
                         </div>
-                        <div class="service-card">
-                            <h3>Data Science</h3>
-                            <p>Turn both structured and unstructured data into actionable insights that drive business decisions. We ensure your data is properly prepared for AI integration with attention to quality, security, and scalability.</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="service-card h-100">
+                                <h3>Data Science</h3>
+                                <p>Turn both structured and unstructured data into actionable insights that drive business decisions. We ensure your data is properly prepared for AI integration with attention to quality, security, and scalability.</p>
+                            </div>
                         </div>
-                        <div class="service-card">
-                            <h3>Generative AI with Diffusion Models</h3>
-                            <p>Integrate image generation capabilities directly into your product or service experience. Our team can set up and deploy customized diffusion models that allow your customers to explore creative possibilities within your platform.</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="service-card h-100">
+                                <h3>Generative AI with Diffusion Models</h3>
+                                <p>Integrate image generation capabilities directly into your product or service experience. Our team can set up and deploy customized diffusion models that allow your customers to explore creative possibilities within your platform.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

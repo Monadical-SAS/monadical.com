@@ -49,48 +49,47 @@ def load_config(fname=CONFIG_FILE):
 
 
 def download_post(post):
+    template_path = os.path.join('templates', post['template'])
     CMD = [
         "wget",
         "--convert-links",
         "--output-document",
-        os.path.join('templates', post['template']),
+        template_path,
         post['source'],
     ]
     proc = subprocess.run(CMD, capture_output=True)
     
     # Strip conflicting meta tags from downloaded content
-    template_path = os.path.join('templates', post['template'])
-    if os.path.exists(template_path):
-        with open(template_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Parse and clean HTML
-        soup = BeautifulSoup(content, 'html.parser')
-        
-        # Remove " - HedgeDoc" suffix from title tags
-        title_tag = soup.find('title')
-        if title_tag and title_tag.string:
-            title_text = title_tag.string
-            if title_text.endswith(' - HedgeDoc'):
-                title_tag.string = title_text[:-len(' - HedgeDoc')]
-        
-        # Remove conflicting meta tags that would override our template's meta tags
-        meta_tags_to_remove = [
-            'og:image', 'og:image:alt', 'og:image:type', 'og:title', 'og:description', 'og:type', 'og:url', 'og:site_name',
-            'twitter:image', 'twitter:title', 'twitter:description', 'twitter:url', 'twitter:card'
-        ]
-        
-        for tag in soup.find_all('meta'):
-            # Check property attribute (og: tags)
-            if tag.get('property') in meta_tags_to_remove:
-                tag.decompose()
-            # Check name attribute (twitter: tags)  
-            elif tag.get('name') in meta_tags_to_remove:
-                tag.decompose()
-        
-        # Write cleaned content back
-        with open(template_path, 'w', encoding='utf-8') as f:
-            f.write(str(soup))
+    with open(template_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Parse and clean HTML
+    soup = BeautifulSoup(content, 'html.parser')
+
+    # Remove " - HedgeDoc" suffix from title tags
+    title_tag = soup.find('title')
+    if title_tag and title_tag.string:
+        title_text = title_tag.string
+        if title_text.endswith(' - HedgeDoc'):
+            title_tag.string = title_text[:-len(' - HedgeDoc')]
+
+    # Remove conflicting meta tags that would override our template's meta tags
+    meta_tags_to_remove = [
+        'og:image', 'og:image:alt', 'og:image:type', 'og:title', 'og:description', 'og:type', 'og:url', 'og:site_name',
+        'twitter:image', 'twitter:title', 'twitter:description', 'twitter:url', 'twitter:card'
+    ]
+
+    for tag in soup.find_all('meta'):
+        # Check property attribute (og: tags)
+        if tag.get('property') in meta_tags_to_remove:
+            tag.decompose()
+        # Check name attribute (twitter: tags)
+        elif tag.get('name') in meta_tags_to_remove:
+            tag.decompose()
+
+    # Write cleaned content back
+    with open(template_path, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
 
 
 CONFIG = load_config(CONFIG_FILE)

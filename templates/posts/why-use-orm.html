@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Your description here">
-    
-    
-    
-    <meta property="og:title" content="Why should you use an ORM (Object Relational Mapper)? - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Your description here">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Why should you use an ORM (Object Relational Mapper)? - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Your description here" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Why should you use an ORM (Object Relational Mapper)? - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?default=identicon&amp;s=96);" title="karim"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="karim"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon Nov 30 2020 16:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 09 2021 15:32:32 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">13462 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Mon Nov 30 2020 16:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 09 2021 15:32:32 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">13463 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -76,12 +61,12 @@
 
 Budding web developers learning [Model-View-Controller frameworks](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) are taught that they should use an Object Relational Mapper (ORM) to interface with their databases. But the “why” is often brushed aside or omitted entirely, leaving a fledgeling programmer with burning questions like ”What are ORMs, anyway?” and “What problems do they solve?”  
 
-ORMs are a class of tools that facilitate interactions between a programming language and a relational database management system. They can range in complexity and opinionation from a simple set of abstractions for interactions with relational databases (SQLAlchemy Base) to fully opinionated tools for mapping database rows to language structs (Django ORM, SQLAlchemy ORM). To get a better understanding of how ORMs work, it&#39;s helpful to work through the kind of problems they can solve.
+ORMs are a class of tools that facilitate interactions between a programming language and a relational database management system. They can range in complexity and opinionation from a simple set of abstractions for interactions with relational databases (SQLAlchemy Base) to fully opinionated tools for mapping database rows to language structs (Django ORM, SQLAlchemy ORM). To get a better understanding of how ORMs work, it's helpful to work through the kind of problems they can solve.
 
 
 ## Plain Python World 
 
-Let&#39;s think about how to model a simple polling application in Python. The application allows users to add questions and choices and vote on them. Using [(data)classes](https://docs.python.org/3/library/dataclasses.html), we can model what a Question and Choice are.
+Let's think about how to model a simple polling application in Python. The application allows users to add questions and choices and vote on them. Using [(data)classes](https://docs.python.org/3/library/dataclasses.html), we can model what a Question and Choice are.
 
 ```python
 class Question:
@@ -100,14 +85,14 @@ class Choice:
 This is great -- it means we can now create Questions and Choices in Python with this simple abstraction.
 
 ```python
-question1 = Question(&#34;Who is the best band of the 20th century?&#34;, datetime.datetime(2020, 7, 14))
-q1_choice1 = Choice(question1, &#34;The Beatles&#34;, 0)
-q2_choice2 = Choice(question1, &#34;The Smiths&#34;, 0)
+question1 = Question("Who is the best band of the 20th century?", datetime.datetime(2020, 7, 14))
+q1_choice1 = Choice(question1, "The Beatles", 0)
+q2_choice2 = Choice(question1, "The Smiths", 0)
 
-question2 = Question(&#34;What is the best hour of the day?&#34;, datetime.datetime(2020, 7, 13))
-q2_choice1 = Choice(question2, &#34;7 in the morning&#34;)
-q2_choice2 = Choice(question2, &#34;9 in the evening&#34;)
-q2_choice3 = Choice(question2, &#34;11 in the morning&#34;)
+question2 = Question("What is the best hour of the day?", datetime.datetime(2020, 7, 13))
+q2_choice1 = Choice(question2, "7 in the morning")
+q2_choice2 = Choice(question2, "9 in the evening")
+q2_choice3 = Choice(question2, "11 in the morning")
 
 
 
@@ -129,29 +114,29 @@ import pickle
 from operator import attrgetter
 
 # assuming questions and choice we already pickled and saved
-questions_filehandler = open(&#39;../data/questions.objs&#39;, &#39;rb&#39;)
+questions_filehandler = open('../data/questions.objs', 'rb')
 questions_list = pickle.load(questions_filehandler)
 
-choices_filehandler = open(&#39;../data/choices.objs&#39;, &#39;rb&#39;)
+choices_filehandler = open('../data/choices.objs', 'rb')
 choices_list = pickle.load(choices_filehandler)
 winning_choices = []
 for question in questions_list:
-    winning_choices.append(max(question.choices, key=attrgetter(&#39;votes&#39;)))
+    winning_choices.append(max(question.choices, key=attrgetter('votes')))
 
 highest_choice_of_all_time = winning_choices.sort(reverse=True)[0]
 
 #let’s add some a question and a choice while we are at it
-question7 = Question(&#34;What is the best cloud provider?&#34;, datetime.datetime(2020, 7, 13))
-q7_choice1 = Choice(question2, &#34;Digital Ocean&#34;)
-q7_choice2 = Choice(question2, &#34;Hetzner&#34;)
+question7 = Question("What is the best cloud provider?", datetime.datetime(2020, 7, 13))
+q7_choice1 = Choice(question2, "Digital Ocean")
+q7_choice2 = Choice(question2, "Hetzner")
 
 questions_list.append(question7)
 choices_list.append(q7_choice1, q7_choice2)
 
-questions_filehandler = open(&#39;../data/questions.objs&#39;, &#39;wb&#39;)
+questions_filehandler = open('../data/questions.objs', 'wb')
 pickle.dump(questions_list, questions_filehandler)
 
-choices_filehandler = open(&#39;../data/choices.objs&#39;, &#39;wb&#39;)
+choices_filehandler = open('../data/choices.objs', 'wb')
 pickle.dump(choices_list, choices_filehandler)
 ```
 
@@ -168,53 +153,53 @@ Finally, what if we have so many Questions and Choices that they can’t fit int
 
 A better solution for both problems would be to use [relational database systems](https://en.wikipedia.org/wiki/Relational_database). The history and evolution of relational database systems is beyond our scope, but they are some of the most mature pieces of software out there. Virtually any piece of software you have touched in the past twenty years relies on relational database systems.
 
-You can think of relational databases as working a bit like magic. That&#39;s because SQL - the language used to interact with relational databases - is a [declarative language](https://en.wikipedia.org/wiki/Declarative_programming), i.e.: programming in SQL involves describing the desired end state of your program. This is in contrast to imperative programming, where you rely on statements to change a program to the desired state.
+You can think of relational databases as working a bit like magic. That's because SQL - the language used to interact with relational databases - is a [declarative language](https://en.wikipedia.org/wiki/Declarative_programming), i.e.: programming in SQL involves describing the desired end state of your program. This is in contrast to imperative programming, where you rely on statements to change a program to the desired state.
 
 If you have ever used CSS, you have used declarative programming. For example, in CSS, if you want all level one headings to be the color red, you simply write `h1: {color: red}`, instead of traversing the whole document searching for level one headers, and applying the color red to them. The CSS engine takes care of finding all level one headers and applying the color red to them. Similarly, in SQL, if you make the query `SELECT * FROM Choices WHERE votes &gt; 10`, the SQL engine makes a [query plan](https://en.wikipedia.org/wiki/Query_plan) that will determine what sequence of steps it should take to return the result of your query.
 
 In SQL databases, data is organized in tables, which are made of rows and columns. Rows represent an entry, and columns represent the fields. We can model our polling application in SQL using two tables, Questions and Choices:
 
 ```sql
-CREATE TABLE &#34;Questions&#34; (
-    &#34;id&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    &#34;question&#34;    TEXT NOT NULL,
-    &#34;pub_date&#34;    TEXT NOT NULL
+CREATE TABLE "Questions" (
+    "id"    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "question"    TEXT NOT NULL,
+    "pub_date"    TEXT NOT NULL
 );
 
-CREATE TABLE &#34;Choices&#34; (
-    &#34;choiceid&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-    &#34;questionid&#34;    INTEGER NOT NULL,
-    &#34;choice_text&#34;    TEXT NOT NULL,
-    &#34;votes&#34;    INTEGER
+CREATE TABLE "Choices" (
+    "choiceid"    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    "questionid"    INTEGER NOT NULL,
+    "choice_text"    TEXT NOT NULL,
+    "votes"    INTEGER
 );
 ```
 (To follow along with this tutorial, you can use the [SQLite DB Browser](https://sqlitebrowser.org/), available for all major operating systems.)
 
 Now that we have our tables, let’s insert some Questions like we did in our Python implementation above.
 ```sql
-INSERT INTO &#34;main&#34;.&#34;Questions&#34; (&#34;id&#34;, &#34;question&#34;, &#34;pub_date&#34;) VALUES (&#39;1&#39;, &#39;Who is the best band of the 20th century?&#39;, &#39;2020/7/14&#39;);
-INSERT INTO &#34;main&#34;.&#34;Questions&#34; (&#34;id&#34;, &#34;question&#34;, &#34;pub_date&#34;) VALUES (&#39;2&#39;, &#39;&#34;What is the best hour of the day?&#34;&#39;, &#39;2020/7/12&#39;);
+INSERT INTO "main"."Questions" ("id", "question", "pub_date") VALUES ('1', 'Who is the best band of the 20th century?', '2020/7/14');
+INSERT INTO "main"."Questions" ("id", "question", "pub_date") VALUES ('2', '"What is the best hour of the day?"', '2020/7/12');
 ...
 ```
 
 And some answers:
 
 ```sql
-INSERT INTO &#34;main&#34;.&#34;Choices&#34;
-(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
-VALUES (1, 1, &#39;The Beatles&#39;, 0);
-INSERT INTO &#34;main&#34;.&#34;Choices&#34;
-(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
-VALUES (2, 1, &#39;The Smiths&#39;, 0);
-INSERT INTO &#34;main&#34;.&#34;Choices&#34;
-(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
-VALUES (3, 2, ‘7 in the morning&#39;, 0);
-INSERT INTO &#34;main&#34;.&#34;Choices&#34;
-(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
-VALUES (4, 2, ‘9 in the evening&#39;, 0);
-INSERT INTO &#34;main&#34;.&#34;Choices&#34;
-(&#34;choiceid&#34;, &#34;questionid&#34;, &#34;choice_text&#34;, &#34;votes&#34;)
-VALUES (5, 2, ‘11 in the morning&#39;, 0);
+INSERT INTO "main"."Choices"
+("choiceid", "questionid", "choice_text", "votes")
+VALUES (1, 1, 'The Beatles', 0);
+INSERT INTO "main"."Choices"
+("choiceid", "questionid", "choice_text", "votes")
+VALUES (2, 1, 'The Smiths', 0);
+INSERT INTO "main"."Choices"
+("choiceid", "questionid", "choice_text", "votes")
+VALUES (3, 2, ‘7 in the morning', 0);
+INSERT INTO "main"."Choices"
+("choiceid", "questionid", "choice_text", "votes")
+VALUES (4, 2, ‘9 in the evening', 0);
+INSERT INTO "main"."Choices"
+("choiceid", "questionid", "choice_text", "votes")
+VALUES (5, 2, ‘11 in the morning', 0);
 ```
 
 Now we can declaratively ask: Which choices have received more than 10 votes?
@@ -229,13 +214,13 @@ A naive implementation could parameterize a query through the use of Python stri
 
 ```python3
 def get_more_than_n_votes(n: int):
-    return f&#39;SELECT * FROM choices WHERE votes &gt; {n}&#39;
+    return f'SELECT * FROM choices WHERE votes &gt; {n}'
 ```  
 Then we can execute that on our database:
 
 ```python
 import sqlite3
-conn = sqlite3.connect(&#39;example.db&#39;)
+conn = sqlite3.connect('example.db')
 c = conn.cursor()
 c.execute(get_more_than_n_votes(10))
 ```
@@ -278,9 +263,9 @@ That may not look like much code, but remember all the different questions we wa
 
 ORMs are libraries that sit between the SQL database world and your object-oriented programming language world. For all intents and purposes, they are an abstraction layer that allows, among other things, for the translation of Python to SQL. Indeed, in most cases, every single ORM line is translated to an SQL line. The ORM is also responsible for all interactions with the database. 
 
-Let&#39;s consider how we write applications in Django with the Django ORM. We start by defining Models, which are Classes in the object-oriented sense, and tables in the relational database sense. Models are composed of attributes (fields) that, at their most basic level, describe what a model can contain. Those fields are the columns in the relational database. Those columns can only contain certain types (integers, charfields) for columns, which are predetermined by the database. 
+Let's consider how we write applications in Django with the Django ORM. We start by defining Models, which are Classes in the object-oriented sense, and tables in the relational database sense. Models are composed of attributes (fields) that, at their most basic level, describe what a model can contain. Those fields are the columns in the relational database. Those columns can only contain certain types (integers, charfields) for columns, which are predetermined by the database. 
 
-Consider the example from [Django&#39;s tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/#creating-models):
+Consider the example from [Django's tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/#creating-models):
 
 ```python
 from django.db import models
@@ -299,7 +284,7 @@ class Choice(models.Model):
 
 
 
-Here, we subclass Django&#39;s own `models.Model` to create a table and each attribute represents a database column, with the initialization attributes (e.g: max_length=200) representing a constraint that will be enforced at the application level (i.e, in Python) and at the database level (i.e, by your database engine).
+Here, we subclass Django's own `models.Model` to create a table and each attribute represents a database column, with the initialization attributes (e.g: max_length=200) representing a constraint that will be enforced at the application level (i.e, in Python) and at the database level (i.e, by your database engine).
 
 
 Additionally, each Choice object will have a [child relationship](https://en.wikipedia.org/wiki/One-to-many_(data_model)) with a Question. The reason for this is that each `Choice` object can only belong to one Question, but not the other way around. In practice this means that each `choice` object will contain a `question_id` field that links it back to the Question it’s related to. This relationship, and [similar relationships](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model), allow us to model our application based on interactions between different tables. Those relationships in turn determine how the database engine of your relational database will plan its queries and give you your results. 
@@ -311,36 +296,36 @@ Since I promised you that all ORM code will turn into SQL code, the result of th
 --
 -- Create model Question
 --
-CREATE TABLE &#34;app1_question&#34; (
-    &#34;id&#34; integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-    &#34;question_text&#34; varchar(200) NOT NULL,
-    &#34;pub_date&#34; datetime NOT NULL
+CREATE TABLE "app1_question" (
+    "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "question_text" varchar(200) NOT NULL,
+    "pub_date" datetime NOT NULL
 );
 --
 -- Create model Choice
 --
-CREATE TABLE &#34;app1_choice&#34; (
-    &#34;id&#34; integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-    &#34;choice_text&#34; varchar(200) NOT NULL,
-    &#34;votes&#34; integer NOT NULL,
-    &#34;question_id&#34; integer NOT NULL REFERENCES &#34;app1_question&#34; (&#34;id&#34;) DEFERRABLE INITIALLY DEFERRED
+CREATE TABLE "app1_choice" (
+    "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "choice_text" varchar(200) NOT NULL,
+    "votes" integer NOT NULL,
+    "question_id" integer NOT NULL REFERENCES "app1_question" ("id") DEFERRABLE INITIALLY DEFERRED
 );
 ```
 
 That’s not really different from the code we used in SQL in the section above:
 
 ```sql
-CREATE TABLE &#34;Questions&#34; (
-    &#34;id&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    &#34;question&#34;    TEXT NOT NULL,
-    &#34;pub_date&#34;    TEXT NOT NULL
+CREATE TABLE "Questions" (
+    "id"    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "question"    TEXT NOT NULL,
+    "pub_date"    TEXT NOT NULL
 );
 
-CREATE TABLE &#34;Choices&#34; (
-    &#34;choiceid&#34;    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-    &#34;questionid&#34;    INTEGER NOT NULL,
-    &#34;choice_text&#34;    TEXT NOT NULL,
-    &#34;votes&#34;    INTEGER
+CREATE TABLE "Choices" (
+    "choiceid"    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    "questionid"    INTEGER NOT NULL,
+    "choice_text"    TEXT NOT NULL,
+    "votes"    INTEGER
 );
 ```
 
@@ -362,10 +347,10 @@ Choice.objects.filter(votes__gt=10)
 
 Thus a cycle is formed: We define our Django models in the Python world as objects, the ORM layer translates those models to SQL statements with SQL types to create tables and columns. Then, in our application, we instantiate objects from those models, which creates rows in the aforementioned tables. Finally, when we want those objects back, we use Python code to retrieve them, which triggers the ORM layer to create the necessary query to retrieve the rows from the database. Then, the ORM layer takes the resulting rows and maps them back to objects.
 
-Another notable benefit of ORMs is their [migration system](https://en.wikipedia.org/wiki/Schema_migration). When we make some changes to our database schema, such as adding a column/attribute to a table/model, problems can arise if the application code depends on the existence of certain columns/attributes that don&#39;t exist. To manage these changes, a migration system is used, whereby changes to the schema of the database, which are the same as changes that the models undergo, are version-controlled and thus are well-known, predictable, and reversible.
+Another notable benefit of ORMs is their [migration system](https://en.wikipedia.org/wiki/Schema_migration). When we make some changes to our database schema, such as adding a column/attribute to a table/model, problems can arise if the application code depends on the existence of certain columns/attributes that don't exist. To manage these changes, a migration system is used, whereby changes to the schema of the database, which are the same as changes that the models undergo, are version-controlled and thus are well-known, predictable, and reversible.
 
 
-So that’s what ORMs are: a class of tools that facilitate interactions between a programming language and a relational database management system. In this guide, we started with solving the problem of retrieval and state inconsistencies by proposing the use of a relational database system. We then built on top of that knowledge the ability to query a relational database, and saw the limitations of doing so imperatively in Python. In production systems, it&#39;s better to start with something opinionated like the Django ORM and migrate to more advanced solutions as limitations arise.
+So that’s what ORMs are: a class of tools that facilitate interactions between a programming language and a relational database management system. In this guide, we started with solving the problem of retrieval and state inconsistencies by proposing the use of a relational database system. We then built on top of that knowledge the ability to query a relational database, and saw the limitations of doing so imperatively in Python. In production systems, it's better to start with something opinionated like the Django ORM and migrate to more advanced solutions as limitations arise.
 
 Read also:
 From our blog and complimentary to this post if you use Firebase, how to migrate from Firebase to Django: https://monadical.com/posts/from-firebase-to-django.html#
@@ -383,30 +368,26 @@ Document Object Mapper: https://github.com/MongoEngine/mongoengine
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

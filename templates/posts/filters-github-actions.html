@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="In this tutorial, you will learn how to implement your version of &#34;[skip ci]&#34; of GitHub Actions to control when executing a workflow or jobs">
-    
-    
-    
-    <meta property="og:title" content="filters with Github Actions - HedgeDoc">
-    
-    
-    <meta property="og:description" content="In this tutorial, you will learn how to implement your version of &#34;[skip ci]&#34; of GitHub Actions to control when executing a workflow or jobs">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>filters with Github Actions - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content='In this tutorial, you will learn how to implement your version of "[skip ci]" of GitHub Actions to control when executing a workflow or jobs' name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>filters with Github Actions - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&amp;s=96);" title="cesar"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 31 2023 16:44:55 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Apr 05 2023 15:40:55 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">4626 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Fri Mar 31 2023 16:44:55 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Apr 05 2023 15:40:55 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">4627 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -111,17 +96,17 @@ Then create your first workflow and execute some simple instructions. But rememb
 name: Basic info
 on: 
   push:
-    branches: [&#34;main&#34;]
+    branches: ["main"]
   
   pull_request:
-    branches: [&#34;main&#34;]
+    branches: ["main"]
 
 jobs:
   showinfo:
     runs-on: ubuntu-latest
     steps:
       - name: Show message 
-        run: echo &#34;Hello everyone!&#34;
+        run: echo "Hello everyone!"
 
 ```
 
@@ -140,9 +125,9 @@ Next, create a `file1.txt` file, and push it to the remote repo in the main bran
 
 ```bash
 touch file1.txt 
-echo &#34;first line&#34; &gt;&gt; file1.txt
+echo "first line" &gt;&gt; file1.txt
 git add file1.txt
-git commit -m &#34;[skip ci] add first txt file&#34;
+git commit -m "[skip ci] add first txt file"
 git push origin main
 ```
 
@@ -169,7 +154,7 @@ git add file2.txt
 
 3. Create a commit with the new file, but add the string `[skip ci]` in the message:
 ```bash
-git commit -m &#34;[skip ci] add file2.txt&#34;
+git commit -m "[skip ci] add file2.txt"
 ```
 
 4. Push to the remote repository:
@@ -185,9 +170,9 @@ git push origin pr1
 Once again, you can see the operation of `[skip ci]`. Now, add a line to the `file2.txt` file and do the same process without adding `[skip ci]` to the commit:
 
 ```bash
-echo &#34;first line in file 2&#34; &gt;&gt; file2.txt
+echo "first line in file 2" &gt;&gt; file2.txt
 git add file2.txt
-git commit -m &#34;add a new line in file2&#34;
+git commit -m "add a new line in file2"
 git push origin pr1
 ```
 
@@ -195,7 +180,7 @@ git push origin pr1
 
 ![figure8](https://docs.monadical.com/uploads/265bfbf0-f2c3-45da-b602-df7c976a5c21.png)
 
-In this case, the workflow was executed without problems. If you merge the PR, you&#39;ll notice that the workflow was executed again. This is because the event was pushed to the main branch:
+In this case, the workflow was executed without problems. If you merge the PR, you'll notice that the workflow was executed again. This is because the event was pushed to the main branch:
 
 ![figure9](https://docs.monadical.com/uploads/dd21d5c3-0feb-4e23-bfc8-e138cd15928a.png)
 
@@ -212,7 +197,7 @@ Let’s look at these two options below in more detail.
 
 ### Option 1: Using filters on paths and files 😲
 
-This option allows you to control the execution of the workflow. You can control the execution even if the changes are from a specific path or file related to the commit, but you can&#39;t control the `[skip ci]` at the commit level using keywords. For example, the `[skip ci]` occurs at the file and path level. Let’s take a look at how this works:
+This option allows you to control the execution of the workflow. You can control the execution even if the changes are from a specific path or file related to the commit, but you can't control the `[skip ci]` at the commit level using keywords. For example, the `[skip ci]` occurs at the file and path level. Let’s take a look at how this works:
 
 1. In the main branch, create a folder called content and create the content1.txt inside the folder.
 
@@ -225,14 +210,14 @@ This option allows you to control the execution of the workflow. You can control
         branches:
           - main
         paths-ignore: 
-          - &#34;content/**&#34;
-          - &#34;file1.txt&#34;
+          - "content/**"
+          - "file1.txt"
 
       pull_request:
-        branches: [&#34;main&#34;]
+        branches: ["main"]
         paths-ignore: 
-          - &#34;content/**&#34;
-          - &#34;file1.txt&#34;
+          - "content/**"
+          - "file1.txt"
 
     jobs:
       Build:
@@ -240,7 +225,7 @@ This option allows you to control the execution of the workflow. You can control
         steps:
           - uses: actions/checkout@v2
           -name: Show info
-            run: echo &#34;Hello World&#34;
+            run: echo "Hello World"
     ```
     This workflow makes use of the filter [paths-ignore] (https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore) to indicate that said workflow should not be executed when there are changes in `file1.txt`, or if the files are contained in the folder  `content`.
 
@@ -248,9 +233,9 @@ This option allows you to control the execution of the workflow. You can control
 
 4. Modify the file `file1.txt`, save changes, and push back to the main branch:
     ```bash
-    echo &#34;line 2 in file 1&#34; &gt;&gt; file1.txt
+    echo "line 2 in file 1" &gt;&gt; file1.txt
     git add file1.txt
-    git commit -m &#34;add line2 in file1.txt&#34;
+    git commit -m "add line2 in file1.txt"
     git push origin main
     ```
 
@@ -265,7 +250,7 @@ When the first commit is sent, both workflows are executed( red box 1). But when
 7. Modify the file `file2.txt`, save changes, and push again to the main branch. In this case,  both workflows are executed:
 ![figure11](https://docs.monadical.com/uploads/f686e749-d9b0-483d-b9ab-2af632abfd6c.png)
 
-There is another drawback in addition to not controlling the `[skip ci]` at the commit level. If you&#39;re working on a branch associated with a PR and you modify a file that is not excluded, `workflow2`will remain active. This means it will continue to execute, regardless of subsequent commits that are related to an excluded file. For example, if you create a new PR, `pr2` and modify `file1.txt`, only `workflow1` is executed. If you modify `file2.txt`, both workflows are executed. But if you then modify `file1.txt` again, both workflows are subsequently executed:
+There is another drawback in addition to not controlling the `[skip ci]` at the commit level. If you're working on a branch associated with a PR and you modify a file that is not excluded, `workflow2`will remain active. This means it will continue to execute, regardless of subsequent commits that are related to an excluded file. For example, if you create a new PR, `pr2` and modify `file1.txt`, only `workflow1` is executed. If you modify `file2.txt`, both workflows are executed. But if you then modify `file1.txt` again, both workflows are subsequently executed:
 
 ![figure12](https://docs.monadical.com/uploads/f2705684-1538-4686-a6a1-0327af99cf93.png)
 ![figure13](https://docs.monadical.com/uploads/c2ea065c-2d0e-40c7-8741-45e7175a6ac3.png)
@@ -277,7 +262,7 @@ In this case, it would be necessary to mix these filters together with `[skip ci
 
 This second option does not prevent you from running the workflow, but it does allow you to skip some jobs.
 
-Consider a project that has both backend and frontend components within the same repository, and one of the workflow jobs involves running the backend tests. When updating documentation or the README, which doesn&#39;t impact the tests, the workflow still executes the tests after pushing the changes, even though the tests code remains unchanged. As a result, you waste execution time running the action pipeline and consume your GitHub Actions account credits. For complex projects, these tests may take a considerable amount of time to finish, making the unnecessary execution even more costly. 
+Consider a project that has both backend and frontend components within the same repository, and one of the workflow jobs involves running the backend tests. When updating documentation or the README, which doesn't impact the tests, the workflow still executes the tests after pushing the changes, even though the tests code remains unchanged. As a result, you waste execution time running the action pipeline and consume your GitHub Actions account credits. For complex projects, these tests may take a considerable amount of time to finish, making the unnecessary execution even more costly. 
 
 In the example above, it would be useful to skip these jobs. You could do this by using your own trigger keywords when you make a push to the remote repository. Let’s learn how to do that by implementing the main branch and PR.
 
@@ -290,10 +275,10 @@ Following the same flow as option 1, complete the next steps:
     name: filter by jobs
     on: 
       push:
-        branches: [&#34;main&#34;]
+        branches: ["main"]
 
       pull_request:
-        branches: [&#34;main&#34;]
+        branches: ["main"]
 
     jobs:
 
@@ -301,17 +286,17 @@ Following the same flow as option 1, complete the next steps:
         runs-on: ubuntu-latest
         steps:
           - name: Show message 
-            run: echo &#34;Hello everybody!&#34;
+            run: echo "Hello everybody!"
           - name: show commit message
-            run: echo &#34;commit - ${{github.event.head_commit.message}}&#34;
+            run: echo "commit - ${{github.event.head_commit.message}}"
 
       test:
-        if: &#34;!contains(github.event.head_commit.message, &#39;[doc]&#39;)&#34;
+        if: "!contains(github.event.head_commit.message, '[doc]')"
         name: Test
         runs-on: ubuntu-latest
         steps:
           - name: test stuff 
-            run: echo &#34;Simulating tests&#34;
+            run: echo "Simulating tests"
     ```
     In this particular workflow, two jobs have been implemented: `showinfo` displays general information (for example, it can represent a build), and `test` simulates a testing pipeline. 
 
@@ -338,7 +323,7 @@ Following the same flow as option 1, complete the next steps:
 
     ![figure18](https://docs.monadical.com/uploads/b5ba7ffc-c789-4446-8aab-84396ec272cc.png)
     
-    When the `[doc]` string appears in the commit, the job testing is not executed. What does this mean? Well, sometimes you don&#39;t need to execute certain jobs, like creation or documentation updates, in your workflows. In this case, implement these filters with your own scopes or trigger keywords. You could even create another job with the function of building the documentation, running it only if you&#39;ve updated the documentation.
+    When the `[doc]` string appears in the commit, the job testing is not executed. What does this mean? Well, sometimes you don't need to execute certain jobs, like creation or documentation updates, in your workflows. In this case, implement these filters with your own scopes or trigger keywords. You could even create another job with the function of building the documentation, running it only if you've updated the documentation.
 
 #### Case 2: Pull request
 
@@ -353,7 +338,7 @@ By following these steps, you get the following:
 
 ![figure19](https://docs.monadical.com/uploads/91b00ef7-f617-4f4e-aa6e-31f20f08ab9f.png)
 
-Wait, something happened 😱!  The filter didn&#39;t work 😭. If we check the `showinfo`, you&#39;ll see the reason: 
+Wait, something happened 😱!  The filter didn't work 😭. If we check the `showinfo`, you'll see the reason: 
 
 ![figure20](https://docs.monadical.com/uploads/205221e7-78bc-46ce-8196-f260996219cc.png)
 
@@ -362,7 +347,7 @@ The GitHub context does not return the commit when working on a PR, so the condi
 According to the [documentation](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context), `github.event` is described as:
 
 
-&gt;The full event webhook payload . You can access individual properties of the event using this context. This object is identical to the webhook payload of the event that triggered the &gt;workflow run, and is different for each event. The webhooks for each GitHub Actions event is linked in &#34;[Events that trigger workflows.](https://docs.github.com/en/articles/events-that-trigger-workflows)&#34; For example, for a workflow run triggered by the [push event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push), this object contains the contents of the [push webhook payload](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push)
+&gt;The full event webhook payload . You can access individual properties of the event using this context. This object is identical to the webhook payload of the event that triggered the &gt;workflow run, and is different for each event. The webhooks for each GitHub Actions event is linked in "[Events that trigger workflows.](https://docs.github.com/en/articles/events-that-trigger-workflows)" For example, for a workflow run triggered by the [push event](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push), this object contains the contents of the [push webhook payload](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push)
 
 And in this case, the event that triggers the workflow is [pull_request](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request), which does not contain the `head_commit` key in its webhook payload.
 
@@ -383,13 +368,13 @@ To fix this, you need to apply [another strategy]((https://joht.github.io/johtiz
 Taking the above into account, create the `workflow4.yml` file with the following content:
 
 ```yaml
-name: filter by jobs in PR&#39;s
+name: filter by jobs in PR's
 on: 
   push:
-    branches: [&#34;main&#34;]
+    branches: ["main"]
   
   pull_request:
-    branches: [&#34;main&#34;]
+    branches: ["main"]
 
 jobs:
 
@@ -403,32 +388,32 @@ jobs:
       -name: check if message contain keywords ace scopeid
         id: check_commit
         run: |
-          message=$(git log -1 --pretty=format:&#39;%s&#39;)
-          re=&#34;\[(doc|skip-tests)\]&#34;
+          message=$(git log -1 --pretty=format:'%s')
+          re="\[(doc|skip-tests)\]"
           if [[ $message =~ $re ]]; then
-            echo &#34;::set-output name=match::true&#34;
-            echo &#34;$message -&gt; Match is true&#34;
+            echo "::set-output name=match::true"
+            echo "$message -&gt; Match is true"
           else
-            echo &#34;$message -&gt; Match is false&#34;
+            echo "$message -&gt; Match is false"
           fi
     outputs:
       match: ${{ steps.check_commit.outputs.match }}
 
   test:
     needs: check_commit
-    if: ${{ needs.check_commit.outputs.match != &#39;true&#39; }}
+    if: ${{ needs.check_commit.outputs.match != 'true' }}
     name: Test
     runs-on: ubuntu-latest
     steps:
       - name: test stuffs 
-        run: echo &#34;Simulating tests&#34;
+        run: echo "Simulating tests"
 ```
 
 Notice that in the first step of the `check_commit` job, the ref parameter is set. In the next step, several commands are executed in the shell:
 
-* The commit is extracted with the command `git log -1 --pretty=format:&#39;%s&#39;`. 
+* The commit is extracted with the command `git log -1 --pretty=format:'%s'`. 
 * Regex is used to validate if the string `[doc]` or `[skip- tests]` is in the commit. With this, you can use more than one scope as a filter in the commit.
-* A variable is created with the command `echo &#34;::set-output name=match::true&#34;`, which will be shared between jobs. For this, the key outputs enable the variable to be shared.
+* A variable is created with the command `echo "::set-output name=match::true"`, which will be shared between jobs. For this, the key outputs enable the variable to be shared.
 * In the job test, the key-value pair `needs: check_commit` indicates that this job depends on check_commit.
 * The conditional `if` validates whether the commit has the string `[doc]`, which validates if the match variable is true or not.
 
@@ -477,30 +462,26 @@ Let me know in the comments if this approach worked for you. If you found errors
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

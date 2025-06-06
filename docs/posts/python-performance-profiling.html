@@ -168,80 +168,65 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Modern techniques for Python performance profiling and optimization.">
-    
-    
-    
-    <meta property="og:title" content="Python Performance Profiling and Optimization - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Modern techniques for Python performance profiling and optimization.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Python Performance Profiling and Optimization - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Modern techniques for Python performance profiling and optimization." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Python Performance Profiling and Optimization - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Dec 05 2019 23:12:11 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Oct 24 2024 06:42:41 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">3347 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Thu Dec 05 2019 23:12:11 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Oct 24 2024 06:42:41 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">3348 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
 # Python Performance Profiling &amp; Optimization
 
-Originally published 2019-12-05 on &lt;a href=&#34;https://docs.sweeting.me/s/blog#About&#34;&gt;docs.sweeting.me&lt;/a&gt;, republished on &lt;a href=&#34;https://monadical.com/blog.html&#34;&gt;Monadical.com&lt;/a&gt;.
+Originally published 2019-12-05 on &lt;a href="https://docs.sweeting.me/s/blog#About"&gt;docs.sweeting.me&lt;/a&gt;, republished on &lt;a href="https://monadical.com/blog.html"&gt;Monadical.com&lt;/a&gt;.
     
 &lt;hr/&gt;
     
-&lt;b style=&#34;opacity: 0.8&#34;&gt;Modern techniques for Python performance profiling &amp; optimization.&lt;/b&gt;
+&lt;b style="opacity: 0.8"&gt;Modern techniques for Python performance profiling &amp; optimization.&lt;/b&gt;
 &lt;small&gt;Tested with Python &gt;3.7 and Django &gt;2.2 as of 2019, but approaches are widely applicable.&lt;/small&gt;
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_7f6377d1e68f48ac9942ee9fd664e798.png&#34; style=&#34;width: 100%&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_7f6377d1e68f48ac9942ee9fd664e798.png" style="width: 100%"&gt;
 &lt;br/&gt;
 
 ---
@@ -256,7 +241,7 @@ Originally published 2019-12-05 on &lt;a href=&#34;https://docs.sweeting.me/s/bl
 
 When a slow piece of code is identified in a codebase and singled out for improvement, the same general approaches can be used to improve performance, regarless of the type of project.
 
-Tests are first written, then run using a &#34;profiler&#34;: a tool that collects timing statics during runtime to measure how long the process spend executing each area of code, the code is improved, and the tests maintained to protect against future regressions.
+Tests are first written, then run using a "profiler": a tool that collects timing statics during runtime to measure how long the process spend executing each area of code, the code is improved, and the tests maintained to protect against future regressions.
 
 1. First, tests are written to solidify the boundaries around the slow piece of code that needs to be optimized, and ensure correctness.
 
@@ -280,13 +265,13 @@ Tests are first written, then run using a &#34;profiler&#34;: a tool that collec
 Writing tests is critical to the performance optimization process.
 
 1. it ensures the code stays correct as we make potentially breaking changes. attempts to improve performance often lead to unforseen bugs.
-2. it provides a quick feedback cycle when making changes, we can tweak somthing and re-run a performance test multiple times a minute, vs manual testing where it&#39;s cumbersome and difficult to precicely reproduce.
-3. It makes it easy to verify the real-world improvement of optimizations applied, and prevent regressions. it&#39;s easy to *feel* like something is 30% faster, but without hard numbers and reproducible performance tests, it might a fluke or quirk of the environement
+2. it provides a quick feedback cycle when making changes, we can tweak somthing and re-run a performance test multiple times a minute, vs manual testing where it's cumbersome and difficult to precicely reproduce.
+3. It makes it easy to verify the real-world improvement of optimizations applied, and prevent regressions. it's easy to *feel* like something is 30% faster, but without hard numbers and reproducible performance tests, it might a fluke or quirk of the environement
 
 
 &gt; Write black-box tests around the slow code to ensure correctness at the boundary.
 
-Don&#39;t optimize code until you&#39;re sure it&#39;s correct.  Python.org says it best:
+Don't optimize code until you're sure it's correct.  Python.org says it best:
 
 
 &lt;center&gt;
@@ -330,12 +315,12 @@ Profile with 3 levels of tests to evaluate each potential code change:
 
 ### What to optimize first
 
-Always optimize big -&gt; small.  Don&#39;t prematurely optimize code that isn&#39;t the slowest area. Focus on the things that will provide the big gains first, and worry about microptimization of python when there are no other factors to rule out.
+Always optimize big -&gt; small.  Don't prematurely optimize code that isn't the slowest area. Focus on the things that will provide the big gains first, and worry about microptimization of python when there are no other factors to rule out.
 
 
 #### The Big Stuff: Blocking IO
 
-Blocking IO is by far the most common source of slowness.  Whether it&#39;s a database query, a file read, or a network call. IO latency is almost always &gt;80% of a request lifecycle&#39;s wall-clock time, and should the first thing to optimize.
+Blocking IO is by far the most common source of slowness.  Whether it's a database query, a file read, or a network call. IO latency is almost always &gt;80% of a request lifecycle's wall-clock time, and should the first thing to optimize.
 
 Batch your IO as much as possible, do a small number of database queries at the beginning of a function to get everything needed up-front, then operate on the objects in-memory, with all the writes batched together at the end of the process.
 
@@ -362,7 +347,7 @@ matches = [item for item in list_a if item in set_b]
 
 #### Low-level Optimization Last
 
-&#34;instead of calling a function 1000x in a loop, call a one function that does 1000 things&#34;
+"instead of calling a function 1000x in a loop, call a one function that does 1000 things"
 
 From https://wiki.python.org/moin/PythonSpeed/PerformanceTips#Data_Aggregation
 ```python3
@@ -377,7 +362,7 @@ t = time.time()
 for i in list:
     doit1(i)
 
-print &#34;%.3f&#34; % (time.time()-t)
+print "%.3f" % (time.time()-t)
 ```
 vs
 ```python3
@@ -391,7 +376,7 @@ def doit2(list):
 list = range(100000)
 t = time.time()
 doit2(list)
-print &#34;%.3f&#34; % (time.time()-t)
+print "%.3f" % (time.time()-t)
 ```
 
 ---
@@ -449,36 +434,32 @@ carpentry.readthedocs.io/en/latest/increasing-performance.html#speeding-up-pytho
 
 &lt;center&gt;
 
-&lt;a href=&#34;#&#34;&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_b097a513867451637b2b474f8d7196b1.png&#34; style=&#34;height: 60px;&#34;&gt;
+&lt;a href="#"&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_b097a513867451637b2b474f8d7196b1.png" style="height: 60px;"&gt;
 &lt;/a&gt;&lt;br/&gt;
 &lt;small&gt;
-&lt;br/&gt;&lt;a href=&#34;https://monadical.com&#34;&gt;Monadical&lt;/a&gt; is a fully-remote, full-stack software consultancy with years of experience&lt;br/&gt;profiling &amp; improving the performance of complex Python &amp; JS applications.&lt;br/&gt; &lt;a href=&#34;https://monadical.com/about.html#contact&#34;&gt;Hire us&lt;/a&gt; to work on your project!&lt;br/&gt;
+&lt;br/&gt;&lt;a href="https://monadical.com"&gt;Monadical&lt;/a&gt; is a fully-remote, full-stack software consultancy with years of experience&lt;br/&gt;profiling &amp; improving the performance of complex Python &amp; JS applications.&lt;br/&gt; &lt;a href="https://monadical.com/about.html#contact"&gt;Hire us&lt;/a&gt; to work on your project!&lt;br/&gt;
 &lt;/small&gt;
 &lt;/i&gt;
 
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

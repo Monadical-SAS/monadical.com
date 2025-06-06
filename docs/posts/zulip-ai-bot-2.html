@@ -168,72 +168,56 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Learn how to use N-tier architecture and FastAPI to build a scalable Zulip bot that can retrieve messages, links, and images from Zulip streams and topics.">
-    
-    
-    
-    <meta property="og:title" content="Integrating AI Models into Zulip Chatbots Using FastAPI, Part 2 - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Learn how to use N-tier architecture and FastAPI to build a scalable Zulip bot that can retrieve messages, links, and images from Zulip streams and topics.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Integrating AI Models into Zulip Chatbots Using FastAPI, Part 2 - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Learn how to use N-tier architecture and FastAPI to build a scalable Zulip bot that can retrieve messages, links, and images from Zulip streams and topics." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Integrating AI Models into Zulip Chatbots Using FastAPI, Part 2 - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&amp;s=96);" title="ops"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/4613674de27b3631008f988acd6d7365?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="ops"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Aug 08 2023 19:14:56 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Apr 10 2024 12:25:32 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1196 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-            <span class="ui-owner">
-                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="hanna"></i>
-                &nbsp;<span class="text-uppercase">owned this note</span>
-            </span>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Aug 08 2023 19:14:56 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Apr 10 2024 12:25:32 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1197 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+<span class="ui-owner">
+                 <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&amp;s=96);" title="hanna"></i>
+                 <span class="text-uppercase">owned this note</span>
+</span>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -253,7 +237,7 @@
 
 Most developers have had the misfortune of experiencing a project  quickly becoming an irredeemable mess. All it takes is a few critical ingredients for this potential disaster: poorly defined user stories, unclear business logic abstraction, lack of communication on the team, poorly implemented code with no documentation, and so on and so forth. 
 
-It’s very easy to fall into one of these traps, and just a few of these could be enough for a project to become a &#34;big ball of mud&#34;, or, in simpler terms, a Frankenstein system that, if it even works, does so for reasons that are either mysterious or, in the worst cases, miraculous.
+It’s very easy to fall into one of these traps, and just a few of these could be enough for a project to become a "big ball of mud", or, in simpler terms, a Frankenstein system that, if it even works, does so for reasons that are either mysterious or, in the worst cases, miraculous.
 
 Fortunately for us mortals, this problem is not new, and thanks to the expertise of some software philosophers, we now have tools to tackle this problem.
 
@@ -286,7 +270,7 @@ Here’s a diagram of the proposed architecture:
 
 In the N-tier architecture, each lower layer is considered to be the provider of the upper one. In this case, the data flow is: 
 
-- Using the Zulip app, a user requests an action from the bot  by entering a command like &lt;span style=&#34;color:red;&#34;&gt;`@delphos messages 100`&lt;/span&gt;. 
+- Using the Zulip app, a user requests an action from the bot  by entering a command like &lt;span style="color:red;"&gt;`@delphos messages 100`&lt;/span&gt;. 
 - The client generates a POST request, which is attended by the controller layer; in this case, it’s the FastAPI app server defined in the `server.py` file, where we have the API entry point. 
 - The request body is checked, and the bot handler picks the right operator for the command. 
 - The operator makes sure the command is valid and runs the instruction. Frequently, the operator obtains data from the integrations layer as well, processing it according to business logic.
@@ -332,7 +316,7 @@ This demonstrates how to use the Zulip API in the bot and get data from Zulip. I
 
 The bot handler is what makes the bot work. It gets the data sent by the user from Zulip, and chooses, based on the specified command, which operator will do the task and process the request. 
 
-A user request comes in the form &lt;span style=&#34;color:red;&#34;&gt;`@delphos messages 100`&lt;/span&gt;, where `messages` is the command, and the representation of the instruction being called (that is, to extract messages from a Zulip topic). Data after the command are called arguments. Here, the argument is the number of messages the user wants from Zulip. 
+A user request comes in the form &lt;span style="color:red;"&gt;`@delphos messages 100`&lt;/span&gt;, where `messages` is the command, and the representation of the instruction being called (that is, to extract messages from a Zulip topic). Data after the command are called arguments. Here, the argument is the number of messages the user wants from Zulip. 
 
 Since our bot will have a lot of features , we need to find a way to handle them independently and be able to add or remove them easily. In other words, we need to keep them decoupled. To do this, we’ll use the [factory pattern](https://refactoring.guru/design-patterns/factory-method). We’ll make a function that handles different commands and an operator for each command in the bot.
 
@@ -352,31 +336,31 @@ from src.models.schemas import Command
 class DelphosHandler:
     @staticmethod
     def usage() -&gt; str:
-        return &#34;&#34;&#34;
+        return """
         Zulip Bot for advanced search
-        &#34;&#34;&#34;
+        """
 
     def handle_message(self, message: Dict[str, Any], bot_handler: BotHandler):
-        message_type = message.get(&#34;type&#34;, None)  # private or stream
-        content = message.get(&#34;content&#34;, None)  # message content
+        message_type = message.get("type", None)  # private or stream
+        content = message.get("content", None)  # message content
 
         if not (message_type and content):
             return [ERROR_HELP]
         
-        # split content [&#34;@Delphos&#34;, &#34;messages&#34;, &#34;10&#34;]
+        # split content ["@Delphos", "messages", "10"]
         content = shlex.split(content.strip())
         if len(content) == 0:
             return [ERROR_HELP]
 
-        mentions = [&#34;Delphos&#34;, &#34;@**Delphos**&#34;]
+        mentions = ["Delphos", "@**Delphos**"]
         starts_with_mention = content[0] in mentions
-        if message_type == &#34;private&#34; and starts_with_mention:
+        if message_type == "private" and starts_with_mention:
             content = content[1:]
 
         command = Command(instruction=content[0], params=content[1:])
-        if message_type == &#34;stream&#34;:
-            command.stream = message.get(&#34;display_recipient&#34;, None)
-            command.topic = message.get(&#34;subject&#34;, None)
+        if message_type == "stream":
+            command.stream = message.get("display_recipient", None)
+            command.topic = message.get("subject", None)
 
         instance = self.get_operator_instance(command)
         response = instance.get_response(command)
@@ -390,7 +374,7 @@ handler_class = DelphosHandler
 
 The `handle_message` function validates that the call to the bot has been well-elaborated. If the validation fails, the function will send a help message to the user explaining how the instruction should be written. If the instruction is well-structured, the requested command will be cleaned and standardized, and each part of it will be stored in an instance of the class `Command`.
 
-The Command class represents a command entered by a user in the Delphos bot. Let&#39;s take a closer look at the class structure. To begin, create a new file `src/models/schemas.py` and enter the following:
+The Command class represents a command entered by a user in the Delphos bot. Let's take a closer look at the class structure. To begin, create a new file `src/models/schemas.py` and enter the following:
 
 ```python
 from enum import Enum
@@ -399,9 +383,9 @@ from typing import List
 from pydantic import BaseModel
 
 class Instruction(str, Enum):
-    HELP = &#34;help&#34;
-    MESSAGES = &#34;messages&#34;
-    LINKS = &#34;links&#34;
+    HELP = "help"
+    MESSAGES = "messages"
+    LINKS = "links"
 
 class Command(BaseModel):
     instruction: Instruction
@@ -413,13 +397,13 @@ class Command(BaseModel):
 If the user enters the command `@delphos messages 100` from the topic `tests` in the stream `bots`, the instance of the `Command` object will look like this: 
 
 ```python
-instruction: &#34;messages&#34;
-params: [&#34;10&#34;]
-stream: &#34;bots&#34;
-topic: &#34;test&#34;
+instruction: "messages"
+params: ["10"]
+stream: "bots"
+topic: "test"
 ```
 
-Back in the &lt;span style=&#34;color:red;&#34;&gt;`delphos.py`&lt;/span&gt; file, add the &lt;span style=&#34;color:red;&#34;&gt;`get_operator_instance`&lt;/span&gt; function, which uses the factory pattern to pick the right operator for the command. If there’s no match, it will use the help operator as a default.
+Back in the &lt;span style="color:red;"&gt;`delphos.py`&lt;/span&gt; file, add the &lt;span style="color:red;"&gt;`get_operator_instance`&lt;/span&gt; function, which uses the factory pattern to pick the right operator for the command. If there’s no match, it will use the help operator as a default.
 
 ```python
 from src.models.schemas import Command, Instruction
@@ -431,9 +415,9 @@ class DelphosHandler:
 
     @staticmethod
     def get_operator_instance(command: Command) -&gt; BaseOperator:
-        &#34;&#34;&#34;
+        """
         Generates a response based on the given command.
-        &#34;&#34;&#34;
+        """
         instructions = Instruction
         available_operators = {
             instructions.HELP: HelpOperator,
@@ -469,7 +453,7 @@ With the `BaseOperator` interface in place, we can now start implementing our op
 
 ### Operator 1: Help 
 
-Before we dive into the more complex operators, let&#39;s start with a fundamental operator that will greatly improve the user experience of our bot: the Help operator. By providing easy-to-follow instructions on how to use each command, the Help operator will make it easier for users to interact with the bot and get the most out of its features.
+Before we dive into the more complex operators, let's start with a fundamental operator that will greatly improve the user experience of our bot: the Help operator. By providing easy-to-follow instructions on how to use each command, the Help operator will make it easier for users to interact with the bot and get the most out of its features.
 
 In addition to improving the UX, implementing the Help operator will also demonstrate how to implement subsequent operators following this architecture. Building and testing the Help operator will also give insight into the principles behind creating operators that are easy to maintain and extend. This is crucial if you want to build a bot that users will love, and not find intolerably irritating. 
 
@@ -494,43 +478,43 @@ Also, define two new constants - `HELP_MESSAGE` and `ERROR_HELP` - in a new `src
 `ERROR_HELP` is a message with some general info on how to use the bot. It will show up when the user types the wrong command or parameters.
 
 ```python
-ERROR_HELP = &#34;&#34;&#34;
+ERROR_HELP = """
 It seems that there was an error processing your request. 
 Please check the format of your message and try again. 
 
-If you&#39;re not sure how to use Delphos, 
+If you're not sure how to use Delphos, 
 you can use the @delphos help command to see a list of available commands and how to use them. 
 
-Here&#39;s a general guide to using Delphos: 
+Here's a general guide to using Delphos: 
 
 In a stream, use the format @delphos &lt;command&gt; &lt;arguments&gt; 
 In a private message, use the format &lt;command&gt; &lt;arguments&gt; 
 
 If you continue to experience issues, please contact the bot administrator for further assistance.
-&#34;&#34;&#34;
+"""
 ```
 
 
 `HELP_MESSAGE` is a message that gives more info on how to use each command. It will show up when the user types “@delphos help”. This message should tell them how to format each command, give some examples, and include any notes or warnings.
     
 ```python
-MESSAGES_HELP = &#34;&#34;&#34;
+MESSAGES_HELP = """
 ## Messages
 Prints the last &lt;amount&gt; messages of the topic. 
 
 Example: @delphos messages 10
 PM Example: messages 10 learning css
-&#34;&#34;&#34;
+"""
 
-LINKS_HELP = &#34;&#34;&#34;
+LINKS_HELP = """
 ## Links 
 Prints all the links in the topic. 
 
 Example: @delphos links
 PM Example: links learning css
-&#34;&#34;&#34;
+"""
 
-HELP_MESSAGE = f&#34;&#34;&#34;
+HELP_MESSAGE = f"""
 Welcome to Delphos, a bot that helps you manage your topic!
 Use the following commands to get started:
 
@@ -543,7 +527,7 @@ Displays a list of available commands and provides examples for each one.
 
 Example: @delphos help
 PM Example: help
-&#34;&#34;&#34; 
+""" 
 ```
 
 
@@ -551,14 +535,14 @@ Note that for `HELP_MESSAGE`, info on all the commands that the bot has needs to
 
 #### Step 2: Test the operator
     
-Now that the bot’s first operator has been added, it’s time to test it. To do so, we’ll run the bot locally and then use ngrok to expose the server to the internet. Once we have the ngrok URL that our server runs on, the endpoint URL in the bot configuration on Zulip will need to be updated in order to integrate them. Let&#39;s look at this in more detail.
+Now that the bot’s first operator has been added, it’s time to test it. To do so, we’ll run the bot locally and then use ngrok to expose the server to the internet. Once we have the ngrok URL that our server runs on, the endpoint URL in the bot configuration on Zulip will need to be updated in order to integrate them. Let's look at this in more detail.
 
 From the terminal, run the command to start the server locally. Remember to have the `zuliprc` file ready, which has the Zulip login info.
 
 ```shell
 pipenv install
 pipenv shell
-python3 server.py --config-file zuliprc-delphos --hostname=&#34;0.0.0.0&#34; --port=8000
+python3 server.py --config-file zuliprc-delphos --hostname="0.0.0.0" --port=8000
 ```
 
 Next, we’ll use ngrok to make our local server available online. Run the following command in a new terminal:
@@ -617,7 +601,7 @@ class MessagesOperator:
 
 The `get_response` method parses the command parameters to determine the stream, topic, and limit for the search. It then checks that they are in the correct format and calls the `search_messages` method to retrieve the requested messages.
     
-#### Step 2: Define the &#39;search messages&#39; method
+#### Step 2: Define the 'search messages' method
     
 Add a new function to the `MessagesOperator` class,  this time creating the `search_messages` method, which will use a `self.zulip_integration` instance (it’ll be defined later on) to retrieve the last `N` messages from a topic in Zulip: 
 
@@ -640,14 +624,14 @@ def search_messages(self, *, stream: str, topic: str, limit: int) -&gt; List[str
         apply_markdown=False
     )
     response = self.zulip_integration.get_zulip_messages(request)
-    if response.result == &#34;success&#34;:
+    if response.result == "success":
         content = format_messages(response.messages)
         file_name = self.zulip_integration.upload_file_to_zulip(
-            f&#34;{stream}-{topic}.txt&#34;, content
+            f"{stream}-{topic}.txt", content
         )
-        return [file_name or &#34;Error uploading file to Zulip.&#34;]
+        return [file_name or "Error uploading file to Zulip."]
 
-    return [f&#34;Error searching messages in Zulip: {response.msg}&#34;]
+    return [f"Error searching messages in Zulip: {response.msg}"]
 ```
 
 The previous method creates a request object with the specified stream, topic, and number of messages, and then sends the request to the Zulip API using the `zulip_integration` instance. If the API call is successful, the method formats the retrieved messages using the `format_messages` function. It then uploads them to Zulip as a text file, with the name based on the stream and topic. Finally, it sends the URL where the user can download the file in the topic’s chat. 
@@ -690,18 +674,18 @@ from src.models.schemas import ZulipResponse
 
 class ZulipIntegration:
     def __init__(self):
-        self.client = Client(config_file=&#34;./zuliprc-api&#34;)
+        self.client = Client(config_file="./zuliprc-api")
 
     def get_zulip_messages(self, request: Any):
         messages = self.client.get_messages(request)
         return ZulipResponse(**messages)
 
     def upload_file_to_zulip(self, filename: str, content: List[str]) -&gt; Union[str, None]:
-        with io.StringIO(&#34;\n&#34;.join(content)) as fstream:
+        with io.StringIO("\n".join(content)) as fstream:
             fstream.name = filename
             result = self.client.upload_file(fstream)
-        uri = result.get(&#34;uri&#34;)
-        return f&#34;[{filename}]({uri})&#34; if uri else None
+        uri = result.get("uri")
+        return f"[{filename}]({uri})" if uri else None
 
     @staticmethod
     def build_search_narrow(
@@ -713,24 +697,24 @@ class ZulipIntegration:
         apply_markdown: bool = True,
     ) -&gt; Dict[str, Any]:
         narrow = {
-            &#34;anchor&#34;: &#34;newest&#34;,
-            &#34;num_before&#34;: limit,
-            &#34;num_after&#34;: 0,
-            &#34;apply_markdown&#34;: apply_markdown,
-            &#34;narrow&#34;: [
-                {&#34;operator&#34;: &#34;stream&#34;, &#34;operand&#34;: stream},
-                {&#34;operator&#34;: &#34;topic&#34;, &#34;operand&#34;: topic},
+            "anchor": "newest",
+            "num_before": limit,
+            "num_after": 0,
+            "apply_markdown": apply_markdown,
+            "narrow": [
+                {"operator": "stream", "operand": stream},
+                {"operator": "topic", "operand": topic},
             ],
         }
 
         if content:
-            narrow[&#34;narrow&#34;].append({&#34;operator&#34;: &#34;has&#34;, &#34;operand&#34;: content})
+            narrow["narrow"].append({"operator": "has", "operand": content})
 
         return narrow
 ```
 
 
-The `ZulipIntegration` class handles all interactions with Zulip. In the `__init__` method, a `Client` object is initialized from Zulip. A  `zuliprc` file is used again for logging into Zulip. But note that a new authentication file is needed, so make sure to add a new `zuliprc-api` file to the main directory. You can reuse the bot&#39;s credentials or create new ones from your Zulip application. The file should look like this:
+The `ZulipIntegration` class handles all interactions with Zulip. In the `__init__` method, a `Client` object is initialized from Zulip. A  `zuliprc` file is used again for logging into Zulip. But note that a new authentication file is needed, so make sure to add a new `zuliprc-api` file to the main directory. You can reuse the bot's credentials or create new ones from your Zulip application. The file should look like this:
 
 ```shell
 [api]
@@ -779,31 +763,31 @@ def format_messages(messages: List[Message]) -&gt; List[str]:
 
         if cleaned:
             all_items.append(
-                f&#34;{datetime.fromtimestamp(message.timestamp)} &#34;
-                f&#34;{message.sender_full_name}: {cleaned}&#34;
+                f"{datetime.fromtimestamp(message.timestamp)} "
+                f"{message.sender_full_name}: {cleaned}"
             )
 
     return all_items
 
 
 def remove_delphos_messages(message: str, sender_email: str) -&gt; str:
-    is_delphos_sender = sender_email == &#34;delphos-bot@zulip.monadical.com&#34;
-    is_delphos_message = message.startswith(&#34;@**Delphos**&#34;)
+    is_delphos_sender = sender_email == "delphos-bot@zulip.monadical.com"
+    is_delphos_message = message.startswith("@**Delphos**")
     if is_delphos_sender or is_delphos_message:
-        return &#34;&#34;
+        return ""
     return message
 
 
 def remove_quotes(message: str) -&gt; str:
-    if &#34;** [said](&#34; in message:
-        message = re.sub(r&#34;@_\*\*(.*?)\):&#34;, &#34;&#34;, message)
-        message = re.sub(r&#34;```quote\n(.*?)\n```&#34;, &#34;&#34;, message)
-        message = re.sub(r&#34;^\s+|\s+$&#34;, &#34;&#34;, message)
+    if "** [said](" in message:
+        message = re.sub(r"@_\*\*(.*?)\):", "", message)
+        message = re.sub(r"```quote\n(.*?)\n```", "", message)
+        message = re.sub(r"^\s+|\s+$", "", message)
     return message
 
 
 def remove_mentions(message: str) -&gt; str:
-    return message.replace(&#34;**&#34;, &#34;&#34;)
+    return message.replace("**", "")
 ```
 
 
@@ -846,7 +830,7 @@ Here’s an example, using a private message with Delphos:
 ![](https://docs.monadical.com/uploads/722a6ef7-f55d-411d-bab0-285fc1ca3157.png)
 
 
-The bot in this case returns the content as a downloadable text file named in the previously-mentioned format, &lt;span style=&#34;color:red;&#34;&gt;`&lt;stream&gt;-&lt;topic&gt;.txt`&lt;/span&gt;.
+The bot in this case returns the content as a downloadable text file named in the previously-mentioned format, &lt;span style="color:red;"&gt;`&lt;stream&gt;-&lt;topic&gt;.txt`&lt;/span&gt;.
     
 ### Operator 3: Links
     
@@ -883,12 +867,12 @@ class LinksOperator:
         request = self.zulip_integration.build_search_narrow(
             stream=stream,
             topic=topic,
-            content=&#34;link&#34;,
+            content="link",
         )
         response = self.zulip_integration.get_zulip_messages(request)
-        if response.result == &#34;success&#34;:
+        if response.result == "success":
             return format_links(response.messages)
-        return [f&#34;Error searching links in Zulip: {response.msg}&#34;]
+        return [f"Error searching links in Zulip: {response.msg}"]
 ```
 
 The `LinksOperator` class also uses a `ZulipIntegration` instance to retrieve links from the Zulip server. The `LinksOperator` class also implements the `get_response` method from the `BaseOperator` interface, where it checks that the command is well-structured. If so, it goes on to search for links within Zulip.
@@ -899,7 +883,7 @@ The `search_links function` builds the request that will go to the Zulip API, re
     
 Just like in the messages example, Zulip responds with a lot of unnecessary information. The message returned by Zulip includes, for example, the entire message related to the link, as well as the links themselves (in HTML). It’s also returned in a format that’s not super useful.
 
-For our use case, we wanted to get all the links and generate a list of links in the form [&#34;https://link1.com&#34;, &#34;https://link2.com&#34;], etc. To do this, the link needs to be separated from the message, obtained, and added to the list of links. It’s also important to know that there is a character and line limit for printing a message in Zulip. So to prevent the message delivery from failing, divide the final set of results into chunks of size `amount`.
+For our use case, we wanted to get all the links and generate a list of links in the form ["https://link1.com", "https://link2.com"], etc. To do this, the link needs to be separated from the message, obtained, and added to the list of links. It’s also important to know that there is a character and line limit for printing a message in Zulip. So to prevent the message delivery from failing, divide the final set of results into chunks of size `amount`.
 Create a new file `src/operators/search/utils/links.py` and add the following functions: 
 
 ```python
@@ -925,13 +909,13 @@ def format_links(messages: List[Message]) -&gt; List[str]:
 
 
 def extract_links_from_string(input_string: str) -&gt; Union[List[str], None]:
-    regex = re.compile(r&#39;href=[\&#39;&#34;]?(http[^\&#39;&#34; &gt;]+)&#39;, re.I)
+    regex = re.compile(r'href=[\'"]?(http[^\'" &gt;]+)', re.I)
     match = regex.findall(input_string)
     return match
 
 
 def format_links_response(links: List[str]):
-    return &#39;\n&#39;.join(f&#34;[]({link})&#34; for link in links)
+    return '\n'.join(f"[]({link})" for link in links)
 ```
 
 These utility functions are called by the operator to clean the data. And there we go - that’s it for the Links operator! Now it just needs to be integrated.
@@ -959,7 +943,7 @@ class DelphosHandler:
 ```
 
 #### Step 4: Test the Links operator
-Once the operator is integrated, it&#39;s time to test it. To do this, head to any Zulip topic and type the command “@delphos links”. This command should return all the different links shared by users within the topic:
+Once the operator is integrated, it's time to test it. To do this, head to any Zulip topic and type the command “@delphos links”. This command should return all the different links shared by users within the topic:
     
 ![](https://docs.monadical.com/uploads/9a4a7f68-f4f5-4d12-89e7-94ce9229642b.png)
 
@@ -968,7 +952,7 @@ Once the operator is integrated, it&#39;s time to test it. To do this, head to a
 As in the previous two examples, it’s possible to add a new operator to get the images shared on a topic, but we’ll leave this task to you, curious reader, to complete. Here are a few hints to help you out:
 
 - Create the new Image operator.
-- Get the images from Zulip and specify &#34;image&#34; in the Zulip narrow.
+- Get the images from Zulip and specify "image" in the Zulip narrow.
 - Clean the data and create the format required for Zulip.
 - Send the data back to the user.
 
@@ -992,27 +976,23 @@ Stay connected for our third and final post coming soon!
 * https://godatadriven.com/blog/protocols-in-python-why-you-need-them/
 * https://realpython.com/factory-method-python/
 * https://refactoring.guru/design-patterns/factory-method/python/example</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

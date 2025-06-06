@@ -168,67 +168,52 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="React Native apps are a powerful tool for developing mobile apps that make use of Solana’s mobile wallet adapter. Here’s how to use the tech to mint an NFT.">
-    
-    
-    
-    <meta property="og:title" content="How to mint NFTs using Solana’s mobile wallet adapter - HedgeDoc">
-    
-    
-    <meta property="og:description" content="React Native apps are a powerful tool for developing mobile apps that make use of Solana’s mobile wallet adapter. Here’s how to use the tech to mint an NFT.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>How to mint NFTs using Solana’s mobile wallet adapter - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="React Native apps are a powerful tool for developing mobile apps that make use of Solana’s mobile wallet adapter. Here’s how to use the tech to mint an NFT." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>How to mint NFTs using Solana’s mobile wallet adapter - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&amp;s=96);" title="juan.david"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 18 2022 06:44:17 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 31 2023 17:14:45 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1406 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 18 2022 06:44:17 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 31 2023 17:14:45 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1407 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -250,7 +235,7 @@
 
 In our [last article](https://monadical.com/posts/ramping-up-solana-phone.html), we introduced the upcoming Solana Mobile Stack (SMS) and showed how to set up your development environment. 
 
-With that completed, we&#39;re ready to demonstrate how to use the fake wallet app and the mobile wallet adapter library. To do so, we’re going to mint NFTs from a React Native mobile app. We’ll use a candy machine to mint NFTs because it handles assets, collections, custom tokens, and many other configurations. To start, we&#39;ll review how to create a candy machine, then we&#39;ll outline how to mint NFTs.
+With that completed, we're ready to demonstrate how to use the fake wallet app and the mobile wallet adapter library. To do so, we’re going to mint NFTs from a React Native mobile app. We’ll use a candy machine to mint NFTs because it handles assets, collections, custom tokens, and many other configurations. To start, we'll review how to create a candy machine, then we'll outline how to mint NFTs.
  
 ## Create a candy machine
 We recommend using the [Sugar CLI](https://docs.metaplex.com/developer-tools/sugar) tool, because it allows you to properly configure your candy machine, and it’s easy to use.
@@ -306,7 +291,7 @@ The modules are as follows:
 
 **Fake Wallet:** This is a native Android application that simulates the behaviour of a wallet provider. The implementation for the wallet adapter must be overridden by each wallet provider that wishes to be a part of the Solana phone ecosystem (Solet, Phantom, etc). Another thing to note is that the wallet adapter can only be run in a native Android environment.
 
-**Example React Native App:** This is a test application made in React Native that contains some example functionalities, such as making an airdrop, signing a message, and others. This application makes use of Solana&#39;s mobile wallet adapter library to interact with the `fakewallet` app. This interaction conveys the transaction from our app to the [Secure Element Chip](https://solana.com/news/solana-mobile-stack-reveal) where it gets signed (if approved by the user) and then sent to the blockchain.
+**Example React Native App:** This is a test application made in React Native that contains some example functionalities, such as making an airdrop, signing a message, and others. This application makes use of Solana's mobile wallet adapter library to interact with the `fakewallet` app. This interaction conveys the transaction from our app to the [Secure Element Chip](https://solana.com/news/solana-mobile-stack-reveal) where it gets signed (if approved by the user) and then sent to the blockchain.
 
 If you want to know more about the way `fakewallet` and dApps interact, you can review our previous post about [Ramping up on the Solana phone](https://monadical.com/posts/ramping-up-solana-phone.html). 
 
@@ -345,8 +330,8 @@ When loading the application, if you get a compatibility error with the `gradle`
 
 ```gradle
 plugins {
-    id &#39;com.android.application&#39; version &#39;7.2.1&#39; apply false
-    id &#39;com.android.library&#39; version &#39;7.2.1&#39; apply false
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
     …
 }
 ```
@@ -417,7 +402,7 @@ yarn android
 
 
 :::warning
-When running the project, if you get the error `&gt; SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project&#39;s local properties file at &#39;~/mobile-wallet-adapter/examples/example-react-native-app/android/local.properties&#39;`. We should create a new `local.properties` file inside the `example-react-native-app/android/` directory, and then enter the following line:
+When running the project, if you get the error `&gt; SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '~/mobile-wallet-adapter/examples/example-react-native-app/android/local.properties'`. We should create a new `local.properties` file inside the `example-react-native-app/android/` directory, and then enter the following line:
 
 ```shell
 sdk.dir=/Users/&lt;username&gt;/Library/Android/sdk
@@ -432,7 +417,7 @@ Once the editor finishes compiling, you should see something like the following 
 
 &lt;center&gt;
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/694f3330-13e2-481d-9438-87362c44c32b.png&#34; width=&#34;400&#34; style=&#34;margin-bottom: 24px&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/694f3330-13e2-481d-9438-87362c44c32b.png" width="400" style="margin-bottom: 24px"&gt;
 
 &lt;/center&gt;
 
@@ -453,8 +438,8 @@ Start by adding a new component to your application. First, you need to create a
 In the file, enter the following lines of code, which define the mint button and its respective styles:
 
 ``` jsx
-import { StyleSheet, View } from &#34;react-native&#34;;
-import { Button } from &#34;react-native-paper&#34;;
+import { StyleSheet, View } from "react-native";
+import { Button } from "react-native-paper";
 
 export default function MintButton() {
   return (
@@ -463,7 +448,7 @@ export default function MintButton() {
         disabled={!selectedAccount}
         loading={loading}
         onPress={handleClickMintButton}
-        mode=&#34;contained&#34;
+        mode="contained"
         style={styles.actionButton}&gt;
         Mint NFT
       &lt;/Button&gt;
@@ -473,9 +458,9 @@ export default function MintButton() {
 
 const styles = StyleSheet.create({
   buttonGroup: {
-    display: &#39;flex&#39;,
-    flexDirection: &#39;column&#39;,
-    width: &#39;100%&#39;,
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
   },
   actionButton: {
     flex: 1,
@@ -484,17 +469,17 @@ const styles = StyleSheet.create({
 });
 ```
 
-At this point, the editor should give a couple of errors, since `selectedAccount`, `loading` and `handleMintButton` don&#39;t exist yet. But don’t worry, we&#39;re going to create them 😉. The next step will be to add the handler of the click event to perform the mint. For this, add a couple of states and a new function before the return statement:
+At this point, the editor should give a couple of errors, since `selectedAccount`, `loading` and `handleMintButton` don't exist yet. But don’t worry, we're going to create them 😉. The next step will be to add the handler of the click event to perform the mint. For this, add a couple of states and a new function before the return statement:
 
 ```jsx
-import { useState } from &#34;react&#34;;
+import { useState } from "react";
 
-const EXPLORER_URL = &#39;https://explorer.solana.com&#39;;
-const CLUSTER = &#39;?cluster=devnet&#39;;
+const EXPLORER_URL = 'https://explorer.solana.com';
+const CLUSTER = '?cluster=devnet';
 
 export default function MintButton() {
   const [loading, setLoading] = useState(false);
-  const [explorerURL, setExplorerURL] = useState(&#39;&#39;);
+  const [explorerURL, setExplorerURL] = useState('');
 
   const handleClickMintButton = async () =&gt; {
     try {
@@ -503,25 +488,25 @@ export default function MintButton() {
       setLoading(false);
 
       if (!result &amp;&amp; !(result.signature || result.mint)) {
-        showAlert(&#39;Error minting the token&#39;);
+        showAlert('Error minting the token');
         return;
       }
 
       if (result.mint) {
         const url = `${EXPLORER_URL}/address/${result.mint}${CLUSTER}`;
         setExplorerURL(url);
-        showAlert(&#39;NFT minted successfully&#39;);
+        showAlert('NFT minted successfully');
         return;
       }
 
       if (result.signature) {
         const url = `${EXPLORER_URL}/tx/${result.signature}${CLUSTER}`;
         setExplorerURL(url);
-        showAlert(&#39;Signature generated successfully&#39;);
+        showAlert('Signature generated successfully');
         return;
       }
 
-      showAlert(&#39;Error minting the new NFT&#39;);
+      showAlert('Error minting the new NFT');
     } catch (error) {
       console.log(error);
     }
@@ -535,18 +520,18 @@ The `handleClickMintButton` function is in charge of controlling the entire flow
 
 If the mint address exists, the program creates a URL to see the details of the mint in [the Solana explorer](https://explorer.solana.com). The URL is then saved in the `explorerUrl` state and the user sees a success alert. If the mint doesn’t exist, but the transaction signature does, the program goes through a similar process, but this time to show the transaction status based on the signature. If neither the mint nor the signature exists, the program simply shows an error message to the user indicating that there was an error in the process. 
 
-Now, let&#39;s add the `mintNewToken` function. This function will be in charge of creating the transaction, signing it, sending it to the blockchain, and confirming if the transaction was successful. This function interacts directly with the mobile-wallet-adapter-protocol through the `fakewallet` dApp. It does this to obtain the wallet’s public key, stored in the adapter, and then to sign the transaction. Make sure to declare `CANDY_MACHINE_ID` at the beginning of the component as a constant. 
+Now, let's add the `mintNewToken` function. This function will be in charge of creating the transaction, signing it, sending it to the blockchain, and confirming if the transaction was successful. This function interacts directly with the mobile-wallet-adapter-protocol through the `fakewallet` dApp. It does this to obtain the wallet’s public key, stored in the adapter, and then to sign the transaction. Make sure to declare `CANDY_MACHINE_ID` at the beginning of the component as a constant. 
 
 ```jsx
-import { PublicKey, Transaction } from &#34;@solana/web3.js&#34;;
-import { transact } from &#34;@solana-mobile/mobile-wallet-adapter-protocol-web3js&#34;;
-import { useConnection } from &#34;@solana/wallet-adapter-react&#34;;
-import useAuthorization from &#34;../utils/useAuthorization&#34;;
-import useGuardedCallback from &#34;../utils/useGuardedCallback&#34;;
-import { getCandyMachineState, mintOneToken } from &#34;../utils/candy-machine&#34;;
+import { PublicKey, Transaction } from "@solana/web3.js";
+import { transact } from "@solana-mobile/mobile-wallet-adapter-protocol-web3js";
+import { useConnection } from "@solana/wallet-adapter-react";
+import useAuthorization from "../utils/useAuthorization";
+import useGuardedCallback from "../utils/useGuardedCallback";
+import { getCandyMachineState, mintOneToken } from "../utils/candy-machine";
 
 const CANDY_MACHINE_ID = new PublicKey(
-  &#39;4muNoMvUbLFi8btqE8QV2YnsFYF2qUQ6tb9xVyHSUPFj&#39;,
+  '4muNoMvUbLFi8btqE8QV2YnsFYF2qUQ6tb9xVyHSUPFj',
 );
 
 export default function MintButton() {
@@ -600,7 +585,7 @@ Up to this point, we have created a component based on the ID of a candy machine
 Let’s add a new button at the bottom of the component. When the user taps this button, they’ll be sent to the Solana explorer via the URL stored in the explorerUrl state. Remember, explorerUrl stores either the URL that shows the user the details of their mint, if the mint address exists, or the URL that shows the details of the transaction, in case only the signature exists. The button makes use of the `openLink` function which simply redirects us to the page specified by the URL using the available browser. 
 
 ```jsx
-import { Linking } from &#34;react-native&#34;;
+import { Linking } from "react-native";
 
 export default function MintButton() {
   ...
@@ -614,7 +599,7 @@ export default function MintButton() {
       {explorerURL &amp;&amp; (
         &lt;Button
           onPress={() =&gt; openLink(explorerURL)}
-          mode=&#34;contained&#34;
+          mode="contained"
           style={styles.actionButton}&gt;
           View Details
         &lt;/Button&gt;
@@ -627,8 +612,8 @@ export default function MintButton() {
 Finally, we’re going to create a function that displays response messages to the user. For this, we’ll make use of Snackbars, which are small, floating alerts shown on the screen. 
 
 ```jsx
-import { useContext } from &#34;react&#34;;
-import { SnackbarContext } from &#34;./SnackbarProvider&#34;;
+import { useContext } from "react";
+import { SnackbarContext } from "./SnackbarProvider";
 
 export default function MintButton() {
   const setSnackbarProps = useContext(SnackbarContext);
@@ -647,14 +632,14 @@ With this code, you’ll have the complete component to mint a new NFT based on 
 As a final step, we want to make the mint button available on the home screen, so we can actually make use of it! Inside the `screens/MainScreen.tsx` file, let’s import the `MintButton` component by replacing the content of the MainScreen with the following: 
 
 ```jsx
-import React, { Fragment, useEffect } from &#34;react&#34;;
-import { ScrollView, StyleSheet } from &#34;react-native&#34;;
-import { Appbar, Portal } from &#34;react-native-paper&#34;;
-import { transact } from &#34;@solana-mobile/mobile-wallet-adapter-protocol-web3js&#34;;
-import MintButton from &#34;../components/MintButton&#34;;
-import useAuthorization from &#34;../utils/useAuthorization&#34;;
-import AccountInfo from &#34;../components/AccountInfo&#34;;
-import &#34;../shim&#34;; // required by rn-nodeify
+import React, { Fragment, useEffect } from "react";
+import { ScrollView, StyleSheet } from "react-native";
+import { Appbar, Portal } from "react-native-paper";
+import { transact } from "@solana-mobile/mobile-wallet-adapter-protocol-web3js";
+import MintButton from "../components/MintButton";
+import useAuthorization from "../utils/useAuthorization";
+import AccountInfo from "../components/AccountInfo";
+import "../shim"; // required by rn-nodeify
 
 export default function MainScreen() {
   const {
@@ -672,8 +657,8 @@ export default function MainScreen() {
 
   return (
     &lt;Fragment&gt;
-      &lt;Appbar.Header elevated mode=&#34;center-aligned&#34;&gt;
-        &lt;Appbar.Content title=&#34;React Native dApp&#34; /&gt;
+      &lt;Appbar.Header elevated mode="center-aligned"&gt;
+        &lt;Appbar.Content title="React Native dApp" /&gt;
       &lt;/Appbar.Header&gt;
 
       &lt;Portal.Host&gt;
@@ -696,7 +681,7 @@ export default function MainScreen() {
 
 Note that we also imported the `authorizeSession` function and added a `useEffect` at the beginning of the component. This requests authorization to connect the wallet as soon as the screen loads, rather than relying on the user tapping the connect and disconnect buttons.
 
-And that’s it! With the above code in place we’ll have the minting button available on our main screen and are ready to test the results. So let&#39;s do that now.
+And that’s it! With the above code in place we’ll have the minting button available on our main screen and are ready to test the results. So let's do that now.
 
 
 
@@ -711,16 +696,16 @@ yarn android
 
 Do this to build the app, and to install it in the emulator or device. When the app opens, it switches to the `fakewallet` app to gain authorization and access to the wallet. Go ahead and authorize it:
 
-&lt;div style={&#34;display:inline-flex&#34;}&gt;
-    &lt;img src=&#34;https://docs.monadical.com/uploads/73e14f9f-2615-42d6-b26b-55a35b839e8d.png&#34; width=&#34;350&#34; style=&#34;margin-bottom: 24px&#34;&gt;
-    &lt;img src=&#34;https://docs.monadical.com/uploads/060db786-a07c-4918-9612-5e147db0053c.png&#34; width=&#34;350&#34; style=&#34;margin-bottom: 24px&#34;&gt;
+&lt;div style={"display:inline-flex"}&gt;
+    &lt;img src="https://docs.monadical.com/uploads/73e14f9f-2615-42d6-b26b-55a35b839e8d.png" width="350" style="margin-bottom: 24px"&gt;
+    &lt;img src="https://docs.monadical.com/uploads/060db786-a07c-4918-9612-5e147db0053c.png" width="350" style="margin-bottom: 24px"&gt;
 &lt;/div&gt;
 
 ### Step 6: Mint that NFT
 Before minting, tap on `Add Funds` to get some SOL. We’ll use these to pay transaction fees:
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/b04e6b51-b3ff-42e7-8831-9acbc94c7d65.png&#34; width=&#34;350&#34; style=&#34;margin-bottom: 24px&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/b04e6b51-b3ff-42e7-8831-9acbc94c7d65.png" width="350" style="margin-bottom: 24px"&gt;
 &lt;/center&gt;
 
 Now, it’s time to hit the “Mint NFT” button. Once again, the app switches to the `fakewallet` app and asks to authorize the transaction signature. After authorizing, you’re prompted to either simulate scenarios, or send the signed transaction to the DevNet cluster. We’ll tap “Send transaction to cluster”.
@@ -728,7 +713,7 @@ Now, it’s time to hit the “Mint NFT” button. Once again, the app switches 
 If there are no network errors or cluster issues, you’ll see a message on screen telling us that the NFT has been minted as well as a button to view the [NFT Details](https://explorer.solana.com/address/9NVoXQBc1Ke9BXWXAyBYYC478bX13U92ujqnNHh7xkVi?cluster=devnet).
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/a767d1ee-5352-4561-a2f1-0df5cad71041.gif&#34; width=&#34;400&#34; style=&#34;margin-bottom: 24px; border: 1px solid grey; border-radius:16px;&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/a767d1ee-5352-4561-a2f1-0df5cad71041.gif" width="400" style="margin-bottom: 24px; border: 1px solid grey; border-radius:16px;"&gt;
 &lt;/center&gt;
 
 Tada! 🥳
@@ -737,31 +722,27 @@ Tada! 🥳
 
 This exercise revealed that React Native apps still have difficulties running native NodeJS dependencies, due to the nature of the environment. Nevertheless, React Native is a powerful tool to develop mobile apps that can make use of Solana’s new mobile wallet adapter.
 
-We also showed how to use the mobile wallet adapter to sign a transaction while the private keys remain safe inside the phone. As a result, you can now send a payload from any app that makes use of Solana&#39;s mobile wallet adapter to the phone’s secure element for signing. In this case, we showed how easy it is to achieve self-custody[^1] with the wallet adapter.
+We also showed how to use the mobile wallet adapter to sign a transaction while the private keys remain safe inside the phone. As a result, you can now send a payload from any app that makes use of Solana's mobile wallet adapter to the phone’s secure element for signing. In this case, we showed how easy it is to achieve self-custody[^1] with the wallet adapter.
 
 [^1]: Self-custody means only the owner of the private keys is responsible for its storage and manipulation; this doesn’t happen with current wallet apps where keys are in possession of the app and its creators, not the owner.
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

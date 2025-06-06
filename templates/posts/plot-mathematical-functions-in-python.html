@@ -1,63 +1,49 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  How to Plot Mathematical Functions in 10 Lines of Python ===  *Written by [Juan David Aria">
-    
-    
-    
-    <meta property="og:title" content="How to Plot Mathematical Functions in 10 Lines of Python - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>How to Plot Mathematical Functions in 10 Lines of Python - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  How to Plot Mathematical Functions in 10 Lines of Python ===  *Written by [Juan David Aria" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>How to Plot Mathematical Functions in 10 Lines of Python - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?default=identicon&amp;s=96);" title="maiya"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 08 2021 14:47:05 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 08 2021 14:47:09 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">5207 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 08 2021 14:47:05 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jun 08 2021 14:47:09 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">5208 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 How to Plot Mathematical Functions in 10 Lines of Python
 ===
@@ -87,11 +73,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-t = sp.Symbol(&#39;t&#39;)
+t = sp.Symbol('t')
 
-function_x = sp.sympify(&#39;sin(t)&#39;)
-function_y = sp.sympify(&#39;cos(t)&#39;)
-function_z = sp.sympify(&#39;t**2&#39;)
+function_x = sp.sympify('sin(t)')
+function_y = sp.sympify('cos(t)')
+function_z = sp.sympify('t**2')
 interval = np.arange(0, 100, 0.1)
 
 x_values = [function_x.subs(t, value) for value in interval]
@@ -99,7 +85,7 @@ y_values = [function_y.subs(t, value) for value in interval]
 z_values = [function_z.subs(t, value) for value in interval]
 
 fig = plt.figure(figsize=(10, 10))
-ax = plt.axes(projection=&#39;3d&#39;)
+ax = plt.axes(projection='3d')
 ax.plot(x_values, y_values, z_values)
 plt.show()
 ```
@@ -138,10 +124,10 @@ import matplotlib.pyplot as plt
 ```
 
 
-The SymPy symbolic computations are done with symbols. SymPy variables are objects of the Symbols class. The `t = sp.Symbol(&#39;t&#39;)` assigns the symbol $t$ to the variable`t`, which from now on we can operate on as a mathematical variable.
+The SymPy symbolic computations are done with symbols. SymPy variables are objects of the Symbols class. The `t = sp.Symbol('t')` assigns the symbol $t$ to the variable`t`, which from now on we can operate on as a mathematical variable.
 
 ```python
-t = sp.Symbol(&#39;t&#39;)
+t = sp.Symbol('t')
 print(t ** 2)
 
 &gt;&gt; &gt; t ^ 2
@@ -150,7 +136,7 @@ print(t ** 2)
 For this task, we need to work with compound expressions stored in a string. To make the conversion from a string to a mathematical expression understandable for SymPy, we make use of the `sympify` function. `sp.sympify(expression)` converts the parameter `expression` into a general mathematical expression.
 
 ```python
-function_z = sp.sympify(&#39;t^2&#39;)
+function_z = sp.sympify('t^2')
 print(function_z + 2)
 
 &gt;&gt; &gt; t ^ 2 + 2
@@ -165,7 +151,7 @@ print(value)
 &gt;&gt; &gt; 5 ^ 2 = 25
 ```
 
-Since we are talking about parametric functions, we are interested in evaluating the function on a sequence of real values within an interval (we use NumPy&#39;s `arange` function for this). The `np.arange(start, stop, step)` function creates a NumPy array with values in the half-open interval $[start, stop)$ with increments of `step`.
+Since we are talking about parametric functions, we are interested in evaluating the function on a sequence of real values within an interval (we use NumPy's `arange` function for this). The `np.arange(start, stop, step)` function creates a NumPy array with values in the half-open interval $[start, stop)$ with increments of `step`.
 
 ```python
 interval = np.arange(0, 10, 1)
@@ -186,15 +172,15 @@ print(z_values)
 We repeat the procedure for the values of `x_values` and `y_values` and so obtain the arrays with the values to plot. Finally, with the help of Matplotlib, we show the graph corresponding to the parametric curve. In the three-dimensional case, we use the following statement to indicate to Matplotlib that we want to make a three-dimensional graph:
 
 ```python
-ax = plt.axes(projection=&#39;3d&#39;)
+ax = plt.axes(projection='3d')
 ```
 
-We can replace the functions and the interval and obtain new and infinite curves. Let&#39;s try it again with different values.
+We can replace the functions and the interval and obtain new and infinite curves. Let's try it again with different values.
 
 ```python
-function_x = sp.sympify(&#39;2*t + 10&#39;)
-function_y = sp.sympify(&#39;t**2&#39;)
-function_z = sp.sympify(&#39;sin(t**2) + cos(t**2)&#39;)
+function_x = sp.sympify('2*t + 10')
+function_y = sp.sympify('t**2')
+function_z = sp.sympify('sin(t**2) + cos(t**2)')
 interval = np.arange(-5, 5, 0.05)
 ```
 
@@ -212,7 +198,7 @@ During my research, I came across a variety of shapes that could be created usin
 If you want to play around with the script yourself, you can open [this link](https://trinket.io/python3/791f8b4319?runOption=run)  and replace the values for `function_x`, `function_y`, `function_z`, and `interval`.
 
 
-&lt;iframe src=&#34;https://trinket.io/embed/python3/c6abaec211?runOption=run&amp;start=result&#34; width=&#34;100%&#34; height=&#34;356&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe src="https://trinket.io/embed/python3/c6abaec211?runOption=run&amp;start=result" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 ## Modifying the script for 2D parametric curves
 
@@ -232,10 +218,10 @@ import sympy as sp
 import numpy as np
 import matplotlib.pyplot as plt
 
-t = sp.Symbol(&#39;t&#39;)
+t = sp.Symbol('t')
 
-function_x = sp.sympify(&#39;t - 1.6*cos(24*t)&#39;)
-function_y = sp.sympify(&#39;t - 1.6*sin(25*t)&#39;)
+function_x = sp.sympify('t - 1.6*cos(24*t)')
+function_y = sp.sympify('t - 1.6*sin(25*t)')
 interval = np.arange(1.5, 20.5, 0.01)
 
 x_values = [function_x.subs(t, value) for value in interval]
@@ -246,11 +232,11 @@ plt.plot(x_values, y_values)
 plt.show()
 ```
 
-Let&#39;s test it with other functions and a new interval:
+Let's test it with other functions and a new interval:
 
 ```python
-function_x = sp.sympify(&#39;4*sin(5*t)&#39;)
-function_y = sp.sympify(&#39;5*cos(3*t)&#39;)
+function_x = sp.sympify('4*sin(5*t)')
+function_y = sp.sympify('5*cos(3*t)')
 interval = np.arange(0, 6.5, 0.001)
 ```
 
@@ -263,8 +249,8 @@ interval = np.arange(0, 6.5, 0.001)
 And one more time...
 
 ```python
-function_x = sp.sympify(&#39;cos(16*t) + (cos(6*t) / 2) + (sin(10*t) / 3)&#39;)
-function_y = sp.sympify(&#39;sin(16*t) + (sin(6*t) / 2) + (cos(10*t) / 3)&#39;)
+function_x = sp.sympify('cos(16*t) + (cos(6*t) / 2) + (sin(10*t) / 3)')
+function_y = sp.sympify('sin(16*t) + (sin(6*t) / 2) + (cos(10*t) / 3)')
 interval = np.arange(0, 3.16, 0.01)
 ```
 
@@ -294,8 +280,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-symbol_x = sp.Symbol(&#39;x&#39;)
-symbol_y = sp.Symbol(&#39;y&#39;)
+symbol_x = sp.Symbol('x')
+symbol_y = sp.Symbol('y')
 
 def get_vector(a, b):
     return np.arange(a, b + 1, 0.1)
@@ -325,32 +311,32 @@ def plot_3d_function(function, a, b):
     
     # Plot the 3D function graph
     fig = plt.figure(figsize=(10, 10))
-    ax = plt.axes(projection=&#39;3d&#39;)
+    ax = plt.axes(projection='3d')
     ax.plot_surface(domain_x, domain_y, image, 
-                    rstride=1, cstride=1, cmap=&#39;viridis&#39;)
+                    rstride=1, cstride=1, cmap='viridis')
     plt.show()
     
-function = input(&#39;&gt;&gt; Enter the function: &#39;)
-a_value = float(input(&#39;&gt;&gt; Enter the [a, ] value: &#39;))
-b_value = float(input(&#39;&gt;&gt; Enter the [, b] value: &#39;))
+function = input('&gt;&gt; Enter the function: ')
+a_value = float(input('&gt;&gt; Enter the [a, ] value: '))
+b_value = float(input('&gt;&gt; Enter the [, b] value: '))
 
-if &#34;x&#34; and not &#34;y&#34; in function:
+if "x" and not "y" in function:
     plot_2d_function(function, a_value, b_value)
 
-elif &#34;x&#34; and &#34;y&#34; in function:
+elif "x" and "y" in function:
     plot_3d_function(function, a_value, b_value)
     
 else: 
-    print(&#34;You must enter a function in terms of x and/or y&#34;)
+    print("You must enter a function in terms of x and/or y")
 ```
 
 You can test this script for yourself [here](https://trinket.io/python3/23f8ad681c?runOption=run): run the script and enter your own configuration.
 
-&lt;iframe src=&#34;https://trinket.io/embed/python3/181bde2cb7?runOption=run&amp;start=result&#34; width=&#34;100%&#34; height=&#34;356&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe src="https://trinket.io/embed/python3/181bde2cb7?runOption=run&amp;start=result" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 *Two dimensional function plot*
 
-&lt;iframe src=&#34;https://trinket.io/embed/python3/fa70d45632?runOption=run&amp;start=result&#34; width=&#34;100%&#34; height=&#34;356&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe src="https://trinket.io/embed/python3/fa70d45632?runOption=run&amp;start=result" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 *Three dimensional function plot*
 
@@ -364,30 +350,26 @@ In my next few posts, I’ll  be explaining how to work with fast API, React, Un
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

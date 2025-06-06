@@ -168,67 +168,52 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.">
-    
-    
-    
-    <meta property="og:title" content="Python vs Javascript Dealing with the quirks of async await - HedgeDoc">
-    
-    
-    <meta property="og:description" content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Python vs Javascript Dealing with the quirks of async await - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="As someone who’s used to implementing asynchronous programming in JS, implementing it in Python came as a surprise. Here’s what I learned." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Python vs Javascript Dealing with the quirks of async await - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&amp;s=96);" title="joyce"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f79751f8202c4b0815eb4f9d50007332?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="joyce"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:52:02 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">5209 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Fri Aug 19 2022 09:04:23 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Aug 22 2022 13:52:02 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">5210 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
     
@@ -258,7 +243,7 @@ Let’s start off with the problem that led to this. I was tasked with implement
 
 Using Elasticsearch asynchronously in Python is as basic as following this example in their documentation, assuming you’ve already sent some data to Elasticsearch.
 
-```python
+```python=
 import asyncio
 from elasticsearch import AsyncElasticsearch
 
@@ -266,8 +251,8 @@ es = AsynchElasticsearch
 
 async def main():
     resp = await es.search(
-        index=&#34;documents&#34;,
-        body={&#34;query&#34;: {&#34;match_all&#34;: {}}},
+        index="documents",
+        body={"query": {"match_all": {}}},
         size=20,
     )
     print(resp)
@@ -298,16 +283,16 @@ But why is that line included in the first place? And where else in the applicat
 #### How does it look in JavaScript?
 
 For comparison, if we move over to JavaScript, to accomplish a similar task as above, also using the example from Elasticsearch documentation, we have this:
-```python
-const client = require(&#39;elasticsearch&#39;).Client()
+```python=
+const client = require('elasticsearch').Client()
 
 async function run() {
     ...
     const result = await client.search({
-        index: &#39;game-of-thrones&#39;,
+        index: 'game-of-thrones',
         query: {
             match: {
-                quote: &#39;winter&#39;
+                quote: 'winter'
             }
         }
     })
@@ -328,16 +313,16 @@ Async/await keywords were added in Python 3.5 and `coroutines` are at the heart 
 
 Here’s an example `coroutine` function:
 
-```python
+```python=
 import asyncio
 
 async def make_api_call(name, time_out):
-    print(f&#34;API {name} has started... &#34;)
+    print(f"API {name} has started... ")
     await asyncio.sleep(time_out)
-    print(f&#34;API {name} is done!&#34;)
+    print(f"API {name} is done!")
 
 async def main():
-    await asyncio.gather(make_api_call(&#34;A&#34;, 5), make_api_call(&#34;B&#34;, 3))
+    await asyncio.gather(make_api_call("A", 5), make_api_call("B", 3))
 
 asyncio.run(main())
 ```
@@ -362,14 +347,14 @@ Now let’s contrast this to the keywords in JavaScript. Here the async/await ke
 
 A `promise` in JavaScript is simply a proxy for a value not yet known at the time of function execution. Similar to the `future` (This represents an eventual result of an asynchronous operation) concept in Python, it allows functions to return values like synchronous functions. 
 A typical way to create a `promise`:
-```javascript101
+```javascript=101
 const itsRaining = true
 
 const whatSaysTheWeather = new Promise((resolve, reject) =&gt; {
     if (itsRaining) {
-        resolve(&#34;Get the umbrella out&#34;);
+        resolve("Get the umbrella out");
     } else {
-        reject(&#34;We have less items to worry about&#34;)
+        reject("We have less items to worry about")
     }
 })
 
@@ -377,7 +362,7 @@ console.log(whatSaysTheWeather)
 ```
 Expected output:
 ```
-Promise { &#39;Get the umbrella out&#39; }
+Promise { 'Get the umbrella out' }
 ```
 
 As the above example shows, we have a `resolve` state and a `reject` state, plus a third one called the `pending` state where the result of the function call is not yet rejected or resolved. Until the function is rejected or resolved, you can continue executing other parts of your code with the hope that you would get feedback once this function is done.
@@ -385,9 +370,9 @@ As the above example shows, we have a `resolve` state and a `reject` state, plus
 Async/await functions use `promise` behind the scenes, with the added benefit of having a more readable syntax.
 
 This is the basic syntax of a function created using the `async/await` keyword in JavaScript:
-```javascript101
+```javascript=101
 async function read_data(db) {
-    const data = await db.fetch(&#39;SELECT ...&#39;)
+    const data = await db.fetch('SELECT ...')
     …
 }
 ```
@@ -404,14 +389,14 @@ However, the `event loop` – a design pattern that waits for and dispatches eve
 
 In JavaScript (NodeJs), the event loop starts when the application is executed and continuously checks the call stack to see if there’s any function that needs to run.
 
-In contrast, in Python, applications with `async/await` functions cannot execute without an event loop that is &#34;running&#34;. Hence why this part 
+In contrast, in Python, applications with `async/await` functions cannot execute without an event loop that is "running". Hence why this part 
 `loop = asyncio.get_event_loop()`
 `loop.run_until_complete(main())`
 
 was necessary. This is the part that executes the `async` function and returns the value returned by the function you passed to it. 
 
-The tricky thing with event loop in Python is that most Python libraries were not written for this paradigm. That is, functions in libraries do not await I/O bound tasks, that means they don&#39;t yield control and therefore block the event loop. That’s what makes it so easy to end up blocking the event loop.
-In JavaScript you can almost think of the asynchronous execution of the code where awaits are like &#34;stop here to continue sequentially later when result is available&#34; while in Python it is like &#34;you are yielding control of the event loop until result is available&#34;.
+The tricky thing with event loop in Python is that most Python libraries were not written for this paradigm. That is, functions in libraries do not await I/O bound tasks, that means they don't yield control and therefore block the event loop. That’s what makes it so easy to end up blocking the event loop.
+In JavaScript you can almost think of the asynchronous execution of the code where awaits are like "stop here to continue sequentially later when result is available" while in Python it is like "you are yielding control of the event loop until result is available".
 
 
 #### Other differences you may or may not have spotted:
@@ -423,7 +408,7 @@ In JavaScript you can almost think of the asynchronous execution of the code whe
 
 I actually ended up not resolving the RuntimeError that drew me in to explore async/await concept in Python due to array of reasons, some of which include: 
 - Flask – the Python framework used in the application is not ASGI compatible by default, which is what Elasticsearch Async is based on (this [article](https://sethmlarson.dev/blog/flask-async-views-and-async-globals))
-- The application runs on Python 3.6 which in itself meant we couldn&#39;t access some of the newer asyncio methods. 
+- The application runs on Python 3.6 which in itself meant we couldn't access some of the newer asyncio methods. 
 
 After a long deliberation with our team we decided to go with the normal Elasticsearch client and use Threading to achieve the intended behavior. If you want to know the difference between using async/await and threading, I recommend this [article](https://itnext.io/practical-guide-to-async-threading-multiprocessing-958e57d7bbb8).
 
@@ -436,27 +421,23 @@ JavaScript async/await is more straightforward and doesn’t expect you to expli
 
 As I mentioned, I didn’t end up using the AsyncElasticsearch class but, nonetheless, figuring out how async/await works in Python was an interesting experiment. I hope you learned something too!
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

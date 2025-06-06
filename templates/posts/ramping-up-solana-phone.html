@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack">
-    
-    
-    
-    <meta property="og:title" content="Ramping up on the Solana phone, crypto for mobile - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Ramping up on the Solana phone, crypto for mobile - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Ramping up on the Solana phone, crypto for mobile - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&amp;s=96);" title="juan.david"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon Sep 05 2022 20:17:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Apr 11 2024 01:48:14 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1570 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Mon Sep 05 2022 20:17:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Apr 11 2024 01:48:14 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1571 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -86,7 +71,7 @@ SE provides the same level of security as hardware wallets (HW wallets also use 
 
 &lt;h2&gt;Solana Mobile Stack (SMS)&lt;/h2&gt;
 
-Now that we’ve learned about the hardware, let&#39;s take a look at the software components. The Solana Mobile Stack is a software development kit (SDK) which, when complete, will consist of:
+Now that we’ve learned about the hardware, let's take a look at the software components. The Solana Mobile Stack is a software development kit (SDK) which, when complete, will consist of:
 
 - [Mobile wallet adapter](https://github.com/solana-mobile/mobile-wallet-adapter): A protocol specification for connecting apps to Wallets on mobile devices. 
 
@@ -98,7 +83,7 @@ Now that we’ve learned about the hardware, let&#39;s take a look at the softwa
 
 The way this set of tools works is as follows: a developer creates a Decentralized App [dApp](https://www.coindesk.com/learn/what-is-a-dapp-decentralized-apps-explained) for Android using web3 and the Solana libraries. Once the dApp is finished, the developer can publish it in the Solana dApp store. Then, any interested users will be able to install the dApp into their Saga device and start using it.
 
-Using a dApp means that the user is interacting in some way with a decentralized system such as the Solana blockchain. These dApps will use a wallet adapter that communicates with a wallet provider like Phantom, Sollet, or others. In turn, the wallet provider will communicate to the Seed Vault service that is responsible for ensuring that the user&#39;s keys are stored securely on the secured element microchip. This microchip receives a payload sent by the upper layers and signs it with the private key. It then sends the signed payload back to the wallet provider which will validate the signature against the Solana ledger. Finally, it will send the transaction to the blockchain and confirm it.
+Using a dApp means that the user is interacting in some way with a decentralized system such as the Solana blockchain. These dApps will use a wallet adapter that communicates with a wallet provider like Phantom, Sollet, or others. In turn, the wallet provider will communicate to the Seed Vault service that is responsible for ensuring that the user's keys are stored securely on the secured element microchip. This microchip receives a payload sent by the upper layers and signs it with the private key. It then sends the signed payload back to the wallet provider which will validate the signature against the Solana ledger. Finally, it will send the transaction to the blockchain and confirm it.
 
 Here’s a somewhat detailed guide on how we set up our development environment, and the process of running the examples for a barely new Solana Mobile Stack. This guide is aimed at people who are interested in Android development, crypto for mobile, web3, and of course, the Solana Mobile Stack (SMS).
 
@@ -108,7 +93,7 @@ Here’s a somewhat detailed guide on how we set up our development environment,
 
 At the moment, the SMS is only available on the Android platform. So, you’ll first need to install the Android Studio on your computer. To do this, go to https://developer.android.com/studio and follow the instructions specific to your operating system.
 
-We recommend that you use Android Studio because it’s the official IDE for Google&#39;s Android OS. It includes direct support for Java and Kotlin. It gives options to build apps, generate APKs and [AABs](https://developer.android.com/guide/app-bundle), and distribute applications or modules. It also has automatic help tips, good documentation, and a powerful editor to build interfaces. 
+We recommend that you use Android Studio because it’s the official IDE for Google's Android OS. It includes direct support for Java and Kotlin. It gives options to build apps, generate APKs and [AABs](https://developer.android.com/guide/app-bundle), and distribute applications or modules. It also has automatic help tips, good documentation, and a powerful editor to build interfaces. 
 
 &lt;h3&gt;Step 2: Get the code and load it in Android Studio&lt;/h3&gt;
 
@@ -129,7 +114,7 @@ The editor will take a while to load the project as it indexes the files and res
 
 &lt;h3&gt;Step 3: Create an android emulator (optional)&lt;/h3&gt;
 
-In case you don&#39;t want to use an android emulator, you can also run the app on your physical device. If you want to do it that way, we recommend following [this guide](https://developer.android.com/studio/run/device).
+In case you don't want to use an android emulator, you can also run the app on your physical device. If you want to do it that way, we recommend following [this guide](https://developer.android.com/studio/run/device).
 
 If we follow the installation recommended by Android Studio, the default editor will come with an emulator. This can be used to test local applications that are developed using different devices, configurations, and APIs. 
 
@@ -157,7 +142,7 @@ To run the application within the emulator, we need to select the emulator and t
 We’ll have to be a little patient now as the process to run the application can take a couple of minutes. Once finished, we should be able to see the next welcome screen in the emulator:
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/50f5a7e1-2186-47da-9b41-d6158bd3d9cb.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/50f5a7e1-2186-47da-9b41-d6158bd3d9cb.png" width="350" /&gt;
 &lt;/center&gt;
 
 
@@ -179,23 +164,23 @@ As done before, we must ensure that we have an emulator selected, and then we ca
 Again, we have to be patient as it loads. Once the application has finished loading the emulator, our screen should look something like this:
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/9777af6d-698c-4a52-a709-b98be76ffd88.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/9777af6d-698c-4a52-a709-b98be76ffd88.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
-In the previous view, we can see the possible operations that we can carry out within the application. We can also see that some buttons are disabled. These are the operations that require authorization to be carried out. Let’s click on the &#34;AUTHORIZE&#34; button, which will switch apps with the `fakewallet` application and allow the user to authorize or decline the action. Behind the scenes, the app is using an [Android intent](https://developer.android.com/reference/android/content/Intent) to request the user’s authorization through the `fakewallet` app[^1].
+In the previous view, we can see the possible operations that we can carry out within the application. We can also see that some buttons are disabled. These are the operations that require authorization to be carried out. Let’s click on the "AUTHORIZE" button, which will switch apps with the `fakewallet` application and allow the user to authorize or decline the action. Behind the scenes, the app is using an [Android intent](https://developer.android.com/reference/android/content/Intent) to request the user’s authorization through the `fakewallet` app[^1].
 
 [^1]: https://github.com/solana-mobile/mobile-wallet-adapter/blob/main/android/docs/integration_guide.md#android-reference-implementation
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/eeae859d-6c88-4066-bd44-abcac3ab0366.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/eeae859d-6c88-4066-bd44-abcac3ab0366.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
 Once in the fake wallet app, we are going to click the “AUTHORIZE” button to effectively let the `fakedapp` access the wallet and then switch back to the `fakedapp` screen. After the switch back, we’ll see that all buttons are active, which indicates  that the authorization was successfully granted. Within the code, now we have access to a `wallet` object where we can access the public key and some methods like `signTransactions`, `signMessages` and `signAndSendTransactions`.
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/9e6d854a-3bf4-4756-89f3-f156d9967db4.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/9e6d854a-3bf4-4756-89f3-f156d9967db4.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
@@ -205,22 +190,22 @@ To finish with this example, we’re going to test a couple of functionalities. 
 
 To see more details of the transaction, we are going to explore the device logs. First, click on the “logcat” tab found in the bottom bar of the editor or from `View &gt; Tool Windows &gt; Logcat`.
 
-In the logs window, we’re going to first configure the filters. To do this, make sure you select the emulator you‘re using and the module `com.solana.mobilewalletapter.fakedapp`. Then, in the search bar, enter the keyword &#34;airdrop&#34;. Now, we’ll be able to see the data associated with the transaction:
+In the logs window, we’re going to first configure the filters. To do this, make sure you select the emulator you‘re using and the module `com.solana.mobilewalletapter.fakedapp`. Then, in the search bar, enter the keyword "airdrop". Now, we’ll be able to see the data associated with the transaction:
 
 ![](https://docs.monadical.com/uploads/ac688436-03f2-4235-ade2-4ed9969d66f4.png)
 
 
-Finally, we’re going to test a functionality to sign and send transactions to the blockchain. To do this, click on the button &#34;sign and send txn x1&#34; which is at the end of the list of actions. Since the app is authorized to access the signing methods, the code will use the provided wallet client to call the `signAndSendTransactions`. As we saw before, the code will use Android intents to communicate to the `fakewallet` app. We’ll see that a switch has been made with the `fakewallet` app. This allows the user to authorize or decline the action from the wallet provider. The view we obtain is the following:
+Finally, we’re going to test a functionality to sign and send transactions to the blockchain. To do this, click on the button "sign and send txn x1" which is at the end of the list of actions. Since the app is authorized to access the signing methods, the code will use the provided wallet client to call the `signAndSendTransactions`. As we saw before, the code will use Android intents to communicate to the `fakewallet` app. We’ll see that a switch has been made with the `fakewallet` app. This allows the user to authorize or decline the action from the wallet provider. The view we obtain is the following:
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/cdad5836-bda1-4e0d-8652-464b7a6a2a03.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/cdad5836-bda1-4e0d-8652-464b7a6a2a03.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
 In this view, we once again have multiple options that allow us to simulate the different possible states of a transaction. In our case, we’re going to choose the option “authorize” which enables us to effectively sign the transaction. Once we press the button, we’ll obtain the following view:
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/1f12a040-3950-4370-8793-00a91efc62a6.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/1f12a040-3950-4370-8793-00a91efc62a6.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
@@ -245,14 +230,14 @@ As the  project configuration loads, we’ll see in the project section that the
 To run the Solana Pay Protocol example, we’ll simply click the “run” button on the taskbar. We must ensure that we have the `app` module selected and an active emulator. Once the app is loaded in the emulator we should see something like this:
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/0b114586-ce68-49da-8479-8e62dc6824e7.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/0b114586-ce68-49da-8479-8e62dc6824e7.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
 In this example, the “Launch Solana Pay Internally” button will internally generate a Solana Pay URI with the following format: `solana:84npKJKZy8ixjdq8UChZULDUea2Twt8ThxjiqKd7QZ54?amount=100&amp;memo=Test%20xfer`. In a real application, we want to load the URI using mechanisms such as QR codes, NFC, etcetera. This URI will be read and interpreted by the Solana Pay implementation. Once we click the  “Launch Solana Pay Internally” button, we’ll be redirected to a new view where the URI data has already been parsed, and it is now possible to simulate transactions in different states.
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/64716acb-1ab5-40a6-a51b-67dccbec7786.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/64716acb-1ab5-40a6-a51b-67dccbec7786.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
@@ -260,16 +245,16 @@ In our case, just press on the “Authorized, Submit Succeeds” button. Then, w
 
 &lt;h3&gt;Example 3: Run the Memo message example&lt;/h3&gt;
 
-The Memo message example consists of a mobile app written in Java, Kotlin and React Native. We&#39;re going to run the React Native version. The purpose of this example is to demonstrate the use of `transact()` as the main method to work with the wallet adapter. The Memo message example will sign and send transactions to the chain. It also contains other tools to handle sessions, connect, disconnect, get the latest blockhash, request airdrop, etcetera.
+The Memo message example consists of a mobile app written in Java, Kotlin and React Native. We're going to run the React Native version. The purpose of this example is to demonstrate the use of `transact()` as the main method to work with the wallet adapter. The Memo message example will sign and send transactions to the chain. It also contains other tools to handle sessions, connect, disconnect, get the latest blockhash, request airdrop, etcetera.
 
 To run the Memo message example, we’ll clone the [mobile-wallet-adapter](https://github.com/solana-mobile/mobile-wallet-adapter) repository. Or, if you already cloned `mobile-wallet-adapter` from a previous step, feel free to use that copy instead. You just have to locate the directory `./examples/example-react-native-app/` within the cloned folder. To build and start the app, run `yarn &amp;&amp; yarn start` in one terminal and leave the metro running in this terminal. Then, run `yarn android` in a second terminal. Since these steps build and start the app, we need to remember to have our Android phone connected and enabled for developing or an emulator properly configured.
 
 &lt;center&gt;
-  &lt;img src=&#34;https://docs.monadical.com/uploads/3e4cf3ea-b54c-4069-883a-efb9350760ee.png&#34; width=&#34;350&#34; /&gt;
+  &lt;img src="https://docs.monadical.com/uploads/3e4cf3ea-b54c-4069-883a-efb9350760ee.png" width="350" /&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
-After we get the app running, feel free to add funds to your provisional devnet wallet, write a memo message, sign it, and of course, send it to the blockchain by clicking “Record Message”. If you do this, you’ll see a toast with a link to explore and inspect the transaction in the blockchain, and the memo instruction with the message. Here&#39;s [the link](https://explorer.solana.com/tx/2ofWbryFBYRUgv6bZDQV61kBPGSBgUFyMjjJLd4uv6cezQL8oYyzhGYH2g61TxS7EH67XBmh4f9eHztM3oJP9Pmw?cluster=devnet) to our transaction and this is how it looks in the explorer:
+After we get the app running, feel free to add funds to your provisional devnet wallet, write a memo message, sign it, and of course, send it to the blockchain by clicking “Record Message”. If you do this, you’ll see a toast with a link to explore and inspect the transaction in the blockchain, and the memo instruction with the message. Here's [the link](https://explorer.solana.com/tx/2ofWbryFBYRUgv6bZDQV61kBPGSBgUFyMjjJLd4uv6cezQL8oYyzhGYH2g61TxS7EH67XBmh4f9eHztM3oJP9Pmw?cluster=devnet) to our transaction and this is how it looks in the explorer:
 
 ![](https://docs.monadical.com/uploads/472cfd1d-9cc8-4ac7-9b88-d7ca958d085d.png)
 
@@ -295,24 +280,20 @@ Solana Mobile Grant Application: https://share.hsforms.com/17ieOT2CNT_SHx0RTjvLa
 
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

@@ -168,75 +168,61 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # A Postfix deployment postmortem:&lt;br/&gt;Debugging short-circuiting of mapping lookups    *O">
-    
-    
-    
-    <meta property="og:title" content="A Postfix deployment postmortem:Debugging short-circuiting of mapping lookups - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>A Postfix deployment postmortem:Debugging short-circuiting of mapping lookups - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  # A Postfix deployment postmortem:&lt;br/&gt;Debugging short-circuiting of mapping lookups    *O" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>A Postfix deployment postmortem:Debugging short-circuiting of mapping lookups - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Sat Feb 29 2020 04:30:36 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Feb 29 2020 07:24:42 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">6270 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Sat Feb 29 2020 04:30:36 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Feb 29 2020 07:24:42 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">6271 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 # A Postfix deployment postmortem:&lt;br/&gt;Debugging short-circuiting of mapping lookups  
 
 *Originally published 2020-02-28 on [docs.sweeting.me](https://docs.sweeting.me/s/blog).*
 *Also published as an [answer on ServerFault](https://serverfault.com/questions/948362/postfix-multiple-smtpd-sender-login-maps/1005041#1005041), and in the [Mailu Issue Tracker #1096](https://github.com/Mailu/Mailu/issues/1096).*
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_6e59cbf30deeba744cdce2c6024b6a95.png&#34; style=&#34;width: 35%&#34;/&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_9ca60c0fc523e381ddd262d3625ab373.png&#34; alt=&#34;Diagram of SMTP over the internet&#34; style=&#34;width: 60%&#34;/&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_6e59cbf30deeba744cdce2c6024b6a95.png" style="width: 35%"/&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_9ca60c0fc523e381ddd262d3625ab373.png" alt="Diagram of SMTP over the internet" style="width: 60%"/&gt;
 
-How we tracked down an email sending bug caused by Postfix&#39;s counterintuitive `type:table` &lt;br/&gt;  lookup behavior, and how we fixed it with Postfix 3.0&#39;s new `unionmap` feature.
+How we tracked down an email sending bug caused by Postfix's counterintuitive `type:table` &lt;br/&gt;  lookup behavior, and how we fixed it with Postfix 3.0's new `unionmap` feature.
     
 ---
 
@@ -286,11 +272,11 @@ The root cause ended up being a surprisingly simple Postfix config assumption th
 
 &lt;br/&gt;
 
-&gt; Tip: EveryCloud&#39;s free [Mail Flow Monitor](https://www.everycloud.com/free-mail-flow-monitor) is a great little monitoring/alerting solution, it helped ensure this issue didn&#39;t affect *any* of our production mailserver users.
+&gt; Tip: EveryCloud's free [Mail Flow Monitor](https://www.everycloud.com/free-mail-flow-monitor) is a great little monitoring/alerting solution, it helped ensure this issue didn't affect *any* of our production mailserver users.
 
 &lt;br/&gt;
 
-&lt;center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/upload_f4316c22add4e63a7dbd5f7921ba995d.png&#34;&gt;&lt;br/&gt;&lt;i&gt;This is how SMTP is used to send an email from a client to its recipient.&lt;/i&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="https://docs.monadical.com/uploads/upload_f4316c22add4e63a7dbd5f7921ba995d.png"&gt;&lt;br/&gt;&lt;i&gt;This is how SMTP is used to send an email from a client to its recipient.&lt;/i&gt;&lt;/center&gt;
 
 
 &lt;br/&gt;
@@ -306,7 +292,7 @@ There are 3 users stored in the MySQL DB who can authenticate via SMTP with Post
 
 Regular users can only send from their main address and their aliases, but we want to allow the admin to be able to masquerade as *any* sender without restrictions. 
 
-&lt;center&gt;&lt;img src=&#34;https://docs.monadical.com/uploads/upload_630aba0208fb9289013db5627cdd8ed5.png&#34;&gt;&lt;br/&gt;&lt;i&gt;The admin could add any any sending address they wanted in their mail client.&lt;/i&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="https://docs.monadical.com/uploads/upload_630aba0208fb9289013db5627cdd8ed5.png"&gt;&lt;br/&gt;&lt;i&gt;The admin could add any any sending address they wanted in their mail client.&lt;/i&gt;&lt;/center&gt;
 &lt;br/&gt;
 
 &gt; In real life this type of setup is common whenever a user needs to be able to send from many addresses `.*@example.com` using only one SMTP login.
@@ -323,7 +309,7 @@ The normal approach to achieve fine-grained control over sender address validati
 
 The purpose of using `smtpd_sender_login_maps` is to validate whether the currently authenticated SMTP user is allowed to send an outbound email based on its FROM address.
 
-It&#39;s a powerful feature to restrict the addresses a client impersonate based on their SMTP auth.
+It's a powerful feature to restrict the addresses a client impersonate based on their SMTP auth.
 
 ### The Config Spec
 
@@ -345,7 +331,7 @@ It&#39;s a powerful feature to restrict the addresses a client impersonate based
 As  you can imagine, being able to granularly filter allowed senders has many use cases:
 
 - **Prevent a user from logging in and sending a message as someone else**  
-    *&gt; Bob can send as `bob@example.com`, but can&#39;t send as `alice@example.com`*
+    *&gt; Bob can send as `bob@example.com`, but can't send as `alice@example.com`*
 
 - **Allow multiple users to send from a single shared address neither of them own**  
     *&gt; Bob and Alice can both send as `marketing@example.com`*
@@ -370,7 +356,7 @@ As  you can imagine, being able to granularly filter allowed senders has many us
 
 &lt;br/&gt;
 
-We&#39;ll investigate this use-case of `smtpd_sender_login_maps` in particular:
+We'll investigate this use-case of `smtpd_sender_login_maps` in particular:
 
 &gt; **Allow an admin to send messages from many addresses** (even owned by others)
 
@@ -379,7 +365,7 @@ We&#39;ll investigate this use-case of `smtpd_sender_login_maps` in particular:
 We start by defining `smtpd_sender_login_maps` in `main.cf` to lookup the message FROM address in two lookup tables to determine whether the currently authenticated SMTP user is allowed to send from that address.
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_1cc8424a8b49e4f2da28424a63bd1200.png&#34; style=&#34;padding-right: 60px; width: 350px&#34;/&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_1cc8424a8b49e4f2da28424a63bd1200.png" style="padding-right: 60px; width: 350px"/&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
@@ -396,7 +382,7 @@ one of the lookups must return `alice@example.com` in the allowed SMTP user list
 
 :::warning
 
-#### `/etc/postfix/main.cf` &lt;small style=&#34;float:right&#34;&gt;[`type:postconf`](http://www.postfix.org/postconf.5.html)&lt;/small&gt;:
+#### `/etc/postfix/main.cf` &lt;small style="float:right"&gt;[`type:postconf`](http://www.postfix.org/postconf.5.html)&lt;/small&gt;:
 ```ini
 ...
 smtpd_sender_login_maps = 
@@ -414,13 +400,13 @@ Then, we create the two mappings referenced above, one using SQL, the other usin
 
 :::warning
 
-#### `/etc/postfix/sender_logins.cf` &lt;small style=&#34;float:right&#34;&gt;[`type:mysql_table`](http://www.postfix.org/mysql_table.5.html)&lt;/small&gt;:
+#### `/etc/postfix/sender_logins.cf` &lt;small style="float:right"&gt;[`type:mysql_table`](http://www.postfix.org/mysql_table.5.html)&lt;/small&gt;:
 ```ini
 hosts = 127.0.0.1
 user = postfix
 password = yourDatabasePasswordHere
 dbname = mail
-query = SELECT email FROM users WHERE email=&#39;%s&#39;
+query = SELECT email FROM users WHERE email='%s'
 ```
 
 This query checks the DB and returns the allowed SMTP users for a given FROM addr.
@@ -432,7 +418,7 @@ This query checks the DB and returns the allowed SMTP users for a given FROM add
 
 :::warning
 
-#### `/etc/postfix/sender_overrides.cf` &lt;small style=&#34;float:right&#34;&gt;[`type:pcre_table`](http://www.postfix.org/pcre_table.5.html)&lt;/small&gt;:
+#### `/etc/postfix/sender_overrides.cf` &lt;small style="float:right"&gt;[`type:pcre_table`](http://www.postfix.org/pcre_table.5.html)&lt;/small&gt;:
 ```ini
 /.*@example.com/     admin@example.com
 ```
@@ -447,9 +433,9 @@ This regex matches *all* `@example.com` FROM addrs and returns the admin SMTP us
 
 ## Testing it out
 
-Great, so far we&#39;ve configured our server to check two lookup tables to determine whether an outbound message is allowed to be sent by the logged in SMTP user.
+Great, so far we've configured our server to check two lookup tables to determine whether an outbound message is allowed to be sent by the logged in SMTP user.
 
-**Now let&#39;s take a look at two scenarios and see exactly what Postfix does in each case.**
+**Now let's take a look at two scenarios and see exactly what Postfix does in each case.**
 
 :::success
 #### Scenario 1: `alice@example.com` tries to send from `alice@example.com`
@@ -471,7 +457,7 @@ Great, so far we&#39;ve configured our server to check two lookup tables to dete
     postfix/smtpd[16645]: NOQUEUE: reject: RCPT from webmail.mailserver[192.168.1.5]: 553 5.7.1 &lt;alice@example.com&gt;: Sender address rejected: not owned by user admin@example.com; from=&lt;alice@example.com&gt; to=&lt;bob@example.com&gt; proto=ESMTP helo=&lt;mail.example.com&gt;
     ```
 
-❌ This does not work, the email is rejected because the SMTP authed user `admin@example.com` doesn&#39;t match the first lookup result `alice@example.com`.
+❌ This does not work, the email is rejected because the SMTP authed user `admin@example.com` doesn't match the first lookup result `alice@example.com`.
 :::
 
 :::danger
@@ -485,7 +471,7 @@ smtpd_sender_login_maps =
     mysql:...
 ```
 
-**Flipping the order of the mappings so that the pcre file is checked before mysql won&#39;t fix the problem.**
+**Flipping the order of the mappings so that the pcre file is checked before mysql won't fix the problem.**
 
  It even makes it worse because the catchall `.*@example.com` will overshadow all the real users in MySQL and prevent any user other than `admin@example.com` from sending email.
 
@@ -508,8 +494,8 @@ When it looks up `alice@example.com` in the pcre file, it returns `admin@example
 
 &lt;center&gt;
 &lt;b&gt;Hmm...&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_97148b3c67f496c293f79eb648dd0d0e.gif&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 4px 4px 4px rgba(0,0,0,0.02)&#34;/&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Clearly there&#39;s something preventing us from using both mappings simultaneously...&lt;/i&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_97148b3c67f496c293f79eb648dd0d0e.gif" style="width: 70%; border-radius: 8px; box-shadow: 4px 4px 4px rgba(0,0,0,0.02)"/&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Clearly there's something preventing us from using both mappings simultaneously...&lt;/i&gt;
 &lt;/center&gt;
  
 &lt;br/&gt;
@@ -541,9 +527,9 @@ When it looks up `alice@example.com` in the pcre file, it returns `admin@example
 
 ### Explanation
 
-The issue is that Postfix doesn&#39;t check both mappings and merge the results, instead it stops the lookup process the moment it encounters the *first* matching lookup returning any SMTP user.
+The issue is that Postfix doesn't check both mappings and merge the results, instead it stops the lookup process the moment it encounters the *first* matching lookup returning any SMTP user.
 
-If the returned SMTP user doesn&#39;t match the currently authed user, it won&#39;t proceed to lookup the address in the next database, it&#39;ll just immediately `DENY`.
+If the returned SMTP user doesn't match the currently authed user, it won't proceed to lookup the address in the next database, it'll just immediately `DENY`.
 
 The same lookup conflict can happen with any two mappings that share keys, e.g. two mysql databases `mysql:...,mysql:...`, not necessarily just a `pcre` with `.*` in it. Any exact match or wildcard match like `@example.com  someuser@example.com` in the first mapping will take precedence and prevent the second mapping from being queried at all.
 
@@ -558,17 +544,17 @@ The same lookup conflict can happen with any two mappings that share keys, e.g. 
 
 ### Solution A. Make the `smtpd_sender_login_maps` disjoint
 
-&lt;img src=&#34;https://media.giphy.com/media/SEv6jiT1OhPRC/giphy.gif&#34; style=&#34;float: right; width: 38%; margin-left: 10px;&#34;/&gt;
+&lt;img src="https://media.giphy.com/media/SEv6jiT1OhPRC/giphy.gif" style="float: right; width: 38%; margin-left: 10px;"/&gt;
 
-If the mappings don&#39;t contain any overlap in keys, then the order doesn&#39;t matter, and any lookup that doesn&#39;t match the first db will proceed to check the subsequent ones as expected.
+If the mappings don't contain any overlap in keys, then the order doesn't matter, and any lookup that doesn't match the first db will proceed to check the subsequent ones as expected.
 
-Mappings earlier in the list cannot have any &#34;catchall&#34; or wildcard keys or they will match everything and overshadow results from later mappings. 
+Mappings earlier in the list cannot have any "catchall" or wildcard keys or they will match everything and overshadow results from later mappings. 
 
 &lt;br/&gt;
 
 ### Solution B. Join multiple lookup results in SQL with `UNION`
 
-If you&#39;re using the `mysql` table type for your `smtpd_sender_login_maps` mappings, then you can control the SQL query run when doing an address lookup and you may be able to join multiple mappings at the SQL level. 
+If you're using the `mysql` table type for your `smtpd_sender_login_maps` mappings, then you can control the SQL query run when doing an address lookup and you may be able to join multiple mappings at the SQL level. 
 
 Assuming all your mappings are accessible in the same MySQL database, you can concatenante the results of multiple address lookups at the SQL level using a `UNION` statement like so:
 
@@ -584,10 +570,10 @@ Assuming all your mappings are accessible in the same MySQL database, you can co
     dbname = mail
     query = SELECT email
                 FROM users
-                WHERE email=&#39;%s&#39;
+                WHERE email='%s'
             UNION SELECT destination
                 FROM aliases
-                WHERE source=&#39;%s&#39;
+                WHERE source='%s'
             UNION SELECT email
                 FROM users
                 WHERE wildcard_sending=1
@@ -599,10 +585,10 @@ In this example we would set `admin@example.com` to have `wildcard_sending=1` in
 
 &lt;br/&gt;
 
-### &lt;span style=&#34;color: green&#34;&gt;Solution C. Use `unionmap` to combine multiple mappings&lt;/span&gt;
+### &lt;span style="color: green"&gt;Solution C. Use `unionmap` to combine multiple mappings&lt;/span&gt;
 
 
-If you&#39;re using Postfix 3.0 or above, you might be able to try using the new `unionmap` feature, which performs a lookup to all the mappings at once and concatenates the results together.
+If you're using Postfix 3.0 or above, you might be able to try using the new `unionmap` feature, which performs a lookup to all the mappings at once and concatenates the results together.
 
     smtpd_sender_login_maps = unionmap:{
             mysql:/etc/postfix/sender_logins.cf,
@@ -617,7 +603,7 @@ See http://www.postfix.org/DATABASE_README.html#types **unionmap** for more info
 
 &lt;center&gt;
 &lt;br/&gt;
-&lt;img src=&#34;https://media.giphy.com/media/YmjleYhDTUiYw/giphy.gif~c200&#34; style=&#34;width: 200px&#34;/&gt;
+&lt;img src="https://media.giphy.com/media/YmjleYhDTUiYw/giphy.gif~c200" style="width: 200px"/&gt;
 &lt;/center&gt;
 
 &lt;br/&gt;
@@ -630,7 +616,7 @@ See http://www.postfix.org/DATABASE_README.html#types **unionmap** for more info
 
 &lt;center&gt;
 
-This post talked about a specific Postfix config option `smtpd_sender_login_maps`, but **the behavior described above applies to any Postfix config option that accepts multiple [`type:table`](http://www.postfix.org/DATABASE_README.html) parameters** and looks them up in order `&#34;until a match is found&#34;`, e.g.:
+This post talked about a specific Postfix config option `smtpd_sender_login_maps`, but **the behavior described above applies to any Postfix config option that accepts multiple [`type:table`](http://www.postfix.org/DATABASE_README.html) parameters** and looks them up in order `"until a match is found"`, e.g.:
 
 &lt;/center&gt;
 
@@ -649,11 +635,11 @@ They all have something like this in the config parameter documentation:
 
 &lt;/center&gt;
 
-&gt; Specify zero or more &#34;type:table&#34; lookup table names, separated by comma or whitespace. The tables are queried in the specified order until a match is found. The first table match wins.
+&gt; Specify zero or more "type:table" lookup table names, separated by comma or whitespace. The tables are queried in the specified order until a match is found. The first table match wins.
 
 &lt;center&gt;
     
-**So watch out for `&#34;until a match is found&#34;` when setting up your own config!**
+**So watch out for `"until a match is found"` when setting up your own config!**
 
 &lt;/center&gt;
 :::
@@ -681,38 +667,34 @@ They all have something like this in the config parameter documentation:
 
 &lt;br/&gt;
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_d05b3d09f8e9d75f457bbcd80451665e.png&#34; style=&#34;width: 100%&#34;/&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_d05b3d09f8e9d75f457bbcd80451665e.png" style="width: 100%"/&gt;
 
 
 ---
 
 &lt;center&gt;
 
-&lt;a href=&#34;https://monadical.com&#34;&gt;&lt;img src=&#34;https://monadical.com/static/logo-blue.png&#34; style=&#34;height: 60px&#34;&gt;&lt;h4&gt;Monadical Inc. | Full-Stack Software Consultancy&lt;/h4&gt;&lt;/a&gt;
+&lt;a href="https://monadical.com"&gt;&lt;img src="https://monadical.com/static/logo-blue.png" style="height: 60px"&gt;&lt;h4&gt;Monadical Inc. | Full-Stack Software Consultancy&lt;/h4&gt;&lt;/a&gt;
     
-&lt;i&gt;Need help with your mail server? &lt;a href=&#34;https://monadical.com/index.html#consulting&#34;&gt;Hire us!&lt;/a&gt;&lt;/i&gt;
+&lt;i&gt;Need help with your mail server? &lt;a href="https://monadical.com/index.html#consulting"&gt;Hire us!&lt;/a&gt;&lt;/i&gt;
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

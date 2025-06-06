@@ -168,72 +168,56 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="In this post, I’ll first setup an example scenario that I’ll use to demonstrate the features of the OOP model. Next, I’ll show you how the OPP model/principles can be implemented in Python, since most of us are familiar with this language. Finally, I’ll compare the implementation in Python to that in Golang.">
-    
-    
-    
-    <meta property="og:title" content="OOP in golang - HedgeDoc">
-    
-    
-    <meta property="og:description" content="In this post, I’ll first setup an example scenario that I’ll use to demonstrate the features of the OOP model. Next, I’ll show you how the OPP model/principles can be implemented in Python, since most of us are familiar with this language. Finally, I’ll compare the implementation in Python to that in Golang.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>OOP in golang - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="In this post, I’ll first setup an example scenario that I’ll use to demonstrate the features of the OOP model. Next, I’ll show you how the OPP model/principles can be implemented in Python, since most of us are familiar with this language. Finally, I’ll compare the implementation in Python to that in Golang." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>OOP in golang - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&amp;s=96);" title="mirjam"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/07c964b3f656d7ea9a90e847c6b3715d?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="mirjam"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 28 2022 18:49:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Jun 29 2022 15:28:42 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1709 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-            <span class="ui-owner">
-                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i>
-                &nbsp;<span class="text-uppercase">owned this note</span>
-            </span>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 28 2022 18:49:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Jun 29 2022 15:28:42 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1710 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+<span class="ui-owner">
+                 <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&amp;s=96);" title="cesar"></i>
+                 <span class="text-uppercase">owned this note</span>
+</span>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -264,7 +248,7 @@ In this post, I’ll first setup an example scenario that I’ll use to demonstr
 
 ## OOP example - A school system
 
-Here&#39;s a simple example to show some key OOP concepts such as abstraction, inheritance, polymorphism, and composition. 
+Here's a simple example to show some key OOP concepts such as abstraction, inheritance, polymorphism, and composition. 
 
 Let’s imagine that you have a platform to manage courses, either online or in-person, and you want to structure your system using OOP. One thing that OOP allows us to do is to build complex systems from simple elements that can be related to each other. 
 
@@ -274,10 +258,10 @@ With this in mind, our example will implement four classes: Person, Student, Tea
 
 
 &lt;table &gt;
-    &lt;col width=&#34;80&#34;&gt;
-    &lt;col width=&#34;150&#34;&gt;
-    &lt;col width=&#34;200&#34;&gt;
-    &lt;col width=&#34;200&#34;&gt;
+    &lt;col width="80"&gt;
+    &lt;col width="150"&gt;
+    &lt;col width="200"&gt;
+    &lt;col width="200"&gt;
       &lt;tr&gt;
         &lt;th&gt;Name&lt;/th&gt;
         &lt;th&gt;Notes&lt;/th&gt;
@@ -386,7 +370,7 @@ With this in mind, our example will implement four classes: Person, Student, Tea
 
 ## Let’s code our model in Python 🧑‍💻
 
-Let&#39;s start by defining the class Person, which will serve as the basis for creating Teachers and Students:
+Let's start by defining the class Person, which will serve as the basis for creating Teachers and Students:
 
 ```python
 class Person:
@@ -397,27 +381,27 @@ class Person:
        self.idnumber = idnumber
 
    def __str__(self):
-       return f&#34;fullname: {self.firstName} {self.lastName}, age: {self.age}, id:{self.idnumber}&#34;
+       return f"fullname: {self.firstName} {self.lastName}, age: {self.age}, id:{self.idnumber}"
 
    def __repr__(self):
-       return f&#34;&lt;{self.__class__.__name__} ({self.firstName} {self.lastName},{self.idnumber})&gt;&#34;
+       return f"&lt;{self.__class__.__name__} ({self.firstName} {self.lastName},{self.idnumber})&gt;"
 
    def greet(self):
-       print(&#34;Say hello from Person&#34;)
+       print("Say hello from Person")
 ```
-In this case, `__str__` and `__repr__` are not our model&#39;s own methods, but are special Python methods. `__str__` allows us to customize the string representation of the object, that is, it allows us to return a string that is readable by people. In the case of `__repr__`, it also allows us to customize the representation of the object but the difference here is that it can be executed, ie, it’s machine readable. When the `__str__` function is not implemented, it’s `__repr__` that returns the default object representation:  
+In this case, `__str__` and `__repr__` are not our model's own methods, but are special Python methods. `__str__` allows us to customize the string representation of the object, that is, it allows us to return a string that is readable by people. In the case of `__repr__`, it also allows us to customize the representation of the object but the difference here is that it can be executed, ie, it’s machine readable. When the `__str__` function is not implemented, it’s `__repr__` that returns the default object representation:  
 
 ```python
 person1 = PersonWithoutSTR(
-   firstname= &#34;Jhon&#34;,
-   lastname =  &#34;Mclane&#34;,
+   firstname= "Jhon",
+   lastname =  "Mclane",
    age= 25,
    idnumber= 12345,
 )
 
 person2 =  Person(
-   firstname= &#34;John&#34;,
-   lastname =  &#34;Doe&#34;,
+   firstname= "John",
+   lastname =  "Doe",
    age= 25,
    idnumber= 12345,
 )
@@ -455,10 +439,10 @@ class Student(Person):
 
 
     def __repr__(self):
-        return f&#34;&lt;{self.__class__.__name__} [{self.firstname}]&gt;&#34;
+        return f"&lt;{self.__class__.__name__} [{self.firstname}]&gt;"
 
     def greet(self):
-        print(&#34;Say hello from &#34;, self.__class__)
+        print("Say hello from ", self.__class__)
 
 ```
 
@@ -467,7 +451,7 @@ We continue with the Teacher class, which is also inherited from the Person clas
 ```python
 class Teacher(Person):
    def __init__(
-       self, firstname, lastname, age, idnumber, area: str = &#34;&#34;, speciality: list = []
+       self, firstname, lastname, age, idnumber, area: str = "", speciality: list = []
    ):
        self.area: str = area
        self.speciality: list = speciality
@@ -482,11 +466,11 @@ class Teacher(Person):
        self.speciality.remove(speciality)
 
    def __repr__(self):
-       return f&#34;&lt;{self.__class__.__name__} [{self.firstname} ({self.area})]&gt;&#34;
+       return f"&lt;{self.__class__.__name__} [{self.firstname} ({self.area})]&gt;"
 ```
 
 
-Now let&#39;s create the Course class:
+Now let's create the Course class:
 
 ```python
 class Course:
@@ -516,7 +500,7 @@ class Course:
        self.is_active = is_active
 
    def __repr__(self):
-       return f&#34;&lt;{self.__class__.__name__} [{self.name} - ({self.code})]&gt;&#34;
+       return f"&lt;{self.__class__.__name__} [{self.name} - ({self.code})]&gt;"
 ```
 
 Finally, we have the Academy class which is going to be a very simple class that can be thought of as the faculty or school of a specific area. You can add more complexity but, at this moment, we’ll use it as the entity that contains the others.
@@ -528,57 +512,57 @@ We’ll start by creating a list of students, teachers and courses.
 ```python
 students_info = [
    {
-       &#34;firstname&#34;: &#34;Jhon&#34;,
-       &#34;lastname&#34; :  &#34;Mclane&#34;,
-       &#34;age&#34;: 25,
-       &#34;idnumber&#34;: 12345,
-       &#34;category&#34;: Student.ONLINE
+       "firstname": "Jhon",
+       "lastname" :  "Mclane",
+       "age": 25,
+       "idnumber": 12345,
+       "category": Student.ONLINE
    },
    {
-       &#34;firstname&#34;: &#34;Siena&#34;,
-       &#34;lastname&#34; :  &#34;Brooks&#34;,
-       &#34;age&#34;: 22,
-       &#34;idnumber&#34;: 102938,
-       &#34;category&#34;: Student.ONLINE
+       "firstname": "Siena",
+       "lastname" :  "Brooks",
+       "age": 22,
+       "idnumber": 102938,
+       "category": Student.ONLINE
    },
    {
-       &#34;firstname&#34;: &#34;Walter&#34;,
-       &#34;lastname&#34; :  &#34;Savic&#34;,
-       &#34;age&#34;: 22,
-       &#34;idnumber&#34;: 1675849,
-       &#34;category&#34;: Student.UNDERGRADUATE
+       "firstname": "Walter",
+       "lastname" :  "Savic",
+       "age": 22,
+       "idnumber": 1675849,
+       "category": Student.UNDERGRADUATE
    },
 ]
 
 
 teachers_info = [
    {
-       &#34;firstname&#34;: &#34;Robert&#34;,
-       &#34;lastname&#34; :  &#34;Langdon&#34;,
-       &#34;age&#34;: 33,
-       &#34;idnumber&#34;: 1183567,
-       &#34;area&#34;: &#34;History&#34;,
-       &#34;speciality&#34;: [&#34;Symbols&#34;]
+       "firstname": "Robert",
+       "lastname" :  "Langdon",
+       "age": 33,
+       "idnumber": 1183567,
+       "area": "History",
+       "speciality": ["Symbols"]
    },
    {
-       &#34;firstname&#34;: &#34;Marie&#34;,
-       &#34;lastname&#34; :  &#34;Curie&#34;,
-       &#34;age&#34;: 33,
-       &#34;idnumber&#34;: 1183567,
-       &#34;area&#34;: &#34;Physics&#34;,
-       &#34;speciality&#34;: [&#34;Radiology&#34;]
+       "firstname": "Marie",
+       "lastname" :  "Curie",
+       "age": 33,
+       "idnumber": 1183567,
+       "area": "Physics",
+       "speciality": ["Radiology"]
    }
 ]
 
 
 courses_info = [
    {
-       &#34;name&#34;: &#34;Meaning of symbols&#34;,
-       &#34;code&#34;: &#34;H354&#34;
+       "name": "Meaning of symbols",
+       "code": "H354"
    },
    {
-       &#34;name&#34;: &#34;Principles of radiation&#34;,
-       &#34;code&#34;: &#34;CNR125&#34;
+       "name": "Principles of radiation",
+       "code": "CNR125"
    }
 ]
 ```
@@ -606,9 +590,9 @@ school.courses[0].set_status(is_active=True)
 Showing the information contained in the school
 
 ```python
-print(&#34;Students: &#34;, school.students)
-print(&#34;Courses: &#34;,school.courses)
-print(&#34;Teachers: &#34;,school.teachers)
+print("Students: ", school.students)
+print("Courses: ",school.courses)
+print("Teachers: ",school.teachers)
 
 # OUTPUT
 # Students:  [&lt;Student [Jhon]&gt;, &lt;Student [Siena]&gt;, &lt;Student [Walter]&gt;]
@@ -616,14 +600,14 @@ print(&#34;Teachers: &#34;,school.teachers)
 # Teachers:  [&lt;Teacher [Robert (History)]&gt;, &lt;Teacher [Marie (Physics)]&gt;]
 ```
 
-So that’s how OOP is implemented in Python. It’s useful when you want to structure complex problems starting from simpler elements. If you want to see the full code, go to the [Google Colab&#39;s notebook](https://colab.research.google.com/drive/1dSEp_0ncXWS__Va4WaLiLfxlgOr_Ye9f?usp=sharing).
+So that’s how OOP is implemented in Python. It’s useful when you want to structure complex problems starting from simpler elements. If you want to see the full code, go to the [Google Colab's notebook](https://colab.research.google.com/drive/1dSEp_0ncXWS__Va4WaLiLfxlgOr_Ye9f?usp=sharing).
 
 Now, let’s get to the interesting part. Let’s learn how to implement the OOP paradigm in Golang. 
 
 
 ## Let’s code our model in Golang 	🎉
 
-The first thing to note is that Golang does not naturally implement OOP, so there is no class statement to implement classes. However, Golang allows us to implement this paradigm using structs and receiver functions. Unlike Python, which contains the entire class definition inside the same struct, these two components are implemented separately in Golang. Let&#39;s take a look:
+The first thing to note is that Golang does not naturally implement OOP, so there is no class statement to implement classes. However, Golang allows us to implement this paradigm using structs and receiver functions. Unlike Python, which contains the entire class definition inside the same struct, these two components are implemented separately in Golang. Let's take a look:
 
 
 ### Step one: Importing libraries 
@@ -633,10 +617,10 @@ As in Python and other languages, you need to import the required libraries at t
 package main
 
 import (
-   &#34;encoding/json&#34;
-   &#34;fmt&#34;
-   &#34;log&#34;
-   &#34;sort&#34;
+   "encoding/json"
+   "fmt"
+   "log"
+   "sort"
 )
 ```
 
@@ -645,10 +629,10 @@ If you’re a programmer used to Python, then this type of variable may not be f
 
 A structure in Golang can be understood as a variable composed of another set of variables. These can be basic types or structures (nested structures). You may ask, what do structures have to do with OOP? Well, think of a Golang struct as a class that only has attributes. 
 
-Let&#39;s define the structures for our example entities:
+Let's define the structures for our example entities:
 
 #### Person
-We&#39;ll define the same attributes used in the Python example. You’ll notice how each property is accompanied by its variable type.
+We'll define the same attributes used in the Python example. You’ll notice how each property is accompanied by its variable type.
 
 ```go
 type Person struct {
@@ -777,13 +761,13 @@ func NewPerson(
 
 // Like __str__ method in python
 func (person Person) String() string {
-   return fmt.Sprintf(&#34;firstname: %s lastname: %s, age: %d, id: %d &#34;,
+   return fmt.Sprintf("firstname: %s lastname: %s, age: %d, id: %d ",
        person.Firstname, person.Lastname, person.Age, person.Idnumber,
    )
 }
 
 func (person Person) Greet() {
-	fmt.Println(&#34;Say hello from Person&#34;)
+	fmt.Println("Say hello from Person")
 }
 ```
 
@@ -804,7 +788,7 @@ https://go.dev/play/p/JckEcmyBgoV
     . . .
     func main() {
 
-        person := NewPerson(&#34;john&#34;, &#34;doe&#34;, 25, 12345)
+        person := NewPerson("john", "doe", 25, 12345)
         fmt.Println(person)
 
     }
@@ -819,7 +803,7 @@ https://go.dev/play/p/JckEcmyBgoV
 
     ```
     
-5. Inside the receiver function we can make use of the structure’s attributes in the same way that a class&#39; method does.  The only difference is the syntax.
+5. Inside the receiver function we can make use of the structure’s attributes in the same way that a class' method does.  The only difference is the syntax.
 
 6. The use of value receivers means that a copy of the structure was made and passed to the receiver function. Only use this method when you’re going to use the values without modifying them! In this case, both the String and Greet functions only use the values stored in the structure but do not alter them.
 
@@ -838,7 +822,7 @@ const (
 // Stringer method allows to return
 // a name instead of a int value
 func (m Mode) String() string {
-   return [...]string{&#34;School&#34;, &#34;Undergraduate&#34;, &#34;Postgraduate&#34;, &#34;Online&#34;}[m]
+   return [...]string{"School", "Undergraduate", "Postgraduate", "Online"}[m]
 }
 
 func (m Mode) EnumIndex() int {
@@ -863,7 +847,7 @@ func main() {
 	fmt.Println(SCHOOL, UNDERGRADUATE, POSTGRADUATE, ONLINE)
 	fmt.Println(UNDERGRADUATE.EnumIndex(), POSTGRADUATE.EnumIndex())
 	fmt.Println(UNDERGRADUATE * 2)
-	fmt.Printf(&#34;%d\n&#34;, POSTGRADUATE)
+	fmt.Printf("%d\n", POSTGRADUATE)
 }
 
 // ==== Output =====
@@ -1003,25 +987,25 @@ First I’ll define the objects that I’ll be using. In this case, they’ll be
 studentsInfoJSON := fmt.Sprintf(`
    [
        {
-           &#34;firstname&#34;: &#34;Jhon&#34;,
-           &#34;lastname&#34; :  &#34;Mclane&#34;,
-           &#34;age&#34;: 25,
-           &#34;idnumber&#34;: 12345,
-           &#34;category&#34;: %d
+           "firstname": "Jhon",
+           "lastname" :  "Mclane",
+           "age": 25,
+           "idnumber": 12345,
+           "category": %d
        },
        {
-           &#34;firstname&#34;: &#34;Siena&#34;,
-           &#34;lastname&#34; :  &#34;Brooks&#34;,
-           &#34;age&#34;: 22,
-           &#34;idnumber&#34;: 102938,
-           &#34;category&#34;: %d
+           "firstname": "Siena",
+           "lastname" :  "Brooks",
+           "age": 22,
+           "idnumber": 102938,
+           "category": %d
        },
        {
-           &#34;firstname&#34;: &#34;Walter&#34;,
-           &#34;lastname&#34; :  &#34;Savic&#34;,
-           &#34;age&#34;: 22,
-           &#34;idnumber&#34;: 1675849,
-           &#34;category&#34;: %d
+           "firstname": "Walter",
+           "lastname" :  "Savic",
+           "age": 22,
+           "idnumber": 1675849,
+           "category": %d
        }
    ]
    `, ONLINE, ONLINE, UNDERGRADUATE)
@@ -1029,32 +1013,32 @@ studentsInfoJSON := fmt.Sprintf(`
 
 teachersInfoJSON := `[
        {
-           &#34;firstname&#34;: &#34;Robert&#34;,
-           &#34;lastname&#34; :  &#34;Langdon&#34;,
-           &#34;age&#34;: 33,
-           &#34;idnumber&#34;: 1183567,
-           &#34;area&#34;: &#34;History&#34;,
-           &#34;speciality&#34;: [&#34;Symbols&#34;]
+           "firstname": "Robert",
+           "lastname" :  "Langdon",
+           "age": 33,
+           "idnumber": 1183567,
+           "area": "History",
+           "speciality": ["Symbols"]
        },
        {
-           &#34;firstname&#34;: &#34;Marie&#34;,
-           &#34;lastname&#34; :  &#34;Curie&#34;,
-           &#34;age&#34;: 33,
-           &#34;idnumber&#34;: 1183567,
-           &#34;area&#34;: &#34;Physics&#34;,
-           &#34;speciality&#34;: [&#34;Radiology&#34;]
+           "firstname": "Marie",
+           "lastname" :  "Curie",
+           "age": 33,
+           "idnumber": 1183567,
+           "area": "Physics",
+           "speciality": ["Radiology"]
        }
    ]`
 
 
 coursesInfoJSON := `[
        {
-           &#34;name&#34;: &#34;Meaning of symbols&#34;,
-           &#34;code&#34;: &#34;H354&#34;
+           "name": "Meaning of symbols",
+           "code": "H354"
        },
        {
-           &#34;name&#34;: &#34;Principles of radiation&#34;,
-           &#34;code&#34;: &#34;CNR125&#34;
+           "name": "Principles of radiation",
+           "code": "CNR125"
        }
    ]`
 
@@ -1065,13 +1049,13 @@ I’ll create the objects from the structures defined above.
 
 ```go
 json.Unmarshal([]byte(studentsInfoJSON), &amp;school.Students)
-fmt.Println(&#34;Students: &#34;, school.Students)
+fmt.Println("Students: ", school.Students)
    
 json.Unmarshal([]byte(teachersInfoJSON), &amp;school.Teachers)
-fmt.Println(&#34;Teachers: &#34;, school.Teachers)
+fmt.Println("Teachers: ", school.Teachers)
    
 json.Unmarshal([]byte(coursesInfoJSON), &amp;school.Courses)
-fmt.Println(&#34;Courses: &#34;, school.Courses)
+fmt.Println("Courses: ", school.Courses)
 ```
 
 In this case, we’re making use of the JSON library to process the information. Note that the Unmarshal function allows us to map the string in the JSON format to a list of structures that must implement the same fields as the JSON.
@@ -1088,11 +1072,11 @@ school.Courses[0].setStatus(status.ACTIVE)
 And display the information contained in the object school:
 
 ```go
-schoolJSON, err := json.MarshalIndent(school, &#34;&#34;, &#34;   &#34;)
+schoolJSON, err := json.MarshalIndent(school, "", "   ")
 if err != nil {
     log.Fatalf(err.Error())
 }
-fmt.Printf(&#34;After updates:\n%s\n&#34;, string(schoolJSON))
+fmt.Printf("After updates:\n%s\n", string(schoolJSON))
 school.Students[0].PrintMessage()
 ```
 
@@ -1104,105 +1088,105 @@ Teachers:  [firstname: Robert lastname: Langdon, age: 33, id: 1183567  firstname
 Courses:  [{Meaning of symbols H354 firstname:  lastname: , age: 0, id: 0  [] false} {Principles of radiation CNR125 firstname:  lastname: , age: 0, id: 0  [] false}]
 After updates:
 {
-   &#34;Courses&#34;: [
+   "Courses": [
       {
-         &#34;Name&#34;: &#34;Meaning of symbols&#34;,
-         &#34;Code&#34;: &#34;H354&#34;,
-         &#34;Teacher&#34;: {
-            &#34;Firstname&#34;: &#34;Robert&#34;,
-            &#34;Lastname&#34;: &#34;Langdon&#34;,
-            &#34;Age&#34;: 33,
-            &#34;Idnumber&#34;: 1183567,
-            &#34;Area&#34;: &#34;History&#34;,
-            &#34;Speciality&#34;: [
-               &#34;Symbols&#34;
+         "Name": "Meaning of symbols",
+         "Code": "H354",
+         "Teacher": {
+            "Firstname": "Robert",
+            "Lastname": "Langdon",
+            "Age": 33,
+            "Idnumber": 1183567,
+            "Area": "History",
+            "Speciality": [
+               "Symbols"
             ]
          },
-         &#34;Students&#34;: [
+         "Students": [
             {
-               &#34;Firstname&#34;: &#34;Jhon&#34;,
-               &#34;Lastname&#34;: &#34;Mclane&#34;,
-               &#34;Age&#34;: 25,
-               &#34;Idnumber&#34;: 12345,
-               &#34;Category&#34;: 3
+               "Firstname": "Jhon",
+               "Lastname": "Mclane",
+               "Age": 25,
+               "Idnumber": 12345,
+               "Category": 3
             },
             {
-               &#34;Firstname&#34;: &#34;Siena&#34;,
-               &#34;Lastname&#34;: &#34;Brooks&#34;,
-               &#34;Age&#34;: 22,
-               &#34;Idnumber&#34;: 102938,
-               &#34;Category&#34;: 3
+               "Firstname": "Siena",
+               "Lastname": "Brooks",
+               "Age": 22,
+               "Idnumber": 102938,
+               "Category": 3
             }
          ],
-         &#34;IsActive&#34;: true
+         "IsActive": true
       },
       {
-         &#34;Name&#34;: &#34;Principles of radiation&#34;,
-         &#34;Code&#34;: &#34;CNR125&#34;,
-         &#34;Teacher&#34;: {
-            &#34;Firstname&#34;: &#34;Marie&#34;,
-            &#34;Lastname&#34;: &#34;Curie&#34;,
-            &#34;Age&#34;: 33,
-            &#34;Idnumber&#34;: 1183567,
-            &#34;Area&#34;: &#34;Physics&#34;,
-            &#34;Speciality&#34;: [
-               &#34;Radiology&#34;
+         "Name": "Principles of radiation",
+         "Code": "CNR125",
+         "Teacher": {
+            "Firstname": "Marie",
+            "Lastname": "Curie",
+            "Age": 33,
+            "Idnumber": 1183567,
+            "Area": "Physics",
+            "Speciality": [
+               "Radiology"
             ]
          },
-         &#34;Students&#34;: [
+         "Students": [
             {
-               &#34;Firstname&#34;: &#34;Walter&#34;,
-               &#34;Lastname&#34;: &#34;Savic&#34;,
-               &#34;Age&#34;: 22,
-               &#34;Idnumber&#34;: 1675849,
-               &#34;Category&#34;: 1
+               "Firstname": "Walter",
+               "Lastname": "Savic",
+               "Age": 22,
+               "Idnumber": 1675849,
+               "Category": 1
             }
          ],
-         &#34;IsActive&#34;: false
+         "IsActive": false
       }
    ],
-   &#34;Students&#34;: [
+   "Students": [
       {
-         &#34;Firstname&#34;: &#34;Jhon&#34;,
-         &#34;Lastname&#34;: &#34;Mclane&#34;,
-         &#34;Age&#34;: 25,
-         &#34;Idnumber&#34;: 12345,
-         &#34;Category&#34;: 3
+         "Firstname": "Jhon",
+         "Lastname": "Mclane",
+         "Age": 25,
+         "Idnumber": 12345,
+         "Category": 3
       },
       {
-         &#34;Firstname&#34;: &#34;Siena&#34;,
-         &#34;Lastname&#34;: &#34;Brooks&#34;,
-         &#34;Age&#34;: 22,
-         &#34;Idnumber&#34;: 102938,
-         &#34;Category&#34;: 3
+         "Firstname": "Siena",
+         "Lastname": "Brooks",
+         "Age": 22,
+         "Idnumber": 102938,
+         "Category": 3
       },
       {
-         &#34;Firstname&#34;: &#34;Walter&#34;,
-         &#34;Lastname&#34;: &#34;Savic&#34;,
-         &#34;Age&#34;: 22,
-         &#34;Idnumber&#34;: 1675849,
-         &#34;Category&#34;: 1
+         "Firstname": "Walter",
+         "Lastname": "Savic",
+         "Age": 22,
+         "Idnumber": 1675849,
+         "Category": 1
       }
    ],
-   &#34;Teachers&#34;: [
+   "Teachers": [
       {
-         &#34;Firstname&#34;: &#34;Robert&#34;,
-         &#34;Lastname&#34;: &#34;Langdon&#34;,
-         &#34;Age&#34;: 33,
-         &#34;Idnumber&#34;: 1183567,
-         &#34;Area&#34;: &#34;History&#34;,
-         &#34;Speciality&#34;: [
-            &#34;Symbols&#34;
+         "Firstname": "Robert",
+         "Lastname": "Langdon",
+         "Age": 33,
+         "Idnumber": 1183567,
+         "Area": "History",
+         "Speciality": [
+            "Symbols"
          ]
       },
       {
-         &#34;Firstname&#34;: &#34;Marie&#34;,
-         &#34;Lastname&#34;: &#34;Curie&#34;,
-         &#34;Age&#34;: 33,
-         &#34;Idnumber&#34;: 1183567,
-         &#34;Area&#34;: &#34;Physics&#34;,
-         &#34;Speciality&#34;: [
-            &#34;Radiology&#34;
+         "Firstname": "Marie",
+         "Lastname": "Curie",
+         "Age": 33,
+         "Idnumber": 1183567,
+         "Area": "Physics",
+         "Speciality": [
+            "Radiology"
          ]
       }
    ]
@@ -1239,27 +1223,23 @@ By learning to use OOP in Golang you’ll be able to tap into the power of Golan
 
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

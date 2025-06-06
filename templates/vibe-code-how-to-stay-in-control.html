@@ -1,105 +1,90 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Explicit vibe/human code separation through modular approach">
-    
-    
-    
-    <meta property="og:title" content="Vibe code isn&#39;t meant to be reviewed: how to stay in control of codebase and not lose vibe code productivity boost - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Explicit vibe/human code separation through modular approach">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Vibe code isn&#39;t meant to be reviewed: how to stay in control of codebase and not lose vibe code productivity boost - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Explicit vibe/human code separation through modular approach" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Vibe code isn't meant to be reviewed: how to stay in control of codebase and not lose vibe code productivity boost - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&amp;s=96);" title="igor"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Jun 06 2025 14:42:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jun 06 2025 14:42:53 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">8 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Fri Jun 06 2025 14:42:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jun 06 2025 14:42:53 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">18 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 ## The Code Review Frustration
 
 Another day, another slop.
 Chasing 10x productivity, you run several Claude code agents simultaneously and push code with blazing fast ferocity.
-No juniors left on the team — they just couldn&#39;t catch up.
+No juniors left on the team — they just couldn't catch up.
 This morning, walking in the park with his dog, your team lead wrote and deployed a 100-story-point system just by casually talking on his phone to a remote agent.
 
-Meanwhile, you&#39;re stuck with a code review:
+Meanwhile, you're stuck with a code review:
 
 ![](https://docs.monadical.com/uploads/042fee53-f1f2-40ba-9e3a-0e65fed1ee4a.png)
 
 
-&#34;It&#39;s fucking vibe code, I don&#39;t care!&#34; — this sentiment is just the tip of the iceberg of a current industry problem:
+"It's fucking vibe code, I don't care!" — this sentiment is just the tip of the iceberg of a current industry problem:
 
-&lt;center&gt;&lt;big&gt;Treating all code the same when it fundamentally isn&#39;t&lt;/big&gt;&lt;/center&gt;
+&lt;center&gt;&lt;big&gt;Treating all code the same when it fundamentally isn't&lt;/big&gt;&lt;/center&gt;
 
 ## The Ownership Trap
 
-Here&#39;s the brutal reality: **the moment you start treating AI-generated code as &#34;precious,&#34; you lose AI&#39;s biggest superpower.**
+Here's the brutal reality: **the moment you start treating AI-generated code as "precious," you lose AI's biggest superpower.**
 
-Once you&#39;ve spent time reviewing, fixing, and improving that generated code, you become invested. You&#39;re going to be extra careful about AI &#34;breaking&#34; it.
+Once you've spent time reviewing, fixing, and improving that generated code, you become invested. You're going to be extra careful about AI "breaking" it.
 
-And it&#39;s ok, some code should be like this! But many times you just want to vibe and have your 10x productivity dream come true.
+And it's ok, some code should be like this! But many times you just want to vibe and have your 10x productivity dream come true.
 
-Treating vibe code as precious is the productivity killer nobody talks about. You get the initial speed boost, then gradually slide back to normal development velocity as your codebase fills up with &#34;improved vibe code&#34; that you&#39;re reluctant to throw away.
+Treating vibe code as precious is the productivity killer nobody talks about. You get the initial speed boost, then gradually slide back to normal development velocity as your codebase fills up with "improved vibe code" that you're reluctant to throw away.
 
-And you aren&#39;t ready to regenerate it from scratch anymore — an LLM skill that it excels at sometimes when it&#39;s stuck with a loop of never ending edits.
+And you aren't ready to regenerate it from scratch anymore — an LLM skill that it excels at sometimes when it's stuck with a loop of never ending edits.
 
 Meanwhile, every code review becomes a battle between two conflicting mental models:
-- Reviewer: &#34;This could be cleaner&#34; (treating it like human code)
-- Author: &#34;It works, who cares&#34; (treating it like disposable vibe code)
+- Reviewer: "This could be cleaner" (treating it like human code)
+- Author: "It works, who cares" (treating it like disposable vibe code)
 
 **The industry needs a way to keep these two types of code separate.**
 
 ## The Modular Solution: Giving Form to Chaos
 
-The solution is neither to abandon AI coding nor to accept messy codebases. It&#39;s to **architect the separation explicitly.**
+The solution is neither to abandon AI coding nor to accept messy codebases. It's to **architect the separation explicitly.**
 
-Think of it like this: Human code provides the &#34;form&#34; or &#34;mold&#34; that vibe code must fill. Just like the inpainting/outpainting feature in image generation. The human code contains your domain knowledge, business logic, and architectural decisions. The vibe code is just the implementation details that make it work.
+Think of it like this: Human code provides the "form" or "mold" that vibe code must fill. Just like the inpainting/outpainting feature in image generation. The human code contains your domain knowledge, business logic, and architectural decisions. The vibe code is just the implementation details that make it work.
 
 When AI code is clearly separated and constrained by interfaces, tests, and clear boundaries, you can also regenerate it fearlessly while keeping your valuable insights intact.
 
@@ -107,20 +92,20 @@ When AI code is clearly separated and constrained by interfaces, tests, and clea
 
 #### The High-Level View
 
-Before scaring managers and leads with implementation details, here&#39;s the conceptual framework:
+Before scaring managers and leads with implementation details, here's the conceptual framework:
 
 1. **Interface packages** - Define contracts, data shapes, and the most important tests (human-written)
 2. **Implementation packages** - Fulfill those constraints (Vibe-generated, marked as @vibe-coded in README or in files)
 3. **Clear dependency direction** - Implementation depends on interfaces, never the reverse
 4. **Regeneration freedom** - Any @vibe-coded package can be deleted and rewritten without fear
 
-This creates a &#34;constraint sandwich&#34; - your domain knowledge stays protected while AI handles the tedious implementation work.
+This creates a "constraint sandwich" - your domain knowledge stays protected while AI handles the tedious implementation work.
 
 &gt; Technical implementation example awaits you in one of the last paragraphs.
 
 ## Two Flavors of Review: Classic vs YOLO
 
-With the modular approach and vibe code as &#34;second class citizen,&#34; we can now reframe code review practices:
+With the modular approach and vibe code as "second class citizen," we can now reframe code review practices:
 
 ### **Classic review: High standards, educational, expertise-building**
 
@@ -130,9 +115,9 @@ Share knowledge, discover new details about the system.
 
 ### **YOLO review**:
 
-&#34;Does it work? Does it pass tests? **Doesn&#39;t it sneak around the overseer package requirements**? Does it look safe enough? Ship it.&#34;
+"Does it work? Does it pass tests? **Doesn't it sneak around the overseer package requirements**? Does it look safe enough? Ship it."
 
-&lt;center&gt;&lt;big&gt;Clear separation of code &#34;types&#34; eliminates misunderstanding and friction&lt;/big&gt;&lt;/center&gt;
+&lt;center&gt;&lt;big&gt;Clear separation of code "types" eliminates misunderstanding and friction&lt;/big&gt;&lt;/center&gt;
 
 ## The Control Paradox Solved
 
@@ -140,17 +125,17 @@ There are deeper psychological and sociological nth-order benefits to this appro
 
 ### Professional Confidence
 
-When someone asks about a feature, you want to give an answer. &#34;I don&#39;t know, I vibed it&#34; destroys professional credibility. &#34;Cursor can&#39;t find the answer today, try again tomorrow&#34; makes you incompetent.
+When someone asks about a feature, you want to give an answer. "I don't know, I vibed it" destroys professional credibility. "Cursor can't find the answer today, try again tomorrow" makes you incompetent.
 
-With explicit separation, you can confidently say: &#34;The business logic is in the interface packages - here&#39;s exactly how it works. The implementation details are auto-generated, but the core logic is solid.&#34;
+With explicit separation, you can confidently say: "The business logic is in the interface packages - here's exactly how it works. The implementation details are auto-generated, but the core logic is solid."
 
 ### Competitive Advantage
 
-While others choose between &#34;fast and messy&#34; or &#34;slow and clean,&#34; you get both. Your company&#39;s competitors using 100% vibe coding will hit complexity walls. Your company&#39;s competitors avoiding AI will be slower.
+While others choose between "fast and messy" or "slow and clean," you get both. Your company's competitors using 100% vibe coding will hit complexity walls. Your company's competitors avoiding AI will be slower.
 
-You&#39;ll maintain AI productivity gains while building systems that actually scale.
+You'll maintain AI productivity gains while building systems that actually scale.
 
-### Better &#34;Boomer Business&#34; Adoption
+### Better "Boomer Business" Adoption
 
 I believe that this approach could tip the scale for businesses who are still indecisive about vibe coding due to reliability and security concerns.
 
@@ -164,7 +149,7 @@ Git commits automatically tagged as vibed. GitHub PRs showing clear visual disti
 
 ### AI Agent Constraints
 
-Future coding agents will have an option to respect &#34;human code zones&#34; - like content-aware inpainting for image generation, but for code. Agents could regenerate entire implementations, not only files or packages, but code line-wise, leaving human guidance code untouched.
+Future coding agents will have an option to respect "human code zones" - like content-aware inpainting for image generation, but for code. Agents could regenerate entire implementations, not only files or packages, but code line-wise, leaving human guidance code untouched.
 
 ### IDE Evolution
 
@@ -174,15 +159,15 @@ Syntax highlighting that dims unchecked vibe code while emphasizing human code. 
 
 This separation makes AI coding auditable and controllable - exactly what the bloody enterprise needs. CTOs can require that all business logic lives in human-controlled packages while allowing rapid development in implementation packages.
 
-**So the idea of vibe code separation isn&#39;t just about individual productivity. It&#39;s about making AI coding enterprise-ready.**
+**So the idea of vibe code separation isn't just about individual productivity. It's about making AI coding enterprise-ready.**
 
 ## Technical Implementation in TypeScript
 
 One of the ways to split vibe and human code using current tooling that I found is a per-package approach.
 
-It&#39;s easy to do with a monorepo, but another structural or file-naming convention could work well too.
+It's easy to do with a monorepo, but another structural or file-naming convention could work well too.
 
-For the case of monorepo, I used the &#34;-interface&#34; packages that contain concentrated domain knowledge and shape-setting code (tests, interfaces).
+For the case of monorepo, I used the "-interface" packages that contain concentrated domain knowledge and shape-setting code (tests, interfaces).
 
 I used dependency injection to draw more explicit frontiers between modules.
 
@@ -203,11 +188,11 @@ export const generateAndSyncTasks =
   };
 ```
 
-This is the &#34;entry point&#34; of a module that receives a PRD document, uses https://github.com/eyaltoledano/claude-task-master to generate tasks, and then syncs them to a task tracker.
+This is the "entry point" of a module that receives a PRD document, uses https://github.com/eyaltoledano/claude-task-master to generate tasks, and then syncs them to a task tracker.
 
-You can tell the coding agent to pick up from there, but it won&#39;t have enough guidance yet.
+You can tell the coding agent to pick up from there, but it won't have enough guidance yet.
 
-Therefore, &#34;we need to go deeper.&#34; That&#39;s an example of how I defined the interface for taskmaster.generateTask, in its own package:
+Therefore, "we need to go deeper." That's an example of how I defined the interface for taskmaster.generateTask, in its own package:
 
 ```ts
 export type GenerateTasksDeps = {
@@ -230,21 +215,21 @@ export type GenerateTasksF = (
 
 export const generateTasks: GenerateTasksF = (deps) =&gt; async (prd, current) =&gt; {
   if (Option.isSome(current)) {
-    throw new Error(&#34;panic! PRD update not implemented&#34;);
+    throw new Error("panic! PRD update not implemented");
   }
-  const prdPath = castNonEmptyString(&#34;scripts/prd.txt&#34;);
+  const prdPath = castNonEmptyString("scripts/prd.txt");
   // not obvious: taskmaster CLI wants the prd first saved in file system
   await using _letFileGo = await deps.savePrd(prdPath, prd);
-  const outputPath = castNonEmptyString(&#34;tasks/tasks.json&#34;);
-  await deps.cli.generate(prdPath, outputPath); // don&#39;t clean up here
+  const outputPath = castNonEmptyString("tasks/tasks.json");
+  await deps.cli.generate(prdPath, outputPath); // don't clean up here
   // we read file system after CLI ran to return parsed tasks.json
   return await deps.readTasksJson(outputPath);
 };
 ```
 
-Past this point, it&#39;s already possible to tell Claude Code to generate the `GenerateTasksDeps` providing code that calls the CLI, saves and reads from the file system.
+Past this point, it's already possible to tell Claude Code to generate the `GenerateTasksDeps` providing code that calls the CLI, saves and reads from the file system.
 
-Important details that we want to be preserved - &#34;PRD file is temporary and we want to have it in the file system before calling CLI,&#34; &#34;we also want to read the result of CLI call from the file system&#34; are well-preserved as strong contextual harness for LLM code.
+Important details that we want to be preserved - "PRD file is temporary and we want to have it in the file system before calling CLI," "we also want to read the result of CLI call from the file system" are well-preserved as strong contextual harness for LLM code.
 
 Data shape definitions are also a great candidate to use as controlling code:
 
@@ -280,31 +265,27 @@ export interface TasksService {
 
 And of course, unit tests are a great candidate for putting into controlling packages, especially [property-based tests](https://monadical.com/posts/property-based-testing-for-temporal-graph-storage.html).
 
-Also, you can put there all the code that you *could* 100% vibe but better *don&#39;t* - that you&#39;re supposed to know, if not by heart, then at least &#34;at some point when you wrote/reviewed it.&#34;
+Also, you can put there all the code that you *could* 100% vibe but better *don't* - that you're supposed to know, if not by heart, then at least "at some point when you wrote/reviewed it."
 
-Tell the agent to conform to those interfaces, test and shape-setting functions, writing the &#34;-implementation&#34; package counterpart to your &#34;-interface.&#34; An example system query: https://github.com/Monadical-SAS/taiga-taskmaster/blob/master/.llm-docs/PACKAGE_ORGANISATION_AND_CODE_SEPARATION_STANDARDS.md
+Tell the agent to conform to those interfaces, test and shape-setting functions, writing the "-implementation" package counterpart to your "-interface." An example system query: https://github.com/Monadical-SAS/taiga-taskmaster/blob/master/.llm-docs/PACKAGE_ORGANISATION_AND_CODE_SEPARATION_STANDARDS.md
 
-To me, it worked handsomely. The agent was very strong at regenerating code anew if I didn&#39;t like something and wanted to add more context to the &#34;control packages.&#34; And it never loses any context because of strict conformance to controlling code.
+To me, it worked handsomely. The agent was very strong at regenerating code anew if I didn't like something and wanted to add more context to the "control packages." And it never loses any context because of strict conformance to controlling code.
 
 And for the PR process, it now becomes clear which code is worth more attention and which you can just glance over, which unlocks much more of vibe power without compromising quality.</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

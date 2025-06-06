@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links.">
-    
-    
-    
-    <meta property="og:title" content="Unix System Monitoring and Diagnostic CLI Tools - HedgeDoc">
-    
-    
-    <meta property="og:description" content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Unix System Monitoring and Diagnostic CLI Tools - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems (Ubuntu/Debian, FreeBSD, macOS, etc.). Includes install instructions, examples, docs, and source code links." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Unix System Monitoring and Diagnostic CLI Tools - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 31 2025 02:18:45 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">37062 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 31 2025 02:18:45 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">37063 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -68,7 +53,7 @@
 *Originally published 2020-09-01 on [blog.sweeting.me](https://docs.sweeting.me/s/blog), updated sporadically since then.*
 *Also published on the [Monadical Blog](https://monadical.com/posts/system-monitoring-tools.html), [HackerNews](https://news.ycombinator.com/item?id=24344520), and [ /r/Sysadmin](https://www.reddit.com/r/sysadmin/comments/ikynyo/an_opinionated_list_of_system_monitoring_and/).*
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_8293c5cdcc3cf0dc6a6024ea0b18a2ee.png&#34; style=&#34;width: 70%; border-radius: 4px; border: 1px solid #ccc; box-shadow: 4px 4px 4px rgba(0,0,0,0.08)&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_8293c5cdcc3cf0dc6a6024ea0b18a2ee.png" style="width: 70%; border-radius: 4px; border: 1px solid #ccc; box-shadow: 4px 4px 4px rgba(0,0,0,0.08)"&gt;
 &lt;br/&gt;&lt;br/&gt;
 
 *An opinionated list of CLI utilities for monitoring and inspecting Linux/BSD systems.*
@@ -114,9 +99,9 @@
 
 **[And More...](#Further-Reading)**
 
-Below is a collection of CLI tools that I&#39;ve personally used while doing Linux/BSD systems administration over the past 10+ years. Some of them I use daily, others I only use once a year or less... but when I need them, boy am I glad they exist!
+Below is a collection of CLI tools that I've personally used while doing Linux/BSD systems administration over the past 10+ years. Some of them I use daily, others I only use once a year or less... but when I need them, boy am I glad they exist!
 
-- `⭐️` I&#39;ve added a star next to utilities that I find to be extremely well-built or well-suited to solving their particular task
+- `⭐️` I've added a star next to utilities that I find to be extremely well-built or well-suited to solving their particular task
 - `🌈` Utiltities marked with a rainbow have glorious xterm256/full-color output
 
 On non-Ubuntu/Debian-based Linuxes you should replace any instance of `apt install xyz` below with `pkg install xyz`/`brew install xyz`/`yum install xyz`/`nix install xyz`/etc. depending on your respective system.
@@ -134,7 +119,7 @@ If you would like to suggest changes/additions to this list you can comment on [
 Prints pretty much everything you need to know at a glance, including container resource usage, active processes, network and disk IO usage, and other stats.
 
 ```bash
-pip install &#39;glances[action,browser,cloud,cpuinfo,docker,export,folders,gpu,graph,ip,raid,snmp,web,wifi]&#39;
+pip install 'glances[action,browser,cloud,cpuinfo,docker,export,folders,gpu,graph,ip,raid,snmp,web,wifi]'
 
 # launch glances CL
 glances
@@ -186,9 +171,9 @@ dstat --cpu-adv --fs --aio --ipc --lock 2
 https://rachelbythebay.com/w/2025/03/25/atop/
 :::
 
-Great for finding out what&#39;s causing system-wide slowness when you&#39;re not sure whether what the culprit is (e.g. CPU/disk/network/temperature/hardware/etc.).
+Great for finding out what's causing system-wide slowness when you're not sure whether what the culprit is (e.g. CPU/disk/network/temperature/hardware/etc.).
 
-Ranks all possible sources of slowness independent of individual processes, highlights potential bottlenecks or high resource usage areas in red. Very useful when you can&#39;t tell what&#39;s causing slowness from `htop` alone.
+Ranks all possible sources of slowness independent of individual processes, highlights potential bottlenecks or high resource usage areas in red. Very useful when you can't tell what's causing slowness from `htop` alone.
 
 ```bash
 apt install atop
@@ -220,20 +205,20 @@ Run SQL queries on your system setup and resources.
 
 ```bash
 # show all processes listening on local ports 
-osqueryi &#34;SELECT DISTINCT
+osqueryi "SELECT DISTINCT
         process.name,
         listening.port,
         process.pid
     FROM processes AS process
     JOIN listening_ports AS listening
     ON process.pid = listening.pid
-    WHERE listening.address = &#39;0.0.0.0&#39;&#34;
+    WHERE listening.address = '0.0.0.0'"
     
 # show all gateway routes to the internet in json format
-osqueryi --json &#34;SELECT * FROM routes WHERE destination = &#39;::1&#39;&#34;
+osqueryi --json "SELECT * FROM routes WHERE destination = '::1'"
 
 # show number of threads by process name
-osqueryi &#39;SELECT count(pid) AS total, name FROM processes GROUP BY name ORDER BY total desc LIMIT 10&#39;
+osqueryi 'SELECT count(pid) AS total, name FROM processes GROUP BY name ORDER BY total desc LIMIT 10'
 ```
 
 - https://osquery.io/
@@ -244,7 +229,7 @@ osqueryi &#39;SELECT count(pid) AS total, name FROM processes GROUP BY name ORDE
 
 ```bash
 apt install sysstat
-echo &#39;ENABLED=&#34;true&#34;&#39; &gt; /etc/default/sysstat
+echo 'ENABLED="true"' &gt; /etc/default/sysstat
 systemctl restart sysstat
 
 # print all basic stats every 1sec
@@ -265,7 +250,7 @@ sar -B -b -d -I ALL -m ALL -n ALL -q -r ALL -S -u ALL -v -W -w -y 1
 
 ### `landscape-sysinfo`
 
-Ubuntu&#39;s builtin system status summary tool that displays whenever you SSH in.
+Ubuntu's builtin system status summary tool that displays whenever you SSH in.
 
 ```bash
 landscape-sysinfo
@@ -276,9 +261,9 @@ landscape-sysinfo
 Web GUI system control panels.
 
 ```bash
-curl -fsSL &#39;http://www.webmin.com/jcameron-key.asc&#39; | apt-key add -
-echo &#34;deb http://download.webmin.com/download/repository/ sarge contrib&#34; \
-     &#34;deb http://webmin.mirror.somersettechsolutions.co.uk/repository/ sarge contrib&#34; | tee /etc/apt/sources.list.d/webmin.list
+curl -fsSL 'http://www.webmin.com/jcameron-key.asc' | apt-key add -
+echo "deb http://download.webmin.com/download/repository/ sarge contrib" \
+     "deb http://webmin.mirror.somersettechsolutions.co.uk/repository/ sarge contrib" | tee /etc/apt/sources.list.d/webmin.list
 apt install webmin
 apt update
 ```
@@ -592,12 +577,12 @@ sudo blktrace -d /dev/nvme0n1 -a read -o - | blkparse -i -
 Translate between block numbers, inode numbers, and file paths.
 
 ```bash
-debugfs -R &#39;icheck 536514808&#39; /dev/nvme0n1
+debugfs -R 'icheck 536514808' /dev/nvme0n1
 # debugfs 1.46.5 (30-Dec-2021)
 # Block   Inode number
 # 536514808   8270377
  
-debugfs -R &#39;ncheck 8270377&#39; /dev/nvme0n1
+debugfs -R 'ncheck 8270377' /dev/nvme0n1
 # debugfs 1.46.5 (30-Dec-2021)
 # Inode   Pathname
 # 8270377 /home/ubuntu/.questdb/db/table_name/2022-10-04/symbol_col9.d.1092
@@ -840,7 +825,7 @@ Lists active network connections sorted by activity level in realtime.
 iftop -P
 
 # show only connections on eno1 to/from 192.168.1.10
-iftop -P -i eno1 -f &#34;host 192.168.1.10&#34;
+iftop -P -i eno1 -f "host 192.168.1.10"
 
 # show traffic between all hosts on eno2 in promiscuous mode (if available)
 iftop -P -i eno2 -p
@@ -950,7 +935,7 @@ ip route
 # or on BSD systems
 route -n
 
-# get the default &#34;next hop&#34; route for the end destination 192.168.1.2
+# get the default "next hop" route for the end destination 192.168.1.2
 ip route get 192.168.1.2
 # or on BSD systems
 route get 192.168.1.2
@@ -1178,7 +1163,7 @@ Collect a dump of all packets sent/received and inspect their contents.
 tcpdump -i eth0 -nn -s0 -v port 80
 
 # show all HTTP GET/POST requests on all interfaces
-tcpdump -s0 -v -n -l | grep -E -i &#34;POST /|GET /|Host:&#34;
+tcpdump -s0 -v -n -l | grep -E -i "POST /|GET /|Host:"
 
 # capture all packets on eth0 and write them to test.pcap
 tcpdump -i eth0 -s0 -w test.pcap
@@ -1247,7 +1232,7 @@ apt install ipmitool
 ipmitool sensor
 
 # show ambient air temperature
-ipmitool sdr type temperature | grep &#39;degrees C&#39;
+ipmitool sdr type temperature | grep 'degrees C'
 
 # get chassis hardware and power status information
 ipmitool chassis status
@@ -1355,10 +1340,10 @@ Monitor UPS power usage, battery level, voltage, and other stats.
 apt install apcupsd
 
 # enable in config
- echo &#34;UPSCABLE usb&#34; &gt;&gt; /etc/apcupsd/apcupsd.conf
-echo &#34;UPSTYPE usb&#34; &gt;&gt; /etc/apcupsd/apcupsd.conf
-echo &#34;DEVICE&#34; &gt;&gt; /etc/apcupsd/apcupsd.conf
-echo &#34;ISCONFIGURED=yes&#34; &gt; /etc/default/apcupsd
+ echo "UPSCABLE usb" &gt;&gt; /etc/apcupsd/apcupsd.conf
+echo "UPSTYPE usb" &gt;&gt; /etc/apcupsd/apcupsd.conf
+echo "DEVICE" &gt;&gt; /etc/apcupsd/apcupsd.conf
+echo "ISCONFIGURED=yes" &gt; /etc/default/apcupsd
 systemctl enable apcupsd
 systemctl start apcupsd
 
@@ -1540,7 +1525,7 @@ gem install redis-stat    # also available as a JAR file
 # show performance stats of a redis db on localhost:6380 every 1sec
 redis-stat --verbose localhost:6380 1
 
-# you can also use redis&#39;s built-in monitoring commands
+# you can also use redis's built-in monitoring commands
 redis-cli INFO
 redis-cli MONITOR
 ```
@@ -1564,7 +1549,7 @@ ngxtop
 ngxtop top remote_addr
 
 # show 4xx/5xx responses by referrer
-ngxtop -i &#39;status &gt;= 400&#39; print request status http_referer
+ngxtop -i 'status &gt;= 400' print request status http_referer
 ```
 
 - https://github.com/lebinh/ngxtop
@@ -1713,12 +1698,12 @@ progress
 
 ### `strace`/`dtrace`/`dtruss` ⭐️
 
-Trace the system calls of a given process to watch what it&#39;s doing internally.
+Trace the system calls of a given process to watch what it's doing internally.
 ```bash
 # Run `ls /home` and print all system calls to stdout
 strace ls /home
 
-# Print &#39;open&#39; or &#39;read&#39; system calls with timestamps
+# Print 'open' or 'read' system calls with timestamps
 strace -t -e open,read ls /home
 
 # Attach to a running process by PID
@@ -1753,7 +1738,7 @@ ltrace -t -T -l /lib/libselinux.so.1 docker ps
 Decompiler utility normally used to inspect firmware binaries, but is useful along with `strings` to see what a binary contains before you run it.
 
 ```python3
-pip3 install &#39;git+https://github.com/ReFirmLabs/binwalk.git&#39;
+pip3 install 'git+https://github.com/ReFirmLabs/binwalk.git'
 
 # extract the full root filesystem from a firmware image binary
 binwalk --extract some_firmware.bin
@@ -1821,7 +1806,7 @@ Alternative Terminal Emulator applicaitons with tons of extra features.
 ```bash
 apt install fish
 fish
-curl -fsSL &#39;https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish&#39; | source
+curl -fsSL 'https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish' | source
 fisher install jorgebucaran/fisher
 fisher install gazorby/fifc
 ```
@@ -1874,7 +1859,7 @@ Best linter available for bash scripts with hundreds of checks for common mistak
 ```bash
 apt install silversearcher-ag
 
-ag &#39;some-regex&#39; .
+ag 'some-regex' .
 ```
 
 - https://github.com/Genivia/ugrep 🌈
@@ -1951,7 +1936,7 @@ watch -n1 -d ip -s link show eno1
 watch -n1 -d lsof +D /media/usb
 
 # run a long-running command with a given timeout
-timeout 10 wget &#39;https://example.com/some/large/file&#39;
+timeout 10 wget 'https://example.com/some/large/file'
 
 # wait for a pid to finish running and exit with its return status
 wait 123
@@ -2004,24 +1989,20 @@ openssl rand -hex 20
 
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

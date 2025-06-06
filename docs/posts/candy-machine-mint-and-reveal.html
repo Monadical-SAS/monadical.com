@@ -168,72 +168,56 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="In this tutorial, you&#39;ll learn how to create a “mint and wait for reveal” Candy Machine. Doing so will allow Candy Machine users to mint “closed” NFTs and wait for them to be “revealed” at a later date, bringing elements of anticipation and excitement to their experience.">
-    
-    
-    
-    <meta property="og:title" content="How to mint and reveal NFTs with Candy Machine V2 - HedgeDoc">
-    
-    
-    <meta property="og:description" content="In this tutorial, you&#39;ll learn how to create a “mint and wait for reveal” Candy Machine. Doing so will allow Candy Machine users to mint “closed” NFTs and wait for them to be “revealed” at a later date, bringing elements of anticipation and excitement to their experience.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>How to mint and reveal NFTs with Candy Machine V2 - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="In this tutorial, you'll learn how to create a “mint and wait for reveal” Candy Machine. Doing so will allow Candy Machine users to mint “closed” NFTs and wait for them to be “revealed” at a later date, bringing elements of anticipation and excitement to their experience." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>How to mint and reveal NFTs with Candy Machine V2 - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/7a4046902e89413f142b9833b9ff6c49?default=identicon&amp;s=96);" title="erin"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/7a4046902e89413f142b9833b9ff6c49?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="erin"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 18 2022 14:35:15 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 09 2022 17:33:11 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">5573 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-            <span class="ui-owner">
-                &thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/7b1b393fd1466bc89ae2b42561b90176?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="kevin"></i>
-                &nbsp;<span class="text-uppercase">owned this note</span>
-            </span>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 18 2022 14:35:15 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 09 2022 17:33:11 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">5574 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+<span class="ui-owner">
+                 <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/7b1b393fd1466bc89ae2b42561b90176?default=identicon&amp;s=96);" title="kevin"></i>
+                 <span class="text-uppercase">owned this note</span>
+</span>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -273,22 +257,22 @@ The assets folder is where you will save the metadata used in the Candy Machine.
 
 ```
 {
-    &#34;price&#34;: 1.0,
-    &#34;number&#34;: 10,
-    &#34;gatekeeper&#34;: null,
-    &#34;solTreasuryAccount&#34;: &#34;&lt;YOUR WALLET ADDRESS&gt;&#34;,
-    &#34;splTokenAccount&#34;: null,
-    &#34;splToken&#34;: null,
-    &#34;goLiveDate&#34;: &#34;25 Dec 2021 00:00:00 GMT&#34;,
-    &#34;endSettings&#34;: null,
-    &#34;whitelistMintSettings&#34;: null,
-    &#34;hiddenSettings&#34;: null,
-    &#34;storage&#34;: &#34;arweave-sol&#34;,
-    &#34;ipfsInfuraProjectId&#34;: null,
-    &#34;ipfsInfuraSecret&#34;: null,
-    &#34;awsS3Bucket&#34;: null,
-    &#34;noRetainAuthority&#34;: false,
-    &#34;noMutable&#34;: false
+    "price": 1.0,
+    "number": 10,
+    "gatekeeper": null,
+    "solTreasuryAccount": "&lt;YOUR WALLET ADDRESS&gt;",
+    "splTokenAccount": null,
+    "splToken": null,
+    "goLiveDate": "25 Dec 2021 00:00:00 GMT",
+    "endSettings": null,
+    "whitelistMintSettings": null,
+    "hiddenSettings": null,
+    "storage": "arweave-sol",
+    "ipfsInfuraProjectId": null,
+    "ipfsInfuraSecret": null,
+    "awsS3Bucket": null,
+    "noRetainAuthority": false,
+    "noMutable": false
 }
 ```
 
@@ -309,7 +293,7 @@ $ spl-token create-account &lt;TOKEN&gt; &gt; account-treasury.txt
 # MINT AN AMOUNT OF TOKENS TO THAT ACCOUNT
 $ spl-token mint &lt;TOKEN&gt; 1000 &lt;ACCOUNT&gt;
 ```
-The spl-token uses solana-cli&#39;s configuration file default. If you want to use Mainnet, you will need to use **-u mainnet-beta** or update your config file. 
+The spl-token uses solana-cli's configuration file default. If you want to use Mainnet, you will need to use **-u mainnet-beta** or update your config file. 
 
 Save this file. You are going to need it later!
 
@@ -347,22 +331,22 @@ In this example I’m using only one asset, so I’m going to have an assets fol
 In 0.json I need to specify my NFT metadata, pointing to my 0.png file.
 ```
 {
-    &#34;name&#34;: &#34;CANDY TOKEN&#34;,
-    &#34;symbol&#34;: &#34;&#34;,
-    &#34;description&#34;: &#34;&#34;,
-    &#34;seller_fee_basis_points&#34;: 500,
-    &#34;image&#34;: &#34;0.png&#34;,
-    &#34;attributes&#34;: [
-        {&#34;trait_type&#34;: &#34;Layer-1&#34;, &#34;value&#34;: &#34;0&#34;},
-        {&#34;trait_type&#34;: &#34;Layer-2&#34;, &#34;value&#34;: &#34;0&#34;}, 
-        {&#34;trait_type&#34;: &#34;Layer-3&#34;, &#34;value&#34;: &#34;0&#34;},
-        {&#34;trait_type&#34;: &#34;Layer-4&#34;, &#34;value&#34;: &#34;1&#34;}
+    "name": "CANDY TOKEN",
+    "symbol": "",
+    "description": "",
+    "seller_fee_basis_points": 500,
+    "image": "0.png",
+    "attributes": [
+        {"trait_type": "Layer-1", "value": "0"},
+        {"trait_type": "Layer-2", "value": "0"}, 
+        {"trait_type": "Layer-3", "value": "0"},
+        {"trait_type": "Layer-4", "value": "1"}
     ],
-    &#34;properties&#34;: {
-        &#34;creators&#34;: [{&#34;address&#34;: &#34;&lt;YOUR WALLET ADDRESS&gt;&#34;, &#34;share&#34;: 100}],
-        &#34;files&#34;: [{&#34;uri&#34;: &#34;0.png&#34;, &#34;type&#34;: &#34;image/png&#34;}]
+    "properties": {
+        "creators": [{"address": "&lt;YOUR WALLET ADDRESS&gt;", "share": 100}],
+        "files": [{"uri": "0.png", "type": "image/png"}]
     },
-    &#34;collection&#34;: {&#34;name&#34;: &#34;numbers&#34;, &#34;family&#34;: &#34;numbers&#34;}
+    "collection": {"name": "numbers", "family": "numbers"}
 }
 ```
 
@@ -382,31 +366,31 @@ At this point, your config.json file should look like this:
 
 ```
 {
-    &#34;price&#34;: 0.0001,
-    &#34;number&#34;: 50,
-    &#34;gatekeeper&#34;: null,
-    &#34;solTreasuryAccount&#34;: &#34;&lt;YOUR WALLET ADDRESS&gt;&#34;,
-    &#34;splTokenAccount&#34;: null,
-    &#34;splToken&#34;: null,
-    &#34;goLiveDate&#34;: &#34;15 Jan 2022 00:00:00 GMT&#34;,
-    &#34;endSettings&#34;: null,
-    &#34;whitelistMintSettings&#34;: {
-        &#34;mode&#34; : { &#34;burnEveryTime&#34;: true },
-        &#34;mint&#34; : &#34;&lt;YOUR TOKEN ADDRESS&gt;&#34;,
-        &#34;presale&#34; : false,
-        &#34;discountPrice&#34; : null
+    "price": 0.0001,
+    "number": 50,
+    "gatekeeper": null,
+    "solTreasuryAccount": "&lt;YOUR WALLET ADDRESS&gt;",
+    "splTokenAccount": null,
+    "splToken": null,
+    "goLiveDate": "15 Jan 2022 00:00:00 GMT",
+    "endSettings": null,
+    "whitelistMintSettings": {
+        "mode" : { "burnEveryTime": true },
+        "mint" : "&lt;YOUR TOKEN ADDRESS&gt;",
+        "presale" : false,
+        "discountPrice" : null
     },
-    &#34;hiddenSettings&#34;: {
-        &#34;name&#34;: &#34;&lt;YOUR NFT NAME&gt; &#34;,
-        &#34;uri&#34;: &#34;&lt;THE ARWAVE URI&gt;&#34;,
-        &#34;hash&#34;: &#34;&lt;ALEATORY 32 CHARACTERS STRING&gt;&#34;
+    "hiddenSettings": {
+        "name": "&lt;YOUR NFT NAME&gt; ",
+        "uri": "&lt;THE ARWAVE URI&gt;",
+        "hash": "&lt;ALEATORY 32 CHARACTERS STRING&gt;"
     },
-    &#34;storage&#34;: &#34;arweave&#34;,
-    &#34;ipfsInfuraProjectId&#34;: null,
-    &#34;ipfsInfuraSecret&#34;: null,
-    &#34;awsS3Bucket&#34;: null,
-    &#34;noRetainAuthority&#34;: false,
-    &#34;noMutable&#34;: false
+    "storage": "arweave",
+    "ipfsInfuraProjectId": null,
+    "ipfsInfuraSecret": null,
+    "awsS3Bucket": null,
+    "noRetainAuthority": false,
+    "noMutable": false
 }
 ```
 
@@ -440,7 +424,7 @@ And should recieve something like this:
     
 If you don’t receive this, take a look at the error. For example, your console might be showing this error:
 
-&#39;(node:107) UnhandledPromiseRejectionWarning:Error: Invalid public key input&#39;
+'(node:107) UnhandledPromiseRejectionWarning:Error: Invalid public key input'
     
 If you’re having trouble with an error, review the pubkeys of your config.json when you try to upload your Candy Machine. There, you will find a .cache folder that contains all the Candy Machine info. Delete this folder and retry uploading. 
     
@@ -505,23 +489,23 @@ You need to generate the metadata from the revealed NFTs. To do that, generate a
     
 ```
 {
-    &#34;mint_account&#34;: &#34;MINT_ADDRESS&#34;,
-    &#34;nft_data&#34;:
+    "mint_account": "MINT_ADDRESS",
+    "nft_data":
     {
-        &#34;name&#34;: NFT_NAME,
-        &#34;symbol&#34;: &#34;&#34;,
-        &#34;uri&#34;: ARWEAVE_REVEALED_METADATA_LINK,
-        &#34;seller_fee_basis_points&#34;: SELLER_FEE_BASIS_POINTS,
-        &#34;creators&#34;: [
+        "name": NFT_NAME,
+        "symbol": "",
+        "uri": ARWEAVE_REVEALED_METADATA_LINK,
+        "seller_fee_basis_points": SELLER_FEE_BASIS_POINTS,
+        "creators": [
             {
-                &#34;address&#34;: &#34;&lt;YOUR_CANDY_MACHINE_CREATOR_ADDRESS&gt;&#34;,
-                &#34;verified&#34;: true,
-                &#34;share&#34;: 0
+                "address": "&lt;YOUR_CANDY_MACHINE_CREATOR_ADDRESS&gt;",
+                "verified": true,
+                "share": 0
             },
             {
-                &#34;address&#34;: &#34;&lt;CREATOR_ADDRESS&gt;&#34;,
-                &#34;verified&#34;: true,
-                &#34;share&#34;: 100
+                "address": "&lt;CREATOR_ADDRESS&gt;",
+                "verified": true,
+                "share": 100
             },
         ]
     }
@@ -593,27 +577,23 @@ That’s it! Remember, you can always take a look at the official docs or visit 
 
 Wanting more? Check out [Monadical’s blog](https://monadical.com/blog.html) for other programming tutorials, and [Metaplex’s blog](https://www.metaplex.com/blog) for Metaplex updates and tutorials. 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

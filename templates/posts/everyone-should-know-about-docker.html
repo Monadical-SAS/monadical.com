@@ -1,63 +1,49 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  Why Everyone Should Know About Docker ===  &lt;big&gt;  **What is Docker and how does it work? T">
-    
-    
-    
-    <meta property="og:title" content="Why Everyone Should Know About Docker - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Why Everyone Should Know About Docker - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  Why Everyone Should Know About Docker ===  &lt;big&gt;  **What is Docker and how does it work? T" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Why Everyone Should Know About Docker - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/812039cd4e81222e17379ec460cc72e6?default=identicon&amp;s=96);" title="angel"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/812039cd4e81222e17379ec460cc72e6?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="angel"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 15 2020 16:25:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Sep 15 2020 16:26:55 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1807 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 15 2020 16:25:09 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Sep 15 2020 16:26:55 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1837 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 Why Everyone Should Know About Docker
 ===
@@ -113,12 +99,12 @@ At a low-level, a container is something that groups a set of resources by using
 
 One possible path is the one I took -- when I first started looking into Docker, I realized that if I wanted to take full advantage of it, I’d need to have a pretty good understanding of Linux. For tasks like software installation and decoupling configuration, and so you can use more advanced Docker tools like Docker-compose, I also recommend the following:
 
-* **Learn Linux OS, preferably Ubuntu/Debian.** When you are building a new image, you&#39;ll need to know the basic commands to navigate the file system and copy or move files. Ubuntu is a good distro if you are a new Linux user because it has a graphical interface that’s super user-friendly. 
+* **Learn Linux OS, preferably Ubuntu/Debian.** When you are building a new image, you'll need to know the basic commands to navigate the file system and copy or move files. Ubuntu is a good distro if you are a new Linux user because it has a graphical interface that’s super user-friendly. 
 * **Learn how to install OS packages by using apt or yum commands.** This is important because in order for them to work, your Docker images might need some software packages. For example, if you’re working in Django, you need to install Python into the image. For that, usually you use package managers like apt in Debian/Ubuntu distros or yum in Red Hat derived flavors.
-* **Figure out how environment variables work.** Environment variables are the best way to decouple software from its [configuration](https://12factor.net/config). This is good practice if you don&#39;t want to edit a lot of config files before a deployment in production. For example, all you need to do is configure the right settings, depending on whether you are in development or production.
+* **Figure out how environment variables work.** Environment variables are the best way to decouple software from its [configuration](https://12factor.net/config). This is good practice if you don't want to edit a lot of config files before a deployment in production. For example, all you need to do is configure the right settings, depending on whether you are in development or production.
 * **Learn some scripting programming languages like bash (or Python).** This is basically so you can do more advanced stuff inside your containers, for example, compile something or connect to other services (or containers).
-* **Learn other programming languages like Java, PHP, or Python.** It&#39;s good to know a little more about the software you want to run using Docker and how it&#39;s made.
-* **Learn a little about basic networking.** If you want to use Docker-compose (an advanced topic used to run multiple containers simultaneously), sometimes you&#39;ll have to set a Docker network for it. Minimally, you should know how to define the possible IPs for your containers.
+* **Learn other programming languages like Java, PHP, or Python.** It's good to know a little more about the software you want to run using Docker and how it's made.
+* **Learn a little about basic networking.** If you want to use Docker-compose (an advanced topic used to run multiple containers simultaneously), sometimes you'll have to set a Docker network for it. Minimally, you should know how to define the possible IPs for your containers.
 
 &lt;center&gt;
 
@@ -131,7 +117,7 @@ One possible path is the one I took -- when I first started looking into Docker,
 
 Learning Docker is a bit of an investment. If you don’t have a broad enough background, you might need to study quite a range of technologies. The payoff is worth it, though: once you’ve mastered Docker, you’ll have a better understanding of application distribution within modern architecture, and an insight into how corporate web applications are deployed.
 
-Docker has a lot of documentation on its official website, so you can study it directly there. There are also tons of good technical blogs and courses in ed-tech on platforms like Udemy. I’ve included some of my favorite resources at the end of this post. If you want to brush up on your background info before you get started, skip to the &#34;Resources for Docker&#34; section using the navigation menu. If you&#39;re ready to get going right away, read on!
+Docker has a lot of documentation on its official website, so you can study it directly there. There are also tons of good technical blogs and courses in ed-tech on platforms like Udemy. I’ve included some of my favorite resources at the end of this post. If you want to brush up on your background info before you get started, skip to the "Resources for Docker" section using the navigation menu. If you're ready to get going right away, read on!
 
 For some people who prefer practical hands-on learning to a theory-centric approach, it may be easier to start by learning Docker Compose before learning Docker itself. Docker Compose provides a high-level way to describe a collection of containers, the relationships between them, and the services they expose to the world. This allows you to see how Docker is used in production without needing to understand as much of the underlying theory, while still exposing you to the main concepts that you’ll need to understand container orchestration in general.
 
@@ -142,7 +128,7 @@ Once you’ve installed it, you can access Docker by using the shell of your ope
 
 To run your first container, you can run this command:
 
-```docker run --name my-first-container ubuntu echo &#34;Hello Monadical&#34;```
+```docker run --name my-first-container ubuntu echo "Hello Monadical"```
 
 You’ll see this execution:
 
@@ -201,7 +187,7 @@ https://blog.jessfraz.com/
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
@@ -209,24 +195,20 @@ Monadical.com | Full-Stack Consultancy
 &lt;/center&gt;
 
 ---</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

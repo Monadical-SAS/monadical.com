@@ -168,98 +168,84 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Two Approaches to Concurrent Write-Safety in Django  *Originally published 2016-08-03 on">
-    
-    
-    
-    <meta property="og:title" content="Two Approaches to Concurrent Write-Safety in Django - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Two Approaches to Concurrent Write-Safety in Django - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  # Two Approaches to Concurrent Write-Safety in Django  *Originally published 2016-08-03 on" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Two Approaches to Concurrent Write-Safety in Django - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:31:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:23:25 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">3859 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:31:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:23:25 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">3888 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 # Two Approaches to Concurrent Write-Safety in Django
 
 *Originally published 2016-08-03 on [InvalidPatent.Wordpress.com](https://invalidpatent.wordpress.com/2016/08/03/two-approaches-to-concurrent-write-safety-in-django/).*
 
 For a more in-depth overview, see: 
-&lt;b&gt;&lt;a href=&#34;https://docs.sweeting.me/s/HJdHDKhjz&#34;&gt;Architecting a Banking service for Real-Time Gaming at OddSlingers&lt;/a&gt;&lt;/b&gt;
+&lt;b&gt;&lt;a href="https://docs.sweeting.me/s/HJdHDKhjz"&gt;Architecting a Banking service for Real-Time Gaming at OddSlingers&lt;/a&gt;&lt;/b&gt;
 
 &lt;/center&gt;
 
 ---
 
-Sometimes when dealing with Django models accessed by multiple people, you want a way to make sure two requests don&#39;t perform writes at the same time.
+Sometimes when dealing with Django models accessed by multiple people, you want a way to make sure two requests don't perform writes at the same time.
 
 For example, lets say you run a poker site, and you have 3 users playing a poker game together in the browser.
 
-&lt;img class=&#34;  wp-image-341 aligncenter&#34; src=&#34;https://invalidpatent.files.wordpress.com/2016/08/poker_game.png&#34; alt=&#34;poker_game&#34; width=&#34;562&#34; height=&#34;449&#34; /&gt;
+&lt;img class="  wp-image-341 aligncenter" src="https://invalidpatent.files.wordpress.com/2016/08/poker_game.png" alt="poker_game" width="562" height="449" /&gt;
 
 You want only one active player to be able to perform game actions, and you want only one action accepted at a time.  Imagine the catastrophe if your active player could open the game in 2 tabs, fold his hand in one, and bet in the other simultaneously!&lt;!--more--&gt;
 
 Here are two easy solutions to create concurrent-write-safe code (to prevent your hypothetical poker site from losing millions of dollars to devious 2-tab players):
 &lt;ul&gt;
-	&lt;li&gt;atomic database transactions, using either version numbers or timestamps to check that the version you&#39;re writing is the same as the version on disk before committing a transaction (aka &lt;a href=&#34;https://en.wikipedia.org/wiki/Optimistic_concurrency_control&#34;&gt;Optimistic concurrency control/optimistic locking&lt;/a&gt;)&lt;/li&gt;
-	&lt;li&gt;locking during the entire operation using a semaphore, to ensure only one person can modify the models at a time (aka &lt;a href=&#34;https://en.wikipedia.org/wiki/Lock_(database)&#34;&gt;normal locking/pessimistic locking&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;atomic database transactions, using either version numbers or timestamps to check that the version you're writing is the same as the version on disk before committing a transaction (aka &lt;a href="https://en.wikipedia.org/wiki/Optimistic_concurrency_control"&gt;Optimistic concurrency control/optimistic locking&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;locking during the entire operation using a semaphore, to ensure only one person can modify the models at a time (aka &lt;a href="https://en.wikipedia.org/wiki/Lock_(database)"&gt;normal locking/pessimistic locking&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 The first solution is commonly used when doing lock-free programming, but is difficult to implement properly.  The second solution is simpler to implement, but can cause deadlocks if your code throws an exception and you leave models locked.  Here I illustrate how to do both.  The code examples use Django, but these principles are generalizable to almost any web backend that mutates shared data.
 &lt;h2&gt;Solution 1: Atomic Transactions with Check-Before-Write&lt;/h2&gt;
-&lt;pre class=&#34;lang-py prettyprint prettyprinted&#34;&gt;&lt;code&gt;&lt;span class=&#34;kwd&#34;&gt;def&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; save&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;self, *args, **kwargs&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;):&lt;/span&gt;
-    &lt;span class=&#34;kwd&#34;&gt;if &lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;
-        on_disk &lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;typ&#34;&gt;Game&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;objects&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;pk&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;kwd&#34;&gt;if on_disk&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.modified&lt;/span&gt; &lt;span class=&#34;pun&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; self&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;modified&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;:&lt;/span&gt;
-            &lt;span class=&#34;kwd&#34;&gt;raise&lt;/span&gt; StaleWriteError&lt;span class=&#34;typ&#34;&gt;(&#39;Tried&lt;/span&gt;&lt;span class=&#34;str&#34;&gt; to save outdated Game&#39;)&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;
-    super&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;typ&#34;&gt;Game&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; self&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(*args, **kwargs)
+&lt;pre class="lang-py prettyprint prettyprinted"&gt;&lt;code&gt;&lt;span class="kwd"&gt;def&lt;/span&gt;&lt;span class="pln"&gt; save&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="pln"&gt;self, *args, **kwargs&lt;/span&gt;&lt;span class="pun"&gt;):&lt;/span&gt;
+    &lt;span class="kwd"&gt;if &lt;/span&gt;&lt;span class="pln"&gt;self&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;id&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt;
+        on_disk &lt;/span&gt;&lt;span class="pun"&gt;=&lt;/span&gt; &lt;span class="typ"&gt;Game&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;objects&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;get&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="pln"&gt;pk&lt;/span&gt;&lt;span class="pun"&gt;=&lt;/span&gt;&lt;span class="pln"&gt;self&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;id&lt;/span&gt;&lt;span class="pun"&gt;)&lt;/span&gt;
+        &lt;span class="kwd"&gt;if on_disk&lt;/span&gt;&lt;span class="pun"&gt;.modified&lt;/span&gt; &lt;span class="pun"&gt;&gt;&lt;/span&gt;&lt;span class="pln"&gt; self&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;modified&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;
+            &lt;span class="kwd"&gt;raise&lt;/span&gt; StaleWriteError&lt;span class="typ"&gt;('Tried&lt;/span&gt;&lt;span class="str"&gt; to save outdated Game')&lt;/span&gt;&lt;span class="pln"&gt;
+    super&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="typ"&gt;Game&lt;/span&gt;&lt;span class="pun"&gt;,&lt;/span&gt;&lt;span class="pln"&gt; self&lt;/span&gt;&lt;span class="pun"&gt;).&lt;/span&gt;&lt;span class="pln"&gt;save&lt;/span&gt;&lt;span class="pun"&gt;(*args, **kwargs)
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 However, THIS CODE IS NOT CORRECT, this naive solution is not good enough to guarantee concurrent-write safety.  Look over the code and think about it for a minute before reading on to find out why.
 
@@ -268,16 +254,16 @@ However, THIS CODE IS NOT CORRECT, this naive solution is not good enough to g
 ...
 
 The reason is: a race condition can occur between the timestamp if-check and the SQL update query.  The proper way to do this is make the condition part of the update query (which is atomic).
-&lt;pre class=&#34;lang-py prettyprint prettyprinted&#34;&gt;&lt;code&gt;&lt;span class=&#34;pln&#34;&gt;updated &lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=&lt;/span&gt; Game&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;objects&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;Q&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=game&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;pun&#34;&gt;&amp;&amp;&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; Q&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=game&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;))&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;\
-      &lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;field_name&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=new_field_value&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; version&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;=game&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;version &lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;+ &lt;/span&gt;&lt;span class=&#34;lit&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;kwd&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;kwd&#34;&gt;not&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; updated&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;:&lt;/span&gt;
-      &lt;span class=&#34;kwd&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;typ&#34;&gt;StaleWriteError&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;(&#39;Tried to save outdated Game&#39;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-Source: &lt;a href=&#34;http://stackoverflow.com/questions/320096/django-how-can-i-protect-against-concurrent-modification-of-database-entries&#34; target=&#34;_blank&#34;&gt;this Stack Overflow question&lt;/a&gt;
+&lt;pre class="lang-py prettyprint prettyprinted"&gt;&lt;code&gt;&lt;span class="pln"&gt;updated &lt;/span&gt;&lt;span class="pun"&gt;=&lt;/span&gt; Game&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;objects&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;filter&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="pln"&gt;Q&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="pln"&gt;id&lt;/span&gt;&lt;span class="pun"&gt;=game&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;id&lt;/span&gt;&lt;span class="pun"&gt;)&lt;/span&gt; &lt;span class="pun"&gt;&amp;&amp;&lt;/span&gt;&lt;span class="pln"&gt; Q&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="pln"&gt;version&lt;/span&gt;&lt;span class="pun"&gt;=game&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;version&lt;/span&gt;&lt;span class="pun"&gt;))&lt;/span&gt;&lt;span class="pln"&gt;\
+      &lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;update&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="pln"&gt;field_name&lt;/span&gt;&lt;span class="pun"&gt;=new_field_value&lt;/span&gt;&lt;span class="pun"&gt;,&lt;/span&gt;&lt;span class="pln"&gt; version&lt;/span&gt;&lt;span class="pun"&gt;=game&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;version &lt;/span&gt;&lt;span class="pun"&gt;+ &lt;/span&gt;&lt;span class="lit"&gt;1&lt;/span&gt;&lt;span class="pun"&gt;)&lt;/span&gt;
+&lt;span class="kwd"&gt;if&lt;/span&gt; &lt;span class="kwd"&gt;not&lt;/span&gt;&lt;span class="pln"&gt; updated&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;
+      &lt;span class="kwd"&gt;raise&lt;/span&gt; &lt;span class="typ"&gt;StaleWriteError&lt;/span&gt;&lt;span class="pun"&gt;('Tried to save outdated Game')&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+Source: &lt;a href="http://stackoverflow.com/questions/320096/django-how-can-i-protect-against-concurrent-modification-of-database-entries" target="_blank"&gt;this Stack Overflow question&lt;/a&gt;
 
 Alternative implementations use a last-modified timestamp instead of a version number, or even the whole state of the database row (which is slow but avoids requiring a separate version column) to check before writing.  If your database supports fast row-hashing, you can also compare row hashes before writing.
 &lt;h2&gt;&lt;strong&gt;Solution 2: Row Locking With a Redis Lock-Table&lt;/strong&gt;&lt;/h2&gt;
 
-Think carefully about whether you trust redis to be a safe enough backend for your locks.  In it&#39;s default configuration, redis will lose data if the machine it&#39;s running on is suddenly powered off!
+Think carefully about whether you trust redis to be a safe enough backend for your locks.  In it's default configuration, redis will lose data if the machine it's running on is suddenly powered off!
 
 ```python
 import redis
@@ -285,53 +271,53 @@ import redis
 from django.db import models
 
 
-lock_table = redis.StrictRedis(host=&#39;localhost&#39;, port=6379)
+lock_table = redis.StrictRedis(host='localhost', port=6379)
 
 
 class ConcurrentModificationError(ValueError):
-    &#34;&#34;&#34;Base error class for write concurrency errors&#34;&#34;&#34;
+    """Base error class for write concurrency errors"""
     pass
 
 
 class StaleWriteError(ConcurrentModificationError):
-    &#34;&#34;&#34;Tried to write a version of a model that is older than the current version in the database&#34;&#34;&#34;
+    """Tried to write a version of a model that is older than the current version in the database"""
     pass
 
 
 class AlreadyLockedError(ConcurrentModificationError):
-    &#34;&#34;&#34;Tried to aquire a lock on a row that is already locked&#34;&#34;&#34;
+    """Tried to aquire a lock on a row that is already locked"""
     pass
 
 
 class WriteWithoutLockError(ConcurrentModificationError):
-    &#34;&#34;&#34;Tried to save a lock-required model row without locking it first&#34;&#34;&#34;
+    """Tried to save a lock-required model row without locking it first"""
     pass
 
 
 class LockedModel:
-    &#34;&#34;&#34;Add row-level locking backed by redis, set lock_required=True to require a lock on .save()&#34;&#34;&#34;
+    """Add row-level locking backed by redis, set lock_required=True to require a lock on .save()"""
 
     lock_required = False  # whether a lock is required to call .save() on this model
 
     @property
     def _lock_key(self):
         model_name = self.__class__.__name__
-        return &#39;{0}__locked:{1}&#39;.format(model_name, self.id)
+        return '{0}__locked:{1}'.format(model_name, self.id)
 
     def is_locked(self):
-        return lock_table.get(self._lock_key) == b&#39;1&#39;
+        return lock_table.get(self._lock_key) == b'1'
 
     def lock(self):
         if self.is_locked():
-            raise AlreadyLockedError(&#39;Tried to lock an already-locked row.&#39;)
-        lock_table.set(self._lock_key, b&#39;1&#39;)
+            raise AlreadyLockedError('Tried to lock an already-locked row.')
+        lock_table.set(self._lock_key, b'1')
 
     def unlock(self):
-        lock_table.set(self._lock_key, b&#39;0&#39;)
+        lock_table.set(self._lock_key, b'0')
 
     def save(self, *args, **kwargs):
         if self.lock_required and not self.is_locked():
-            raise WriteWithoutLockError(&#39;Tried to save a lock-required model row without locking it first&#39;)
+            raise WriteWithoutLockError('Tried to save a lock-required model row without locking it first')
         super(LockedModel, self).save(*args, **kwargs)
 
 
@@ -342,9 +328,9 @@ class Game(models.Model, LockedModel):
     players = models.ManyToManyField(Player)
 ```
 
-Locking is a generic pattern than can be used for more complex operations than just single-row locking.  You can always manually use the lock_table to create and hold locks over whole blocks of code that aren&#39;t linked to a specific DB row.
+Locking is a generic pattern than can be used for more complex operations than just single-row locking.  You can always manually use the lock_table to create and hold locks over whole blocks of code that aren't linked to a specific DB row.
 
-Here&#39;s how you&#39;d use the above row-locking feature in a real use case, (e.g. calling perform_game_action from inside a view).
+Here's how you'd use the above row-locking feature in a real use case, (e.g. calling perform_game_action from inside a view).
 
 ```python
 from django.db import IntegrityError, transaction
@@ -361,26 +347,26 @@ def perform_game_action(game: Game, new_player: Player):
             game.save()
     except ConcurrentModificationError, IntegrityError:
         # handle write integrity errors/lock contention cases here
-        print(&#39;Game transaction failed!&#39;)
+        print('Game transaction failed!')
     finally:
         # release redis write-lock on table object
         game.unlock()
 ```                   
                 
-&lt;h2&gt;Alternative Solution 2: Use Django&#39;s built-in locking&lt;/h2&gt;
-I&#39;ve recently been informed of a third solution by the kind people of the internet and this &lt;a href=&#34;http://stackoverflow.com/questions/1123200/how-to-lock-a-critical-section-in-django&#34;&gt;Stack Overflow question&lt;/a&gt;.  This is the canonical &#34;Django Solution&#34;, but my version above with Redis locking gives a little bit more exception granularity, allowing you to handle different contention cases separately.  The Django method just throws a generic &lt;a class=&#34;reference internal&#34; title=&#34;django.db.DatabaseError&#34; href=&#34;https://docs.djangoproject.com/en/1.9/ref/exceptions/#django.db.DatabaseError&#34;&gt;&lt;code class=&#34;xref py py-exc docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;DatabaseError&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; regardless of the situation.
+&lt;h2&gt;Alternative Solution 2: Use Django's built-in locking&lt;/h2&gt;
+I've recently been informed of a third solution by the kind people of the internet and this &lt;a href="http://stackoverflow.com/questions/1123200/how-to-lock-a-critical-section-in-django"&gt;Stack Overflow question&lt;/a&gt;.  This is the canonical "Django Solution", but my version above with Redis locking gives a little bit more exception granularity, allowing you to handle different contention cases separately.  The Django method just throws a generic &lt;a class="reference internal" title="django.db.DatabaseError" href="https://docs.djangoproject.com/en/1.9/ref/exceptions/#django.db.DatabaseError"&gt;&lt;code class="xref py py-exc docutils literal"&gt;&lt;span class="pre"&gt;DatabaseError&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; regardless of the situation.
 
-Quoting the Django Docs, &lt;a href=&#34;https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet.select_for_update&#34;&gt;select_or_update()&lt;/a&gt;:
+Quoting the Django Docs, &lt;a href="https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet.select_for_update"&gt;select_or_update()&lt;/a&gt;:
 
-Returns a queryset that will lock rows until the end of the transaction, generating a &lt;code class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;FOR&lt;/span&gt; &lt;span class=&#34;pre&#34;&gt;UPDATE&lt;/span&gt;&lt;/code&gt; SQL statement on supported databases.
-&lt;pre&gt;&lt;span class=&#34;n&#34;&gt;games&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;objects&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;select_for_update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;active&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;
+Returns a queryset that will lock rows until the end of the transaction, generating a &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;SELECT&lt;/span&gt; &lt;span class="pre"&gt;...&lt;/span&gt; &lt;span class="pre"&gt;FOR&lt;/span&gt; &lt;span class="pre"&gt;UPDATE&lt;/span&gt;&lt;/code&gt; SQL statement on supported databases.
+&lt;pre&gt;&lt;span class="n"&gt;games&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Game&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select_for_update&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;active&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/pre&gt;
 All matched games will be locked until the end of the transaction block, meaning that other transactions will be prevented from changing or acquiring locks on them.
 
-Usually, if another transaction has already acquired a lock on one of the selected rows, the query will block until the lock is released. If this is not the behavior you want, call &lt;code class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;select_for_update(nowait=True)&lt;/span&gt;&lt;/code&gt;. This will make the call non-blocking. If a conflicting lock is already acquired by another transaction, &lt;a class=&#34;reference internal&#34; title=&#34;django.db.DatabaseError&#34; href=&#34;https://docs.djangoproject.com/en/1.9/ref/exceptions/#django.db.DatabaseError&#34;&gt;&lt;code class=&#34;xref py py-exc docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;DatabaseError&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; will be raised when the queryset is evaluated.
+Usually, if another transaction has already acquired a lock on one of the selected rows, the query will block until the lock is released. If this is not the behavior you want, call &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;select_for_update(nowait=True)&lt;/span&gt;&lt;/code&gt;. This will make the call non-blocking. If a conflicting lock is already acquired by another transaction, &lt;a class="reference internal" title="django.db.DatabaseError" href="https://docs.djangoproject.com/en/1.9/ref/exceptions/#django.db.DatabaseError"&gt;&lt;code class="xref py py-exc docutils literal"&gt;&lt;span class="pre"&gt;DatabaseError&lt;/span&gt;&lt;/code&gt;&lt;/a&gt; will be raised when the queryset is evaluated.
 
 &lt;hr /&gt;
 
-Which approach you choose is up to you, just remember to test your code with a variety of write conditions and load levels.  Prefer atomic operations over non-atomic, and test every lock contention edge-case before deploying your shiny new &#34;concurrent-write-safe&#34; code to production.  Beware of &lt;b&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Time_of_check_to_time_of_use&#34;&gt;TOCTTOU&lt;/a&gt; &lt;/b&gt;bugs!
+Which approach you choose is up to you, just remember to test your code with a variety of write conditions and load levels.  Prefer atomic operations over non-atomic, and test every lock contention edge-case before deploying your shiny new "concurrent-write-safe" code to production.  Beware of &lt;b&gt;&lt;a href="https://en.wikipedia.org/wiki/Time_of_check_to_time_of_use"&gt;TOCTTOU&lt;/a&gt; &lt;/b&gt;bugs!
 
 Remember, a single edge case that happens even 1 out of every 10,000 requests can be exploited by a devious user, and could potentially cost your tiny startup lots of money!  (follow-up post on rate-limiting in Django coming soon)
 
@@ -390,37 +376,33 @@ Please leave comments if you have other solutions to share, or if you find any e
 
 &lt;h3&gt;Related reading:&lt;/h3&gt;
 &lt;ul&gt;
-	&lt;li&gt;Django Docs on the &lt;a href=&#34;https://docs.djangoproject.com/en/1.10/topics/db/queries/#updating-multiple-objects-at-once&#34;&gt;update() method&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;Django Docs on the &lt;a href=&#34;https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet.select_for_update&#34;&gt;select_for_update() method&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;Django Docs on &lt;a href=&#34;https://docs.djangoproject.com/en/1.10/topics/db/transactions/#controlling-transactions-explicitly&#34;&gt;atomic database transactions&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;Top &lt;a href=&#34;http://stackoverflow.com/questions/320096/django-how-can-i-protect-against-concurrent-modification-of-database-entries&#34;&gt;Stack Overflow question&lt;/a&gt; on Django concurrent-write protection&lt;/li&gt;
-	&lt;li&gt;If you&#39;re into the history of this feature, check out the &lt;a href=&#34;https://code.djangoproject.com/ticket/2705&#34;&gt;original Django ticket&lt;/a&gt; that added update() support&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/1123200/how-to-lock-a-critical-section-in-django&#34;&gt;Stack Overflow question&lt;/a&gt; on locking critical sections in Django&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/129329/optimistic-vs-pessimistic-locking&#34;&gt;Stack Overflow question&lt;/a&gt; explaining the difference between optimistic and pessimistic locking&lt;/li&gt;
-	&lt;li&gt;Wikipedia pages on &lt;a href=&#34;https://en.wikipedia.org/wiki/Optimistic_concurrency_control&#34;&gt;Optimistic Concurrency Control&lt;/a&gt;, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Lock_(database)&#34;&gt;Locking&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Django Docs on the &lt;a href="https://docs.djangoproject.com/en/1.10/topics/db/queries/#updating-multiple-objects-at-once"&gt;update() method&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Django Docs on the &lt;a href="https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.query.QuerySet.select_for_update"&gt;select_for_update() method&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Django Docs on &lt;a href="https://docs.djangoproject.com/en/1.10/topics/db/transactions/#controlling-transactions-explicitly"&gt;atomic database transactions&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Top &lt;a href="http://stackoverflow.com/questions/320096/django-how-can-i-protect-against-concurrent-modification-of-database-entries"&gt;Stack Overflow question&lt;/a&gt; on Django concurrent-write protection&lt;/li&gt;
+	&lt;li&gt;If you're into the history of this feature, check out the &lt;a href="https://code.djangoproject.com/ticket/2705"&gt;original Django ticket&lt;/a&gt; that added update() support&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/1123200/how-to-lock-a-critical-section-in-django"&gt;Stack Overflow question&lt;/a&gt; on locking critical sections in Django&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/129329/optimistic-vs-pessimistic-locking"&gt;Stack Overflow question&lt;/a&gt; explaining the difference between optimistic and pessimistic locking&lt;/li&gt;
+	&lt;li&gt;Wikipedia pages on &lt;a href="https://en.wikipedia.org/wiki/Optimistic_concurrency_control"&gt;Optimistic Concurrency Control&lt;/a&gt;, and &lt;a href="https://en.wikipedia.org/wiki/Lock_(database)"&gt;Locking&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-P.S. Sorry about the ads and lack of syntax highlighting on my blog!  I&#39;ll work on migrating it to Jekyll eventually...</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+P.S. Sorry about the ads and lack of syntax highlighting on my blog!  I'll work on migrating it to Jekyll eventually...</div>
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

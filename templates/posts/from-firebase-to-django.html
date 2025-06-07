@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)">
-    
-    
-    
-    <meta property="og:title" content="How to Migrate from Firebase to Django (or another SQL ORM) - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>How to Migrate from Firebase to Django (or another SQL ORM) - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Strategy and tips on how to migrate from Firebase to Django (or another SQL ORM)" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>How to Migrate from Firebase to Django (or another SQL ORM) - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?default=identicon&amp;s=96);" title="karim"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f1c25162d8beb87563cb1f179478fb10?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="karim"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 29 2020 14:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 09 2021 15:32:50 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">4027 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 29 2020 14:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 09 2021 15:32:50 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">4056 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -84,23 +69,23 @@ In recent years, Firebase has emerged as a strong contender in the NoSQL space, 
 
 ### Step One: Get your models in order
 
-The very first step in migrating your Firebase application to Django is to stabilize your models. By this, I mean that you should have a concrete idea of how your data is structured and [related](https://en.wikipedia.org/wiki/Relational_database). Take a look at the objects in your Firebase store and try to follow them as they move through your frontend application. Which fields are actually used? Which fields can be normalized? It&#39;s hard to overstate how important this step is. Look at your data in the collections interface of Firebase first, then as they flow into your application, and, finally, start defining your Django models.  
+The very first step in migrating your Firebase application to Django is to stabilize your models. By this, I mean that you should have a concrete idea of how your data is structured and [related](https://en.wikipedia.org/wiki/Relational_database). Take a look at the objects in your Firebase store and try to follow them as they move through your frontend application. Which fields are actually used? Which fields can be normalized? It's hard to overstate how important this step is. Look at your data in the collections interface of Firebase first, then as they flow into your application, and, finally, start defining your Django models.  
 
-If you have no experience with SQL, then you will need to familiarize yourself with at least [one-to-many relationships](https://docs.djangoproject.com/en/3.0/topics/db/examples/many_to_one/). Armed with this knowledge, you should have a Django model for each of your collections in Firebase.  If you are a developer who relies on Firebase, this will likely be the hardest step for you, since, unlike with Firebase, you will now need to make concrete decisions about how your objects should look and behave. However, just because you are using [Django&#39;s migrations](https://docs.djangoproject.com/en/dev/topics/migrations/) to manage our SQL database schema, this does not mean that the decisions for a model are set in stone. Indeed, the migration system exists precisely for that: propagating changes you make to your models into your SQL database schema.
+If you have no experience with SQL, then you will need to familiarize yourself with at least [one-to-many relationships](https://docs.djangoproject.com/en/3.0/topics/db/examples/many_to_one/). Armed with this knowledge, you should have a Django model for each of your collections in Firebase.  If you are a developer who relies on Firebase, this will likely be the hardest step for you, since, unlike with Firebase, you will now need to make concrete decisions about how your objects should look and behave. However, just because you are using [Django's migrations](https://docs.djangoproject.com/en/dev/topics/migrations/) to manage our SQL database schema, this does not mean that the decisions for a model are set in stone. Indeed, the migration system exists precisely for that: propagating changes you make to your models into your SQL database schema.
 
-Django provides a [JSON field](https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.JSONField) that you can use as a &#39;catchall&#39; for fields where you aren&#39;t sure of their structure or presence. However, I don&#39;t recommend using it as your primary method for storing data - this would cost you the goodies that come with Django and its ORM, namely: type checking, serialization, forms, auto-indexing, and migrations.
+Django provides a [JSON field](https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.JSONField) that you can use as a 'catchall' for fields where you aren't sure of their structure or presence. However, I don't recommend using it as your primary method for storing data - this would cost you the goodies that come with Django and its ORM, namely: type checking, serialization, forms, auto-indexing, and migrations.
 
-But what about all those Firebase objects that contain data that you don&#39;t know what to do with, or that were derived using Cloud Functions? And what about data that you stored in objects at some point and didn&#39;t end up using, but don&#39;t want to leave behind in Firebase once you migrate? For those I suggest using a JSON field in Django and calling it `metadata`. I’ll expand on this some more below.
+But what about all those Firebase objects that contain data that you don't know what to do with, or that were derived using Cloud Functions? And what about data that you stored in objects at some point and didn't end up using, but don't want to leave behind in Firebase once you migrate? For those I suggest using a JSON field in Django and calling it `metadata`. I’ll expand on this some more below.
 
 ### Step Two: Migrate the user model
 
-The next step is to ensure you have a working user/auth model. This is because most applications&#39; models will have relationships with the user model. Firebase makes auth exceptionally easy with JWTs, which can optionally include claims that replace a complicated auth model. (E.g: you don’t need groups and permissions checks if each JWT includes all permissions the user has access to.) Luckily with the [Firebase cli](https://github.com/firebase/firebase-tools) you can do:
+The next step is to ensure you have a working user/auth model. This is because most applications' models will have relationships with the user model. Firebase makes auth exceptionally easy with JWTs, which can optionally include claims that replace a complicated auth model. (E.g: you don’t need groups and permissions checks if each JWT includes all permissions the user has access to.) Luckily with the [Firebase cli](https://github.com/firebase/firebase-tools) you can do:
 
 ```
 firebase auth:export accounts.json --format=json --project &lt;project_name&gt;
 ```
 
-and it will generate a JSON file with all your Firebase users&#39; details, including the hash and salt for their passwords if they set up their account with password-based authentication.
+and it will generate a JSON file with all your Firebase users' details, including the hash and salt for their passwords if they set up their account with password-based authentication.
 
 For the user models loading, this script can be used:
 ```python3
@@ -114,41 +99,41 @@ from app_name.models import User # or wherever your user model is
 
 
 def run(*args):
-    with open(&#34;../data/accounts.json&#34;) as users_file:
-        users = json.load(users_file)[&#34;users&#34;]
+    with open("../data/accounts.json") as users_file:
+        users = json.load(users_file)["users"]
     downloaded_from_firebase = len(users)
     imported_users = 0
 
     for firebase_user in users:
         # ensure each user has displayName
-        if &#39;displayName&#39; not in firebase_user:
-            firebase_user[&#34;displayName&#34;] = firebase_user[&#34;email&#34;]
+        if 'displayName' not in firebase_user:
+            firebase_user["displayName"] = firebase_user["email"]
         with transaction.atomic(): # use transactions to guard against data corruption during loading
             # Get first_name &amp; last_name for django User model by bisecting displayName
-            if len(firebase_user[&#34;displayName&#34;].split(&#34; &#34;)) &gt;= 2:
-                first_name = firebase_user[&#34;displayName&#34;].split(&#34; &#34;, maxsplit=1)[0][:30]
-                last_name = firebase_user[&#34;displayName&#34;].split(&#34; &#34;, maxsplit=1)[1]
+            if len(firebase_user["displayName"].split(" ")) &gt;= 2:
+                first_name = firebase_user["displayName"].split(" ", maxsplit=1)[0][:30]
+                last_name = firebase_user["displayName"].split(" ", maxsplit=1)[1]
             else:
-                first_name = firebase_user[&#34;displayName&#34;][:30]
-                last_name = firebase_user[&#34;displayName&#34;]
+                first_name = firebase_user["displayName"][:30]
+                last_name = firebase_user["displayName"]
             # fields common to both normal login &amp; Google Sign-In
             defaults = {
-                        &#34;email&#34;: firebase_user[&#34;email&#34;],
-                        &#34;firebase_id&#34;: firebase_user[&#34;localId&#34;],
-                        &#34;first_name&#34;: first_name,
-                        &#34;last_name&#34;: last_name,
-                        &#34;username&#34;: firebase_user[&#34;email&#34;],
+                        "email": firebase_user["email"],
+                        "firebase_id": firebase_user["localId"],
+                        "first_name": first_name,
+                        "last_name": last_name,
+                        "username": firebase_user["email"],
                     }
-            if &#39;passwordHash&#39; in firebase_user:
-                django_password = f&#34;{FirebaseScryptPasswordHasher.algorithm}${firebase_user[&#39;salt&#39;]}${firebase_user[&#39;passwordHash&#39;]}&#34;
-                defaults[&#34;password&#34;] = django_password
+            if 'passwordHash' in firebase_user:
+                django_password = f"{FirebaseScryptPasswordHasher.algorithm}${firebase_user['salt']}${firebase_user['passwordHash']}"
+                defaults["password"] = django_password
             django_user, created = User.objects.update_or_create(
-                email=firebase_user[&#34;email&#34;], defaults=defaults
+                email=firebase_user["email"], defaults=defaults
                 )
             django_user.save()
             # add any logic you want after loading a user
             imported_users += 1
-    print(f&#34;Imported or updated {imported_users} users from a firebase dump of {downloaded_from_firebase} users.&#34;)
+    print(f"Imported or updated {imported_users} users from a firebase dump of {downloaded_from_firebase} users.")
 ```
 This script iterates through the file downloaded from the CLI and creates accounts for the users in it, setting their passwords to the hash+salt that were obtained from Firebase. Note that I use [update_or_create](https://docs.djangoproject.com/en/3.1/ref/models/querysets/#update-or-create) to allow the script to be [idempotent](https://en.wikipedia.org/wiki/Idempotence). Additionally, [transactions](https://en.wikipedia.org/wiki/Database_transaction) are used to ensure no broken database objects (rows) are created. Also note that not much can be done about users that used Sign-In with Google - they will have to reauthenticate. [You should use Django REST Framework to set up JWT auth.](https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html)
 
@@ -160,7 +145,7 @@ If you have set up everything correctly in this section, you should be able to s
 
 Finally, you are ready to start migrating actual data!
 
-Since the Firebase CLI doesn&#39;t offer us a way to export our collections in JSON format, you will have to &#39;stream&#39; them (i.e: read them) one by one from Firebase using the Firebase Python SDK.
+Since the Firebase CLI doesn't offer us a way to export our collections in JSON format, you will have to 'stream' them (i.e: read them) one by one from Firebase using the Firebase Python SDK.
 
 Make sure you install the [Firebase Admin Python SDK](https://github.com/firebase/firebase-admin-python). Then create a new file, firebase_helpers.py, in your application directory:
 ```python
@@ -189,19 +174,19 @@ from app_name.firebase_helpers import db
 
 
 def run(*args):
-    blogs_dict = {&#34;blogs&#34;: []}
-    blogs = db.collection(&#39;blogs&#39;)
+    blogs_dict = {"blogs": []}
+    blogs = db.collection('blogs')
     for blog in blogs.stream():
         blog_dict = blog.to_dict()
-        blog_dict[&#34;id&#34;] = blog.id
-        blogs_dict[&#34;blogs&#34;].append(blog_dict)
-        print(f&#34;Saving blog with id {blog.id}&#34;)
-    blogs_filehandler = open(&#39;../data/blogs.objs&#39;, &#39;wb&#39;)
+        blog_dict["id"] = blog.id
+        blogs_dict["blogs"].append(blog_dict)
+        print(f"Saving blog with id {blog.id}")
+    blogs_filehandler = open('../data/blogs.objs', 'wb')
     pickle.dump(blogs_dict, blogs_filehandler)
-    print(f&#34;Saved {len(blogs_dict[&#39;blogs&#39;])} blogs&#34;)
+    print(f"Saved {len(blogs_dict['blogs'])} blogs")
 
 ```
-You will notice two things here; the first is that I am serializing them as pickled dicts, not JSON. That&#39;s because JSON objects are serialized to dicts in Python anyway, so there’s no need for an intermediary step. Second, I add the object id (the blog id in this case) to the dict of each blog object - this is to have the object as complete as possible when it enters the Django database.
+You will notice two things here; the first is that I am serializing them as pickled dicts, not JSON. That's because JSON objects are serialized to dicts in Python anyway, so there’s no need for an intermediary step. Second, I add the object id (the blog id in this case) to the dict of each blog object - this is to have the object as complete as possible when it enters the Django database.
 
 Next, you will have to load them. Similar to the script loading the users above, the goal is to be as idempotent as possible.
 
@@ -215,37 +200,37 @@ from app_name.models import User
 
 
 def run(*args):
-    blogs_filehandler = open(&#39;../data/blogs.objs&#39;, &#39;rb&#39;)
+    blogs_filehandler = open('../data/blogs.objs', 'rb')
     blogs_dict = pickle.load(blogs_filehandler)
-    downloaded_from_firebase = len(blogs_dict[&#34;blogs&#34;])
+    downloaded_from_firebase = len(blogs_dict["blogs"])
     invalid_blog_objects = 0
     failed_to_import_blogs = 0
     imported_blogs = 0
-    for blog in blogs_dict[&#34;blogs&#34;]:
+    for blog in blogs_dict["blogs"]:
         with transaction.atomic():
             try:
-                owner = User.objects.get(firebase_id=blog[&#34;owner&#34;])
+                owner = User.objects.get(firebase_id=blog["owner"])
                 defaults = {
-                        &#34;name&#34;: blog[&#34;title&#34;],
-                        &#34;owner&#34;: owner,
-                        &#34;metadata&#34;: {&#34;firebase_id&#34;: blog[&#34;id&#34;]}
+                        "name": blog["title"],
+                        "owner": owner,
+                        "metadata": {"firebase_id": blog["id"]}
                             }
-                if &#39;some_key&#39; in blog:
-                        defaults[&#34;metadata&#34;] = {&#34;firebase_id&#34;: blog[&#34;id&#34;], &#34;some_key&#34;: blog[&#34;some_key&#34;]}
+                if 'some_key' in blog:
+                        defaults["metadata"] = {"firebase_id": blog["id"], "some_key": blog["some_key"]}
                 django_blog, created = Blog.objects.update_or_create(
-                    metadata__firebase_id=blog[&#34;id&#34;],
+                    metadata__firebase_id=blog["id"],
                     defaults=defaults)
                 django_blog.save()
                 imported_blogs += 1
             except User.DoesNotExist:
-                print(f&#34;Couldn&#39;t find owner with firebase_id {blog[&#39;owner&#39;]} of blog {blog[&#39;id&#39;]}&#34;)
+                print(f"Couldn't find owner with firebase_id {blog['owner']} of blog {blog['id']}")
                 failed_to_import_blogs += 1
 print(
-    f&#34;Imported or updated {imported_blogs} of a total {downloaded_from_firebase} from firebase. {invalid_blog_objects} were invalid &amp; {failed_to_import_blogs} couldn&#39;t be loaded because their owner couldn&#39;t be found in Django DB.&#34;
+    f"Imported or updated {imported_blogs} of a total {downloaded_from_firebase} from firebase. {invalid_blog_objects} were invalid &amp; {failed_to_import_blogs} couldn't be loaded because their owner couldn't be found in Django DB."
     )
 
 ```
-Note that as part of the loading of those pickled objects, I added the `firebase_id` key to the aforementioned `metadata` JSON field in our Django objects. This allows you to reference this object with `firebase_id` later should the need arise. I also check for the existence of `some_key` and, if found, it&#39;s added to the `metadata` field. This will allow us to access this data in the future, perhaps also adding it as `some_column` in the future for the Django objects.
+Note that as part of the loading of those pickled objects, I added the `firebase_id` key to the aforementioned `metadata` JSON field in our Django objects. This allows you to reference this object with `firebase_id` later should the need arise. I also check for the existence of `some_key` and, if found, it's added to the `metadata` field. This will allow us to access this data in the future, perhaps also adding it as `some_column` in the future for the Django objects.
 
 If the migration is a multi-week process and you want to be as close to the current Firebase production collections as possible, simply run those scripts as cron jobs on a daily basis. Their failures will point to problems that you have not addressed in the serialization of Firebase objects to your Django database. In the course of helping our client migrate to Django, we did this process several times to ensure that every object in Firebase could move to Django. Each time we ran the script and it failed, we examined the object that raised the exception thoroughly and added the necessary logic to load it. 
 
@@ -268,30 +253,26 @@ A tool to convert Firebase databases (Firestores) to Postgresql-based GraphQL ba
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

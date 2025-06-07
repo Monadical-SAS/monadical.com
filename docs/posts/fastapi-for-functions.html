@@ -168,65 +168,51 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Building a FastAPI Server to Evaluate Mathematical Functions   &lt;big&gt;  **We make an alrea">
-    
-    
-    
-    <meta property="og:title" content="Building a FastAPI Server to Evaluate Mathematical Functions - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Building a FastAPI Server to Evaluate Mathematical Functions - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  # Building a FastAPI Server to Evaluate Mathematical Functions   &lt;big&gt;  **We make an alrea" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Building a FastAPI Server to Evaluate Mathematical Functions - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&amp;s=96);" title="juan.david"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 03 2022 18:51:40 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Sep 01 2022 16:52:33 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1948 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 03 2022 18:51:40 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Sep 01 2022 16:52:33 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1977 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 # Building a FastAPI Server to Evaluate Mathematical Functions 
 
@@ -250,7 +236,7 @@ In this blog, we’ll create a more accessible version of the script, and theref
 
 ## The plan: building the application server 
  
-We&#39;ll create a server that is easier to use for people who have limited or no knowledge of programs like Python or SymPy. The main features of this application server will be to:
+We'll create a server that is easier to use for people who have limited or no knowledge of programs like Python or SymPy. The main features of this application server will be to:
 
 * receive the information associated with a mathematical function $f(x)=(...)$
 * evaluate the function in the interval defined by $[a, b]$
@@ -328,13 +314,13 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get(&#34;/health&#34;)
+@app.get("/health")
 async def get_server_health():
-    return {&#34;success&#34;: True, &#34;message&#34;: &#34;grafar server running&#34;}
+    return {"success": True, "message": "grafar server running"}
 
 
-if __name__ == &#34;__main__&#34;:
-    uvicorn.run(&#34;main:app&#34;, host=&#34;127.0.0.1&#34;, port=5000, reload=True)
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=5000, reload=True)
 ```
 
 Then, run the server with the following command:
@@ -346,8 +332,8 @@ We should now have a FastAPI server running. To check that it’s running, go to
 
 ```json
 {
-  &#34;success&#34;: true,
-  &#34;message&#34;: &#34;grafar server running&#34;
+  "success": true,
+  "message": "grafar server running"
 }
 ```
 
@@ -430,7 +416,7 @@ def get_step(self, interval: Interval):
     return (interval.b - interval.a) / self.points.
 ```
 
-In this code, something we&#39;ll do often is creating NumPy vectors which are required to make the function&#39;s domain. To avoid ending up with duplicate code, isolate the logic of these processes in the `get_vector` function. 
+In this code, something we'll do often is creating NumPy vectors which are required to make the function's domain. To avoid ending up with duplicate code, isolate the logic of these processes in the `get_vector` function. 
 
 ```python
 def get_vector(self, interval: Interval):
@@ -438,7 +424,7 @@ def get_vector(self, interval: Interval):
     return np.arange(interval.a, interval.b + 1, step)
 ```
 
-Another common task will be evaluating the values in a mathematical function. To isolate such logic, we&#39;ll want a constructor to take a collection of mathematical symbols that were parsed from user input and turn them into a SymPy function object.
+Another common task will be evaluating the values in a mathematical function. To isolate such logic, we'll want a constructor to take a collection of mathematical symbols that were parsed from user input and turn them into a SymPy function object.
 
 ```python
 def create_function(self, symbols):
@@ -458,8 +444,8 @@ class Function2D(Function):
         vector_x = self.get_vector(self.interval_x)
         vector_y = self.evaluate_function_2d(vector_x)
         self.mesh = {
-            &#34;x&#34;: vector_x.tolist(),
-            &#34;y&#34;: vector_y.tolist()
+            "x": vector_x.tolist(),
+            "y": vector_y.tolist()
         }
     
     def evaluate_function_2d(self, vector_x):
@@ -468,7 +454,7 @@ class Function2D(Function):
         return function_fx(vector_x)
 ```
 
-Let&#39;s take a look at the `create_mesh` method: 
+Let's take a look at the `create_mesh` method: 
 * `vector_x`  creates a vector with the values for the $x$ axis in the interval `self.inverval_x`.
 * `vector_y` creates the vector with the values for the $y$ axis based on the values of `vector_x`, this line makes use of the`self.evaluate_function_2d()` function, which we’ll detail later.
 * `self.mesh` creates a dictionary with the values associated with the $x$ and $y$ axes of the function.
@@ -494,9 +480,9 @@ def create_mesh(self):
     vector_x, vector_y = np.meshgrid(vector_x, vector_y)
     vector_z = self.evaluate_function_3d(vector_x, vector_y)
     self.mesh = {
-        &#34;x&#34;: vector_x.tolist(),
-        &#34;y&#34;: vector_y.tolist(),
-        &#34;z&#34;: vector_z.tolist()
+        "x": vector_x.tolist(),
+        "y": vector_y.tolist(),
+        "z": vector_z.tolist()
     }
 
 def evaluate_function_3d(self, vector_x, vector_y):
@@ -507,18 +493,18 @@ def evaluate_function_3d(self, vector_x, vector_y):
 
 ## Step three: Add the services
 
-Now that we have the models created and the business logic implemented, the only thing left to do is to expose the functions as services to be used by client applications. For this, we&#39;ll create two REST API endpoints that will serve as an entry point for users to evaluate the functions in the intervals required.
+Now that we have the models created and the business logic implemented, the only thing left to do is to expose the functions as services to be used by client applications. For this, we'll create two REST API endpoints that will serve as an entry point for users to evaluate the functions in the intervals required.
 
-First, we&#39;ll create an endpoint to evaluate two-dimensional functions. This endpoint receives a Function2D as the body which is initialized with the function value and the interval.
+First, we'll create an endpoint to evaluate two-dimensional functions. This endpoint receives a Function2D as the body which is initialized with the function value and the interval.
 
-Let&#39;s see an example of the POST API body:
+Let's see an example of the POST API body:
 
 ```json
 {
-  &#34;function&#34;: &#34;3*x+sin(x)&#34;,
-  &#34;interval_x&#34;: {
-    &#34;a&#34;: &#34;-2&#34;,
-    &#34;b&#34;: &#34;5&#34;
+  "function": "3*x+sin(x)",
+  "interval_x": {
+    "a": "-2",
+    "b": "5"
   }
 }
 ```
@@ -527,18 +513,18 @@ Let&#39;s see an example of the POST API body:
 The `create_2d_function_mesh` function first calls the `create_mesh` function of the `function_2d` object, which is in charge of creating the mesh of values associated to the `function_2d.function` in the interval `[function_2d.interval_x.a, function_2d.interval_x.b]`. Finally it returns to the client a JSON that contains a boolean to indicate that the operation was successful, the information associated with the function and a successful response message.
 
 ```python
-@app.post(&#34;/function/2d&#34;)
+@app.post("/function/2d")
 async def create_2d_function_mesh(function_2d: Function2D):
     function_2d.create_mesh().
     return {
-        &#34;success&#34;: true,
-        &#34;data&#34;: function_2d,
-        &#34;message&#34;: &#34;successfully create 2D mesh&#34;.
+        "success": true,
+        "data": function_2d,
+        "message": "successfully create 2D mesh".
     }
 ```
 
 
-To verify that the endpoint is working correctly, let&#39;s perform an API test using *Postman*.
+To verify that the endpoint is working correctly, let's perform an API test using *Postman*.
 
 &lt;center&gt; 
     
@@ -549,13 +535,13 @@ To verify that the endpoint is working correctly, let&#39;s perform an API test 
 Finally we can add in a similar way a new endpoint to handle the function evaluation requests in two variables, for this we are going to create the `create_3d_function_mesh` function, which works in a similar way to `create_2d_function_mesh`, only that in this case evaluations are made to three-dimensional functions:
 
 ```python
-@app.post(&#34;/function/3d&#34;)
+@app.post("/function/3d")
 async def create_3d_mesh_function(function_3d: Function3D):
     function_3d.create_mesh().
     return {
-        &#34;success&#34;: true,
-        &#34;data&#34;: function_3d,
-        &#34;message&#34;: &#34;successfully create 3D mesh&#34;
+        "success": true,
+        "data": function_3d,
+        "message": "successfully create 3D mesh"
     }
 ```
 
@@ -576,7 +562,7 @@ In this blog post, we resolved the portability and accessibility limitations ass
 
 After following these steps, we should now have developed a server to evaluate mathematical functions in two- and three-dimensions.
 
-But we’re not done yet! Stay tuned for my next post where we’ll solve issues of display and interactivity limitations of the API server. We&#39;ll also look at how I built a web application in React using the PlotyJs visualization library. This web application is an interactive plotter called Grafar which allows users to plot two- and three-dimensionsional graphs. 
+But we’re not done yet! Stay tuned for my next post where we’ll solve issues of display and interactivity limitations of the API server. We'll also look at how I built a web application in React using the PlotyJs visualization library. This web application is an interactive plotter called Grafar which allows users to plot two- and three-dimensionsional graphs. 
 
 If you want to see the results of my work in Grafar, please go to:
 Github: https://github.com/juanArias8/GRAFAR  
@@ -592,27 +578,23 @@ Here are some screenshots of the final web interactive plotter:
 
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

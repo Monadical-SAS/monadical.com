@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="This blog post will serve as an introduction to logging in Python. I want to share what I’ve learned about logging in python by telling you about its central ideas, and demonstrating how I use logging with some simple examples.">
-    
-    
-    
-    <meta property="og:title" content="The Ins and Outs of Logging in Python, Part 1 - HedgeDoc">
-    
-    
-    <meta property="og:description" content="This blog post will serve as an introduction to logging in Python. I want to share what I’ve learned about logging in python by telling you about its central ideas, and demonstrating how I use logging with some simple examples.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>The Ins and Outs of Logging in Python, Part 1 - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="This blog post will serve as an introduction to logging in Python. I want to share what I’ve learned about logging in python by telling you about its central ideas, and demonstrating how I use logging with some simple examples." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>The Ins and Outs of Logging in Python, Part 1 - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&amp;s=96);" title="cesar"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/1320dfd720ce1260acc58ffef46a955e?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="cesar"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Jan 21 2022 18:51:34 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 25 2022 15:02:37 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">5967 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Fri Jan 21 2022 18:51:34 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Jan 25 2022 15:02:37 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">5996 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -87,10 +72,10 @@ First off, let me tell you why logging modules are worth learning about:
  4. **Structured measuring**:  Logging can be configured (the behavior, structure, and output channel of logs) according to execution context, either with configuration files or directly within the code. This not only creates a more organized system for displaying messages, but prepares your app to use a monitoring system or log catcher. 
  
     &lt;center&gt;
-        &lt;img src=&#34;https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b61b.png&#34;&gt;
+        &lt;img src="https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b61b.png"&gt;
         &lt;figcaption&gt; 
             &lt;small&gt; Taken from 
-                &lt;a href=&#34;https://www.datadoghq.com/product/log-management/&#34;&gt;
+                &lt;a href="https://www.datadoghq.com/product/log-management/"&gt;
                     https://www.datadoghq.com/product/log-management/
                 &lt;/a&gt;  
             &lt;/small&gt;
@@ -118,7 +103,7 @@ You can configure each of these components to suit your needs, making the logger
 The following figure illustrates what happens when a log is issued. Notice the roles played by the five main components. 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b61e.png&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b61e.png"&gt;
 &lt;/center&gt;
 &lt;br&gt;
 
@@ -150,9 +135,9 @@ To use logging, you first need to import the logging module, and begin displayin
 # code
 import logging
 
-logging.info(&#34; -&gt; Info message&#34;)
-logging.warning(&#34; -&gt; Warning message&#34;)
-logging.error(&#34; -&gt; Error message&#34;)
+logging.info(" -&gt; Info message")
+logging.warning(" -&gt; Warning message")
+logging.error(" -&gt; Error message")
 
 
 # output
@@ -183,7 +168,7 @@ print(logging.RootLogger.__bases__)
 
 # OUTPUT
 # &lt;RootLogger root (WARNING)&gt;
-# &lt;class &#39;logging.Logger&#39;&gt;
+# &lt;class 'logging.Logger'&gt;
 # (logging.Logger,)
 
 ```
@@ -192,7 +177,7 @@ If you review the output, you can see that the logging module instantiates a log
 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b620.png&#34; width=&#34;40%&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/5fb79fe51e47ca767ab94b620.png" width="40%"&gt;
 &lt;/center&gt;
 &lt;br/&gt;
 
@@ -208,7 +193,7 @@ logging.basicConfig()
 
 # The RootLogger is no longer used to display messages. 
 # The logger ‘mylogger’ is used instead.
-mylogger = logging.getLogger(&#39;my-logger-instance&#39;)
+mylogger = logging.getLogger('my-logger-instance')
 
 # The level changed to INFO
 mylogger.setLevel(logging.INFO)
@@ -217,11 +202,11 @@ mylogger.setLevel(logging.INFO)
 # Messages are displayed starting from the INFO level. 
 # Logs with DEBUG levels will be not displayed because 
 # they don’t comply with the level set for the logger.
-mylogger.debug(&#39;Debug message&#39;)
-mylogger.info(&#34;Info message&#34;)
-mylogger.warning(&#34;Warning message&#34;)
-mylogger.error(&#34;Error message&#34;)
-mylogger.critical(&#34;Critical message&#34;)
+mylogger.debug('Debug message')
+mylogger.info("Info message")
+mylogger.warning("Warning message")
+mylogger.error("Error message")
+mylogger.critical("Critical message")
 
 # To show info about logger
 print(mylogger)
@@ -269,26 +254,26 @@ import logging
 logging.basicConfig()
 
 # get logger instance
-api_log = logging.getLogger(&#39;api&#39;)
-database_log = logging.getLogger(&#39;database&#39;)
+api_log = logging.getLogger('api')
+database_log = logging.getLogger('database')
 
 # set level
 database_log.setLevel(logging.DEBUG)
 api_log.setLevel(logging.ERROR)
 
-api_log.debug(&#34; -&gt; Debug message&#34;)
-api_log.info(&#34; -&gt; Info message&#34;)
-api_log.warning(&#34; -&gt; Warning message&#34;)
-api_log.error(&#34; -&gt; Error message&#34;)
-api_log.critical(&#34; -&gt; Critical message&#34;)
+api_log.debug(" -&gt; Debug message")
+api_log.info(" -&gt; Info message")
+api_log.warning(" -&gt; Warning message")
+api_log.error(" -&gt; Error message")
+api_log.critical(" -&gt; Critical message")
 
-print(&#34;-&#34; * 30, flush=True)
+print("-" * 30, flush=True)
 
-database_log.debug(&#34; -&gt; Debug message&#34;)
-dattabase_log.info(&#34; -&gt; Info message&#34;)
-database_log.warning(&#34; -&gt; Warning message&#34;)
-database_log.error(&#34; -&gt; Error message&#34;)
-database_log.critical(&#34; -&gt; Critical message&#34;)
+database_log.debug(" -&gt; Debug message")
+dattabase_log.info(" -&gt; Info message")
+database_log.warning(" -&gt; Warning message")
+database_log.error(" -&gt; Error message")
+database_log.critical(" -&gt; Critical message")
 
 #  OUTPUT
 # ERROR:api: -&gt; Error message
@@ -325,17 +310,17 @@ import logging
 # the message and the module name where the logger was invoked
 logging.basicConfig(
     level = logging.DEBUG,
-    format = &#34;[ %(asctime)s ] - [%(name)s-%(lineno)d] - [%(levelname)s] %(message)s&#34;
+    format = "[ %(asctime)s ] - [%(name)s-%(lineno)d] - [%(levelname)s] %(message)s"
 )
 
-log = logging.getLogger(&#34;mainapp.module&#34;)
+log = logging.getLogger("mainapp.module")
 
-log.debug(&#34; Debug message&#34;)
-log.info(&#34; Info message&#34;)
-log.warning(&#34; Warning message&#34;)
-log.error(&#34; Error message&#34;)
-log.critical(&#34; Critical message&#34;)
-log.log(logging.INFO,&#34;General function to log&#34;)
+log.debug(" Debug message")
+log.info(" Info message")
+log.warning(" Warning message")
+log.error(" Error message")
+log.critical(" Critical message")
+log.log(logging.INFO,"General function to log")
 
 # OUTPUT
 # [ 2021-05-30 21:26:06,010 ] - [mainapp.module-12] - [DEBUG]  Debug message
@@ -375,15 +360,15 @@ log.setLevel(logging.INFO)
 
 # Set handlers
 log_handler = logging.StreamHandler()
-error_handler = logging.FileHandler(&#34;errors.log&#34;)
+error_handler = logging.FileHandler("errors.log")
 
 # Set level for every handlers
 log_handler.setLevel(logging.DEBUG)
 error_handler.setLevel(logging.ERROR)
 
 # Establish the desired string format
-log_format = logging.Formatter(&#39;[ %(asctime)s ][ %(levelname)s ] - %(message)s&#39;)
-error_format = logging.Formatter(&#39;[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s&#39;)
+log_format = logging.Formatter('[ %(asctime)s ][ %(levelname)s ] - %(message)s')
+error_format = logging.Formatter('[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s')
 
 # Set the format to each handler
 log_handler.setFormatter(log_format)
@@ -394,11 +379,11 @@ log.addHandler(log_handler)
 log.addHandler(error_handler)
 
 
-log.debug(&#34; Debug message&#34;)
-log.info(&#34; Info message&#34;)
-log.warning(&#34; Warning message&#34;)
-log.error(&#34; Error message&#34;)
-log.critical(&#34; Critical message&#34;)
+log.debug(" Debug message")
+log.info(" Info message")
+log.warning(" Warning message")
+log.error(" Error message")
+log.critical(" Critical message")
 
 # OUTPUT
 # [ 2021-05-30 23:15:04,800 ][ INFO ] -  Info message
@@ -407,7 +392,7 @@ log.critical(&#34; Critical message&#34;)
 # [ 2021-05-30 23:15:04,814 ][ CRITICAL ] -  Critical message
 
 
-# FILE&#39;S CONTENT - errors.log
+# FILE'S CONTENT - errors.log
 # [ 2021-05-30 23:15:04,810 ][ __main__-31 ][ ERROR ]  Error message
 # [ 2021-05-30 23:15:04,814 ][ __main__-32 ][ CRITICAL ]  Critical message
 ```
@@ -426,44 +411,44 @@ import logging
 import logging.config
 
 config = {
-    &#39;disable_existing_loggers&#39;: False,
-    &#39;version&#39;: 1,
-    &#39;formatters&#39;: {
-        &#39;console_logs_fmt&#39;: {
-            &#39;format&#39;: &#39;[ %(asctime)s ][ %(name)s ][ %(levelname)s ] - %(message)s&#39;
+    'disable_existing_loggers': False,
+    'version': 1,
+    'formatters': {
+        'console_logs_fmt': {
+            'format': '[ %(asctime)s ][ %(name)s ][ %(levelname)s ] - %(message)s'
         },
-        &#39;error_logs_fmt&#39;:{
-            &#39;format&#39;: &#39;[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s&#39;
+        'error_logs_fmt':{
+            'format': '[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s'
         }
 
     },
-    &#39;handlers&#39;:{
-        &#39;console&#39;:{
-            &#39;level&#39;: &#39;INFO&#39;,
-            &#39;formatter&#39;: &#39;console_logs_fmt&#39;,
-            &#39;class&#39;: &#39;logging.StreamHandler&#39;
+    'handlers':{
+        'console':{
+            'level': 'INFO',
+            'formatter': 'console_logs_fmt',
+            'class': 'logging.StreamHandler'
         },
-        &#39;errors&#39;:{
-            &#39;level&#39;: &#39;ERROR&#39;,
-            &#39;formatter&#39;: &#39;error_logs_fmt&#39;,
-            &#39;class&#39;: &#39;logging.FileHandler&#39;,
-            &#39;filename&#39;: &#39;./errors-3.log&#39;
+        'errors':{
+            'level': 'ERROR',
+            'formatter': 'error_logs_fmt',
+            'class': 'logging.FileHandler',
+            'filename': './errors-3.log'
         },
-        &#39;other&#39;:{
-            &#39;level&#39;:&#39;DEBUG&#39;,
-            &#39;formatter&#39;:&#39;console_logs_fmt&#39;,
-            &#39;class&#39;: &#39;logging.StreamHandler&#39;
+        'other':{
+            'level':'DEBUG',
+            'formatter':'console_logs_fmt',
+            'class': 'logging.StreamHandler'
         }
 
     },
-    &#39;loggers&#39;:{
-        &#39;&#39;:{
-            &#39;handlers&#39;: [&#39;errors&#39;],
-            &#39;level&#39;: &#39;INFO&#39;
+    'loggers':{
+        '':{
+            'handlers': ['errors'],
+            'level': 'INFO'
         },
-        &#39;other&#39;:{
-            &#39;handlers&#39;: [&#39;other&#39;],
-            &#39;level&#39;: &#39;DEBUG&#39;
+        'other':{
+            'handlers': ['other'],
+            'level': 'DEBUG'
         }
 
     }
@@ -472,18 +457,18 @@ config = {
 logging.config.dictConfig(config)
 logger = logging.getLogger(__name__)
 
-logger.debug(&#34; Debug message&#34;)
-logger.info(&#34; Info message&#34;)
-logger.warning(&#34; Warning message&#34;)
-logger.error(&#34; Error message&#34;)
-logger.critical(&#34; Critical message&#34;)
+logger.debug(" Debug message")
+logger.info(" Info message")
+logger.warning(" Warning message")
+logger.error(" Error message")
+logger.critical(" Critical message")
 
-other_logger = logging.getLogger(&#39;other&#39;)
-other_logger.debug(&#34; Debug message&#34;)
-other_logger.info(&#34; Info message&#34;)
-other_logger.warning(&#34; Warning message&#34;)
-other_logger.error(&#34; Error message&#34;)
-other_logger.critical(&#34; Critical message&#34;)
+other_logger = logging.getLogger('other')
+other_logger.debug(" Debug message")
+other_logger.info(" Info message")
+other_logger.warning(" Warning message")
+other_logger.error(" Error message")
+other_logger.critical(" Critical message")
 
 
 # OUTPUT
@@ -493,7 +478,7 @@ other_logger.critical(&#34; Critical message&#34;)
 # [ 2021-05-31 02:37:47,760 ][ other ][ ERROR ] -  Error message
 # [ 2021-05-31 02:37:47,764 ][ other ][ CRITICAL ] -  Critical message
 
-# FILE&#39;S  CONTENT
+# FILE'S  CONTENT
 # [ 2021-05-31 02:37:47,752 ][ __main__-55 ][ ERROR ]  Error message
 # [ 2021-05-31 02:37:47,752 ][ __main__-56 ][ CRITICAL ]  Critical message
 # [ 2021-05-31 02:37:47,760 ][ other-62 ][ ERROR ]  Error message
@@ -536,7 +521,7 @@ args=(sys.stdout,)
 class=FileHandler
 level=ERROR
 formatter=error_fmt
-args=(&#39;./errors-1.log&#39;,)
+args=('./errors-1.log',)
 
 [formatter_console_fmt]
 format=[ %(asctime)s ][ %(name)s ][ %(levelname)s ] - %(message)s
@@ -552,16 +537,16 @@ import logging
 import logging.config
 
 logging.config.fileConfig(
-    fname=&#39;./config.cfg&#39;,
+    fname='./config.cfg',
     disable_existing_loggers=False
 )
 
 logger = logging.getLogger(__name__)
-logger.debug(&#34; Debug message&#34;)
-logger.info(&#34; Info message&#34;)
-logger.warning(&#34; Warning message&#34;)
-logger.error(&#34; Error message&#34;)
-logger.critical(&#34; Critical message&#34;)
+logger.debug(" Debug message")
+logger.info(" Info message")
+logger.warning(" Warning message")
+logger.error(" Error message")
+logger.critical(" Critical message")
 
 
 # OUTPUT
@@ -570,7 +555,7 @@ logger.critical(&#34; Critical message&#34;)
 # [ 2021-05-31 12:17:53,287 ][ __main__ ][ ERROR ] -  Error message
 # [ 2021-05-31 12:17:53,290 ][ __main__ ][ CRITICAL ] -  Critical message
 
-# FILE&#39;S CONTENT
+# FILE'S CONTENT
 # [ 2021-05-31 12:17:53,287 ][ __main__-14 ][ ERROR ]  Error message
 # [ 2021-05-31 12:17:53,290 ][ __main__-15 ][ CRITICAL ]  Critical message
 ```
@@ -598,7 +583,7 @@ log.setLevel(logging.INFO)
 
 # Set handlers
 log_handler = logging.StreamHandler()
-error_handler = logging.FileHandler(&#34;errors-2.log&#34;)
+error_handler = logging.FileHandler("errors-2.log")
 
 # Set level for every handlers
 log_handler.setLevel(logging.DEBUG)
@@ -606,10 +591,10 @@ error_handler.setLevel(logging.ERROR)
 
 # Establish the desired string format
 log_format = logging.Formatter(
-      &#39;[ %(asctime)s ][ %(levelname)s ] - %(message)s&#39;
+      '[ %(asctime)s ][ %(levelname)s ] - %(message)s'
 )
 error_format = logging.Formatter(
-     &#39;[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s&#39;
+     '[ %(asctime)s ][ %(name)s-%(lineno)d ][ %(levelname)s ] %(message)s'
 )
 
 # Set the format to each handler
@@ -623,17 +608,17 @@ log_handler.addFilter(FilterOnScreen())
 log.addHandler(log_handler)
 log.addHandler(error_handler)
 
-log.debug(&#34; Debug message&#34;)
-log.info(&#34; Info message&#34;)
-log.warning(&#34; Warning message&#34;)
-log.error(&#34; Error message&#34;)
-log.critical(&#34; Critical message&#34;)
+log.debug(" Debug message")
+log.info(" Info message")
+log.warning(" Warning message")
+log.error(" Error message")
+log.critical(" Critical message")
 
 # OUTPUT
 # [ 2021-05-31 01:47:37,350 ][ INFO ] -  Info message
 # [ 2021-05-31 01:47:37,351 ][ WARNING ] -  Warning message
 
-# FILE&#39;S CONTENT
+# FILE'S CONTENT
 # [ 2021-05-31 01:47:37,351 ][ __main__-41 ][ ERROR ]  Error message
 # [ 2021-05-31 01:47:37,354 ][ __main__-42 ][ CRITICAL ]  Critical message
 ```
@@ -660,30 +645,26 @@ Logging offers a much more detailed follow-up of what is happening in your code,
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

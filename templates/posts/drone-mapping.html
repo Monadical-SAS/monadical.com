@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.">
-    
-    
-    
-    <meta property="og:title" content="How to Create Your Own Terrain Surface Model - HedgeDoc">
-    
-    
-    <meta property="og:description" content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>How to Create Your Own Terrain Surface Model - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="An introduction to drone mapping. How to create a terrain surface model using a mobile app, your computer or cloud service, and your own drone." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>How to Create Your Own Terrain Surface Model - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/bd996ca3d6f681cbd3a036c679873b56?default=identicon&amp;s=96);" title="jose.zdy"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/bd996ca3d6f681cbd3a036c679873b56?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jose.zdy"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Sep 17 2020 15:36:32 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 28 2022 17:24:10 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">4269 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Thu Sep 17 2020 15:36:32 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 28 2022 17:24:10 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">4301 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -77,7 +62,7 @@ I first started learning about drones four years ago, at the University of Antio
 With this post, I want to give you an idea of what drone mapping is and why it’s useful, and show how you can have a go at doing some yourself with your own drone. I’ve included the details of one of my flights and some of the results I’ve been able to achieve.
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_17503ddb2111439e8ed5c7ea5ad459d7.jpg&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;vector-image&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_17503ddb2111439e8ed5c7ea5ad459d7.jpg" style="width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="vector-image"&gt;
 &lt;/center&gt;
 &lt;br&gt;
 
@@ -108,7 +93,7 @@ For this task, the drone must be able to follow a path in the air, while taking 
 Before you take your drone out, you need to install an app that has drone mapping capabilities. There are also desktop applications for this, but most people find that a mobile app is more practical. Apps for drone mapping allow you to define your flying area and create a mission for your drone. 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_0f7bd139b906db07769cf5a10f5fb63b.jpeg&#34; style=&#34;width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;drone-apps&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_0f7bd139b906db07769cf5a10f5fb63b.jpeg" style="width: 70%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="drone-apps"&gt;
 &lt;/center&gt;
 &lt;br&gt;
 
@@ -128,10 +113,10 @@ Once you’ve chosen your app, you’ll need to open a map on it, locate the pla
 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_611968c5acbc34438abf2a9970959e19.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2);&#34; alt=&#34;overlap&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_611968c5acbc34438abf2a9970959e19.png" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2);" alt="overlap"&gt;
 &lt;/center&gt;
 
-*&lt;small style=&#34;float:right;margin-top:5px&#34;&gt;From https://support.dronedeploy.com/docs/making-successful-maps&lt;/small&gt;*
+*&lt;small style="float:right;margin-top:5px"&gt;From https://support.dronedeploy.com/docs/making-successful-maps&lt;/small&gt;*
 
 &lt;br&gt;
 
@@ -143,10 +128,10 @@ For my flight, I used DroneHarmony and planned the mission in the field, but you
 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_0260e8c71c8a1a0144755d24de544494.jpg&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;mission-paths&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_0260e8c71c8a1a0144755d24de544494.jpg" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="mission-paths"&gt;
 &lt;/center&gt;
 
-*&lt;small style=&#34;float:right;margin-top:5px&#34;&gt;DroneHarmony planned (yellow) and traveled (green) paths&lt;/small&gt;*
+*&lt;small style="float:right;margin-top:5px"&gt;DroneHarmony planned (yellow) and traveled (green) paths&lt;/small&gt;*
 
 &lt;br&gt;
 
@@ -178,16 +163,16 @@ Here are the resulting models of some of my recent attempts. The first two are f
 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_4ff81f6fcf1cd64faa97c0a7af8969a5.gif&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;hill-gif&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_4ff81f6fcf1cd64faa97c0a7af8969a5.gif" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="hill-gif"&gt;
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_26b9204cef7d9dcf5eb3f09b29524bc3.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2); margin:12px 0 16px 0&#34; alt=&#34;hill-still&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_26b9204cef7d9dcf5eb3f09b29524bc3.png" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2); margin:12px 0 16px 0" alt="hill-still"&gt;
 &lt;/center&gt;
 
 
 The model below is from part of a highway at the edge of a mountain. You can see that, while the highway has come out well, the trees and the terrain on the right were harder to model (that’s why I’ve picked an angle that shows off more of the highway!).
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_edfa96dc3c5fb1f52a0baf5c85f9befd.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;highway&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_edfa96dc3c5fb1f52a0baf5c85f9befd.png" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="highway"&gt;
 &lt;/center&gt;
 
 &lt;br&gt;
@@ -195,7 +180,7 @@ The model below is from part of a highway at the edge of a mountain. You can see
 The next model shows a roadside area that is under construction. For construction projects like this one, drone mapping can be used to measure distances, calculate soil volume, or simply track the progress of a build.
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_8411819b145003e9b8112c71ca2cb0b3.png&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;civil-construction&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_8411819b145003e9b8112c71ca2cb0b3.png" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="civil-construction"&gt;
 &lt;/center&gt;
 
 &lt;br&gt;
@@ -204,18 +189,18 @@ The next model shows a roadside area that is under construction. For constructio
 This last model was done for a friend who wanted to make an architectural sketch of a house. He used the contour lines extracted from this digital surface model (built with ODM).
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_a746d3f5cb5c134b9e862f5672b9a8f5.jpeg&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; alt=&#34;contour-lines&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_a746d3f5cb5c134b9e862f5672b9a8f5.jpeg" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" alt="contour-lines"&gt;
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/upload_9c2223ed6a9110a2584f1ba3e535db68.jpeg&#34; style=&#34;width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2); margin:12px 0 5px 0&#34; alt=&#34;house-sketch&#34;&gt;
+&lt;img src="https://docs.monadical.com/uploads/upload_9c2223ed6a9110a2584f1ba3e535db68.jpeg" style="width: 100%; border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2); margin:12px 0 5px 0" alt="house-sketch"&gt;
 
-*&lt;small style=&#34;float:right;&#34;&gt;From Constructo: Arquitectura, Diseño, Construcción&lt;/small&gt;*
+*&lt;small style="float:right;"&gt;From Constructo: Arquitectura, Diseño, Construcción&lt;/small&gt;*
 &lt;/center&gt;
 
 
 ## Conclusion
 Drone mapping is no longer a new and exclusive technology. Even though the selection of drones available is still pretty limited (mostly to DJI), there are some great options when it comes to mobile apps and photogrammetry software.
 
-So grab a drone, a mission app, some photogrammetry software, and you&#39;re all set. Have a good flight and watch out for those trees! :sunglasses: 
+So grab a drone, a mission app, some photogrammetry software, and you're all set. Have a good flight and watch out for those trees! :sunglasses: 
 
 
 ## Tips
@@ -225,24 +210,20 @@ So grab a drone, a mission app, some photogrammetry software, and you&#39;re all
 * Repeat the path in an orthogonal direction to improve model accuracy quality.
 * Avoid any moving objects in the area -- don’t map a construction site with moving vehicles!
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

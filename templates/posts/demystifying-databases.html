@@ -1,89 +1,75 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="# Demystifying Databases: Cracking the Code of Efficient Data Storage  *Written by Jose Benitez. Ori">
-    
-    
-    
-    <meta property="og:title" content="Demystifying Databases: Cracking the Code of Efficient Data Storage - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Demystifying Databases: Cracking the Code of Efficient Data Storage - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="# Demystifying Databases: Cracking the Code of Efficient Data Storage  *Written by Jose Benitez. Ori" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Demystifying Databases: Cracking the Code of Efficient Data Storage - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&amp;s=96);" title="hanna"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/f94a3fb3f095243cee71ab1cb801a836?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="hanna"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri May 26 2023 19:34:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon May 29 2023 21:49:02 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1080 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" ># Demystifying Databases: Cracking the Code of Efficient Data Storage
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Fri May 26 2023 19:34:59 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon May 29 2023 21:49:02 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1109 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc"># Demystifying Databases: Cracking the Code of Efficient Data Storage
 
 *Written by Jose Benitez. Originally published 2023-05-30 on the [Monadical blog](https://monadical.com/blog.html).*
 
-Picture this: You&#39;re in the early stages of a project, brimming with excitement as you bring your innovative web application to life. The possibilities seem endless, and you&#39;re ready to conquer the digital realm. But hold on! There&#39;s one critical aspect you can&#39;t afford to overlook: [choosing the right database](https://www.youtube.com/watch?v=W2Z7fbCLSTw).
+Picture this: You're in the early stages of a project, brimming with excitement as you bring your innovative web application to life. The possibilities seem endless, and you're ready to conquer the digital realm. But hold on! There's one critical aspect you can't afford to overlook: [choosing the right database](https://www.youtube.com/watch?v=W2Z7fbCLSTw).
 
-Selecting the perfect database might sound like a mundane task, but let me assure you, it&#39;s anything but. As an experienced developer, I&#39;ve witnessed the consequences of hasty decisions and ill-fitting databases. The repercussions can range from frustrating performance issues to the nightmare of data migration, [haunting you like an unrelenting spectre](https://icedq.com/data-migration/the-data-migration-process-and-the-potential-risks).
+Selecting the perfect database might sound like a mundane task, but let me assure you, it's anything but. As an experienced developer, I've witnessed the consequences of hasty decisions and ill-fitting databases. The repercussions can range from frustrating performance issues to the nightmare of data migration, [haunting you like an unrelenting spectre](https://icedq.com/data-migration/the-data-migration-process-and-the-potential-risks).
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/65d39a3b-60f4-4198-a004-ea347a3c8095.jpg&#34; width=&#34;400&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/65d39a3b-60f4-4198-a004-ea347a3c8095.jpg" width="400" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 *Check out more info on [schema migration](https://en.wikipedia.org/wiki/Schema_migration) and [database migration](https://www.simform.com/blog/database-migration/).*
 
-But fear not! In this article, I&#39;m here to guide you through the database labyrinth, sharing my firsthand experience and insights to help you make informed decisions. We&#39;ll explore various database types, their inner workings, and the applications they integrate with. I&#39;ll also reveal the challenges I&#39;ve faced and the workarounds I&#39;ve discovered along the way. From the ever-reliable relational databases to cutting-edge blockchain technology, we&#39;ll cover it all. So, fasten your seatbelts, as we embark on a journey to demystify the world of databases and empower you to make the right choices for your projects.
+But fear not! In this article, I'm here to guide you through the database labyrinth, sharing my firsthand experience and insights to help you make informed decisions. We'll explore various database types, their inner workings, and the applications they integrate with. I'll also reveal the challenges I've faced and the workarounds I've discovered along the way. From the ever-reliable relational databases to cutting-edge blockchain technology, we'll cover it all. So, fasten your seatbelts, as we embark on a journey to demystify the world of databases and empower you to make the right choices for your projects.
 
 Let’s get started! 
 
 ## Relational Databases
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/ac3ded75-b143-48a5-bd83-acfec42addf1.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/ac3ded75-b143-48a5-bd83-acfec42addf1.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 &lt;br/&gt;
 
-Let&#39;s kick off our database exploration with the tried and true [**relational databases**](https://aws.amazon.com/relational-database/). These databases have stood the test of time, making them one of the [first attempts](https://www.thinkautomation.com/histories/the-history-of-databases/) to structure and store data on computers. In fact, they continue to reign supreme as the [most widely used technique](https://www.c-sharpcorner.com/article/what-is-the-most-popular-database-in-the-world/) to store data in today&#39;s digital landscape.
+Let's kick off our database exploration with the tried and true [**relational databases**](https://aws.amazon.com/relational-database/). These databases have stood the test of time, making them one of the [first attempts](https://www.thinkautomation.com/histories/the-history-of-databases/) to structure and store data on computers. In fact, they continue to reign supreme as the [most widely used technique](https://www.c-sharpcorner.com/article/what-is-the-most-popular-database-in-the-world/) to store data in today's digital landscape.
 
 Relational databases are the backbone of structured data management, offering a robust and efficient way to store and retrieve data. They utilize tables, schemas, and relationships to establish logical connections between data entities, ensuring data integrity and enabling powerful querying capabilities for advanced web development projects.
 
@@ -92,23 +78,23 @@ As illustrated in the image below, relational databases establish predefined rel
 ![](https://docs.monadical.com/uploads/a80accb1-2e2c-444c-b6c3-e1e3543c20c0.png)
 *Taken from [XBSoftware](https://xbsoftware.com/blog/main-types-of-database-management-systems/)*
 
-Relational databases store data in separate tables, with the programmer responsible for defining these tables and distributing a single object across multiple entities. While almost every type of application can benefit from a relational database, it&#39;s important to acknowledge the [maintenance, scalability, and complexity limitations](https://databasetown.com/relational-database-benefits-and-limitations/) that come with this approach.
+Relational databases store data in separate tables, with the programmer responsible for defining these tables and distributing a single object across multiple entities. While almost every type of application can benefit from a relational database, it's important to acknowledge the [maintenance, scalability, and complexity limitations](https://databasetown.com/relational-database-benefits-and-limitations/) that come with this approach.
 
-In my experience, I&#39;ve employed relational databases in a range of applications, including customer relationship management software like Salesforce, an [online poker platform](https://oddslingers.com/), a dynamic real estate platform, and even a cutting-edge medical data synchronization app. 
+In my experience, I've employed relational databases in a range of applications, including customer relationship management software like Salesforce, an [online poker platform](https://oddslingers.com/), a dynamic real estate platform, and even a cutting-edge medical data synchronization app. 
 
 In each of these cases, my primary concern revolved around query optimization. While the relational database performed admirably overall, sometimes there remained complex computations which necessitated [complex queries](https://www.sqlshack.com/learn-sql-how-to-write-a-complex-select-query/); these queries, in turn, had the potential to slow down an application’s performance. While the impact on performance isn’t an inherent characteristic of relational databases, a developer could nonetheless encounter the problem on occasion and as a result should be aware of workarounds. 
 
 Using the example of the online poker game application, let me illustrate this challenge and how I came up with a solution. On the leaderboard page, I encountered the task of querying multiple tables to calculate the [hands](https://en.wikipedia.org/wiki/List_of_poker_hands) and games played by each player, ultimately ranking them based on their weekly and seasonal winnings. This process, although essential, proved to be a bottleneck, causing significant delays as the database engine scoured through the data, organized the information, and returned the results to the web page. Additionally, the database was queried on every page load—an unfavourable situation for a web page that demands lightning-fast load times in milliseconds.
 
-To overcome this hurdle, I devised a solution: since the leaderboard data changed weekly, there was no need to query the database and compute the information on every page load. Instead, it made sense to implement a programmed task and store the information in an intermediary memory called a [cache](https://aws.amazon.com/caching/). As a result, anyone could request the leaderboard page view and access the cached data without unnecessarily taxing the database. Utilizing a caching mechanism significantly improved the application&#39;s performance and ensured a smooth user experience.
+To overcome this hurdle, I devised a solution: since the leaderboard data changed weekly, there was no need to query the database and compute the information on every page load. Instead, it made sense to implement a programmed task and store the information in an intermediary memory called a [cache](https://aws.amazon.com/caching/). As a result, anyone could request the leaderboard page view and access the cached data without unnecessarily taxing the database. Utilizing a caching mechanism significantly improved the application's performance and ensured a smooth user experience.
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/62333c73-9369-4984-9d7a-ba7ef16ec918.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/62333c73-9369-4984-9d7a-ba7ef16ec918.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
-*If you&#39;re interested in exploring the code behind this leaderboard optimization, you&#39;ll find the complete open-source implementation in the [leaderboard file](https://github.com/Monadical-SAS/oddslingers.poker/blob/main/core/ui/views/leaderboard.py).*
+*If you're interested in exploring the code behind this leaderboard optimization, you'll find the complete open-source implementation in the [leaderboard file](https://github.com/Monadical-SAS/oddslingers.poker/blob/main/core/ui/views/leaderboard.py).*
 
-Relational databases have undoubtedly shaped the foundations of modern data storage, but as we delve deeper into other database types, you&#39;ll discover alternative solutions that tackle the occasional limitations they pose. 
+Relational databases have undoubtedly shaped the foundations of modern data storage, but as we delve deeper into other database types, you'll discover alternative solutions that tackle the occasional limitations they pose. 
 
 ## Document Databases
 
@@ -119,19 +105,19 @@ Traditional relational databases (left) rely on multiple tables to house separat
 ![](https://docs.monadical.com/uploads/c4a61112-fa06-4d7e-aa10-604b30350c65.png)
 *Taken from [relational databases vs. NoSQL document databases](https://lennilobel.wordpress.com/2015/06/01/relational-databases-vs-nosql-document-databases/). This is a comparison between data stored in tables and data stored in documents.*
 
-Over the years, I’ve used document databases in a variety of applications. From building a dynamic music streaming platform to developing an application rooted in the principles of the [Lean Startup methodology](https://theleanstartup.com/principles) and even constructing a robust restaurant point-of-sale system, document databases have been instrumental in handling unstructured data in both my personal and professional projects. Furthermore, I&#39;ve utilized them as auxiliary databases for innovative functionalities like [staking](https://twitter.com/cyber_pharmacy/status/1547040501206945793) and [swapping](https://twitter.com/cyber_pharmacy/status/1487655698506784771) on [NFT platforms](https://www.blockchain-council.org/nft/nft-marketplace/).
+Over the years, I’ve used document databases in a variety of applications. From building a dynamic music streaming platform to developing an application rooted in the principles of the [Lean Startup methodology](https://theleanstartup.com/principles) and even constructing a robust restaurant point-of-sale system, document databases have been instrumental in handling unstructured data in both my personal and professional projects. Furthermore, I've utilized them as auxiliary databases for innovative functionalities like [staking](https://twitter.com/cyber_pharmacy/status/1547040501206945793) and [swapping](https://twitter.com/cyber_pharmacy/status/1487655698506784771) on [NFT platforms](https://www.blockchain-council.org/nft/nft-marketplace/).
 
 However, their schema-less nature introduces its own set of challenges; for example, document databases sometimes [struggle](https://www.geeksforgeeks.org/document-databases-in-nosql/) with querying vast amounts of data, organizing complex sets of information, and performing comprehensive consistency checks.
 
-Let&#39;s zoom in on my experience with the [Lean Startup methodology](https://www.universitylabpartners.org/blog/what-is-lean-startup-methodology) application and the obstacles I encountered, along with my solution. This application relies heavily on forms, which could have been implemented using traditional relational databases. But since forms vary and are not well-defined, I found that document databases were the superior choice in this case, as each time a user fills out a new form, a new document is created within the database. The image below provides a glimpse into a segment of the Lean Startup methodology&#39;s content stored within a document:
+Let's zoom in on my experience with the [Lean Startup methodology](https://www.universitylabpartners.org/blog/what-is-lean-startup-methodology) application and the obstacles I encountered, along with my solution. This application relies heavily on forms, which could have been implemented using traditional relational databases. But since forms vary and are not well-defined, I found that document databases were the superior choice in this case, as each time a user fills out a new form, a new document is created within the database. The image below provides a glimpse into a segment of the Lean Startup methodology's content stored within a document:
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/e54ae806-969d-4558-ba57-2ffe89a9d49a.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/e54ae806-969d-4558-ba57-2ffe89a9d49a.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 *Note that in the document database, a collection comprises a set of documents.*
 
-Should any field require an update, the database can conveniently populate the corresponding form with the document&#39;s content. Accessing specific document content is a breeze using designated paths like `/mainForms/TDNB3hGG152zmU6I1w2M`. 
+Should any field require an update, the database can conveniently populate the corresponding form with the document's content. Accessing specific document content is a breeze using designated paths like `/mainForms/TDNB3hGG152zmU6I1w2M`. 
 
 However, filtering documents poses a performance challenge, as the database engine must query each document that matches the specified criteria. Matters worsened when I searched across different collections, which amplified the computational burden. To mitigate these limitations, I took a crucial design process that involved organizing the information effectively into collections and documents, which ensured optimal resource utilization.
 
@@ -147,17 +133,17 @@ However, they diverge from [conventional databases](https://www.influxdata.com/b
 To gain a visual understanding of time-series data, take a look at the snapshot below:
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/b4f8e5d8-04f2-451b-a22e-8ee90855af51.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/b4f8e5d8-04f2-451b-a22e-8ee90855af51.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 *Courtesy of Grafana’s monitoring stack for time-series databases.*
 
-I&#39;ve had the opportunity to leverage time-series databases in a unique application: monitoring my greenhouse variables. The first step involved setting up an array of sensors, measuring crucial factors such as pH, electrical conductivity, water level, and pump activation. Next, I connected these sensors to a microcontroller equipped with internet connectivity. Leveraging the [database&#39;s API](https://docs.influxdata.com/influxdb/v2.4/api-guide/api_intro/), I then pushed the sensor data into the database, meticulously tagging and organizing it within a designated bucket.
+I've had the opportunity to leverage time-series databases in a unique application: monitoring my greenhouse variables. The first step involved setting up an array of sensors, measuring crucial factors such as pH, electrical conductivity, water level, and pump activation. Next, I connected these sensors to a microcontroller equipped with internet connectivity. Leveraging the [database's API](https://docs.influxdata.com/influxdb/v2.4/api-guide/api_intro/), I then pushed the sensor data into the database, meticulously tagging and organizing it within a designated bucket.
 
 To extract valuable insights from this wealth of data, I utilized [Flux](https://docs.influxdata.com/flux/v0.x/get-started/syntax-basics/), a query language tailored for time-series data manipulation. Flux processed the data before presenting it through a user-friendly interface, enabling me to assemble customized monitoring views with ease. Allow me to share a glimpse of my greenhouse pH control interface, showcasing four distinct signals: the desired pH, the current pH, and the yellow and green points representing dosages of acid or alkaline solutions employed to adjust the pH level of the water tank. 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/c5c08a59-d7de-481b-b087-b62794ccb9a0.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/c5c08a59-d7de-481b-b087-b62794ccb9a0.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 &lt;br/&gt;
@@ -169,7 +155,7 @@ While this view represents a rudimentary example, the flexibility of time-series
 [**Graph databases**](https://neo4j.com/developer/graph-database/) store data as interconnected nodes and relationships, providing advanced features for complex data querying and exploration. By utilizing nodes, edges, and properties, graph databases create a network of connections that can be easily traversed. In this realm, relationships are highly valued and persistently stored in the database, allowing for speedy retrieval of intricate data connections.
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/abe2cb80-3cd9-4d29-b459-745061e02b13.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/abe2cb80-3cd9-4d29-b459-745061e02b13.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 *While relational databases handle data relationships, graph databases excel at linking massive and complex entities.*
@@ -178,10 +164,10 @@ One intriguing project where I used graph databases was with [Currents](https://
 
 However, as the relationships within this musical ecosystem grew increasingly intricate, the computation of royalties spiralled into a daunting task, so I turned to graph databases. By strategically storing and organizing the necessary information within the graph database, I was able to transform royalty computation and tracking into a remarkably manageable endeavour. The graph database deftly handled the efficient management of the complex web of relationships.
 
-To provide you with a visual glimpse into this musical graph database, notice the image below. Here, graph databases map artists, channels, and fans as ‘entities’ and subscriptions and beneficiaries as *&#39;relationships’*: 
+To provide you with a visual glimpse into this musical graph database, notice the image below. Here, graph databases map artists, channels, and fans as ‘entities’ and subscriptions and beneficiaries as *'relationships’*: 
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/e72b3543-1e92-4d5a-a285-34eb76ab7948.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/e72b3543-1e92-4d5a-a285-34eb76ab7948.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 *A graph database drawing of a music streaming platform project. The red dots represent payment methods, green are users, and pink are artist channels.* 
@@ -211,7 +197,7 @@ Those two kinds of mapping look like this:
 
 In both cases, messages can be mapped from any producer to any consumer depending on the application’s needs. Messages can also contain information about their target consumer.
 
-Let&#39;s look at a situation in which I used queues with the key-value approach to enhance the execution of a set of tasks. I had set out to develop a program that would collect data from an array of sensors gracefully adorning a vehicle. The task at hand involved transmitting these readings to a remote server, thus paving the way for a wealth of insights. However, hurdles awaited me. The sensors, with their intrinsic nature, operated at their own pace, introducing delays in delivering the readings. The server, too, exhibited a sluggish response time, hindering the program&#39;s execution. To add to the complexity, the execution time of the program&#39;s tasks varied significantly, further worsening the program&#39;s clumsiness and roughness.
+Let's look at a situation in which I used queues with the key-value approach to enhance the execution of a set of tasks. I had set out to develop a program that would collect data from an array of sensors gracefully adorning a vehicle. The task at hand involved transmitting these readings to a remote server, thus paving the way for a wealth of insights. However, hurdles awaited me. The sensors, with their intrinsic nature, operated at their own pace, introducing delays in delivering the readings. The server, too, exhibited a sluggish response time, hindering the program's execution. To add to the complexity, the execution time of the program's tasks varied significantly, further worsening the program's clumsiness and roughness.
 
 This clumsy awkwardness meant that I had to find a workaround. I realized that in this particular application, the readings from the sensors could play the role of producers, while pushing the readings to a server could act as the consumer program. With both programs working asynchronously, readings and pushes worked smoothly by not interfering with each other’s executions. However, the main challenge lay in facilitating seamless data sharing between the two programs. In this case, queues emerged as the ultimate saviour, providing a conduit to store and retrieve the readings. With this newfound solution, I divided the program into discrete tasks, relying on the key-value database used as a queue to foster data exchange between these tasks. 
 
@@ -219,20 +205,20 @@ This clumsy awkwardness meant that I had to find a workaround. I realized that i
 
 [**Blockchains**](https://aws.amazon.com/what-is/blockchain/) are the heralds of a new era for databases. These distributed, cryptographically secured systems hold the key to revolutionizing information storage, offering a wealth of intriguing possibilities. With their decentralized nature, blockchains not only [safeguard user privacy](https://en.wikipedia.org/wiki/Privacy_and_blockchain) by [protecting personal information](https://www.bitstamp.net/learn/security/how-private-is-blockchain/), but also introduce a [new way of owning data](https://lorisleiva.com/owning-digital-assets-in-solana/a-new-way-of-owning-data), thereby transforming the way we perceive and interact with digital assets.
 
-At their core, blockchains are decentralized digital ledgers that ensure secure and transparent record-keeping without relying on intermediaries. They use clever cryptographic techniques to create a chain of blocks, making transactions or information tamper-resistant and trustworthy. Transactional authenticity is achieved through the use of [digitally signed transactions](https://en.wikipedia.org/wiki/Digital_signature), with fees playing a pivotal role in [supporting the network&#39;s economy](https://docs.solana.com/transaction_fees).
+At their core, blockchains are decentralized digital ledgers that ensure secure and transparent record-keeping without relying on intermediaries. They use clever cryptographic techniques to create a chain of blocks, making transactions or information tamper-resistant and trustworthy. Transactional authenticity is achieved through the use of [digitally signed transactions](https://en.wikipedia.org/wiki/Digital_signature), with fees playing a pivotal role in [supporting the network's economy](https://docs.solana.com/transaction_fees).
 
 ![](https://docs.monadical.com/uploads/4f1cdeba-8f12-476f-a293-3e7b7d9b59ec.png)
 *Taken from [Geeks for Geeks](https://www.geeksforgeeks.org/how-does-the-blockchain-work/)*
 
 In the modern landscape, blockchains have transcended their humble origins, evolving into dynamic platforms that are capable of [executing programs](https://solanacookbook.com/core-concepts/programs.html#deploying-programs) with [increasing sophistication and power](https://medium.com/coinmonks/the-blockchain-running-applications-80ec0d9c3eb0). This newfound versatility has fueled their adoption across diverse domains, ranging from financial applications to goods traceability, digital identity management, gaming, voting systems, digital certificates, healthcare, [and beyond](https://www.simplilearn.com/tutorials/blockchain-tutorial/why-is-blockchain-important).
 
-One unique facet of blockchains is their association with [Non-Fungible Tokens (NFTs)](https://en.wikipedia.org/wiki/Non-fungible_token), which have garnered considerable attention and sparked somewhat of a renaissance in the digital art realm. Within the blockchain ecosystem, a record is referred to as an &#34;account&#34;, capable of housing data or acting as an executable program. In the context of NFTs, accounts serve as repositories for unique tokens, each representing a distinctive digital asset.
+One unique facet of blockchains is their association with [Non-Fungible Tokens (NFTs)](https://en.wikipedia.org/wiki/Non-fungible_token), which have garnered considerable attention and sparked somewhat of a renaissance in the digital art realm. Within the blockchain ecosystem, a record is referred to as an "account", capable of housing data or acting as an executable program. In the context of NFTs, accounts serve as repositories for unique tokens, each representing a distinctive digital asset.
 
 Personally, I had the opportunity to immerse myself in the world of NFTs and engage with their vibrant communities. The goal of the platform I worked on was to burn NFTs from one collection to produce another NFT from a new collection.
 
-The journey began with the creation of a web interface, allowing users to initiate the burning process by submitting a transaction to the blockchain. To ensure a smooth experience, I developed a program that diligently tracked the transaction&#39;s status. Upon successful completion, the program orchestrated the transfer transaction, enabling users to obtain their new NFTs.
+The journey began with the creation of a web interface, allowing users to initiate the burning process by submitting a transaction to the blockchain. To ensure a smooth experience, I developed a program that diligently tracked the transaction's status. Upon successful completion, the program orchestrated the transfer transaction, enabling users to obtain their new NFTs.
 
-Yet, as with any venture, challenges did emerge. The burn transaction, susceptible to network instability, occasionally faltered or timed out, disrupting the delicate flow of operations. Moreover, transaction confirmations suffered from unpredictable delays, which introduced inconsistencies and jeopardized the program&#39;s ability to track the burned NFTs. This had the potential of leaving users without their new NFTs, an unacceptable outcome.
+Yet, as with any venture, challenges did emerge. The burn transaction, susceptible to network instability, occasionally faltered or timed out, disrupting the delicate flow of operations. Moreover, transaction confirmations suffered from unpredictable delays, which introduced inconsistencies and jeopardized the program's ability to track the burned NFTs. This had the potential of leaving users without their new NFTs, an unacceptable outcome.
 
 The key to solving this issue lay in abandoning the reliance on a separate program, instead consolidating the entire exchange process into a single transaction. Initially, the complexity of requiring two signatures, one for burning and another for transferring the NFT, had led me to opt for separate transactions. However, through a process of trial and error, I discovered that merging the two steps into a single serialized transaction, accompanied by the appropriate signatures, aligned smoothly with the inherent nature of blockchain transactions. This newfound approach ensured the integrity and continuity of the exchange process.
 
@@ -247,7 +233,7 @@ Lastly, don’t overlook the fundamental concepts of [atomicity, consistency, is
 I hope that the insights and solutions shared here will serve as valuable tools as you embark on your own database journey. Experimentation and exploration are the keys to unlocking the full potential of these powerful tools. Allow the experiences and lessons learned to shape your path, enabling you to build efficient and robust systems that unleash the true power of data. Finally, embrace curiosity, adaptability, and continuous learning as you navigate the ever-changing landscape. By doing so, you will be poised to conquer new challenges, innovate with confidence, and harness the transformative potential of data in the pursuit of progress.
 
 &lt;center&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/f946b338-3167-46d0-99ff-7ef717b40190.png&#34; style=&#34;border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)&#34; /&gt;
+&lt;img src="https://docs.monadical.com/uploads/f946b338-3167-46d0-99ff-7ef717b40190.png" style="border-radius: 8px; box-shadow: 6px 6px 6px rgba(0,0,0,0.2)" /&gt;
 &lt;/center&gt;
 
 &lt;br/&gt;
@@ -259,24 +245,20 @@ Some database engines for each paradigm, in no particular order:
 **Graphs:** [Neo4j](https://neo4j.com/), [ArangoDB](https://www.arangodb.com/), [Memgraph](https://memgraph.com/), [ApacheAGE](https://age.apache.org/)
 **Key-Value:** [Redis](https://redis.io/), [DynamoDB](https://aws.amazon.com/dynamodb/), [RabbitMQ](https://www.rabbitmq.com/)
 **Blockchain:** [Ethereum](https://ethereum.org/en/), [Solana](https://solana.com/)</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

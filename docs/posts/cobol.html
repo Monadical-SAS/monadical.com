@@ -181,10 +181,10 @@
 
 
 
-<meta content="HedgeDoc logo" property="og:image:alt"/>
-<meta content="image/png" property="og:image:type"/>
+
+
 <base href=""/>
-<title>Learning COBOL: A Journey for the Modern Programmer - HedgeDoc</title>
+<title>Learning COBOL: A Journey for the Modern Programmer</title>
 <link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -208,7 +208,7 @@
                  <span class="text-uppercase ui-status-lastchange"></span>
 <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 01 2021 18:11:48 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jun 06 2025 22:39:33 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">38691 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">38701 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -317,7 +317,7 @@ sudo yum install open-cobol
 Now create a new file:
 
 `helloworld.cbl`
-```bash=
+```bash
        IDENTIFICATION DIVISION. 
        PROGRAM-ID. HELLO.
        PROCEDURE DIVISION.
@@ -422,7 +422,7 @@ A better implementation will require careful use of the Decimal package in Pytho
 
 Marianne's implementations are as follows:
 
-```python=
+```python
 from decimal import Decimal
 def rec(y, z):
  return 108 - ((815-1500/z)/y)
@@ -486,7 +486,7 @@ So how is this different in COBOL?
 COBOL's implementation will also break, but it allows us to have control over the decimal places, since a fixed point is built in (I used 35 places here). This was also executed without an import. For a deeper discussion of this point, I recommend [Marianne Bellotti's article](https://medium.com/the-technical-archaeologist/is-cobol-holding-you-hostage-with-math-5498c0eb428b).
 
 `muller.cbl`
-```bash=
+```bash
 IDENTIFICATION DIVISION.
 PROGRAM-ID.  muller.
 AUTHOR.  Marianne Bellotti.

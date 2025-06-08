@@ -182,10 +182,10 @@
 
 
 
-<meta content="HedgeDoc logo" property="og:image:alt"/>
-<meta content="image/png" property="og:image:type"/>
+
+
 <base href=""/>
-<title>The Essential Guide to Ray.io’s Anatomy - HedgeDoc</title>
+<title>The Essential Guide to Ray.io’s Anatomy</title>
 <link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -209,7 +209,7 @@
                  <span class="text-uppercase ui-status-lastchange"></span>
 <span class="ui-lastchange text-uppercase" data-createtime="Wed Mar 06 2024 20:28:13 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Apr 30 2024 18:20:36 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">1285 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">1291 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -454,7 +454,7 @@ Docker creates and runs isolated containers containing everything needed to run 
 To start with Docker for your Ray cluster, you’ll need a Docker image containing all the required dependencies for Ray. The example below goes through what setting up a solid Ray Docker image entails.
 
 
-```dockerfile=
+```dockerfile
 # ray-core/Dockerfile
 FROM rayproject/ray:latest-gpu
 
@@ -511,7 +511,7 @@ The critical part here is the flag `--num-gpus=5`, which tells Ray that this nod
 
 Finally, our `docker-compose.yml` should look like this: 
 
-```yaml=
+```yaml
 # ray-core/docker-compose.yml
 version: "3.3"
 services:

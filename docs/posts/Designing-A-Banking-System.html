@@ -181,10 +181,10 @@
 
 
 
-<meta content="HedgeDoc logo" property="og:image:alt"/>
-<meta content="image/png" property="og:image:type"/>
+
+
 <base href=""/>
-<title>Architecting a Banking Service for  Real-Time Gaming at OddSlingers - HedgeDoc</title>
+<title>Architecting a Banking Service for  Real-Time Gaming at OddSlingers</title>
 <link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -208,7 +208,7 @@
                  <span class="text-uppercase ui-status-lastchange"></span>
 <span class="ui-lastchange text-uppercase" data-createtime="Thu Apr 12 2018 07:14:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jul 11 2024 23:31:12 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">5749 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">5751 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -416,7 +416,7 @@ A SQL transaction is basically a way of saying "perform all these operations at 
 Atomic transaction alone aren't magic though, we still need to avoid [TOCTTOU](https://en.wikipedia.org/wiki/Time_of_check_to_time_of_use) bugs, which means that the `condition` and `action` actually need to be a single statement to avoid data changing between the read and the write.  For example, to subtract 50 chips from a user's balance, we might write:
 
 :::danger
-```python=
+```python
 user = User.objects.get(id=241)
 if user.balance == 100:
     user.balance = 50

@@ -181,10 +181,10 @@
 
 
 
-<meta content="HedgeDoc logo" property="og:image:alt"/>
-<meta content="image/png" property="og:image:type"/>
+
+
 <base href=""/>
-<title>Implementing C++ Virtual Functions in Cython - HedgeDoc</title>
+<title>Implementing C++ Virtual Functions in Cython</title>
 <link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -208,7 +208,7 @@
                  <span class="text-uppercase ui-status-lastchange"></span>
 <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 01 2021 20:09:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Feb 19 2021 16:10:30 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">7146 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">7150 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -249,13 +249,13 @@ After considering [different binding alternatives](https://realpython.com/python
 For each scraped piece of content (bytes)--i.e., web pages, images, videos, js, other resources)--we needed to construct an article and call the `add_article` [function](https://github.com/openzim/libzim/blob/7716d8545bf26f7c3cc381affdcf8d2ca63e1768/include/zim/writer/creator.h#L48) on the `zim::writer::Creator` [class](https://github.com/openzim/libzim/blob/master/include/zim/writer/creator.h) within the library. This function has the following prototype:
 
 
-```cpp=
+```cpp
 void addArticle(std::shared_ptr&lt;Article&gt; article);
 ```
 
 However, this is how the class `zim::writer::Article` of the `article` parameter is [defined](https://github.com/openzim/libzim/blob/master/include/zim/writer/article.h) 
 
-```cpp=
+```cpp
 class Article
     {
       public:
@@ -290,7 +290,7 @@ Let's see how that works.
 To start with, let's create a minimal `setup.py` file for our Cython wrapper.
 
 `setup.py`
-```python=
+```python
 import os
 from distutils.core import setup
 from distutils.extension import Extension
@@ -323,7 +323,7 @@ setup(
 To implement our virtual class, let's define a `zim::writer::Article` wrapper named `ArticleWrapper` that will implement the required functions:
 
 `libzim/wrappers.cpp`
-```cpp=
+```cpp
 
 #include &lt;string&gt;
 #include &lt;iostream&gt;
@@ -393,7 +393,7 @@ public:
 
 This simplified implementation defines functions over its data members as follows:
 
-```cpp=
+```cpp
 virtual std::string getTitle() const 
 {
     return title;
@@ -409,7 +409,7 @@ To enable a `Creator`'s `add_article` function to accept our newly defined `Arti
 
 `libzim/wrapper.cpp` continuation
 
-```cpp=
+```cpp
 class OverriddenZimCreator : public zim::writer::Creator
 {
 public:
@@ -479,7 +479,7 @@ To use the wrapper's and library's code from Cython/Python, we need to let Cytho
 
 `zim_wrapper.pxd`
 
-```python=
+```python
 from libcpp.string cimport string
 from libc.stdint cimport uint32_t, uint64_t
 from libcpp cimport bool
@@ -547,7 +547,7 @@ Let's start by defining Cython's `ZimArticle` and a `__cinit__` to set its "inte
 
 `pyzim.pyx`
 
-```python=
+```python
 # This imports all the definitions from zim_wrapper.pxd (ArticleWrapper, etc)
 cimport zim_wrapper as zim
 
@@ -576,7 +576,7 @@ Now let's write Python wrappers for `ArticleWrapper` data members.
 
 Fortunately, Cython has a neat feature that enables a very pythonic property-based API. When we wrote `zim_wrapper.pxd` above, notice that we also included `ArticleWrappers`'s' public data members (e.g., char ns, string title, etc.):
 
-```python=
+```python
 cdef extern from "wrappers.cpp":
     cdef cppclass ArticleWrapper:
         ArticleWrapper(char ns,
@@ -620,7 +620,7 @@ We follow a similar strategy for wrapping the C++ `CreatorWrapper` in Cython.
 
 However, notice that the Cython wrapper for `add_article` will accept Cython `ZimArticle` objects. This will allow us to use the class with a pythonic API from Cython/Python, allowing it to take care of the internal details of dereferencing and creating a shared pointer inside the function as follows: 
 
-```python=
+```python
  def add_article(self, ZimArticle article):
         """Add a ZimArticle to the Creator object.
         
@@ -643,7 +643,7 @@ A complete file with the simplified implementation will look like this:
 
 `pyzim.pyx`
 
-```python=
+```python
 
 from libcpp.string cimport string
 from libcpp cimport bool
@@ -948,7 +948,7 @@ cdef class ZimCreator:
 
 To compile our extension, the following command is inputed:
 
-```bash=
+```bash
 python3 setup.py build_ext -i
 ```
 
@@ -958,7 +958,7 @@ python3 setup.py build_ext -i
 This implementation using the `ZimArticle` wrapper enables a very pythonic property-based API. 
 
 `example.py`
-```python=
+```python
 import libzim
 
 test_content = '''&lt;!DOCTYPE html&gt; 
@@ -985,7 +985,7 @@ article2.title = "Monadical SAS"
 
 Using the creator is also straightforward:
 
-```python=
+```python
 # Write the articles
 
 zim_creator = libzim.ZimCreator('test.zim',main_page = "welcome",index_language= "eng", min_chunk_size= 2048)
@@ -1102,7 +1102,7 @@ With the public API defined, we will be able to call `string_cy_call_fct` from C
 
 `lib.h`
 
-```cpp=
+```cpp
 // -*- c++ -*-
 #ifndef libzim_LIB_H
 #define libzim_LIB_H 1
@@ -1134,7 +1134,7 @@ private:
 ```
 `lib.cxx`
 
-```cpp=
+```cpp
 #include &lt;Python.h&gt;
 #include "lib.h"
 

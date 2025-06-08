@@ -1,76 +1,62 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="  &lt;center&gt;  # The Scraping-With-Cookies Dilemma  Originally published 2025-03-29 by &lt;a href=&#34;https:/">
-    
-    
-    
-    <meta property="og:title" content="The Scraping &amp; Internet Archiving Cookie Dilemma - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>The Scraping &amp; Internet Archiving Cookie Dilemma - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content='  &lt;center&gt;  # The Scraping-With-Cookies Dilemma  Originally published 2025-03-29 by &lt;a href="https:/' name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>The Scraping &amp; Internet Archiving Cookie Dilemma - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 10 2025 10:37:48 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 31 2025 18:27:53 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">299 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 10 2025 10:37:48 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 31 2025 18:27:53 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">332 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
 # The Scraping-With-Cookies Dilemma
 
-Originally published 2025-03-29 by &lt;a href=&#34;https://blog.sweeting.me&#34;&gt;Nick Sweeting&lt;/a&gt; on &lt;a href=&#34;https://blog.monadical.com&#34;&gt;blog.monadical.com&lt;/a&gt;.
+Originally published 2025-03-29 by &lt;a href="https://blog.sweeting.me"&gt;Nick Sweeting&lt;/a&gt; on &lt;a href="https://blog.monadical.com"&gt;blog.monadical.com&lt;/a&gt;.
     
 &lt;hr/&gt;
     
-&lt;b style=&#34;opacity: 0.8&#34;&gt;The internet archiving and scraping industries have a growing problem.&lt;/b&gt;
-&lt;small&gt;We don&#39;t know how to handle cookies 🍪&lt;/small&gt;
+&lt;b style="opacity: 0.8"&gt;The internet archiving and scraping industries have a growing problem.&lt;/b&gt;
+&lt;small&gt;We don't know how to handle cookies 🍪&lt;/small&gt;
 
-&lt;!--&lt;img src=&#34;https://docs.monadical.com/uploads/upload_7f6377d1e68f48ac9942ee9fd664e798.png&#34; style=&#34;width: 100%&#34;&gt;--&gt;
+&lt;!--&lt;img src="https://docs.monadical.com/uploads/upload_7f6377d1e68f48ac9942ee9fd664e798.png" style="width: 100%"&gt;--&gt;
 
     
 &lt;/center&gt;
@@ -96,7 +82,7 @@ Originally published 2025-03-29 by &lt;a href=&#34;https://blog.sweeting.me&#34;
 
 
 **Having every archive you save be tainted with PII severely limits the utility of archiving.**  
-Now you can&#39;t *share* these archives with anyone who you wouldn&#39;t share your login with.
+Now you can't *share* these archives with anyone who you wouldn't share your login with.
 
 ![](https://docs.monadical.com/uploads/ffdbd213-5b16-4742-8b61-c779a9636ab8.png)
 
@@ -112,10 +98,10 @@ So you have to make a choice, do you:
 
 ### 🤖 Create a separate fake account on every website for the archiver to use?
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/95bb457f-bf03-4877-836e-2c46eaf583ed.png&#34; style=&#34;max-width: 240px; float: right; margin: 5px; border-radius: 4px&#34;/&gt;
+&lt;img src="https://docs.monadical.com/uploads/95bb457f-bf03-4877-836e-2c46eaf583ed.png" style="max-width: 240px; float: right; margin: 5px; border-radius: 4px"/&gt;
 
 
-You can create fake &#34;sockpuppet&#34; accounts on every site you want to capture, and invite those accounts to any private spaces or groups you want to archive so they have read access. This isn&#39;t perfect because even if leaked credentials only belong to a bot, it still gives an attacker the ability to lock you out and take over the bot.
+You can create fake "sockpuppet" accounts on every site you want to capture, and invite those accounts to any private spaces or groups you want to archive so they have read access. This isn't perfect because even if leaked credentials only belong to a bot, it still gives an attacker the ability to lock you out and take over the bot.
     
 - **pros:** limits exposure in case headers are leaked, can restrict user access just for archiving  
 - **cons:** *very* tedious to maintain a fleet of fake accounts, bot-only accts are easily detected
@@ -126,23 +112,23 @@ You can create fake &#34;sockpuppet&#34; accounts on every site you want to capt
 
 This is risky-by-default and requires constant active intervention to avoid disaster. A failure of any one of the approaches below can lead to immediate life-altering consequences.
 
-Imagine you save an interesting Google search result and share the [warc](https://en.wikipedia.org/wiki/WARC_(file_format)) with a close friend. They think it&#39;s funny and innocently post it on Reddit for laughs, not realizing that they just made your Google/Gmail login credentials completely public to the world. From there, in 30 seconds someone can lock you out of your entire digital life by just logging in as you and requesting password reset emails from other sites.
+Imagine you save an interesting Google search result and share the [warc](https://en.wikipedia.org/wiki/WARC_(file_format)) with a close friend. They think it's funny and innocently post it on Reddit for laughs, not realizing that they just made your Google/Gmail login credentials completely public to the world. From there, in 30 seconds someone can lock you out of your entire digital life by just logging in as you and requesting password reset emails from other sites.
 
 &lt;br/&gt;
-&lt;img src=&#34;https://docs.monadical.com/uploads/29d37bdf-43e1-412b-b345-91a09cbe2d7c.png&#34; style=&#34;max-width: 100%&#34;/&gt;
+&lt;img src="https://docs.monadical.com/uploads/29d37bdf-43e1-412b-b345-91a09cbe2d7c.png" style="max-width: 100%"/&gt;
 &lt;br/&gt;&lt;br/&gt;
 
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/cf890d3d-de8a-43b9-b061-cad7cd87efe9.png&#34; style=&#34;max-width: 290px; float: right; margin-top: 15px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://docs.monadical.com/uploads/cf890d3d-de8a-43b9-b061-cad7cd87efe9.png" style="max-width: 290px; float: right; margin-top: 15px"/&gt;&lt;br/&gt;
 
-Cookie theft used to be a much more popular form of attack (remember [firesheep](https://en.wikipedia.org/wiki/Firesheep)?), but people mostly worry about malicious browser extensions selling off their data, not &#34;static&#34; archive files these days. If we all start archiving more of our social media / private content, that will change.
+Cookie theft used to be a much more popular form of attack (remember [firesheep](https://en.wikipedia.org/wiki/Firesheep)?), but people mostly worry about malicious browser extensions selling off their data, not "static" archive files these days. If we all start archiving more of our social media / private content, that will change.
 
 
 &lt;br/&gt;&lt;br/&gt;
 
 
-&lt;img src=&#34;https://docs.monadical.com/uploads/3fafb489-d24f-44a1-956d-66e1449a0676.png
-&#34;/&gt;
+&lt;img src="https://docs.monadical.com/uploads/3fafb489-d24f-44a1-956d-66e1449a0676.png
+"/&gt;
 
 &lt;br&gt;
 
@@ -159,12 +145,12 @@ Cookie theft used to be a much more popular form of attack (remember [firesheep]
 
 - 🫨 **Anxiety helicopter mode: Try to log out of sites after every crawl** &amp; detect/scrub PII.  
     This is only feasible at scale with help from automated tooling (AI QA + browser agents).
-    - **Cons:** imperfect. Logout might fail. You have to trust sites to actually invalidate old cookies on logout. It doesn&#39;t work for JWT or other long-lived API tokens or secrets embedded in the capture. Doesn&#39;t address PII in the HTML like your email, name, notifications, etc.
+    - **Cons:** imperfect. Logout might fail. You have to trust sites to actually invalidate old cookies on logout. It doesn't work for JWT or other long-lived API tokens or secrets embedded in the capture. Doesn't address PII in the HTML like your email, name, notifications, etc.
 
 - 📅 **Zen patience mode: Archives are secret by default and time-unlock after 10 years.**  
     After so much time all secret API keys or cookies would have expired, making captures safe*r* to share with the public. *(beware: not all PII expires!)*
-    - **Cons:** destroys the short-term value of archiving (making immediately-shareable backup copies of sites), research / evidence collection / censorship avoidance can&#39;t be done without exposing the archivist. It hinders realtime integration with other apps that could actually make your archive dataset useful day-to-day.
-    - **Pros:** fairly safe, unless you set up auto-archiving with no URL filtering. It&#39;s very easy to accidentally capture a [plaintextoffender](https://plaintextoffenders.com/) or sensitive Google doc by accident and lose track of it in a sea of everything else you&#39;re saving.
+    - **Cons:** destroys the short-term value of archiving (making immediately-shareable backup copies of sites), research / evidence collection / censorship avoidance can't be done without exposing the archivist. It hinders realtime integration with other apps that could actually make your archive dataset useful day-to-day.
+    - **Pros:** fairly safe, unless you set up auto-archiving with no URL filtering. It's very easy to accidentally capture a [plaintextoffender](https://plaintextoffenders.com/) or sensitive Google doc by accident and lose track of it in a sea of everything else you're saving.
 
 - ⚖️ **Risk-Tolerant Mode: Allow sharing screenshots &amp; plain text from logged-in pages.**  
     Currently the best practical solution, balances risk vs reward for each output type and only allows sharing of outputs where any included PII is plainly visible, up to the human to catch.
@@ -183,20 +169,20 @@ Cookie theft used to be a much more popular form of attack (remember [firesheep]
 
 &lt;br/&gt;
 
-&gt; **Even screenshots can contain [PII](https://en.wikipedia.org/wiki/Personal_data?useskin=vector)**, but at least it&#39;s easily spotted.
+&gt; **Even screenshots can contain [PII](https://en.wikipedia.org/wiki/Personal_data?useskin=vector)**, but at least it's easily spotted.
 
 As a practical solution we can allow people to share screenshots of logged-in pages, because presumably the user can see any PII themselves in the screenshot and decide not to share it. We can only promise that there is no *invisible* PII unless the page does some sort of stenography. With screenshots you just get what you see, and what you see might include PII.
 
 
 
-On social media sites that can still mean you reveal the logged-in user&#39;s username, full name, profile picture, and recent notifications in the upper right hand corner. On messaging apps like Discord, all your server and channel names might be exposed because they&#39;re in the sidebar. 
+On social media sites that can still mean you reveal the logged-in user's username, full name, profile picture, and recent notifications in the upper right hand corner. On messaging apps like Discord, all your server and channel names might be exposed because they're in the sidebar. 
 
 &gt; **Recommended principle: prevent users from inadvertently sharing *hidden* PII.**
 
 ![](https://docs.monadical.com/uploads/d686034f-5214-448a-b1f8-a74f72420626.png)
 
 
-No matter how hard you try, all html captures (even when stripped of all JS) can contain hidden PII (e.g. user UUID, API keys, name, email, etc.) embedded in `data-` attributes, server resource URLs, `data:base64` URLs, css, etc. On docs apps like Google Docs, attempting to archive one doc might inadvertently reveal the secret URLs for 5 other docs you own because they&#39;re rendered in the `File &gt; Open Recent...` menubar html. It&#39;s almost never safe to share HTML unless it&#39;s been sanitized *by hand* (or by AI?).
+No matter how hard you try, all html captures (even when stripped of all JS) can contain hidden PII (e.g. user UUID, API keys, name, email, etc.) embedded in `data-` attributes, server resource URLs, `data:base64` URLs, css, etc. On docs apps like Google Docs, attempting to archive one doc might inadvertently reveal the secret URLs for 5 other docs you own because they're rendered in the `File &gt; Open Recent...` menubar html. It's almost never safe to share HTML unless it's been sanitized *by hand* (or by AI?).
 
 ![](https://docs.monadical.com/uploads/98e4c541-d350-423c-82c4-422b352417a9.png)
 
@@ -218,7 +204,7 @@ Most modern websites are not static pages anymore. Instead, they are a gaggle of
 
 &gt; **Websites are Turing-complete.**
 
-These little Turing-complete VMs get very mad at you when you mess with any of their inputs and outputs, because they do all sorts of subresource integrity checking and signature verification (e.g. MD5&#39;s and [HMAC](https://en.wikipedia.org/wiki/HMAC)s on JSON requests, [CSP hashes](https://content-security-policy.com/hash/), etc.). It&#39;s hard enough as-is getting sites to run with byte-for-byte perfectly replayed IO; every extra sanitization perturbance causes 3 new things to break elsewhere. If you try to tamper with responses to santize PII, you end up having to tamper with the code that checks the response signatures too.
+These little Turing-complete VMs get very mad at you when you mess with any of their inputs and outputs, because they do all sorts of subresource integrity checking and signature verification (e.g. MD5's and [HMAC](https://en.wikipedia.org/wiki/HMAC)s on JSON requests, [CSP hashes](https://content-security-policy.com/hash/), etc.). It's hard enough as-is getting sites to run with byte-for-byte perfectly replayed IO; every extra sanitization perturbance causes 3 new things to break elsewhere. If you try to tamper with responses to santize PII, you end up having to tamper with the code that checks the response signatures too.
 
 ![](https://docs.monadical.com/uploads/038c6f29-0106-4064-88e2-51affe90bb83.png)
 
@@ -226,18 +212,18 @@ These little Turing-complete VMs get very mad at you when you mess with any of t
 
 &gt; But we need some way to disentangle authentication tokens from Turing-complete JS code, arbitrary HTML, API responses, WebSocket messages, protobufs, gzips, etc. and more... without breaking any of those things in the process.
 
-The only reason saving modern JS pages is possible is because archived frontend code can&#39;t tell the difference between a real backend and the archive server emulating one. Archive [replayers](https://webrecorder.net/replaywebpage/) only work because you can play back the original captured IO byte-for-byte without having to understand any of the content.
+The only reason saving modern JS pages is possible is because archived frontend code can't tell the difference between a real backend and the archive server emulating one. Archive [replayers](https://webrecorder.net/replaywebpage/) only work because you can play back the original captured IO byte-for-byte without having to understand any of the content.
 
-&gt; &#34;If you wish to make an apple pie from scratch, you must first invent the universe.&#34;
+&gt; "If you wish to make an apple pie from scratch, you must first invent the universe."
 
-When you decide you need to start tampering with captures to make them safe, you&#39;re suddenly faced with the impossible task of *parsing every single byte that any website could send you that might contain a secret in any format*. It&#39;s even beyond the scope of current AIs. Base64-encoded [HMAC](https://en.wikipedia.org/wiki/HMAC)&#39;d responses are a *regular* occurrence on the web, not an edge case, and updating a line within one of those—in-place without breaking it—is still beyond the reach of current AI and cryptography tech (as of 2025/01).
+When you decide you need to start tampering with captures to make them safe, you're suddenly faced with the impossible task of *parsing every single byte that any website could send you that might contain a secret in any format*. It's even beyond the scope of current AIs. Base64-encoded [HMAC](https://en.wikipedia.org/wiki/HMAC)'d responses are a *regular* occurrence on the web, not an edge case, and updating a line within one of those—in-place without breaking it—is still beyond the reach of current AI and cryptography tech (as of 2025/01).
 
 ![](https://docs.monadical.com/uploads/c4fa5f37-bc5e-4057-949a-aa4ff51dd6a6.png)
 
 
 The moment you start poking around inside the captured traffic trying to modify stuff, the whole house of cards comes tumbling down because many of the big-tech media platforms perform signature/hash checking of their AJAX and content requests.
 
-The better the archiving tool is at emulating every feature of the modern web, the more APIs and formats you&#39;ll have to delicately sanitize without breaking them.
+The better the archiving tool is at emulating every feature of the modern web, the more APIs and formats you'll have to delicately sanitize without breaking them.
 
 ---
 
@@ -250,7 +236,7 @@ The better the archiving tool is at emulating every feature of the modern web, t
 
     - 🟡: Only safe to share html with certain users, html is unsanitized &amp; contains PII 🍪! 
       ACL can be managed by Django permissions system or SAML/other API/etc.
-      full html, js, request/response data should be stored encrypted at rest w/ [Shamir&#39;s keys](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing)
+      full html, js, request/response data should be stored encrypted at rest w/ [Shamir's keys](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing)
 
     - 🔴: HTML is not safe to share with anyone beyond the user that created it
       Only allow screenshots 🖥️ and plaintext ✏️ versions to be shared.
@@ -287,14 +273,14 @@ The better the archiving tool is at emulating every feature of the modern web, t
 ### Brainstorming Ideas for 2030
 
 - In the future, we could encrypt individual records with different keys linked to the cookies used to perform the archiving. This could tie the permissions together such that only the users with the decryption key for the cookies can access the decryption key for the archived content.
-    - Then to &#34;burn&#34; some credentials voluntarily and make its content public all you have to do is publish the key to both on a messageboard.
+    - Then to "burn" some credentials voluntarily and make its content public all you have to do is publish the key to both on a messageboard.
     - If capture access is coupled to profile access, it will be much harder to accidentally share a capture without being forced to explicitly share the entire profile.
     - It prevents mistakes of overconfidence in thinking a capture is sanitized enough to not burn the account that was used.
-    - But it harms usability in cases where security doesn&#39;t matter that much, but logins are practically needed to access the content without getting blocked (youtube/soundcloud/tiktok/fb/insta/x/etc).
-    - &#34;Mining&#34; for a P2P archiving network could be doing proof-of-work to unlock time-locked archives, proof-of-work to do crawling, or proof-of-existence verifying that archived snapshots still exist.
-    - You could use FHE and some sort of zk-proof to compute the AND intersection of a group of people&#39;s archive&#39;s of a single site without revealing everyone&#39;s individual inputs.
+    - But it harms usability in cases where security doesn't matter that much, but logins are practically needed to access the content without getting blocked (youtube/soundcloud/tiktok/fb/insta/x/etc).
+    - "Mining" for a P2P archiving network could be doing proof-of-work to unlock time-locked archives, proof-of-work to do crawling, or proof-of-existence verifying that archived snapshots still exist.
+    - You could use FHE and some sort of zk-proof to compute the AND intersection of a group of people's archive's of a single site without revealing everyone's individual inputs.
         - This would eliminate the user-specific content and only show the intersection of what everyone sees.
-        - PII (or anything that varies per-user) will be obscured with &#34;fog of war&#34; style noise in the screenshot.
+        - PII (or anything that varies per-user) will be obscured with "fog of war" style noise in the screenshot.
         - Anything that *multiple* users can see on a page can be marked shareable once they do a zk-proof to find the intersection of their individual results, without ever sharing the full cleartext.
 
 
@@ -324,24 +310,20 @@ The better the archiving tool is at emulating every feature of the modern web, t
 
 ---
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

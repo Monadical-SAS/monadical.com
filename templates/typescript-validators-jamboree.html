@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Typescript Validators Showdown: A Comprehensive Review">
-    
-    
-    
-    <meta property="og:title" content="Typescript Validators Jamboree: A Fair(ly cruel) Review of Typescript Validation Libraries - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Typescript Validators Showdown: A Comprehensive Review">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Typescript Validators Jamboree: A Fair(ly cruel) Review of Typescript Validation Libraries - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Typescript Validators Showdown: A Comprehensive Review" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Typescript Validators Jamboree: A Fair(ly cruel) Review of Typescript Validation Libraries - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&amp;s=96);" title="igor"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Aug 23 2024 15:50:06 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">3242 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Wed Aug 21 2024 14:56:54 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Aug 23 2024 15:50:06 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">3280 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -96,9 +81,9 @@ So, for this review, the validator is something that takes a piece of data that�
 ```mermaid
 graph TD
    A[Specification: object should have a key someNumber whose value is a number and a key someString whose value is a string]
-   B[&#34;{ &#39;someNumber&#39;: 1, &#39;someString&#39;: &#39;string!&#39; }&#34;]
-   C[&#34;{ &#39;someNumber&#39;: 1, &#39;someString&#39;: &#39;string!&#39; }&#34;]
-   D[&#34;{ &#39;notExpected&#39;: &#39;hello?&#39; }&#34;]
+   B["{ 'someNumber': 1, 'someString': 'string!' }"]
+   C["{ 'someNumber': 1, 'someString': 'string!' }"]
+   D["{ 'notExpected': 'hello?' }"]
    E[Error: Invalid Input]
 
    A --&gt;|Validates| B
@@ -163,7 +148,7 @@ You’ll see that some of my testing data structure fields check multiple featur
 
 ### Validity checks hierarchy
 
-![Inferno by Botticelli](https://loskutoff.com/static/blog/parsers-jamboree/infer-botticelli.jpg &#34;Inferno&#34;)
+![Inferno by Botticelli](https://loskutoff.com/static/blog/parsers-jamboree/infer-botticelli.jpg "Inferno")
 
 
 This is probably a good time to talk about types. I like types and would love to see them everywhere. Sorry, Lisp bros. I like the types that articulate domain design well. 
@@ -175,7 +160,7 @@ Briefly, a type can be strongly knitted between compile time and runtime. You se
 The same is true for a Number. If I want to count my users’ [money](https://www.youtube.com/watch?v=m6ID-dv2f34), I just use a Number. It’s beautiful. I can multiply and divide it, and my users’ money accumulates floating-point errors. I can also multiply it by itself. My users’ dollars become Dollars Squared: exactly what they need!
 
 
-![DSquared by Google](https://loskutoff.com/static/blog/parsers-jamboree/dsquared.png &#34;Dsquared&#34;)
+![DSquared by Google](https://loskutoff.com/static/blog/parsers-jamboree/dsquared.png "Dsquared")
 &gt; Taken from an old [Reddit thread](https://www.reddit.com/r/softwaregore/comments/baz7x8/square_dollars/)
 
 Wait a second, Igor. Have you gone mad? Dollar Squared? Well, check your codebase. If it’s possible to multiply your users’ money by themselves, your compiler certainly isn’t used in full. Which is okay, but can we still do better?
@@ -231,7 +216,7 @@ It helps a lot when writing your code; after defining the validator, you can inf
 
 For better visualization, I’ll repurpose a well-known [ports and adapters architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) diagram[^5]:
 
-![Inputs](https://loskutoff.com/static/blog/parsers-jamboree/inputs.png &#34;https://bijijoo.com/2011/leonid-brezhnev&#34;)
+![Inputs](https://loskutoff.com/static/blog/parsers-jamboree/inputs.png "https://bijijoo.com/2011/leonid-brezhnev")
 
 So, the magic of inference happens mostly without your involvement. The important thing is that your business logic gets nice, sanitized data.
 
@@ -246,7 +231,7 @@ It comes especially handy with Javascript: JS tools often use JSON.stringify you
 
 ```
 
-JSON.stringify(new Set([&#39;1&#39;, &#39;2&#39;])); // -&gt; ‘{}’
+JSON.stringify(new Set(['1', '2'])); // -&gt; ‘{}’
 
 ```
 
@@ -254,14 +239,14 @@ The problem here isn’t rather validation but proper conversion into serializab
 
 The libraries that can do that have the “codecs” semantics, meaning they “decode” the input data and can “encode” the “business logic” objects back into a serializable format.
 
-![Outputs](https://loskutoff.com/static/blog/parsers-jamboree/outputs.png &#34;https://bijijoo.com/2011/leonid-brezhnev&#34;)
+![Outputs](https://loskutoff.com/static/blog/parsers-jamboree/outputs.png "https://bijijoo.com/2011/leonid-brezhnev")
 
 
 If the library can declaratively perform both encoding and decoding, e.g., `Array -&gt; Set -&gt; Array`, I’m going to “grade” it higher (sorry, Zod and other one-way parsers, but that doesn’t apply to you, although we can technically define two isomorphic transformations there, it won’t be a core feature but an afterthought).
 
 As a nice side effect, the codec semantics allow for much better composability: a codec A -&gt; B -&gt; C can be piped with a codec C -&gt; D -&gt; E, which can be piped with E -&gt; F -&gt; A, etc.
 
-![Lego Bricks](https://loskutoff.com/static/blog/parsers-jamboree/bricks.png  &#34;https://openclipart.org/detail/184889/bricks&#34;)
+![Lego Bricks](https://loskutoff.com/static/blog/parsers-jamboree/bricks.png  "https://openclipart.org/detail/184889/bricks")
 
 ### Frontend as a 1st-class citizen
 
@@ -277,20 +262,20 @@ You may be of an adventurous nature and let your users write into your [Firestor
 
 Doesn’t it remind you of the same ports and adapters we’ve seen already?
 
-![Frontend](https://loskutoff.com/static/blog/parsers-jamboree/frontend.png &#34;https://bijijoo.com/2011/leonid-brezhnev&#34;)
+![Frontend](https://loskutoff.com/static/blog/parsers-jamboree/frontend.png "https://bijijoo.com/2011/leonid-brezhnev")
 
 If that’s not enough, we can also use [monorepos](https://en.wikipedia.org/wiki/Monorepo) to share codecs/parsers code and type information — what a blessing that is! 
 
 That said, you see where I’m going. All the libraries in this review have to be able to work on the front end.
 
-Now, that was a long interlude! Unfortunately, it’s over. It&#39;s time to get dirty (with unvalidated JSONs) now. I’ll go by alphabet, for not picking any favourites.
+Now, that was a long interlude! Unfortunately, it’s over. It's time to get dirty (with unvalidated JSONs) now. I’ll go by alphabet, for not picking any favourites.
 
 
 ## Libraries
 
 Each library will have several code widgets: the editable JSON (try this out) that I use for testing, the source code that does validation/transformations, with comments on API here and there, the view output of the validated object (it’s JS inner representation at this point, not necessary JSON, so some liberties taken: I print “JS object” along with the string representation to show it), and the view output of this object converted back (with encoders, if present) to the initial JSON-serializable type.
 
-![Interface](https://loskutoff.com/static/blog/parsers-jamboree/interface.png &#34;Interface&#34;)
+![Interface](https://loskutoff.com/static/blog/parsers-jamboree/interface.png "Interface")
 
 ## AJV
 
@@ -298,7 +283,7 @@ Bearing a recursive name Ajv JSON [schema] Validator, it’s one of the special 
 
 The library is mature, tremendously popular, and is well-maintained[^8].
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/ajv&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/ajv" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 You’ll see that it doesn’t cover some test cases that it is supposed to. This is because many typechecks aren’t well-typed, and I’d have to digress to “any” implementing them. This is understandable; with a focus towards JSON Schema definitions, I guess it’s very difficult to translate Typescript types 1x1. I decided to mark them as failed because of the reasons in the introduction: Typescript has to be supported fully, or no deal.
 
@@ -313,7 +298,7 @@ It shouldn’t be an issue in your production code; it’s unlikely that anythin
 
 Arktype has a unique concept: it parses [template literals](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html) parallel in runtime and compile time. Its own template literal syntax mirrors Typescript. These points together allow for very positive DevEx, especially since the library provides its plugins for popular IDEs. 
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/arktype&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/arktype" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 Pay attention to how parsers are defined. It’s a true joy (no pun intended, [Joy](https://github.com/hapijs/joi)) to work with it. It feels like magic, a work of art, or both.
 
@@ -330,13 +315,13 @@ They [recently](https://x.com/arktypeio/status/1816172678748700833) released the
 
 This library doesn’t compare itself with others or have unique features. The API is neat and has everything you’d expect from a validator library: pre-processors, refinements, transformations. Decoders don’t seem well-composable, though, as I had to redefine some things twice. It also doesn’t seem to have enough Typescript support for discriminated unions[^9], so many important tests fail.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/decoders&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/decoders" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 ## Effect-schema
 
-The creation of [effect.ts](https://effect.website/) developers effect-schema is probably the most feature-complete. I haven’t found any way to break it, and it perfectly handles complex Typescript inference. It’s well-maintained but not well-known yet. I consider it to be [io-ts&#39;s](https://github.com/gcanti/io-ts/blob/master/index.md) successor, especially for its very similar API, and for that, the io-ts creator went to work with the effect-ts team. Io-ts has existed for quite a while, so I deem effect-schema mature. It’s well-maintained and updated thanks to effect.ts strong development push.
+The creation of [effect.ts](https://effect.website/) developers effect-schema is probably the most feature-complete. I haven’t found any way to break it, and it perfectly handles complex Typescript inference. It’s well-maintained but not well-known yet. I consider it to be [io-ts's](https://github.com/gcanti/io-ts/blob/master/index.md) successor, especially for its very similar API, and for that, the io-ts creator went to work with the effect-ts team. Io-ts has existed for quite a while, so I deem effect-schema mature. It’s well-maintained and updated thanks to effect.ts strong development push.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/effect-schema&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/effect-schema" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 It adheres to the “codecs” semantics, being able to convert values back and forth. 
 
@@ -345,7 +330,7 @@ It adheres to the “codecs” semantics, being able to convert values back and 
 
 A library focused on DevEx and small bundle size. It is the [fastest of them all](https://moltar.github.io/typescript-runtime-type-benchmarks/).
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/rescript-schema&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/rescript-schema" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 It has another superpower that makes it stand out: it’s written in [Rescript](https://rescript-lang.org/) JS dialect and is bundled for Typescript.
 
@@ -356,13 +341,13 @@ Although not too lively by the time I wrote this, Runtypes still covers many Typ
 
 I struggled to find its special power (and there’s no comparison/motivation versus other libs in the readme either) until I discovered that the maintainers’ principal stance is [not to do any transformation](https://github.com/runtypes/runtypes/issues/56). So, an Array always stays Array and never becomes Set and vice versa. It’s a respectable point of view, and I empathize with it, although the reality is that the default expectation from a validator library is to be able to convert types. If we ignore that, though, Runtypes covers a lot of ground feature-wise.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/runtypes&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/runtypes" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 ## Schemata-ts
 
 Another slow-maintained but feature-rich library. It features JSON Schema generation. It is positioned as the successor to io-ts. I think it’s a [reaction](https://github.com/fp-tx/core) to the fp-ts and io-ts maintainers leaving for effect.ts. The sentiment is understandable, but I think effect.ts has much more traction because they have much more development resources at this point.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/schemata-ts&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/schemata-ts" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 Notably, the only failed test is a simple refinement to ensure the array is unique before converting it to a set. Maybe it is my skill issues. With more effort, it could’ve been possible, but I also consider the DevEx aspect here, so it’s one “fail.”
 
@@ -373,13 +358,13 @@ The purpose of Superstruct, among other things, is to provide detailed errors, m
 
 Superstuct is one of few libraries with a motivation in the readme. “Why” compares itself with several libs except Zod. I find this a bit weird since Zod is the King of validators today.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/superstruct&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/superstruct" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 ## Typebox
 
 Typebox is a feature-rich type checker whose superpower is its ability to generate JSON Schema (which makes it compatible with, e.g., Ajv). It gives the impression that the library is very mature and well-tended.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/typebox&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/typebox" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 A unique feature is that it generates JSON Schema “out-of-the-box” as a core feature. It fails some of my feature tests due to this adherence to JSON Schema, but with all things considered, I probably would’ve chosen it anyway if I had to work with JSON Schema. One thing that seems weird about the API is its many unrelated to the validation task, e.g., “[mutate](https://github.com/sinclairzx81/typebox?tab=readme-ov-file#mutate)” for mutating a nested object.
 
@@ -388,16 +373,16 @@ A unique feature is that it generates JSON Schema “out-of-the-box” as a core
 
 Another library with a special feature/superpower. This one takes pride in its small bundle size, leverages tree-shaking with a functional API, and declares high performance. Originally a [Bachelor’s thesis](https://valibot.dev/thesis.pdf), it was [endorsed](https://www.builder.io/blog/introducing-valibot) by several famous people, including Miško Hevery, one of the AngularJS creators. It seems to be actively maintained.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/valibot&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/valibot" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 I enjoyed its API; it was a breeze to use it, although some things were counter-intuitive, for instance, the [default Set combinator](https://github.com/fabian-hiller/valibot/issues/685) that doesn’t take an Array (as I would expect from a library that parses JSON) but instead requires another Set (much more rare case, many codebases may never encounter the need of that). Custom type definition typing was also weak when writing this (see source code above). Overall, I liked it, and I’d take this library if I needed a tiny bundle size. However, the API also seems immature in some places.
 
 
 ## Valita
 
-The library&#39;s primary goal is to be as powerful as Zod but with higher performance.
+The library's primary goal is to be as powerful as Zod but with higher performance.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/valita&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/valita" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 What stands out is that they took their stance against implementing asynchronous parsing. I support this decision and think that async is not a concern of validation libraries. Although many others include this feature, I think it primarily serves the “marketing” (making the library more popular because it’s a very often requested feature) rather than keeping the library’s feature integrity.
 
@@ -406,13 +391,13 @@ What stands out is that they took their stance against implementing asynchronous
 
 One of the most popular validators, likely a part of the popularity, is due to its release long ago and taking the niché early. I wasn’t able to make it validate many cases and keep typing at the same time. Perhaps it fares better for JS projects.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/yup&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/yup" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 ## Zod
 
 Zod is the Elvis of validators. It dominates this area of Typescript software, and not without a reason. It’s battle-tested, feature-rich, and, importantly, allows wide support in the ecosystem; more often than not, I see other libraries and frameworks that need to outsource validation, referring to Zod as the default choice.
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/zod&#34; height=&#34;500&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/zod" height="500" width="100%"&gt;&lt;/iframe&gt;
 
 I did [manage to break](https://github.com/colinhacks/zod/issues/3628) it on the crossing between the recursive structures feature and discriminated union feature, but it doesn’t mean it doesn’t support them separately. 
 
@@ -421,9 +406,9 @@ I’d have taken Zod into my codebase if I was looking for the safest choice.
 
 ## Test cases elaborated
 
-I’m not going to name any “winners” but encourage you to consider what’s better for your project on your own. Despite which libraries passed more or less of my checks, there’s more context and considerations than just test cases. The features you need, the performance you chase to achieve, the code style of your project, and the needs of the people you&#39;re working with are all important factors to consider..
+I’m not going to name any “winners” but encourage you to consider what’s better for your project on your own. Despite which libraries passed more or less of my checks, there’s more context and considerations than just test cases. The features you need, the performance you chase to achieve, the code style of your project, and the needs of the people you're working with are all important factors to consider..
 
-&lt;iframe src=&#34;https://parsers-jamboree.apps.loskutoff.com/summary?iframe&#34; height=&#34;630px&#34; width=&#34;100%&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://parsers-jamboree.apps.loskutoff.com/summary?iframe" height="630px" width="100%"&gt;&lt;/iframe&gt;
 
 That said, some elaboration on the test cases I used is due. Most of it will repeat the introduction’ “criteria,” but others are extra considerations that don’t just concern the data itself.
 
@@ -431,7 +416,7 @@ Many tests also focus not just on features but also on such features working tog
 
 **acceptsTypedInput:** A “compile-time” test that shows that the lib can not only work on `unknown`s(/`any`s) but on other types. I find this feature very useful when I want to additionally validate/transform the results of third-party libs, such as [StripeJS](https://www.npmjs.com/package/@stripe/stripe-js). Still, I don’t want to be able to make the mistake of sending an unrelated object to validation. 
 
-**addFavouriteRed:** Adds a duplicated valid colour to the favouriteColours field. Although in some cases it&#39;s ok, other times I&#39;d like to have no garbage in my database. Having duplicated values in a collection with &#34;set&#34; semantics means that one side of the interaction doesn&#39;t know what it&#39;s doing, and this is a potential timebomb better to defuse the earliest.
+**addFavouriteRed:** Adds a duplicated valid colour to the favouriteColours field. Although in some cases it's ok, other times I'd like to have no garbage in my database. Having duplicated values in a collection with "set" semantics means that one side of the interaction doesn't know what it's doing, and this is a potential timebomb better to defuse the earliest.
 
 **addFavouriteTiger:** Adds an invalid colour to the favouriteColours field. Enough said.
 
@@ -445,13 +430,13 @@ Many tests also focus not just on features but also on such features working tog
 
 **clearName:** Checks for very basic refines, e.g., very often, you don’t expect some strings be empty, like the name of the user. 
 
-**prefixCustomerId:** This is basically a “regex” case but with a point to explore whether the lib supports template literals. It&#39;s not strictly needed, but I keep it here as a sign that template literals can’t be automatically tested runtime. I moved them into another “manual” test case.
+**prefixCustomerId:** This is basically a “regex” case but with a point to explore whether the lib supports template literals. It's not strictly needed, but I keep it here as a sign that template literals can’t be automatically tested runtime. I moved them into another “manual” test case.
 
 **setCreatedAtCyborgWar:** Feeds the validator an invalid date value. I expect only the ISO date format returned by `new Date().toString()`, which JSON.stringify does. There’s a separate argument for why I prefer ISO timestamps rather than Unix timestamps, but it doesn’t matter here: how libraries handle this case matters. Not only battery-included ISO validations are accepted. If it’s easy enough to define a custom validation for an ISO date, I consider it a success, too.
 
 **setHalfVisits:** Sets the “visits” counter to a float value. Who wants 1.5 visits to their service? There’s a vast array of domain values that benefit from being integers. Typescript doesn’t account for them by default, and we need to help it. 
 
-**setProfileArtist:** sets a “profile” belonging to a Listener to an Artist. Listeners&#39; fields aren’t Artists’ fields here, so it shouldn’t be possible.
+**setProfileArtist:** sets a “profile” belonging to a Listener to an Artist. Listeners' fields aren’t Artists’ fields here, so it shouldn’t be possible.
 
 **setSubscriptionTypeBanana:** A fundamental Enum check.
 
@@ -519,24 +504,20 @@ And PR is welcome: https://github.com/dearlordylord/parsers-jamboree
      https://basarat.gitbook.io/typescript/type-system/discriminated-unions
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

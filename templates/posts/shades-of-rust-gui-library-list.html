@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
-    
-    
-    
-    <meta property="og:title" content="50 Shades of Rust, or emerging Rust GUIs in a WASM world - HedgeDoc">
-    
-    
-    <meta property="og:description" content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>50 Shades of Rust, or emerging Rust GUIs in a WASM world - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="An overview of Rust GUI libraries and frameworks, focused on WASM. Discover the latest GUI toolkit options for Rust, increase your programming skills, and create efficient WebAssembly bundles that will help you build comprehensive applications." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>50 Shades of Rust, or emerging Rust GUIs in a WASM world - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&amp;s=96);" title="igor"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 25 2023 14:09:43 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Jul 27 2024 22:15:30 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">70065 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Apr 25 2023 14:09:43 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Jul 27 2024 22:15:30 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">70099 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -76,9 +61,9 @@
 
 &lt;/center&gt;
 
-GUI in Rust progresses with unprecedented speed – 3 months in Rust GUI-land is like 3 years in the mortal world. To put things in perspective, GUI moves so fast for the web that it&#39;s even ahead of browsers. There are many possible reasons for this, from the cross-platform nature of Rust to the WebAssembly support, which provides easier distribution of software. 
+GUI in Rust progresses with unprecedented speed – 3 months in Rust GUI-land is like 3 years in the mortal world. To put things in perspective, GUI moves so fast for the web that it's even ahead of browsers. There are many possible reasons for this, from the cross-platform nature of Rust to the WebAssembly support, which provides easier distribution of software. 
 
-In this post, I&#39;ll review the current toolkit for GUI in Rust, and share some tips for building WebAssembly bundles. Due to the speed at which GUI in Rust moves, some tools I’ve outlined below may deprecate in the near future. So, at the risk of this post becoming obsolete before you’ve finished reading it, let&#39;s dive into the most current GUI architecture for Rust that I&#39;ve discovered thus far.
+In this post, I'll review the current toolkit for GUI in Rust, and share some tips for building WebAssembly bundles. Due to the speed at which GUI in Rust moves, some tools I’ve outlined below may deprecate in the near future. So, at the risk of this post becoming obsolete before you’ve finished reading it, let's dive into the most current GUI architecture for Rust that I've discovered thus far.
 
 ## The current toolkit 
 
@@ -91,7 +76,7 @@ Now, onto the toolkit.
 
 **Dioxus** has a react-like interface architecture, but on Rust. For Desktop builds, it uses Tauri, focuses on the Web, has experimental Terminal support, and has an SSR feature for generating server-side markup. Dioxus also implements React-like interior mutability for data handling with, for example, `use_state`. Because of its global state management through useContext-like API, potential Redux-like tools [can be integrated through it](https://dioxuslabs.com/docs/0.3/guide/en/roadmap.html) (“redux/recoil/mobx on top of context”). Below is an example widget built with Dioxus: 
 
-&lt;iframe src=&#34;https://shades-dioxus.apps.loskutoff.com&#34; width=&#34;150px&#34; height=&#34;150px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-dioxus.apps.loskutoff.com" width="150px" height="150px"&gt;&lt;/iframe&gt;
 
 ```rust=
 // main.rs
@@ -112,7 +97,7 @@ fn echo_to_angle(s: &amp;str) -&gt; u32 {
 
 
 fn App(cx: Scope) -&gt; Element {
-   let echo = use_state(&amp;cx, || &#34;Echo&#34;.to_string());
+   let echo = use_state(&amp;cx, || "Echo".to_string());
    let angle = use_state(&amp;cx, || echo_to_angle(&amp;echo.get()));
    cx.spawn({
        let mut angle = angle.to_owned();
@@ -127,28 +112,28 @@ fn App(cx: Scope) -&gt; Element {
    cx.render(rsx! {
        div {
            div {
-               &#34;Angle: {angle}&#34;
+               "Angle: {angle}"
            }
            div {
-               transform: &#34;rotateX({angle}deg) rotateY({angle}deg)&#34;,
-               width: &#34;100px&#34;,
-               height: &#34;100px&#34;,
-               transform_style: &#34;preserve-3d&#34;,
-               position: &#34;relative&#34;,
+               transform: "rotateX({angle}deg) rotateY({angle}deg)",
+               width: "100px",
+               height: "100px",
+               transform_style: "preserve-3d",
+               position: "relative",
                div {
-                   position: &#34;absolute&#34;,
-                   width: &#34;100%&#34;,
-                   height: &#34;100%&#34;,
-                   background: &#34;red&#34;,
-                   transform: &#34;translateZ(50px)&#34;,
+                   position: "absolute",
+                   width: "100%",
+                   height: "100%",
+                   background: "red",
+                   transform: "translateZ(50px)",
                }
                // more cube sides CSS definitions omitted
                div {
-                   position: &#34;absolute&#34;,
-                   width: &#34;100%&#34;,
-                   height: &#34;100%&#34;,
-                   background: &#34;orange&#34;,
-                   transform: &#34;rotateY(90deg) translateZ(50px)&#34;,
+                   position: "absolute",
+                   width: "100%",
+                   height: "100%",
+                   background: "orange",
+                   transform: "rotateY(90deg) translateZ(50px)",
                }
            }
        }
@@ -168,10 +153,10 @@ fn App(cx: Scope) -&gt; Element {
 ```htmlbars
 &lt;!-- index.html --&gt;
 
-&lt;div class=&#34;row&#34;&gt;
+&lt;div class="row"&gt;
    &lt;div&gt;
-       &lt;input id=&#34;greet-input&#34; placeholder=&#34;Enter a name...&#34;/&gt;
-       &lt;button id=&#34;greet-button&#34; type=&#34;button&#34;&gt;Greet&lt;/button&gt;
+       &lt;input id="greet-input" placeholder="Enter a name..."/&gt;
+       &lt;button id="greet-button" type="button"&gt;Greet&lt;/button&gt;
    &lt;/div&gt;
 &lt;/div&gt;
 ```
@@ -179,7 +164,7 @@ fn App(cx: Scope) -&gt; Element {
 ```typescript=
 // main.ts
 
-import { invoke } from &#34;@tauri-apps/api/tauri&#34;;
+import { invoke } from "@tauri-apps/api/tauri";
 
 
 let greetInputEl: HTMLInputElement | null;
@@ -189,19 +174,19 @@ let greetMsgEl: HTMLElement | null;
 async function greet() {
  if (greetMsgEl &amp;&amp; greetInputEl) {
    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-   greetMsgEl.textContent = await invoke(&#34;greet&#34;, {
+   greetMsgEl.textContent = await invoke("greet", {
      name: greetInputEl.value,
    });
  }
 }
 
 
-window.addEventListener(&#34;DOMContentLoaded&#34;, () =&gt; {
- greetInputEl = document.querySelector(&#34;#greet-input&#34;);
- greetMsgEl = document.querySelector(&#34;#greet-msg&#34;);
+window.addEventListener("DOMContentLoaded", () =&gt; {
+ greetInputEl = document.querySelector("#greet-input");
+ greetMsgEl = document.querySelector("#greet-msg");
  document
-   .querySelector(&#34;#greet-button&#34;)
-   ?.addEventListener(&#34;click&#34;, () =&gt; greet());
+   .querySelector("#greet-button")
+   ?.addEventListener("click", () =&gt; greet());
 });
 ```
 
@@ -210,7 +195,7 @@ window.addEventListener(&#34;DOMContentLoaded&#34;, () =&gt; {
 
 #[tauri::command]
 fn greet(name: &amp;str) -&gt; String {
-   format!(&#34;Hello, {}! You&#39;ve been greeted from Rust!&#34;, name)
+   format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
 
@@ -218,7 +203,7 @@ fn main() {
    tauri::Builder::default()
        .invoke_handler(tauri::generate_handler![greet])
        .run(tauri::generate_context!())
-       .expect(&#34;error while running tauri application&#34;);
+       .expect("error while running tauri application");
 }
 ```
 
@@ -232,7 +217,7 @@ Based on this article, the natural decision is to choose a centralized state lik
 ### 4. [Iced](https://github.com/iced-rs/iced)
 
 **Iced** is [“a cross-platform GUI library for Rust focused on simplicity and type-safety.”](https://github.com/iced-rs/iced). It uses Elm architecture and a reactive programming model. By default, web builds use DOM to render, but Iced can be used with other backends, too, like wgpu or glow. The web part seems a bit overlooked right now (https://github.com/iced-rs/iced_web), and it [hasn’t been updated in a while](https://www.reddit.com/r/rust/comments/12zjysp/comment/jht57yc/). Here, their built Bezier tool employs Canvas: 
-&lt;iframe src=&#34;https://shades-iced.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;250px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-iced.apps.loskutoff.com" width="100%" height="250px"&gt;&lt;/iframe&gt;
 
 ```rust=
 
@@ -274,7 +259,7 @@ impl Sandbox for Example {
 
 
    fn title(&amp;self) -&gt; String {
-       String::from(&#34;Bezier tool - Iced&#34;)
+       String::from("Bezier tool - Iced")
    }
 
 
@@ -294,9 +279,9 @@ impl Sandbox for Example {
 
    fn view(&amp;self) -&gt; Element&lt;Message&gt; {
        column![
-           text(&#34;Bezier tool example&#34;).width(Length::Shrink).size(50),
+           text("Bezier tool example").width(Length::Shrink).size(50),
            self.bezier.view(&amp;self.curves).map(Message::AddCurve),
-           button(&#34;Clear&#34;).padding(8).on_press(Message::Clear),
+           button("Clear").padding(8).on_press(Message::Clear),
        ]
            .padding(20)
            .spacing(20)
@@ -323,7 +308,7 @@ mod bezier {
 
 
    impl State {
-       pub fn view&lt;&#39;a&gt;(&amp;&#39;a self, curves: &amp;&#39;a [Curve]) -&gt; Element&lt;&#39;a, Curve&gt; {
+       pub fn view&lt;'a&gt;(&amp;'a self, curves: &amp;'a [Curve]) -&gt; Element&lt;'a, Curve&gt; {
            Canvas::new(Bezier {
                state: self,
                curves,
@@ -340,13 +325,13 @@ mod bezier {
    }
 
 
-   struct Bezier&lt;&#39;a&gt; {
-       state: &amp;&#39;a State,
-       curves: &amp;&#39;a [Curve],
+   struct Bezier&lt;'a&gt; {
+       state: &amp;'a State,
+       curves: &amp;'a [Curve],
    }
 
 
-   impl&lt;&#39;a&gt; canvas::Program&lt;Curve&gt; for Bezier&lt;&#39;a&gt; {
+   impl&lt;'a&gt; canvas::Program&lt;Curve&gt; for Bezier&lt;'a&gt; {
        type State = Option&lt;Pending&gt;;
 
 
@@ -520,10 +505,10 @@ mod bezier {
 
 ### 5. [Egui](https://github.com/emilk/egui)
 
-**Egui** is &#34;the easiest to use GUI library.” [https://github.com/emilk/egui]. It utilizes Immediate Mode GUI architecture [https://en.wikipedia.org/wiki/Immediate_mode_GUI]. 
+**Egui** is "the easiest to use GUI library.” [https://github.com/emilk/egui]. It utilizes Immediate Mode GUI architecture [https://en.wikipedia.org/wiki/Immediate_mode_GUI]. 
 Some of its goals are to be portable and easy to use. The native look is specifically a non-goal. For example, it fits simple GUIs, games, or other apps that need a quick GUI drop-in library. Check out  their example build for WebAssembly:
 
-&lt;iframe src=&#34;https://shades-egui.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;150px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-egui.apps.loskutoff.com" width="100%" height="150px"&gt;&lt;/iframe&gt;
 
 ```rust=
 // app.rs
@@ -547,7 +532,7 @@ impl Default for TemplateApp {
    fn default() -&gt; Self {
        Self {
            // Example stuff:
-           label: &#34;Hello World!&#34;.to_owned(),
+           label: "Hello World!".to_owned(),
            value: 2.7,
        }
    }
@@ -556,7 +541,7 @@ impl Default for TemplateApp {
 
 impl TemplateApp {
    /// Called once before the first frame.
-   pub fn new(cc: &amp;eframe::CreationContext&lt;&#39;_&gt;) -&gt; Self {
+   pub fn new(cc: &amp;eframe::CreationContext&lt;'_&gt;) -&gt; Self {
        // This is also where you can customize the look and feel of egui using
        // `cc.egui_ctx.set_visuals` and `cc.egui_ctx.set_fonts`.
 
@@ -592,12 +577,12 @@ impl eframe::App for TemplateApp {
        // For inspiration and more examples, go to https://emilk.github.io/egui
 
 
-       #[cfg(not(target_arch = &#34;wasm32&#34;))] // no File-&gt;Quit on web pages!
-       egui::TopBottomPanel::top(&#34;top_panel&#34;).show(ctx, |ui| {
+       #[cfg(not(target_arch = "wasm32"))] // no File-&gt;Quit on web pages!
+       egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
            // The top panel is often a good place for a menu bar:
            egui::menu::bar(ui, |ui| {
-               ui.menu_button(&#34;File&#34;, |ui| {
-                   if ui.button(&#34;Quit&#34;).clicked() {
+               ui.menu_button("File", |ui| {
+                   if ui.button("Quit").clicked() {
                        _frame.close();
                    }
                });
@@ -605,18 +590,18 @@ impl eframe::App for TemplateApp {
        });
 
 
-       egui::SidePanel::left(&#34;side_panel&#34;).show(ctx, |ui| {
-           ui.heading(&#34;Side Panel&#34;);
+       egui::SidePanel::left("side_panel").show(ctx, |ui| {
+           ui.heading("Side Panel");
 
 
            ui.horizontal(|ui| {
-               ui.label(&#34;Write something: &#34;);
+               ui.label("Write something: ");
                ui.text_edit_singleline(label);
            });
 
 
-           ui.add(egui::Slider::new(value, 0.0..=10.0).text(&#34;value&#34;));
-           if ui.button(&#34;Increment&#34;).clicked() {
+           ui.add(egui::Slider::new(value, 0.0..=10.0).text("value"));
+           if ui.button("Increment").clicked() {
                *value += 1.0;
            }
 
@@ -624,25 +609,25 @@ impl eframe::App for TemplateApp {
            ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
                ui.horizontal(|ui| {
                    ui.spacing_mut().item_spacing.x = 0.0;
-                   ui.label(&#34;powered by &#34;);
-                   ui.hyperlink_to(&#34;egui&#34;, &#34;https://github.com/emilk/egui&#34;);
-                   ui.label(&#34; and &#34;);
+                   ui.label("powered by ");
+                   ui.hyperlink_to("egui", "https://github.com/emilk/egui");
+                   ui.label(" and ");
                    ui.hyperlink_to(
-                       &#34;eframe&#34;,
-                       &#34;https://github.com/emilk/egui/tree/master/crates/eframe&#34;,
+                       "eframe",
+                       "https://github.com/emilk/egui/tree/master/crates/eframe",
                    );
-                   ui.label(&#34;.&#34;);
+                   ui.label(".");
                });
            });
        });
 
 
        egui::CentralPanel::default().show(ctx, |ui| {
-           // The central panel the region left after adding TopPanel&#39;s and SidePanel&#39;s
+           // The central panel the region left after adding TopPanel's and SidePanel's
 
 
-           ui.heading(&#34;Shades of Rust - egui&#34;);
-           ui.hyperlink(&#34;https://github.com/Firfi/shades-of-rust/tree/master/shades-egui&#34;);
+           ui.heading("Shades of Rust - egui");
+           ui.hyperlink("https://github.com/Firfi/shades-of-rust/tree/master/shades-egui");
            egui::warn_if_debug_build(ui);
        });
    }
@@ -657,17 +642,17 @@ Note their bigger demo on https://www.egui.rs/#demo
 
 ### 7. [Slint](https://github.com/slint-ui/slint)
 
-With **Slint**, the web is not the focus; it can be compiled into WebAssembly only for demo purposes. Slint targets native looks, embedded systems, microcontrollers and desktop. It uses its own script language to describe UI, which provides components&#39; state and look description. Slint does allow some scripting, although it’s possible to run the most heavyweight code in Rust. Overall, it’s an imperative tool.
+With **Slint**, the web is not the focus; it can be compiled into WebAssembly only for demo purposes. Slint targets native looks, embedded systems, microcontrollers and desktop. It uses its own script language to describe UI, which provides components' state and look description. Slint does allow some scripting, although it’s possible to run the most heavyweight code in Rust. Overall, it’s an imperative tool.
 
 Here is a built code of their tutorial: 
 
-&lt;iframe src=&#34;https://shades-slint.apps.loskutoff.com&#34; width=&#34;326px&#34; height=&#34;326px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-slint.apps.loskutoff.com" width="326px" height="326px"&gt;&lt;/iframe&gt;
 
 ```rust=
 
 // main.rs
 
-#[cfg_attr(target_arch = &#34;wasm32&#34;,
+#[cfg_attr(target_arch = "wasm32",
 wasm_bindgen::prelude::wasm_bindgen(start))]
 pub fn main() {
    use slint::Model;
@@ -791,14 +776,14 @@ slint::slint! {
 
 
        in property &lt;[TileData]&gt; memory_tiles: [
-           { image: @image-url(&#34;icons/at.png&#34;) },
-           { image: @image-url(&#34;icons/balance-scale.png&#34;) },
-           { image: @image-url(&#34;icons/bicycle.png&#34;) },
-           { image: @image-url(&#34;icons/bus.png&#34;) },
-           { image: @image-url(&#34;icons/cloud.png&#34;) },
-           { image: @image-url(&#34;icons/cogs.png&#34;) },
-           { image: @image-url(&#34;icons/motorcycle.png&#34;) },
-           { image: @image-url(&#34;icons/video.png&#34;) },
+           { image: @image-url("icons/at.png") },
+           { image: @image-url("icons/balance-scale.png") },
+           { image: @image-url("icons/bicycle.png") },
+           { image: @image-url("icons/bus.png") },
+           { image: @image-url("icons/cloud.png") },
+           { image: @image-url("icons/cogs.png") },
+           { image: @image-url("icons/motorcycle.png") },
+           { image: @image-url("icons/video.png") },
        ];
        for tile[i] in memory_tiles : MemoryTile {
            x: mod(i, 4) * 74px;
@@ -831,8 +816,8 @@ slint::slint! {
 fn App&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
    let a = create_signal(cx, 0_f64);
    view! { cx,
-p { &#34;Input value: &#34; (a.get()) }
-       input(type=&#34;number&#34;, bind:valueAsNumber=a)
+p { "Input value: " (a.get()) }
+       input(type="number", bind:valueAsNumber=a)
    }
 }
 
@@ -849,8 +834,8 @@ By default, Sycamore is made for the web, but it can be easily embedded into oth
 // app.rs
 
 #[derive(Serialize, Deserialize)]
-struct GreetArgs&lt;&#39;a&gt; {
-   name: &amp;&#39;a str,
+struct GreetArgs&lt;'a&gt; {
+   name: &amp;'a str,
 }
 
 
@@ -864,7 +849,7 @@ pub fn App&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
        spawn_local_scoped(cx, async move {
            // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
            let new_msg =
-               invoke(&#34;greet&#34;, to_value(&amp;GreetArgs { name: &amp;name.get() }).unwrap()).await;
+               invoke("greet", to_value(&amp;GreetArgs { name: &amp;name.get() }).unwrap()).await;
 
 
            log(&amp;new_msg.as_string().unwrap());
@@ -876,11 +861,11 @@ pub fn App&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
 
 
    view! { cx,
-       main(class=&#34;container&#34;) {             
-           div(class=&#34;row&#34;) {
-               input(id=&#34;greet-input&#34;,bind:value=name,placeholder=&#34;Enter a name...&#34;)
-               button(type=&#34;button&#34;,on:click=greet) {
-                   &#34;Greet&#34;
+       main(class="container") {             
+           div(class="row") {
+               input(id="greet-input",bind:value=name,placeholder="Enter a name...")
+               button(type="button",on:click=greet) {
+                   "Greet"
                }
            }
            p {
@@ -904,39 +889,39 @@ mod app;
 use app::App;
 
 
-#[cfg(all(not(debug_assertions), not(feature = &#34;ssg&#34;)))]
+#[cfg(all(not(debug_assertions), not(feature = "ssg")))]
 fn main() {
    sycamore::hydrate(App);
 }
 
 
-#[cfg(all(debug_assertions, not(feature = &#34;ssg&#34;)))]
+#[cfg(all(debug_assertions, not(feature = "ssg")))]
 fn main() {
    sycamore::render(App);
 }
 
 
-#[cfg(feature = &#34;ssg&#34;)]
+#[cfg(feature = "ssg")]
 fn main() {
    let out_dir = std::env::args().nth(1).unwrap();
 
 
-   println!(&#34;out_dir {}&#34;, out_dir);
+   println!("out_dir {}", out_dir);
 
 
-   let template = std::fs::read_to_string(format!(&#34;{}/index.html&#34;, out_dir)).unwrap();
+   let template = std::fs::read_to_string(format!("{}/index.html", out_dir)).unwrap();
 
 
    let html = sycamore::render_to_string(App);
 
 
-   let html = template.replace(&#34;&lt;!--app-html--&gt;\n&#34;, &amp;html);
+   let html = template.replace("&lt;!--app-html--&gt;\n", &amp;html);
 
 
-   let path = format!(&#34;{}/index.html&#34;, out_dir);
+   let path = format!("{}/index.html", out_dir);
 
 
-   println!(&#34;Writing html to file \&#34;{}\&#34;&#34;, path);
+   println!("Writing html to file \"{}\"", path);
    std::fs::write(path, html).unwrap();
 }
 
@@ -948,7 +933,7 @@ fn main() {
 **Yew** seems rather popular right now. It’s a GUI framework made specifically for the web and  has a bit of a React feel to it, albeit with some differences. For example, components are made like state machines with defined messages and reactions to those messages. The components keep state in themselves. [Yewdux](https://github.com/intendednull/yewdux) can be used to implement redux-like data handling. Among other features, Yew also has [hydration](https://en.wikipedia.org/wiki/Hydration_(web_development)) and [server-side rendering](https://solutionshub.epam.com/blog/post/what-is-server-side-rendering). It also lets us define components in a way not unlike functional components defined in React.
 
 Here is one of the lib’s examples compiled: 
-&lt;iframe src=&#34;https://shades-yew.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;500px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-yew.apps.loskutoff.com" width="100%" height="500px"&gt;&lt;/iframe&gt;
 
 ```rust=
 
@@ -1056,13 +1041,13 @@ impl App {
    fn view_cellule(&amp;self, idx: usize, cellule: &amp;Cellule, link: &amp;Scope&lt;Self&gt;) -&gt; Html {
        let cellule_status = {
            if cellule.is_alive() {
-               &#34;cellule-live&#34;
+               "cellule-live"
            } else {
-               &#34;cellule-dead&#34;
+               "cellule-dead"
            }
        };
        html! {
-           &lt;div key={idx} class={classes!(&#34;game-cellule&#34;, cellule_status)}
+           &lt;div key={idx} class={classes!("game-cellule", cellule_status)}
                onclick={link.callback(move |_| Msg::ToggleCellule(idx))}&gt;
            &lt;/div&gt;
        }
@@ -1095,12 +1080,12 @@ impl Component for App {
        match msg {
            Msg::Random =&gt; {
                self.random_mutate();
-               log::info!(&#34;Random&#34;);
+               log::info!("Random");
                true
            }
            Msg::Start =&gt; {
                self.active = true;
-               log::info!(&#34;Start&#34;);
+               log::info!("Start");
                false
            }
            Msg::Step =&gt; {
@@ -1109,12 +1094,12 @@ impl Component for App {
            }
            Msg::Reset =&gt; {
                self.reset();
-               log::info!(&#34;Reset&#34;);
+               log::info!("Reset");
                true
            }
            Msg::Stop =&gt; {
                self.active = false;
-               log::info!(&#34;Stop&#34;);
+               log::info!("Stop");
                false
            }
            Msg::ToggleCellule(idx) =&gt; {
@@ -1148,7 +1133,7 @@ impl Component for App {
                        .enumerate()
                        .map(|(x, cell)| self.view_cellule(idx_offset + x, cell, ctx.link()));
                    html! {
-                       &lt;div key={y} class=&#34;game-row&#34;&gt;
+                       &lt;div key={y} class="game-row"&gt;
                            { for cells }
                        &lt;/div&gt;
                    }
@@ -1157,17 +1142,17 @@ impl Component for App {
 
        html! {
            &lt;div&gt;
-               &lt;section class=&#34;game-container&#34;&gt;
-                   &lt;section class=&#34;game-area&#34;&gt;
-                       &lt;div class=&#34;game-of-life&#34;&gt;
+               &lt;section class="game-container"&gt;
+                   &lt;section class="game-area"&gt;
+                       &lt;div class="game-of-life"&gt;
                            { for cell_rows }
                        &lt;/div&gt;
-                       &lt;div class=&#34;game-buttons&#34;&gt;
-                           &lt;button class=&#34;game-button&#34; onclick={ctx.link().callback(|_| Msg::Random)}&gt;{ &#34;Random&#34; }&lt;/button&gt;
-                           &lt;button class=&#34;game-button&#34; onclick={ctx.link().callback(|_| Msg::Step)}&gt;{ &#34;Step&#34; }&lt;/button&gt;
-                           &lt;button class=&#34;game-button&#34; onclick={ctx.link().callback(|_| Msg::Start)}&gt;{ &#34;Start&#34; }&lt;/button&gt;
-                           &lt;button class=&#34;game-button&#34; onclick={ctx.link().callback(|_| Msg::Stop)}&gt;{ &#34;Stop&#34; }&lt;/button&gt;
-                           &lt;button class=&#34;game-button&#34; onclick={ctx.link().callback(|_| Msg::Reset)}&gt;{ &#34;Reset&#34; }&lt;/button&gt;
+                       &lt;div class="game-buttons"&gt;
+                           &lt;button class="game-button" onclick={ctx.link().callback(|_| Msg::Random)}&gt;{ "Random" }&lt;/button&gt;
+                           &lt;button class="game-button" onclick={ctx.link().callback(|_| Msg::Step)}&gt;{ "Step" }&lt;/button&gt;
+                           &lt;button class="game-button" onclick={ctx.link().callback(|_| Msg::Start)}&gt;{ "Start" }&lt;/button&gt;
+                           &lt;button class="game-button" onclick={ctx.link().callback(|_| Msg::Stop)}&gt;{ "Stop" }&lt;/button&gt;
+                           &lt;button class="game-button" onclick={ctx.link().callback(|_| Msg::Reset)}&gt;{ "Reset" }&lt;/button&gt;
                        &lt;/div&gt;
                    &lt;/section&gt;
                &lt;/section&gt;
@@ -1191,7 +1176,7 @@ fn wrap(coord: isize, range: isize) -&gt; usize {
 
 fn main() {
    wasm_logger::init(wasm_logger::Config::default());
-   log::trace!(&#34;Initializing yew...&#34;);
+   log::trace!("Initializing yew...");
    yew::Renderer::&lt;App&gt;::new().render();
 }
 
@@ -1203,7 +1188,7 @@ fn main() {
 
 By default, bracket-lib runs in OpenGL mode (or WebGL if it detects that you are compiling for wasm32-unknown-unknown). It can use wgpu as a backend, which will come in very handy in the future. Here is the last level of their tutorial built for the web:
 
-&lt;iframe src=&#34;https://shades-bracket-lib.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;430px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-bracket-lib.apps.loskutoff.com" width="100%" height="430px"&gt;&lt;/iframe&gt;
 
 Source code would be too large to include in the article, so there is a “hello world” [example](https://bfnightly.bracketproductions.com/bracket-lib/hello_terminal.html) written with this library:
 
@@ -1219,14 +1204,14 @@ struct State {}
 
 impl GameState for State {
  fn tick(&amp;mut self, ctx: &amp;mut BTerm) {
-   ctx.print(1, 1, &#34;Hello Bracket World&#34;);
+   ctx.print(1, 1, "Hello Bracket World");
  }
 }
 
 
 fn main() -&gt; BError {
  let context = BTermBuilder::simple80x50()
-   .with_title(&#34;Hello Minimal Bracket World&#34;)
+   .with_title("Hello Minimal Bracket World")
    .build()?;
 
 
@@ -1255,10 +1240,10 @@ fn main() {
  let mut siv = cursive::default();
 
 
- siv.add_global_callback(&#39;q&#39;, |s| s.quit());
+ siv.add_global_callback('q', |s| s.quit());
 
 
- siv.add_layer(TextView::new(&#34;Hello cursive! Press &lt;q&gt; to quit.&#34;));
+ siv.add_layer(TextView::new("Hello cursive! Press &lt;q&gt; to quit."));
 
 
  siv.run();
@@ -1272,7 +1257,7 @@ fn main() {
 
 Here is one of their examples: 
 
-&lt;iframe src=&#34;https://shades-vizia.apps.loskutoff.com&#34; width=&#34;250px&#34; height=&#34;250px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-vizia.apps.loskutoff.com" width="250px" height="250px"&gt;&lt;/iframe&gt;
 
 ```rust=
 
@@ -1288,7 +1273,7 @@ use vizia::prelude::*;
 use chrono::{NaiveDate, ParseError};
 
 
-const STYLE: &amp;str = r#&#34;
+const STYLE: &amp;str = r#"
    /*
    * {
        border-width: 1px;
@@ -1298,7 +1283,7 @@ const STYLE: &amp;str = r#&#34;
    textbox.invalid {
        background-color: #AA0000;
    }
-&#34;#;
+"#;
 
 
 #[derive(Clone)]
@@ -1313,8 +1298,8 @@ impl Data for SimpleDate {
 
 
 impl std::fmt::Display for SimpleDate {
-   fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;&#39;_&gt;) -&gt; std::fmt::Result {
-       write!(f, &#34;{}&#34;, self.0.format(&#34;%Y:%m:%d&#34;))
+   fn fmt(&amp;self, f: &amp;mut std::fmt::Formatter&lt;'_&gt;) -&gt; std::fmt::Result {
+       write!(f, "{}", self.0.format("%Y:%m:%d"))
    }
 }
 
@@ -1322,14 +1307,14 @@ impl std::fmt::Display for SimpleDate {
 impl FromStr for SimpleDate {
    type Err = ParseError;
    fn from_str(s: &amp;str) -&gt; Result&lt;Self, Self::Err&gt; {
-       NaiveDate::parse_from_str(s, &#34;%Y:%m:%d&#34;).map(|date| SimpleDate(date))
+       NaiveDate::parse_from_str(s, "%Y:%m:%d").map(|date| SimpleDate(date))
    }
 }
 
 
 #[derive(Lens)]
 pub struct AppData {
-   options: Vec&lt;&amp;&#39;static str&gt;,
+   options: Vec&lt;&amp;'static str&gt;,
    choice: String,
    start_date: SimpleDate,
    end_date: SimpleDate,
@@ -1367,8 +1352,8 @@ impl Model for AppData {
 impl AppData {
    pub fn new() -&gt; Self {
        Self {
-           options: vec![&#34;one-way flight&#34;, &#34;return flight&#34;],
-           choice: &#34;one-way flight&#34;.to_string(),
+           options: vec!["one-way flight", "return flight"],
+           choice: "one-way flight".to_string(),
            start_date: SimpleDate(NaiveDate::from_ymd_opt(2022, 02, 12).unwrap()),
            end_date: SimpleDate(NaiveDate::from_ymd_opt(2022, 02, 26).unwrap()),
        }
@@ -1389,7 +1374,7 @@ fn main() {
                        Label::new(cx, AppData::choice)
                            .width(Stretch(1.0))
                            .text_wrap(false);
-                       Label::new(cx, DOWN).font(&#34;icons&#34;).left(Pixels(5.0)).right(Pixels(5.0));
+                       Label::new(cx, DOWN).font("icons").left(Pixels(5.0)).right(Pixels(5.0));
                    }).width(Stretch(1.0)),
                // List of options
                move |cx| {
@@ -1401,7 +1386,7 @@ fn main() {
                            .bind(AppData::choice, move |handle, choice| {
                                let selected = item.get(handle.cx) == choice.get(handle.cx);
                                handle.background_color(if selected {
-                                   Color::from(&#34;#f8ac14&#34;)
+                                   Color::from("#f8ac14")
                                } else {
                                    Color::white()
                                });
@@ -1420,9 +1405,9 @@ fn main() {
                .on_edit(|cx, text| {
                    if let Ok(val) = text.parse::&lt;SimpleDate&gt;() {
                        cx.emit(AppEvent::SetStartDate(val));
-                       cx.toggle_class(&#34;invalid&#34;, false);
+                       cx.toggle_class("invalid", false);
                    } else {
-                       cx.toggle_class(&#34;invalid&#34;, true);
+                       cx.toggle_class("invalid", true);
                    }
                })
                .width(Pixels(150.0));
@@ -1432,22 +1417,22 @@ fn main() {
                .on_edit(|cx, text| {
                    if let Ok(val) = text.parse::&lt;SimpleDate&gt;() {
                        cx.emit(AppEvent::SetEndDate(val));
-                       cx.toggle_class(&#34;invalid&#34;, false);
+                       cx.toggle_class("invalid", false);
                    } else {
-                       cx.toggle_class(&#34;invalid&#34;, true);
+                       cx.toggle_class("invalid", true);
                    }
                })
                .width(Pixels(150.0))
-               .disabled(AppData::choice.map(|choice| choice == &#34;one-way flight&#34;));
+               .disabled(AppData::choice.map(|choice| choice == "one-way flight"));
 
 
-           Button::new(cx, |_| {}, |cx| Label::new(cx, &#34;Book&#34;).width(Stretch(1.0)))
+           Button::new(cx, |_| {}, |cx| Label::new(cx, "Book").width(Stretch(1.0)))
                .width(Pixels(150.0));
        })
            .row_between(Pixels(10.0))
            .child_space(Stretch(1.0));
    })
-       .title(&#34;Flight Booker&#34;)
+       .title("Flight Booker")
        .inner_size((250, 250))
        .run();
 }
@@ -1461,7 +1446,7 @@ fn main() {
 
 Check out Leptos’ router example:
 
-&lt;iframe src=&#34;https://shades-leptos.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;300px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-leptos.apps.loskutoff.com" width="100%" height="300px"&gt;&lt;/iframe&gt;
 
 ```rust=
 
@@ -1481,7 +1466,7 @@ use crate::api::{get_contact, get_contacts};
 
 #[component]
 pub fn RouterExample(cx: Scope) -&gt; impl IntoView {
-   log::debug!(&#34;rendering &lt;RouterExample/&gt;&#34;);
+   log::debug!("rendering &lt;RouterExample/&gt;");
 
 
    view! { cx,
@@ -1492,37 +1477,37 @@ pub fn RouterExample(cx: Scope) -&gt; impl IntoView {
                // 1) ensuring that relative routing works properly for nested routes
                // 2) setting the `aria-current` attribute on the current link,
                //    for a11y and styling purposes
-               &lt;A exact=true href=&#34;/&#34;&gt;&#34;Contacts&#34;&lt;/A&gt;
-               &lt;A href=&#34;about&#34;&gt;&#34;About&#34;&lt;/A&gt;
-               &lt;A href=&#34;settings&#34;&gt;&#34;Settings&#34;&lt;/A&gt;
-               &lt;A href=&#34;redirect-home&#34;&gt;&#34;Redirect to Home&#34;&lt;/A&gt;
+               &lt;A exact=true href="/"&gt;"Contacts"&lt;/A&gt;
+               &lt;A href="about"&gt;"About"&lt;/A&gt;
+               &lt;A href="settings"&gt;"Settings"&lt;/A&gt;
+               &lt;A href="redirect-home"&gt;"Redirect to Home"&lt;/A&gt;
            &lt;/nav&gt;
            &lt;main&gt;
                &lt;Routes&gt;
                    &lt;Route
-                       path=&#34;&#34;
+                       path=""
                        view=move |cx| view! { cx,  &lt;ContactList/&gt; }
                    &gt;
                        &lt;Route
-                           path=&#34;:id&#34;
+                           path=":id"
                            view=move |cx| view! { cx,  &lt;Contact/&gt; }
                        /&gt;
                        &lt;Route
-                           path=&#34;/&#34;
-                           view=move |_| view! { cx,  &lt;p&gt;&#34;Select a contact.&#34;&lt;/p&gt; }
+                           path="/"
+                           view=move |_| view! { cx,  &lt;p&gt;"Select a contact."&lt;/p&gt; }
                        /&gt;
                    &lt;/Route&gt;
                    &lt;Route
-                       path=&#34;about&#34;
+                       path="about"
                        view=move |cx| view! { cx,  &lt;About/&gt; }
                    /&gt;
                    &lt;Route
-                       path=&#34;settings&#34;
+                       path="settings"
                        view=move |cx| view! { cx,  &lt;Settings/&gt; }
                    /&gt;
                    &lt;Route
-                       path=&#34;redirect-home&#34;
-                       view=move |cx| view! { cx, &lt;Redirect path=&#34;/&#34;/&gt; }
+                       path="redirect-home"
+                       view=move |cx| view! { cx, &lt;Redirect path="/"/&gt; }
                    /&gt;
                &lt;/Routes&gt;
            &lt;/main&gt;
@@ -1533,19 +1518,19 @@ pub fn RouterExample(cx: Scope) -&gt; impl IntoView {
 
 #[component]
 pub fn ContactList(cx: Scope) -&gt; impl IntoView {
-   log::debug!(&#34;rendering &lt;ContactList/&gt;&#34;);
+   log::debug!("rendering &lt;ContactList/&gt;");
 
 
    let location = use_location(cx);
    let contacts = create_resource(cx, move || location.search.get(), get_contacts);
    let contacts = move || {
        contacts.read().map(|contacts| {
-           // this data doesn&#39;t change frequently so we can use .map().collect() instead of a keyed &lt;For/&gt;
+           // this data doesn't change frequently so we can use .map().collect() instead of a keyed &lt;For/&gt;
            contacts
                .into_iter()
                .map(|contact| {
                    view! { cx,
-                       &lt;li&gt;&lt;A href=contact.id.to_string()&gt;&lt;span&gt;{&amp;contact.first_name} &#34; &#34; {&amp;contact.last_name}&lt;/span&gt;&lt;/A&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;A href=contact.id.to_string()&gt;&lt;span&gt;{&amp;contact.first_name} " " {&amp;contact.last_name}&lt;/span&gt;&lt;/A&gt;&lt;/li&gt;
                    }
                })
                .collect::&lt;Vec&lt;_&gt;&gt;()
@@ -1554,9 +1539,9 @@ pub fn ContactList(cx: Scope) -&gt; impl IntoView {
 
 
    view! { cx,
-       &lt;div class=&#34;contact-list&#34;&gt;
-           &lt;h1&gt;&#34;Contacts&#34;&lt;/h1&gt;
-           &lt;Suspense fallback=move || view! { cx,  &lt;p&gt;&#34;Loading contacts...&#34;&lt;/p&gt; }&gt;
+       &lt;div class="contact-list"&gt;
+           &lt;h1&gt;"Contacts"&lt;/h1&gt;
+           &lt;Suspense fallback=move || view! { cx,  &lt;p&gt;"Loading contacts..."&lt;/p&gt; }&gt;
                {move || view! { cx, &lt;ul&gt;{contacts}&lt;/ul&gt;}}
            &lt;/Suspense&gt;
            &lt;Outlet/&gt;
@@ -1573,14 +1558,14 @@ pub struct ContactParams {
 
 #[component]
 pub fn Contact(cx: Scope) -&gt; impl IntoView {
-   log::debug!(&#34;rendering &lt;Contact/&gt;&#34;);
+   log::debug!("rendering &lt;Contact/&gt;");
 
 
    let params = use_params::&lt;ContactParams&gt;(cx);
    let contact = create_resource(
        cx,
        move || params().map(|params| params.id).ok(),
-       // any of the following would work (they&#39;re identical)
+       // any of the following would work (they're identical)
        // move |id| async move { get_contact(id).await }
        // move |id| get_contact(id),
        // get_contact
@@ -1590,15 +1575,15 @@ pub fn Contact(cx: Scope) -&gt; impl IntoView {
 
    let contact_display = move || match contact.read() {
        // None =&gt; loading, but will be caught by Suspense fallback
-       // I&#39;m only doing this explicitly for the example
+       // I'm only doing this explicitly for the example
        None =&gt; None,
        // Some(None) =&gt; has loaded and found no contact
-       Some(None) =&gt; Some(view! { cx, &lt;p&gt;&#34;No contact with this ID was found.&#34;&lt;/p&gt; }.into_any()),
+       Some(None) =&gt; Some(view! { cx, &lt;p&gt;"No contact with this ID was found."&lt;/p&gt; }.into_any()),
        // Some(Some) =&gt; has loaded and found a contact
        Some(Some(contact)) =&gt; Some(
            view! { cx,
-               &lt;section class=&#34;card&#34;&gt;
-                   &lt;h1&gt;{contact.first_name} &#34; &#34; {contact.last_name}&lt;/h1&gt;
+               &lt;section class="card"&gt;
+                   &lt;h1&gt;{contact.first_name} " " {contact.last_name}&lt;/h1&gt;
                    &lt;p&gt;{contact.address_1}&lt;br/&gt;{contact.address_2}&lt;/p&gt;
                &lt;/section&gt;
            }
@@ -1608,8 +1593,8 @@ pub fn Contact(cx: Scope) -&gt; impl IntoView {
 
 
    view! { cx,
-       &lt;div class=&#34;contact&#34;&gt;
-           &lt;Transition fallback=move || view! { cx,  &lt;p&gt;&#34;Loading...&#34;&lt;/p&gt; }&gt;
+       &lt;div class="contact"&gt;
+           &lt;Transition fallback=move || view! { cx,  &lt;p&gt;"Loading..."&lt;/p&gt; }&gt;
                {contact_display}
            &lt;/Transition&gt;
        &lt;/div&gt;
@@ -1619,7 +1604,7 @@ pub fn Contact(cx: Scope) -&gt; impl IntoView {
 
 #[component]
 pub fn About(cx: Scope) -&gt; impl IntoView {
-   log::debug!(&#34;rendering &lt;About/&gt;&#34;);
+   log::debug!("rendering &lt;About/&gt;");
    // use_navigate allows you to navigate programmatically by calling a function
    let navigate = use_navigate(cx);
 
@@ -1630,11 +1615,11 @@ pub fn About(cx: Scope) -&gt; impl IntoView {
            // &lt;button on:click&gt; to navigate is an *anti-pattern*
            // you should ordinarily use a link instead,
            // both semantically and so your link will work before WASM loads
-           &lt;button on:click=move |_| { _ = navigate(&#34;/&#34;, Default::default()); }&gt;
-               &#34;Home&#34;
+           &lt;button on:click=move |_| { _ = navigate("/", Default::default()); }&gt;
+               "Home"
            &lt;/button&gt;
-           &lt;h1&gt;&#34;About&#34;&lt;/h1&gt;
-           &lt;p&gt;&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&#34;&lt;/p&gt;
+           &lt;h1&gt;"About"&lt;/h1&gt;
+           &lt;p&gt;"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."&lt;/p&gt;
        &lt;/&gt;
    }
 }
@@ -1642,17 +1627,17 @@ pub fn About(cx: Scope) -&gt; impl IntoView {
 
 #[component]
 pub fn Settings(cx: Scope) -&gt; impl IntoView {
-   log::debug!(&#34;rendering &lt;Settings/&gt;&#34;);
+   log::debug!("rendering &lt;Settings/&gt;");
    view! { cx,
        &lt;&gt;
-           &lt;h1&gt;&#34;Settings&#34;&lt;/h1&gt;
+           &lt;h1&gt;"Settings"&lt;/h1&gt;
            &lt;form&gt;
                &lt;fieldset&gt;
-                   &lt;legend&gt;&#34;Name&#34;&lt;/legend&gt;
-                   &lt;input type=&#34;text&#34; name=&#34;first_name&#34; placeholder=&#34;First&#34;/&gt;
-                   &lt;input type=&#34;text&#34; name=&#34;last_name&#34; placeholder=&#34;Last&#34;/&gt;
+                   &lt;legend&gt;"Name"&lt;/legend&gt;
+                   &lt;input type="text" name="first_name" placeholder="First"/&gt;
+                   &lt;input type="text" name="last_name" placeholder="Last"/&gt;
                &lt;/fieldset&gt;
-               &lt;pre&gt;&#34;This page is just a placeholder.&#34;&lt;/pre&gt;
+               &lt;pre&gt;"This page is just a placeholder."&lt;/pre&gt;
            &lt;/form&gt;
        &lt;/&gt;
    }
@@ -1703,18 +1688,18 @@ pub async fn get_contacts(_search: String) -&gt; Vec&lt;ContactSummary&gt; {
    vec![
        ContactSummary {
            id: 0,
-           first_name: &#34;Bill&#34;.into(),
-           last_name: &#34;Smith&#34;.into(),
+           first_name: "Bill".into(),
+           last_name: "Smith".into(),
        },
        ContactSummary {
            id: 1,
-           first_name: &#34;Tim&#34;.into(),
-           last_name: &#34;Jones&#34;.into(),
+           first_name: "Tim".into(),
+           last_name: "Jones".into(),
        },
        ContactSummary {
            id: 2,
-           first_name: &#34;Sally&#34;.into(),
-           last_name: &#34;Stevens&#34;.into(),
+           first_name: "Sally".into(),
+           last_name: "Stevens".into(),
        },
    ]
 }
@@ -1726,39 +1711,39 @@ pub async fn get_contact(id: Option&lt;usize&gt;) -&gt; Option&lt;Contact&gt; {
    match id {
        Some(0) =&gt; Some(Contact {
            id: 0,
-           first_name: &#34;Bill&#34;.into(),
-           last_name: &#34;Smith&#34;.into(),
-           address_1: &#34;12 Mulberry Lane&#34;.into(),
-           address_2: &#34;&#34;.into(),
-           city: &#34;Boston&#34;.into(),
-           state: &#34;MA&#34;.into(),
-           zip: &#34;02129&#34;.into(),
-           email: &#34;bill@smith.com&#34;.into(),
-           phone: &#34;617-121-1221&#34;.into(),
+           first_name: "Bill".into(),
+           last_name: "Smith".into(),
+           address_1: "12 Mulberry Lane".into(),
+           address_2: "".into(),
+           city: "Boston".into(),
+           state: "MA".into(),
+           zip: "02129".into(),
+           email: "bill@smith.com".into(),
+           phone: "617-121-1221".into(),
        }),
        Some(1) =&gt; Some(Contact {
            id: 1,
-           first_name: &#34;Tim&#34;.into(),
-           last_name: &#34;Jones&#34;.into(),
-           address_1: &#34;56 Main Street&#34;.into(),
-           address_2: &#34;&#34;.into(),
-           city: &#34;Chattanooga&#34;.into(),
-           state: &#34;TN&#34;.into(),
-           zip: &#34;13371&#34;.into(),
-           email: &#34;timjones@lmail.com&#34;.into(),
-           phone: &#34;232-123-1337&#34;.into(),
+           first_name: "Tim".into(),
+           last_name: "Jones".into(),
+           address_1: "56 Main Street".into(),
+           address_2: "".into(),
+           city: "Chattanooga".into(),
+           state: "TN".into(),
+           zip: "13371".into(),
+           email: "timjones@lmail.com".into(),
+           phone: "232-123-1337".into(),
        }),
        Some(2) =&gt; Some(Contact {
            id: 2,
-           first_name: &#34;Sally&#34;.into(),
-           last_name: &#34;Stevens&#34;.into(),
-           address_1: &#34;404 E 123rd St&#34;.into(),
-           address_2: &#34;Apt 7E&#34;.into(),
-           city: &#34;New York&#34;.into(),
-           state: &#34;NY&#34;.into(),
-           zip: &#34;10082&#34;.into(),
-           email: &#34;sally.stevens@wahoo.net&#34;.into(),
-           phone: &#34;242-121-3789&#34;.into(),
+           first_name: "Sally".into(),
+           last_name: "Stevens".into(),
+           address_1: "404 E 123rd St".into(),
+           address_2: "Apt 7E".into(),
+           city: "New York".into(),
+           state: "NY".into(),
+           zip: "10082".into(),
+           email: "sally.stevens@wahoo.net".into(),
+           phone: "242-121-3789".into(),
        }),
        _ =&gt; None,
    }
@@ -1784,7 +1769,7 @@ fn delay(duration: Duration) -&gt; impl Future&lt;Output = Result&lt;(), Cancele
 
 Example:
 
-&lt;iframe src=&#34;https://shades-perseus.apps.loskutoff.com&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-perseus.apps.loskutoff.com"&gt;&lt;/iframe&gt;
 
 ```rust=
 
@@ -1805,7 +1790,7 @@ fn index_page&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
    // We access the global state through the render context, extracted from
 
 
-   // Sycamore&#39;s context system
+   // Sycamore's context system
 
 
    let global_state = Reactor::&lt;G&gt;::from_cx(cx).get_global_state::&lt;AppStateRx&gt;(cx);
@@ -1815,7 +1800,7 @@ fn index_page&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
       // The user can change the global state through an input, and the changes they make will be reflected throughout the app
       p { (global_state.test.get()) }
       input(bind:value = global_state.test)
-      a(href = &#34;about&#34;, id = &#34;about-link&#34;) { &#34;About&#34; }
+      a(href = "about", id = "about-link") { "About" }
   }
 }
 
@@ -1823,13 +1808,13 @@ fn index_page&lt;G: Html&gt;(cx: Scope) -&gt; View&lt;G&gt; {
 #[engine_only_fn]
 fn head(cx: Scope) -&gt; View&lt;SsrNode&gt; {
    view! { cx,
-      title { &#34;Index Page&#34; }
+      title { "Index Page" }
   }
 }
 
 
 pub fn get_template&lt;G: Html&gt;() -&gt; Template&lt;G&gt; {
-   Template::build(&#34;index&#34;).view(index_page).head(head).build()
+   Template::build("index").view(index_page).head(head).build()
 
 
 ```
@@ -1861,7 +1846,7 @@ pub fn main&lt;G: Html&gt;() -&gt; PerseusApp&lt;G&gt; {
 
 Library for building UI for web with focus on simplicity. React-like UI declaration and ELM-like state management.
 
-&lt;iframe src=&#34;https://shades-sauron.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;300px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-sauron.apps.loskutoff.com" width="100%" height="300px"&gt;&lt;/iframe&gt;
 
 ```rust=
 
@@ -1893,15 +1878,15 @@ impl Application&lt;Msg&gt; for App {
    fn view(&amp;self) -&gt; Node&lt;Msg&gt; {
        node! {
            &lt;main&gt;
-               &lt;input type=&#34;button&#34;
-                   value=&#34;+&#34;
+               &lt;input type="button"
+                   value="+"
                    on_click=|_| {
                        Msg::Increment
                    }
                /&gt;
-               &lt;button class=&#34;count&#34; on_click=|_|{Msg::Reset} &gt;{text(self.count)}&lt;/button&gt;
-               &lt;input type=&#34;button&#34;
-                   value=&#34;-&#34;
+               &lt;button class="count" on_click=|_|{Msg::Reset} &gt;{text(self.count)}&lt;/button&gt;
+               &lt;input type="button"
+                   value="-"
                    on_click=|_| {
                        Msg::Decrement
                    }
@@ -1923,20 +1908,20 @@ impl Application&lt;Msg&gt; for App {
 
    fn style(&amp;self) -&gt; String {
        jss! {
-           &#34;body&#34;:{
-               font_family: &#34;verdana, arial, monospace&#34;,
+           "body":{
+               font_family: "verdana, arial, monospace",
            },
 
 
-           &#34;main&#34;:{
+           "main":{
                width:px(30),
                height: px(100),
-               margin: &#34;auto&#34;,
-               text_align: &#34;center&#34;,
+               margin: "auto",
+               text_align: "center",
            },
 
 
-           &#34;input, .count&#34;:{
+           "input, .count":{
                font_size: px(40),
                padding: px(30),
                margin: px(30),
@@ -1958,7 +1943,7 @@ pub fn start() {
 
 A fullstack framework from a former Seed maintainer. From the examples, its frontend state management has signal semantics.
 
-&lt;iframe src=&#34;https://shades-moonzoon.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;90px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-moonzoon.apps.loskutoff.com" width="100%" height="90px"&gt;&lt;/iframe&gt;
 
 The “counter” example code looks like this:
 
@@ -1970,7 +1955,7 @@ use zoon::*;
 
 
 #[static_ref]
-fn counter() -&gt; &amp;&#39;static Mutable&lt;i32&gt; {
+fn counter() -&gt; &amp;'static Mutable&lt;i32&gt; {
    Mutable::new(0)
 }
 
@@ -1987,9 +1972,9 @@ fn decrement() {
 
 fn root() -&gt; impl Element {
    Column::new()
-       .item(Button::new().label(&#34;-&#34;).on_press(decrement))
+       .item(Button::new().label("-").on_press(decrement))
        .item(Text::with_signal(counter().signal()))
-       .item(Button::new().label(&#34;+&#34;).on_press(increment))
+       .item(Button::new().label("+").on_press(increment))
 }
 
 
@@ -2000,24 +1985,24 @@ fn _root() -&gt; impl Element {
    Column::new()
        .item(
            Button::new()
-               .label(&#34;-&#34;)
+               .label("-")
                .on_press(clone!((on_press) move || on_press(-1))),
        )
        .item_signal(counter_signal)
-       .item(Button::new().label(&#34;+&#34;).on_press(move || on_press(1)))
+       .item(Button::new().label("+").on_press(move || on_press(1)))
 }
 // ---------- // -----------
 
 
 fn main() {
-   start_app(&#34;app&#34;, root);
+   start_app("app", root);
 }
 
 ```
 
 ### 16. [Relm4](https://github.com/Relm4/Relm4)
 
-**Relm4** is an idiomatic GUI library inspired by Elm and based on gtk4-rs. Relm4 is a new version of relm that&#39;s built from scratch and compatible with GTK4 and libadwaita. Although the original relm is still maintained, these two libraries (relm and relm4) seem to be maintained by different people.
+**Relm4** is an idiomatic GUI library inspired by Elm and based on gtk4-rs. Relm4 is a new version of relm that's built from scratch and compatible with GTK4 and libadwaita. Although the original relm is still maintained, these two libraries (relm and relm4) seem to be maintained by different people.
 
 Currently, only [devices and desktop are available](https://relm4.org/book/stable/#platform-support). No web is available, probably because of the gtk4 backend. Still, Relm4 can make use of CSS;  for example, in https://github.com/Relm4/Relm4/blob/53b9a6bf6e514a5cce979c8307a4fefea422bdd7/examples/tracker.rs, global CSS is used for UI rendering.
 Here is a screenshot of one of their examples running on desktop:
@@ -2064,7 +2049,7 @@ impl SimpleComponent for App {
 
    fn init_root() -&gt; Self::Root {
        gtk::Window::builder()
-           .title(&#34;Simple app&#34;)
+           .title("Simple app")
            .default_width(300)
            .default_height(100)
            .build()
@@ -2086,11 +2071,11 @@ impl SimpleComponent for App {
            .build();
 
 
-       let inc_button = gtk::Button::with_label(&#34;Increment&#34;);
-       let dec_button = gtk::Button::with_label(&#34;Decrement&#34;);
+       let inc_button = gtk::Button::with_label("Increment");
+       let dec_button = gtk::Button::with_label("Decrement");
 
 
-       let label = gtk::Label::new(Some(&amp;format!(&#34;Counter: {}&#34;, model.counter)));
+       let label = gtk::Label::new(Some(&amp;format!("Counter: {}", model.counter)));
        label.set_margin_all(5);
 
 
@@ -2134,13 +2119,13 @@ impl SimpleComponent for App {
    fn update_view(&amp;self, widgets: &amp;mut Self::Widgets, _sender: ComponentSender&lt;Self&gt;) {
        widgets
            .label
-           .set_label(&amp;format!(&#34;Counter: {}&#34;, self.counter));
+           .set_label(&amp;format!("Counter: {}", self.counter));
    }
 }
 
 
 fn main() {
-   let app = RelmApp::new(&#34;relm4.example.simple_manual&#34;);
+   let app = RelmApp::new("relm4.example.simple_manual");
    app.run::&lt;App&gt;(0);
 }
 
@@ -2148,7 +2133,7 @@ fn main() {
 
 ### 17. [Fltk-rs](https://github.com/fltk-rs/fltk-rs)
 
-**Fltk-rs** is bindings for https://www.fltk.org. FLTK currently doesn&#39;t support Wasm or iOS. It has experimental support for Android (YMMV) and is focused on desktop applications. This is one of the low-level bindings that can be used as graphic foundations by apps or GUI frameworks. 
+**Fltk-rs** is bindings for https://www.fltk.org. FLTK currently doesn't support Wasm or iOS. It has experimental support for Android (YMMV) and is focused on desktop applications. This is one of the low-level bindings that can be used as graphic foundations by apps or GUI frameworks. 
 
 The image below shows one of their examples running on the Desktop:
 
@@ -2166,100 +2151,100 @@ use fltk::{
 use std::ops::{Deref, DerefMut};
 use std::{cell::RefCell, rc::Rc};
 
-const POWER: &amp;str = r#&#34;&lt;?xml version=&#34;1.0&#34; encoding=&#34;iso-8859-1&#34;?&gt;
+const POWER: &amp;str = r#"&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
 
 
 &lt;!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;
 
 
-&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; x=&#34;0px&#34; y=&#34;0px&#34;
+&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 
 
-	 viewBox=&#34;0 0 315.083 315.083&#34; style=&#34;enable-background:new 0 0 315.083 315.083;&#34; xml:space=&#34;preserve&#34;&gt;
+	 viewBox="0 0 315.083 315.083" style="enable-background:new 0 0 315.083 315.083;" xml:space="preserve"&gt;
 
 
-&lt;g id=&#34;Layer_1&#34;&gt;
+&lt;g id="Layer_1"&gt;
 
 
-	&lt;linearGradient id=&#34;SVGID_1_&#34; gradientUnits=&#34;userSpaceOnUse&#34; x1=&#34;157.5417&#34; y1=&#34;4.5417&#34; x2=&#34;157.5417&#34; y2=&#34;310.5417&#34;&gt;
+	&lt;linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="157.5417" y1="4.5417" x2="157.5417" y2="310.5417"&gt;
 
 
-		&lt;stop  offset=&#34;0&#34; style=&#34;stop-color:#939598&#34;/&gt;
+		&lt;stop  offset="0" style="stop-color:#939598"/&gt;
 
 
-		&lt;stop  offset=&#34;0.25&#34; style=&#34;stop-color:#414042&#34;/&gt;
+		&lt;stop  offset="0.25" style="stop-color:#414042"/&gt;
 
 
-		&lt;stop  offset=&#34;0.5&#34; style=&#34;stop-color:#252223&#34;/&gt;
+		&lt;stop  offset="0.5" style="stop-color:#252223"/&gt;
 
 
-		&lt;stop  offset=&#34;1&#34; style=&#34;stop-color:#000000&#34;/&gt;
-
-
-	&lt;/linearGradient&gt;
-
-
-	&lt;circle style=&#34;fill:url(#SVGID_1_);&#34; cx=&#34;157.542&#34; cy=&#34;157.542&#34; r=&#34;153&#34;/&gt;
-
-
-&lt;/g&gt;
-
-
-&lt;g id=&#34;Layer_2&#34;&gt;
-
-
-	&lt;linearGradient id=&#34;SVGID_2_&#34; gradientUnits=&#34;userSpaceOnUse&#34; x1=&#34;157.5417&#34; y1=&#34;292.5417&#34; x2=&#34;157.5417&#34; y2=&#34;22.5417&#34;&gt;
-
-
-		&lt;stop  offset=&#34;0&#34; style=&#34;stop-color:#58595B&#34;/&gt;
-
-
-		&lt;stop  offset=&#34;0.1&#34; style=&#34;stop-color:#414042&#34;/&gt;
-
-
-		&lt;stop  offset=&#34;0.2&#34; style=&#34;stop-color:#242122&#34;/&gt;
-
-
-		&lt;stop  offset=&#34;1&#34; style=&#34;stop-color:#000000&#34;/&gt;
+		&lt;stop  offset="1" style="stop-color:#000000"/&gt;
 
 
 	&lt;/linearGradient&gt;
 
 
-	&lt;circle style=&#34;fill:url(#SVGID_2_);stroke:#58595B;stroke-miterlimit:10;&#34; cx=&#34;157.542&#34; cy=&#34;157.542&#34; r=&#34;135&#34;/&gt;
+	&lt;circle style="fill:url(#SVGID_1_);" cx="157.542" cy="157.542" r="153"/&gt;
 
 
 &lt;/g&gt;
 
 
-&lt;g id=&#34;Layer_4&#34;&gt;
+&lt;g id="Layer_2"&gt;
 
 
-	&lt;radialGradient id=&#34;SVGID_3_&#34; cx=&#34;157.5417&#34; cy=&#34;89.9217&#34; r=&#34;62.2727&#34; gradientUnits=&#34;userSpaceOnUse&#34;&gt;
+	&lt;linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="157.5417" y1="292.5417" x2="157.5417" y2="22.5417"&gt;
 
 
-		&lt;stop  offset=&#34;0&#34; style=&#34;stop-color:#58595B&#34;/&gt;
+		&lt;stop  offset="0" style="stop-color:#58595B"/&gt;
 
 
-		&lt;stop  offset=&#34;0.5&#34; style=&#34;stop-color:#414042&#34;/&gt;
+		&lt;stop  offset="0.1" style="stop-color:#414042"/&gt;
 
 
-		&lt;stop  offset=&#34;1&#34; style=&#34;stop-color:#231F20&#34;/&gt;
+		&lt;stop  offset="0.2" style="stop-color:#242122"/&gt;
+
+
+		&lt;stop  offset="1" style="stop-color:#000000"/&gt;
+
+
+	&lt;/linearGradient&gt;
+
+
+	&lt;circle style="fill:url(#SVGID_2_);stroke:#58595B;stroke-miterlimit:10;" cx="157.542" cy="157.542" r="135"/&gt;
+
+
+&lt;/g&gt;
+
+
+&lt;g id="Layer_4"&gt;
+
+
+	&lt;radialGradient id="SVGID_3_" cx="157.5417" cy="89.9217" r="62.2727" gradientUnits="userSpaceOnUse"&gt;
+
+
+		&lt;stop  offset="0" style="stop-color:#58595B"/&gt;
+
+
+		&lt;stop  offset="0.5" style="stop-color:#414042"/&gt;
+
+
+		&lt;stop  offset="1" style="stop-color:#231F20"/&gt;
 
 
 	&lt;/radialGradient&gt;
 
 
-	&lt;radialGradient id=&#34;SVGID_4_&#34; cx=&#34;157.5417&#34; cy=&#34;89.9217&#34; r=&#34;62.7723&#34; gradientUnits=&#34;userSpaceOnUse&#34;&gt;
+	&lt;radialGradient id="SVGID_4_" cx="157.5417" cy="89.9217" r="62.7723" gradientUnits="userSpaceOnUse"&gt;
 
 
-		&lt;stop  offset=&#34;0&#34; style=&#34;stop-color:#FFFFFF&#34;/&gt;
+		&lt;stop  offset="0" style="stop-color:#FFFFFF"/&gt;
 
 
-		&lt;stop  offset=&#34;0.6561&#34; style=&#34;stop-color:#231F20&#34;/&gt;
+		&lt;stop  offset="0.6561" style="stop-color:#231F20"/&gt;
 
 
-		&lt;stop  offset=&#34;1&#34; style=&#34;stop-color:#000000&#34;/&gt;
+		&lt;stop  offset="1" style="stop-color:#000000"/&gt;
 
 
 	&lt;/radialGradient&gt;
@@ -2268,34 +2253,34 @@ const POWER: &amp;str = r#&#34;&lt;?xml version=&#34;1.0&#34; encoding=&#34;iso-
 	
 
 
-		&lt;ellipse style=&#34;fill:url(#SVGID_3_);stroke:url(#SVGID_4_);stroke-miterlimit:10;&#34; cx=&#34;157.542&#34; cy=&#34;89.922&#34; rx=&#34;59.833&#34; ry=&#34;64.62&#34;/&gt;
+		&lt;ellipse style="fill:url(#SVGID_3_);stroke:url(#SVGID_4_);stroke-miterlimit:10;" cx="157.542" cy="89.922" rx="59.833" ry="64.62"/&gt;
 
 
 &lt;/g&gt;
 
 
-&lt;g id=&#34;Layer_6&#34;&gt;
+&lt;g id="Layer_6"&gt;
 
 
-	&lt;path style=&#34;fill:none;stroke:red;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;&#34; d=&#34;M119.358,119.358
+	&lt;path style="fill:none;stroke:red;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;" d="M119.358,119.358
 
 
 		c-9.772,9.772-15.816,23.272-15.816,38.184c0,14.912,6.044,28.412,15.816,38.184s23.272,15.816,38.184,15.816
 
 
-		c14.912,0,28.412-6.044,38.184-15.816s15.816-23.272,15.816-38.184c0-14.912-6.044-28.412-15.816-38.184&#34;/&gt;
+		c14.912,0,28.412-6.044,38.184-15.816s15.816-23.272,15.816-38.184c0-14.912-6.044-28.412-15.816-38.184"/&gt;
 
 
 	
 
 
-		&lt;line style=&#34;fill:none;stroke:red;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;&#34; x1=&#34;157.542&#34; y1=&#34;154.542&#34; x2=&#34;157.542&#34; y2=&#34;100.542&#34;/&gt;
+		&lt;line style="fill:none;stroke:red;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;" x1="157.542" y1="154.542" x2="157.542" y2="100.542"/&gt;
 
 
 &lt;/g&gt;
 
 
-&lt;/svg&gt;&#34;#;
+&lt;/svg&gt;"#;
 
 pub struct FlatButton {
    wid: Widget,
@@ -2378,14 +2363,14 @@ pub struct PowerButton {
 
 impl PowerButton {
    pub fn new(x: i32, y: i32, w: i32, h: i32) -&gt; Self {
-       let mut frm = Frame::new(x, y, w, h, &#34;&#34;);
+       let mut frm = Frame::new(x, y, w, h, "");
        frm.set_frame(FrameType::FlatBox);
        frm.set_color(Color::Black);
        let on = Rc::from(RefCell::from(false));
        frm.draw({
            // storing two almost identical images here, in a real application this could be optimized
            let on = Rc::clone(&amp;on);
-           let mut on_svg =   SvgImage::from_data(&amp;POWER.to_string().replace(&#34;red&#34;, &#34;green&#34;)).unwrap();
+           let mut on_svg =   SvgImage::from_data(&amp;POWER.to_string().replace("red", "green")).unwrap();
            on_svg.scale(frm.width(), frm.height(), true, true);
            let mut off_svg = SvgImage::from_data(POWER).unwrap();
            off_svg.scale(frm.width(), frm.height(), true, true);
@@ -2444,7 +2429,7 @@ impl FancyHorSlider {
    pub fn new(x: i32, y: i32, width: i32, height: i32) -&gt; Self {
 
 
-       let mut s = Slider::new(x, y, width, height, &#34;&#34;);
+       let mut s = Slider::new(x, y, width, height, "");
        s.set_type(SliderType::Horizontal);
        s.set_frame(FrameType::RFlatBox);
        s.set_color(Color::from_u32(0x868db1));
@@ -2484,16 +2469,16 @@ fn main() {
 
    let mut wind = Window::default()
        .with_size(800, 600)
-       .with_label(&#34;Custom Widgets&#34;);
-   let mut but = FlatButton::new(350, 350, 160, 80, &#34;Increment&#34;);
+       .with_label("Custom Widgets");
+   let mut but = FlatButton::new(350, 350, 160, 80, "Increment");
    let mut power = PowerButton::new(600, 100, 100, 100);
-   let mut dial = FillDial::new(100, 100, 200, 200, &#34;0&#34;);
+   let mut dial = FillDial::new(100, 100, 200, 200, "0");
    let mut frame = Frame::default()
        .with_size(160, 80)
-       .with_label(&#34;0&#34;)
+       .with_label("0")
        .above_of(&amp;*but, 20);
    let mut fancy_slider = FancyHorSlider::new(100, 550, 500, 10);
-   let mut toggle = button::ToggleButton::new(650, 400, 80, 35, &#34;@+9circle&#34;)
+   let mut toggle = button::ToggleButton::new(650, 400, 80, 35, "@+9circle")
 
 
        .with_align(Align::Left | Align::Inside);
@@ -2532,7 +2517,7 @@ fn main() {
    });
 
    dial.set_callback(|d| {
-       d.set_label(&amp;format!(&#34;{}&#34;, (d.value() * 100.) as i32));
+       d.set_label(&amp;format!("{}", (d.value() * 100.) as i32));
        app::redraw();
    });
    but.set_callback(move |_| {
@@ -2540,7 +2525,7 @@ fn main() {
    });
 
    power.set_callback(move |_| {
-       println!(&#34;power button clicked&#34;);
+       println!("power button clicked");
    });
 
    fancy_slider.set_callback(|s| s.parent().unwrap().redraw());
@@ -2562,21 +2547,21 @@ The styling of Makepad Framework applications is described using a domain-specif
 
 This is a great example of this framework in action: 
 
-&lt;iframe src=&#34;https://shades-makepad.apps.loskutoff.com&#34; width=&#34;100%&#34; height=&#34;400px&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-makepad.apps.loskutoff.com" width="100%" height="400px"&gt;&lt;/iframe&gt;
 
-Open [the example](https://shades-makepad.apps.loskutoff.com) directly to hear sounds. They can&#39;t make it through the iframe!
+Open [the example](https://shades-makepad.apps.loskutoff.com) directly to hear sounds. They can't make it through the iframe!
 
 Instead of the provided player example code, there is an example code for a more simplistic Counter “hello world” app:
 
 ```javascript=
 const wasm = await WasmWebGL.fetch_and_instantiate_wasm(
- &#34;/makepad/target/wasm32-unknown-unknown/release/makepad-example-simple.wasm&#34;
+ "/makepad/target/wasm32-unknown-unknown/release/makepad-example-simple.wasm"
 );
 
 
 class MyWasmApp {
  constructor(wasm) {
-   let canvas = document.getElementsByClassName(&#39;full_canvas&#39;)[0];
+   let canvas = document.getElementsByClassName('full_canvas')[0];
    this.bridge = new WasmWebGL (wasm, this, canvas);
  }
 }
@@ -2644,7 +2629,7 @@ live_design! {
 
 
                // The `fn pixel(self) -&gt; vec4` syntax is used to define a property named `pixel`,
-               // the value of which is a shader. We use our own custom DSL to define shaders. It&#39;s
+               // the value of which is a shader. We use our own custom DSL to define shaders. It's
                // syntax is *mostly* compatible with GLSL, although there are some differences as
                // well.
                fn pixel(self) -&gt; vec4 {
@@ -2675,7 +2660,7 @@ live_design! {
            // named `Button`, except for the properties defined here below, which override any
            // existing values.
            button1 = &lt;Button&gt; {
-               text: &#34;Click to count&#34;
+               text: "Click to count"
            }
 
 
@@ -2684,7 +2669,7 @@ live_design! {
                label: {
                    color: #f
                },
-               text: &#34;Counter: 0&#34;
+               text: "Counter: 0"
            }
        }
    }
@@ -2762,7 +2747,7 @@ impl App {
            // Get a reference to our label from the frame, update its text, and schedule a redraw
            // for it.
            let label = self.ui.get_label(id!(label1));
-           label.set_text(&amp;format!(&#34;Counter: {}&#34;, self.counter));
+           label.set_text(&amp;format!("Counter: {}", self.counter));
            label.redraw(cx);
        }
    }
@@ -2799,20 +2784,20 @@ The initial purpose of Rui was that the creators wanted to move their own app (a
 
 **Silkenweb** is a web-first library that emphasizes having no virtual DOM, no macro usage for describing DOM, and signal-based reactivity.
 
-There&#39;s their example that uses CSS and signals:
+There's their example that uses CSS and signals:
 
-&lt;iframe src=&#34;https://shades-silkenweb.apps.loskutoff.com&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-silkenweb.apps.loskutoff.com"&gt;&lt;/iframe&gt;
 
 ```rust
 // main.rs
 use silkenweb::{elements::html::*, log_panics, prelude::*};
 
-silkenweb::css!(&#34;color.css&#34;);
+silkenweb::css!("color.css");
 
 fn change_color(
-    color: &amp;Mutable&lt;&amp;&#39;static str&gt;,
+    color: &amp;Mutable&lt;&amp;'static str&gt;,
     description: &amp;str,
-    new_color: &amp;&#39;static str,
+    new_color: &amp;'static str,
 ) -&gt; Button {
     clone!(color);
     button()
@@ -2823,17 +2808,17 @@ fn change_color(
 fn main() {
     log_panics();
 
-    let color = Mutable::new(&#34;green&#34;);
+    let color = Mutable::new("green");
     let app = div()
         .style_property(var::COLOR, Sig(color.signal_cloned()))
-        .child(change_color(&amp;color, &#34;Red&#34;, &#34;red&#34;))
-        .child(change_color(&amp;color, &#34;Green&#34;, &#34;green&#34;))
+        .child(change_color(&amp;color, "Red", "red"))
+        .child(change_color(&amp;color, "Green", "green"))
         .child(
             div()
                 .class(class::COLOR)
-                .text(&#34;Click either the &#39;Red&#39; or &#39;Green&#39; button to set the color of this text.&#34;),
+                .text("Click either the 'Red' or 'Green' button to set the color of this text."),
         );
-    mount(&#34;app&#34;, app);
+    mount("app", app);
 }
 ```
 
@@ -2849,7 +2834,7 @@ fn main() {
 
 It is describe as one of the fastest, and very scalable with O(1) cost of updates even in larger DOM.
 
-&lt;iframe src=&#34;https://shades-rust-dominator.apps.loskutoff.com&#34;&gt;&lt;/iframe&gt;
+&lt;iframe src="https://shades-rust-dominator.apps.loskutoff.com"&gt;&lt;/iframe&gt;
 
 ```rust
 // lib.rs
@@ -2884,7 +2869,7 @@ struct User {
     repos_url: String,
     events_url: String,
     received_events_url: String,
-    #[serde(rename = &#34;type&#34;)]
+    #[serde(rename = "type")]
     type_: String,
     site_admin: bool,
     name: Option&lt;String&gt;,
@@ -2904,7 +2889,7 @@ struct User {
 
 impl User {
     async fn fetch(user: &amp;str) -&gt; Result&lt;Self, JsValue&gt; {
-        let user = fetch_github(&amp;format!(&#34;https://api.github.com/users/{}&#34;, user)).await?;
+        let user = fetch_github(&amp;format!("https://api.github.com/users/{}", user)).await?;
         Ok(serde_json::from_str::&lt;Self&gt;(&amp;user).unwrap())
     }
 }
@@ -2927,15 +2912,15 @@ impl App {
 
     fn render(app: Arc&lt;Self&gt;) -&gt; Dom {
         static APP: Lazy&lt;String&gt; = Lazy::new(|| class! {
-            .style(&#34;white-space&#34;, &#34;pre&#34;)
+            .style("white-space", "pre")
         });
 
-        html!(&#34;div&#34;, {
+        html!("div", {
             .class(&amp;*APP)
 
             .children(&amp;mut [
-                html!(&#34;input&#34; =&gt; HtmlInputElement, {
-                    .prop_signal(&#34;value&#34;, app.input.signal_cloned())
+                html!("input" =&gt; HtmlInputElement, {
+                    .prop_signal("value", app.input.signal_cloned())
 
                     .with_node!(element =&gt; {
                         .event(clone!(app =&gt; move |_: events::Input| {
@@ -2944,13 +2929,13 @@ impl App {
                     })
                 }),
 
-                html!(&#34;button&#34;, {
-                    .text(&#34;Lookup user&#34;)
+                html!("button", {
+                    .text("Lookup user")
 
                     .event(clone!(app =&gt; move |_: events::Click| {
                         let input = app.input.lock_ref();
 
-                        if *input == &#34;&#34; {
+                        if *input == "" {
                             app.user.set(None);
 
                         } else {
@@ -2967,23 +2952,23 @@ impl App {
                     }))
                 }),
 
-                html!(&#34;button&#34;, {
-                    .text(&#34;Cancel&#34;)
+                html!("button", {
+                    .text("Cancel")
 
                     .event(clone!(app =&gt; move |_: events::Click| {
                         app.loader.cancel();
                     }))
                 }),
 
-                html!(&#34;div&#34;, {
+                html!("div", {
                     .visible_signal(app.loader.is_loading())
-                    .text(&#34;LOADING&#34;)
+                    .text("LOADING")
                 }),
 
-                html!(&#34;div&#34;, {
+                html!("div", {
                     .visible_signal(not(app.loader.is_loading()))
 
-                    .text_signal(app.user.signal_ref(|user| format!(&#34;{:#?}&#34;, user)))
+                    .text_signal(app.user.signal_ref(|user| format!("{:#?}", user)))
                 }),
             ])
         })
@@ -2995,9 +2980,9 @@ impl App {
 pub async fn main_js() -&gt; Result&lt;(), JsValue&gt; {
     console_error_panic_hook::set_once();
 
-    let user = User::fetch(&#34;Pauan&#34;).await.ok();
+    let user = User::fetch("Pauan").await.ok();
 
-    let app = App::new(&#34;Pauan&#34;, user);
+    let app = App::new("Pauan", user);
 
     dominator::append_dom(&amp;dominator::body(), App::render(app));
 
@@ -3065,30 +3050,26 @@ Also, [here is my Github repository](https://github.com/Firfi/shades-of-rust) wi
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack">
-    
-    
-    
-    <meta property="og:title" content="Integrating AI models into Zulip bots using FastAPI - Part 1 - HedgeDoc">
-    
-    
-    <meta property="og:description" content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Integrating AI models into Zulip bots using FastAPI - Part 1 - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="Step-by-step guide on how to set up the development environment and run example applications using Solana Mobile Stack" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Integrating AI models into Zulip bots using FastAPI - Part 1 - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&amp;s=96);" title="juan.david"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/2473334027fbd2200340fc45dabbd6c5?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="juan.david"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 31 2023 08:42:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 01 2023 04:29:37 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1973 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Jan 31 2023 08:42:22 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 01 2023 04:29:37 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">2002 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -94,7 +79,7 @@ This post is the first of the series. Here, you’ll learn how to create a Zulip
 Let’s begin!
 
 ## Setting up an example bot
-Before creating the bot using FastAPI, let’s  test one of the example bots found in [Zulip&#39;s repository](https ://github.com/zulip/python-zulip-api.git). First, you’ll need to set up your development environment. According to the [documentation](https://zulip.com/api/running-bots): 
+Before creating the bot using FastAPI, let’s  test one of the example bots found in [Zulip's repository](https ://github.com/zulip/python-zulip-api.git). First, you’ll need to set up your development environment. According to the [documentation](https://zulip.com/api/running-bots): 
 
 1. Add a new bot to your Zulip account by going to your Zulip client app &gt; settings icon &gt; personal settings &gt; Bots (https://zulip.com/help/add-a-bot-or-integration) &gt; click on the “Add new bot” button
 
@@ -130,18 +115,18 @@ from zulip_bots.lib import BotHandler
 
 class HelloWorldHandler:
     def usage(self) -&gt; str:
-        return &#34;&#34;&#34;
+        return """
         This is a boilerplate bot that responds to a user query with
-        &#34;beep boop&#34;, which is a robot for &#34;Hello World&#34;.
+        "beep boop", which is a robot for "Hello World".
         This bot can be used as a template for other, more
         sophisticated, bots.
-        &#34;&#34;&#34;
+        """
 
     def handle_message(self, message: Dict[str, Any], bot_handler: BotHandler) -&gt; None:
-        content = &#34;beep boop&#34;  # type: str
+        content = "beep boop"  # type: str
         bot_handler.send_reply(message, content)
 
-        emoji_name = &#34;wave&#34;  # type: str
+        emoji_name = "wave"  # type: str
         bot_handler.react(message, emoji_name)
         return
 
@@ -183,11 +168,11 @@ token=xxxxxtokenxxxxx
 ```
 
 
-Once you’ve run a couple of examples and feel comfortable by using them, you&#39;re ready to implement a Zulip bot with FastAPI.
+Once you’ve run a couple of examples and feel comfortable by using them, you're ready to implement a Zulip bot with FastAPI.
 
 
 ## Setting up a bot with FastAPI
-So far, we&#39;ve used the initial Zulip example bot repository and executed one of their bots. The repository code that Zulip provides contains the structure to create and integrate a new bot, as well as several test examples, and a series of libraries that allow for the  creation and management of the bots. The libraries also add functionalities for things like local tests, deployments, pull requests, etc. 
+So far, we've used the initial Zulip example bot repository and executed one of their bots. The repository code that Zulip provides contains the structure to create and integrate a new bot, as well as several test examples, and a series of libraries that allow for the  creation and management of the bots. The libraries also add functionalities for things like local tests, deployments, pull requests, etc. 
 
 This structure, while useful, is overly complex if what we want is to integrate a simple bot. So, we’ll only maintain some key concepts and redefine the structure in the new project we’re going to create. 
 
@@ -195,7 +180,7 @@ In the next section, you’ll learn how to write your own Zulip bot server in Fa
 The bot we’re going to create is named Delphos, this in reference to the city that housed [The Delphi Oracle](https://blogs.unimelb.edu.au/sciencecommunication/2021/08/15/the-delphi-or/) in Greek mythology, because our goal is for Delphos to be the source of all knowledge within our company.
 
 ## Migrating from Flask to FastAPI
-While it&#39;s possible to implement the project from scratch, for ease, we&#39;re going to reuse some files from the Flask project and rewrite a couple of functions to be FastAPI compliant.
+While it's possible to implement the project from scratch, for ease, we're going to reuse some files from the Flask project and rewrite a couple of functions to be FastAPI compliant.
 
 The `zulip-botserver` tool  has two essential files that we’re going to use:
 
@@ -224,17 +209,17 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get(&#34;/&#34;)
+@app.get("/")
 async def main():
-    return {&#34;success&#34;: True, &#34;message&#34;: &#34;Hello Delphos&#34;}
+    return {"success": True, "message": "Hello Delphos"}
 
 
-if __name__ == &#34;__main__&#34;:
-    uvicorn.run(&#34;server:app&#34;, host=&#34;127.0.0.1&#34;, port=5000, reload=True)
+if __name__ == "__main__":
+    uvicorn.run("server:app", host="127.0.0.1", port=5000, reload=True)
 ```
 
 
-The above script creates a basic FastAPI server with a GET endpoint that returns a JSON with the message &#34;Hello Delphos&#34;. To test that everything works, run the `python server.py` command from a terminal and go to the url http://127.0.0.1:5000/  in a browser. Once there, you should see the following JSON: `{&#34;success&#34;:true, &#34;message&#34;: &#34;Hello Delphos&#34;}`.
+The above script creates a basic FastAPI server with a GET endpoint that returns a JSON with the message "Hello Delphos". To test that everything works, run the `python server.py` command from a terminal and go to the url http://127.0.0.1:5000/  in a browser. Once there, you should see the following JSON: `{"success":true, "message": "Hello Delphos"}`.
 
 
 To start with the migration, first copy the contents of [server.py](https://github.com/zulip/python-zulip-api/blob/main/zulip_botserver/zulip_botserver/server.py) into the `server.py` file in the main directory of the delphos project.
@@ -322,18 +307,18 @@ Once the server starts up, the system loads the bots configuration. To do this, 
 ```shell
 Settings = (
 bots_lib_modules: {
-    &#34;delphos&#34;: src/delphos/delphos.py
+    "delphos": src/delphos/delphos.py
 }
 bot_handlers: {
-    &#34;delphos&#34;: ExternalBotHandler = client: (
-            email=&#34;delphos@email.com&#34;,
-            api_key=&#34;delphos_api_key&#34;,
-            site=&#34;https://zulip.site.com&#34;,
+    "delphos": ExternalBotHandler = client: (
+            email="delphos@email.com",
+            api_key="delphos_api_key",
+            site="https://zulip.site.com",
     )
     ...
 }
 message_handlers: {
-    &#34;delphos&#34;:  DelphosHandler.handle_message()
+    "delphos":  DelphosHandler.handle_message()
 })
 ```
 
@@ -360,7 +345,7 @@ You also need to change the function `read_config_section` to update the module_
 
 
 ### Step 6: Initialize the FastAPI app
-Change the app instance so that it &#39;s an object of type FastAPI. Additionally, define an `initdata` variable of type `Settings` that will serve to store the initial configuration of the bot server as a global state of the app. 
+Change the app instance so that it 's an object of type FastAPI. Additionally, define an `initdata` variable of type `Settings` that will serve to store the initial configuration of the bot server as a global state of the app. 
 
 ![](https://docs.monadical.com/uploads/764f1f24-57bc-4c47-a976-24ecca3fa458.png)
 
@@ -398,7 +383,7 @@ Up to this point, you’ve managed to migrate the `zulip-botserver` from Flask t
 
 ### Step 11: Add your bot functionality
 To run your own functionalities, you need to add commands to the bot. The following is an example of the process, with a command to get a city’s weather specified as a parameter. For example, `@delphos weather Medellin`. 
-To achieve this, we’ll make use of the public API **www.weatherapi.com**. First, register on its page to obtain an API KEY. Once you have the API KEY, you can make requests to its endpoint. Attach the API KEY and specify the name of the city as a parameter. Something like `http://api.weatherapi.com/v1/current.json?key=API_KEY&amp;q=Medellin`. Let&#39;s see the complete example. 
+To achieve this, we’ll make use of the public API **www.weatherapi.com**. First, register on its page to obtain an API KEY. Once you have the API KEY, you can make requests to its endpoint. Attach the API KEY and specify the name of the city as a parameter. Something like `http://api.weatherapi.com/v1/current.json?key=API_KEY&amp;q=Medellin`. Let's see the complete example. 
 
 Create a new file file `src/bots/delphos/delphos.py` and add the following content:
 
@@ -411,25 +396,25 @@ from zulip_bots.lib import BotHandler
 
 
 def get_weather(city_name: str):
-    API_KEY = &#34;37bf4285515446549a4222213231001&#34;
-    url = f&#34;https://api.weatherapi.com/v1/current.json?key={API_KEY}&amp;q={city_name}&#34;
+    API_KEY = "37bf4285515446549a4222213231001"
+    url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&amp;q={city_name}"
     return requests.get(url).json()
 
 
 class DelphosHandler:
-    ERROR_MESSAGE = &#34;&#34;&#34;
+    ERROR_MESSAGE = """
     Sorry, No command/city found. You need to write the command and city: 
-    &#39;@weather weather &lt;city&gt;&#39; or &#39;weather &lt;city&gt;&#39; in DM
-    &#34;&#34;&#34;
+    '@weather weather &lt;city&gt;' or 'weather &lt;city&gt;' in DM
+    """
 
     def usage(self) -&gt; str:
-        return &#34;&#34;&#34;
+        return """
         This is a weather report system,
         Please specify the city name to obtain detailed info.
-        &#34;&#34;&#34;
+        """
 
     def handle_message(self, message: Dict[str, Any], bot_handler: BotHandler) -&gt; None:
-        content = message.get(&#34;content&#34;, None)
+        content = message.get("content", None)
         response = self.ERROR_MESSAGE
         
         try:
@@ -440,7 +425,7 @@ class DelphosHandler:
             command = None
             city = None
             
-        if command == &#34;weather&#34; and city:
+        if command == "weather" and city:
             response = get_weather(city)
         
         bot_handler.send_reply(message, response)
@@ -466,7 +451,7 @@ token=xxxxxtokenxxxxx
 Now you can run the application with the following command from a terminal:
 
 ```shell
-python3 server.py --config-file zuliprc-delphos --hostname=&#34;0.0.0.0&#34; --port=8000
+python3 server.py --config-file zuliprc-delphos --hostname="0.0.0.0" --port=8000
 ```
 
 
@@ -517,24 +502,20 @@ Finally, we’ve implemented a simple project structure without going into detai
 * https://testdriven.io/blog/moving-from-flask-to-fastapi/
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

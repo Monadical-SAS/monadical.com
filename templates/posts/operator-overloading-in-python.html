@@ -1,63 +1,49 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;   Operator Overloading in Python ===  *Written by [Alejandro](https://twitter.com/asanchezy">
-    
-    
-    
-    <meta property="og:title" content="Operator Overloading in Python - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Operator Overloading in Python - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;   Operator Overloading in Python ===  *Written by [Alejandro](https://twitter.com/asanchezy" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Operator Overloading in Python - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?default=identicon&amp;s=96);" title="maiya"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/631905653495f361dd947f36c21f56fb?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="maiya"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 08 2021 18:43:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jun 11 2021 21:16:15 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">3216 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Jun 08 2021 18:43:07 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Jun 11 2021 21:16:15 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">3245 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 
 Operator Overloading in Python
@@ -74,7 +60,7 @@ To illustrate how operator overloading works, I’ll walk you through how to red
     
 ## Using operator overloading 
 
-The best way to understand an idea like this is to see it in practice. So, let’s start with an exercise which makes it necessary to redefine the behavior of Python&#39;s `+` and `-` operators.   
+The best way to understand an idea like this is to see it in practice. So, let’s start with an exercise which makes it necessary to redefine the behavior of Python's `+` and `-` operators.   
     
 Let’s say that we have a 24-hour clock, and we need to know what time the clock will show in 10 hours’ time. For example, if it’s now 18:00 in the evening, 10 hours later the clock will indicate that it’s 4:00 in the morning--18:00 hours + 10:00 hours = 4:00 hours. So, the summation of 24-clock-time is not like the usual summation of natural numbers, integers, or real numbers. 
 
@@ -83,7 +69,7 @@ Let’s say that we have a 24-hour clock, and we need to know what time the cloc
 ![clock arithmetic](https://docs.monadical.com/uploads/upload_24150b966f9e028198961e88f1c420d6.png)  
         &lt;/center&gt;
 
-The aim of this exercise is to understand how the behavior of the addition and subtraction operators (`+`, `-`) can be redefined to properly capture clock arithmetic, so that &#34;clock time” (in hours) can be added and subtracted to give appropriate results. Let’s get started.
+The aim of this exercise is to understand how the behavior of the addition and subtraction operators (`+`, `-`) can be redefined to properly capture clock arithmetic, so that "clock time” (in hours) can be added and subtracted to give appropriate results. Let’s get started.
 
 Initially, we are going to have a class called `Clock` in which we will represent the time with the format HH:MM:
     
@@ -91,17 +77,17 @@ Initially, we are going to have a class called `Clock` in which we will represen
 class Clock:
 
    def __init__(self, time: str):
-       self.hour, self.min = [int(i) for i in time.split(&#39;:&#39;)]
+       self.hour, self.min = [int(i) for i in time.split(':')]
   
    def __repr__(self) -&gt; str:
-       min = &#39;0&#39; + str(self.min)
-       return str(self.hour) + &#39;:&#39; + min[-2:]    
+       min = '0' + str(self.min)
+       return str(self.hour) + ':' + min[-2:]    
 ```
     
 Note that we are expecting the user to enter the `time` variable as a string in the format HH:MM. We have also made use of the `__repr__` method to define the console representation of our class, again in the format HH:MM. Let’s instantiate and execute it:
     
 ```python
-time_1 = Clock(&#39;10:30&#39;)
+time_1 = Clock('10:30')
 time_1
 ```
     
@@ -114,8 +100,8 @@ The console output will be:
 Now we can create two instances of the `Clock` class:
     
 ```python
-time_1 = Clock(&#39;10:30&#39;)
-time_2 = Clock(&#39;19:45&#39;)
+time_1 = Clock('10:30')
+time_2 = Clock('19:45')
 ```
 
 If we try at this point to add these instances, we find the following error:
@@ -127,7 +113,7 @@ TypeError                                 Traceback (most recent call last)
 &lt;ipython-input-17-9693c7986cbd&gt; in &lt;module&gt;()
 ----&gt; 1 time_1 + time_2
 
-TypeError: unsupported operand type(s) for +: &#39;Clock&#39; and &#39;Clock&#39;
+TypeError: unsupported operand type(s) for +: 'Clock' and 'Clock'
 ```
 
 The problem here is that the `+` operator does not understand the operands of the `Clock` class.
@@ -139,19 +125,19 @@ We can correct this error by adding a method associated with addition to the `Cl
    def __add__(self, other: Clock) -&gt; Clock:
        hour, min = divmod(self.min + other.min, 60)
        hour = (hour + self.hour + other.hour) % 24
-       return self.__class__(str(hour) + &#39;:&#39; + str(min))
+       return self.__class__(str(hour) + ':' + str(min))
 ```
     
 Notice how `divmod` is used here. This function performs a division--the same operation that we do with the division operator (`/`)--but it returns two values: the quotient and the residue. `divmod` converts the total number of minutes into the format HH:MM. The number of minutes is divided by 60 so that the quotient represents the hours and the residue represents the minutes. Since the clock uses the digits 0, 1, 2 ... 24 to represent hours, we calculate the total number of hours modulo 24.
     
     
-Finally, at the end the expression, `self.__class__(str(hour) + &#39;:&#39; + str(min))` is used to create a new instance of the `Clock` class so that the result can be reused in subsequent calculations.
+Finally, at the end the expression, `self.__class__(str(hour) + ':' + str(min))` is used to create a new instance of the `Clock` class so that the result can be reused in subsequent calculations.
     
-Let&#39;s make two instances of the `Clock` class:
+Let's make two instances of the `Clock` class:
     
 ```python
-time_1 = Clock(&#39;10:30&#39;)
-time_2 = Clock(&#39;19:45&#39;)
+time_1 = Clock('10:30')
+time_2 = Clock('19:45')
 ```
 
 If we add them, we get:
@@ -168,7 +154,7 @@ This is exactly the result we want. Similarly, we can redefine the behavior of t
     def __sub__(self, other: Clock) -&gt; Clock:
         hour, min = divmod(self.min - other.min, 60)
         hour = (hour + self.hour - other.hour) % 24
-        return self.__class__(str(hour) + &#39;:&#39; + str(min))
+        return self.__class__(str(hour) + ':' + str(min))
 ``` 
     
     
@@ -178,29 +164,29 @@ We can do this in such a way that the final class will be:
 Class Clock:
 
    def __init__(self, time):
-       self.hour, self.min = [int(i) for i in time.split(&#39;:&#39;)]
+       self.hour, self.min = [int(i) for i in time.split(':')]
   
    def __repr__(self) -&gt; str:
-       min = &#39;0&#39; + str(self.min)
-       return str(self.hour) + &#39;:&#39; + min[-2:]
+       min = '0' + str(self.min)
+       return str(self.hour) + ':' + min[-2:]
 
    def __add__(self, other: Clock) -&gt; Clock:
        hour, min = divmod(self.min + other.min, 60)
        hour = (hour + self.hour + other.hour) % 24
-       return self.__class__(str(hour) + &#39;:&#39; + str(min))
+       return self.__class__(str(hour) + ':' + str(min))
 
    def __sub__(self, other: Clock) -&gt; Clock:
        hour, min = divmod(self.min - other.min, 60)
        hour = (hour + self.hour - other.hour) % 24
-       return self.__class__(str(hour) + &#39;:&#39; + str(min))
+       return self.__class__(str(hour) + ':' + str(min))
 ```
     
 It’s now possible to operate on `Clock` objects directly using the `+` and `-` operators, instead of calling methods:
 
 ```python
-time_1 = Clock(&#39;10:30&#39;)
-time_2 = Clock(&#39;19:45&#39;)
-time_3 = Clock(&#39;16:16&#39;)
+time_1 = Clock('10:30')
+time_2 = Clock('19:45')
+time_3 = Clock('16:16')
 
 time_1 - time_2 + time_3
 7:01
@@ -208,7 +194,7 @@ time_1 - time_2 + time_3
 
 ## Methods for overloading operators
 
-As we saw in the previous section, operator overloading allows us to redefine the behavior of arithmetic operators (`+`, `-`) and in fact, it can be done with any of Python&#39;s arithmetic, binary, comparison, and logical operators. We can use the following special methods to redefine any of the operators: 
+As we saw in the previous section, operator overloading allows us to redefine the behavior of arithmetic operators (`+`, `-`) and in fact, it can be done with any of Python's arithmetic, binary, comparison, and logical operators. We can use the following special methods to redefine any of the operators: 
     
  
 
@@ -280,34 +266,30 @@ https://docs.python.org/3/library/operator.html
     
     
     
-&lt;a id=&#34;10&#34;&gt;[1]&lt;/a&gt; Not all languages support operator overloading. Though operator overloading can be more convenient and allow for more elegant code, it’s not essential for object-oriented programming. C, Java and Pascal do not suppose operator overloading. Python, C++, C#, Perl, and Ruby do support operator overloading.
+&lt;a id="10"&gt;[1]&lt;/a&gt; Not all languages support operator overloading. Though operator overloading can be more convenient and allow for more elegant code, it’s not essential for object-oriented programming. C, Java and Pascal do not suppose operator overloading. Python, C++, C#, Perl, and Ruby do support operator overloading.
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

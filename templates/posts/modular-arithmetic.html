@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="In this tutorial, we&#39;re going to learn how to create a library for modular arithmetic, using operator overloading and redefining the built-in functions for numpy.">
-    
-    
-    
-    <meta property="og:title" content="How to build a modular arithmetic library in Python - HedgeDoc">
-    
-    
-    <meta property="og:description" content="In this tutorial, we&#39;re going to learn how to create a library for modular arithmetic, using operator overloading and redefining the built-in functions for numpy.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>How to build a modular arithmetic library in Python - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="In this tutorial, we're going to learn how to create a library for modular arithmetic, using operator overloading and redefining the built-in functions for numpy." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>How to build a modular arithmetic library in Python - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/50b480368c2e107c3f2d73626dd7e554?default=identicon&amp;s=96);" title="asanchezyali"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/50b480368c2e107c3f2d73626dd7e554?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="asanchezyali"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 04 2022 18:43:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Oct 05 2022 16:27:18 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">3362 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 04 2022 18:43:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Oct 05 2022 16:27:18 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">3392 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -90,23 +75,23 @@ In this game, a change of state is represented by a change in colour. In the ori
 
 Mathematically, the game can be modeled as a $5$-by-$5$ matrix ([Lights Out: Solutions Using Linear Algebra](http://cau.ac.kr/~mhhgtx/courses/LinearAlgebra/references/MadsenLightsOut.pdf)) where each entry represents the state of a light bulb. Modular arithmetic is an excellent way to find the winning strategy because the state of each light bulb occurs cyclically. Plus, in this case, the usual matrix operations are inefficient due to their unbounded nature. What that means is that it’s possible to get results that are outside the range of the game states, such as decimal numbers or very large numbers that don’t match the ‘on’, ‘off’, or other states in the game.
 
-This is article one of two. In this blog, I&#39;ll demonstrate how I have successfully implemented modular arithmetic in Python. In the second post, I&#39;ll demonstrate how I used modular arithmetic to model the Lights Out Game&#39;s state change as a cyclic sequence.
+This is article one of two. In this blog, I'll demonstrate how I have successfully implemented modular arithmetic in Python. In the second post, I'll demonstrate how I used modular arithmetic to model the Lights Out Game's state change as a cyclic sequence.
 
-In doing so, we&#39;ll learn how to:
+In doing so, we'll learn how to:
 
 * use matrix algebra in modular arithmetic
 * use concepts from graph theory to determine when a Lights Out Game is solvable.
 
-On the programming side, we&#39;ll learn how to:
+On the programming side, we'll learn how to:
 
-* articulate these mathematical concepts to extend Python&#39;s capabilities
+* articulate these mathematical concepts to extend Python's capabilities
 * use operator overloading and built-in functions to redefine NumPy’s universal operators.
 
 By the end of this tutorial, we’ll have a Python library with the ability to perform computation using modular arithmetic. This tool can effectively be used in other projects that are related to cryptography, graphs, modeling of cyclic sequence processes, etc.
 
 ## Problem with NumPy
 
-Before we start our tutorial, I’d like to highlight one of the problems I encountered with NumPy while building my game. NumPy doesn&#39;t have support for performing matrix calculations with modular arithmetic, and this was exactly the type of calculation I needed to make. More specifically, I needed to solve the computation of inverse matrices in modular arithmetic in any modulo. In this case, using only the native Python mod operator (`%`) was not going to be enough to perform this task. Let&#39;s see why in the simple example below. 
+Before we start our tutorial, I’d like to highlight one of the problems I encountered with NumPy while building my game. NumPy doesn't have support for performing matrix calculations with modular arithmetic, and this was exactly the type of calculation I needed to make. More specifically, I needed to solve the computation of inverse matrices in modular arithmetic in any modulo. In this case, using only the native Python mod operator (`%`) was not going to be enough to perform this task. Let's see why in the simple example below. 
 
 If we have, for example:
 
@@ -154,7 +139,7 @@ If you don’t understand modular arithmetic very well, then this problem could 
 
 Before building our library, it’s important to understand what modular arithmetic (also called clock arithmetic) is. If you’re already familiar with modular arithmetic, feel free to skip to the [next section](https://docs.monadical.com/asanchezyali-modular-arithmetic?view#Tutorial-How-to-build-a-modular-arithmetic-library-in-Python). 
 
-In mathematics, modular arithmetic is a system of arithmetic for integers that deal primarily with operations and applications regarding remainders. In this system, numbers “cycle” or repeat when reaching a certain value, called the **modulo**. Let&#39;s see what this means by referring to a tool we use every day, a clock!
+In mathematics, modular arithmetic is a system of arithmetic for integers that deal primarily with operations and applications regarding remainders. In this system, numbers “cycle” or repeat when reaching a certain value, called the **modulo**. Let's see what this means by referring to a tool we use every day, a clock!
 
 Let’s look at the $12$-hour analog clock below. Suppose the clock reads $5$ o’clock. After $3$ hours the clock would read $8$ o’clock. This is determined by simply adding $5 + 3 = 8$.
 
@@ -238,7 +223,7 @@ Moreover, if $n$ is prime, in the set $\mathbb{Z}/n\mathbb{Z}$, we can calculate
 
 With this introduction to modular arithmetic, I hope that you have a better understanding of how it works. 
 
-Now, let&#39;s look at how I used modular arithmetic to build a library that allows me to model the lights in Lights Out as a cyclic sequence of states. Let’s get started!
+Now, let's look at how I used modular arithmetic to build a library that allows me to model the lights in Lights Out as a cyclic sequence of states. Let’s get started!
 
 ## Tutorial: How to build a modular arithmetic library in Python 
 
@@ -263,7 +248,7 @@ class Zmodn:
         return congruence_class
     
     def __repr__(self):
-        return f&#39;{self.representative} (mod {self.module})&#39;
+        return f'{self.representative} (mod {self.module})'
 ```
 
 Note that Zmodn receives only the variable `module`, which allows defining the set of equivalence classes $\mathbb{Z}/n\mathbb{Z}$ according to the value of the module. To generate the elements of $\mathbb{Z}/n\mathbb{Z}$, we redefine the `__call__` method, which allows us to call our class as a function to build different instances of `Zmodn` by `congruence_class = self.__class__(self.module)`, and calculate the representative (`self.representative`) of the class as the remainder when dividing `integer` by `self.module`. Finally, we redefine the method `__repr__` to be represented by the console `Zmodn` class as `a (mod n)`.
@@ -296,21 +281,21 @@ The next step is to redefine the methods `__add__`($+$), `__sub__`($-$), `__mul_
 def __add__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot add {self} and {other}, they are not in the same module&#39;
+            f'Cannot add {self} and {other}, they are not in the same module'
         )
     return self.__call__(self.representative + other.representative)
 
 def __sub__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot subtract {self} and {other}, they are not in the same module&#39;
+            f'Cannot subtract {self} and {other}, they are not in the same module'
         )
     return self.__call__(self.representative - other.representative)
 
 def __mul__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot multiply {self} and {other}, they are not in the same module&#39;
+            f'Cannot multiply {self} and {other}, they are not in the same module'
         )
     return self.__call__(self.representative * other.representative)
 ```
@@ -322,7 +307,7 @@ As for the division between two elements $a$ and $b$ of $\mathbb{Z}/n\mathbb{Z}$
 ```python=
 def multiplicative_inverse(self):
     if self.representative == 0:
-        raise ZeroDivisionError(&#39;Cannot compute the multiplicative inverse of 0&#39;)
+        raise ZeroDivisionError('Cannot compute the multiplicative inverse of 0')
     aux1 = 0
     aux2 = 1
     y = self.representative
@@ -335,7 +320,7 @@ def multiplicative_inverse(self):
         return self.__call__(aux1 % self.module)
     else:
         raise ValueError(
-            f&#39;{self.representative} is not coprime to {self.module}&#39;
+            f'{self.representative} is not coprime to {self.module}'
 ```
 
 And after this, we can define the division as follows:
@@ -344,7 +329,7 @@ And after this, we can define the division as follows:
 def __truediv__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot divide {self} and {other}, they are not in the same module&#39;
+            f'Cannot divide {self} and {other}, they are not in the same module'
         )
     return self.__call__(self.representative) * other.multiplicative_inverse()
 ```
@@ -373,32 +358,32 @@ class Zmodn:
         return self.representative
 
     def __repr__(self):
-        return f&#39;{self.representative} (mod {self.module})&#39;
+        return f'{self.representative} (mod {self.module})'
 
     def __add__(self, other: int):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot add {self} and {other}, they are not in the same module&#39;
+                f'Cannot add {self} and {other}, they are not in the same module'
             )
         return self.__call__(self.representative + other.representative)
 
     def __sub__(self, other: int):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot subtract {self} and {other}, they are not in the same module&#39;
+                f'Cannot subtract {self} and {other}, they are not in the same module'
             )
         return self.__call__(self.representative - other.representative)
 
     def __mul__(self, other: int):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot multiply {self} and {other}, they are not in the same module&#39;
+                f'Cannot multiply {self} and {other}, they are not in the same module'
             )
         return self.__call__(self.representative * other.representative)
 
     def multiplicative_inverse(self):
         if self.representative == 0:
-            raise ZeroDivisionError(&#39;Cannot compute the multiplicative inverse of 0&#39;)
+            raise ZeroDivisionError('Cannot compute the multiplicative inverse of 0')
         aux1 = 0
         aux2 = 1
         y = self.representative
@@ -411,13 +396,13 @@ class Zmodn:
             return self.__call__(aux1 % self.module)
         else:
             raise ValueError(
-                f&#39;{self.representative} is not coprime to {self.module}&#39;
+                f'{self.representative} is not coprime to {self.module}'
                 )
 
     def __truediv__(self, other: int):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot divide {self} and {other}, they are not in the same module&#39;
+                f'Cannot divide {self} and {other}, they are not in the same module'
             )
         return self.__call__(self.representative) * other.multiplicative_inverse()
 ```
@@ -463,7 +448,7 @@ class ZmodnArray:
         return congruence_class_array
 
     def __repr__(self):
-        return f&#39;{self.representatives.astype(int)} (mod {self.module})&#39;
+        return f'{self.representatives.astype(int)} (mod {self.module})'
 ```
 
 What’s new here is the line `congruence_class = np.vectorize(self.congruence_class)`. In essence, we’re [vectorizing](https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html) the `self.congruence_class` function using the `np.vectorize` method. This allows us to pass a complete array to the `congruence_class` function as done in the line `congruence_class_array.representatives = congruence_class(integers)`.
@@ -474,21 +459,21 @@ To complete this class, we add the `__add__`, `__sub__` and `__mul__` methods. T
 def __add__(self, other: list):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot add {self} and {other}, they are not in the same module&#39;
+            f'Cannot add {self} and {other}, they are not in the same module'
         )
     return self.__call__((self.representatives + other.representatives).astype(int))
 
 def __sub__(self, other: list):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot subtract {self} and {other}, they are not in the same module&#39;
+            f'Cannot subtract {self} and {other}, they are not in the same module'
         )
     return self.__call__((self.representatives - other.representatives).astype(int))
 
 def __mul__(self, other: list):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot multiply {self} and {other}, they are not in the same module&#39;
+            f'Cannot multiply {self} and {other}, they are not in the same module'
         )
     return self.__call__(
         (np.dot(self.representatives, other.representatives)).astype(int)
@@ -553,10 +538,10 @@ And the method for calculating the inverse matrix:
 def inv(self):
     matrix = self.representatives.astype(int)
     if matrix.shape[0] != matrix.shape[1]:
-        raise ValueError(&#39;Matrix is not square&#39;)
+        raise ValueError('Matrix is not square')
     determinant = int(np.linalg.det(matrix))
     if determinant == 0:
-        raise ValueError(&#39;Matrix is not invertible&#39;)
+        raise ValueError('Matrix is not invertible')
     adjoint = ZmodnArray.adjoint_of_matrix(matrix)
     return self.__call__(
         int(self.congruence_class(1) / self.congruence_class(determinant))
@@ -579,7 +564,7 @@ As a further exercise, I recommend overloading the `__getitem__` method because 
 
 So far, we’ve seen how to build a `Zmodn` class that allows us to work with the  $\mathbb{Z}/n\mathbb{Z}$  modular classes, and we learned how to use these elements with NumPy. 
 
-Next, we’ll solve the problem in a different way by redefining NumPy&#39;s universal functions. For this, we’ll use the special method `__array_function__`, which allows us to override NumPy’s native methods. The structure of this method is:
+Next, we’ll solve the problem in a different way by redefining NumPy's universal functions. For this, we’ll use the special method `__array_function__`, which allows us to override NumPy’s native methods. The structure of this method is:
 
 ```python=
 def __array_ufunc__(self, ufunc, method, *inputs, **kwargs)
@@ -609,7 +594,7 @@ class ZmodnArrays:
         self.module = module
 
     def __repr__(self):
-        return f&#39;{self.representatives} (mod {self.module})&#39;
+        return f'{self.representatives} (mod {self.module})'
 
     def __array_function__(self, func, types, args, kwargs):
         if func not in HANDLED_FUNCTIONS:
@@ -637,7 +622,7 @@ NumPy has a list of universal functions that can be overridden with this strateg
 def __add__(self, other):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot add {self} and {other}, they are not in the same module&#39;
+            f'Cannot add {self} and {other}, they are not in the same module'
         )
     repr_sum = np.array(self.representatives) + np.array(other.representatives)
     return self.__class__(repr_sum % self.module, self.module)
@@ -646,7 +631,7 @@ def __add__(self, other):
 def __sub__(self, other):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot subtract {self} and {other}, they are not in the same module&#39;
+            f'Cannot subtract {self} and {other}, they are not in the same module'
         )
     repr_sub = np.array(self.representatives) - np.array(other.representatives)
     return self.__class__(repr_sub % self.module, self.module)
@@ -655,7 +640,7 @@ def __sub__(self, other):
 def __mul__(self, other):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
-            f&#39;Cannot multiply {self} and {other}, they are not in the same module&#39;
+            f'Cannot multiply {self} and {other}, they are not in the same module'
         )
     repr_dot = np.dot(np.array(self.representatives), np.array(other.representatives))
     return self.__class__(repr_dot % self.module, self.module)
@@ -683,7 +668,7 @@ class ZmodnArrays:
         self.module = module
 
     def __repr__(self):
-        return f&#39;{self.representatives} (mod {self.module})&#39;
+        return f'{self.representatives} (mod {self.module})'
 
     def __array_function__(self, func, types, args, kwargs):
         if func not in HANDLED_FUNCTIONS:
@@ -702,7 +687,7 @@ class ZmodnArrays:
     def __add__(self, other):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot add {self} and {other}, they are not in the same module&#39;
+                f'Cannot add {self} and {other}, they are not in the same module'
             )
         repr_sum = np.array(self.representatives) + np.array(other.representatives)
         return self.__class__(repr_sum % self.module, self.module)
@@ -711,7 +696,7 @@ class ZmodnArrays:
     def __sub__(self, other):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot subtract {self} and {other}, they are not in the same module&#39;
+                f'Cannot subtract {self} and {other}, they are not in the same module'
             )
         repr_sub = np.array(self.representatives) - np.array(other.representatives)
         return self.__class__(repr_sub % self.module, self.module)
@@ -720,7 +705,7 @@ class ZmodnArrays:
     def __mul__(self, other):
         if not self.module == other.module and not isinstance(other, self.__class__):
             raise ValueError(
-                f&#39;Cannot multiply {self} and {other}, they are not in the same module&#39;
+                f'Cannot multiply {self} and {other}, they are not in the same module'
             )
         repr_dot = np.dot(np.array(self.representatives), np.array(other.representatives))
         return self.__class__(repr_dot % self.module, self.module)
@@ -760,14 +745,14 @@ class MyArray:
     def __array_function__(self, func, types, args, kwargs):
         if func not in HANDLED_FUNCTIONS:
             return NotImplemented
-        # Note: this allows subclasses that don&#39;t override
+        # Note: this allows subclasses that don't override
         # __array_function__ to handle MyArray objects
         if not all(issubclass(t, MyArray) for t in types):
             return NotImplemented
         return HANDLED_FUNCTIONS[func](*args, **kwargs)
 
 def implements(numpy_function):
-    &#34;&#34;&#34;Register an __array_function__ implementation for MyArray objects.&#34;&#34;&#34;
+    """Register an __array_function__ implementation for MyArray objects."""
     def decorator(func):
         HANDLED_FUNCTIONS[numpy_function] = func
         return func
@@ -782,7 +767,7 @@ def broadcast_to(array, shape):
     ...  # implementation of broadcast_to for MyArray objects
 ```
 
-With this approach of overloading operators and redefining NumPy’s universal functions, we’ve built a modular arithmetic library that can be successfully used in my version of the Lights Out Game. We&#39;ll have to meet again in my next post to learn how the library functions in the game. 
+With this approach of overloading operators and redefining NumPy’s universal functions, we’ve built a modular arithmetic library that can be successfully used in my version of the Lights Out Game. We'll have to meet again in my next post to learn how the library functions in the game. 
 
 If you’re like me, you may be interested in building this library to learn more about topics such as graph theory, cryptography, and number theory, among others. To learn more about these topics in relation to the Lights Out Game, please check out these articles:
 
@@ -807,30 +792,26 @@ If you enjoyed building this modular arithmetic library through my tutorial, ple
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
     
 &lt;/center&gt;</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

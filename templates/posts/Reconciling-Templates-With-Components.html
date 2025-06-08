@@ -1,63 +1,49 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Reconciling Backend Templates with Frontend Components **How to build a frontend without">
-    
-    
-    
-    <meta property="og:title" content="Reconciling Backend Templates with Frontend Components - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Reconciling Backend Templates with Frontend Components - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  # Reconciling Backend Templates with Frontend Components **How to build a frontend without" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Reconciling Backend Templates with Frontend Components - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 12:11:31 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:20:05 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">2354 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Sat Apr 21 2018 12:11:31 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 00:20:05 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">2383 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 # Reconciling Backend Templates with Frontend Components
 **How to build a frontend without making a Single-Page-App**
@@ -70,7 +56,7 @@ At `$startupNameHere` we decided to write our backend in Django and our frontend
 
 The fundamental issue is that Django wants you to build up your pages using template fragments, and React wants to pull you into its world with JS components as the main building blocks. This conflict can also arise with Rails, Flask and any other backend framework that uses templating.
 
-&lt;img src=&#34;https://cdn-images-1.medium.com/max/2000/1*B-kFzr8f4OF9rr6Ueg-UFg.png&#34; width=&#34;100%&#34;&gt;
+&lt;img src="https://cdn-images-1.medium.com/max/2000/1*B-kFzr8f4OF9rr6Ueg-UFg.png" width="100%"&gt;
 &lt;br/&gt;&lt;br/&gt;
 
 I’m here to tell you these don’t necessarily have to conflict, it’s possible to use both without angering the Lilliputians.
@@ -97,22 +83,22 @@ This base template can accept any combination of JS component file and props. If
 
 
 ```html+django
-{% extends &#34;ui/base.html&#34; %}
+{% extends "ui/base.html" %}
 
 {% block title %}{{title}}{% endblock %}
 
 {% block inner %}
-    &lt;div id=&#34;react&#34;&gt;
+    &lt;div id="react"&gt;
         &lt;!-- Contents get replaced by mounted React.Component --&gt;
-        &lt;i class=&#34;fa fa-lg fa-spinner fa-spin&#34;&gt;&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-        &lt;i class=&#34;pending&#34;&gt;Loading components...&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        &lt;i class="fa fa-lg fa-spinner fa-spin"&gt;&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        &lt;i class="pending"&gt;Loading components...&lt;/i&gt;&lt;br&gt;&lt;br&gt;
     &lt;/div&gt;
 
     &lt;script&gt;
         window.props = {{props|json}};  // make sure to escape your props to prevent XSS! See here for the source for the json filter: https://gist.github.com/pirate/c18bfe4fd96008ffa0aef25001a2e88f
-        window.react_mount = document.getElementById(&#39;react&#39;);
+        window.react_mount = document.getElementById('react');
     &lt;/script&gt;
-    &lt;script src=&#34;/static/src/{{component}}&#34;&gt;&lt;/script&gt;
+    &lt;script src="/static/src/{{component}}"&gt;&lt;/script&gt;
 
 ```
 
@@ -124,13 +110,13 @@ So far this gives us a basic page with a navbar, and a loading message. Once we 
 
 ## The React Component
 
-Now we define a basic React component which lays out our page. We can import reusable components from other JS files, or just write it all in one file. I’ll do that here for simplicity. A more complex page may mount a redux Provider, import dozens of components, or setup websocket connections here. Think of this as your `index.js` entry point, similar to an SPA&#39;s `index.js`, except it only defines the contents of one page.
+Now we define a basic React component which lays out our page. We can import reusable components from other JS files, or just write it all in one file. I’ll do that here for simplicity. A more complex page may mount a redux Provider, import dozens of components, or setup websocket connections here. Think of this as your `index.js` entry point, similar to an SPA's `index.js`, except it only defines the contents of one page.
 
 Here I implement a simple leaderboard, which shows a list of users.
 
 ```jsx
-import React from &#39;react&#39;
-import ReactDOM from &#39;react-dom&#39;
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 const Leaderboard = ({users}) =&gt;
     &lt;div&gt;
@@ -165,11 +151,11 @@ Great, now we have something on the screen!
 
 The Django view just needs to provide the following context to the react_base.html template in order to render this page properly:
 
-1. `component` = `&#34;leaderboard.js&#34;` (our React file above)
+1. `component` = `"leaderboard.js"` (our React file above)
 
 1. `props` = `{users: [{username: ‘alice’}, {username: ‘bob’}]}` (the data passed to the React component as props)
 
-1. `title` = `&#34;Leaderboard&#34;` (used for the browser tab title)
+1. `title` = `"Leaderboard"` (used for the browser tab title)
 
 ```python
 from django.views import View
@@ -177,23 +163,23 @@ from django.shortcuts import render
 
 
 class Leaderboard(View):
-    title = &#39;Leaderboard&#39;
-    template = &#39;ui/react_base.html&#39;
-    component = &#39;pages/leaderboard.js&#39;
+    title = 'Leaderboard'
+    template = 'ui/react_base.html'
+    component = 'pages/leaderboard.js'
 
     def get(self, request):
         # gets passed to react via window.props
         props = {
-            &#39;users&#39;: [
-                {&#39;username&#39;: &#39;alice&#39;},
-                {&#39;username&#39;: &#39;bob&#39;},
+            'users': [
+                {'username': 'alice'},
+                {'username': 'bob'},
             ]
         }
 
         context = {
-            &#39;title&#39;: self.title,
-            &#39;component&#39;: self.component,
-            &#39;props&#39;: props,
+            'title': self.title,
+            'component': self.component,
+            'props': props,
         }
 
         render(request, self.template, context)
@@ -289,24 +275,20 @@ Hopefully you find this useful! If so, give this article a 💚, or ping me on t
 If you’re interested working on cool Django + React/Redux projects involving Ethereum, [Monadical is hiring](https://monadical.com) remote &amp; local devs (we’ll fly you to sunny Medellín for the first month)!
 
 ![](https://cdn-images-1.medium.com/max/3796/1*uRMpX-1G6q12KDu23mGcvQ.png)</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

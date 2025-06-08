@@ -168,72 +168,58 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Storing Database ORM Operations as Data **A Strategy for Linearizing Database Operations">
-    
-    
-    
-    <meta property="og:title" content="Storing Database ORM Operations as Data - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Storing Database ORM Operations as Data - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  # Storing Database ORM Operations as Data **A Strategy for Linearizing Database Operations" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Storing Database ORM Operations as Data - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:50:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 13:00:25 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">2382 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Wed Feb 13 2019 23:50:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Feb 14 2019 13:00:25 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">2430 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 # Storing Database ORM Operations as Data
 **A Strategy for Linearizing Database Operations**
 
 *Originally published 2018-09-05 on [labs.oddslingers.com](https://labs.oddslingers.com/posts/Linearizing-database-operations-django.html).*
 
-&lt;img src=&#34;https://i.imgur.com/YiU19Lv.jpg&#34; style=&#34;width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.04);&#34;&gt;
+&lt;img src="https://i.imgur.com/YiU19Lv.jpg" style="width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.04);"&gt;
 
 &lt;br/&gt;&lt;br/&gt;
 &lt;/center&gt;
@@ -252,7 +238,7 @@ Here are some code smells that often indicate hidden complexity and potentially 
 
 &lt;br/&gt;
 &lt;center&gt;
-&lt;img src=&#34;https://i.imgur.com/kBITVs1.png&#34; style=&#34;width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.04);&#34;&gt;
+&lt;img src="https://i.imgur.com/kBITVs1.png" style="width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.04);"&gt;
 &lt;/center&gt;
 
 ## Why would data be better than code?
@@ -263,19 +249,19 @@ For example, typical CI/CD pipelines have gradually moved from  bash scripts in 
 
 This principle extends beyond config management to code actual implementation.  We can build systems in the form of pure functional layers that pass around some data, then perform side effects at the very end safely.
 
-Having as much complexity expressed as data aids in keeping layers of systems cleanly separated, and does wonders for testability. As you&#39;re probably heard a compsci teacher say before &#34;find the right data structure and the problem solves itself&#34;. You can pass around a data structure that represents a complex sequence of events as simple values and test it like data by making assertions about its content. LISP discovered the power of code as data long ago.
+Having as much complexity expressed as data aids in keeping layers of systems cleanly separated, and does wonders for testability. As you're probably heard a compsci teacher say before "find the right data structure and the problem solves itself". You can pass around a data structure that represents a complex sequence of events as simple values and test it like data by making assertions about its content. LISP discovered the power of code as data long ago.
 
-That being said, we&#39;re not going whole-hog into the meta-programming heavens like LISP, here we&#39;re illustrating a compact structure that solves one problem well: describing database changes.
+That being said, we're not going whole-hog into the meta-programming heavens like LISP, here we're illustrating a compact structure that solves one problem well: describing database changes.
 
 ## How can we represent a database operation as data?
 
-Here&#39;s a database operation you might see in imperative form, as it is typically written in Django codebases:
+Here's a database operation you might see in imperative form, as it is typically written in Django codebases:
 ```python
 user = User.objects.get(id=123)
 user.balance = user.balance + 100
 ```
 
-Now we&#39;re going to transform that example from imperative code that *outlines steps*, into declarative data that *describes a desired outcome*.
+Now we're going to transform that example from imperative code that *outlines steps*, into declarative data that *describes a desired outcome*.
 
 We can represent each operation on a database as a tuple, and each set of operations as a list of those tuples, forming a transaction.
 
@@ -288,8 +274,8 @@ An individual operation can now look like this in data form:
 ```python
 operation: Operation = (
     User.objects.filter(id=123),        # QuerySet to update
-    &#39;update&#39;,                           # func to call on the queryset
-    {&#39;balance&#39;: F(&#39;balance&#39;) + 100},    # kwargs for the func
+    'update',                           # func to call on the queryset
+    {'balance': F('balance') + 100},    # kwargs for the func
 )
 ```
 
@@ -297,19 +283,19 @@ Django documents this as: [Avoiding Race Conditions With `F()`](https://docs.dja
 
 This structure works not only for updates, but also equally well for object creation and deletion:
 ```python
-operation1 = (User.objects, &#39;get_or_create&#39;, {&#39;username&#39;: &#39;bob&#39;})
-operation2 = (User.objects.filter(username=&#39;bob&#39;), &#39;delete&#39;, {})
+operation1 = (User.objects, 'get_or_create', {'username': 'bob'})
+operation2 = (User.objects.filter(username='bob'), 'delete', {})
 ```
 
-If `F()` expressions aren&#39;t enough, you can reuse this design to aquire a list of locks before your logic executes, and execute a different list of operations afterwards. 
+If `F()` expressions aren't enough, you can reuse this design to aquire a list of locks before your logic executes, and execute a different list of operations afterwards. 
 
 ```jsx
 pre_logic_locks = [
-    (User.objects.filter(id=123), &#39;select_for_update, {}),
+    (User.objects.filter(id=123), 'select_for_update, {}),
 ]
 ...
 post_logic_writes = [
-    (User.objects.filter(id=123), &#39;update&#39;, {&#39;some_field&#39;: new_val})
+    (User.objects.filter(id=123), 'update', {'some_field': new_val})
 ]
 ```
 
@@ -317,7 +303,7 @@ Of course, the ultimate declarative language is SQL, we can only get close with 
 
 &lt;center&gt;
 
-&lt;img src=&#34;https://i.imgur.com/WVMRrDq.png&#34; style=&#34;width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.08);&#34;&gt;
+&lt;img src="https://i.imgur.com/WVMRrDq.png" style="width: 80%; border-radius: 14px; box-shadow: 4px 4px 4px rgba(0,0,0,0.08);"&gt;
 &lt;/center&gt;
 
 ## How do we process a list of operations?
@@ -338,16 +324,16 @@ In this way we can perform 20 or 30 field and row updates scattered across vario
 
 Imagine you have a game loop with complex logic that takes 100ms to calculate the next gamestate after each player action.  The logic needs to access and update several datase rows representing the game state, but the reads and writes happen scattered throughout the game loop.
 
-Because each game loop step needs to write all changes in a single transaction, and writes are scattered in a 100ms window, we know that to operate it safely we will need to hold some locks for the entire 100ms window.  Lets take the example of a person joining a game and paying for some chips out of their wallet to start playing.  To make sure we have enough chips balance to pay the join-game fee for the whole duration of the join transaction, we have to prevent concurrent games from modifying balance until we&#39;re done.  Additionally, if they don&#39;t have enough chips, or if the game fails for some reason during the transaction, we don&#39;t want to leave partially commited database changes, we want to roll everything back together.
+Because each game loop step needs to write all changes in a single transaction, and writes are scattered in a 100ms window, we know that to operate it safely we will need to hold some locks for the entire 100ms window.  Lets take the example of a person joining a game and paying for some chips out of their wallet to start playing.  To make sure we have enough chips balance to pay the join-game fee for the whole duration of the join transaction, we have to prevent concurrent games from modifying balance until we're done.  Additionally, if they don't have enough chips, or if the game fails for some reason during the transaction, we don't want to leave partially commited database changes, we want to roll everything back together.
 
-Locking other games for 100ms is not great, because it effectively rate-limits all table changes to 10/s, in a way that&#39;s difficult to fix later because it requires a fundamental structural change in the code. If we can come up with an atomic solution that performs all writes in one go at the end, maybe we can bring the locking down to under 5 or 10ms. Grouping writes into single short atomic transactions should allow more games to run simultaneously, no more long locks on all objects shared between games. 
+Locking other games for 100ms is not great, because it effectively rate-limits all table changes to 10/s, in a way that's difficult to fix later because it requires a fundamental structural change in the code. If we can come up with an atomic solution that performs all writes in one go at the end, maybe we can bring the locking down to under 5 or 10ms. Grouping writes into single short atomic transactions should allow more games to run simultaneously, no more long locks on all objects shared between games. 
 
 ```python
 join_game: Transaction = [
-    (GameAction.objects, &#39;create&#39;, {&#39;user&#39;: bob, &#39;action&#39;: &#39;JOIN&#39;}),
+    (GameAction.objects, 'create', {'user': bob, 'action': 'JOIN'}),
     (Game.objects.filter())
-    (UserBalance.objects.filter(user=bob), &#39;select_for_update&#39;, {}),
-    (UserBalance.objects.filter(user=bob, amt__gte=5000), &#39;update&#39;)
+    (UserBalance.objects.filter(user=bob), 'select_for_update', {}),
+    (UserBalance.objects.filter(user=bob, amt__gte=5000), 'update')
 ]
 ```
     
@@ -360,36 +346,36 @@ With transactions outlined as data, we can test assumptions about their behavior
 ```python3
 def balance_transfer(src: User, dst: User, amt: int) -&gt; Transaction:
     return [
-        (UserBalance.objects.filter(user=src), &#39;select_for_update&#39;, {}),
-        (BalanceTransfer.objects, &#39;create&#39;, {&#39;src&#39;: src, &#39;dst&#39;: dst, &#39;amt&#39;: amt}),
+        (UserBalance.objects.filter(user=src), 'select_for_update', {}),
+        (BalanceTransfer.objects, 'create', {'src': src, 'dst': dst, 'amt': amt}),
         ...
     ]
 
 class TestBalanceTransfer:
     def test_lock_aquired(self):
         operations = balance_transfer(test_user_a, test_user_b, 100)
-        assert operations[0].func = &#39;select_for_update&#39;
+        assert operations[0].func = 'select_for_update'
         ...
-        assert all(execute_operations(operations)), &#39;Some operations did not run&#39;
+        assert all(execute_operations(operations)), 'Some operations did not run'
 ```
 
 These operation lists and objects can also be passed around, extended, and modified as needed much more easily than imperative code deep inside a view somewhere.
 
 ### Lazy QuerySet evaluation is mandatory
 
-It&#39;s critical that QuerySets don&#39;t get accidentally evaluated before they run in the transaction, as that may lead to stale data read into memory early on being written back to the db after other logic executes.
+It's critical that QuerySets don't get accidentally evaluated before they run in the transaction, as that may lead to stale data read into memory early on being written back to the db after other logic executes.
 
 We can prevent this easily by adding an assertion in our `execute_operations` function:
 
 ```python
-assert isinstance(queryset, QuerySet), &#39;QuerySets should not be evaluated before they are executed to maintain concurrency safety&#39;
+assert isinstance(queryset, QuerySet), 'QuerySets should not be evaluated before they are executed to maintain concurrency safety'
 ```
 
 Evaluated QuerySets will be instances of `List` instead of `QuerySet`.
 
 ## Full example with locking &amp; updates across multiple tables
 
-Here I show an example of a bank that needs to store both an `Account.balance` and a table of `BalanceTransfers` to keep track of credits and debits for each of their users.  When transferring money between two users, it needs to update multiple inter-dependent rows and ensure that the assumptions about a user&#39;s balance hold true throughout the entire transaction. Specifically, we need to make sure that the source user doesn&#39;t have money withdrawn concurrently by other threads until we finish this transfer.
+Here I show an example of a bank that needs to store both an `Account.balance` and a table of `BalanceTransfers` to keep track of credits and debits for each of their users.  When transferring money between two users, it needs to update multiple inter-dependent rows and ensure that the assumptions about a user's balance hold true throughout the entire transaction. Specifically, we need to make sure that the source user doesn't have money withdrawn concurrently by other threads until we finish this transfer.
 
 ```jsx
 src = User.objects.get(id=123)
@@ -397,15 +383,15 @@ dst = User.objects.get(id=987)
 amt = 1000
 
 balance_transfer = [
-    # lock source&#39;s balance to prevent other withdrawals until transaction is over
-    (Account.objects.filter(user=src), &#39;select_for_update&#39;, {}),
+    # lock source's balance to prevent other withdrawals until transaction is over
+    (Account.objects.filter(user=src), 'select_for_update', {}),
     
-    # throws a NotFoundError if src user doesn&#39;t have enough money
-    (Account.objects.filter(user=src, balance__gte=amt), &#39;get&#39;, {}),
+    # throws a NotFoundError if src user doesn't have enough money
+    (Account.objects.filter(user=src, balance__gte=amt), 'get', {}),
     
-    (BalanceTransfer.objects, &#39;create&#39;, {&#39;src&#39;: src, &#39;dst&#39;: dst, &#39;amt&#39;: amt}),
-    (Account.objects.filter(user=src, &#39;update&#39;, {&#39;balance&#39;: F(&#39;balance&#39;) - amt}),
-    (Account.objects.filter(user=dst, &#39;update&#39;, {&#39;balance&#39;: F(&#39;balance&#39;) + amt}),
+    (BalanceTransfer.objects, 'create', {'src': src, 'dst': dst, 'amt': amt}),
+    (Account.objects.filter(user=src, 'update', {'balance': F('balance') - amt}),
+    (Account.objects.filter(user=dst, 'update', {'balance': F('balance') + amt}),
 ]
 
 execute_operations(balance_transfer)
@@ -413,33 +399,29 @@ execute_operations(balance_transfer)
 
 ## Further Reading
 
-You may not use the Django ORM or you may have a different preferred way of representing transactions.  If you think you&#39;ve found a better way, give us a shoutout at @MonadicalSAS, we&#39;d love to learn!
+You may not use the Django ORM or you may have a different preferred way of representing transactions.  If you think you've found a better way, give us a shoutout at @MonadicalSAS, we'd love to learn!
 
-If you&#39;re interested in database integrity and want to learn more, check out our other resources on designing safe systems with SQL databases and Python: 
+If you're interested in database integrity and want to learn more, check out our other resources on designing safe systems with SQL databases and Python: 
  - [Banking Blunders and Concurrency Challenges](https://labs.oddslingers.com/posts/Designing-A-Banking-System.html)
  - [PyGotham2018 Talk](https://github.com/pirate/django-concurrency-talk)
  - [Modeling Message Queues in TLA+](https://www.hillelwayne.com/post/tla-messages/) by Hillel Wayne (not our team)</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

@@ -1,63 +1,49 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  # Using the Redux Store Like a Database  *Originally published 2017-07-27 on [HackerNoon.c">
-    
-    
-    
-    <meta property="og:title" content="Using the Redux Store Like a Database - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Using the Redux Store Like a Database - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  # Using the Redux Store Like a Database  *Originally published 2017-07-27 on [HackerNoon.c" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Using the Redux Store Like a Database - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Fri Apr 20 2018 00:45:05 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 13 2019 23:59:18 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1808 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Fri Apr 20 2018 00:45:05 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Feb 13 2019 23:59:18 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1837 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 # Using the Redux Store Like a Database
 
@@ -85,18 +71,18 @@ If you’re storing some data where each item has an id, you could shape your st
 **This is the most common one by far that I’ve seen. It makes iteration easy and you can store your data in a particular order, but you cant access a specific item by id or name without iterating and filtering.
 
     categories: [
-      {name: &#39;abs&#39;,  id: &#39;32o8wafe&#39;, exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
-      {name: &#39;arms&#39;, id: &#39;oaiwefjo&#39;, exercises: [...]},
-      {name: &#39;legs&#39;, id: &#39;aoijwfeo&#39;, exercises: [...]},
+      {name: 'abs',  id: '32o8wafe', exercises: ['crunches', 'plank']},
+      {name: 'arms', id: 'oaiwefjo', exercises: [...]},
+      {name: 'legs', id: 'aoijwfeo', exercises: [...]},
     ]
 
 **Object keyed on id {id: {values}}:
 **This gives you fast O(1) access to each item, but you cant easily access the id of a given item while you’re iterating using Object.values().
 
     categories: {
-      &#39;32o8wafe&#39;: {name: &#39;abs&#39;,  exercises: [&#39;crunches&#39;, &#39;plank&#39;]},
-      &#39;oaiwefjo&#39;: {name: &#39;arms&#39;, exercises: [...]},
-      &#39;3oij2e3c&#39;: {name: &#39;legs&#39;, exercises: [...]},
+      '32o8wafe': {name: 'abs',  exercises: ['crunches', 'plank']},
+      'oaiwefjo': {name: 'arms', exercises: [...]},
+      '3oij2e3c': {name: 'legs', exercises: [...]},
     }
 
     Object.values(categories).map(row =&gt; // cant access id here)
@@ -109,9 +95,9 @@ Arrays and Objects are [the same thing in JS](https://developer.mozilla.org/en-U
 On our journey implementing a large redux app at [Monadical](https://monadical.com), we stumbled upon a different approach that gives us the benefit of both easy iteration with Object.values(state.categories), and fast O(1) access to individual items:
 
     categories: {
-      &#39;32o8wafe&#39;: {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;,  exercises: [...]},
-      &#39;oaiwefjo&#39;: {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, exercises: [...]},
-      &#39;3oij2e3c&#39;: {id: &#39;3oij2e3c&#39;, name: &#39;legs&#39;, exercises: [...]},
+      '32o8wafe': {id: '32o8wafe', name: 'abs',  exercises: [...]},
+      'oaiwefjo': {id: 'oaiwefjo', name: 'arms', exercises: [...]},
+      '3oij2e3c': {id: '3oij2e3c', name: 'legs', exercises: [...]},
     }
 
 Notice how the id is both the key for the row, and a property in the row itself. This little bit of duplication affords us great flexibility at access time. It’s also compatible with the [normalized](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html) (*aka* flat) shape that the redux docs recommend.
@@ -122,7 +108,7 @@ Object.values(categories).map(cat =&gt; ({id: cat.id, name: cat.name}))
 
 Or access any individual item instantly by id!
 
-categories[‘32o8wafe’].name // &#39;abs&#39;
+categories[‘32o8wafe’].name // 'abs'
 
 We send our data to the frontend already shaped like this, so the frontend doesn’t need to do any processing to produce the mapping of id: values. It’s easy to do from the backend, since you’re likely pulling data out of a database where it already has an id field that you can use as a key.
 
@@ -143,13 +129,13 @@ To make the index, we write a function that takes the store data, and returns a 
                           return index
                       }, {})
 
-    // {abs: &#39;32o8wafe&#39;, arms: &#39;oaiwefjo&#39;, legs: &#39;3oij2e3c&#39;}
+    // {abs: '32o8wafe', arms: 'oaiwefjo', legs: '3oij2e3c'}
 
 ![](https://cdn-images-1.medium.com/max/2572/1*y3bELbeb5YMOFNwIotJ6QQ.png)
 
     const ids_by_name = index_by_name(categories)
 
-    categories[ids_by_name[&#39;abs&#39;]] // {id: &#39;32o8wafe&#39;, name: &#39;abs&#39;, ...}
+    categories[ids_by_name['abs']] // {id: '32o8wafe', name: 'abs', ...}
 
 You can build as many indexes as you want for the same data, which gives you O(1) access based on any column, just like you’d have in a database.
 
@@ -169,7 +155,7 @@ What if your categories have an inherent order (like in an array), and you need 
 
 You might think to do something like:
 
-    const category_order = [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
+    const category_order = ['32o8wafe', 'oaiwefjo', '3oij2e3c']
     category_order.map(id =&gt; categories[id])
 
 This is a good approach, however, it requires keeping an array separately from our data to store the order, which is suboptimal. Lets do it properly with indexes.
@@ -183,15 +169,15 @@ We send the data from our backend with an order (or idx) key specifying each row
                             return ordered_ids
                         }, [])
 
-    // [&#39;32o8wafe&#39;, &#39;oaiwefjo&#39;, &#39;3oij2e3c&#39;]
+    // ['32o8wafe', 'oaiwefjo', '3oij2e3c']
 
 Notice how this reduce operation produces an index Array instead of an Object. In JS, an array is actually just an object with the keys 0, 1, 2, …, so now we have both O(1) access to a specific id by order, and we can iterate using map, filter, and reduce on the ordered list:
 
     const second_category = categories[ids_by_order[1]]
-    // {id: &#39;oaiwefjo&#39;, name: &#39;arms&#39;, order: &#39;1&#39;}
+    // {id: 'oaiwefjo', name: 'arms', order: '1'}
 
     const ordered_names = ids_by_order.map(id =&gt; categories[id].name)
-    // [&#39;abs&#39;, &#39;arms&#39;, &#39;legs&#39;]
+    // ['abs', 'arms', 'legs']
 &gt; **Food for thought:**
 Why does this work even if your order numbers [have gaps](http://www.htmlgoodies.com/beyond/javascript/dont-fear-sparse-arrays-in-javascript.html)? e.g. 0, 2, 41, 399
 
@@ -218,9 +204,9 @@ Memoizing using the .hash() on immutable.js objects is [**fast](https://egghead.
                             return index
                         }, {})
 
-    const ids_by_name = ids_by_key(&#39;name&#39;)  // returns an index function
-    const abs_id = ids_by_name(categories)[&#39;abs&#39;]
-    // &#39;32o8wafe&#39;
+    const ids_by_name = ids_by_key('name')  // returns an index function
+    const abs_id = ids_by_name(categories)['abs']
+    // '32o8wafe'
 &gt; **Food for thought:**
 Write an index maker function that makes indexes keyed on a tuple of two keys: `${row[key1]}-${row[key2]}` -&gt; id
 
@@ -266,24 +252,20 @@ If you want more database-like features in the browser, check out: [redux-orm](h
 Hopefully you find this useful! If so, give this article a 💚, or ping me on twitter [@theSquashSH](https://twitter.com/theSquashSH).
 
 If you’re interested in working on cool Django + React/Redux projects involving Ethereum, [OddSlingers Labs](https://monadical.com/apply) is hiring remote devs.</div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

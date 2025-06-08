@@ -1,65 +1,50 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="In-depth analysis of if/else.">
-    
-    
-    
-    <meta property="og:title" content="Mindfulness in Typescript code branching. Exhaustiveness, pattern matching, and side effects - HedgeDoc">
-    
-    
-    <meta property="og:description" content="In-depth analysis of if/else.">
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Mindfulness in Typescript code branching. Exhaustiveness, pattern matching, and side effects - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="In-depth analysis of if/else." name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Mindfulness in Typescript code branching. Exhaustiveness, pattern matching, and side effects - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&amp;s=96);" title="igor"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/33bb9fc1b3ad97771de6600a1e7ca622?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="igor"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Thu Jan 09 2025 14:48:17 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jan 09 2025 15:00:58 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">1244 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Thu Jan 09 2025 14:48:17 GMT+0000 (Coordinated Universal Time)" data-updatetime="Thu Jan 09 2025 15:00:58 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">1280 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">
 
 &lt;center&gt;
 
@@ -67,7 +52,7 @@
 
 &lt;big&gt;
 
-1/2: &#34;Exhaustive absurd&#34;, Or how to if/else
+1/2: "Exhaustive absurd", Or how to if/else
 
 &lt;/big&gt;
 
@@ -83,24 +68,24 @@ As developers, we probably all wrote our first **if/else** statement when we wer
 
 ```ts
 if (x &gt; 5) {
-  console.log(&#39;Greater than 5&#39;);
+  console.log('Greater than 5');
 } else {
-  console.log(&#39;Not greater than 5&#39;);
+  console.log('Not greater than 5');
 }
 ```
 
-We proceeded with learning switch/case, and usually end here. &#34;We&#39;re ready to hack The Next Facebook. Nobody can stop us now, not even our teamlead&#34;.
+We proceeded with learning switch/case, and usually end here. "We're ready to hack The Next Facebook. Nobody can stop us now, not even our teamlead".
 
 ```ts
 switch (x) {
   case 5:
-    console.log(&#39;Five&#39;);
+    console.log('Five');
     break;
   case 6:
-    console.log(&#39;Six&#39;);
+    console.log('Six');
     break;
   default:
-    console.log(&#39;Not five or six&#39;);
+    console.log('Not five or six');
 }
 ```
 
@@ -117,14 +102,14 @@ class Animal {
 }
 
 class Dog extends Animal {
-  name = &#39;Dog&#39;;
+  name = 'Dog';
   makeSound(): string {
     return `${this.name} barks.`;
   }
 }
 
 class Cat extends Animal {
-  name = &#39;Cat&#39;;
+  name = 'Cat';
   makeSound(): string {
     return `${this.name} meows.`;
   }
@@ -133,28 +118,28 @@ class Cat extends Animal {
 // see, no if/else or anything
 const handleSound = (animal: Animal): string =&gt; animal.makeSound();
 
-const dog = new Dog(&#39;Storm&#39;);
-const cat = new Cat(&#39;Viper&#39;);
+const dog = new Dog('Storm');
+const cat = new Cat('Viper');
 
-// &#34;Storm barks.&#34;
+// "Storm barks."
 handleSound(dog);
-// &#34;Viper meows.&#34;
+// "Viper meows."
 handleSound(cat);
 
 ```
 
 ![Catdog](https://www.loskutoff.com/static/blog/never-have-i-ever/catdog.png)
 
-&gt; We can also invert the control of the above using visitor pattern (https://en.wikipedia.org/wiki/Visitor_pattern) which I&#39;m to detail in the next post.
+&gt; We can also invert the control of the above using visitor pattern (https://en.wikipedia.org/wiki/Visitor_pattern) which I'm to detail in the next post.
 
 The most inquisitive of us all probably wondered how we can do more complex branching and encountered pattern matching in such languages as Haskell, Scala, OCaml and Rust:
 
 ```scala
 def listMatch(lst: List[Int]): String = lst match {
-  case Nil =&gt; &#34;Empty list&#34;
-  case List(0, _, _) =&gt; &#34;Starts with zero and has three elements&#34;
-  case List(x, y) if x == y =&gt; &#34;Two identical elements&#34;
-  case _ =&gt; &#34;Other&#34;
+  case Nil =&gt; "Empty list"
+  case List(0, _, _) =&gt; "Starts with zero and has three elements"
+  case List(x, y) if x == y =&gt; "Two identical elements"
+  case _ =&gt; "Other"
 }
 ```
 
@@ -162,11 +147,11 @@ But is there a deeper meaning to this syntax? And are there underlying intricaci
 
 ![arrows](https://www.loskutoff.com/static/blog/never-have-i-ever/ifelse-vs-arrow.png)
 
-In this brief article, I&#39;ll hopefully present a way of deeper thinking about code branching. I&#39;ll show how to improve type safety and composability of branching in Typescript.
+In this brief article, I'll hopefully present a way of deeper thinking about code branching. I'll show how to improve type safety and composability of branching in Typescript.
 
 ## Why branch?
 
-We need if/else or equivalents to do anything useful in classic programming. Without it, programs will be static and won&#39;t do much. Making programmatic decisions will be very hard. Most likely you&#39;ll map/reduce some data into some other data and that&#39;ll be it.
+We need if/else or equivalents to do anything useful in classic programming. Without it, programs will be static and won't do much. Making programmatic decisions will be very hard. Most likely you'll map/reduce some data into some other data and that'll be it.
 
 Assume that you want to send a notification to a user. A user may use different channels to receive notifications, and you want to dispatch properly:
 
@@ -175,29 +160,29 @@ Assume that you want to send a notification to a user. A user may use different 
 
 ```typescript
 type Notification =
-  | { type: &#39;email&#39;; recipient: string; subject: string; body: string }
-  | { type: &#39;sms&#39;; phoneNumber: string; message: string }
-  | { type: &#39;push&#39;; deviceId: string; title: string; body: string }
-  | { type: &#39;slack&#39;; channelId: string; text: string }
+  | { type: 'email'; recipient: string; subject: string; body: string }
+  | { type: 'sms'; phoneNumber: string; message: string }
+  | { type: 'push'; deviceId: string; title: string; body: string }
+  | { type: 'slack'; channelId: string; text: string }
 ```
 
 You can handle it with a naive switch/case:
 
-&gt; I&#39;m going to use &#34;break&#34; or &#34;return&#34; for switches everywhere in this post; we won&#39;t go into fallthrough logic.
+&gt; I'm going to use "break" or "return" for switches everywhere in this post; we won't go into fallthrough logic.
 
 ```ts
 function handleNotification(notification: Notification) {
   switch (notification.type) {
-    case &#39;email&#39;:
+    case 'email':
       sendEmail(notification.recipient, notification.subject, notification.body);
       break;
-    case &#39;sms&#39;:
+    case 'sms':
       sendSMS(notification.phoneNumber, notification.message);
       break;
-    case &#39;push&#39;:
+    case 'push':
       sendPushNotification(notification.deviceId, notification.title, notification.body);
       break;
-    case &#39;slack&#39;:
+    case 'slack':
       postToSlack(notification.channelId, notification.text);
       break;
   }
@@ -206,40 +191,40 @@ function handleNotification(notification: Notification) {
 
 &gt; The kind of type we match against (`Notification`) is called [discriminated union](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#discriminated-unions).
 
-&gt; This code has some potential issues I&#39;ll talk about later. The main point here is that it shows why we want to branch our code at all.
+&gt; This code has some potential issues I'll talk about later. The main point here is that it shows why we want to branch our code at all.
 
 ### Playing around with if/else
 
-You also can rewrite the code above to if/else. That won&#39;t change much, it&#39;s just a bit more boilerplate in this case.
+You also can rewrite the code above to if/else. That won't change much, it's just a bit more boilerplate in this case.
 
 &gt; if/else is much more powerful since you can give it any expression resulting in a boolean, e.g. `if (x &gt; 5)`, whereas switch/case would only accept exact matches.
 
 ![if/else and switch? Same Picture!](https://www.loskutoff.com/static/blog/never-have-i-ever/same-picture.jpeg)
-&lt;p&gt;&lt;i&gt;Picture &lt;a href=&#34;https://dev.to/sumusiriwardana/if-else-or-switch-case-which-one-to-pick-4p3h&#34;&gt;source&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Picture &lt;a href="https://dev.to/sumusiriwardana/if-else-or-switch-case-which-one-to-pick-4p3h"&gt;source&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 
 ```ts
 function handleNotification(notification: Notification) {
-  if (notification.type === &#39;email&#39;) {
+  if (notification.type === 'email') {
     sendEmail(notification.recipient, notification.subject, notification.body);
-  } else if (notification.type === &#39;sms&#39;) {
+  } else if (notification.type === 'sms') {
     sendSMS(notification.phoneNumber, notification.message);
-  } else if (notification.type === &#39;push&#39;) {
+  } else if (notification.type === 'push') {
     sendPushNotification(notification.deviceId, notification.title, notification.body);
-  } else if (notification.type === &#39;slack&#39;) {
+  } else if (notification.type === 'slack') {
     postToSlack(notification.channelId, notification.text);
   }
 }
 ```
 
-In both cases, Typescript figures out the shape of the notification object after the &#34;type&#34; field check. Additionally you won&#39;t be able to write something like `notification.type === &#39;GIBBERISH&#39;` or `case(&#39;yes?&#39;)`; it will stop you.
+In both cases, Typescript figures out the shape of the notification object after the "type" field check. Additionally you won't be able to write something like `notification.type === 'GIBBERISH'` or `case('yes?')`; it will stop you.
 
-A difference with switch/case is that if/else has more boilerplate, but also is more applicable to more general cases because it allows expressions (such as math comparison `x &gt; 2`) in its &#34;decision tree&#34;.
+A difference with switch/case is that if/else has more boilerplate, but also is more applicable to more general cases because it allows expressions (such as math comparison `x &gt; 2`) in its "decision tree".
 
 ## Adding new cases
 
-Now, time for the bad news. We want to add a new case like `{ type: &#39;discord&#39;; channel: string; message: string }`. We add it to the union type definition but forget to add to `handleNotification` function.
+Now, time for the bad news. We want to add a new case like `{ type: 'discord'; channel: string; message: string }`. We add it to the union type definition but forget to add to `handleNotification` function.
 
-`handleNotification` works for a week until we notice users aren&#39;t getting notified. They lose their money, the business goes down, marriages break up. All because we forgot to handle `type === &#39;discord&#39;`.
+`handleNotification` works for a week until we notice users aren't getting notified. They lose their money, the business goes down, marriages break up. All because we forgot to handle `type === 'discord'`.
 
 ![arrowhead miss](https://www.loskutoff.com/static/blog/never-have-i-ever/arrowhead-miss.png)
 
@@ -259,32 +244,32 @@ function handleNotification(notification: Notification) {
 }
 ```
 
-&gt; This function is also called `assertNever` in [TS documentation](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#union-exhaustiveness-checking). I&#39;ll stick to `absurd` because it&#39;s more fun.
+&gt; This function is also called `assertNever` in [TS documentation](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#union-exhaustiveness-checking). I'll stick to `absurd` because it's more fun.
 
 How does it work? Each `case` (or `if/else`) Typescript narrows down the possible type of `notification.type`:
 
 ```ts
-// here, notification.type is full &#39;email&#39; | &#39;sms&#39; | &#39;push&#39; | &#39;slack&#39; | &#39;discord&#39;
+// here, notification.type is full 'email' | 'sms' | 'push' | 'slack' | 'discord'
 switch (notification.type) {
-  case &#39;email&#39;:
+  case 'email':
     break;
-  // if we end with &#34;default&#34; clause here, notification.type would be &#39;sms&#39; | &#39;push&#39; | &#39;slack&#39; | &#39;discord&#39;, so, with no &#39;email&#39;
-  case &#39;sms&#39;:
+  // if we end with "default" clause here, notification.type would be 'sms' | 'push' | 'slack' | 'discord', so, with no 'email'
+  case 'sms':
     break;
-  // if we end with &#34;default&#34; clause here, notification.type would be &#39;push&#39; | &#39;slack&#39; | &#39;discord&#39;, so, with no &#39;email&#39; or &#39;sms&#39;
-  case &#39;push&#39;:
+  // if we end with "default" clause here, notification.type would be 'push' | 'slack' | 'discord', so, with no 'email' or 'sms'
+  case 'push':
     break;
-  // if we end with &#34;default&#34; clause here, notification.type would be &#39;slack&#39; | &#39;discord&#39;, so, with no &#39;email&#39; or &#39;sms&#39; or &#39;push&#39;
-  case &#39;slack&#39;:
+  // if we end with "default" clause here, notification.type would be 'slack' | 'discord', so, with no 'email' or 'sms' or 'push'
+  case 'slack':
     postToSlack(notification.channelId, notification.text);
     break;
-  // finally, we&#39;re ending with &#34;default&#34; clause here, and so notification.type is &#39;discord&#39;, with no &#39;email&#39; or &#39;sms&#39; or &#39;push&#39; or &#39;slack&#39;
+  // finally, we're ending with "default" clause here, and so notification.type is 'discord', with no 'email' or 'sms' or 'push' or 'slack'
   default:
     absurd(notification.type);
 }
 ```
 
-But `absurd(notification.type)` expects `never` type! It won&#39;t allow anything else, yet we&#39;re trying to feed it &#39;discord&#39; string literal.
+But `absurd(notification.type)` expects `never` type! It won't allow anything else, yet we're trying to feed it 'discord' string literal.
 
 And so it goes: compiler complains, you realize your code has a bug, you fix it **before** shipping to your users and not **after** (that is, unless you also wrote good tests.)
 
@@ -294,7 +279,7 @@ You fix it by adding another `case` clause:
 function handleNotification(notification: Notification) {
   switch (notification.type) {
     // ...
-    case &#39;discord&#39;:
+    case 'discord':
       postToDiscord(notification.channelId, notification.message);
       break;
     // default: ...
@@ -302,16 +287,16 @@ function handleNotification(notification: Notification) {
 }
 ```
 
-&gt; What about more &#34;type-free&#34; comparisons like n &gt; 5? Type narrowing doesn&#39;t apply here. You have to figure yourself whether you covered all cases or not.
+&gt; What about more "type-free" comparisons like n &gt; 5? Type narrowing doesn't apply here. You have to figure yourself whether you covered all cases or not.
 
-### A peculiar case of &#34;never&#34;
+### A peculiar case of "never"
 
 ![nevermore](https://www.loskutoff.com/static/blog/never-have-i-ever/nevermore.png)
-&lt;p&gt;&lt;i&gt;Artist: &lt;a href=&#34;https://www.instagram.com/serytama.art/p/C59EwKrOQBR/&#34;&gt;Serytama.art&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Artist: &lt;a href="https://www.instagram.com/serytama.art/p/C59EwKrOQBR/"&gt;Serytama.art&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 
 `never` is a very [special type](https://www.typescriptlang.org/docs/handbook/basic-types.html#never) in Typescript.
 
-It&#39;s assignable to anything, which isn&#39;t very useful in our case, but is useful in more advanced cases.
+It's assignable to anything, which isn't very useful in our case, but is useful in more advanced cases.
 
 But another property we can and do leverage: nothing can be assigned to `never`, except `never` itself.
 
@@ -321,91 +306,87 @@ So, the function `absurd` expects only `never` type.
 function absurd(x: never): never {
   throw new Error(`panic! not reachable: ${x}`);
 }
-absurd(&#39;fizzbuzz&#39;); // error: Argument of type &#39;&#34;fizzbuzz&#34;&#39; is not assignable to parameter of type &#39;never&#39;.
+absurd('fizzbuzz'); // error: Argument of type '"fizzbuzz"' is not assignable to parameter of type 'never'.
 ```
 
 When our `notification.type` above is checked, it narrows down gradually to lesser and lesser type, until only `discord` literal is left, and finally we narrow `discord` literal itself.
 
 When nothing is left out of our poor `notification.type` type, only `never` remains.
 
-There&#39;s one extra way to show that in code; with an (arguably ugly) ternary:
+There's one extra way to show that in code; with an (arguably ugly) ternary:
 
 ```ts
-// some imaginary numeric &#34;code&#34;...
+// some imaginary numeric "code"...
 const code: number =
-  notification.type/*&#39;email&#39; | &#39;sms&#39; | &#39;push&#39; | &#39;slack&#39; | &#39;discord&#39;*/ === &#39;email&#39; ? 1 :
-    notification.type/*&#39;sms&#39; | &#39;push&#39; | &#39;slack&#39; | &#39;discord&#39;*/ === &#39;sms&#39; ? 2 :
-      notification.type/*&#39;push&#39; | &#39;slack&#39; | &#39;discord&#39;*/ === &#39;push&#39; ? 3 :
-        notification.type/*&#39;slack&#39; | &#39;discord&#39;*/ === &#39;slack&#39; ? 4 :
-          notification.type/*&#39;discord&#39;*/ === &#39;discord&#39; ? 5 :
+  notification.type/*'email' | 'sms' | 'push' | 'slack' | 'discord'*/ === 'email' ? 1 :
+    notification.type/*'sms' | 'push' | 'slack' | 'discord'*/ === 'sms' ? 2 :
+      notification.type/*'push' | 'slack' | 'discord'*/ === 'push' ? 3 :
+        notification.type/*'slack' | 'discord'*/ === 'slack' ? 4 :
+          notification.type/*'discord'*/ === 'discord' ? 5 :
             absurd(notification.type/*never*/);
 ````
 
-Importantly, when `never`-typed values in code, you can always assume this part of the code is unreachable, assuming your typing has no bugs. In Typescript, it may happen e.g. because of casting with `as`. That&#39;s why I accompany the `never` check in `absurd` with a `throw`. Better safe than sorry.
+Importantly, when `never`-typed values in code, you can always assume this part of the code is unreachable, assuming your typing has no bugs. In Typescript, it may happen e.g. because of casting with `as`. That's why I accompany the `never` check in `absurd` with a `throw`. Better safe than sorry.
 
 ### Object key mapping
 
-There&#39;s another technique to map behaviours that&#39;s worth mentioning. It lets us (in some cases) avoid the need for `switch/case`, `if/else`, and still have exhaustive behaviour without using any `absurd` hacks.
+There's another technique to map behaviours that's worth mentioning. It lets us (in some cases) avoid the need for `switch/case`, `if/else`, and still have exhaustive behaviour without using any `absurd` hacks.
 
 ```ts
 export const handlers = {
-  email: (notification: Notification &amp; {type: &#39;email&#39;}) =&gt; sendEmail(notification.recipient, notification.subject, notification.body),
-  sms: (notification: Notification &amp; {type: &#39;sms&#39;}) =&gt; sendSMS(notification.phoneNumber, notification.message),
-  push: (notification: Notification &amp; {type: &#39;push&#39;}) =&gt; sendPushNotification(notification.deviceId, notification.title, notification.body),
-  slack: (notification: Notification &amp; {type: &#39;slack&#39;}) =&gt; postToSlack(notification.channelId, notification.text),
-  discord: (notification: Notification &amp; {type: &#39;discord&#39;}) =&gt; postToDiscord(notification.channelId, notification.message),
+  email: (notification: Notification &amp; {type: 'email'}) =&gt; sendEmail(notification.recipient, notification.subject, notification.body),
+  sms: (notification: Notification &amp; {type: 'sms'}) =&gt; sendSMS(notification.phoneNumber, notification.message),
+  push: (notification: Notification &amp; {type: 'push'}) =&gt; sendPushNotification(notification.deviceId, notification.title, notification.body),
+  slack: (notification: Notification &amp; {type: 'slack'}) =&gt; postToSlack(notification.channelId, notification.text),
+  discord: (notification: Notification &amp; {type: 'discord'}) =&gt; postToDiscord(notification.channelId, notification.message),
 };
 // ...
-const notification: Notification = {type: &#39;email&#39;, recipient: &#39;igor@loskutoff.com&#39;, subject: &#39;hello&#39;, body: &#39;world&#39;};
+const notification: Notification = {type: 'email', recipient: 'igor@loskutoff.com', subject: 'hello', body: 'world'};
 handlers[notification.type](notification);
 ```
 
-Note `&amp; {type: &#39;email&#39;}` in the argument type. It would narrow down the type of `notification`, opening up the fields `receipient`, `subject` and `body` to be used in the handler. Same with `sms` and `push` and `slack` and `discord`.
+Note `&amp; {type: 'email'}` in the argument type. It would narrow down the type of `notification`, opening up the fields `receipient`, `subject` and `body` to be used in the handler. Same with `sms` and `push` and `slack` and `discord`.
 
-With `handlers`, you won&#39;t be able to write a new type of notifications without adding a new handler, which is the main benefit of this technique.
+With `handlers`, you won't be able to write a new type of notifications without adding a new handler, which is the main benefit of this technique.
 
-Dead code elimination works here as well: if you remove one of the handlers, its `&amp; {type: }` won&#39;t compile anymore, inviting you to remove the corresponding case as well, same as with `switch/case` or `if/else`.
+Dead code elimination works here as well: if you remove one of the handlers, its `&amp; {type: }` won't compile anymore, inviting you to remove the corresponding case as well, same as with `switch/case` or `if/else`.
 
-The most common sentiment against this technique I encounter is that it introduces a layer of indirection. I say indeed it does, as any separation of concerns technique. I also argue that separation of concerns objectively brings more benefits than a thin (it&#39;s language-level!) layer of indirection.
+The most common sentiment against this technique I encounter is that it introduces a layer of indirection. I say indeed it does, as any separation of concerns technique. I also argue that separation of concerns objectively brings more benefits than a thin (it's language-level!) layer of indirection.
 
 ### Eslint rule
 
-Honorary mention to [switch-exhaustiveness-check](https://typescript-eslint.io/rules/switch-exhaustiveness-check/), which while not a &#34;typescript&#34;-native solution, is still good enough to preserve exhaustiveness for switch/case.
+Honorary mention to [switch-exhaustiveness-check](https://typescript-eslint.io/rules/switch-exhaustiveness-check/), which while not a "typescript"-native solution, is still good enough to preserve exhaustiveness for switch/case.
 
-It&#39;s a ESlint rule that enforces exhaustiveness of enums and union types.
+It's a ESlint rule that enforces exhaustiveness of enums and union types.
 
 ## Never have I ever...
 
-In this post, I&#39;ve introduced the concept of exhaustiveness checking and explored some of the ways to branch in Typescript.
+In this post, I've introduced the concept of exhaustiveness checking and explored some of the ways to branch in Typescript.
 
 These tools alone, used properly, will drastically improve your type safety and save you from many runtime bugs.
 
-I haven&#39;t talked about return types yet; i&#39;ll save that for the follow up.
+I haven't talked about return types yet; i'll save that for the follow up.
 
-In that post I&#39;ll also talk about more advanced notions, such as pattern matching with ts-pattern and in other languages, expressions and side effects, IIFE, discriminated unions and algebraic data types (spoiler: we used the latter two in the examples above), and what they do in OOP to achieve the same goal (spoiler: Visitor Pattern).
+In that post I'll also talk about more advanced notions, such as pattern matching with ts-pattern and in other languages, expressions and side effects, IIFE, discriminated unions and algebraic data types (spoiler: we used the latter two in the examples above), and what they do in OOP to achieve the same goal (spoiler: Visitor Pattern).
 
-I&#39;ll also present a case that in most situations, we won&#39;t need the `absurd`-like function call at all, even if you don&#39;t explicitly declare return type.
+I'll also present a case that in most situations, we won't need the `absurd`-like function call at all, even if you don't explicitly declare return type.
 
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

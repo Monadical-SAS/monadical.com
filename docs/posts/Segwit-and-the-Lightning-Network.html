@@ -168,65 +168,51 @@
                     
                         <article class="article-content">
                             <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="# An ELI5 explanation of Segwit, the Lightning Network, and how they are related  ### A Short Prefac">
-    
-    
-    
-    <meta property="og:title" content="An ELI5 explanation of Segwit, the Lightning Network, and how they are related - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>An ELI5 explanation of Segwit, the Lightning Network, and how they are related - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="# An ELI5 explanation of Segwit, the Lightning Network, and how they are related  ### A Short Prefac" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>An ELI5 explanation of Segwit, the Lightning Network, and how they are related - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&amp;s=96);" title="nick"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/aa8b1ebe25440bd38748639eebdc6eaf?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="nick"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:20:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon May 14 2018 17:25:42 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">2402 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" ># An ELI5 explanation of Segwit, the Lightning Network, and how they are related
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Mon May 14 2018 17:20:52 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon May 14 2018 17:25:42 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">2435 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc"># An ELI5 explanation of Segwit, the Lightning Network, and how they are related
 
 ### A Short Preface
 
@@ -341,7 +327,7 @@ It seems that a lot of the Bitcoin community falls into one of two camps: either
 
 I suppose that there’s an economic point to be made in favor of Segwit instead of larger blocks: that encouraging the much more energy-efficient person-to-person lightning network is a great gain. However, it seems to me that small blocks are in fact a risk for the lightning network.
 
-This is because of the time-dependent nature of lightning network transactions. If every block is full (as they currently are), then any given transaction runs the risk of not being included in a given block. This can happen indefinitely, as there is no first-in-first-out rule for miners to choose transactions. It’s entirely possible for a Lightning Network channel-closing transaction to sit around in the mempool until the next timelocked transaction becomes committable! **edit: this problem can be somewhat mitigated by &#34;breach remedy&#34; transactions**&lt;sup&gt;[4](#fn4)&lt;/sup&gt;
+This is because of the time-dependent nature of lightning network transactions. If every block is full (as they currently are), then any given transaction runs the risk of not being included in a given block. This can happen indefinitely, as there is no first-in-first-out rule for miners to choose transactions. It’s entirely possible for a Lightning Network channel-closing transaction to sit around in the mempool until the next timelocked transaction becomes committable! **edit: this problem can be somewhat mitigated by "breach remedy" transactions**&lt;sup&gt;[4](#fn4)&lt;/sup&gt;
 
 This means that larger blocks are not just a necessary adaptation to the increased traffic Bitcoin has seen. Larger would also decrease risks associated with the Lightning Network!
 On the other side of this debate, I just see misaligned incentives: the Lightning Network clearly benefits users, but it also harms miners: miners make a (currently small) portion of their income from transactions, and each transaction that occurs off-chain is a potential loss. Since miners ultimately hold the power to make changes to Bitcoin’s protocol, it’s been very difficult to convince miners to upgrade to Segwit. And the community’s stratification on this issue, and the idea that the two protocol changes are somehow exclusive, has only made this problem worse.
@@ -353,13 +339,13 @@ Finally, there’s a hard- vs soft-fork argument, but I don’t believe this is 
 ---
 #### Footnotes
 
-&lt;a name=&#34;fn1&#34;&gt;1&lt;/a&gt;: Transactions also include timestamps, version numbers, and a couple other fields that are irrelevant to this explanation, and are in a binary format.
+&lt;a name="fn1"&gt;1&lt;/a&gt;: Transactions also include timestamps, version numbers, and a couple other fields that are irrelevant to this explanation, and are in a binary format.
 
-&lt;a name=&#34;fn2&#34;&gt;2&lt;/a&gt;: Specifically, for every ECDSA signature (r,s), the signature (r, -s (mod N)) is a valid signature of the same message.
+&lt;a name="fn2"&gt;2&lt;/a&gt;: Specifically, for every ECDSA signature (r,s), the signature (r, -s (mod N)) is a valid signature of the same message.
 
-&lt;a name=&#34;fn3&#34;&gt;3&lt;/a&gt;: The amount of effectively added space varies based on the ratio of transaction data to signature data, but you can assume something between a 25 and 50% increase in effective number of transactions for blocks in a typical case.
+&lt;a name="fn3"&gt;3&lt;/a&gt;: The amount of effectively added space varies based on the ratio of transaction data to signature data, but you can assume something between a 25 and 50% increase in effective number of transactions for blocks in a typical case.
 
-&lt;a name=&#34;fn4&#34;&gt;4&lt;/a&gt;: A &#34;breach remedy&#34; transaction is a way to ensure that an overwritten transaction never reaches the blockchain. Suppose you have a transaction open in a channel that looks like this:
+&lt;a name="fn4"&gt;4&lt;/a&gt;: A "breach remedy" transaction is a way to ensure that an overwritten transaction never reaches the blockchain. Suppose you have a transaction open in a channel that looks like this:
 
 ```{id: 1, outputs: [(a, 50), (b, 50)], inputs: [txid 0]}```
 
@@ -367,33 +353,29 @@ and you replace it with:
 
 ```{id: 2, outputs: [(a, 40), (b, 60)], inputs: [txid 0]}```
 
-In this case, `a` can sign a &#34;breach remedy&#34; transaction: 
+In this case, `a` can sign a "breach remedy" transaction: 
 
 ```{id: 3, outputs: [(b, 100)], inputs: [txid: 1]}```
 
 So that if the overwritten `TxID:1` is ever committed, it allows Bob to claim all of the coins in the channel. However, for this to work, `TxID:1` needs to be timelocked such that it cannot be closed right away except in the case of breach remedies, and however long that timelock is needs to be weighed against the possibility of a breach remedy sitting indefinitely in the mempool. So this mitigates the problem at the cost of the coins being locked for some amount of time after the channel closes.
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>
 
                         </article>
                     

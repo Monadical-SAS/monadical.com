@@ -1,63 +1,49 @@
 <!DOCTYPE html>
+
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    
-    <meta name="description" content="&lt;center&gt;  Implementing C++ Virtual Functions in Cython ===  *Written by [JDC](https://twitter.com/jd">
-    
-    
-    
-    <meta property="og:title" content="Implementing C++ Virtual Functions in Cython - HedgeDoc">
-    
-    
-    
-    <meta property="og:type" content="website">
-    
-    <meta property="og:image" content="https://docs.monadical.com/icons/android-chrome-512x512.png">
-    <meta property="og:image:alt" content="HedgeDoc logo">
-    <meta property="og:image:type" content="image/png">
-    
-    <base href="">
-    <title>Implementing C++ Virtual Functions in Cython - HedgeDoc</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.monadical.com/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://docs.monadical.com/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://docs.monadical.com/icons/favicon-16x16.png">
-<link rel="manifest" href="https://docs.monadical.com/icons/site.webmanifest">
-<link rel="mask-icon" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" color="#b51f08">
-<link rel="shortcut icon" href="https://docs.monadical.com/icons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="HedgeDoc - Ideas grow better together">
-<meta name="application-name" content="HedgeDoc - Ideas grow better together">
-<meta name="msapplication-TileColor" content="#b51f08">
-<meta name="msapplication-config" content="https://docs.monadical.com/icons/browserconfig.xml">
-<meta name="theme-color" content="#b51f08">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="&lt;center&gt;  Implementing C++ Virtual Functions in Cython ===  *Written by [JDC](https://twitter.com/jd" name="description"/>
 
-    <link rel="stylesheet" href='https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css'>
-    <link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet">
+
+
+<meta content="HedgeDoc logo" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<base href=""/>
+<title>Implementing C++ Virtual Functions in Cython - HedgeDoc</title>
+<link href="https://docs.monadical.com/icons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://docs.monadical.com/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://docs.monadical.com/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://docs.monadical.com/icons/site.webmanifest" rel="manifest"/>
+<link color="#b51f08" href="https://docs.monadical.com/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://docs.monadical.com/icons/favicon.ico" rel="shortcut icon"/>
+<meta content="HedgeDoc - Ideas grow better together" name="apple-mobile-web-app-title"/>
+<meta content="HedgeDoc - Ideas grow better together" name="application-name"/>
+<meta content="#b51f08" name="msapplication-TileColor"/>
+<meta content="https://docs.monadical.com/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#b51f08" name="theme-color"/>
+<link href="https://docs.monadical.com/build/emojify.js/dist/css/basic/emojify.min.css" rel="stylesheet"/>
+<link href="https://docs.monadical.com/build/font-pack.4362583c9249021b5028.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/2.15c517ea2148f55c8206.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/3.ec6e7d6280fcd73e729d.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles-pack.2fb0d01138de2df6de0a.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty-styles.8aa1888af7df52aee395.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/1.1666d9d869a0532d9bce.css" rel="stylesheet"/><link href="https://docs.monadical.com/build/pretty.0424d40e7df68caf04c5.css" rel="stylesheet"/>
 </head>
-
 <body style="display:none;">
-    <div class="ui-infobar container-fluid unselectable hidden-print">
-        <small>
-            <span>
+<div class="ui-infobar container-fluid unselectable hidden-print">
+<small>
+<span>
+<span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?default=identicon&amp;s=96);" title="jdc"></i></span>
                 
-                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://cdn.libravatar.org/avatar/92545e5e3acba8fc9f93afe0a338bf9b?default=identicon&s=96);" data-toggle="tooltip" data-placement="right" title="jdc"></i></span>
-                
-                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
-                <span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 01 2021 20:09:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Feb 19 2021 16:10:30 GMT+0000 (Coordinated Universal Time)"></span>
-            </span>
-            <span class="pull-right">7115 views <a href="https://docs.monadical.com/#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
-            <br>
-            
-        </small>
-    </div>
-    <div id="doc" class="container markdown-body" >&lt;center&gt;
+                 <span class="text-uppercase ui-status-lastchange"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Mon Feb 01 2021 20:09:39 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Feb 19 2021 16:10:30 GMT+0000 (Coordinated Universal Time)"></span>
+</span>
+<span class="pull-right">7146 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<br/>
+</small>
+</div>
+<div class="container markdown-body" id="doc">&lt;center&gt;
 
 Implementing C++ Virtual Functions in Cython
 ===
@@ -128,11 +114,11 @@ Notice that the `Article` class is composed of [pure virtual functions](https://
 
 The first strategy we considered involved implementing the `Article` class on a `C++` wrapper with data members in C++ Land, and then wrapping this `C++` wrapper class with a Cython class, and passing the contents from Python/Cython to obtain a property based pythonic API.
 
-Let&#39;s see how that works.
+Let's see how that works.
 
 ## Part 1: Basic Cython Wrapper
 
-To start with, let&#39;s create a minimal `setup.py` file for our Cython wrapper.
+To start with, let's create a minimal `setup.py` file for our Cython wrapper.
 
 `setup.py`
 ```python=
@@ -146,26 +132,26 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = &#34;python-libzim&#34;,
-    version = &#34;0.0.1&#34;,
-    author = &#34;Monadical Inc - Juan Diego Caballero&#34;,
-    author_email = &#34;jdc@monadical.com&#34;,
-    description = (&#34;A python-facing API for creating and interacting with ZIM files&#34;),
-    license = &#34;GPLv3&#34;,
-    long_description=read(&#39;README.md&#39;),
-    long_description_content_type=&#39;text/markdown&#39;,
+    name = "python-libzim",
+    version = "0.0.1",
+    author = "Monadical Inc - Juan Diego Caballero",
+    author_email = "jdc@monadical.com",
+    description = ("A python-facing API for creating and interacting with ZIM files"),
+    license = "GPLv3",
+    long_description=read('README.md'),
+    long_description_content_type='text/markdown',
     ext_modules = cythonize([
-        Extension(&#34;libzim&#34;,  [&#34;libzim/*.pyx&#34;,&#34;libzim/wrappers.cpp&#34;],
-                  libraries=[&#34;zim&#34;],
-                  extra_compile_args=[&#39;-std=c++11&#39;],
-                  language=&#34;c++&#34;),
+        Extension("libzim",  ["libzim/*.pyx","libzim/wrappers.cpp"],
+                  libraries=["zim"],
+                  extra_compile_args=['-std=c++11'],
+                  language="c++"),
     ],
-    compiler_directives={&#39;language_level&#39; : &#34;3&#34;}
+    compiler_directives={'language_level' : "3"}
     )
 )
 ```
 ### A Simple `C++` Wrapper 
-To implement our virtual class, let&#39;s define a `zim::writer::Article` wrapper named `ArticleWrapper` that will implement the required functions:
+To implement our virtual class, let's define a `zim::writer::Article` wrapper named `ArticleWrapper` that will implement the required functions:
 
 `libzim/wrappers.cpp`
 ```cpp=
@@ -250,7 +236,7 @@ virtual zim::Blob getData() const
 }
 ```
 
-To enable a `Creator`&#39;s `add_article` function to accept our newly defined `ArticleWrapper` class and set some defaults, we override the original `zim::writer::Creator` with `CreatorWrapper` as follows:
+To enable a `Creator`'s `add_article` function to accept our newly defined `ArticleWrapper` class and set some defaults, we override the original `zim::writer::Creator` with `CreatorWrapper` as follows:
 
 `libzim/wrapper.cpp` continuation
 
@@ -264,7 +250,7 @@ public:
 
     virtual zim::writer::Url getMainUrl()
     {
-        return zim::writer::Url(&#39;A&#39;, mainPage);
+        return zim::writer::Url('A', mainPage);
     }
 
     void setMainUrl(std::string newUrl)
@@ -316,11 +302,11 @@ public:
 };
 ```
 
-Up to this point, we have normal `C++` wrapping code. We haven&#39;t created any Cython related code other than the minimal `setup.py`.
+Up to this point, we have normal `C++` wrapping code. We haven't created any Cython related code other than the minimal `setup.py`.
 
 ### Defining the interface
 
-To use the wrapper&#39;s and library&#39;s code from Cython/Python, we need to let Cython know about the interface. We use the `*.pxd` files for this. Let&#39;s describe all the functions and data types to be used or called from our Cython/Python code:
+To use the wrapper's and library's code from Cython/Python, we need to let Cython know about the interface. We use the `*.pxd` files for this. Let's describe all the functions and data types to be used or called from our Cython/Python code:
 
 `zim_wrapper.pxd`
 
@@ -331,23 +317,23 @@ from libcpp cimport bool
 from libcpp.memory cimport shared_ptr, unique_ptr
 
 
-cdef extern from &#34;zim/zim.h&#34; namespace &#34;zim&#34;:
+cdef extern from "zim/zim.h" namespace "zim":
     ctypedef uint32_t size_type
     ctypedef uint64_t offset_type
 
-cdef extern from &#34;zim/blob.h&#34; namespace &#34;zim&#34;:
+cdef extern from "zim/blob.h" namespace "zim":
     cdef cppclass Blob:
         char* data() except +
         char* end() except +
         int size() except +
 
 
-cdef extern from &#34;zim/writer/url.h&#34; namespace &#34;zim::writer&#34;:
+cdef extern from "zim/writer/url.h" namespace "zim::writer":
     cdef cppclass Url:
         string getLongUrl() except +
 
 
-cdef extern from &#34;wrappers.cpp&#34;:
+cdef extern from "wrappers.cpp":
     cdef cppclass ArticleWrapper:
         ArticleWrapper(char ns,
                         string url,
@@ -380,15 +366,15 @@ cdef extern from &#34;wrappers.cpp&#34;:
 
 ### The Cython Wrapper
 
-With the `C++` wrappers defined in `wrappers.cpp` and a description of the interface that Cython can understand in `wrappers.pxd`, let&#39;s write the Cython/Python code that will use and call the C++ functions and data.
+With the `C++` wrappers defined in `wrappers.cpp` and a description of the interface that Cython can understand in `wrappers.pxd`, let's write the Cython/Python code that will use and call the C++ functions and data.
 
 Cython requires that we write `*.pyx` files that allow us to combine Cython/Python code with `C++`.
 
 The strategy for getting a pythonic API is to wrap the `C++` data types and class functions with Cython classes `cdef class ZimArticle` and `cdef class ZimCreator`. 
 
-Each class holds an &#34;internal&#34; pointer to an object of its corresponding `C++` class (either `ArticleWrapper` or `CreatorWrapper`) and wraps the functions and data types.
+Each class holds an "internal" pointer to an object of its corresponding `C++` class (either `ArticleWrapper` or `CreatorWrapper`) and wraps the functions and data types.
 
-Let&#39;s start by defining Cython&#39;s `ZimArticle` and a `__cinit__` to set its &#34;internal&#34; pointer:
+Let's start by defining Cython's `ZimArticle` and a `__cinit__` to set its "internal" pointer:
 
 `pyzim.pyx`
 
@@ -397,15 +383,15 @@ Let&#39;s start by defining Cython&#39;s `ZimArticle` and a `__cinit__` to set i
 cimport zim_wrapper as zim
 
 cdef class ZimArticle:
-    # This is an &#34;internal&#34; pointer to hold a C++ ArticleWrapper
+    # This is an "internal" pointer to hold a C++ ArticleWrapper
     cdef zim.ArticleWrapper *c_zim_article
-    def __cinit__(self, url=&#34;&#34;, content=&#34;&#34;, namespace= &#34;A&#34;, mimetype= &#34;text/html&#34;, title=&#34;&#34;, redirect_article_url= &#34;&#34;, should_index=True ):
+    def __cinit__(self, url="", content="", namespace= "A", mimetype= "text/html", title="", redirect_article_url= "", should_index=True ):
         # Creates a new ArticleWrapper object
         c_zim_art = new zim.ArticleWrapper(ord(namespace),                     # Namespace
-                                       url.encode(&#39;UTF-8&#39;),                # url
-                                       title.encode(&#39;UTF-8&#39;),              # title
-                                       mimetype.encode(&#39;UTF-8&#39;),           # mimeType
-                                       redirect_article_url.encode(&#39;UTF-8&#39;),# redirectUrl
+                                       url.encode('UTF-8'),                # url
+                                       title.encode('UTF-8'),              # title
+                                       mimetype.encode('UTF-8'),           # mimeType
+                                       redirect_article_url.encode('UTF-8'),# redirectUrl
                                        should_index,                       # shouldIndex
                                        content)
         self.c_zim_article = c_zim_art
@@ -415,14 +401,14 @@ cdef class ZimArticle:
             del self.c_zim_article
 ```
 
-The code is straightforward and just creates new `C++` &#34;internal&#34; to the class objects `c_zim_article` from our `C++` wrapper class `ArticleWrapper`, getting the input from Python via the `__cinit__` constructor.
+The code is straightforward and just creates new `C++` "internal" to the class objects `c_zim_article` from our `C++` wrapper class `ArticleWrapper`, getting the input from Python via the `__cinit__` constructor.
 
-Now let&#39;s write Python wrappers for `ArticleWrapper` data members.
+Now let's write Python wrappers for `ArticleWrapper` data members.
 
-Fortunately, Cython has a neat feature that enables a very pythonic property-based API. When we wrote `zim_wrapper.pxd` above, notice that we also included `ArticleWrappers`&#39;s&#39; public data members (e.g., char ns, string title, etc.):
+Fortunately, Cython has a neat feature that enables a very pythonic property-based API. When we wrote `zim_wrapper.pxd` above, notice that we also included `ArticleWrappers`'s' public data members (e.g., char ns, string title, etc.):
 
 ```python=
-cdef extern from &#34;wrappers.cpp&#34;:
+cdef extern from "wrappers.cpp":
     cdef cppclass ArticleWrapper:
         ArticleWrapper(char ns,
                         string url,
@@ -452,13 +438,13 @@ This allows us to use very simple accessor methods (setters, getters) on the Pyt
 ```python
     @property
     def title(self):
-        &#34;&#34;&#34;Get the article&#39;s title&#34;&#34;&#34;
-        return self.c_zim_article.title.decode(&#39;UTF-8&#39;)
+        """Get the article's title"""
+        return self.c_zim_article.title.decode('UTF-8')
 
     @title.setter
     def title(self, new_title):
-        &#34;&#34;&#34;Set the article&#39;s title&#34;&#34;&#34;
-        self.c_zim_article.title = new_title.encode(&#39;UTF-8&#39;)
+        """Set the article's title"""
+        self.c_zim_article.title = new_title.encode('UTF-8')
 ```
 
 We follow a similar strategy for wrapping the C++ `CreatorWrapper` in Cython. 
@@ -467,13 +453,13 @@ However, notice that the Cython wrapper for `add_article` will accept Cython `Zi
 
 ```python=
  def add_article(self, ZimArticle article):
-        &#34;&#34;&#34;Add a ZimArticle to the Creator object.
+        """Add a ZimArticle to the Creator object.
         
         Parameters
         ----------
         article : ZimArticle
             The article to add to the file
-        &#34;&#34;&#34;
+        """
 
 
         # Make a shared pointer to ArticleWrapper from the ZimArticle object (dereference internal c_zim_article)
@@ -509,7 +495,7 @@ cimport zim_wrapper as zim
 
 
 cdef class ZimArticle:
-    &#34;&#34;&#34; 
+    """ 
     A class to represent a Zim Article. 
     
     Attributes
@@ -536,21 +522,21 @@ cdef class ZimArticle:
         the long redirect article url i.e {NAMESPACE}/{redirect_url}
     redirect_url : str
         the redirect article url
-    &#34;&#34;&#34;
+    """
     cdef zim.ArticleWrapper *c_zim_article
 
-    VALID_NAMESPACES = [&#34;-&#34;,&#34;A&#34;,&#34;B&#34;,&#34;I&#34;,&#34;J&#34;,&#34;M&#34;,&#34;U&#34;,&#34;V&#34;,&#34;W&#34;,&#34;X&#34;]
+    VALID_NAMESPACES = ["-","A","B","I","J","M","U","V","W","X"]
 
 
-    def __cinit__(self, url=&#34;&#34;, content=&#34;&#34;, namespace= &#34;A&#34;, mimetype= &#34;text/html&#34;, title=&#34;&#34;, redirect_article_url= &#34;&#34;, should_index=True ):
-        &#34;&#34;&#34;Constructs a ZimArticle from parameters.
+    def __cinit__(self, url="", content="", namespace= "A", mimetype= "text/html", title="", redirect_article_url= "", should_index=True ):
+        """Constructs a ZimArticle from parameters.
         Parameters
         ----------
         url : str
             Article url without namespace
         content : str - bytes
             Article content either str or bytes
-        namespace : {&#34;A&#34;,&#34;-&#34;,&#34;B&#34;,&#34;I&#34;,&#34;J&#34;,&#34;M&#34;,&#34;U&#34;,&#34;V&#34;,&#34;W&#34;,&#34;X&#34;}
+        namespace : {"A","-","B","I","J","M","U","V","W","X"}
             Article namespace (the default is A)
         mimetype : str
             Article mimetype (the default is text/html)
@@ -560,25 +546,25 @@ cdef class ZimArticle:
             Article redirect if article is a redirect
         should_index : bool
             Flag if article should be indexed (the default is True)
-        &#34;&#34;&#34;
+        """
         # Encoding must be set to UTF-8 
-        #cdef bytes py_bytes = content.encode(encoding=&#39;UTF-8&#39;)
+        #cdef bytes py_bytes = content.encode(encoding='UTF-8')
         #cdef char* c_string = py_bytes
 
-        bytes_content =b&#39;&#39;
+        bytes_content =b''
         if isinstance(content, str):
-            bytes_content = content.encode(&#39;UTF-8&#39;)
+            bytes_content = content.encode('UTF-8')
         else:
             bytes_content = content
         
         if namespace not in self.VALID_NAMESPACES:
-            raise ValueError(&#34;Invalid Namespace&#34;)
+            raise ValueError("Invalid Namespace")
 
         c_zim_art = new zim.ArticleWrapper(ord(namespace),                     # Namespace
-                                       url.encode(&#39;UTF-8&#39;),                # url
-                                       title.encode(&#39;UTF-8&#39;),              # title
-                                       mimetype.encode(&#39;UTF-8&#39;),           # mimeType
-                                       redirect_article_url.encode(&#39;UTF-8&#39;),# redirectUrl
+                                       url.encode('UTF-8'),                # url
+                                       title.encode('UTF-8'),              # title
+                                       mimetype.encode('UTF-8'),           # mimeType
+                                       redirect_article_url.encode('UTF-8'),# redirectUrl
                                        should_index,                                # shouldIndex
                                        bytes_content)
         self.__setup(c_zim_art)
@@ -590,7 +576,7 @@ cdef class ZimArticle:
    
 
     cdef __setup(self, zim.ZimArticle *art):
-        &#34;&#34;&#34;Assigns an internal pointer to the wrapped C++ article object.
+        """Assigns an internal pointer to the wrapped C++ article object.
         A python ZimArticle always maintains a pointer to a wrapped zim.ZimArticle C++ object. 
         The python object reflects the state, accessible with properties, of a wrapped C++ zim.ZimArticle,
         this ensures a valid wrapped article that can be passed to a zim.ZimCreator.
@@ -598,98 +584,98 @@ cdef class ZimArticle:
         ----------
         *art : zim.ArticleWrapper
             Pointer to a C++ article object
-        &#34;&#34;&#34;
+        """
         # Set new internal C zim.ZimArticle article
         self.c_zim_article = art
 
 
     @property
     def namespace(self):
-        &#34;&#34;&#34;Get the article&#39;s namespace&#34;&#34;&#34;
+        """Get the article's namespace"""
         return chr(self.c_zim_article.ns)
 
     @namespace.setter
     def namespace(self,new_namespace):
-        &#34;&#34;&#34;Set the article&#39;s namespace&#34;&#34;&#34;
+        """Set the article's namespace"""
         if new_namespace not in self.VALID_NAMESPACES:
-            raise ValueError(&#34;Invalid Namespace&#34;)
+            raise ValueError("Invalid Namespace")
         self.c_zim_article.ns = ord(new_namespace[0])
         
     @property
     def title(self):
-        &#34;&#34;&#34;Get the article&#39;s title&#34;&#34;&#34;
-        return self.c_zim_article.title.decode(&#39;UTF-8&#39;)
+        """Get the article's title"""
+        return self.c_zim_article.title.decode('UTF-8')
 
     @title.setter
     def title(self, new_title):
-        &#34;&#34;&#34;Set the article&#39;s title&#34;&#34;&#34;
-        self.c_zim_article.title = new_title.encode(&#39;UTF-8&#39;)
+        """Set the article's title"""
+        self.c_zim_article.title = new_title.encode('UTF-8')
 
     @property
     def content(self):
-        &#34;&#34;&#34;Get the article&#39;s content&#34;&#34;&#34;
+        """Get the article's content"""
         data = self.c_zim_article.content 
         try:
-            return data.decode(&#39;UTF-8&#39;)
+            return data.decode('UTF-8')
         except UnicodeDecodeError:
             return data
 
     @content.setter
     def content(self, new_content):
-        &#34;&#34;&#34;Set the article&#39;s content&#34;&#34;&#34;
+        """Set the article's content"""
         if isinstance(new_content, str):
-            self.c_zim_article.content = new_content.encode(&#39;UTF-8&#39;) 
+            self.c_zim_article.content = new_content.encode('UTF-8') 
         else:
             self.c_zim_article.content = new_content 
 
     @property
     def longurl(self):
-        &#34;&#34;&#34;Get the article&#39;s long url i.e {NAMESPACE}/{url}&#34;&#34;&#34;
-        return self.c_zim_article.getUrl().getLongUrl().decode(&#34;UTF-8&#34;, &#34;strict&#34;)
+        """Get the article's long url i.e {NAMESPACE}/{url}"""
+        return self.c_zim_article.getUrl().getLongUrl().decode("UTF-8", "strict")
 
     @property
     def url(self):
-        &#34;&#34;&#34;Get the article&#39;s url&#34;&#34;&#34;
-        return self.c_zim_article.url.decode(&#39;UTF-8&#39;)
+        """Get the article's url"""
+        return self.c_zim_article.url.decode('UTF-8')
     
     @url.setter
     def url(self, new_url):
-        &#34;&#34;&#34;Set the article&#39;s url&#34;&#34;&#34;
-        self.c_zim_article.url = new_url.encode(&#39;UTF-8&#39;)
+        """Set the article's url"""
+        self.c_zim_article.url = new_url.encode('UTF-8')
 
     @property
     def redirect_longurl(self):
-        &#34;&#34;&#34;Get the article&#39;s redirect long url i.e {NAMESPACE}/{redirect_url}&#34;&#34;&#34;
-        return self.c_zim_article.getRedirectUrl().getLongUrl().decode(&#34;UTF-8&#34;, &#34;strict&#34;)
+        """Get the article's redirect long url i.e {NAMESPACE}/{redirect_url}"""
+        return self.c_zim_article.getRedirectUrl().getLongUrl().decode("UTF-8", "strict")
 
     @property
     def redirect_url(self):
-        &#34;&#34;&#34;Get the article&#39;s redirect url&#34;&#34;&#34;
-        return self.c_zim_article.redirectUrl.decode(&#39;UTF-8&#39;)
+        """Get the article's redirect url"""
+        return self.c_zim_article.redirectUrl.decode('UTF-8')
 
     @redirect_url.setter
     def redirect_url(self, new_redirect_url):
-        &#34;&#34;&#34;Set the article&#39;s redirect url&#34;&#34;&#34;
-        self.c_zim_article.redirectUrl = new_redirect_url.encode(&#39;UTF-8&#39;)
+        """Set the article's redirect url"""
+        self.c_zim_article.redirectUrl = new_redirect_url.encode('UTF-8')
 
     @property
     def mimetype(self):
-        &#34;&#34;&#34;Get the article&#39;s mimetype&#34;&#34;&#34;
-        return self.c_zim_article.mimeType.decode(&#39;UTF-8&#39;)
+        """Get the article's mimetype"""
+        return self.c_zim_article.mimeType.decode('UTF-8')
 
     @mimetype.setter
     def mimetype(self, new_mimetype):
-        &#34;&#34;&#34;Set the article&#39;s mimetype&#34;&#34;&#34;
-        self.c_zim_article.mimeType = new_mimetype.encode(&#39;UTF-8&#39;)
+        """Set the article's mimetype"""
+        self.c_zim_article.mimeType = new_mimetype.encode('UTF-8')
 
     @property
     def is_redirect(self):
-        &#34;&#34;&#34;Get if the article is a redirect&#34;&#34;&#34;
+        """Get if the article is a redirect"""
         return self.c_zim_article.isRedirect()
 
 
     def __repr__(self):
-        return f&#34;{self.__class__.__name__}(url={self.longurl}, title=)&#34;
+        return f"{self.__class__.__name__}(url={self.longurl}, title=)"
 
 
 #########################
@@ -697,7 +683,7 @@ cdef class ZimArticle:
 #########################
 
 cdef class ZimCreator:
-    &#34;&#34;&#34; 
+    """ 
     A class to represent a Zim Creator. 
     
     Attributes
@@ -706,7 +692,7 @@ cdef class ZimCreator:
         a pointer to the C++ Creator object
     _filename : str
         zim filename
-    &#34;&#34;&#34;
+    """
 
     cdef zim.CreatorWrapper *c_creator
     cdef object _filename
@@ -716,8 +702,8 @@ cdef class ZimCreator:
 
 
 
-    def __cinit__(self, str filename, str main_page = &#34;&#34;, str index_language = &#34;eng&#34;, min_chunk_size = 2048):
-        &#34;&#34;&#34;Constructs a ZimCreator from parameters.
+    def __cinit__(self, str filename, str main_page = "", str index_language = "eng", min_chunk_size = 2048):
+        """Constructs a ZimCreator from parameters.
         Parameters
         ----------
         filename : str
@@ -728,54 +714,54 @@ cdef class ZimCreator:
             Zim file index language (default eng)
         min_chunk_size : int
             Minimum chunk size (default 2048)
-        &#34;&#34;&#34;
+        """
 
-        self.c_creator = zim.CreatorWrapper.create(filename.encode(&#34;UTF-8&#34;), main_page.encode(&#34;UTF-8&#34;), index_language.encode(&#34;UTF-8&#34;), min_chunk_size)
+        self.c_creator = zim.CreatorWrapper.create(filename.encode("UTF-8"), main_page.encode("UTF-8"), index_language.encode("UTF-8"), min_chunk_size)
         
         self._filename = filename
-        self._main_page = self.c_creator.getMainUrl().getLongUrl().decode(&#34;UTF-8&#34;, &#34;strict&#34;)
+        self._main_page = self.c_creator.getMainUrl().getLongUrl().decode("UTF-8", "strict")
         self._index_language = index_language
         self._min_chunk_size = min_chunk_size
 
 
     @property
     def filename(self):
-        &#34;&#34;&#34;Get the filename of the ZimCreator object&#34;&#34;&#34;
+        """Get the filename of the ZimCreator object"""
         return self._filename
 
     @property
     def main_page(self):
-        &#34;&#34;&#34;Get the main page of the ZimCreator object&#34;&#34;&#34;
-        return self.c_creator.getMainUrl().getLongUrl().decode(&#34;UTF-8&#34;, &#34;strict&#34;)[2:]
+        """Get the main page of the ZimCreator object"""
+        return self.c_creator.getMainUrl().getLongUrl().decode("UTF-8", "strict")[2:]
     
     @main_page.setter
     def main_page(self,new_url):
-        &#34;&#34;&#34;Set the main page of the ZimCreator object&#34;&#34;&#34;
+        """Set the main page of the ZimCreator object"""
         # Check if url longformat is used
-        if new_url[1] == &#39;/&#39;:
-            raise ValueError(&#34;Url should not include a namespace&#34;)
+        if new_url[1] == '/':
+            raise ValueError("Url should not include a namespace")
 
-        self.c_creator.setMainUrl(new_url.encode(&#39;UTF-8&#39;))
+        self.c_creator.setMainUrl(new_url.encode('UTF-8'))
 
     @property
     def index_language(self):
-        &#34;&#34;&#34;Get the index language of the ZimCreator object&#34;&#34;&#34;
+        """Get the index language of the ZimCreator object"""
         return self._index_language
 
     @property
     def min_chunk_size(self):
-        &#34;&#34;&#34;Get the minimum chunk size of the ZimCreator object&#34;&#34;&#34;
+        """Get the minimum chunk size of the ZimCreator object"""
         return self._min_chunk_size
 
 
     def add_article(self, ZimArticle article):
-        &#34;&#34;&#34;Add a ZimArticle to the Creator object.
+        """Add a ZimArticle to the Creator object.
         
         Parameters
         ----------
         article : ZimArticle
             The article to add to the file
-        &#34;&#34;&#34;
+        """
 
 
         # Make a shared pointer to ArticleWrapper from the ZimArticle object (dereference internal c_zim_article)
@@ -785,7 +771,7 @@ cdef class ZimCreator:
     
 
     def __repr__(self):
-        return f&#34;{self.__class__.__name__}(filename={self.filename})&#34;
+        return f"{self.__class__.__name__}(filename={self.filename})"
 ```
 
 
@@ -806,15 +792,15 @@ This implementation using the `ZimArticle` wrapper enables a very pythonic prope
 ```python=
 import libzim
 
-test_content = &#39;&#39;&#39;&lt;!DOCTYPE html&gt; 
-&lt;html class=&#34;client-js&#34;&gt;
-&lt;head&gt;&lt;meta charset=&#34;UTF-8&#34;&gt;
+test_content = '''&lt;!DOCTYPE html&gt; 
+&lt;html class="client-js"&gt;
+&lt;head&gt;&lt;meta charset="UTF-8"&gt;
 &lt;title&gt;Monadical&lt;/title&gt;
-&lt;h1&gt; ñññ Hello, it works ñññ &lt;/h1&gt;&lt;/html&gt;&#39;&#39;&#39;
+&lt;h1&gt; ñññ Hello, it works ñññ &lt;/h1&gt;&lt;/html&gt;'''
 
 # Create a filled article
 
-article = libzim.ZimArticle(namespace=&#34;A&#34;, url = &#34;Monadical&#34;, title=&#34;Monadical&#34;, content=test_content, should_index = True)
+article = libzim.ZimArticle(namespace="A", url = "Monadical", title="Monadical", content=test_content, should_index = True)
 
 print(article.longurl)
 print(article.url)
@@ -823,8 +809,8 @@ print(article.url)
 article2 = libzim.ZimArticle()
 
 article2.content =  test_content
-article2.url = &#34;Monadical_SAS&#34;
-article2.title = &#34;Monadical SAS&#34;
+article2.url = "Monadical_SAS"
+article2.title = "Monadical SAS"
 
 ```
 
@@ -833,7 +819,7 @@ Using the creator is also straightforward:
 ```python=
 # Write the articles
 
-zim_creator = libzim.ZimCreator(&#39;test.zim&#39;,main_page = &#34;welcome&#34;,index_language= &#34;eng&#34;, min_chunk_size= 2048)
+zim_creator = libzim.ZimCreator('test.zim',main_page = "welcome",index_language= "eng", min_chunk_size= 2048)
 
 # Add article to zim file
 zim_creator.add_article(article)
@@ -932,14 +918,14 @@ Now, let’s declare a public API function that returns a string from evaluating
 
 cdef public api:
     string string_cy_call_fct(object obj, string method, string *error) with gil:
-        &#34;&#34;&#34;Lookup and execute a pure virtual method on ZimArticle returning a string&#34;&#34;&#34;
+        """Lookup and execute a pure virtual method on ZimArticle returning a string"""
         try:
-            func = getattr(obj, method.decode(&#39;UTF-8&#39;))
+            func = getattr(obj, method.decode('UTF-8'))
             ret_str = func()
-            return ret_str.encode(&#39;UTF-8&#39;)
+            return ret_str.encode('UTF-8')
         except Exception as e:
-            error[0] = traceback.format_exc().encode(&#39;UTF-8&#39;)
-        return b&#34;&#34;
+            error[0] = traceback.format_exc().encode('UTF-8')
+        return b""
 ```
 With the public API defined, we will be able to call `string_cy_call_fct` from C++ code by including the Cython auto-generated header file `libzim_api.h`. Let’s implement the C++ wrapper that uses the Cython public API to obtain the title:
 
@@ -981,11 +967,11 @@ private:
 
 ```cpp=
 #include &lt;Python.h&gt;
-#include &#34;lib.h&#34;
+#include "lib.h"
 
 // THE FILE BELOW IS AUTOGENERATED BY CYTHON AND INCLUDES BOTH (import_libzim__wrapper and string_cy_call )
 
-#include &#34;libzim_api.h&#34;
+#include "libzim_api.h"
 
 #include &lt;cstdlib&gt;
 #include &lt;iostream&gt;
@@ -1000,8 +986,8 @@ ZimArticleWrapper::ZimArticleWrapper(PyObject *obj) : m_obj(obj)
 {
     if (import_libzim__wrapper())
     {
-        std::cerr &lt;&lt; &#34;Error executing import_libzim!\n&#34;;
-        throw std::runtime_error(&#34;Error executing import_libzim&#34;);
+        std::cerr &lt;&lt; "Error executing import_libzim!\n";
+        throw std::runtime_error("Error executing import_libzim");
     }
     else
     {
@@ -1020,7 +1006,7 @@ ZimArticleWrapper::~ZimArticleWrapper()
 std::string ZimArticleWrapper::callCythonReturnString(std::string methodName) const
 {
     if (!this-&gt;m_obj)
-        throw std::runtime_error(&#34;Python object not set&#34;);
+        throw std::runtime_error("Python object not set");
 
     std::string error;
 
@@ -1034,7 +1020,7 @@ std::string ZimArticleWrapper::callCythonReturnString(std::string methodName) co
 std::string
 ZimArticleWrapper::getTitle() const
 {
-    return callCythonReturnString(&#34;get_title&#34;);
+    return callCythonReturnString("get_title");
 }
 
 ```
@@ -1047,7 +1033,7 @@ Finally, to use the wrapper from Cython we need to describe the interface:
 from cpython.ref cimport PyObject
 from libcpp.string cimport string
 
-cdef extern from &#34;lib.h&#34;: 
+cdef extern from "lib.h": 
     cdef cppclass ZimArticleWrapper(Article):
         ZimArticleWrapper(PyObject *obj) except +
         const string getTitle() except +
@@ -1076,7 +1062,7 @@ https://groups.google.com/forum/#!topic/cython-users/vAB9hbLMxRg
 
 &lt;center&gt;
  
-&lt;img src=&#34;https://monadical.com/static/logo-black.png&#34; style=&#34;height: 80px&#34;/&gt;&lt;br/&gt;
+&lt;img src="https://monadical.com/static/logo-black.png" style="height: 80px"/&gt;&lt;br/&gt;
     
 Monadical.com | Full-Stack Consultancy
 *We build software that outlasts us*
@@ -1085,24 +1071,20 @@ Monadical.com | Full-Stack Consultancy
 
 
 </div>
-    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
-        <div class="pull-right dropdown">
-            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
-                <i class="fa fa-bars"></i>
-            </a>
-            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-            </ul>
-        </div>
-    </div>
-    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
-    
+<div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+<div class="pull-right dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://docs.monadical.com/#" id="tocLabel" role="button" title="Table of content">
+<i class="fa fa-bars"></i>
+</a>
+<ul aria-labelledby="tocLabel" class="ui-toc-dropdown dropdown-menu" id="ui-toc">
+</ul>
+</div>
+</div>
+<div class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" id="ui-toc-affix" style="display:none;"></div>
 </body>
-
 </html>
 <script src="https://docs.monadical.com/js/mathjax-config-extra.js"></script>
-<script src="https://docs.monadical.com/build/MathJax/MathJax.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js" defer></script>
-<script src="https://docs.monadical.com/build/MathJax/config/Safe.js" defer></script>
-<script src="https://docs.monadical.com/config"></script><script src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js" defer="defer"></script><script src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js" defer="defer"></script><script src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js" defer="defer"></script><script src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js" defer="defer"></script>
-
-
+<script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.0252483117be96f00e28.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.0c0667a7b004f0fcfd13.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.89ccd89a09f629d94d5c.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ab8ca16a9a0e12c92d31.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.c2685453bcc85995cfc9.js"></script>

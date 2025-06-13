@@ -209,7 +209,7 @@
                  <span class="text-uppercase ui-status-lastchange"></span>
 <span class="ui-lastchange text-uppercase" data-createtime="Tue Oct 04 2022 18:43:41 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Oct 05 2022 16:27:18 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">3412 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">3413 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -264,7 +264,7 @@ Before we start our tutorial, I’d like to highlight one of the problems I enco
 
 If we have, for example:
 
-```python=
+```python
 import numpy as np
 a = np.array([[1, 2], [3, 8]]) % 7
 a
@@ -276,7 +276,7 @@ a
 
 and calculate the inverse using NumPy, we get:
 
-```python=
+```python
 np.linalg.inv(a)
 ```
 ```python
@@ -286,7 +286,7 @@ np.linalg.inv(a)
 
 This matrix is not the inverse in modular arithmetic with modulo $7$, mainly because the result is in decimals and not integers. Another way we could try is:
 
-```python=
+```python
 np.linalg.inv(a) % 7
 ```
 ```python
@@ -405,7 +405,7 @@ For this tutorial we’ll need:
 ### Step 1: Build a Python class to manipulate the elements of $\mathbb{Z}/n\mathbb{Z}$
 To start, let’s define a class named `Zmodn` (integers module $n$):
 
-```python=
+```python
 class Zmodn:
     def __init__(self, module: int = 2):
         self.representative = None
@@ -424,7 +424,7 @@ Note that Zmodn receives only the variable `module`, which allows defining the s
 
 To see how this works, let’s generate the elements of  $\mathbb{Z}/n\mathbb{Z} =\{0\; (mod\; 2), 1\; (mod\; 2)\}$. To do this, we first write:
 
-```python=
+```python
 mod2 = Zmodn(2)
 ```
 At this point, `mod2` is a function that we can pass any integer to. Let’s look at some examples:
@@ -446,7 +446,7 @@ As we saw in my post about [operator overloading](https://monadical.com/posts/op
 
 The next step is to redefine the methods `__add__`($+$), `__sub__`($-$), `__mul__`($\times$), and `__truediv__` ($/$). For this, we’ll make use of what we learned in the operator overloading post. So we have:
 
-```python=
+```python
 def __add__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
@@ -473,7 +473,7 @@ Note that before calculating any operation, we must ensure that the elements tha
 
 As for the division between two elements $a$ and $b$ of $\mathbb{Z}/n\mathbb{Z}$, it only makes sense if $b$ is [coprime](https://en.wikipedia.org/wiki/Coprime_integers) with $n$. In that case, we first make use of the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for remainders and then calculate the multiplicative inverse of $b$. So we have:
 
-```python=
+```python
 def multiplicative_inverse(self):
     if self.representative == 0:
         raise ZeroDivisionError('Cannot compute the multiplicative inverse of 0')
@@ -494,7 +494,7 @@ def multiplicative_inverse(self):
 
 And after this, we can define the division as follows:
 
-```python=
+```python
 def __truediv__(self, other: int):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
@@ -505,14 +505,14 @@ def __truediv__(self, other: int):
 
 In the next step, we’ll need the integer representation. So we define the following method:
 
-```python=
+```python
 def __int__(self) -&gt; int:
     return self.representative
 ```
 
 Finally, our `Zmodn` class would be:
 
-```python=
+```python
 class Zmodn:
     def __init__(self, module: int = 2):
         self.representative = None
@@ -602,7 +602,7 @@ Other methods we could implement are:`__eq__`, `__neg__`, `__isub__`, and `__iad
 
 In this step, we’re going to look at how to create arrays using `Zmodn` with some of NumPy’s functionalities. For this, we’ll build the following class:
 
-```python=
+```python
 import numpy as np
 class ZmodnArray:
     def __init__(self, module):
@@ -624,7 +624,7 @@ What’s new here is the line `congruence_class = np.vectorize(self.congruence_c
 
 To complete this class, we add the `__add__`, `__sub__` and `__mul__` methods. This has a similar structure to the methods already implemented in `Zmodn`, the only difference here is that the operations ($+,-,\times$) are executed through NumPy, and we make use of the `astype(int)` method to obtain the integer representatives of the `Zmodn` classes. These methods would be:
 
-```python=
+```python
 def __add__(self, other: list):
     if not self.module == other.module and not isinstance(other, self.__class__):
         raise ValueError(
@@ -651,7 +651,7 @@ def __mul__(self, other: list):
 
 So far, we can execute some basic operations between arrays of `Zmodn` elements. Let’s look at some examples:
 
-```python=
+```python
 mod7_array = ZmodnArray(7)
 a = mod7_array([[1, 2], [3, 8]])
 b = mod7_array([[10, 7], [3, 8]])
@@ -688,7 +688,7 @@ For the case of modular arithmetic with matrices in $\mathbb{Z}/n\mathbb{Z}$, th
 
 Here’s the method for calculating the adjugate matrix:
 
-```python=
+```python
 @staticmethod
 def adjoint_of_matrix(matrix):
     adjoint = np.zeros(matrix.shape, dtype=np.int16)
@@ -703,7 +703,7 @@ def adjoint_of_matrix(matrix):
 
 And the method for calculating the inverse matrix:
 
-```python=
+```python
 def inv(self):
     matrix = self.representatives.astype(int)
     if matrix.shape[0] != matrix.shape[1]:
@@ -735,7 +735,7 @@ So far, we’ve seen how to build a `Zmodn` class that allows us to work with th
 
 Next, we’ll solve the problem in a different way by redefining NumPy's universal functions. For this, we’ll use the special method `__array_function__`, which allows us to override NumPy’s native methods. The structure of this method is:
 
-```python=
+```python
 def __array_ufunc__(self, ufunc, method, *inputs, **kwargs)
 	...
 	return result
@@ -752,7 +752,7 @@ Therefore, the arguments are normalized; only the necessary input arguments are 
 
 With this in mind, we can build a class to work with modular arithmetic as follows:
 
-```python=
+```python
 import numpy as np
 HANDLED_FUNCTIONS = dict()
 
@@ -786,7 +786,7 @@ Note three important elements:
 
 NumPy has a list of universal functions that can be overridden with this strategy. The list can be found in the [documentation](https://numpy.org/neps/nep-0013-ufunc-overrides.html#list-of-operators-and-numpy-ufuncs). For our case, we’re only going to redefine `__add__`, `__sub__` and `__mul__`. In effect, the redefinitions would be:
 
-```python=
+```python
 @implements(np.add)
 def __add__(self, other):
     if not self.module == other.module and not isinstance(other, self.__class__):
@@ -817,7 +817,7 @@ def __mul__(self, other):
 
 As we can see, the structure is similar to what we already implemented in the previous sections. What’s new here is the implementation of the decorator `@implements(numpy_function)`, which is named after the universal function we want to rewrite. Furthermore, in the redefinition, we implement addition, subtraction, and multiplication using NumPy’s native operations, but we’re  careful to extract the remainder. For example, in the case of an addition, we return the following:
 
-```python=
+```python
     repr_sum = np.array(self.representatives) + np.array(other.representatives)
     return self.__class__(repr_sum % self.module, self.module)
 ```
@@ -826,7 +826,7 @@ Note that the sum is calculated through the native sum for objects of type `np.a
 
 Our final class would be:
 
-```python=
+```python
 import numpy as np
 HANDLED_FUNCTIONS = dict()
 
@@ -880,7 +880,7 @@ class ZmodnArrays:
         return self.__class__(repr_dot % self.module, self.module)
 ```
 To test this class, we can do:
-```python=
+```python
 mod7_array = ZmodnArrays(7)
 a = mod7_array([[1, 2], [3, 8]])
 b = mod7_array([[10, 7], [3, 8]])
@@ -907,7 +907,7 @@ Let’s wrap up what we’ve covered today in our four steps:
 2. Using the `__array_function__` method, we can tell NumPy how to execute the universal operations according to the needs of our objects.
 3. According to the NumPy [documentation](https://numpy.org/devdocs/reference/arrays.classes.html#numpy.class.__array_ufunc__), the standard structure for building a class to redefine NumPy’s universal functions is:
 
-```python=
+```python
 HANDLED_FUNCTIONS = {}
 
 class MyArray:

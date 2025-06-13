@@ -209,7 +209,7 @@
                  <span class="text-uppercase ui-status-lastchange"></span>
 <span class="ui-lastchange text-uppercase" data-createtime="Mon Dec 04 2023 15:06:20 GMT+0000 (Coordinated Universal Time)" data-updatetime="Wed Aug 21 2024 14:38:24 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">1920 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">1921 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -428,7 +428,7 @@ That’s exactly it. &lt;font color="green"&gt;PRNGs&lt;/font&gt;. Deterministic
 
 What the sequence generation looks like, laid out imperatively, is:
 
-```typescript=
+```typescript
 
 const seed = ‘123’;
 
@@ -456,7 +456,7 @@ In the example above, Generator is an object, which encapsulates both behaviour 
 
 First of all, we can separate those:
 
-```typescript=
+```typescript
 
 const state0 = initialGeneratorState(‘seed’);
 
@@ -481,7 +481,7 @@ Instead, let’s focus on usage with &lt;font color="green"&gt;PRNG&lt;/font&gt;
 
 The code that invokes 16 sequential &lt;font color="yellow" style="background-color: black"&gt;pseudo&lt;/font&gt;-&lt;font color="green"&gt;random&lt;/font&gt; generator calls and combines them into a UUID looks like this:
 
-```typescript=
+```typescript
 
 // rng is PRNG state passed to us and is in the scope
 
@@ -514,7 +514,7 @@ return [newId, newRng];
 
 It doesn’t look as spectacular for NLPA, where I just read State and pass the new State further, but check how the DnD bruteforce lays out:
 
-```typescript=
+```typescript
 
 pipe(
 
@@ -575,7 +575,7 @@ The number of **Nodes** is basically how many nodes the generated graph will hav
 
 In TypeScript, we can define it like this:
 
-```typescript=
+```typescript
 
 declare const heterogeneity: number;
 
@@ -587,7 +587,7 @@ declare const nodes: number;
 
 Now, we can conveniently add nodes with heterogeneity:
 
-```typescript=
+```typescript
 
 const nodes = 1000;
 
@@ -599,7 +599,7 @@ const x = nodes + heterogeneity; // 1000.5
 
 And even pass density instead of heterogeneity to our methods:
 
-```typescript=
+```typescript
 
 const doSomethingWithHeterogeneityAndDensity = (heterogeneity: number, density: number) =&gt; {}
 
@@ -632,7 +632,7 @@ And it’s time to stop using primitives where they don’t belong!
 
 Follow me.
 
-```typescript=
+```typescript
 
 export type Heterogeneity = Newtype&lt;{ readonly HETEROGENEITY: unique symbol }, Decimal01&gt;;
 
@@ -644,7 +644,7 @@ export type ListLength = Newtype&lt;{ readonly LIST_LENGTH: unique symbol }, Non
 
 And the helper types used above are:
 
-```typescript=
+```typescript
 
 export type Decimal01 = Newtype&lt;{ readonly DECIMAL01: unique symbol }, NonNegative&gt;,
 
@@ -654,7 +654,7 @@ whereas `NonNegativeInteger` and `NonNegative` are helper types from the library
 
 I define the runtime bridges between Newtypes and primitives like this:
 
-```typescript=
+```typescript
 
 const moreThanOne = (n: number) =&gt; n &gt; 1;
 
@@ -670,7 +670,7 @@ Prism is the bridge itself. It will take a primitive, ensure its bounds, and spi
 
 Sometimes, I also want to cast a primitive into a Newtype when I’m quite sure that I’m passing a correct value and ready to get an exception right in my face:
 
-```typescript=
+```typescript
 
 // where castToPrism is a helper function that does some mundane stuff
 
@@ -684,7 +684,7 @@ export const castDecimal01 = castToPrism(prismDecimal01)(
 
 Now we can have the previous examples from the start of this paragraph rewritten like this:
 
-```typescript=
+```typescript
 
 const nodes = castListLength(1000);
 
@@ -759,7 +759,7 @@ I found, though, that the [Web Worker](https://developer.mozilla.org/en-US/docs/
 
 The Web Worker code is stupidly simple:
 
-```typescript=
+```typescript
 
 /// &lt;reference lib="webworker" /&gt;
 

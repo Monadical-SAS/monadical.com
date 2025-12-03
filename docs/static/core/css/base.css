@@ -2002,6 +2002,7 @@ ul.open-positions>li {
     z-index: -1;
     pointer-events: none;
     background-image:
+        url(/static/core/img/img-home-001.png),
         url(/static/cloud-bg-2x.png),
         url(/static/b-thing-2x.png),
         url(/static/figure8-2x.png),
@@ -2009,6 +2010,7 @@ ul.open-positions>li {
         url(/static/b-thing-2x.png),
         url(/static/figure8-2x.png);
     background-position:
+        calc(100% + 100px) 40px,
         -10px 0px,
         -320px 600px,
         calc(100% + 250px) 1400px,
@@ -2018,6 +2020,7 @@ ul.open-positions>li {
         calc(100% + 250px) 4300px;
     background-repeat: no-repeat;
     background-size:
+        600px auto,
         1300px auto,
         500px auto,
         500px auto,

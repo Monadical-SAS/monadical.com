@@ -207,9 +207,9 @@
 <span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://docs.monadical.com/user/nick/avatar.svg);" title="nick"></i></span>
                 
                  <span class="text-uppercase ui-status-lastchange"></span>
-<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Mar 31 2025 02:18:45 GMT+0000 (Coordinated Universal Time)"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Dec 27 2025 03:50:25 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">39269 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">40133 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -335,7 +335,7 @@ dstat --cpu-adv --fs --aio --ipc --lock 2
 ### ~~`atop`~~
 
 :::danger
-**POTENTIALLY COMPROMISED? ☠️**
+**POTENTIALLY COMPROMISED? ☠️ ... `glances` is a good alternative for now**
 
 https://rachelbythebay.com/w/2025/03/25/atop/
 :::
@@ -355,7 +355,7 @@ atop -y
 - https://linux.die.net/man/1/atop
 - https://haydenjames.io/use-atop-linux-server-performance-analysis/
 
-### `tiptop`/`mactop` 🌈
+### `tiptop` 🌈
 
 tiptop is a command-line system monitoring tool in the spirit of top. It displays various interesting system stats and graphs them. Works on all operating systems.
 
@@ -365,7 +365,25 @@ tiptop
 ```
 
 - https://github.com/nschloe/tiptop
+
+![](https://docs.monadical.com/uploads/31e11478-d24d-4e28-adc2-0cd9a03b8c92.png)
+
+
+### `mactop`  🌈
+
+Two identially named but separate projects that provide macOS / Apple Silicon monitoring.
+
+```bash
+brew install mactop
+mactop
+```
+
+- https://github.com/metaspartan/mactop
 - https://github.com/laixintao/mactop
+
+![](https://docs.monadical.com/uploads/d5edc7e2-c7b1-428a-a934-946939b32227.png)
+
+
 
 ### `osquery` ⭐️
 
@@ -1902,6 +1920,26 @@ ltrace -t -T -l /lib/libselinux.so.1 docker ps
 - https://gitlab.com/cespedes/ltrace
 - https://manpages.ubuntu.com/manpages/cosmic/man1/ltrace.1.html
 
+### `witr`
+
+"Why is this thing running?" Check why a given process, port, pid, etc. is running, what started it, what's keeping it alive, etc.
+
+```bash
+# install
+# curl -fsSL https://raw.githubusercontent.com/pranshuparmar/witr/main/install.sh | bash
+
+# check why a port is listening
+witr --port 5000
+
+# check by process name
+witr node
+
+# check by pid and show full tree output
+witr 234 --tree
+```
+
+- https://github.com/pranshuparmar/witr
+
 ### `binwalk`/`strings`/`hexyl`/`hexabyte`/`dissy` 🌈
 
 Decompiler utility normally used to inspect firmware binaries, but is useful along with `strings` to see what a binary contains before you run it.
@@ -2174,7 +2212,7 @@ openssl rand -hex 20
 <script defer="" src="https://docs.monadical.com/build/MathJax/MathJax.js"></script>
 <script defer="" src="https://docs.monadical.com/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js"></script>
 <script defer="" src="https://docs.monadical.com/build/MathJax/config/Safe.js"></script>
-<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.6ca6a20d83df19066d96.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.deaa5ba7add85ca9499b.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.3a55279942375e344a4b.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.00ba21c360fe4ee91e15.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.6e275e1bc24af120eb14.js"></script>
+<script src="https://docs.monadical.com/config"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~common.416b1eda8a25bde937d8.js"></script><script defer="defer" src="https://docs.monadical.com/build/common.7571c5f3816940134570.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~cover~cover-pack~index~index-pack~pretty~pretty-pack~slide~slide-pack.f63651c51059baff7257.js"></script><script defer="defer" src="https://docs.monadical.com/build/vendors~index~index-pack~pretty~pretty-pack~slide~slide-pack.ee48259a734d6fa119fa.js"></script><script defer="defer" src="https://docs.monadical.com/build/pretty-pack.12f46fc3d4cfbda8d879.js"></script>
 
                         </article>
                     

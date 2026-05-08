@@ -38,9 +38,9 @@
 <span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://docs.monadical.com/user/nick/avatar.svg);" title="nick"></i></span>
                 
                  <span class="text-uppercase ui-status-lastchange"></span>
-<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Dec 27 2025 03:50:25 GMT+0000 (Coordinated Universal Time)"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue Sep 01 2020 17:52:27 GMT+0000 (Coordinated Universal Time)" data-updatetime="Fri Apr 10 2026 18:15:25 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">40622 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">41840 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
@@ -816,6 +816,32 @@ fdisk -l
 
 Alternative filesystems / fileshares besides ext4.
 
+### `dev-purge`
+
+
+Find and clean build artifacts, dependency folders, and cache directories across all your projects. One command to reclaim gigabytes of disk space.
+
+
+
+```bash
+npm install -g dev-purge
+
+dev-purge                         # Cycle through projects, y/n each
+dev-purge ~/projects              # Scan a specific directory
+dev-purge --dry-run               # Show bloat without deleting
+dev-purge -a                      # Single confirmation to delete all
+dev-purge -a --older-than 1y      # Nuke everything older than a year
+dev-purge -a --category cache --older-than 6m  # Nuke old caches
+dev-purge --category deps         # Only node_modules, venv, Pods, etc.
+dev-purge -s 100m                 # Only show bloat &gt; 100 MB
+dev-purge -s 0                    # Show everything (no size minimum)
+dev-purge --json                  # Machine-readable JSON output
+dev-purge --watch                 # Real-time disk usage monitoring
+```
+
+
+- https://github.com/LarsenCundric/dev-purge
+
 ---
 
 ## Network
@@ -1212,6 +1238,7 @@ Interactive TUI to explore iptables.
 
 - https://github.com/davidmoreno/iptables-tui
 
+
 ### `impala` 🌈
 
 TUI for managing Wifi on Linux
@@ -1224,9 +1251,71 @@ impala
 
 - https://github.com/pythops/impala
 
+
+### `port-whisperer` 🌈
+
+See a color-coded table of every dev server, database, and background process listening on your machine -- with framework detection, Docker container identification, and interactive process management.
+
+```bash
+npm install -g port-whisperer
+
+ports --all
+ports ps
+ports watch
+
+whoisonport 3000
+
+ports kill 3000                # kill by port
+ports kill 3000 5173 8080      # kill multiple
+ports kill 42872               # kill by PID
+ports kill -f 3000             # force kill (SIGKILL)
+
+```
+
+- https://github.com/LarsenCundric/port-whisperer
+
+
+
 ---
 
 ## Hardware
+
+### `mac-hardware-toys` 🌈 ⭐️
+
+A suite of commands like accelerometer, microphone, bandpass, keyboard-brightness, screen-brightness, and more that can be linked together using UNIX pipes.
+
+All tools input and output a standardized mono audio signal that represents their sensor input/output values, letting you pipe together arbitrary sensor signals / output like a modular synth.
+
+```bash
+pip install mac-hardware-toys
+# or
+uv tool install mac-hardware-toys
+
+
+# flash your screen according to your microphone input
+microphone | screen-brightness
+
+# play a sine wave tone based on your screen lid-angle
+lid-angle | speaker
+
+# flash the keyboard according to your heartbeat (keep your wrists on palm rests)
+accelerometer | metronome | keyboard-brightness
+
+# see more detail about any given signal by piping it into visualizer
+microphone | visualizer
+sine 1000 | visualizer
+gyroscope | tee &gt;(speaker) | visualizer
+```
+
+- https://github.com/pirate/mac-hardware-toys
+- https://pypi.org/project/mac-hardware-toys
+
+![](https://docs.monadical.com/uploads/4fe980de-0d1a-4691-b554-527ba7ef40e7.gif)![](https://docs.monadical.com/uploads/13148c70-12be-425b-b543-59c36bec1758.gif)
+![](https://docs.monadical.com/uploads/880f0260-f395-412b-8ce4-457d7adc9f82.png)
+
+
+
+
 
 ### `sensors`
 
@@ -1608,7 +1697,55 @@ uwsgitop /tmp/stats.socket
 - https://github.com/xrmx/uwsgitop
 - https://www.engagespark.com/blog/deploying-monitoring-python-web-apps-uwsgi/
 
-## OS / System
+## Packaging / OS / System
+
+### `abx-pkg` + `abx` 🌈 ⭐️
+
+Like `uv` / `uvx` but for ALL package managers: `apt`, `brew`, `pip`, `uv`, `npm`, `pnpm`, `yarn`, `bun`, `deno`, `cargo`, `gem`, `goget`, `nix`, `docker`, `bash`, `chromewebstore`, `puppeteer`, `playwright`, `ansible`, `pyinfra`
+
+
+```bash
+pip install abx-pkg
+
+abx-pkg install wget
+abx-pkg run wget --version
+
+abx-pkg install --binproviders=playwright,puppeteer,apt,brew chromium
+abx-pkg update chromium
+abx-pkg uninstall chromium
+
+
+abx yt-dlp --version   # auto-dowload and run yt-dlp "by any means possible", tries all providers until one finds it
+```
+
+```python
+from abx_pkg import Binary, apt, brew, pip, npm, env
+
+# Provider singletons are available as simple imports — no manual instantiation needed
+dependencies = [
+    Binary(name='curl',       binproviders=[env, apt, brew]),
+    Binary(name='yt-dlp',     binproviders=[env, pip, uv, apt, brew]),
+    Binary(name='playwright', binproviders=[env, npm, pnpm]),
+    Binary(name='chromium',   binproviders=[playwright, puppeteer, apt]),
+    Binary(name='postgres',   binproviders=[docker, env, apt, brew]),
+]
+for binary in dependencies:
+    binary = binary.load_or_install()
+
+    print(binary.abspath, binary.version, binary.binprovider, binary.is_valid, binary.sha256)
+    # Path(...) SemVer(...) EnvProvider()/AptProvider()/BrewProvider()/PipProvider()/NpmProvider() True '&lt;sha256&gt;'
+
+    binary.exec(cmd=['--version'])   # curl 7.81.0 (x86_64-apple-darwin23.0) libcurl/7.81.0 ...
+```
+
+Also supports defining dependencies at the top of scripts in a shebang (similar to `uv` `script` mode), but for *any* language not just python.
+
+Uses safe defaults to prevent supply-chain attacks: `--min-release-age=7` + `--postinstall-scripts=False`, hermetically installs packages in an isolated prefix to avoid breaking system packages, but can also be used for global system packages.
+
+- https://github.com/ArchiveBox/abx-pkg
+- https://archivebox.github.io/abx-pkg
+- https://deepwiki.com/ArchiveBox/abx-pkg
+- https://pypi.org/project/abx-pkg
 
 ### `nala` 🌈
 
@@ -1796,6 +1933,27 @@ hexyl /bin/some_binary.exe
 - https://github.com/sharkdp/hexyl 🌈
 - https://github.com/thetacom/hexabyte ⭐️🌈
 - https://github.com/tonybaloney/dissy ⭐️🌈
+
+
+### `profano`
+
+CLI tool to analyze V8 .cpuprofile files and print the top functions by self-time or total-time directly in the terminal. Built for AI agents and humans who want quick profiling insights without opening Chrome DevTools.
+
+```bash
+npm install -g profano
+
+# Analyze a profile, sorted by self-time (default)
+profano ./tmp/cpu-profiles/CPU.*.cpuprofile
+
+# Sort by total/inclusive time instead
+profano profile.cpuprofile --sort total
+
+# Show the top 50 functions (default 30)
+profano profile.cpuprofile -n 50
+```
+
+- https://github.com/remorses/profano
+
 
 
 ---

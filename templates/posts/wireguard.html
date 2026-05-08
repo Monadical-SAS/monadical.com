@@ -8,7 +8,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="yes" name="mobile-web-app-capable"/>
-<meta content='&lt;center&gt;  # Some Unofficial WireGuard Documentation  &lt;!--&lt;img src="https://i.imgur.com/dQ3PDQQ.png"&gt;' name="description"/>
+<meta content='&lt;div align="center"&gt;  # Some Unofficial WireGuard Documentation  &lt;!--&lt;img src="https://i.imgur.com/d' name="description"/>
 
 
 
@@ -37,17 +37,17 @@
 <span class="ui-lastchangeuser"> <i class="ui-user-icon small" data-placement="right" data-toggle="tooltip" style="background-image: url(https://docs.monadical.com/user/nick/avatar.svg);" title="nick"></i></span>
                 
                  <span class="text-uppercase ui-status-lastchange"></span>
-<span class="ui-lastchange text-uppercase" data-createtime="Tue May 28 2019 07:19:00 GMT+0000 (Coordinated Universal Time)" data-updatetime="Tue Mar 23 2021 17:16:13 GMT+0000 (Coordinated Universal Time)"></span>
+<span class="ui-lastchange text-uppercase" data-createtime="Tue May 28 2019 07:19:00 GMT+0000 (Coordinated Universal Time)" data-updatetime="Sat Mar 21 2026 09:48:24 GMT+0000 (Coordinated Universal Time)"></span>
 </span>
-<span class="pull-right">93915 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+<span class="pull-right">97215 views <a class="ui-edit" href="https://docs.monadical.com/#" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
 <br/>
 </small>
 </div>
-<div class="container markdown-body" id="doc">&lt;center&gt;
+<div class="container markdown-body" id="doc">&lt;div align="center"&gt;
 
 # Some Unofficial WireGuard Documentation
 
-&lt;!--&lt;img src="https://i.imgur.com/dQ3PDQQ.png"&gt;&lt;br/&gt;&lt;br/&gt;--&gt;
+&lt;!--&lt;img src="https://i.imgur.com/dQ3PDQQ.png"&gt;--&gt;&lt;br/&gt;&lt;br/&gt;
 
 
 API reference guide for WireGuard including Setup, Configuration, and Usage, with examples.
@@ -57,12 +57,12 @@ API reference guide for WireGuard including Setup, Configuration, and Usage, wit
 
 &lt;small&gt;
     
-Source for these docs, example code, and issue tracker: https://github.com/pirate/wireguard-docs &amp;nbsp; &amp;nbsp; 
-Nicer HTML page version: https://docs.sweeting.me/s/wireguard
+Source for these docs, example code, and issue tracker: [wireguard-docs](https://github.com/pirate/wireguard-docs) &amp;nbsp; &amp;nbsp;
+Nicer HTML page version: [docs.sweeting.me](https://docs.sweeting.me/s/wireguard)
 
 &lt;/small&gt;
 
-&lt;/center&gt;
+&lt;/div&gt;
 
 ---
 
@@ -70,13 +70,13 @@ Nicer HTML page version: https://docs.sweeting.me/s/wireguard
 
 **Official Links**
 
-- Homepage: https://www.wireguard.com
-- Install: https://www.wireguard.com/install/
-- QuickStart: https://www.wireguard.com/quickstart/
-- Manpages: [`wg`](https://manpages.debian.org/testing/wireguard-tools/wg.8.en.html), [`wg-quick`](https://manpages.debian.org/unstable/wireguard-tools/wg-quick.8.en.html)
-- Main Git repo: https://git.zx2c4.com/WireGuard/
-- GitHub Mirror: https://github.com/WireGuard/WireGuard
-- Mailing List: https://lists.zx2c4.com/mailman/listinfo/wireguard
+- [Homepage](https://www.wireguard.com/)
+- [Install](https://www.wireguard.com/install/)
+- [QuickStart](https://www.wireguard.com/quickstart/)
+- Manpages: [`wg(8)`](https://man7.org/linux/man-pages/man8/wg.8.html), [`wg-quick(8)`](https://man7.org/linux/man-pages/man8/wg-quick.8.html)
+- [Main Git repo](https://git.zx2c4.com/WireGuard/)
+- [GitHub Mirror](https://github.com/WireGuard/WireGuard)
+- [Mailing List](https://lists.zx2c4.com/mailman/listinfo/wireguard)
 
 **WireGuard Goals**
 
@@ -89,7 +89,7 @@ Nicer HTML page version: https://docs.sweeting.me/s/wireguard
 &lt;div align="center"&gt;
 &lt;a href="https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/"&gt;&lt;img src="https://www.ckn.io/images/wireguard_comparisions.png" width="600px"/&gt;&lt;/a&gt;&lt;br/&gt;&lt;small&gt;
 It's also &lt;i&gt;fast as hell&lt;/i&gt;. I routinely get sub 0.5ms pings and 900mbps+ on good connections.&lt;br/&gt;
-(See https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/)
+(See [this WireGuard topology write-up](https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/))
 &lt;/small&gt;
 &lt;/div&gt;
 
@@ -97,9 +97,86 @@ It's also &lt;i&gt;fast as hell&lt;/i&gt;. I routinely get sub 0.5ms pings and 9
 
 # Table of Contents
 
-See https://github.com/pirate/wireguard-docs for example code and documentation source.
+See [wireguard-docs](https://github.com/pirate/wireguard-docs) for example code and documentation source.
 
-[TOC]
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Table-of-Contents"&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Intro"&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#My-Personal-Requirements-for-a-VPN-Solution"&gt;My Personal Requirements for a VPN Solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#List-of-Possible-VPN-Solutions"&gt;List of Possible VPN Solutions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#WireGuard-Documentation"&gt;WireGuard Documentation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Glossary"&gt;Glossary&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#PeerNodeDevice"&gt;Peer/Node/Device&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Bounce-Server"&gt;Bounce Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Subnet"&gt;Subnet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#CIDR-Notation"&gt;CIDR Notation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#NAT"&gt;NAT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Public-Endpoint"&gt;Public Endpoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Private-key"&gt;Private key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Public-key"&gt;Public key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#DNS"&gt;DNS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Example-Strings"&gt;Example Strings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#How-WireGuard-Works"&gt;How WireGuard Works&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#How-Public-Relay-Servers-Work"&gt;How Public Relay Servers Work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#How-WireGuard-Routes-Packets"&gt;How WireGuard Routes Packets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#What-WireGuard-Traffic-Looks-Like"&gt;What WireGuard Traffic Looks Like&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#WireGuard-Performance"&gt;WireGuard Performance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#WireGuard-Security-Model"&gt;WireGuard Security Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#How-WireGuard-Manages-Keys"&gt;How WireGuard Manages Keys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Usage"&gt;Usage&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#QuickStart"&gt;QuickStart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Setup"&gt;Setup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Config-Creation"&gt;Config Creation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Key-Generation"&gt;Key Generation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Start--Stop"&gt;Start / Stop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Inspect"&gt;Inspect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Testing"&gt;Testing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Config-Reference"&gt;Config Reference&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Interface"&gt;[Interface]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Peer"&gt;[Peer]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Advanced-Topics"&gt;Advanced Topics&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#IPv6"&gt;IPv6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Forwarding-All-Traffic"&gt;Forwarding All Traffic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#NAT-to-NAT-Connections"&gt;NAT-to-NAT Connections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Dynamic-IP-Allocation"&gt;Dynamic IP Allocation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Platform-Capture-Technologies"&gt;Platform Capture Technologies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Other-WireGuard-Implementations"&gt;Other WireGuard Implementations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#WireGuard-Setup-tools"&gt;WireGuard Setup Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Config-Shortcuts"&gt;Config Shortcuts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Containerization"&gt;Containerization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Further-Reading"&gt;Further Reading&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Reference-Docs"&gt;Reference Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Tutorials"&gt;Tutorials&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Papers-Articles-and-Talks"&gt;Papers, Articles, and Talks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Related-Projects"&gt;Related Projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Docker"&gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Other"&gt;Other&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Discussions"&gt;Discussions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 
 
 # Intro
@@ -117,7 +194,7 @@ Whether living behind the Great Wall of China or just trying to form a network b
  - fast (low latency and line-rate bandwidth)
  - modern encryption, secure by default with forward secrecy &amp; resilience to downgrade attacks
  - ideally support for any type of Level 2 and control traffic, e.g. ARP/DHCP/ICMP (or ideally raw ethernet frames), not just TCP/HTTP
- - ability to join the VPN from Ubuntu, FreeBSD, iOS, MacOS, Windows, Android (via open-source apps or natively)
+ - ability to join the VPN from Ubuntu, FreeBSD, iOS, MacOS, Windows, Android, and some Chromebooks (via apps or native clients)
  - supports both running on the host routing traffic for docker or running in a docker container routing for the host
 
 **Things WireGuard does not do:**
@@ -146,7 +223,7 @@ But you can write your own solutions for these problems using WireGuard under th
  - [TINC](https://www.tinc-vpn.org/): haven't tried it yet, but it doesn't work on iOS, worst case scenario I could live
  - [VPNCloud](https://github.com/dswd/vpncloud): similar properties to WireGuard, with more auto-mesh features
  - [cjdns](https://github.com/cjdelisle/cjdns): haven't tried it yet, should I?
- - [ZeroTier](https://www.zerotier.com): haven't tried it yet, should I
+ - [ZeroTier](https://www.zerotier.com): haven't tried it yet, should I?
  - [MeshBird](https://github.com/meshbird/meshbird): "Cloud native" VPN/networking layer
  - [Yggdrasil Network](https://yggdrasil-network.github.io/): Yggdrasil is a self-arranging IPv4/IPv6 mesh VPN (haven't tried it yet)
 
@@ -193,7 +270,7 @@ A host that connects to the VPN and registers a VPN subnet address such as `192.
 
 A publicly reachable peer/node that serves as a fallback to relay traffic for other VPN peers behind NATs.  A bounce server is not a special type of server, it's a normal peer just like all the others, the only difference is that it has a public IP and has kernel-level IP forwarding turned on which allows it to bounce traffic back down the VPN to other clients.
 
-See more: https://tailscale.com/blog/how-nat-traversal-works/ (Tailscale uses Wireguard under the hood)
+See more: [How NAT traversal works](https://tailscale.com/blog/how-nat-traversal-works/) (Tailscale uses WireGuard under the hood)
 
 ### Subnet
 
@@ -209,7 +286,7 @@ A way of defining a subnet and its size with a "mask", a smaller mask = more  ad
   + `0.0.0.1/0` (4,294,967,296 IPs from `0.0.0.0` - `255.255.255.255`) netmask = `0.0.0.0`
   + IPv6 CIDR notation is also supported e.g. `2001:DB8::/64`
  
-https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+[Classless Inter-Domain Routing (CIDR)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
 
 To people just getting started `192.0.2.1/32` may seem like a weird and confusing way to refer to a single IP.  This design is nice though because it allows peers to expose multiple IPs if needed without needing multiple notations.  Just know that anywhere you see something like `192.0.2.3/32`, it really just means `192.0.2.3`.
 
@@ -233,7 +310,7 @@ A WireGuard public key for a single node, generated with:
 
 ### DNS
 
-Domain Name Server, used to resolve hostnames to IPs for VPN clients, instead of allowing DNS requests to leak outside the VPN and reveal traffic.  Leaks are testable with http://dnsleak.com.
+Domain Name Server, used to resolve hostnames to IPs for VPN clients, instead of allowing DNS requests to leak outside the VPN and reveal traffic.  Leaks are testable with [dnsleak.com](https://dnsleak.com).
 
 ---
 
@@ -248,6 +325,8 @@ If all peers are publicly accessible, you don't have to worry about special trea
 Each client only needs to define the publicly accessible servers/peers in its config, any traffic bound to other peers behind NATs will go to the catchall VPN subnet (e.g. `192.0.2.1/24`) in the public relays `AllowedIPs` route and will be forwarded accordingly once it hits the relay server.
 
 In summary: only direct connections between clients should be configured, any connections that need to be bounced should not be defined as peers, as they should head to the bounce server first and be routed from there back down the vpn to the correct client.
+
+**Important: traffic bounced through a relay server is not end-to-end encrypted between the two NAT-ed peers.** The relay server decrypts incoming traffic from one peer and re-encrypts it with the destination peer's key before forwarding. This means the relay server can see the plaintext VPN traffic passing through it. Each hop (A↔Relay, Relay↔B) is independently encrypted, but the relay acts as a trusted intermediary that performs [Cryptokey Routing](https://www.wireguard.com/#cryptokey-routing) to match the decrypted packet's destination IP to the correct peer. For more details, see the [WireGuard whitepaper](https://www.wireguard.com/papers/wireguard.pdf) and [Pro Custodibus's explanation of hub-and-spoke E2EE limitations](https://www.procustodibus.com/blog/2021/12/wireguard-e2ee-hub-and-spoke/). If end-to-end encryption between NAT-ed peers is required, consider using an application-level encryption layer (e.g. TLS) on top of WireGuard, or a solution like [Tailscale's DERP relays](https://tailscale.com/blog/how-tailscale-works) which forward opaque encrypted packets without decrypting them.
 
 ### How WireGuard Routes Packets
 
@@ -338,19 +417,19 @@ Some services that help with key distribution and deployment:
 - https://github.com/its0x08/wg-install
 - https://github.com/brittson/wireguard_config_maker
 - https://www.wireguardconfig.com
-- https://wirt.network
+- https://github.com/UrielCh/wireguard
 
 You can also read in keys from a file or via command if you don't want to hardcode them in `wg0.conf`, this makes managing keys via 3rd party service much easier:
 
 ```ini
 [Interface]
 ...
-PostUp = wg set %i private-key /etc/wireguard/wg0.key &lt;(cat /some/path/%i/privkey)
+PreUp = wg set %i private-key &lt;(cat /some/path/%i/privkey)
 ```
 
 Technically, multiple servers can share the same private key as long as clients arent connected to two servers with the same key simulatenously.
 An example of a scenario where this is a reasonable setup is if you're using round-robin DNS to load-balance connections between two servers that are pretending to be a single server.
-Most of the time however, every peer should have its own pubic/private keypair so that peers can't read eachothers traffic and can be individually revoked.
+Most of the time however, every peer should have its own public/private keypair so that peers can't read eachothers traffic and can be individually revoked.
 
 ---
 
@@ -363,11 +442,11 @@ Overview of the general process:
 1. Install `apt install wireguard` or `pkg/brew install wireguard-tools` on each node
 2. Generate public and private keys locally on each node `wg genkey`+`wg pubkey`
 3. Create a `wg0.conf` WireGuard config file on the main relay server
-    - `[Interface]` Make sure to specify a CIDR range for the entire VPN subnet when defining the address the server accepts routes for `Address = 192.0.2.1/24`
+    - `[Interface]` Make sure to specify the local tunnel address(es) the server will use, e.g. `Address = 192.0.2.1/24,2001:DB8::1/64` for a dual-stack VPN subnet
     - `[Peer]` Create a peer section for every client joining the VPN, using their corresponding remote public keys
 4. Create a `wg0.conf` on each client node
-   - `[Interface]` Make sure to specify only a single IP for client peers that don't relay traffic `Address = 192.0.2.3/32`.
-   - `[Peer]` Create a peer section for each public peer not behind a NAT, make sure to specify a CIDR range for the entire VPN subnet when defining the remote peer acting as the bounce server `AllowedIPs = 192.0.2.1/24`. Make sure to specify individual IPs for remote peers that don't relay traffic and only act as simple clients `AllowedIPs = 192.0.2.3/32`.
+   - `[Interface]` Make sure to specify only the client peer's own tunnel IPs when it doesn't relay traffic, e.g. `Address = 192.0.2.3/32,2001:DB8::3/128`.
+   - `[Peer]` Create a peer section for each public peer not behind a NAT, and make sure to use IPv4 and/or IPv6 CIDRs as appropriate when defining what should route through that peer, e.g. relay server `AllowedIPs = 192.0.2.0/24,2001:DB8::/64` or simple client `AllowedIPs = 192.0.2.3/32,2001:DB8::3/128`.
 5. Start WireGuard on the main relay server with `wg-quick up /full/path/to/wg0.conf`
 6. Start WireGuard on all the client peers with `wg-quick up /full/path/to/wg0.conf`
 7. Traffic is routed from peer to peer using most specific route first over the WireGuard interface, e.g. `ping 192.0.2.3` checks for a direct route to a peer with `AllowedIPs = 192.0.2.3/32` first, then falls back to a relay server that's accepting IPs in the whole subnet
@@ -389,17 +468,28 @@ pkg install wireguard
 # install on other systems using https://www.wireguard.com/install/#installation
 ```
 
+ChromeOS note: some Chromebooks have basic built-in WireGuard support in the VPN settings UI, where you can add a connection and select `Provider type: WireGuard`. ChromeOS also documents `VPN.Type = WireGuard` in its ONC format for managed or imported network configs. Under the hood, ChromiumOS implements this as a built-in WireGuard client backed by the kernel module and documents a kernel `5.4+` requirement. See [Google's Chromebook VPN setup guide](https://support.google.com/chromebook/answer/1282338?hl=en#zippy=%2Cwireguard-support), the [Chromium ONC spec](https://chromium.googlesource.com/chromium/src/+/main/components/onc/docs/onc_spec.md#WireGuard-connections-and-types), and the [ChromiumOS VPN implementation notes](https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/shill/doc/vpn.md#built_in_wireguard_vpn).
+
 ```bash
-# to enable kernel relaying/forwarding ability on bounce servers
-echo "net.ipv4.ip_forward = 1" &gt;&gt; /etc/sysctl.conf
-echo "net.ipv4.conf.all.proxy_arp = 1" &gt;&gt; /etc/sysctl.conf
+# to enable kernel forwarding on bounce servers
+echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
+echo "net.ipv6.conf.all.forwarding = 1" | sudo tee -a /etc/sysctl.conf
+# optional IPv4-specific proxy_arp example for proxy-ARP based topologies
+echo "net.ipv4.conf.all.proxy_arp = 1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p /etc/sysctl.conf
 
-# to add iptables forwarding rules on bounce servers
-iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-iptables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
-iptables -t nat -A POSTROUTING -s 192.0.2.0/24 -o eth0 -j MASQUERADE
+# to add IPv4 forwarding/NAT rules on bounce servers
+sudo iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
+sudo iptables -t nat -A POSTROUTING -s 192.0.2.0/24 -o eth0 -j MASQUERADE
+
+# to add IPv6 forwarding rules on bounce servers
+sudo ip6tables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+sudo ip6tables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+sudo ip6tables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
+# optional NAT66 example if you intentionally want IPv6 masquerading
+# sudo ip6tables -t nat -A POSTROUTING -s 2001:DB8::/64 -o eth0 -j MASQUERADE
 ```
 
 ### Config Creation
@@ -422,7 +512,9 @@ wg pubkey &lt; example.key &gt; example.key.pub
 ```bash
 wg-quick up /full/path/to/wg0.conf
 wg-quick down /full/path/to/wg0.conf
-# Note: you must specify the absolute path to wg0.conf, relative paths won't work
+# Note: CONFIG_FILE can be in any directory, but its filename must still match the interface name, e.g. ./wg0.conf or /full/path/to/wg0.conf
+# If wg0.conf is in /etc/wireguard you can use the simpler:
+wg-quick up wg0
 ```
 
 ```bash
@@ -450,12 +542,14 @@ ip route delete 192.0.2.3/32 dev wg0
 
 ```bash
 # show system LAN and WAN network interfaces
-ifconfig
 ip address show
+# or if ip is not available:
+ifconfig
 
 # show system VPN network interfaces
-ifconfig wg0
 ip link show wg0
+# or
+ifconfig wg0
 
 # show WireGuard VPN interfaces
 wg show all
@@ -466,8 +560,10 @@ wg show wg0
 
 ```bash
 # show public IP address
-ifconfig eth0
 ip address show eth0
+# or
+ifconfig eth0
+# or
 dig -4 +short myip.opendns.com @resolver1.opendns.com
 
 # show VPN IP address
@@ -513,7 +609,7 @@ reboot
 
 #### Ping Speed
 ```bash
-# check that main relay server is accessible directly via public internet
+# check that the main relay server is accessible directly via public internet
 ping public-server1.example-vpn.dev
 
 # check that the main relay server is available via VPN
@@ -534,7 +630,7 @@ ping 192.0.2.4
 
 ```bash
 # install iperf using your preferred package manager
-apt/brew/pkg install iperf
+apt/brew/pkg/opkg install iperf
 
 # check bandwidth over public internet to relay server
 iperf -s # on public relay server
@@ -559,7 +655,7 @@ iperf -c 192.0.2.4 # on local client
 
 #### DNS
 
-Check for DNS leaks using http://dnsleak.com, or by checking the resolver on a lookup:
+Check for DNS leaks using [dnsleak.com](https://dnsleak.com), or by checking the resolver on a lookup:
 ```bash
 dig example.com A
 ```
@@ -579,20 +675,22 @@ The config file name must be in the format `${name of the new WireGuard interfac
 
 Config files can opt to use the limited set of `wg` config options, or the more extended `wg-quick` options, depending on what command is preferred to start WireGuard.  These docs recommend sticking to `wg-quick` as it provides a more powerful and user-friendly config experience.
 
+The core `wg(8)` config format covers peer/session state such as `PrivateKey`, `ListenPort`, `FwMark`, `PublicKey`, `PresharedKey`, `AllowedIPs`, `Endpoint`, and `PersistentKeepalive`. The convenience keys `Address`, `DNS`, `Table`, `MTU`, `PreUp`, `PostUp`, `PreDown`, and `PostDown` below are `wg-quick(8)` extensions. See [wg(8)](https://man7.org/linux/man-pages/man8/wg.8.html) and [wg-quick(8)](https://man7.org/linux/man-pages/man8/wg-quick.8.html).
+
 **Jump to definition:**
 
 ¶ &lt;a href="#Interface"&gt;`[Interface]`&lt;/a&gt;  
 ¶ &lt;a href="#-Name"&gt;`# Name = node1.example.tld`&lt;/a&gt;  
-¶ &lt;a href="#Address"&gt;`Address = 192.0.2.3/32`&lt;/a&gt;  
+¶ &lt;a href="#Address"&gt;`Address = 192.0.2.3/32`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
 ¶ &lt;a href="#ListenPort"&gt;`ListenPort = 51820`&lt;/a&gt;  
 ¶ &lt;a href="#PrivateKey"&gt;`PrivateKey = localPrivateKeyAbcAbcAbc=`&lt;/a&gt;  
-¶ &lt;a href="#DNS"&gt;`DNS = 1.1.1.1,8.8.8.8`&lt;/a&gt;  
-¶ &lt;a href="#Table"&gt;`Table = 12345`&lt;/a&gt;  
-¶ &lt;a href="#MTU"&gt;`MTU = 1500`&lt;/a&gt;  
-¶ &lt;a href="#PreUp"&gt;`PreUp = /bin/example arg1 arg2 %i`&lt;/a&gt;  
-¶ &lt;a href="#PostUp"&gt;`PostUp = /bin/example arg1 arg2 %i`&lt;/a&gt;  
-¶ &lt;a href="#PreDown"&gt;`PreDown = /bin/example arg1 arg2 %i`&lt;/a&gt;  
-¶ &lt;a href="#PostDown"&gt;`PostDown = /bin/example arg1 arg2 %i`&lt;/a&gt;  
+¶ &lt;a href="#DNS-2"&gt;`DNS = 1.1.1.1,8.8.8.8`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
+¶ &lt;a href="#Table"&gt;`Table = 12345`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
+¶ &lt;a href="#MTU"&gt;`MTU = 1420`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
+¶ &lt;a href="#PreUp"&gt;`PreUp = /bin/example arg1 arg2 %i`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
+¶ &lt;a href="#PostUp"&gt;`PostUp = /bin/example arg1 arg2 %i`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
+¶ &lt;a href="#PreDown"&gt;`PreDown = /bin/example arg1 arg2 %i`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
+¶ &lt;a href="#PostDown"&gt;`PostDown = /bin/example arg1 arg2 %i`&lt;/a&gt; (wg-quick only)&lt;br/&gt;
 
 
 ¶ &lt;a href="#Peer"&gt;`[Peer]`&lt;/a&gt;  
@@ -629,22 +727,31 @@ DNS = 1.1.1.1
 
 This is just a standard comment in INI syntax used to help keep track of which config section belongs to which node, it's completely ignored by WireGuard and has no effect on VPN behavior.
 
+NOTE: All comments, including `# Name`, are removed from the .conf files by certain operations and applications. 
+If you need to identify peers, consider using a wireguard vanity key generator, such as 
+[wireguard-vanity-keygen](https://github.com/axllent/wireguard-vanity-keygen) or 
+[wireguard-vanity-address](https://github.com/warner/wireguard-vanity-address),
+which will allow you to include the host name in the public key of the host.
+The key generation can take minutes (4 characters), hours (5 characters) or longer,
+so consider using an abbreviation for hosts with longer names.
+
 #### `Address`
 
-Defines what address range the local node should route traffic for. Depending on whether the node is a simple client joining the VPN subnet, or a bounce server that's relaying traffic between multiple clients, this can be set to a single IP of the node itself (specified with CIDR notation), e.g. 192.0.2.3/32), or a range of IPv4/IPv6 subnets that the node can route traffic for.
+Defines what address(es) the local WireGuard interface should use. Depending on whether the node is a simple client joining the VPN subnet, or a bounce server that's relaying traffic between multiple clients, this can be set to a single IP of the node itself (specified with CIDR notation), e.g. `192.0.2.3/32` or `2001:DB8::3/128`, or to multiple IPv4/IPv6 addresses on the same interface.
 
 **Examples**
 
 * Node is a client that only routes traffic for itself  
 `Address = 192.0.2.3/32`
 
+* IPv6-only client address: `Address = 2001:DB8::3/128`
+
 * Node is a public bounce server that can relay traffic to other peers  
-When the node is acting as the public bounce server, it should set this to be the entire subnet that it can route traffic, not just a single IP for itself.
+When the node is acting as the public bounce server, it should use an address inside the VPN subnet together with the subnet prefix length it routes, not just a `/32` for itself.
 
 `Address = 192.0.2.1/24`
 
-* You can also specify multiple subnets or IPv6 subnets like so:  
-`Address = 192.0.2.1/24,2001:DB8::/64`
+* Dual-stack example with both IPv4 and IPv6: `Address = 192.0.2.1/24,2001:DB8::1/64`
 
 #### `ListenPort`
 
@@ -670,15 +777,14 @@ This key can be generated with `wg genkey &gt; example.key`
 
 #### `DNS`
 
-The DNS server(s) to announce to VPN clients via DHCP, most clients will use this server for DNS requests over the VPN, but clients can also override this value locally on their nodes
+This is a `wg-quick` convenience option for the local machine, not a WireGuard setting that is announced or pushed to peers. In `wg-quick`, IP entries are applied as DNS servers for the local interface via `resolvconf`, and non-IP entries are treated as DNS search domains. See [wg-quick(8)](https://man7.org/linux/man-pages/man8/wg-quick.8.html) and the [WireGuard for Windows parser](https://git.zx2c4.com/wireguard-windows/tree/conf/parser.go).
 
 **Examples**
 
-* The value can be left unconfigured to use system default DNS servers
-* A single DNS server can be provided  
-`DNS = 1.1.1.1`
-* or multiple DNS servers can be provided  
-`DNS = 1.1.1.1,8.8.8.8`
+* The value can be left unconfigured to use the system's default DNS handling
+* A single DNS server can be provided: `DNS = 1.1.1.1`
+* Multiple DNS servers can be provided: `DNS = 1.1.1.1,8.8.8.8`
+* A DNS server and search domain can be provided: `DNS = 10.0.0.2, internal.example.com`
 
 #### `Table`
 
@@ -686,7 +792,7 @@ Optionally defines which routing table to use for the WireGuard routes, not nece
 
 There are two special values: ‘off’ disables the creation of routes altogether, and ‘auto’ (the default) adds routes to the default table and enables special handling of default routes.
 
-https://git.zx2c4.com/WireGuard/about/src/tools/man/wg-quick.8
+See [`wg-quick(8)`](https://man7.org/linux/man-pages/man8/wg-quick.8.html).
 
 **Examples**
 
@@ -698,14 +804,16 @@ Table = 1234
 
 Optionally defines the maximum transmission unit (MTU, aka packet/frame size) to use when connecting to the peer, not necessary to configure for most setups.
 
-The MTU is automatically determined from the endpoint addresses or the system default route, which is usually a sane choice.
+The MTU is automatically determined from the endpoint addresses or the system default route, which is usually a sane choice. 
 
-https://git.zx2c4.com/WireGuard/about/src/tools/man/wg-quick.8
+You should avoid setting this if at all possible. You almost certainly do not want 1500 here due to the encapsulation overhead.
+
+See [`wg-quick(8)`](https://man7.org/linux/man-pages/man8/wg-quick.8.html).
 
 **Examples**
 
 ```ini
-MTU = 1500
+MTU = 1420
 ```
 
 
@@ -727,7 +835,7 @@ This option can appear multiple times, as with &lt;a href="#PreUp"&gt;PreUp&lt;/
 **Examples**
 
 * Read in a config value from a file or some command's output  
-`PostUp = wg set %i private-key /etc/wireguard/wg0.key &lt;(some command here)`
+`PostUp = wg set %i private-key &lt;(some command here)`
 
 * Log a line to a file  
 `PostUp = echo "$(date +%s) WireGuard Started" &gt;&gt; /var/log/wireguard.log`
@@ -752,10 +860,10 @@ This option can appear multiple times, as with &lt;a href="#PreUp"&gt;PreUp&lt;/
 **Examples**
 
 * Log a line to a file  
-`PostDown = echo "$(date +%s) WireGuard Going Down" &gt;&gt; /var/log/wireguard.log`
+`PreDown = echo "$(date +%s) WireGuard Going Down" &gt;&gt; /var/log/wireguard.log`
 
 * Hit a webhook on another server  
-`PostDown = curl https://events.example.dev/wireguard/stopping/?key=abcdefg`
+`PreDown = curl https://events.example.dev/wireguard/stopping/?key=abcdefg`
 
 
 #### `PostDown`
@@ -779,7 +887,7 @@ This option can appear multiple times, as with &lt;a href="#PreUp"&gt;PreUp&lt;/
 
 Defines the VPN settings for a remote peer capable of routing traffic for one or more addresses (itself and/or other peers). Peers can be either a public bounce server that relays traffic to other peers, or a directly accessible client via LAN/internet that is not behind a NAT and only routes traffic for itself.
 
-All clients must be defined as peers on the public bounce server. Simple clients that only route traffic for themselves, only need to define peers for the public relay, and any other nodes directly accessible.  Nodes that are behind separate NATs should _not_ be defined as peers outside of the public server config, as no direct route is available between separate NATs. Instead, nodes behind NATs should only define the public relay servers and other public clients as their peers, and should specify `AllowedIPs = 192.0.2.1/24` on the public server that accept routes and bounce traffic for the VPN subnet to the remote NAT-ed peers.
+All clients must be defined as peers on the public bounce server. Simple clients that only route traffic for themselves, only need to define peers for the public relay, and any other nodes directly accessible.  Nodes that are behind separate NATs should _not_ be defined as peers outside of the public server config, as no direct route is available between separate NATs. Instead, nodes behind NATs should only define the public relay servers and other public clients as their peers, and should specify `AllowedIPs = 192.0.2.1/24` on the public server that accepts routes and bounces traffic for the VPN subnet to the remote NAT-ed peers.  Traffic destined for a NAT-ed peer that isn't directly defined will match the relay server's broad `AllowedIPs` range, be encrypted to the relay server, and then be decrypted and re-encrypted by the relay for delivery to the final destination peer (see the [security note above](#how-public-relay-servers-work) about relay traffic not being end-to-end encrypted).
 
 In summary, all nodes must be defined on the main bounce server.  On client servers, only peers that are directly accessible from a node should be defined as peers of that node, any peers that must be relayed by a bounce server should be left out and will be handled by the relay server's catchall route.
 
@@ -815,7 +923,6 @@ AllowedIPs = 192.0.2.2/32
 ```ini
 [Peer]
 # Name = home-server.example-vpn.dev
-Endpoint = home-server.example-vpn.dev:51820
 PublicKey = &lt;public key for home-server.example-vpn.dev&gt;
 AllowedIPs = 192.0.2.3/32
 ```
@@ -837,29 +944,34 @@ This is just a standard comment in INI syntax used to help keep track of which c
 
 #### `Endpoint`
 
-Defines the publicly accessible address for a remote peer.  This should be left out for peers behind a NAT or peers that don't have a stable publicly accessible IP:PORT pair.  Typically, this only needs to be defined on the main bounce server, but it can also be defined on other public nodes with stable IPs like `public-server2` in the example config below.
+Defines the publicly accessible address for a remote peer.  This should be left out for peers behind a NAT or peers that don't have a stable publicly accessible IP:PORT pair.  Typically, this only needs to be defined on the main bounce server, but it can also be defined on other public nodes with stable IPs like `public-server2` in the example config below.  IPv6 literal endpoints are supported, but they must be wrapped in square brackets.  After a packet is received from a peer, WireGuard also updates the stored endpoint to that peer's most recent authenticated source IP:PORT.
 
 **Examples**
 
  - Endpoint is an IP address  
 `Endpoint = 123.124.125.126:51820`  (IPv6 is also supported)
+ - Endpoint is an IPv6 address: `Endpoint = [2001:DB8::1]:51820`
  - Endpoint is a hostname/FQDN  
 `Endpoint = public-server1.example-vpn.tld:51820`
 
 #### `AllowedIPs`
 
-This defines the IP ranges for which a peer will route traffic.  On simple clients, this is usually a single address (the VPN address of the simple client itself). For bounce servers this will be a range of the IPs or subnets that the relay server is capable of routing traffic for.  Multiple IPs and subnets may be specified using comma-separated IPv4 or IPv6 CIDR notation (from a single /32 or /128 address, all the way up to `0.0.0.0/0` and `::/0` to indicate a default route to send all internet and VPN traffic through that peer).  This option may be specified multiple times.
+This defines which IP prefixes the local node associates with a peer in WireGuard's cryptokey routing table. When sending, the local node uses the destination IP to choose which peer to encrypt to. When receiving, it only accepts a decrypted packet from that peer if the packet's source IP matches one of that peer's `AllowedIPs`. This mapping is local to the machine that owns the config; it is not dynamically advertised to other peers. See [WireGuard's cryptokey routing overview](https://www.wireguard.com/) and the [WireGuard whitepaper](https://www.wireguard.com/papers/wireguard.pdf).
 
-When deciding how to route a packet, the system chooses the most specific route first, and falls back to broader routes. So for a packet destined to `192.0.2.3`, the system would first look for a peer advertising `192.0.2.3/32` specifically, and would fall back to a peer advertising `192.0.2.1/24` or a larger range like `0.0.0.0/0` as a last resort.
+On simple clients, this is usually a single address (the VPN address of the peer itself) or a small routed prefix. On bounce servers, this may be a broader range of IPs or subnets that should be routed back to that peer. Multiple IPs and subnets may be specified using comma-separated IPv4 or IPv6 CIDR notation (from a single /32 or /128 address, all the way up to `0.0.0.0/0` and `::/0` to indicate a default route to send all internet and VPN traffic through that peer). If you need "internet passthrough but no peer-to-peer access", treat `AllowedIPs` as address mapping and source validation, and enforce any additional forwarding policy separately on the machine that would route the traffic.
+
+When deciding how to route a packet, the system chooses the most specific route first, and falls back to broader routes. So for a packet destined to `192.0.2.3`, the system would first look for a peer configured with `192.0.2.3/32` specifically, and would fall back to a peer configured with `192.0.2.1/24` or a larger range like `0.0.0.0/0` as a last resort.
 
 **Examples**
 
 
- - peer is a simple client that only accepts traffic to/from itself  
-`AllowedIPs = 192.0.2.3/32`
+ - peer is a simple client that only represents its own tunnel IP: `AllowedIPs = 192.0.2.3/32`
 
- - peer is a relay server that can bounce VPN traffic to all other peers  
-`AllowedIPs = 192.0.2.1/24`
+ - peer is a simple client with an IPv6 tunnel address: `AllowedIPs = 2001:DB8::3/128`
+
+ - peer is a relay server that can bounce VPN traffic to all other peers  `AllowedIPs = 192.0.2.1/24`
+
+ - peer is a relay server for a dual-stack VPN subnet: `AllowedIPs = 192.0.2.0/24,2001:DB8::/64`
 
  - peer is a relay server that bounces all internet &amp; VPN traffic (like a proxy), including IPv6  
 `AllowedIPs = 0.0.0.0/0,::/0`
@@ -884,7 +996,7 @@ This key can be generated with `wg pubkey &lt; example.key &gt; example.key.pub`
 
 #### `PersistentKeepalive`
 
-If the connection is going from a NAT-ed peer to a public peer, the node behind the NAT must regularly send an outgoing ping in order to keep the bidirectional connection alive in the NAT router's connection table.
+If the connection is going from a NAT-ed peer to a public peer, the node behind the NAT must regularly send an outgoing keepalive packet in order to keep the bidirectional connection alive in the NAT router's connection table.
 
 **Examples**
 
@@ -895,7 +1007,7 @@ If the connection is going from a NAT-ed peer to a public peer, the node behind 
   This value should be left undefined as it's the client's responsibility to keep the connection alive because the server cannot reopen a dead connection to the client if it times out.
   
  - local NAT-ed node to remote public node  
-`PersistentKeepalive = 25` this will send a ping to every 25 seconds keeping the connection open in the local NAT router's connection table.
+`PersistentKeepalive = 25` this will send an authenticated empty keepalive packet every 25 seconds, keeping the connection open in the local NAT router's connection table.
 
 ---
 
@@ -903,13 +1015,20 @@ If the connection is going from a NAT-ed peer to a public peer, the node behind 
 
 ### IPv6
 
-The examples in these docs primarily use IPv4, but WireGuard natively supports IPv6 CIDR notation and addresses everywhere that it supports IPv4, simply add them as you would any other subnet range or address.
+The examples in these docs primarily use IPv4, but WireGuard is layer-3 only and natively supports both IPv4 and IPv6, including v4-in-v6 and v6-in-v4. In practice, the important patterns are:
+
+- `Address` accepts IPv6 interface addresses such as `2001:DB8::3/128`
+- `AllowedIPs` accepts IPv6 CIDRs such as `2001:DB8::/64` and the IPv6 default route `::/0`
+- `Endpoint` accepts IPv6 literals, but they must be wrapped in square brackets, e.g. `[2001:DB8::1]:51820`
+- the `proxy_arp` line shown in the Setup section is IPv4-specific; IPv6 forwarding uses `net.ipv6.conf.all.forwarding = 1`
+
+See the [WireGuard whitepaper](https://www.wireguard.com/papers/wireguard.pdf), [`wg(8)`](https://man7.org/linux/man-pages/man8/wg.8.html), and [`wg-quick(8)`](https://man7.org/linux/man-pages/man8/wg-quick.8.html).
 
 **Example**
 
 ```ini
 [Interface]
-AllowedIps = 192.0.2.3/24, 2001:DB8::/64
+Address = 192.0.2.3/32, 2001:DB8::3/128
 
 [Peer]
 ...
@@ -940,17 +1059,17 @@ AllowedIPs = 0.0.0.0/0, ::/0
 
 ### NAT To NAT Connections
 
-WireGuard can sometimes natively make connections between two clients behind NATs without the need for a public relay server, but in most cases this is not possible. NAT-to-NAT connections are only possible if at least one host has a stable, publicly-accessible IP address:port pair that can be hardcoded ahead of time, whether that's using a FQDN updated with Dynamic DNS, or a static public IP with a non-randomized NAT port opened by outgoing packets, anything works as long as all peers can communicate it beforehand and it doesn't change once the connection is initiated.
+Plain WireGuard configs can sometimes make direct connections between two clients behind NATs without the need for a public relay server, but there is no built-in signaling or discovery layer to find the right public IP:PORT pair automatically. In practice, manual NAT-to-NAT setups only work when the peers already know usable public IP:PORT information ahead of time, or when an external signaling/discovery tool provides it.
 
-A known port and address need to be configured ahead of time because WireGuard doesn't have a signalling layer or public STUN servers that can be used to search for other hosts dynamically.  WebRTC is an example of a protocol that can dynamically configure a connection between two NATs, but it does this by using an out-of-band signaling server to detect the IP:port combo of each host. WireGuard doesn't have this, so it only works with a hardcoded `Endpoint` + `ListenPort` (and `PersistentKeepalive` so it doesn't drop after inactivity).
+A known port and address need to be configured ahead of time for the static/manual approach described here. WebRTC is an example of a protocol that can dynamically configure a connection between two NATs, but it does this by using an out-of-band signaling server to detect the IP:PORT combo of each host. WireGuard itself doesn't do that, so the plain `wg`/`wg-quick` setup below only works with a hardcoded `Endpoint` + `ListenPort` (and `PersistentKeepalive` so it doesn't drop after inactivity).
 
-Learn more from Tailscale's bible of NAT traversal: https://tailscale.com/blog/how-nat-traversal-works/
+See the official [wireguard-tools `nat-hole-punching` example](https://git.zx2c4.com/wireguard-tools/tree/contrib/nat-hole-punching/) for a manual setup.
 
 #### Requirements for NAT-to-NAT setups
 
- - At least one peer has to have to have a hardcoded, directly-accessible `Endpoint` defined. If they're both behind NATs without stable IP addresses, then you'll need to use Dynamic DNS or another solution to have a stable, publicly accessibly domain/IP for at least one peer
- - At least one peer has to have a hardcoded UDP `ListenPort` defined, and it's NAT router must not do UDP source port randomization, otherwise return packets will be sent to the hardcoded `ListenPort` and dropped by the router, instead of using the random port assigned by the NAT on the outgoing packet
- - All NAT'ed peers must have `PersistentKeepalive` enabled on all other peers, so that they continually send outgoing pings to keep connections persisted in their NAT's routing table
+ - For the static/manual approach, at least one peer has to have a usable `Endpoint` that can be configured ahead of time. If neither side has one, you'll need an external discovery/signaling solution or a relay server
+ - At least one peer has to have a hardcoded UDP `ListenPort` defined, and its NAT router must not do UDP source port randomization, otherwise return packets will be sent to the hardcoded `ListenPort` and dropped by the router instead of using the random port assigned by the NAT on the outgoing packet
+ - All NAT'ed peers must have `PersistentKeepalive` enabled on all other peers, so that they continually send outgoing keepalive packets to keep connections persisted in their NAT's routing table
 
 #### The hole-punching connection process
 
@@ -974,19 +1093,19 @@ NAT-to-NAT connections are not possible if all endpoints are behind NAT's with s
 
 ##### Using a signaling server
 
-NAT-to-NAT connections from behind NATs with strict source-port randomization is possible, you just need a signaling server to tell each side the other's IP:port tuple.  Here are a few implementations that achieve this with WireGuard:
+A signaling server can improve the odds by telling each side the other's current public IP:PORT tuple, but it still depends on the NAT behavior of both networks.  Here are a few implementations that do this for WireGuard:
 
 - https://github.com/takutakahashi/wg-connect
 - https://git.zx2c4.com/wireguard-tools/tree/contrib/nat-hole-punching/
 - https://github.com/jwhited/wgsd
 
 ##### Dynamic IP addresses
-Many users report having to restart WireGuard whenever a dynamic IP changes, as it only resolves hostnames on startup. To force WireGuard to re-resolve dynamic DNS `Endpoint` hostnames more often, you may want to use a `PostUp` hook to restart WireGuard every few minutes or hours.
+If a peer's public IP changes, WireGuard can learn the new endpoint from authenticated packets sent by that peer, but DNS hostnames are not continuously polled in the background. If you depend on Dynamic DNS `Endpoint` hostnames being refreshed proactively, you may need external tooling; the official wireguard-tools repo includes [`reresolve-dns.sh`](https://git.zx2c4.com/wireguard-tools/tree/contrib/reresolve-dns/) for exactly this purpose.
 
 
 #### Testing it out
 
-You can see if a hole-punching setup is feasible by using netcat on the client and server to see what ports and connection order work to get a bidirectional connection open: run `nc -v -u -p 51820 &lt;address of peer2&gt; 51820` (on peer1) and `nc -v -u -l 0.0.0.0 51820` (on peer2), then type in both windows to see if you can get bidirectional traffic going.  If it doesn't work regardless of which peer sends the initial packet, then WireGuard won't be unable to work between the peers without a public relay server.
+You can see if a hole-punching setup is feasible by using netcat on the client and server to see what ports and connection order work to get a bidirectional connection open: run `nc -v -u -p 51820 &lt;address of peer2&gt; 51820` (on peer1) and `nc -v -u -l 0.0.0.0 51820` (on peer2), then type in both windows to see if you can get bidirectional traffic going.  If it doesn't work regardless of which peer sends the initial packet, then WireGuard will be unable to work between the peers without a public relay server.
 
 NAT-to-NAT connections are often more unstable and have other limitations, which is why having a fallback public relay server is still advised.
 
@@ -1008,7 +1127,7 @@ NAT-to-NAT connections are often more unstable and have other limitations, which
 ```ini
 [Interface]
 ...
-ListenPort 12000
+ListenPort = 12000
 
 [Peer]
 ...
@@ -1020,7 +1139,7 @@ PersistentKeepalive = 25
 ```ini
 [Interface]
 ...
-ListenPort 12000
+ListenPort = 12000
 
 [Peer]
 ...
@@ -1033,7 +1152,7 @@ PersistentKeepalive = 25
 *Note: this section is about dynamic peer IPs within the VPN subnet, not dynamic public `Endpoint` addresses*.
 
 Dynamic allocation of peer IPs (instead of only having fixed peers) is being developed, the WIP implementation is available here:
-https://github.com/WireGuard/wg-dynamic
+[wg-dynamic](https://git.zx2c4.com/wg-dynamic/about/)
 
 You can also build a dynamic allocation system yourself by reading in IP values from files at runtime by using `PostUp` (see below).
 
@@ -1041,8 +1160,24 @@ You can also build a dynamic allocation system yourself by reading in IP values 
 ```ini
 [Interface]
 ...
-PostUp = wg set %i allowed-ips /etc/wireguard/wg0.key &lt;(some command)
+PostUp = wg set %i peer "$(cat /etc/wireguard/peer1.pub)" allowed-ips "$(cat /etc/wireguard/peer1.allowedips)"
 ```
+
+### Platform Capture Technologies
+
+When people ask what WireGuard uses for packet capture, the answer depends on the platform and backend. The WireGuard protocol stays the same, but the local interface plumbing is different on each OS.
+
+- **Linux**: on standard Linux installs, WireGuard is the kernel implementation exposed as a normal network interface; the official [quick start](https://www.wireguard.com/quickstart/) uses `ip link add dev wg0 type wireguard`, and the official [install matrix](https://www.wireguard.com/install/) ships Linux distributions as `module`/`tools` packages. `/dev/net/tun` belongs to the userspace [`wireguard-go`](https://git.zx2c4.com/wireguard-go/about/) path instead; its Linux TUN implementation opens [`/dev/net/tun`](https://git.zx2c4.com/wireguard-go/tree/tun/tun_linux.go).
+
+- **Windows**: the official [WireGuard for Windows](https://git.zx2c4.com/wireguard-windows/about/) client uses [WireGuardNT](https://git.zx2c4.com/wireguard-nt/about/), not Wintun. Upstream documents describe WireGuardNT as a [kernel driver](https://git.zx2c4.com/wireguard-windows/about/docs/attacksurface.md), the app [README](https://git.zx2c4.com/wireguard-windows/tree/README.md) says it "uses WireGuardNT", and the current service code logs the active [WireGuardNT driver version](https://git.zx2c4.com/wireguard-windows/tree/tunnel/service.go) while only removing [legacy Wintun adapters](https://git.zx2c4.com/wireguard-windows/tree/driver/wintunremoval_windows.go). If you embed the generic userspace [`wireguard-go`](https://git.zx2c4.com/wireguard-go/about/) backend on Windows instead, that backend creates a [Wintun interface](https://git.zx2c4.com/wireguard-go/tree/tun/tun_windows.go).
+
+- **macOS / iOS**: the official Apple app is a [`NEPacketTunnelProvider`](https://git.zx2c4.com/wireguard-apple/tree/Sources/WireGuardNetworkExtension/PacketTunnelProvider.swift) network extension. Its [`WireGuardAdapter`](https://git.zx2c4.com/wireguard-apple/tree/Sources/WireGuardKit/WireGuardAdapter.swift) locates the system `utun` file descriptor and passes it to `wgTurnOn`, so packets flow through the Apple Network Extension / `utun` path rather than `/dev/net/tun`.
+
+- **Android**: the official Android app [opportunistically uses the kernel implementation and falls back to userspace `wireguard-go`](https://git.zx2c4.com/wireguard-android/tree/README.md). In source, [`Application.determineBackend()`](https://git.zx2c4.com/wireguard-android/tree/ui/src/main/java/com/wireguard/android/Application.kt) picks the kernel `WgQuickBackend` when support is present and otherwise uses [`GoBackend`](https://git.zx2c4.com/wireguard-android/tree/tunnel/src/main/java/com/wireguard/android/backend/GoBackend.java); that userspace backend creates the tunnel with Android `VpnService.Builder.establish()` and passes the resulting TUN file descriptor to `wgTurnOn`.
+
+- **Other Unix-like systems**: the official [install matrix](https://www.wireguard.com/install/) is the quickest way to tell which path a platform uses. Entries marked `module` or `kmod` indicate native kernel support, while entries marked `userspace go` use the TUN-oriented [`wireguard-go`](https://git.zx2c4.com/wireguard-go/about/) model described in the official [cross-platform interface docs](https://www.wireguard.com/xplatform/).
+
+So "Windows uses Wintun" and "Linux uses `/dev/net/tun`" are accurate for the generic userspace backend, but they do not describe the default official Windows client or a standard Linux kernel deployment. See the upstream [Windows app README](https://git.zx2c4.com/wireguard-windows/tree/README.md), the [Linux quick start](https://www.wireguard.com/quickstart/), and the [`wireguard-go` TUN sources for Linux](https://git.zx2c4.com/wireguard-go/tree/tun/tun_linux.go) and [Windows](https://git.zx2c4.com/wireguard-go/tree/tun/tun_windows.go).
 
 ### Other WireGuard Implementations
 
@@ -1055,14 +1190,11 @@ An incomplete, insecure userspace implementation of WireGuard written in Rust (n
 - https://git.zx2c4.com/wireguard-hs/about/  
 An incomplete, insecure userspace implementation of WireGuard written in Haskell (not ready for the public).
 
-- https://github.com/cloudflare/boringtun  
-A non-compliant, independent WireGuard implementation written in Rust (a separate fork written by CloudFlare).
-See https://blog.cloudflare.com/boringtun-userspace-wireguard-rust/
+- [BoringTun](https://github.com/cloudflare/boringtun)
+  An independent userspace WireGuard implementation written in Rust by Cloudflare.
+  See also: [BoringTun: userspace WireGuard in Rust](https://blog.cloudflare.com/boringtun-userspace-wireguard-rust/)
 
-- Platform-specific WireGuard apps  
-https://git.zx2c4.com/wireguard-ios/about/  
-https://git.zx2c4.com/wireguard-android/about/  
-https://git.zx2c4.com/wireguard-windows/about/  
+- Platform-specific WireGuard apps: [wireguard-ios](https://git.zx2c4.com/wireguard-ios/about/), [wireguard-android](https://git.zx2c4.com/wireguard-android/about/), [wireguard-windows](https://git.zx2c4.com/wireguard-windows/about/)
 
 All of the userspace implementations are slower than the native C version that runs in kernel-land, but provide other benefits by running in userland (e.g. easier containerization, compatibility, etc.).
 
@@ -1070,7 +1202,9 @@ All of the userspace implementations are slower than the native C version that r
 
 These are some GUI and CLI tools that wrap WireGuard to assist with config, deployment, key management, and connection.
 
+ - https://github.com/weejewel/wg-easy
  - https://github.com/seashell/drago
+ - https://github.com/gravitl/netmaker
  - https://github.com/vx3r/wg-gen-web
  - https://github.com/subspacecloud/subspace
  - https://github.com/corrad1nho/qomui
@@ -1093,18 +1227,22 @@ These are some GUI and CLI tools that wrap WireGuard to assist with config, depl
  - https://github.com/perara/wg-manager
  - https://github.com/pivpn/pivpn
  - https://github.com/BrunIF/wg-ccg
+ - https://github.com/freifunkMUC/wg-access-server
+ - https://github.com/firezone/firezone
+ - https://gitlab.com/BoostCookie/wgsetup
+ - https://github.com/ygguser/Simple-WG-Config-Generator
 
 
 ### Config Shortcuts
 
 Credit for these shortcuts goes to: 
-https://www.ericlight.com/new-things-i-didnt-know-about-wireguard.html
+[New Things I Didn't Know About Wireguard](https://www.ericlight.com/new-things-i-didnt-know-about-wireguard.html)
 
 #### Sharing a single peers.conf file
 
 WireGuard will ignore a peer whose public key matches the interface's private key. So you can distribute a single list of peers everywhere, and only define the `[Interface]` separately on each server.
 
-See: https://lists.zx2c4.com/pipermail/wireguard/2018-December/003703.html
+See: [WireGuard mailing list discussion](https://lists.zx2c4.com/pipermail/wireguard/2018-December/003703.html)
 
 You can combine this with `wg addconf` like this:
 
@@ -1112,7 +1250,7 @@ You can combine this with `wg addconf` like this:
 
 * Each peer also has a shared `/etc/wireguard/peers.conf` file, which contains all the peers.
 
-* The `wg0.conf` file also has a `PostUp` hook: `PostUp = wg addconf /etc/wireguard/peers.conf`.
+* The `wg0.conf` file also has a `PostUp` hook: `PostUp = wg addconf %i /etc/wireguard/peers.conf`.
 
 It's up to you to decide how you want to share the `peers.conf`, be it via a proper orchestration platform, something much more pedestrian like Dropbox, or something kinda wild like Ceph. I dunno, but it's pretty great that you can just wildly fling a peer section around, without worrying whether it's the same as the interface.
 
@@ -1120,13 +1258,13 @@ It's up to you to decide how you want to share the `peers.conf`, be it via a pro
 
 You can set config values from arbitrary commands or by reading in values from files, this makes key management and deployment much easier as you can read in keys at runtime from a 3rd party service like Kubernetes Secrets or AWS KMS.
 
-See: https://lists.zx2c4.com/pipermail/wireguard/2018-December/003702.html
+See: [WireGuard mailing list discussion](https://lists.zx2c4.com/pipermail/wireguard/2018-December/003702.html)
 
 **Example**
 
 You can read in a file as the `PrivateKey` by doing something like:
 
-`PostUp = wg set %i private-key /etc/wireguard/wg0.key &lt;(some command)`
+`PreUp = wg set %i private-key /etc/wireguard/wg0.key`
 
 
 ### Containerization
@@ -1213,17 +1351,69 @@ PersistentKeepalive = 21
 
 For more details see the Further Reading: Docker section below.
 
+#### Example Firecracker MicroVM Setup
+
+If you want to run application code inside a Firecracker microVM, the simplest stable pattern is usually to keep WireGuard on the host, attach the microVM to the host with a TAP device, and route a dedicated subnet from `wg0` into the guest. Firecracker networking is host-managed: the Firecracker Go SDK supports Linux TAP devices or CNI-created TAP-backed interfaces, and `firectl` exposes this directly via `--tap-device`. `wg-quick` only provides interface lifecycle hooks (`PreUp`, `PostUp`, `PreDown`, `PostDown`), so "launch a VM when a peer connects" requires a separate control-plane or supervisor, not just a WireGuard config. [Firecracker Go SDK networking docs](https://github.com/firecracker-microvm/firecracker-go-sdk) / [firectl](https://github.com/firecracker-microvm/firectl) / [wg-quick(8)](https://man7.org/linux/man-pages/man8/wg-quick.8.html)
+
+If you want to study a more opinionated end-to-end design, [distvirt](https://github.com/hansihe/distvirt) is an experimental project that combines Firecracker microVMs with WireGuard ingress and on-demand activation.
+
+**Host setup:**
+```bash
+ip tuntap add dev fc-tap0 mode tap
+ip addr add 172.31.200.1/24 dev fc-tap0
+ip link set fc-tap0 up
+
+sysctl -w net.ipv4.ip_forward=1
+
+iptables -A FORWARD -i wg0 -o fc-tap0 -j ACCEPT
+iptables -A FORWARD -i fc-tap0 -o wg0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+```
+
+If you also want the guest to reach the public internet through the host, add a NAT rule on the host's external interface:
+
+```bash
+iptables -t nat -A POSTROUTING -s 172.31.200.0/24 -o eth0 -j MASQUERADE
+```
+
+**Launch the microVM:**
+```bash
+firectl \
+  --kernel=vmlinux \
+  --root-drive=rootfs.ext4 \
+  --tap-device=fc-tap0/06:00:ac:10:c8:02
+```
+
+**Guest setup:**
+```bash
+ip addr add 172.31.200.2/24 dev eth0
+ip link set eth0 up
+ip route add default via 172.31.200.1
+```
+
+**WireGuard client route to the guest subnet:**
+```ini
+[Peer]
+Endpoint = relay1.wg.example.com:51820
+PublicKey = zJNKewtL3gcHdG62V3GaBkErFtapJWsAx+2um0c0B1s=
+AllowedIPs = 192.0.2.1/24,172.31.200.0/24
+PersistentKeepalive = 21
+```
+
+That keeps WireGuard termination and peer authentication on the host while forwarding decrypted traffic into the Firecracker guest. If you want *all* client traffic to go through the guest, replace the guest subnet above with `0.0.0.0/0` (and `::/0` for IPv6) and make the host/guest forwarding and NAT policy explicit.
+
 ---
 
 # Further Reading
 
 ### Reference Docs
 
-- https://www.wireguard.com/install/#installation
-- https://git.zx2c4.com/WireGuard/about/src/tools/man/wg.8
-- https://git.zx2c4.com/WireGuard/about/src/tools/man/wg-quick.8
-- https://wiki.archlinux.org/index.php/WireGuard
-- https://wiki.debian.org/Wireguard#Configuration
+- [WireGuard install guide](https://www.wireguard.com/install/#installation)
+- [`wg(8)` man page](https://man7.org/linux/man-pages/man8/wg.8.html)
+- [`wg-quick(8)` man page](https://man7.org/linux/man-pages/man8/wg-quick.8.html)
+- [ArchWiki: WireGuard](https://wiki.archlinux.org/title/WireGuard)
+- [Debian Wiki: WireGuard configuration](https://wiki.debian.org/Wireguard#Configuration)
+- [Netgate pfSense WireGuard docs](https://docs.netgate.com/pfsense/en/latest/vpn/wireguard/index.html)
+- [Pro Custodibus: WireGuard topologies](https://www.procustodibus.com/blog/2020/10/wireguard-topologies/)
 
 ### Tutorials
 
@@ -1238,7 +1428,6 @@ For more details see the Further Reading: Docker section below.
 - https://techcrunch.com/2018/07/28/how-i-made-my-own-wireguard-vpn-server/
 - https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/
 - https://jrs-s.net/2018/08/05/routing-between-wg-interfaces-with-wireguard/
-- https://www.stavros.io/posts/how-to-configure-wireguard/
 - https://vincent.bernat.ch/en/blog/2018-route-based-vpn-wireguard
 - https://staaldraad.github.io/2017/04/17/nat-to-nat-with-wireguard
 - https://try.popho.be/wg.html
@@ -1267,6 +1456,8 @@ For more details see the Further Reading: Docker section below.
 
 ### Related Projects
 
+- https://github.com/weejewel/wg-easy
+- https://github.com/gravitl/netmaker
 - https://github.com/complexorganizations/wireguard-manager
 - https://github.com/subspacecloud/subspace
 - https://github.com/trailofbits/algo
@@ -1295,6 +1486,8 @@ For more details see the Further Reading: Docker section below.
 - https://github.com/tailscale/tailscale
 - https://github.com/pivpn/pivpn
 - https://github.com/jwhited/wgsd
+- https://github.com/freifunkMUC/wg-access-server
+- https://github.com/firezone/firezone
 
 ### Docker
 
@@ -1333,6 +1526,7 @@ For more details see the Further Reading: Docker section below.
 - https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/
 - https://github.com/max-moser/network-manager-wireguard
 - https://blog.linuxserver.io/2019/11/24/connect-an-ubuntu-client-to-opnsense-wireguard-tunnel-with-a-gui-toggle-in-gnome/
+- https://im.salty.fish/index.php/archives/linux-networking-shallow-dive.html
 
 
 ### Discussions
@@ -1352,14 +1546,14 @@ For more details see the Further Reading: Docker section below.
 - https://news.ycombinator.com/item?id=17659983
 - https://news.ycombinator.com/item?id=17846387
 
-For more detailed instructions, see the [QuickStart](#QuickStart) guide and API reference above. You can also download the complete example setup here: https://github.com/pirate/wireguard-example.
+For more detailed instructions, see the [QuickStart](#QuickStart) guide and API reference above. You can also download the complete example setup here: [wireguard-example](https://github.com/pirate/wireguard-example).
 
 
 ---
 
 &lt;center&gt;
     
-Suggest changes: https://github.com/pirate/wireguard-docs/issues
+Suggest changes: [wireguard-docs issues](https://github.com/pirate/wireguard-docs/issues)
     
 &lt;/center&gt;
 </div>

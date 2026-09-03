@@ -3,6 +3,10 @@ on:
   workflow_dispatch:
 env:
   BRANCH: master
+# contents: push the empty commit, actions: dispatch the deploy workflow (no PAT to expire)
+permissions:
+  contents: write
+  actions: write
 jobs:
   new-deploy:
     runs-on: ubuntu-latest
@@ -18,5 +22,11 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.REDEPLOY_GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH }}
+      - name: Trigger deploy
+        # Pushes made with GITHUB_TOKEN don't fire other workflows, so start the deploy explicitly.
+        # It checks out the new "Redeployed" HEAD, so its autodeploy skip check passes and it rebuilds.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref ${{ env.BRANCH }}

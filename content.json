@@ -36,7 +36,7 @@
       "template": "services.html"
     },
     "ai-services": {
-      "title": "AI",
+      "title": "Services",
       "url": "/ai-services.html",
       "template": "ai-services.html"
     },
@@ -2867,19 +2867,12 @@
   "HeaderLinks": [
     "index",
     "portfolio",
-    "services",
+    "ai-services",
     "about",
     "careers",
     "blog"
   ],
-  "SubHeaderLinks": {
-    "services": {
-      "title": "Services",
-      "links": [
-        "ai-services"
-      ]
-    }
-  },
+  "SubHeaderLinks": {},
   "WEBINARS": {
     "building-ai-powered-operational-assistants": {
       "title": "Building AI-Powered Operational Assistants",

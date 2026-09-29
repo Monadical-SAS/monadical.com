@@ -103,11 +103,25 @@ RATES = {rate['url']: rate for rate in list(CONFIG['RATES'].values())}  # {url: 
 REPORTS = {report['url']: report for report in list(CONFIG['REPORTS'].values())}  # {url: {post_data}}
 
 
+def get_or_404(collection, url):
+    """look up a url in one of the dicts above, or respond with the 404 page if it doesn't exist"""
+    try:
+        return collection[url]
+    except KeyError:
+        abort(404)
+
+
 ### Routes
 
 # Similar to wordpress, pages and posts are separate.  Every page has its own template
 # in templates/page.html, but all posts use the same template + an iframe URL for the
 # post content
+
+@app.errorhandler(404)
+def page_not_found(error):
+    page = CONFIG['PAGES']['not-found']
+    return render_template(page['template'], now=datetime.now(), **CONFIG, **page), 404
+
 
 @app.route('/')
 def index():
@@ -132,7 +146,7 @@ def render_projects():
 
 @app.route('/<path>')
 def render_page(path):
-    page = PAGES[f'/{path}'].copy()   # get it from content.json
+    page = get_or_404(PAGES, f'/{path}').copy()   # get it from content.json
 
     # special projects
     if page['title'] == "Team":
@@ -161,21 +175,21 @@ def render_page(path):
 
 @app.route('/rates/<path>')
 def render_pricing_model(path):
-    rate = RATES[f'/rates/{path}']
+    rate = get_or_404(RATES, f'/rates/{path}')
     download_post(rate)
     return render_template('rate.html', now=datetime.now(), **CONFIG, **rate)
 
 
 @app.route('/posts/<path>')
 def render_post(path):
-    post = POSTS[f'/posts/{path}']
+    post = get_or_404(POSTS, f'/posts/{path}')
     download_post(post)
     return render_template('post.html', now=datetime.now(), **CONFIG, **post)
 
 
 @app.route('/jobs/<path>')
 def render_job(path):
-    job = JOBS[f'/jobs/{path}']
+    job = get_or_404(JOBS, f'/jobs/{path}')
     return render_template('job_post.html', now=datetime.now(), **CONFIG, **job)
 
 
@@ -239,7 +253,7 @@ def render_webinar(path):
 
 @app.route('/reports/<path>')
 def render_report(path):
-    report = REPORTS[f'/reports/{path}']
+    report = get_or_404(REPORTS, f'/reports/{path}')
     download_post(report)
     return render_template('report.html', now=datetime.now(), **CONFIG, **report)
 
@@ -269,7 +283,7 @@ def generate_rss():
 
 @app.route('/projects/<path>')
 def render_case(path):
-    case = CASES[f'/projects/{path}']
+    case = get_or_404(CASES, f'/projects/{path}')
     return render_template(case['template'], now=datetime.now(), **CONFIG, **case)
 
 
